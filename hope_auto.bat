@@ -5,3 +5,4 @@ if not exist runs mkdir runs
 set PYTHONIOENCODING=utf-8
 echo ===== %date% %time% ===== >> runs\auto.log
 python agents.py >> runs\auto.log 2>&1
+python video.py >> runs\auto.log 2>&1

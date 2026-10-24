@@ -15,3 +15,16 @@ Every run saves all helpers' outputs to `runs/`. Finished packages go to `outbox
 ## Channels
 
 `channels.json` lists the channels. Hope proposes new ones as `needs_setup`; create them by hand (YouTube and Instagram don't allow automated channel creation), then set `status` to `live` and fill in `url`.
+
+## Videos and YouTube upload
+
+`python video.py` turns every outbox package without a video into an `.mp4` next to it (free Edge AI voice, captions, and Pexels photos when `PEXELS_API_KEY` is set), then uploads YouTube packages as **private** videos. The daily run does this automatically after the agents finish.
+
+One-time YouTube setup:
+
+1. In [Google Cloud Console](https://console.cloud.google.com/), create a project and enable **YouTube Data API v3**.
+2. Under **Google Auth Platform**, set up the consent screen (External), add yourself as a test user, then set publishing status to **In production** so the sign-in doesn't expire every 7 days.
+3. Create an **OAuth client ID** of type **Desktop app**, download its JSON, and save it next to `agents.py` as `client_secret.json`.
+4. Run `python video.py` once by hand and sign in with the Google account that owns the channel. After that it's automatic.
+
+Videos uploaded by an unaudited Google Cloud project stay private. To be able to publish them, submit YouTube's API audit form for the project.
