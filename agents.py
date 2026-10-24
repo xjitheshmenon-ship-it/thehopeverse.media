@@ -11,6 +11,7 @@
 Run:  python agents.py "Decide my first three channels and draft a video for one"
 """
 import json
+import os
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -25,8 +26,23 @@ CHANNELS = HERE / "channels.json"
 OUTBOX = HERE / "outbox"
 CAST = HERE / "characters.md"
 LOG = HERE / "runs" / f"{datetime.now():%Y-%m-%d_%H%M}.md"
-WEB_SEARCH = {"type": "web_search_20260209", "name": "web_search", "max_uses": 5}
-WEB_FETCH = {"type": "web_fetch_20260209", "name": "web_fetch", "max_uses": 8}
+WEB_SEARCH = {"type": "web_search_20260209", "name": "web_search", "max_uses": 3}
+WEB_FETCH = {"type": "web_fetch_20260209", "name": "web_fetch", "max_uses": 4}
+
+# Hard spending cap per run, in US dollars. Change it with: setx HOPE_BUDGET 3
+BUDGET = float(os.environ.get("HOPE_BUDGET", "2"))
+# $ per million tokens: input, output, cache read, cache write
+PRICES = {MODEL: (4, 20, 0.20, 5), HELPER_MODEL: (2, 10, 0.20, 2.5)}
+spent = 0.0
+
+
+def _cost(model: str, usage) -> float:
+    i, o, cr, cw = PRICES[model]
+    tools = getattr(usage, "server_tool_use", None)
+    searches = (getattr(tools, "web_search_requests", 0) or 0) if tools else 0
+    return ((usage.input_tokens or 0) * i + (usage.output_tokens or 0) * o
+            + (usage.cache_read_input_tokens or 0) * cr + (usage.cache_creation_input_tokens or 0) * cw) / 1e6 \
+        + searches * 0.01
 
 client = anthropic.Anthropic()
 
@@ -34,7 +50,10 @@ client = anthropic.Anthropic()
 def run_agent(name: str, system: str, prompt: str, tools: list, effort: str = "medium",
               model: str = HELPER_MODEL) -> str:
     """One agent = a system prompt + tools, driven by the SDK's tool runner. Output is saved to runs/."""
-    print(f"... {name} is working", flush=True)
+    global spent
+    if spent >= BUDGET:
+        return f"[budget of ${BUDGET:.2f} reached; stop now and summarize what you have]"
+    print(f"... {name} is working (spent so far ${spent:.2f})", flush=True)
     runner = client.beta.messages.tool_runner(
         model=model,
         max_tokens=16000,
@@ -43,11 +62,17 @@ def run_agent(name: str, system: str, prompt: str, tools: list, effort: str = "m
         output_config={"effort": effort},
         betas=["server-side-fallback-2026-07-01"],
         fallbacks="default",
+        cache_control={"type": "ephemeral"},
+        max_iterations=12,
         messages=[{"role": "user", "content": prompt}],
     )
     final = None
     for message in runner:
         final = message
+        spent += _cost(model, message.usage)
+        if spent >= BUDGET:
+            print(f"!!! budget of ${BUDGET:.2f} reached, stopping", flush=True)
+            break
     if final.stop_reason == "refusal":
         text = f"[declined: {final.stop_details.explanation if final.stop_details else 'no detail'}]"
     else:
@@ -147,7 +172,7 @@ def focus(request: str) -> str:
         "TOPIC: return key facts each with a dated source link, 3 angles that would hook viewers, open "
         "questions, and anything to avoid (misinformation, copyright, platform policy).\n"
         "FACT-CHECK: go claim by claim and mark each as correct, wrong (with the fix) or unverified.",
-        request, [WEB_SEARCH, WEB_FETCH], effort="high")
+        request, [WEB_SEARCH, WEB_FETCH], effort="medium")
 
 
 @beta_tool
@@ -196,7 +221,7 @@ def pen(brief: str) -> str:
         "You are Mr. Pen, the script writer at Hopeverse Media. Using only facts from the research you are given, write "
         "a hook for the first 3 seconds and the full script with timestamps, speaker names and on-screen text. "
         "Keep the tone hopeful and curious. Match the format: Shorts and Reels under 60 seconds.",
-        brief, [], effort="high")
+        brief, [], effort="medium")
 
 
 @beta_tool
@@ -254,7 +279,8 @@ HOPE = (
     "(script, edit plan, cast, titles, thumbnail). "
     "Check list_channels and list_outbox first; never repeat a drafted topic. "
     "To start a new channel, research the niche, then call propose_channel; "
-    "the owner creates it by hand, so only queue posts for channels with status live. Finish with a "
+    "the owner creates it by hand, so only queue posts for channels with status live. Be economical: one topic, one pass, "
+    "no repeated calls. Finish with a "
     "short summary of what you decided, any channels the owner must create, and what was queued."
 )
 
@@ -265,5 +291,6 @@ if __name__ == "__main__":
     print(run_agent("Mr. Hope", HOPE, goal, [list_channels, list_outbox, propose_channel, focus,
                                           cast, pen, cut, spark,
                                           post],
-                    effort="high", model=MODEL))
-    print(f"\nFull scripts and research saved in {LOG}")
+                    effort="medium", model=MODEL))
+    print(f"\nEstimated cost of this run: ${spent:.2f} (cap ${BUDGET:.2f})")
+    print(f"Full scripts and research saved in {LOG}")
