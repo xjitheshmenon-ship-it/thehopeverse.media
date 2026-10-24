@@ -167,7 +167,7 @@ def focus(request: str) -> str:
         "DAILY: find the most-viewed topics on YouTube today and the most valuable topics of the day (big "
         "news, real public interest, lasting value). Return exactly 5 topics that are clearly different from "
         "each other. For each: the topic, why it matters today, evidence of views or interest with a dated "
-        "link, the best format (Short, long video or Reel), and a one-line video idea. Prefer topics that fit "
+        "link, and a one-line idea for a YouTube Short under 60 seconds. Prefer topics that fit "
         "the niche you are given, and say when one doesn't.\n"
         "TOPIC: return key facts each with a dated source link, 3 angles that would hook viewers, open "
         "questions, and anything to avoid (misinformation, copyright, platform policy).\n"
@@ -220,7 +220,8 @@ def pen(brief: str) -> str:
         "Mr. Pen",
         "You are Mr. Pen, the script writer at Hopeverse Media. Using only facts from the research you are given, write "
         "a hook for the first 3 seconds and the full script with timestamps, speaker names and on-screen text. "
-        "Keep the tone hopeful and curious. Match the format: Shorts and Reels under 60 seconds.",
+        "Keep the tone hopeful and curious. Every video is a YouTube Short: vertical, under 60 seconds "
+        "(about 130 spoken words), one idea, a payoff in the last line.",
         brief, [], effort="medium")
 
 
@@ -233,7 +234,8 @@ def cut(script: str) -> str:
     """
     return run_agent(
         "Mr. Cut",
-        "You are Mr. Cut, the video editor at Hopeverse Media. Turn the script into a shot-by-shot edit plan with "
+        "You are Mr. Cut, the video editor at Hopeverse Media. Every video is a vertical YouTube Short "
+        "under 60 seconds with a cut every 2-3 seconds. Turn the script into a shot-by-shot edit plan with "
         "timestamps: visuals, b-roll and where to get it legally (public-domain NASA footage, stock, AI-made), "
         "captions, music mood, sound effects, transitions and pacing. Label any AI or artist's-concept visuals.",
         script, [], effort="medium")
@@ -248,7 +250,7 @@ def spark(script: str) -> str:
     """
     return run_agent(
         "Mr. Spark",
-        "You are Mr. Spark, the thumbnail and title specialist at Hopeverse Media. Give 3 honest, clickable titles (no "
+        "You are Mr. Spark, the thumbnail and title specialist at Hopeverse Media. Every video is a YouTube Short; include #Shorts. Give 3 honest, clickable titles (no "
         "clickbait the video doesn't deliver), with your pick; a description with keywords and hashtags for "
         "YouTube and a caption for Instagram; and 2 thumbnail concepts (image, text of 4 words or fewer, colours).",
         script, [], effort="medium")
@@ -269,7 +271,8 @@ def post(task: str) -> str:
 
 
 HOPE = (
-    "You are Mr. Hope, the primary decision maker of a content studio that runs several YouTube channels "
+    "You are Mr. Hope, the primary decision maker of a content studio that focuses on YouTube Shorts: "
+    "every post is one vertical Short under 60 seconds for a live YouTube channel. You run several YouTube channels "
     "and Instagram accounts under the owner's one primary account. You decide which channels exist, "
     "their names and niches, and what each one publishes. Delegate: focus (Mr. Focus) for "
     "research: start each run with a DAILY request for today's 5 topics, pick one and ask focus to research "
@@ -287,7 +290,7 @@ HOPE = (
 if __name__ == "__main__":
     goal = " ".join(sys.argv[1:]) or (
         "Scheduled run: get today's 5 topics from Mr. Focus, check the outbox, then draft and queue "
-        "the single best new post for one live channel.")
+        "the single best new YouTube Short for the live YouTube channel.")
     print(run_agent("Mr. Hope", HOPE, goal, [list_channels, list_outbox, propose_channel, focus,
                                           cast, pen, cut, spark,
                                           post],

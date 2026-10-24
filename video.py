@@ -34,7 +34,6 @@ class Scene(BaseModel):
 
 
 class Storyboard(BaseModel):
-    vertical: bool
     scenes: list[Scene]
 
 
@@ -47,7 +46,8 @@ def storyboard(package: dict) -> Storyboard:
         messages=[{"role": "user", "content":
                    "Split this video package into scenes for narration. narration: exactly what the voice says "
                    "(only spoken words, no stage directions). on_screen_text: at most 8 words. picture_search: "
-                   "2-4 words to search a stock photo site. vertical: true for a Short or Reel.\n\n"
+                   "2-4 words to search a stock photo site. It is a YouTube Short: keep it under 60 seconds "
+                   "of narration.\n\n"
                    + json.dumps(package)}],
         output_format=Storyboard,
     ).parsed_output
@@ -98,7 +98,7 @@ def frame(scene: Scene, size: tuple) -> np.ndarray:
 def render(package_path: Path) -> Path:
     package = json.loads(package_path.read_text(encoding="utf-8"))
     board = storyboard(package)
-    size = (1080, 1920) if board.vertical else (1920, 1080)
+    size = (1080, 1920)  # YouTube Shorts are vertical
     work = package_path.with_suffix("")
     work.mkdir(exist_ok=True)
     clips = []
