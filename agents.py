@@ -22,6 +22,7 @@ CHANNELS = HERE / "channels.json"
 OUTBOX = HERE / "outbox"
 LOG = HERE / "runs" / f"{datetime.now():%Y-%m-%d_%H%M}.md"
 WEB_SEARCH = {"type": "web_search_20260209", "name": "web_search", "max_uses": 5}
+WEB_FETCH = {"type": "web_fetch_20260209", "name": "web_fetch", "max_uses": 8}
 
 client = anthropic.Anthropic()
 
@@ -135,16 +136,19 @@ def trend_scout(focus: str) -> str:
 
 @beta_tool
 def researcher(topic: str) -> str:
-    """Ask the researcher for verified facts, sources and angles on one topic.
+    """Ask the researcher to research a topic, or to fact-check a finished script before it is queued.
 
     Args:
-        topic: The topic to research, with any angle or audience notes.
+        topic: The topic to research, or "FACT-CHECK:" followed by the full script to verify.
     """
     return run_agent(
-        "Researcher", "You are a researcher for video content. Use web search to gather accurate, current facts. "
-        "Return key facts with source links, 3 angles that would hook viewers, and anything to avoid "
-        "(misinformation, copyright, platform policy risks).",
-        topic, [WEB_SEARCH])
+        "Researcher",
+        "You are the researcher at Hopeverse Media. Search the web, then open and read the primary sources "
+        "(official agencies, papers, the original reporting), not just headlines. Note each source's date and "
+        "prefer the newest. For a topic, return: key facts each with a dated source link, 3 angles that would "
+        "hook viewers, open questions, and anything to avoid (misinformation, copyright, platform policy). "
+        "For a FACT-CHECK, go claim by claim and mark each as correct, wrong (with the fix) or unverified.",
+        topic, [WEB_SEARCH, WEB_FETCH], effort="high")
 
 
 @beta_tool
@@ -179,7 +183,7 @@ HOPE = (
     "You are Hope, the primary decision maker of a content studio that runs several YouTube channels "
     "and Instagram accounts under the owner's one primary account. You decide which channels exist, "
     "their names and niches, and what each one publishes. Delegate: trend_scout for what's hot, "
-    "researcher for facts, creative for scripts/edits/characters, channel_manager for queuing posts. "
+    "researcher for facts (and send it the finished script with FACT-CHECK: before queuing), creative for scripts/edits/characters, channel_manager for queuing posts. "
     "Check list_channels and list_outbox first; never repeat a drafted topic. "
     "To start a new channel, research the niche, then call propose_channel; "
     "the owner creates it by hand, so only queue posts for channels with status live. Finish with a "
