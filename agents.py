@@ -2,11 +2,11 @@
 
     mr_hope       -> primary decision maker: picks channel names/niches, what to make, where
     focus         -> Mr. Focus, the researcher: today's 5 best topics, deep research, fact-checks
-    character_designer -> recurring cast (saved in characters.md)
-    script_writer      -> hook and full script
-    video_editor       -> shot-by-shot edit plan
-    thumbnail_and_title -> titles, description, hashtags, thumbnail
-    channel_mgr   -> manages channels in channels.json (Hope proposes, you create by hand)
+    cast          -> Mr. Cast: recurring characters (saved in characters.md)
+    pen           -> Mr. Pen: hook and full script
+    cut           -> Mr. Cut: shot-by-shot edit plan
+    spark         -> Mr. Spark: titles, description, hashtags, thumbnail
+    post          -> Mr. Post: manages channels in channels.json (Hope proposes, you create by hand)
 
 Run:  python agents.py "Decide my first three channels and draft a video for one"
 """
@@ -166,16 +166,16 @@ def save_cast(cast: str) -> str:
 
 
 @beta_tool
-def character_designer(brief: str) -> str:
-    """Ask the Character Designer which recurring characters appear in this video and how they look and sound.
-    Call this before the script writer.
+def cast(brief: str) -> str:
+    """Ask Mr. Cast, the character designer, which recurring characters appear in this video and how they look and sound.
+    Call this before pen.
 
     Args:
         brief: Topic, channel and format of the video.
     """
     return run_agent(
-        "Character Designer",
-        "You are the Character Designer at Hopeverse Media. Call read_cast first and reuse existing characters "
+        "Mr. Cast",
+        "You are Mr. Cast, the character designer at Hopeverse Media. Call read_cast first and reuse existing characters "
         "so the channel keeps a consistent cast; add a new one only when the video truly needs it, then "
         "save_cast with the full list. Return the characters for this video: name, role, look (for AI image "
         "or animation tools), voice and personality, and how they appear on screen.",
@@ -183,59 +183,59 @@ def character_designer(brief: str) -> str:
 
 
 @beta_tool
-def script_writer(brief: str) -> str:
-    """Ask the Script Writer for the full script.
+def pen(brief: str) -> str:
+    """Ask Mr. Pen, the script writer, for the full script.
 
     Args:
         brief: Topic, Mr. Focus's research, the characters, channel, format and length.
     """
     return run_agent(
-        "Script Writer",
-        "You are the Script Writer at Hopeverse Media. Using only facts from the research you are given, write "
+        "Mr. Pen",
+        "You are Mr. Pen, the script writer at Hopeverse Media. Using only facts from the research you are given, write "
         "a hook for the first 3 seconds and the full script with timestamps, speaker names and on-screen text. "
         "Keep the tone hopeful and curious. Match the format: Shorts and Reels under 60 seconds.",
         brief, [], effort="high")
 
 
 @beta_tool
-def video_editor(script: str) -> str:
-    """Ask the Video Editor for the edit plan of a finished script.
+def cut(script: str) -> str:
+    """Ask Mr. Cut, the video editor, for the edit plan of a finished script.
 
     Args:
         script: The final script, with format and characters.
     """
     return run_agent(
-        "Video Editor",
-        "You are the Video Editor at Hopeverse Media. Turn the script into a shot-by-shot edit plan with "
+        "Mr. Cut",
+        "You are Mr. Cut, the video editor at Hopeverse Media. Turn the script into a shot-by-shot edit plan with "
         "timestamps: visuals, b-roll and where to get it legally (public-domain NASA footage, stock, AI-made), "
         "captions, music mood, sound effects, transitions and pacing. Label any AI or artist's-concept visuals.",
         script, [], effort="medium")
 
 
 @beta_tool
-def thumbnail_and_title(script: str) -> str:
-    """Ask the Thumbnail & Title specialist for titles, description, hashtags and the thumbnail.
+def spark(script: str) -> str:
+    """Ask Mr. Spark for titles, description, hashtags and the thumbnail.
 
     Args:
         script: The final script, with channel and format.
     """
     return run_agent(
-        "Thumbnail & Title",
-        "You are the Thumbnail & Title specialist at Hopeverse Media. Give 3 honest, clickable titles (no "
+        "Mr. Spark",
+        "You are Mr. Spark, the thumbnail and title specialist at Hopeverse Media. Give 3 honest, clickable titles (no "
         "clickbait the video doesn't deliver), with your pick; a description with keywords and hashtags for "
         "YouTube and a caption for Instagram; and 2 thumbnail concepts (image, text of 4 words or fewer, colours).",
         script, [], effort="medium")
 
 
 @beta_tool
-def channel_manager(task: str) -> str:
-    """Ask the channel manager to look up channels or queue a finished video package for one.
+def post(task: str) -> str:
+    """Ask Mr. Post, the channel manager, to look up channels or queue a finished video package for one.
 
     Args:
         task: What to do, e.g. "queue this package for the tech channel: ...".
     """
     return run_agent(
-        "Channel manager", "You manage the owner's YouTube channels and Instagram accounts. You cannot create channels or "
+        "Mr. Post", "You are Mr. Post. You manage the owner's YouTube channels and Instagram accounts. You cannot create channels or "
         "accounts; the owner creates them by hand. Use list_channels to see them and queue_post to queue "
         "finished content. Pick the best-fitting channel when not told.",
         task, [list_channels, queue_post], effort="low")
@@ -246,9 +246,9 @@ HOPE = (
     "and Instagram accounts under the owner's one primary account. You decide which channels exist, "
     "their names and niches, and what each one publishes. Delegate: focus (Mr. Focus) for "
     "research: start each run with a DAILY request for today's 5 topics, pick one and ask focus to research "
-    "it. Then, in order: character_designer for the cast, script_writer for the script (give it the "
-    "research and cast), focus with FACT-CHECK: plus the script, and fix anything wrong; then video_editor "
-    "and thumbnail_and_title on the final script. Finally ask channel_manager to queue the whole package "
+    "it. Then, in order: cast (Mr. Cast) for the characters, pen (Mr. Pen) for the script (give it the "
+    "research and cast), focus with FACT-CHECK: plus the script, and fix anything wrong; then cut "
+    "and spark on the final script. Finally ask post to queue the whole package "
     "(script, edit plan, cast, titles, thumbnail). "
     "Check list_channels and list_outbox first; never repeat a drafted topic. "
     "To start a new channel, research the niche, then call propose_channel; "
@@ -261,7 +261,7 @@ if __name__ == "__main__":
         "Scheduled run: get today's 5 topics from Mr. Focus, check the outbox, then draft and queue "
         "the single best new post for one live channel.")
     print(run_agent("Mr. Hope", HOPE, goal, [list_channels, list_outbox, propose_channel, focus,
-                                          character_designer, script_writer, video_editor, thumbnail_and_title,
-                                          channel_manager],
+                                          cast, pen, cut, spark,
+                                          post],
                     effort="high"))
     print(f"\nFull scripts and research saved in {LOG}")

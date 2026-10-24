@@ -1,6 +1,6 @@
 # Hopeverse Media agents
 
-Mr. Hope, the primary decision maker, runs Hopeverse Media's YouTube and Instagram channels and directs his mini agents: Mr. Focus (the researcher, who finds the 5 best topics of the day, researches them and fact-checks scripts), a Character Designer (keeps a recurring cast in `characters.md`), a Script Writer, a Video Editor, a Thumbnail & Title specialist, and a channel manager.
+Mr. Hope, the primary decision maker, runs Hopeverse Media's YouTube and Instagram channels and directs his mini agents: Mr. Focus (the researcher, who finds the 5 best topics of the day, researches them and fact-checks scripts), Mr. Cast (character designer, keeps a recurring cast in `characters.md`), Mr. Pen (script writer), Mr. Cut (video editor), Mr. Spark (thumbnail and title), and Mr. Post (channel manager).
 
 ## Run
 
