@@ -1,0 +1,20 @@
+[
+  {
+    "id": "yt-hopeverse",
+    "platform": "youtube",
+    "name": "Hopeverse Media",
+    "url": "https://www.youtube.com/@HopeverseMedia",
+    "niche": "Hopeful curiosity: space, science and the future (chosen by Hope)",
+    "audience": "Worldwide, English",
+    "status": "live"
+  },
+  {
+    "id": "ig-hopeverse",
+    "platform": "instagram",
+    "name": "Hopeverse Media",
+    "url": "https://www.instagram.com/thehopeverse.media",
+    "niche": "Hopeful curiosity: space, science and the future (chosen by Hope)",
+    "audience": "Worldwide, English",
+    "status": "live"
+  }
+]

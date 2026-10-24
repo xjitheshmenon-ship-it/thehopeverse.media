@@ -1,0 +1,185 @@
+"""Utube: Hope, the primary agent, that delegates to four sub-agents.
+
+    hope          -> primary decision maker: picks channel names/niches, what to make, where
+    trend_scout   -> what's trending on YouTube / Instagram right now (web search)
+    researcher    -> facts, sources, angles for a chosen topic (web search)
+    creative      -> script, shot list / edit plan, characters, title, thumbnail idea
+    channel_mgr   -> manages channels in channels.json (Hope proposes, you create by hand)
+
+Run:  python agents.py "Decide my first three channels and draft a video for one"
+"""
+import json
+import sys
+from datetime import datetime
+from pathlib import Path
+
+import anthropic
+from anthropic import beta_tool
+
+MODEL = "claude-opus-5-5"
+HERE = Path(__file__).parent
+CHANNELS = HERE / "channels.json"
+OUTBOX = HERE / "outbox"
+LOG = HERE / "runs" / f"{datetime.now():%Y-%m-%d_%H%M}.md"
+WEB_SEARCH = {"type": "web_search_20260209", "name": "web_search", "max_uses": 5}
+
+client = anthropic.Anthropic()
+
+
+def run_agent(name: str, system: str, prompt: str, tools: list, effort: str = "medium") -> str:
+    """One agent = a system prompt + tools, driven by the SDK's tool runner. Output is saved to runs/."""
+    print(f"... {name} is working", flush=True)
+    runner = client.beta.messages.tool_runner(
+        model=MODEL,
+        max_tokens=16000,
+        system=system,
+        tools=tools,
+        output_config={"effort": effort},
+        betas=["server-side-fallback-2026-07-01"],
+        fallbacks="default",
+        messages=[{"role": "user", "content": prompt}],
+    )
+    final = None
+    for message in runner:
+        final = message
+    if final.stop_reason == "refusal":
+        text = f"[declined: {final.stop_details.explanation if final.stop_details else 'no detail'}]"
+    else:
+        text = "".join(b.text for b in final.content if b.type == "text")
+    LOG.parent.mkdir(exist_ok=True)
+    with LOG.open("a", encoding="utf-8") as f:
+        f.write(f"## {name}\n\n**Asked:** {prompt}\n\n{text}\n\n")
+    return text
+
+
+# ---------- channel manager tools (local state only) ----------
+
+def _channels() -> list:
+    return json.loads(CHANNELS.read_text()) if CHANNELS.exists() else []
+
+
+@beta_tool
+def list_channels() -> str:
+    """List the YouTube channels and Instagram accounts the owner has set up, with niche and audience."""
+    return json.dumps(_channels(), indent=2)
+
+
+@beta_tool
+def queue_post(channel_id: str, title: str, description: str, script: str) -> str:
+    """Save a finished video package to the outbox for a channel. The outbox is a private review
+    folder: nothing is published until the owner reviews and uploads it, so queue drafts freely.
+
+    Args:
+        channel_id: The id of a channel from list_channels.
+        title: Video or reel title.
+        description: Description / caption with hashtags.
+        script: Full script and edit plan.
+    """
+    channel = next((c for c in _channels() if c["id"] == channel_id), None)
+    if not channel:
+        return f"error: unknown channel '{channel_id}'. Call list_channels."
+    if channel.get("status") != "live":
+        return f"error: '{channel_id}' is not live yet; the owner must create it by hand and set status to live."
+    OUTBOX.mkdir(exist_ok=True)
+    path = OUTBOX / f"{channel_id}-{len(list(OUTBOX.glob(channel_id + '-*'))) + 1}.json"
+    path.write_text(json.dumps(
+        {"channel_id": channel_id, "title": title, "description": description, "script": script}, indent=2))
+    # ponytail: writes to outbox only; real upload needs YouTube Data API / Instagram Graph API OAuth per channel
+    return f"queued at {path.name}"
+
+
+@beta_tool
+def propose_channel(channel_id: str, platform: str, name: str, niche: str, audience: str) -> str:
+    """Decide a new channel. It is saved as needs_setup; the owner creates it by hand, then sets status to live.
+
+    Args:
+        channel_id: Short slug, e.g. "yt-tech".
+        platform: "youtube" or "instagram".
+        name: The channel or account name you chose.
+        niche: What the channel covers.
+        audience: Who it is for (age, region, language).
+    """
+    if platform not in ("youtube", "instagram"):
+        return "error: platform must be youtube or instagram"
+    channels = _channels()
+    if any(c["id"] == channel_id for c in channels):
+        return f"error: '{channel_id}' already exists"
+    channels.append({"id": channel_id, "platform": platform, "name": name, "niche": niche,
+                     "audience": audience, "status": "needs_setup", "url": ""})
+    CHANNELS.write_text(json.dumps(channels, indent=2))
+    return f"saved '{name}' as needs_setup"
+
+
+# ---------- sub-agents, exposed to Hope as tools ----------
+
+@beta_tool
+def trend_scout(focus: str) -> str:
+    """Ask the trend scout what is trending right now on YouTube and Instagram.
+
+    Args:
+        focus: Niche, region or audience to scout for, e.g. "Indian tech shorts".
+    """
+    return run_agent(
+        "Trend scout", "You are a trend scout for YouTube and Instagram. Use web search to find what is trending "
+        "this week. Return 5-8 topic ideas, each with why it's hot, the format that works (short/long/reel), "
+        "and a source link.",
+        focus, [WEB_SEARCH], effort="low")
+
+
+@beta_tool
+def researcher(topic: str) -> str:
+    """Ask the researcher for verified facts, sources and angles on one topic.
+
+    Args:
+        topic: The topic to research, with any angle or audience notes.
+    """
+    return run_agent(
+        "Researcher", "You are a researcher for video content. Use web search to gather accurate, current facts. "
+        "Return key facts with source links, 3 angles that would hook viewers, and anything to avoid "
+        "(misinformation, copyright, platform policy risks).",
+        topic, [WEB_SEARCH])
+
+
+@beta_tool
+def creative(brief: str) -> str:
+    """Ask the creative agent to produce the script, edit plan, characters, title and thumbnail idea.
+
+    Args:
+        brief: Topic, research notes, target channel, format and length.
+    """
+    return run_agent(
+        "Creative", "You are the creative director. From the brief, produce: a hook in the first 3 seconds, a full "
+        "script with timestamps, an edit plan (shots, b-roll, captions, music mood, cuts), recurring "
+        "characters/persona if useful, a title, a description with hashtags, and a thumbnail concept.",
+        brief, [], effort="high")
+
+
+@beta_tool
+def channel_manager(task: str) -> str:
+    """Ask the channel manager to look up channels or queue a finished video package for one.
+
+    Args:
+        task: What to do, e.g. "queue this package for the tech channel: ...".
+    """
+    return run_agent(
+        "Channel manager", "You manage the owner's YouTube channels and Instagram accounts. You cannot create channels or "
+        "accounts; the owner creates them by hand. Use list_channels to see them and queue_post to queue "
+        "finished content. Pick the best-fitting channel when not told.",
+        task, [list_channels, queue_post], effort="low")
+
+
+HOPE = (
+    "You are Hope, the primary decision maker of a content studio that runs several YouTube channels "
+    "and Instagram accounts under the owner's one primary account. You decide which channels exist, "
+    "their names and niches, and what each one publishes. Delegate: trend_scout for what's hot, "
+    "researcher for facts, creative for scripts/edits/characters, channel_manager for queuing posts. "
+    "Check list_channels first. To start a new channel, research the niche, then call propose_channel; "
+    "the owner creates it by hand, so only queue posts for channels with status live. Finish with a "
+    "short summary of what you decided, any channels the owner must create, and what was queued."
+)
+
+if __name__ == "__main__":
+    goal = " ".join(sys.argv[1:]) or "Plan and draft this week's best video for one of my channels."
+    print(run_agent("Hope", HOPE, goal, [list_channels, propose_channel, trend_scout, researcher, creative, channel_manager],
+                    effort="high"))
+    print(f"\nFull scripts and research saved in {LOG}")
