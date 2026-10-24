@@ -1,8 +1,7 @@
-"""Utube: Hope, the primary agent, that delegates to four sub-agents.
+"""Utube: Hope, the primary agent, that delegates to three sub-agents.
 
     hope          -> primary decision maker: picks channel names/niches, what to make, where
-    trend_scout   -> what's trending on YouTube / Instagram right now (web search)
-    researcher    -> facts, sources, angles for a chosen topic (web search)
+    focus         -> Mr. Focus, the researcher: today's 5 best topics, deep research, fact-checks
     creative      -> script, shot list / edit plan, characters, title, thumbnail idea
     channel_mgr   -> manages channels in channels.json (Hope proposes, you create by hand)
 
@@ -121,34 +120,28 @@ def propose_channel(channel_id: str, platform: str, name: str, niche: str, audie
 # ---------- sub-agents, exposed to Hope as tools ----------
 
 @beta_tool
-def trend_scout(focus: str) -> str:
-    """Ask the trend scout what is trending right now on YouTube and Instagram.
+def focus(request: str) -> str:
+    """Ask Mr. Focus, the researcher. Three kinds of request:
+    "DAILY: <niche notes>" for today's 5 best video topics; a topic name to research it in depth;
+    or "FACT-CHECK:" followed by a finished script to verify before it is queued.
 
     Args:
-        focus: Niche, region or audience to scout for, e.g. "Indian tech shorts".
+        request: "DAILY: ...", a topic to research, or "FACT-CHECK: <script>".
     """
     return run_agent(
-        "Trend scout", "You are a trend scout for YouTube and Instagram. Use web search to find what is trending "
-        "this week. Return 5-8 topic ideas, each with why it's hot, the format that works (short/long/reel), "
-        "and a source link.",
-        focus, [WEB_SEARCH], effort="low")
-
-
-@beta_tool
-def researcher(topic: str) -> str:
-    """Ask the researcher to research a topic, or to fact-check a finished script before it is queued.
-
-    Args:
-        topic: The topic to research, or "FACT-CHECK:" followed by the full script to verify.
-    """
-    return run_agent(
-        "Researcher",
-        "You are the researcher at Hopeverse Media. Search the web, then open and read the primary sources "
-        "(official agencies, papers, the original reporting), not just headlines. Note each source's date and "
-        "prefer the newest. For a topic, return: key facts each with a dated source link, 3 angles that would "
-        "hook viewers, open questions, and anything to avoid (misinformation, copyright, platform policy). "
-        "For a FACT-CHECK, go claim by claim and mark each as correct, wrong (with the fix) or unverified.",
-        topic, [WEB_SEARCH, WEB_FETCH], effort="high")
+        "Mr. Focus",
+        "You are Mr. Focus, the researcher at Hopeverse Media. Search the web, then open and read the primary "
+        "sources (YouTube trending and top videos, official agencies, papers, original reporting), not just "
+        "headlines. Note each source's date and prefer the newest.\n"
+        "DAILY: find the most-viewed topics on YouTube today and the most valuable topics of the day (big "
+        "news, real public interest, lasting value). Return exactly 5 topics that are clearly different from "
+        "each other. For each: the topic, why it matters today, evidence of views or interest with a dated "
+        "link, the best format (Short, long video or Reel), and a one-line video idea. Prefer topics that fit "
+        "the niche you are given, and say when one doesn't.\n"
+        "TOPIC: return key facts each with a dated source link, 3 angles that would hook viewers, open "
+        "questions, and anything to avoid (misinformation, copyright, platform policy).\n"
+        "FACT-CHECK: go claim by claim and mark each as correct, wrong (with the fix) or unverified.",
+        request, [WEB_SEARCH, WEB_FETCH], effort="high")
 
 
 @beta_tool
@@ -182,8 +175,10 @@ def channel_manager(task: str) -> str:
 HOPE = (
     "You are Hope, the primary decision maker of a content studio that runs several YouTube channels "
     "and Instagram accounts under the owner's one primary account. You decide which channels exist, "
-    "their names and niches, and what each one publishes. Delegate: trend_scout for what's hot, "
-    "researcher for facts (and send it the finished script with FACT-CHECK: before queuing), creative for scripts/edits/characters, channel_manager for queuing posts. "
+    "their names and niches, and what each one publishes. Delegate: focus (Mr. Focus) for "
+    "research: start each run with a DAILY request for today's 5 topics, pick one and ask focus to research "
+    "it, then send the finished script back with FACT-CHECK: before queuing. Use creative for "
+    "scripts/edits/characters and channel_manager for queuing posts. "
     "Check list_channels and list_outbox first; never repeat a drafted topic. "
     "To start a new channel, research the niche, then call propose_channel; "
     "the owner creates it by hand, so only queue posts for channels with status live. Finish with a "
@@ -192,8 +187,8 @@ HOPE = (
 
 if __name__ == "__main__":
     goal = " ".join(sys.argv[1:]) or (
-        "Scheduled run: check what's trending now and what's already in the outbox, then draft and queue "
+        "Scheduled run: get today's 5 topics from Mr. Focus, check the outbox, then draft and queue "
         "the single best new post for one live channel.")
-    print(run_agent("Hope", HOPE, goal, [list_channels, list_outbox, propose_channel, trend_scout, researcher, creative, channel_manager],
+    print(run_agent("Hope", HOPE, goal, [list_channels, list_outbox, propose_channel, focus, creative, channel_manager],
                     effort="high"))
     print(f"\nFull scripts and research saved in {LOG}")

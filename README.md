@@ -1,6 +1,6 @@
 # Hopeverse Media agents
 
-Hope, the primary decision maker, runs Hopeverse Media's YouTube and Instagram channels and directs four helpers: a trend scout, a researcher, a creative, and a channel manager.
+Hope, the primary decision maker, runs Hopeverse Media's YouTube and Instagram channels and directs three helpers: Mr. Focus (the researcher, who finds the 5 best topics of the day, researches them and fact-checks scripts), a creative, and a channel manager.
 
 ## Run
 
