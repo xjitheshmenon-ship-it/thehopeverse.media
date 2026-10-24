@@ -2,7 +2,7 @@
 
     python video.py            # every outbox package that has no video yet
 
-Voice: free Microsoft Edge voices (edge-tts). Pictures: Pexels photos when PEXELS_API_KEY is set,
+Voice: free Microsoft Edge voices (edge-tts). Footage: Pexels stock video clips (or photos) when PEXELS_API_KEY is set,
 otherwise plain coloured backgrounds. Upload: needs client_secret.json from Google Cloud (see README).
 """
 import asyncio
@@ -16,7 +16,8 @@ from pathlib import Path
 
 import edge_tts
 import numpy as np
-from moviepy import AudioFileClip, ImageClip, concatenate_videoclips
+from moviepy import (AudioFileClip, ColorClip, CompositeVideoClip, ImageClip, VideoFileClip,
+                     concatenate_videoclips, vfx)
 from PIL import Image, ImageDraw, ImageFont
 from pydantic import BaseModel
 
@@ -46,7 +47,7 @@ def storyboard(package: dict) -> Storyboard:
         messages=[{"role": "user", "content":
                    "Split this video package into scenes for narration. narration: exactly what the voice says "
                    "(only spoken words, no stage directions). on_screen_text: at most 8 words. picture_search: "
-                   "2-4 words to search a stock photo site. It is a YouTube Short: keep it under 60 seconds "
+                   "2-4 concrete, filmable words to search a stock video site (e.g. 'ocean waves aerial'). It is a YouTube Short: keep it under 60 seconds "
                    "of narration.\n\n"
                    + json.dumps(package)}],
         output_format=Storyboard,
@@ -62,30 +63,51 @@ def _font(size: int):
     return ImageFont.load_default(size=size)
 
 
-def _picture(query: str, size: tuple) -> Image.Image:
-    key = os.environ.get("PEXELS_API_KEY")
-    if key:
+def _pexels(path: str, params: dict) -> dict:
+    url = f"https://api.pexels.com/{path}?" + urllib.parse.urlencode(params)
+    req = urllib.request.Request(url, headers={"Authorization": os.environ["PEXELS_API_KEY"], "User-Agent": "hopeverse"})
+    return json.load(urllib.request.urlopen(req, timeout=20))
+
+
+def _fill(clip, size: tuple):
+    """Scale and centre-crop a clip to exactly fill the frame."""
+    clip = clip.resized(max(size[0] / clip.w, size[1] / clip.h))
+    return clip.cropped(x_center=clip.w / 2, y_center=clip.h / 2, width=size[0], height=size[1])
+
+
+def background(query: str, size: tuple, duration: float, work: Path, used: set):
+    """A moving stock clip from Pexels; a photo with a slow zoom if no clip; a plain colour without a key."""
+    if os.environ.get("PEXELS_API_KEY"):
         try:
-            orient = "portrait" if size[1] > size[0] else "landscape"
-            url = "https://api.pexels.com/v1/search?" + urllib.parse.urlencode(
-                {"query": query, "per_page": 1, "orientation": orient})
-            req = urllib.request.Request(url, headers={"Authorization": key, "User-Agent": "hopeverse"})
-            photo = json.load(urllib.request.urlopen(req, timeout=20))["photos"][0]["src"]["large2x"]
-            img = Image.open(BytesIO(urllib.request.urlopen(photo, timeout=30).read())).convert("RGB")
-            scale = max(size[0] / img.width, size[1] / img.height)
-            img = img.resize((int(img.width * scale) + 1, int(img.height * scale) + 1))
-            left, top = (img.width - size[0]) // 2, (img.height - size[1]) // 2
-            return img.crop((left, top, left + size[0], top + size[1]))
-        except Exception as e:  # no photo is not worth losing the video over
-            print(f"    no picture for '{query}': {e}")
-    return Image.new("RGB", size, (12, 18, 48))
+            for video in _pexels("videos/search", {"query": query, "orientation": "portrait", "per_page": 5})["videos"]:
+                if video["id"] in used:
+                    continue
+                files = [f for f in video["video_files"] if f.get("file_type") == "video/mp4" and (f.get("height") or 0) >= 1280]
+                if not files:
+                    continue
+                used.add(video["id"])
+                path = work / f"clip-{video['id']}.mp4"
+                if not path.exists():
+                    urllib.request.urlretrieve(min(files, key=lambda f: f["height"])["link"], path)
+                clip = _fill(VideoFileClip(str(path)).without_audio(), size)
+                if clip.duration < duration:
+                    clip = clip.with_effects([vfx.Loop(duration=duration)])
+                return clip.subclipped(0, duration)
+            photo = _pexels("v1/search", {"query": query, "orientation": "portrait", "per_page": 1})["photos"][0]
+            img = Image.open(BytesIO(urllib.request.urlopen(photo["src"]["large2x"], timeout=30).read())).convert("RGB")
+            clip = _fill(ImageClip(np.array(img)), size).with_duration(duration)
+            return clip.resized(lambda t: 1 + 0.04 * t / duration).with_position("center")  # slow zoom
+        except Exception as e:  # missing footage is not worth losing the video over
+            print(f"    no footage for '{query}': {e}")
+    return ColorClip(size, color=(12, 18, 48), duration=duration)
 
 
-def frame(scene: Scene, size: tuple) -> np.ndarray:
-    img = _picture(scene.picture_search, size)
-    draw = ImageDraw.Draw(img, "RGBA")
+def caption(text: str, size: tuple) -> np.ndarray:
+    """Caption on a transparent layer, laid over the footage."""
+    img = Image.new("RGBA", size, (0, 0, 0, 0))
+    draw = ImageDraw.Draw(img)
     font = _font(size[0] // 14)
-    lines = textwrap.wrap(scene.on_screen_text, width=18 if size[1] > size[0] else 28)
+    lines = textwrap.wrap(text, width=18)
     line_h = font.size + 16
     top = int(size[1] * 0.72) - line_h * len(lines) // 2
     draw.rectangle((0, top - 30, size[0], top + line_h * len(lines) + 30), fill=(0, 0, 0, 150))
@@ -101,16 +123,19 @@ def render(package_path: Path) -> Path:
     size = (1080, 1920)  # YouTube Shorts are vertical
     work = package_path.with_suffix("")
     work.mkdir(exist_ok=True)
-    clips = []
+    clips, used = [], set()
     for i, scene in enumerate(board.scenes):
         audio = work / f"{i:03}.mp3"
         asyncio.run(edge_tts.Communicate(scene.narration, VOICE).save(str(audio)))
         sound = AudioFileClip(str(audio))
-        clips.append(ImageClip(frame(scene, size)).with_duration(sound.duration + 0.3).with_audio(sound))
+        duration = sound.duration + 0.3
+        layers = [background(scene.picture_search, size, duration, work, used),
+                  ImageClip(caption(scene.on_screen_text, size), transparent=True).with_duration(duration)]
+        clips.append(CompositeVideoClip(layers, size=size).with_duration(duration).with_audio(sound))
         print(f"    scene {i + 1}/{len(board.scenes)}")
     out = package_path.with_suffix(".mp4")
-    concatenate_videoclips(clips).write_videofile(str(out), fps=24, codec="libx264", audio_codec="aac",
-                                                  logger=None)
+    concatenate_videoclips(clips).write_videofile(str(out), fps=30, codec="libx264", audio_codec="aac",
+                                                  ffmpeg_params=["-pix_fmt", "yuv420p"], logger=None)
     return out
 
 
