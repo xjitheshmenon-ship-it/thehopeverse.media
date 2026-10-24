@@ -65,6 +65,13 @@ def list_channels() -> str:
 
 
 @beta_tool
+def list_outbox() -> str:
+    """List the titles of drafts already saved to the outbox, so you don't repeat a topic."""
+    drafts = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(OUTBOX.glob("*.json"))]
+    return json.dumps([{"channel_id": d["channel_id"], "title": d["title"]} for d in drafts])
+
+
+@beta_tool
 def queue_post(channel_id: str, title: str, description: str, script: str) -> str:
     """Save a finished video package to the outbox for a channel. The outbox is a private review
     folder: nothing is published until the owner reviews and uploads it, so queue drafts freely.
@@ -173,13 +180,16 @@ HOPE = (
     "and Instagram accounts under the owner's one primary account. You decide which channels exist, "
     "their names and niches, and what each one publishes. Delegate: trend_scout for what's hot, "
     "researcher for facts, creative for scripts/edits/characters, channel_manager for queuing posts. "
-    "Check list_channels first. To start a new channel, research the niche, then call propose_channel; "
+    "Check list_channels and list_outbox first; never repeat a drafted topic. "
+    "To start a new channel, research the niche, then call propose_channel; "
     "the owner creates it by hand, so only queue posts for channels with status live. Finish with a "
     "short summary of what you decided, any channels the owner must create, and what was queued."
 )
 
 if __name__ == "__main__":
-    goal = " ".join(sys.argv[1:]) or "Plan and draft this week's best video for one of my channels."
-    print(run_agent("Hope", HOPE, goal, [list_channels, propose_channel, trend_scout, researcher, creative, channel_manager],
+    goal = " ".join(sys.argv[1:]) or (
+        "Scheduled run: check what's trending now and what's already in the outbox, then draft and queue "
+        "the single best new post for one live channel.")
+    print(run_agent("Hope", HOPE, goal, [list_channels, list_outbox, propose_channel, trend_scout, researcher, creative, channel_manager],
                     effort="high"))
     print(f"\nFull scripts and research saved in {LOG}")
