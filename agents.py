@@ -173,7 +173,7 @@ def channel_manager(task: str) -> str:
 
 
 HOPE = (
-    "You are Hope, the primary decision maker of a content studio that runs several YouTube channels "
+    "You are Mr. Hope, the primary decision maker of a content studio that runs several YouTube channels "
     "and Instagram accounts under the owner's one primary account. You decide which channels exist, "
     "their names and niches, and what each one publishes. Delegate: focus (Mr. Focus) for "
     "research: start each run with a DAILY request for today's 5 topics, pick one and ask focus to research "
@@ -189,6 +189,6 @@ if __name__ == "__main__":
     goal = " ".join(sys.argv[1:]) or (
         "Scheduled run: get today's 5 topics from Mr. Focus, check the outbox, then draft and queue "
         "the single best new post for one live channel.")
-    print(run_agent("Hope", HOPE, goal, [list_channels, list_outbox, propose_channel, focus, creative, channel_manager],
+    print(run_agent("Mr. Hope", HOPE, goal, [list_channels, list_outbox, propose_channel, focus, creative, channel_manager],
                     effort="high"))
     print(f"\nFull scripts and research saved in {LOG}")
