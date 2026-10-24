@@ -2,6 +2,10 @@
 
 Mr. Hope, the primary decision maker, makes YouTube Shorts for Hopeverse Media and directs his mini agents: Mr. Focus (the researcher, who finds the 5 best topics of the day, researches them and fact-checks scripts), Mr. Cast (character designer, keeps a recurring cast in `characters.md`), Mr. Pen (script writer), Mr. Cut (video editor), Mr. Spark (thumbnail and title), and Mr. Post (channel manager).
 
+## Change what the agents do
+
+Every agent's instructions are in `team.md`. Edit it on GitHub (open the file, click the pencil, then **Commit changes**). The daily run fetches the latest version before it starts, so nothing needs downloading.
+
 ## Run
 
 1. `pip install -r requirements.txt`
