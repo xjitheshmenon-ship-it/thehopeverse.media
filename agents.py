@@ -18,7 +18,8 @@ from pathlib import Path
 import anthropic
 from anthropic import beta_tool
 
-MODEL = "claude-opus-5-5"
+MODEL = "claude-opus-5-5"          # Mr. Hope: makes the decisions
+HELPER_MODEL = "claude-sonnet-5-5"  # the mini agents: about half the price per token
 HERE = Path(__file__).parent
 CHANNELS = HERE / "channels.json"
 OUTBOX = HERE / "outbox"
@@ -30,11 +31,12 @@ WEB_FETCH = {"type": "web_fetch_20260209", "name": "web_fetch", "max_uses": 8}
 client = anthropic.Anthropic()
 
 
-def run_agent(name: str, system: str, prompt: str, tools: list, effort: str = "medium") -> str:
+def run_agent(name: str, system: str, prompt: str, tools: list, effort: str = "medium",
+              model: str = HELPER_MODEL) -> str:
     """One agent = a system prompt + tools, driven by the SDK's tool runner. Output is saved to runs/."""
     print(f"... {name} is working", flush=True)
     runner = client.beta.messages.tool_runner(
-        model=MODEL,
+        model=model,
         max_tokens=16000,
         system=system,
         tools=tools,
@@ -263,5 +265,5 @@ if __name__ == "__main__":
     print(run_agent("Mr. Hope", HOPE, goal, [list_channels, list_outbox, propose_channel, focus,
                                           cast, pen, cut, spark,
                                           post],
-                    effort="high"))
+                    effort="high", model=MODEL))
     print(f"\nFull scripts and research saved in {LOG}")
