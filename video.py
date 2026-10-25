@@ -459,6 +459,8 @@ if __name__ == "__main__":
     quota_left = True
     for path in sorted(OUTBOX.glob("*.json")):
         package = json.loads(path.read_text(encoding="utf-8"))
+        if "--only" in sys.argv and package["channel_id"] != sys.argv[sys.argv.index("--only") + 1]:
+            continue  # e.g. python video.py --only yt-kissa: post just that channel's videos
         video = path.with_suffix(".mp4")
         voice = channels.get(package["channel_id"], {}).get("voice", VOICE)
         if not video.exists() and "youtube_id" not in package:  # cloud runs don't keep videos; never remake posted ones
