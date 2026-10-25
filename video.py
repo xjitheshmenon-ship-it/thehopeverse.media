@@ -25,6 +25,7 @@ from PIL import Image, ImageDraw, ImageFont
 from pydantic import BaseModel
 
 from agents import HELPER_MODEL, OUTBOX, _channels, client, read_cast
+from approve import approved
 
 HERE = Path(__file__).parent
 VOICE = os.environ.get("HOPE_VOICE", "en-US-AndrewNeural")
@@ -302,6 +303,9 @@ if __name__ == "__main__":
             print(f"Making video for {path.name}")
             render(path)
         if "--no-upload" in sys.argv:  # the 4 PM run only makes videos; the 6 PM run posts them
+            continue
+        if "youtube_id" not in package and not approved(package):
+            print(f"Not posting {path.name}: not approved on Telegram")
             continue
         if platform.get(package["channel_id"]) == "youtube" and "youtube_id" not in package:
             if not SECRET.exists():

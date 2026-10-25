@@ -15,11 +15,15 @@ echo ===== %date% %time% %1 ===== >> runs\auto.log
 rem Fetch the latest code and instructions from GitHub first.
 git pull --rebase --autostash >> runs\auto.log 2>&1
 if /i "%1"=="post" (
+  if defined TELEGRAM_TOKEN python approve.py collect >> runs\auto.log 2>&1
   python video.py >> runs\auto.log 2>&1
   rem Show today's spending report on screen.
-  if exist runs\spend-report.md start "" notepad runs\spend-report.md
+  if defined TELEGRAM_TOKEN (python approve.py report >> runs\auto.log 2>&1) else (
+    if exist runs\spend-report.md start "" notepad runs\spend-report.md
+  )
   python dashboard.py >> runs\auto.log 2>&1
 ) else (
   python agents.py >> runs\auto.log 2>&1
   python video.py --no-upload >> runs\auto.log 2>&1
+  if defined TELEGRAM_TOKEN python approve.py ask >> runs\auto.log 2>&1
 )
