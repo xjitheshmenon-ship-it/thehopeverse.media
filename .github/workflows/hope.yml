@@ -86,6 +86,7 @@ jobs:
         if: github.event.schedule == '45 11 * * *' || inputs.job == 'daily'
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core > /dev/null  # Hindi captions
+          python agents.py --grow || true  # Mr. Grow's notes for today's Shorts
           for id in $(python -c "import json; print(*[c['id'] for c in json.load(open('channels.json')) if c['platform'] == 'youtube' and c['status'] == 'live'])"); do
             for i in $(seq "$SHORTS_PER_DAY"); do
               HOPE_REVIEW=$([ "$i" = "$SHORTS_PER_DAY" ] && echo 1 || echo 0) python agents.py \

@@ -7,6 +7,7 @@
     cut           -> Mr. Cut: shot-by-shot edit plan
     spark         -> Mr. Spark: titles, description, hashtags, thumbnail
     post          -> Mr. Post: manages channels in channels.json (Hope proposes, you create by hand)
+    grow          -> Mr. Grow: once a day (python agents.py --grow), turns the numbers and trends into runs/growth.md
 
 Run:  python agents.py "Decide my first three channels and draft a video for one"
 """
@@ -28,6 +29,7 @@ OUTBOX = HERE / "outbox"
 CAST = HERE / "characters.md"
 TEAM_FILE = HERE / "team.md"
 LESSONS = HERE / "lessons.md"  # Mr. Hope writes this himself after every run
+GROWTH = HERE / "runs" / "growth.md"  # Mr. Grow rewrites this every morning; each agent gets its own section
 HISTORY = HERE / "runs" / "history.jsonl"
 LOG = HERE / "runs" / f"{datetime.now():%Y-%m-%d_%H%M}.md"
 WEB_SEARCH = {"type": "web_search_20260209", "name": "web_search", "max_uses": 3}
@@ -81,6 +83,9 @@ def run_agent(name: str, system: str, prompt: str, tools: list, effort: str = "m
     lessons = _sections(LESSONS).get(name)
     if lessons:
         system += "\n\nLessons Mr. Hope has learned from past runs (follow them):\n" + lessons
+    growth = _sections(GROWTH).get(name)
+    if growth:
+        system += "\n\nToday's growth notes from Mr. Grow (follow them):\n" + growth
     runner = client.beta.messages.tool_runner(
         model=model,
         max_tokens=16000,
@@ -384,6 +389,9 @@ def spend_report() -> str:
     if ideas:
         lines += ["", f"## Today's new channel idea (folder ideas/{ideas[-1].parent.name})", "",
                   ideas[-1].read_text(encoding="utf-8").split("## Images")[0].strip()]
+    owner = _sections(GROWTH).get("Owner")
+    if owner:
+        lines += ["", "## Mr. Grow's to-dos for you today", "", owner]
     SPEND.parent.mkdir(exist_ok=True)
     SPEND.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return "\n".join(lines)
@@ -392,6 +400,17 @@ def spend_report() -> str:
 if __name__ == "__main__":
     if spent_today() >= DAILY_BUDGET:
         sys.exit(f"Daily budget of ${DAILY_BUDGET:.2f} reached; no more Shorts today.")
+    if sys.argv[1:] == ["--grow"]:
+        notes = run_agent("Mr. Grow", TEAM["Mr. Grow"],
+                          f"Today is {datetime.now():%A %d %B %Y}. Channels:\n{list_channels()}",
+                          [performance, read_lessons, *([perplexity] if PPLX_KEY else []), WEB_SEARCH])
+        if "## " in notes:  # keep yesterday's notes if the run was cut off by the budget
+            GROWTH.parent.mkdir(exist_ok=True)
+            GROWTH.write_text(notes[notes.index("## "):], encoding="utf-8")
+        with HISTORY.open("a", encoding="utf-8") as f:
+            f.write(json.dumps({"date": f"{datetime.now():%Y-%m-%d %H:%M}", "cost_usd": round(spent, 2)}) + "\n")
+        print(notes)
+        sys.exit()
     goal = " ".join(sys.argv[1:]) or (
         "Scheduled run: get today's 5 topics from Mr. Focus, check the outbox, then draft and queue "
         "the single best new YouTube Short for the live YouTube channel.")

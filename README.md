@@ -1,6 +1,6 @@
 # Hopeverse Media agents
 
-Mr. Hope, the primary decision maker, makes YouTube Shorts for Hopeverse Media and directs his mini agents: Mr. Focus (the researcher, who finds the 5 best topics of the day, researches them and fact-checks scripts), Mr. Cast (character designer, keeps a recurring cast in `characters.md`), Mr. Pen (script writer), Mr. Cut (video editor), Mr. Spark (thumbnail and title), and Mr. Post (channel manager).
+Mr. Hope, the primary decision maker, makes YouTube Shorts for Hopeverse Media and directs his mini agents: Mr. Focus (the researcher, who finds the 5 best topics of the day, researches them and fact-checks scripts), Mr. Cast (character designer, keeps a recurring cast in `characters.md`), Mr. Pen (script writer), Mr. Cut (video editor), Mr. Spark (thumbnail and title), Mr. Post (channel manager), and Mr. Grow (audience growth: every morning he reads the numbers and today's trends and writes `runs/growth.md`, with notes each agent follows that day and a to-do list for you, such as pinned comments, community posts and cross-promotion, which appears in the daily report).
 
 ## Change what the agents do
 
