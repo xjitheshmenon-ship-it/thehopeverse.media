@@ -8,6 +8,7 @@ for each shot in Mr. Cut's edit plan, else a photo-real AI image from fal.ai (FA
 import asyncio
 import json
 import os
+import subprocess
 import textwrap
 import urllib.parse
 import urllib.request
@@ -16,8 +17,8 @@ from pathlib import Path
 
 import edge_tts
 import numpy as np
-from moviepy import (AudioFileClip, ColorClip, CompositeVideoClip, ImageClip, VideoFileClip,
-                     concatenate_videoclips, vfx)
+from moviepy import AudioFileClip, ColorClip, CompositeVideoClip, ImageClip, VideoFileClip, vfx
+from moviepy.config import FFMPEG_BINARY
 from PIL import Image, ImageDraw, ImageFont
 from pydantic import BaseModel
 
@@ -190,7 +191,10 @@ def render(package_path: Path) -> Path:
     size = (1080, 1920)  # YouTube Shorts are vertical
     work = package_path.with_suffix("")
     work.mkdir(exist_ok=True)
-    clips, used = [], set()
+    logo = None
+    if LOGO.exists():  # channel watermark, top-left, clear of the Shorts buttons on the right
+        logo = ImageClip(str(LOGO), transparent=True).resized(width=150).with_opacity(0.85).with_position((60, 170))
+    parts, used = [], set()
     for i, scene in enumerate(board.scenes):
         audio = work / f"{i:03}.mp3"
         asyncio.run(edge_tts.Communicate(scene.narration, VOICE).save(str(audio)))
@@ -198,15 +202,22 @@ def render(package_path: Path) -> Path:
         duration = sound.duration + 0.3
         layers = [background(scene, size, duration, work, used),
                   ImageClip(caption(scene.on_screen_text, size), transparent=True).with_duration(duration)]
-        clips.append(CompositeVideoClip(layers, size=size).with_duration(duration).with_audio(sound))
+        if logo:
+            layers.append(logo.with_duration(duration))
+        clip = CompositeVideoClip(layers, size=size).with_duration(duration).with_audio(sound)
+        # Each scene is written to disk and closed straight away, so only one scene's footage is in memory.
+        part = work / f"scene-{i:03}.mp4"
+        clip.write_videofile(str(part), fps=30, codec="libx264", audio_codec="aac",
+                             ffmpeg_params=["-pix_fmt", "yuv420p"], logger=None)
+        for c in (clip, sound, *layers):
+            c.close()
+        parts.append(part)
         print(f"    scene {i + 1}/{len(board.scenes)}")
-    video = concatenate_videoclips(clips)
-    if LOGO.exists():  # channel watermark, top-left, clear of the Shorts buttons on the right
-        logo = ImageClip(str(LOGO), transparent=True).resized(width=150).with_opacity(0.85)
-        video = CompositeVideoClip([video, logo.with_position((60, 170)).with_duration(video.duration)], size=size)
     out = package_path.with_suffix(".mp4")
-    video.write_videofile(str(out), fps=30, codec="libx264", audio_codec="aac",
-                                                  ffmpeg_params=["-pix_fmt", "yuv420p"], logger=None)
+    listing = work / "scenes.txt"
+    listing.write_text("".join(f"file '{p.resolve().as_posix()}'\n" for p in parts), encoding="utf-8")
+    subprocess.run([FFMPEG_BINARY, "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(listing),
+                    "-c", "copy", str(out)], check=True)
     return out
 
 
