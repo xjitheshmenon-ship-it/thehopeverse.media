@@ -13,7 +13,7 @@ from pathlib import Path
 
 from pydantic import BaseModel
 
-from agents import HISTORY, MODEL, OUTBOX, TEAM, _channels, _cost, client
+from agents import DAILY_BUDGET, HISTORY, MODEL, OUTBOX, TEAM, _channels, _cost, client, spent_today
 from video import Scene
 
 HERE = Path(__file__).parent
@@ -91,4 +91,6 @@ def write_episode() -> Path:
 
 
 if __name__ == "__main__":
+    if spent_today() >= DAILY_BUDGET:
+        raise SystemExit(f"Daily budget of ${DAILY_BUDGET:.2f} reached; no more episodes today.")
     write_episode()

@@ -24,7 +24,7 @@ def git(*args, **kw) -> str:
 def files() -> list:
     runs = HERE / "runs"
     found = [*OUTBOX.glob("*.json"), *OUTBOX.glob("*/board.json"), *runs.glob("*.md"), *runs.glob("*.jsonl"),
-             *(HERE / "hosts").glob("*.png"),
+             *(HERE / "hosts").glob("*.png"), *(HERE / "ideas").glob("*/*"),
              LESSONS, CAST, HERE / "series.json"]
     return [str(p.relative_to(HERE)) for p in found if p.exists()]
 

@@ -456,13 +456,18 @@ if __name__ == "__main__":
         sys.exit()
     dubs = [c for c in channels.values() if c.get("status") == "dub" and (HERE / c["token"]).exists()]
     platform = {i: c["platform"] for i, c in channels.items()}
+    quota_left = True
     for path in sorted(OUTBOX.glob("*.json")):
         package = json.loads(path.read_text(encoding="utf-8"))
         video = path.with_suffix(".mp4")
         voice = channels.get(package["channel_id"], {}).get("voice", VOICE)
         if not video.exists() and "youtube_id" not in package:  # cloud runs don't keep videos; never remake posted ones
             print(f"Making video for {path.name}")
-            render(path, voice)
+            try:
+                render(path, voice)
+            except Exception as e:  # with many Shorts a day, one broken package shouldn't stop the rest
+                print(f"    failed: {e}")
+                continue
         # Only Shorts made from now on have board.json, so older ones are never dubbed.
         for c in dubs if "dub_of" not in package and (path.with_suffix("") / "board.json").exists() else []:
             if not path.with_suffix(f".{c['lang']}.json").exists():
@@ -477,11 +482,18 @@ if __name__ == "__main__":
             print(f"Not posting {path.name}: not approved on Telegram")
             continue
         if platform.get(package["channel_id"]) == "youtube" and "youtube_id" not in package:
+            if not quota_left:
+                continue
             if not SECRET.exists():
                 print("Skipping upload: client_secret.json not found (see README).")
                 continue
             print(f"Uploading {video.name} to YouTube as public")
-            package["youtube_id"] = upload(video, package, HERE / channels[package["channel_id"]].get("token", "token.json"))
+            try:
+                package["youtube_id"] = upload(video, package, HERE / channels[package["channel_id"]].get("token", "token.json"))
+            except Exception as e:  # the daily API quota fits about 6 uploads; the rest go up on the next run
+                print(f"    upload failed: {e}")
+                quota_left = "quota" not in str(e).lower() and "uploadLimitExceeded" not in str(e)
+                continue
             path.write_text(json.dumps(package, indent=2), encoding="utf-8")
             print(f"    https://youtu.be/{package['youtube_id']}")
         if channels.get(package["channel_id"], {}).get("lang"):  # Hindi dubs and series stay on their own channel

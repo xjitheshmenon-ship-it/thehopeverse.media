@@ -4,12 +4,12 @@ name: Hope
 
 on:
   schedule:
-    - cron: "45 11 * * *"  # 17:15 IST: research, make and post today's Short (posts by about 18:00)
+    - cron: "45 11 * * *"  # 17:15 IST: research, make and post today's Shorts (6 per channel take 2-4 hours)
     - cron: "15 * * * *"   # hourly: dashboard numbers
   workflow_dispatch:
     inputs:
       job:
-        description: "daily = make and post a Short, stats = dashboard numbers only"
+        description: "daily = make and post today's Shorts, stats = dashboard numbers only"
         default: daily
         type: choice
         options: [daily, stats]
@@ -28,11 +28,14 @@ env:
   PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
   FAL_KEY: ${{ secrets.FAL_KEY }}
   INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
+  # Settings > Secrets and variables > Actions > Variables: change these without editing this file
+  SHORTS_PER_DAY: ${{ vars.SHORTS_PER_DAY || '6' }}  # per channel, for the 100-day plan
+  DAILY_BUDGET: ${{ vars.DAILY_BUDGET || '20' }}     # US dollars a day across everything; runs stop once reached
 
 jobs:
   hope:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 300
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -54,18 +57,26 @@ jobs:
           true
       - run: python state.py load
 
-      - name: Research, script and make the Short
+      - name: Research, script and make today's Shorts for every live channel
         if: github.event.schedule == '45 11 * * *' || inputs.job == 'daily'
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core > /dev/null  # Hindi captions
-          python agents.py
+          for id in $(python -c "import json; print(*[c['id'] for c in json.load(open('channels.json')) if c['platform'] == 'youtube' and c['status'] == 'live'])"); do
+            for i in $(seq "$SHORTS_PER_DAY"); do
+              HOPE_REVIEW=$([ "$i" = "$SHORTS_PER_DAY" ] && echo 1 || echo 0) python agents.py \
+                "Scheduled run, Short $i of $SHORTS_PER_DAY today for channel $id: get today's topics from Mr. Focus, check list_outbox, then draft and queue the best new YouTube Short for $id on a topic and category not already drafted today." || true
+            done
+          done
           python video.py
       - name: Write and post today's Hindi series episode
         if: always() && (github.event.schedule == '45 11 * * *' || inputs.job == 'daily')
         run: |
           [ -f token-series.json ] || { echo "Series channel not connected yet (YOUTUBE_TOKEN_SERIES)"; exit 0; }
-          python series.py
+          for i in $(seq "$SHORTS_PER_DAY"); do python series.py || true; done
           python video.py
+      - name: Today's new channel idea and its brand kit
+        if: always() && (github.event.schedule == '45 11 * * *' || inputs.job == 'daily')
+        run: python scout.py || true
       - name: Save Hope's memory
         if: always() && (github.event.schedule == '45 11 * * *' || inputs.job == 'daily')
         run: python state.py save
