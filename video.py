@@ -231,18 +231,19 @@ def caption(text: str, size: tuple, lang: str = "") -> np.ndarray:
     return np.array(img)
 
 
-def speak(text: str, voice: str, path: Path):
-    """Edge's free voice service sometimes returns an empty or broken file, so check it and try again."""
-    for attempt in range(4):
+def speak(text: str, voice: str, path: Path) -> bool:
+    """Edge's free voice service sometimes returns an empty or broken file, so check it and try again.
+    Returns False if it never works, so the caller can drop that scene instead of losing the whole video."""
+    for attempt in range(3):
         try:
             asyncio.run(edge_tts.Communicate(text, voice).save(str(path)))
             AudioFileClip(str(path)).close()  # raises if ffmpeg can't read it
-            return
+            return True
         except Exception as e:
-            if attempt == 3:
-                raise
-            print(f"    voice failed ({e.__class__.__name__}), retrying")
+            print(f"    voice failed ({e.__class__.__name__}), size {path.stat().st_size if path.exists() else 0} bytes")
             time.sleep(5 * (attempt + 1))
+    print(f"    skipping this scene; the voice could not read: {text!r}")
+    return False
 
 
 def render(package_path: Path, voice: str = VOICE) -> Path:
@@ -264,7 +265,8 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
         if not any(ch.isalnum() for ch in scene.narration):  # nothing to say, so no sound file would come back
             continue
         audio = work / f"{prefix}{i:03}.mp3"
-        speak(scene.narration, voice, audio)
+        if not speak(scene.narration, voice, audio):
+            continue
         sound = AudioFileClip(str(audio))
         duration = sound.duration + 0.3
         layers = [background(scene, size, duration, work, used),
