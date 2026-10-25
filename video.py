@@ -2,8 +2,8 @@
 
     python video.py            # every outbox package that has no video yet
 
-Voice: free Microsoft Edge voices (edge-tts). Footage: Pexels stock video clips (or photos) when PEXELS_API_KEY is set,
-otherwise plain coloured backgrounds. Upload: needs client_secret.json from Google Cloud (see README).
+Voice: free Microsoft Edge voices (edge-tts). Pictures: an AI image per scene from fal.ai when FAL_KEY is
+set, otherwise Pexels stock clips when PEXELS_API_KEY is set, otherwise plain coloured backgrounds. Upload: needs client_secret.json from Google Cloud (see README).
 """
 import asyncio
 import json
@@ -21,10 +21,12 @@ from moviepy import (AudioFileClip, ColorClip, CompositeVideoClip, ImageClip, Vi
 from PIL import Image, ImageDraw, ImageFont
 from pydantic import BaseModel
 
-from agents import HELPER_MODEL, OUTBOX, _channels, client
+from agents import HELPER_MODEL, OUTBOX, _channels, client, read_cast
 
 HERE = Path(__file__).parent
 VOICE = os.environ.get("HOPE_VOICE", "en-US-AndrewNeural")
+FAL_MODEL = "fal-ai/flux/schnell"  # about $0.006 per Short-sized image
+STYLE = "vertical 9:16, cinematic, hopeful mood, soft glowing light, rich colour, high detail, no text, no words"
 SECRET, TOKEN = HERE / "client_secret.json", HERE / "token.json"
 
 
@@ -32,6 +34,7 @@ class Scene(BaseModel):
     narration: str
     on_screen_text: str
     picture_search: str
+    image_prompt: str
 
 
 class Storyboard(BaseModel):
@@ -47,8 +50,11 @@ def storyboard(package: dict) -> Storyboard:
         messages=[{"role": "user", "content":
                    "Split this video package into scenes for narration. narration: exactly what the voice says "
                    "(only spoken words, no stage directions). on_screen_text: at most 8 words. picture_search: "
-                   "2-4 concrete, filmable words to search a stock video site (e.g. 'ocean waves aerial'). It is a YouTube Short: keep it under 60 seconds "
-                   "of narration.\n\n"
+                   "2-4 concrete, filmable words to search a stock video site (e.g. 'ocean waves aerial'). image_prompt: a vivid "
+                   "description of one AI image for the scene (subject, setting, camera angle); when a recurring "
+                   "character appears, copy their look from the cast below word for word so they stay consistent. "
+                   "It is a YouTube Short: keep it under 60 seconds "
+                   "of narration.\n\nCast:\n" + read_cast.call({}) + "\n\nPackage:\n"
                    + json.dumps(package)}],
         output_format=Storyboard,
     ).parsed_output
@@ -75,8 +81,26 @@ def _fill(clip, size: tuple):
     return clip.cropped(x_center=clip.w / 2, y_center=clip.h / 2, width=size[0], height=size[1])
 
 
-def background(query: str, size: tuple, duration: float, work: Path, used: set):
-    """A moving stock clip from Pexels; a photo with a slow zoom if no clip; a plain colour without a key."""
+def _zoom(img: Image.Image, size: tuple, duration: float):
+    clip = _fill(ImageClip(np.array(img.convert("RGB"))), size).with_duration(duration)
+    return clip.resized(lambda t: 1 + 0.06 * t / duration).with_position("center")  # slow push-in
+
+
+def background(scene: "Scene", size: tuple, duration: float, work: Path, used: set):
+    """An AI image from fal.ai (FAL_KEY), else Pexels stock footage (PEXELS_API_KEY), else a plain colour."""
+    if os.environ.get("FAL_KEY"):
+        try:
+            import fal_client
+            path = work / f"ai-{len(used):03}.png"
+            used.add(path.name)
+            if not path.exists():
+                result = fal_client.subscribe(FAL_MODEL, arguments={
+                    "prompt": f"{scene.image_prompt}. {STYLE}", "image_size": "portrait_16_9", "num_images": 1})
+                urllib.request.urlretrieve(result["images"][0]["url"], path)
+            return _zoom(Image.open(path), size, duration)
+        except Exception as e:
+            print(f"    no AI image for this scene: {e}")
+    query = scene.picture_search
     if os.environ.get("PEXELS_API_KEY"):
         try:
             for video in _pexels("videos/search", {"query": query, "orientation": "portrait", "per_page": 5})["videos"]:
@@ -95,8 +119,7 @@ def background(query: str, size: tuple, duration: float, work: Path, used: set):
                 return clip.subclipped(0, duration)
             photo = _pexels("v1/search", {"query": query, "orientation": "portrait", "per_page": 1})["photos"][0]
             img = Image.open(BytesIO(urllib.request.urlopen(photo["src"]["large2x"], timeout=30).read())).convert("RGB")
-            clip = _fill(ImageClip(np.array(img)), size).with_duration(duration)
-            return clip.resized(lambda t: 1 + 0.04 * t / duration).with_position("center")  # slow zoom
+            return _zoom(img, size, duration)
         except Exception as e:  # missing footage is not worth losing the video over
             print(f"    no footage for '{query}': {e}")
     return ColorClip(size, color=(12, 18, 48), duration=duration)
@@ -129,7 +152,7 @@ def render(package_path: Path) -> Path:
         asyncio.run(edge_tts.Communicate(scene.narration, VOICE).save(str(audio)))
         sound = AudioFileClip(str(audio))
         duration = sound.duration + 0.3
-        layers = [background(scene.picture_search, size, duration, work, used),
+        layers = [background(scene, size, duration, work, used),
                   ImageClip(caption(scene.on_screen_text, size), transparent=True).with_duration(duration)]
         clips.append(CompositeVideoClip(layers, size=size).with_duration(duration).with_audio(sound))
         print(f"    scene {i + 1}/{len(board.scenes)}")
