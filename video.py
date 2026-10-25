@@ -2,7 +2,7 @@
 
     python video.py            # every outbox package that has no video yet
 
-Voice: free Microsoft Edge voices (edge-tts). Pictures: real moving stock footage from Pixabay (free, PIXABAY_API_KEY)
+Voice: free Microsoft Edge voices (edge-tts). Pictures: real moving stock footage from Pixabay (free, PIXABAY_API_KEY) or NASA (no key)
 for each shot in Mr. Cut's edit plan, else a photo-real AI image from fal.ai (FAL_KEY), else a plain colour. Upload: needs client_secret.json from Google Cloud (see README).
 """
 import asyncio
@@ -82,6 +82,34 @@ def _pixabay(kind: str, query: str) -> list:
     return json.load(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "hopeverse"}), timeout=20))["hits"]
 
 
+def _nasa(query: str, used: set, work: Path):
+    """Download a public-domain clip from NASA's video library (no key needed), or return None."""
+    url = "https://images-api.nasa.gov/search?" + urllib.parse.urlencode({"q": query, "media_type": "video", "page_size": 10})
+    for item in json.load(urllib.request.urlopen(url, timeout=20))["collection"]["items"]:
+        nasa_id = item["data"][0]["nasa_id"]
+        if nasa_id in used:
+            continue
+        files = json.load(urllib.request.urlopen(urllib.parse.quote(item["href"], safe=":/~"), timeout=20))
+        mp4 = next((f for size in ("~medium.mp4", "~small.mp4", "~mobile.mp4") for f in files if f.endswith(size)), None)
+        if not mp4:
+            continue
+        used.add(nasa_id)
+        path = work / f"nasa-{len(used):03}.mp4"
+        if not path.exists():  # ponytail: downloads the whole clip; long NASA videos can be 100+ MB
+            urllib.request.urlretrieve(urllib.parse.quote(mp4, safe=":/~"), path)
+        return path
+    return None
+
+
+def _clip(path: Path, size: tuple, duration: float, skip: float = 0):
+    """A stock clip filling the frame for `duration` seconds, starting `skip` of the way in."""
+    clip = _fill(VideoFileClip(str(path)).without_audio(), size)
+    clip = clip.subclipped(min(clip.duration * skip, max(0, clip.duration - duration)))
+    if clip.duration < duration:
+        clip = clip.with_effects([vfx.Loop(duration=duration)])
+    return clip.subclipped(0, duration)
+
+
 def _fill(clip, size: tuple):
     """Scale and centre-crop a clip to exactly fill the frame."""
     clip = clip.resized(max(size[0] / clip.w, size[1] / clip.h))
@@ -94,8 +122,8 @@ def _zoom(img: Image.Image, size: tuple, duration: float):
 
 
 def background(scene: "Scene", size: tuple, duration: float, work: Path, used: set):
-    """Real stock footage from Pixabay (PIXABAY_API_KEY), else a photo-real AI image from fal.ai (FAL_KEY),
-    else a Pixabay photo, else a plain colour."""
+    """Real stock footage from Pixabay (PIXABAY_API_KEY), else NASA's free library, else a photo-real AI image
+    from fal.ai (FAL_KEY), else a Pixabay photo, else a plain colour."""
     query = scene.picture_search
     if os.environ.get("PIXABAY_API_KEY"):
         try:
@@ -106,12 +134,15 @@ def background(scene: "Scene", size: tuple, duration: float, work: Path, used: s
                 path = work / f"clip-{video['id']}.mp4"
                 if not path.exists():
                     urllib.request.urlretrieve(video["videos"]["medium"]["url"], path)  # 1080p, or 720p on old clips
-                clip = _fill(VideoFileClip(str(path)).without_audio(), size)
-                if clip.duration < duration:
-                    clip = clip.with_effects([vfx.Loop(duration=duration)])
-                return clip.subclipped(0, duration)
+                return _clip(path, size, duration)
         except Exception as e:  # missing footage is not worth losing the video over
             print(f"    no footage for '{query}': {e}")
+    try:
+        path = _nasa(query, used, work)
+        if path:
+            return _clip(path, size, duration, skip=0.2)  # skip NASA title cards at the start
+    except Exception as e:
+        print(f"    no NASA footage for '{query}': {e}")
     if os.environ.get("FAL_KEY"):
         try:
             import fal_client
