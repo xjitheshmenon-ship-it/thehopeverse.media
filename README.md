@@ -12,9 +12,15 @@ Every agent's instructions are in `team.md`. Edit it on GitHub (open the file, c
 2. Set your key: `$env:ANTHROPIC_API_KEY="..."` (PowerShell) or `export ANTHROPIC_API_KEY=...` (Mac/Linux)
 3. `python agents.py "what Hope should do"`, or double-click `start_hope.bat` on Windows
 
+Optional: with `PERPLEXITY_API_KEY` set (`setx PERPLEXITY_API_KEY pplx-...`), Mr. Focus searches with Perplexity Sonar first (about $0.006 a search, counted in the `HOPE_BUDGET` cap) and falls back to Claude's web search if it fails. Without the key nothing changes.
+
 To run Hope automatically on Windows, double-click `schedule_hope.bat` once. It saves your key and creates two Task Scheduler tasks: at 16:00 Hope researches, writes and makes the Short (`hope_auto.bat`, which runs `video.py --no-upload`), and at 18:00 it is posted to YouTube and Instagram (`hope_auto.bat post`). Runs log to `runs/auto.log`. After every run `runs/spend-report.md` is updated (today, last 7 days, this month), and the 18:00 task opens it in Notepad. With `TELEGRAM_TOKEN` set (see the top of `approve.py`), the 4 PM run sends each new Short to Telegram with Approve and Skip buttons, the 6 PM run posts only approved Shorts (or everything except skipped ones with `HOPE_APPROVAL=auto`), then sends the spending report there instead of opening Notepad. Every hour `hope_auto.bat stats` runs `dashboard.py`, which collects YouTube and Instagram views, spend and agent work into `runs/dashboard.json` and pushes it to the `dashboard-data` branch for the Hopeverse HQ dashboard. Stop them with `schtasks /Delete /TN "Hope - research" /F` and `schtasks /Delete /TN "Hope - post" /F`.
 
 Every run saves all helpers' outputs to `runs/`. Finished packages go to `outbox/` for you to review and upload by hand.
+
+## Run in the cloud (no PC)
+
+`.github/workflows/hope.yml` runs Hope on GitHub's servers: every day at 17:15 IST it researches, makes and posts the Short (`agents.py`, then `video.py`), and every hour it updates the dashboard. Keys go in the repo's **Settings > Secrets and variables > Actions**: `ANTHROPIC_API_KEY`, `PIXABAY_API_KEY`, `FAL_KEY`, `INSTAGRAM_TOKEN`, optional `PERPLEXITY_API_KEY`, and the YouTube files pasted as text: `YOUTUBE_CLIENT_SECRET` (client_secret.json), `YOUTUBE_TOKEN` (token.json), optional `YOUTUBE_TOKEN_HI` (token-hi.json). Hope's memory (outbox packages, `lessons.md`, `characters.md`, run logs) is kept on the `state` branch by `state.py`; videos and tokens are never saved there. To move from the PC, run `python state.py save` there once, then delete the Task Scheduler tasks so the Short isn't posted twice. Start a run by hand from the **Actions** tab > Hope > Run workflow.
 
 ## Channels
 

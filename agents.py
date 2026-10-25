@@ -13,6 +13,7 @@ Run:  python agents.py "Decide my first three channels and draft a video for one
 import json
 import os
 import sys
+import urllib.request
 from datetime import datetime
 from pathlib import Path
 
@@ -210,6 +211,36 @@ def save_lessons(lessons: str) -> str:
     return "saved"
 
 
+# ---------- Perplexity search for Mr. Focus (optional: setx PERPLEXITY_API_KEY pplx-...) ----------
+
+PPLX_KEY = os.environ.get("PERPLEXITY_API_KEY")
+
+
+@beta_tool
+def perplexity(query: str) -> str:
+    """Search the live web with Perplexity. Returns a sourced answer with dated citations.
+
+    Args:
+        query: A specific question, e.g. "top trending tech news in India today with numbers".
+    """
+    global spent
+    if spent >= BUDGET:
+        return f"[budget of ${BUDGET:.2f} reached]"
+    req = urllib.request.Request(
+        "https://api.perplexity.ai/chat/completions",
+        json.dumps({"model": "sonar", "messages": [{"role": "user", "content": query}]}).encode(),
+        {"Authorization": f"Bearer {PPLX_KEY}", "Content-Type": "application/json"})
+    try:
+        r = json.load(urllib.request.urlopen(req, timeout=60))
+    except Exception as e:
+        return f"[perplexity failed: {e}; use web_search instead]"
+    # Sonar: $1/M tokens + about $0.005 per request; use the API's own figure when it sends one
+    spent += (r.get("usage", {}).get("cost") or {}).get("total_cost") or 0.006
+    sources = r.get("search_results") or [{"url": u} for u in r.get("citations", [])]
+    return r["choices"][0]["message"]["content"] + "\n\nSources:\n" + "\n".join(
+        f"[{i}] {x.get('title', '')} {x.get('date', '')} {x['url']}" for i, x in enumerate(sources, 1))
+
+
 # ---------- sub-agents, exposed to Hope as tools ----------
 
 @beta_tool
@@ -221,6 +252,11 @@ def focus(request: str) -> str:
     Args:
         request: "DAILY: ...", a topic to research, or "FACT-CHECK: <script>".
     """
+    if PPLX_KEY:
+        return run_agent(
+            "Mr. Focus",
+            TEAM["Mr. Focus"] + "\n\nSearch with the perplexity tool first; use web_search only if it fails.",
+            request, [perplexity, WEB_SEARCH, WEB_FETCH], effort="medium")
     return run_agent(
         "Mr. Focus",
         TEAM["Mr. Focus"],
