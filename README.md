@@ -36,3 +36,7 @@ Videos uploaded by an unaudited Google Cloud project stay private. To be able to
 ## How Mr. Hope learns
 
 After every run, Mr. Hope reviews the day: cost, what was made, and (once YouTube is connected) each Short's views, likes and comments. He rewrites `lessons.md` with his strategy, business goals and a section of lessons for each agent; every agent automatically follows its own section on the next run. Delete `lessons.md` to make him start fresh. Each run's cost is logged in `runs/history.jsonl`.
+
+## Instagram Reels
+
+Once you make a video **public** on YouTube, the next `python video.py` also posts it to Instagram as a Reel (Instagram has no private drafts, so YouTube is the review step). It needs `INSTAGRAM_TOKEN`: a Facebook Login token with `instagram_basic`, `instagram_content_publish`, `pages_show_list`, `pages_read_engagement` and `business_management`, for a Facebook Page linked to the Instagram professional account. Make one in the Graph API Explorer and extend it to 60 days in the Access Token Debugger.

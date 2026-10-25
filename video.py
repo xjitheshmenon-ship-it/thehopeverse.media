@@ -10,6 +10,7 @@ import json
 import os
 import subprocess
 import textwrap
+import time
 import urllib.parse
 import urllib.request
 from io import BytesIO
@@ -263,6 +264,39 @@ def upload(video: Path, package: dict) -> str:
     return response["id"]
 
 
+GRAPH = "https://graph.facebook.com/v21.0"
+
+
+def _graph(path: str, method: str = "GET", **params) -> dict:
+    url = f"{GRAPH}/{path}"
+    data = urllib.parse.urlencode(params).encode() if method == "POST" else None
+    if method == "GET":
+        url += "?" + urllib.parse.urlencode(params)
+    req = urllib.request.Request(url, data=data, method=method,
+                                 headers={"Authorization": f"OAuth {os.environ['INSTAGRAM_TOKEN']}"})
+    return json.load(urllib.request.urlopen(req, timeout=60))
+
+
+def instagram(video: Path, caption: str) -> str:
+    """Post the video as an Instagram Reel (public). Needs INSTAGRAM_TOKEN from a Meta app (see README)."""
+    pages = _graph("me/accounts", fields="instagram_business_account")["data"]
+    ig = next(p["instagram_business_account"]["id"] for p in pages if "instagram_business_account" in p)
+    container = _graph(f"{ig}/media", "POST", media_type="REELS", upload_type="resumable",
+                       caption=caption[:2200])["id"]
+    urllib.request.urlopen(urllib.request.Request(
+        f"https://rupload.facebook.com/ig-api-upload/v21.0/{container}", data=video.read_bytes(), method="POST",
+        headers={"Authorization": f"OAuth {os.environ['INSTAGRAM_TOKEN']}", "offset": "0",
+                 "file_size": str(video.stat().st_size)}), timeout=600)
+    for _ in range(60):  # Instagram processes the video before it can be published
+        status = _graph(container, fields="status_code,status")
+        if status["status_code"] == "FINISHED":
+            return _graph(f"{ig}/media_publish", "POST", creation_id=container)["id"]
+        if status["status_code"] == "ERROR":
+            raise RuntimeError(f"Instagram rejected the video: {status.get('status')}")
+        time.sleep(10)
+    raise RuntimeError("Instagram took over 10 minutes to process the video")
+
+
 if __name__ == "__main__":
     platform = {c["id"]: c["platform"] for c in _channels()}
     for path in sorted(OUTBOX.glob("*.json")):
@@ -279,3 +313,14 @@ if __name__ == "__main__":
             package["youtube_id"] = upload(video, package)
             path.write_text(json.dumps(package, indent=2), encoding="utf-8")
             print(f"    https://youtu.be/{package['youtube_id']} (private)")
+        # Instagram has no private drafts, so a video is cross-posted there only after the owner has
+        # checked it and made it public on YouTube.
+        if os.environ.get("INSTAGRAM_TOKEN") and "youtube_id" in package and "instagram_id" not in package:
+            try:
+                if stats([package["youtube_id"]]).get(package["youtube_id"], {}).get("privacy") == "public":
+                    print(f"Posting {video.name} to Instagram as a Reel")
+                    package["instagram_id"] = instagram(video, package["description"].replace("#Shorts", "").strip())
+                    path.write_text(json.dumps(package, indent=2), encoding="utf-8")
+                    print("    posted")
+            except Exception as e:  # one failed Reel shouldn't stop the other videos
+                print(f"    Instagram post failed: {e}")
