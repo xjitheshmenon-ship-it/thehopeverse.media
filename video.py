@@ -34,6 +34,17 @@ from approve import approved
 HERE = Path(__file__).parent
 VOICE = os.environ.get("HOPE_VOICE", "en-US-AndrewNeural")
 FAL_MODEL = "fal-ai/flux/schnell"  # about $0.006 per Short-sized image
+HOST_MODEL = "fal-ai/flux-pro/kontext"  # about $0.04 per image; keeps a host's face from their reference photo
+HOSTS_DIR = HERE / "hosts"  # one reference photo per host, made once and then reused in every Short
+# The two hosts in every Short. Change a look and delete hosts/<name>.png to give them a new face.
+HOSTS = {
+    "Arjun": {"voice": "en-IN-PrabhatNeural",
+              "look": "Indian man, about 35, warm brown skin, short neat black hair, trimmed beard, "
+                      "deep-teal field jacket over a white shirt"},
+    "Meera": {"voice": "en-IN-NeerjaNeural",
+              "look": "Indian woman, about 29, medium-brown skin, shoulder-length wavy black hair, "
+                      "small gold earrings, rust-coloured kurta-style top"},
+}
 MUSIC_MODEL = "fal-ai/stable-audio-3/medium/base/text-to-audio"  # about $0.05 per track
 MUSIC_VOLUME = 0.12  # background music level under the voice (1 = full)
 STYLE = ("photorealistic real photograph, shot on 35mm film camera, natural light, documentary style, vertical 9:16, "
@@ -51,6 +62,8 @@ class Scene(BaseModel):
     on_screen_text: str
     picture_search: str
     image_prompt: str
+    speaker: str = ""  # Arjun or Meera: whose voice reads this line
+    host_on_screen: bool = False  # True: the speaker is shown (from their reference photo), not stock footage
 
 
 class Storyboard(BaseModel):
@@ -110,6 +123,9 @@ def storyboard(package: dict) -> Storyboard:
                    "image_prompt: a photo-real description of the same shot (person, setting, camera angle); when a "
                    "recurring character appears, copy their look from the cast below word for word. Real footage only, "
                    "never cartoon. "
+                   "speaker: who says the line, Arjun or Meera (the two hosts; use both in every Short). "
+                   "host_on_screen: true when the shot shows that host talking (about every third scene, including "
+                   "the first), then image_prompt describes only their pose, expression and setting. "
                    "It is a YouTube Short: keep it under 60 seconds "
                    "of narration.\n\nCast:\n" + read_cast.call({}) + "\n\nPackage:\n"
                    + json.dumps(package)}],
@@ -175,10 +191,37 @@ def _zoom(img: Image.Image, size: tuple, duration: float):
     return clip.resized(lambda t: 1 + 0.06 * t / duration).with_position("center")  # slow push-in
 
 
+def host_photo(name: str) -> Path:
+    """The host's reference photo, made once from their look so every Short shows the same person."""
+    path = HOSTS_DIR / f"{name.lower()}.png"
+    if not path.exists():
+        import fal_client
+        HOSTS_DIR.mkdir(exist_ok=True)
+        result = fal_client.subscribe(FAL_MODEL, arguments={
+            "prompt": f"Head-and-shoulders portrait of an {HOSTS[name]['look']}, friendly, looking at the camera, "
+                      f"plain light studio background. {STYLE}", "image_size": "portrait_4_3", "num_images": 1})
+        urllib.request.urlretrieve(result["images"][0]["url"], path)
+    return path
+
+
 def background(scene: "Scene", size: tuple, duration: float, work: Path, used: set):
     """Real stock footage from Pixabay (PIXABAY_API_KEY), else NASA's free library, else a photo-real AI image
     from fal.ai (FAL_KEY), else a Pixabay photo, else a plain colour."""
     query = scene.picture_search
+    if scene.host_on_screen and scene.speaker in HOSTS and os.environ.get("FAL_KEY"):
+        try:
+            import fal_client
+            path = work / f"host-{len(used):03}.png"
+            used.add(path.name)
+            if not path.exists():
+                result = fal_client.subscribe(HOST_MODEL, arguments={
+                    "prompt": f"The same person, same face, hair and clothes: {scene.image_prompt}. Talking to camera. "
+                              f"{STYLE}",
+                    "image_url": fal_client.upload_file(str(host_photo(scene.speaker))), "aspect_ratio": "9:16"})
+                urllib.request.urlretrieve(result["images"][0]["url"], path)
+            return _zoom(Image.open(path), size, duration)
+        except Exception as e:
+            print(f"    no host shot of {scene.speaker}: {e}")
     if os.environ.get("PIXABAY_API_KEY"):
         try:
             for video in _pixabay("videos/", query):
@@ -285,7 +328,8 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
         if not any(ch.isalnum() for ch in scene.narration):  # nothing to say, so no sound file would come back
             continue
         audio = work / f"{prefix}{i:03}.mp3"
-        if not speak(scene.narration, voice, audio):
+        # Dubs keep their channel's voice; English lines are read by the host who says them.
+        if not speak(scene.narration, voice if lang else HOSTS.get(scene.speaker, {}).get("voice", voice), audio):
             continue
         sound = AudioFileClip(str(audio))
         duration = sound.duration + 0.3
