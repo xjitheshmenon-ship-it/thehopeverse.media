@@ -50,7 +50,7 @@ def _cost(model: str, usage) -> float:
             + (usage.cache_read_input_tokens or 0) * cr + (usage.cache_creation_input_tokens or 0) * cw) / 1e6 \
         + searches * 0.01
 
-client = anthropic.Anthropic()
+client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY", "").strip() or None)  # a pasted secret often ends in a newline
 
 
 def _sections(path: Path) -> dict:
