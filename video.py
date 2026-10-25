@@ -231,6 +231,20 @@ def caption(text: str, size: tuple, lang: str = "") -> np.ndarray:
     return np.array(img)
 
 
+def speak(text: str, voice: str, path: Path):
+    """Edge's free voice service sometimes returns an empty or broken file, so check it and try again."""
+    for attempt in range(4):
+        try:
+            asyncio.run(edge_tts.Communicate(text, voice).save(str(path)))
+            AudioFileClip(str(path)).close()  # raises if ffmpeg can't read it
+            return
+        except Exception as e:
+            if attempt == 3:
+                raise
+            print(f"    voice failed ({e.__class__.__name__}), retrying")
+            time.sleep(5 * (attempt + 1))
+
+
 def render(package_path: Path, voice: str = VOICE) -> Path:
     package = json.loads(package_path.read_text(encoding="utf-8"))
     size = (1080, 1920)  # YouTube Shorts are vertical
@@ -247,8 +261,10 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
         logo = ImageClip(str(LOGO), transparent=True).resized(width=150).with_opacity(0.85).with_position((60, 170))
     parts, used = [], set()
     for i, scene in enumerate(board.scenes):
+        if not any(ch.isalnum() for ch in scene.narration):  # nothing to say, so no sound file would come back
+            continue
         audio = work / f"{prefix}{i:03}.mp3"
-        asyncio.run(edge_tts.Communicate(scene.narration, voice).save(str(audio)))
+        speak(scene.narration, voice, audio)
         sound = AudioFileClip(str(audio))
         duration = sound.duration + 0.3
         layers = [background(scene, size, duration, work, used),
