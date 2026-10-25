@@ -16,5 +16,18 @@
     "niche": "Hopeful curiosity: space, science and the future (chosen by Hope)",
     "audience": "Worldwide, English",
     "status": "live"
+  },
+  {
+    "id": "yt-hopeverse-hi",
+    "platform": "youtube",
+    "name": "Hopeverse Hindi",
+    "url": "",
+    "niche": "Hindi versions of every Hopeverse Media Short, made automatically by video.py",
+    "audience": "India, Hindi",
+    "lang": "hi",
+    "language": "Hindi",
+    "voice": "hi-IN-MadhurNeural",
+    "token": "token-hi.json",
+    "status": "dub"
   }
 ]
