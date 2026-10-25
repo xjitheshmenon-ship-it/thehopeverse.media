@@ -11,6 +11,7 @@ the same footage, once that channel is signed in:  python video.py --connect hi
 import asyncio
 import json
 import os
+import re
 import subprocess
 import sys
 import textwrap
@@ -27,12 +28,25 @@ from moviepy.config import FFMPEG_BINARY
 from PIL import Image, ImageDraw, ImageFont
 from pydantic import BaseModel
 
-from agents import HELPER_MODEL, OUTBOX, _channels, client, read_cast
+from agents import HELPER_MODEL, OUTBOX, TEAM, _channels, client, read_cast
 from approve import approved
 
 HERE = Path(__file__).parent
 VOICE = os.environ.get("HOPE_VOICE", "en-US-AndrewNeural")
 FAL_MODEL = "fal-ai/flux/schnell"  # about $0.006 per Short-sized image
+HOST_MODEL = "fal-ai/flux-pro/kontext"  # about $0.04 per image; keeps a host's face from their reference photo
+HOSTS_DIR = HERE / "hosts"  # one reference photo per host, made once and then reused in every Short
+# The two hosts in every Short. Change a look and delete hosts/<name>.png to give them a new face.
+HOSTS = {
+    "Arjun": {"voice": "en-IN-PrabhatNeural",
+              "look": "Indian man, about 35, warm brown skin, short neat black hair, trimmed beard, "
+                      "deep-teal field jacket over a white shirt"},
+    "Meera": {"voice": "en-IN-NeerjaNeural",
+              "look": "Indian woman, about 29, medium-brown skin, shoulder-length wavy black hair, "
+                      "small gold earrings, rust-coloured kurta-style top"},
+}
+MUSIC_MODEL = "fal-ai/stable-audio-3/medium/base/text-to-audio"  # about $0.05 per track
+MUSIC_VOLUME = 0.12  # background music level under the voice (1 = full)
 STYLE = ("photorealistic real photograph, shot on 35mm film camera, natural light, documentary style, vertical 9:16, "
          "not a cartoon, not an illustration, not CGI, no text, no words")
 SECRET, TOKEN = HERE / "client_secret.json", HERE / "token.json"
@@ -48,6 +62,8 @@ class Scene(BaseModel):
     on_screen_text: str
     picture_search: str
     image_prompt: str
+    speaker: str = ""  # Arjun or Meera: whose voice reads this line
+    host_on_screen: bool = False  # True: the speaker is shown (from their reference photo), not stock footage
 
 
 class Storyboard(BaseModel):
@@ -107,6 +123,9 @@ def storyboard(package: dict) -> Storyboard:
                    "image_prompt: a photo-real description of the same shot (person, setting, camera angle); when a "
                    "recurring character appears, copy their look from the cast below word for word. Real footage only, "
                    "never cartoon. "
+                   "speaker: who says the line, Arjun or Meera (the two hosts; use both in every Short). "
+                   "host_on_screen: true when the shot shows that host talking (about every third scene, including "
+                   "the first), then image_prompt describes only their pose, expression and setting. "
                    "It is a YouTube Short: keep it under 60 seconds "
                    "of narration.\n\nCast:\n" + read_cast.call({}) + "\n\nPackage:\n"
                    + json.dumps(package)}],
@@ -172,10 +191,37 @@ def _zoom(img: Image.Image, size: tuple, duration: float):
     return clip.resized(lambda t: 1 + 0.06 * t / duration).with_position("center")  # slow push-in
 
 
+def host_photo(name: str) -> Path:
+    """The host's reference photo, made once from their look so every Short shows the same person."""
+    path = HOSTS_DIR / f"{name.lower()}.png"
+    if not path.exists():
+        import fal_client
+        HOSTS_DIR.mkdir(exist_ok=True)
+        result = fal_client.subscribe(FAL_MODEL, arguments={
+            "prompt": f"Head-and-shoulders portrait of an {HOSTS[name]['look']}, friendly, looking at the camera, "
+                      f"plain light studio background. {STYLE}", "image_size": "portrait_4_3", "num_images": 1})
+        urllib.request.urlretrieve(result["images"][0]["url"], path)
+    return path
+
+
 def background(scene: "Scene", size: tuple, duration: float, work: Path, used: set):
     """Real stock footage from Pixabay (PIXABAY_API_KEY), else NASA's free library, else a photo-real AI image
     from fal.ai (FAL_KEY), else a Pixabay photo, else a plain colour."""
     query = scene.picture_search
+    if scene.host_on_screen and scene.speaker in HOSTS and os.environ.get("FAL_KEY"):
+        try:
+            import fal_client
+            path = work / f"host-{len(used):03}.png"
+            used.add(path.name)
+            if not path.exists():
+                result = fal_client.subscribe(HOST_MODEL, arguments={
+                    "prompt": f"The same person, same face, hair and clothes: {scene.image_prompt}. Talking to camera. "
+                              f"{STYLE}",
+                    "image_url": fal_client.upload_file(str(host_photo(scene.speaker))), "aspect_ratio": "9:16"})
+                urllib.request.urlretrieve(result["images"][0]["url"], path)
+            return _zoom(Image.open(path), size, duration)
+        except Exception as e:
+            print(f"    no host shot of {scene.speaker}: {e}")
     if os.environ.get("PIXABAY_API_KEY"):
         try:
             for video in _pixabay("videos/", query):
@@ -234,16 +280,33 @@ def caption(text: str, size: tuple, lang: str = "") -> np.ndarray:
 def speak(text: str, voice: str, path: Path) -> bool:
     """Edge's free voice service sometimes returns an empty or broken file, so check it and try again.
     Returns False if it never works, so the caller can drop that scene instead of losing the whole video."""
-    for attempt in range(3):
+    for attempt in range(6):  # about 2.5 minutes in all, so a short internet drop doesn't cost a scene
         try:
             asyncio.run(edge_tts.Communicate(text, voice).save(str(path)))
             AudioFileClip(str(path)).close()  # raises if ffmpeg can't read it
             return True
         except Exception as e:
             print(f"    voice failed ({e.__class__.__name__}), size {path.stat().st_size if path.exists() else 0} bytes")
-            time.sleep(5 * (attempt + 1))
+            time.sleep(10 * (attempt + 1))
     print(f"    skipping this scene; the voice could not read: {text!r}")
     return False
+
+
+def music(work: Path, seconds: float) -> Path | None:
+    """One background track per Short from fal.ai, in the mood set by "## Music" in team.md. Dubs reuse it."""
+    path = work / "music.mp3"
+    if path.exists() or not os.environ.get("FAL_KEY"):
+        return path if path.exists() else None
+    try:
+        import fal_client
+        result = fal_client.subscribe(MUSIC_MODEL, arguments={
+            "prompt": TEAM.get("Music", "mysterious, curious ambient underscore, no vocals"),
+            "duration": min(seconds + 2, 380), "negative_prompt": "vocals, singing, speech"})
+        urllib.request.urlretrieve(result["audio"]["url"], path)
+        return path
+    except Exception as e:  # no music is better than no video
+        print(f"    no background music: {e}")
+        return None
 
 
 def render(package_path: Path, voice: str = VOICE) -> Path:
@@ -260,15 +323,17 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
     logo = None
     if LOGO.exists():  # channel watermark, top-left, clear of the Shorts buttons on the right
         logo = ImageClip(str(LOGO), transparent=True).resized(width=150).with_opacity(0.85).with_position((60, 170))
-    parts, used = [], set()
+    parts, used, seconds = [], set(), 0.0
     for i, scene in enumerate(board.scenes):
         if not any(ch.isalnum() for ch in scene.narration):  # nothing to say, so no sound file would come back
             continue
         audio = work / f"{prefix}{i:03}.mp3"
-        if not speak(scene.narration, voice, audio):
+        # Dubs keep their channel's voice; English lines are read by the host who says them.
+        if not speak(scene.narration, voice if lang else HOSTS.get(scene.speaker, {}).get("voice", voice), audio):
             continue
         sound = AudioFileClip(str(audio))
         duration = sound.duration + 0.3
+        seconds += duration
         layers = [background(scene, size, duration, work, used),
                   ImageClip(caption(scene.on_screen_text, size, lang), transparent=True).with_duration(duration)]
         if logo:
@@ -283,10 +348,19 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
         parts.append(part)
         print(f"    scene {i + 1}/{len(board.scenes)}")
     out = package_path.with_suffix(".mp4")
+    voiced = work / f"{prefix}voice.mp4"
     listing = work / f"{prefix}scenes.txt"
     listing.write_text("".join(f"file '{p.resolve().as_posix()}'\n" for p in parts), encoding="utf-8")
     subprocess.run([FFMPEG_BINARY, "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(listing),
-                    "-c", "copy", str(out)], check=True)
+                    "-c", "copy", str(voiced)], check=True)
+    track = music(work, seconds)
+    if not track:
+        voiced.replace(out)
+        return out
+    # Music loops if it's short and stops when the voice ends; the video is copied, only the sound is re-encoded.
+    subprocess.run([FFMPEG_BINARY, "-y", "-loglevel", "error", "-i", str(voiced), "-stream_loop", "-1", "-i", str(track),
+                    "-filter_complex", f"[1:a]volume={MUSIC_VOLUME}[m];[0:a][m]amix=inputs=2:duration=first:normalize=0[a]",
+                    "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", str(out)], check=True)
     return out
 
 
@@ -320,8 +394,13 @@ def upload(video: Path, package: dict, token: Path = TOKEN) -> str:
     """Upload as a public video (the owner chose public by default on 2026-10-25)."""
     from googleapiclient.http import MediaFileUpload
 
-    body = {"snippet": {"title": package["title"][:100], "description": package["description"][:5000],
-                        "categoryId": "28"},  # Science & Technology
+    footer = TEAM.get("YouTube footer", "")  # edit it in team.md
+    tags = list(dict.fromkeys(["Hopeverse Media", "Shorts", *re.findall(r"#(\w+)", package["description"])]))
+    while len(",".join(tags)) > 450:  # YouTube allows 500 characters of tags
+        tags.pop()
+    body = {"snippet": {"title": package["title"][:100],
+                        "description": f"{package['description']}\n\n{footer}".strip()[:5000],
+                        "tags": tags, "categoryId": "28"},  # Science & Technology
             "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False,
                        "containsSyntheticMedia": True}}
     request = youtube(token=token).videos().insert(
