@@ -1,0 +1,162 @@
+{
+  "channel_id": "yt-kissa",
+  "title": "Ep 1 | 100 \u0926\u093f\u0928 \u0915\u093e \u0930\u093f\u0936\u094d\u0924\u093e: \u092a\u093e\u0901\u091a \u0932\u093e\u0916 \u0915\u093e \u0915\u0930\u094d\u091c\u093c \u0914\u0930 \u090f\u0915 \u0905\u091c\u0928\u092c\u0940 \u0915\u093e \u092a\u094d\u0930\u0938\u094d\u0924\u093e\u0935",
+  "description": "\u0915\u0932 \u0936\u093e\u092e \u0924\u0915 \u092a\u093e\u0901\u091a \u0932\u093e\u0916 \u0928\u0939\u0940\u0902, \u0924\u094b \u092a\u093e\u092a\u093e \u0915\u0940 \u092c\u0947\u0915\u0930\u0940 \u0939\u092e\u0947\u0936\u093e \u0915\u0947 \u0932\u093f\u090f \u0917\u0908\u0964 \u0924\u092d\u0940 \u090f\u0915 \u0905\u091c\u0928\u092c\u0940 \u0906\u0924\u093e \u0939\u0948 \u0914\u0930 \u0915\u0939\u0924\u093e \u0939\u0948, \u0915\u0930\u094d\u091c\u093c \u092e\u0948\u0902 \u091a\u0941\u0915\u093e\u090a\u0901\u0917\u093e, \u092c\u0938 \u0938\u094c \u0926\u093f\u0928 \u0915\u0947 \u0932\u093f\u090f \u092e\u0941\u091d\u0938\u0947 \u0936\u093e\u0926\u0940 \u0915\u0930 \u0932\u094b\u0964 \u0930\u093f\u092f\u093e \u0915\u094d\u092f\u093e \u091a\u0941\u0928\u0947\u0917\u0940?\n#Kissa #100DinKaRishta #HindiWebSeries #ContractMarriage #Shorts",
+  "lang": "hi",
+  "category": "24",
+  "footer": "Ek kahaani. Roz ek twist. \u0930\u094b\u091c\u093c \u0928\u092f\u093e \u090f\u092a\u093f\u0938\u094b\u0921\u0964 Subscribe \u0915\u0930\u0947\u0902 \u0924\u093e\u0915\u093f \u0905\u0917\u0932\u093e \u091f\u094d\u0935\u093f\u0938\u094d\u091f \u092e\u093f\u0938 \u0928 \u0939\u094b\u0964\nMade by AI. Made with hope.",
+  "music": "Tense, emotional cinematic underscore with soft piano and low strings, a building pulse of suspense, a light romantic hint in the middle, ending on an unresolved dark sting, no vocals",
+  "cast": [
+    {
+      "name": "Narrator",
+      "role": "Storyteller voice",
+      "look": "Indian man, 40s, calm face, short neat black hair, plain dark kurta, unseen voice-over",
+      "voice": "hi-IN-MadhurNeural",
+      "pitch": "+0Hz"
+    },
+    {
+      "name": "Riya",
+      "role": "Heroine, 24, runs her late father's bakery in Lucknow",
+      "look": "Indian woman, 24, expressive large brown eyes, warm wheatish face, long black hair in a loose braid, flour-dusted pastel cotton kurta with a bakery apron",
+      "voice": "hi-IN-SwaraNeural",
+      "pitch": "+0Hz"
+    },
+    {
+      "name": "Kabir",
+      "role": "Cold heir of the Malhotra hotel empire, 29",
+      "look": "Indian man, 29, sharp jawline, light stubble, intense cold eyes, neatly styled black hair, tailored charcoal suit with an open-collar white shirt and an expensive watch",
+      "voice": "hi-IN-MadhurNeural",
+      "pitch": "+0Hz"
+    },
+    {
+      "name": "Gupta",
+      "role": "Greedy Lucknow moneylender",
+      "look": "Indian man, 55, round face, thick moustache, receding oiled grey hair, cream safari suit, gold rings, a red tilak on his forehead",
+      "voice": "hi-IN-MadhurNeural",
+      "pitch": "+0Hz"
+    }
+  ],
+  "scenes": [
+    {
+      "narration": "\u092c\u0938! \u092c\u0939\u0941\u0924 \u0939\u094b \u0917\u092f\u093e, \u0930\u093f\u092f\u093e\u0964 \u0915\u0932 \u0936\u093e\u092e \u0924\u0915 \u092a\u093e\u0901\u091a \u0932\u093e\u0916 \u0928\u0939\u0940\u0902 \u0926\u093f\u090f, \u0924\u094b \u092f\u0947 \u092c\u0947\u0915\u0930\u0940 \u092e\u0947\u0930\u0940\u0964",
+      "on_screen_text": "\u0915\u0932 \u0936\u093e\u092e \u0924\u0915 \u092a\u093e\u0901\u091a \u0932\u093e\u0916!",
+      "picture_search": "small bakery shop India",
+      "image_prompt": "Photo-real shot of a heavyset Indian moneylender in a cream safari suit, angrily slamming a ledger on the glass counter of a small cosy Lucknow bakery, pointing a gold-ringed finger, warm evening light",
+      "speaker": "Gupta",
+      "host_on_screen": true
+    },
+    {
+      "narration": "\u0917\u0941\u092a\u094d\u0924\u093e \u091c\u0940, \u092a\u094d\u0932\u0940\u091c\u093c... \u092f\u0947 \u092a\u093e\u092a\u093e \u0915\u0940 \u0906\u0916\u093f\u0930\u0940 \u0928\u093f\u0936\u093e\u0928\u0940 \u0939\u0948\u0964 \u092c\u0938 \u090f\u0915 \u092e\u0939\u0940\u0928\u093e \u0926\u0947 \u0926\u0940\u091c\u093f\u090f\u0964",
+      "on_screen_text": "\u092a\u093e\u092a\u093e \u0915\u0940 \u0906\u0916\u093f\u0930\u0940 \u0928\u093f\u0936\u093e\u0928\u0940",
+      "picture_search": "bakery counter cakes",
+      "image_prompt": "Photo-real close-up of a young Indian woman in a flour-dusted apron, eyes wet with tears, hands folded in pleading, behind a bakery counter full of cakes and a garlanded photo of her late father on the wall",
+      "speaker": "Riya",
+      "host_on_screen": true
+    },
+    {
+      "narration": "\u092e\u0939\u0940\u0928\u093e? \u0924\u0941\u092e\u094d\u0939\u093e\u0930\u0947 \u092a\u093e\u092a\u093e \u092d\u0940 \u092f\u0939\u0940 \u0915\u0939\u0924\u0947 \u0925\u0947\u0964 \u0915\u0932 \u0936\u093e\u092e... \u0924\u093e\u0932\u093e \u0932\u0917\u0947\u0917\u093e\u0964",
+      "on_screen_text": "\u0915\u0932 \u0936\u093e\u092e \u0924\u093e\u0932\u093e \u0932\u0917\u0947\u0917\u093e",
+      "picture_search": "padlock shop door",
+      "image_prompt": "Photo-real shot of the moneylender smirking coldly while dangling a heavy brass padlock and keys at the bakery doorway, busy Lucknow street behind him",
+      "speaker": "Gupta",
+      "host_on_screen": true
+    },
+    {
+      "narration": "\u0909\u0938\u0940 \u0935\u0915\u093c\u094d\u0924, \u0915\u094b\u0928\u0947 \u0915\u0940 \u091f\u0947\u092c\u0932 \u092a\u0930 \u092c\u0948\u0920\u093e \u090f\u0915 \u0905\u091c\u0928\u092c\u0940 \u0938\u092c \u0938\u0941\u0928 \u0930\u0939\u093e \u0925\u093e\u0964",
+      "on_screen_text": "\u090f\u0915 \u0905\u091c\u0928\u092c\u0940 \u0938\u092c \u0938\u0941\u0928 \u0930\u0939\u093e \u0925\u093e",
+      "picture_search": "man sitting cafe corner",
+      "image_prompt": "Photo-real moody shot of a well-dressed Indian man in a charcoal suit sitting alone at a corner table of a small bakery, coffee cup in hand, watching silently with cold eyes, shallow depth of field",
+      "speaker": "Narrator",
+      "host_on_screen": false
+    },
+    {
+      "narration": "\u092a\u093e\u0901\u091a \u0932\u093e\u0916? \u092c\u0938 \u0907\u0924\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0930\u094b \u0930\u0939\u0940 \u0939\u094b?",
+      "on_screen_text": "\u092c\u0938 \u0907\u0924\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f?",
+      "picture_search": "luxury watch coffee table",
+      "image_prompt": "Photo-real shot of the suited Indian man rising from his chair, adjusting his expensive watch, one eyebrow raised with a cool, arrogant expression inside the warm-lit bakery",
+      "speaker": "Kabir",
+      "host_on_screen": true
+    },
+    {
+      "narration": "\u0906\u092a \u0915\u094c\u0928 \u0939\u094b\u0924\u0947 \u0939\u0948\u0902 \u092c\u0940\u091a \u092e\u0947\u0902 \u092c\u094b\u0932\u0928\u0947 \u0935\u093e\u0932\u0947? \u092c\u093f\u0932 \u0926\u0940\u091c\u093f\u090f \u0914\u0930 \u091c\u093e\u0907\u090f\u0964",
+      "on_screen_text": "\u0906\u092a \u0915\u094c\u0928 \u0939\u094b\u0924\u0947 \u0939\u0948\u0902?",
+      "picture_search": "bakery bill counter",
+      "image_prompt": "Photo-real shot of the young woman wiping her tears with the back of her hand, glaring angrily across the counter at the stranger, arms crossed",
+      "speaker": "Riya",
+      "host_on_screen": true
+    },
+    {
+      "narration": "\u0915\u092c\u0940\u0930 \u092e\u0932\u094d\u0939\u094b\u0924\u094d\u0930\u093e\u0964 \u0924\u0941\u092e\u094d\u0939\u093e\u0930\u093e \u092a\u0942\u0930\u093e \u0915\u0930\u094d\u091c\u093c... \u092e\u0948\u0902 \u091a\u0941\u0915\u093e \u0926\u0942\u0901\u0917\u093e\u0964",
+      "on_screen_text": "\u092a\u0942\u0930\u093e \u0915\u0930\u094d\u091c\u093c \u092e\u0948\u0902 \u091a\u0941\u0915\u093e\u090a\u0901\u0917\u093e",
+      "picture_search": "business card on counter",
+      "image_prompt": "Photo-real close shot of the man placing a sleek black business card on the glass counter, leaning in slightly with a calm, unreadable face",
+      "speaker": "Kabir",
+      "host_on_screen": true
+    },
+    {
+      "narration": "\u092e\u0941\u092b\u093c\u094d\u0924 \u092e\u0947\u0902 \u0924\u094b \u0915\u094b\u0908 \u0915\u0941\u091b \u0928\u0939\u0940\u0902 \u0926\u0947\u0924\u093e\u0964 \u092c\u0926\u0932\u0947 \u092e\u0947\u0902 \u0915\u094d\u092f\u093e \u091a\u093e\u0939\u093f\u090f?",
+      "on_screen_text": "\u092c\u0926\u0932\u0947 \u092e\u0947\u0902 \u0915\u094d\u092f\u093e \u091a\u093e\u0939\u093f\u090f?",
+      "picture_search": "woman suspicious look",
+      "image_prompt": "Photo-real close-up of the young woman narrowing her eyes suspiciously, holding the black business card between two fingers",
+      "speaker": "Riya",
+      "host_on_screen": true
+    },
+    {
+      "narration": "\u0938\u093f\u0930\u094d\u092b\u093c \u0938\u094c \u0926\u093f\u0928\u0964 \u0938\u094c \u0926\u093f\u0928 \u0915\u0947 \u0932\u093f\u090f... \u092e\u0941\u091d\u0938\u0947 \u0936\u093e\u0926\u0940 \u0915\u0930 \u0932\u094b\u0964",
+      "on_screen_text": "100 \u0926\u093f\u0928... \u092e\u0941\u091d\u0938\u0947 \u0936\u093e\u0926\u0940 \u0915\u0930\u094b",
+      "picture_search": "dramatic close up eyes",
+      "image_prompt": "Photo-real dramatic close-up of the man's face, steady intense gaze straight into her eyes, warm bakery lights blurred behind him",
+      "speaker": "Kabir",
+      "host_on_screen": true
+    },
+    {
+      "narration": "\u0926\u093f\u092e\u093e\u0917\u093c \u0916\u093c\u0930\u093e\u092c \u0939\u0948 \u0906\u092a\u0915\u093e? \u0928\u093f\u0915\u0932\u093f\u090f \u092f\u0939\u093e\u0901 \u0938\u0947, \u0905\u092d\u0940!",
+      "on_screen_text": "\u0928\u093f\u0915\u0932\u093f\u090f \u092f\u0939\u093e\u0901 \u0938\u0947!",
+      "picture_search": "shop door bell",
+      "image_prompt": "Photo-real shot of the furious young woman pointing toward the bakery door, her braid swinging, the shop bell above the door",
+      "speaker": "Riya",
+      "host_on_screen": true
+    },
+    {
+      "narration": "\u0915\u093e\u0930\u094d\u0921 \u0930\u0916 \u0932\u094b\u0964 \u0924\u093e\u0932\u093e \u0932\u0917\u0928\u0947 \u0938\u0947 \u092a\u0939\u0932\u0947 \u092b\u093c\u0948\u0938\u0932\u093e \u0915\u0930 \u0932\u0947\u0928\u093e\u0964",
+      "on_screen_text": "\u0924\u093e\u0932\u093e \u0932\u0917\u0928\u0947 \u0938\u0947 \u092a\u0939\u0932\u0947 \u092b\u093c\u0948\u0938\u0932\u093e",
+      "picture_search": "luxury car night street",
+      "image_prompt": "Photo-real shot of the man pausing at the doorway, half-turned with a faint knowing smirk, a black luxury car waiting on the dusky Lucknow street outside",
+      "speaker": "Kabir",
+      "host_on_screen": true
+    },
+    {
+      "narration": "\u0905\u0917\u0932\u0940 \u0936\u093e\u092e... \u092c\u0947\u0915\u0930\u0940 \u0915\u0947 \u0926\u0930\u0935\u093e\u091c\u093c\u0947 \u092a\u0930 \u0924\u093e\u0932\u093e \u0932\u0917\u0928\u0947 \u0939\u0940 \u0935\u093e\u0932\u093e \u0925\u093e\u0964",
+      "on_screen_text": "\u0905\u0917\u0932\u0940 \u0936\u093e\u092e...",
+      "picture_search": "shop shutter closing evening",
+      "image_prompt": "Photo-real shot of a metal shutter being pulled down on a small bakery at sunset while a padlock hangs ready, the moneylender's men standing nearby",
+      "speaker": "Narrator",
+      "host_on_screen": false
+    },
+    {
+      "narration": "\u092e\u093f\u0938\u094d\u091f\u0930 \u092e\u0932\u094d\u0939\u094b\u0924\u094d\u0930\u093e... \u092e\u0948\u0902 \u0924\u0948\u092f\u093e\u0930 \u0939\u0942\u0901\u0964 \u0932\u0947\u0915\u093f\u0928 \u0936\u0930\u094d\u0924\u0947\u0902 \u092e\u0947\u0930\u0940 \u092d\u0940 \u0939\u094b\u0902\u0917\u0940\u0964",
+      "on_screen_text": "\u092e\u0948\u0902 \u0924\u0948\u092f\u093e\u0930 \u0939\u0942\u0901",
+      "picture_search": "woman phone call street",
+      "image_prompt": "Photo-real shot of the young woman standing outside the half-closed bakery shutter, phone pressed to her ear, eyes red but determined, golden sunset light",
+      "speaker": "Riya",
+      "host_on_screen": true
+    },
+    {
+      "narration": "\u092e\u0902\u091c\u093c\u0942\u0930\u0964 \u092a\u0930 \u092a\u0939\u0932\u0940 \u0936\u0930\u094d\u0924 \u092e\u0947\u0930\u0940... \u092a\u094d\u092f\u093e\u0930 \u092e\u0924 \u0915\u0930\u0928\u093e\u0964",
+      "on_screen_text": "\u092a\u0939\u0932\u0940 \u0936\u0930\u094d\u0924: \u092a\u094d\u092f\u093e\u0930 \u092e\u0924 \u0915\u0930\u0928\u093e",
+      "picture_search": "man phone luxury car",
+      "image_prompt": "Photo-real shot of the suited man in the back seat of a luxury car, phone at his ear, a slow cold smile, city lights streaking past the window",
+      "speaker": "Kabir",
+      "host_on_screen": true
+    },
+    {
+      "narration": "\u092a\u0930 \u0915\u092c\u0940\u0930 \u0928\u0939\u0940\u0902 \u091c\u093e\u0928\u0924\u093e \u0925\u093e... \u0938\u0921\u093c\u0915 \u092a\u093e\u0930 \u0916\u0921\u093c\u0940 \u0915\u093e\u0932\u0940 \u0917\u093e\u0921\u093c\u0940 \u0938\u0947 \u0915\u094b\u0908 \u0909\u0928\u0915\u0940 \u0939\u0930 \u092c\u093e\u0924 \u0930\u093f\u0915\u0949\u0930\u094d\u0921 \u0915\u0930 \u0930\u0939\u093e \u0925\u093e\u0964",
+      "on_screen_text": "\u0915\u094b\u0908 \u0938\u092c \u0930\u093f\u0915\u0949\u0930\u094d\u0921 \u0915\u0930 \u0930\u0939\u093e \u0925\u093e...",
+      "picture_search": "spy car recording night",
+      "image_prompt": "Photo-real suspenseful shot through a tinted car window: a gloved hand holding a phone that is recording the bakery across the street, face hidden in shadow, dim streetlight",
+      "speaker": "Narrator",
+      "host_on_screen": false
+    }
+  ],
+  "youtube_id": "79xxPDzXSjM"
+}

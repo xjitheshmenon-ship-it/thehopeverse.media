@@ -1,0 +1,40 @@
+{
+  "premise": "Season 1, '100 Din Ka Rishta': Riya Saxena, 24, runs her late father's small bakery in Lucknow and is about to lose it to moneylender Gupta. Kabir Malhotra, 29, the cold heir of a Mumbai hotel empire, must be married within 100 days to keep control of the company from his scheming uncle Vikram. A chance meeting leads to a contract: a 100-day fake marriage in exchange for the bakery's debt. The rules are no feelings, no family drama and no one finds out. Over about 30 episodes every rule breaks. Riya moves into the Malhotra mansion in Mumbai and faces a suspicious family. Vikram's spy tries to expose the contract, Kabir's childhood friend becomes a second lead, and a family secret ties Riya's father's debt to the Malhotras. The two fall truly in love. The season ends with the contract exposed on day 100, and Kabir has to choose between the company and Riya.",
+  "cast": [
+    {
+      "name": "Narrator",
+      "role": "Storyteller voice",
+      "look": "Indian man, 40s, calm face, short neat black hair, plain dark kurta, unseen voice-over",
+      "voice": "hi-IN-MadhurNeural",
+      "pitch": "+0Hz"
+    },
+    {
+      "name": "Riya",
+      "role": "Heroine, 24, runs her late father's bakery in Lucknow",
+      "look": "Indian woman, 24, expressive large brown eyes, warm wheatish face, long black hair in a loose braid, flour-dusted pastel cotton kurta with a bakery apron",
+      "voice": "hi-IN-SwaraNeural",
+      "pitch": "+0Hz"
+    },
+    {
+      "name": "Kabir",
+      "role": "Cold heir of the Malhotra hotel empire, 29",
+      "look": "Indian man, 29, sharp jawline, light stubble, intense cold eyes, neatly styled black hair, tailored charcoal suit with an open-collar white shirt and an expensive watch",
+      "voice": "hi-IN-MadhurNeural",
+      "pitch": "+0Hz"
+    },
+    {
+      "name": "Gupta",
+      "role": "Greedy Lucknow moneylender",
+      "look": "Indian man, 55, round face, thick moustache, receding oiled grey hair, cream safari suit, gold rings, a red tilak on his forehead",
+      "voice": "hi-IN-MadhurNeural",
+      "pitch": "+0Hz"
+    }
+  ],
+  "episodes": [
+    {
+      "n": 1,
+      "title": "Ep 1 | 100 दिन का रिश्ता: पाँच लाख का कर्ज़ और एक अजनबी का प्रस्ताव",
+      "summary": "Moneylender Gupta gives Riya until tomorrow evening to repay 5 lakh or lose her late father's Lucknow bakery. A stranger, Kabir Malhotra, offers to clear the debt if she marries him for 100 days. She throws him out, but as the lock goes on the door she calls him and accepts. His first rule is 'don't fall in love', while someone in a black car secretly records them."
+    }
+  ]
+}
