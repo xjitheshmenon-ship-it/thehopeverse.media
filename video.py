@@ -294,6 +294,31 @@ def instagram(video: Path, caption: str) -> str:
     raise RuntimeError("Instagram took over 10 minutes to process the video")
 
 
+FB = "https://graph.facebook.com/v26.0"
+
+
+def facebook(video: Path, caption: str) -> str:
+    """Post the video as a public Facebook Reel on the Hopeverse Media Page (FACEBOOK_TOKEN: a Page access token)."""
+    token = os.environ["FACEBOOK_TOKEN"]
+
+    def call(path, method="GET", **params):
+        query = urllib.parse.urlencode({**params, "access_token": token})
+        req = (urllib.request.Request(f"{FB}/{path}", data=query.encode(), method="POST") if method == "POST"
+               else f"{FB}/{path}?{query}")
+        return json.load(urllib.request.urlopen(req, timeout=60))
+
+    page = call("me", fields="id")["id"]
+    video_id = call(f"{page}/video_reels", "POST", upload_phase="start")["video_id"]
+    data = video.read_bytes()
+    urllib.request.urlopen(urllib.request.Request(
+        f"https://rupload.facebook.com/video-upload/v26.0/{video_id}", data=data, method="POST",
+        headers={"Authorization": f"OAuth {token}", "offset": "0", "file_size": str(len(data)),
+                 "Content-Type": "application/octet-stream"}), timeout=300)
+    call(f"{page}/video_reels", "POST", upload_phase="finish", video_id=video_id, video_state="PUBLISHED",
+         description=caption[:2200], is_ai_generated="true")
+    return video_id
+
+
 if __name__ == "__main__":
     platform = {c["id"]: c["platform"] for c in _channels()}
     for path in sorted(OUTBOX.glob("*.json")):
@@ -315,14 +340,27 @@ if __name__ == "__main__":
             package["youtube_id"] = upload(video, package)
             path.write_text(json.dumps(package, indent=2), encoding="utf-8")
             print(f"    https://youtu.be/{package['youtube_id']}")
-        # A video is cross-posted to Instagram once it is public on YouTube; set a YouTube video to
-        # private in Studio to keep it off Instagram.
-        if os.environ.get("INSTAGRAM_TOKEN") and "youtube_id" in package and "instagram_id" not in package:
+        # A video is cross-posted to Instagram and Facebook once it is public on YouTube; set a YouTube
+        # video to private in Studio to keep it off both.
+        cross = [(name, key, post) for name, key, post, env in
+                 [("Instagram", "instagram_id", instagram, "INSTAGRAM_TOKEN"),
+                  ("Facebook", "facebook_id", facebook, "FACEBOOK_TOKEN")]
+                 if os.environ.get(env) and key not in package]
+        if "youtube_id" not in package or not cross:
+            continue
+        try:
+            public = stats([package["youtube_id"]]).get(package["youtube_id"], {}).get("privacy") == "public"
+        except Exception as e:
+            print(f"    Could not check YouTube privacy: {e}")
+            continue
+        if not public:
+            continue
+        caption = package["description"].replace("#Shorts", "").strip()
+        for name, key, post in cross:
             try:
-                if stats([package["youtube_id"]]).get(package["youtube_id"], {}).get("privacy") == "public":
-                    print(f"Posting {video.name} to Instagram as a Reel")
-                    package["instagram_id"] = instagram(video, package["description"].replace("#Shorts", "").strip())
-                    path.write_text(json.dumps(package, indent=2), encoding="utf-8")
-                    print("    posted")
+                print(f"Posting {video.name} to {name} as a Reel")
+                package[key] = post(video, caption)
+                path.write_text(json.dumps(package, indent=2), encoding="utf-8")
+                print("    posted")
             except Exception as e:  # one failed Reel shouldn't stop the other videos
-                print(f"    Instagram post failed: {e}")
+                print(f"    {name} post failed: {e}")
