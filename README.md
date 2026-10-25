@@ -12,7 +12,7 @@ Every agent's instructions are in `team.md`. Edit it on GitHub (open the file, c
 2. Set your key: `$env:ANTHROPIC_API_KEY="..."` (PowerShell) or `export ANTHROPIC_API_KEY=...` (Mac/Linux)
 3. `python agents.py "what Hope should do"`, or double-click `start_hope.bat` on Windows
 
-To run Hope automatically once a day (9:00) on Windows, double-click `schedule_hope.bat` once. It saves your key and creates a Task Scheduler task; scheduled runs log to `runs/auto.log`. Stop it with `schtasks /Delete /TN "Hope - Hopeverse Media" /F`.
+To run Hope automatically on Windows, double-click `schedule_hope.bat` once. It saves your key and creates two Task Scheduler tasks: at 16:00 Hope researches, writes and makes the Short (`hope_auto.bat`, which runs `video.py --no-upload`), and at 18:00 it is posted to YouTube and Instagram (`hope_auto.bat post`). Runs log to `runs/auto.log`. Stop them with `schtasks /Delete /TN "Hope - research" /F` and `schtasks /Delete /TN "Hope - post" /F`.
 
 Every run saves all helpers' outputs to `runs/`. Finished packages go to `outbox/` for you to review and upload by hand.
 
