@@ -3,6 +3,6 @@ __pycache__/
 client_secret.json
 outbox/
 runs/
-token.json
+token*.json
 characters.md
 lessons.md
