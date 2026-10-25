@@ -32,3 +32,7 @@ One-time YouTube setup:
 4. Run `python video.py` once by hand and sign in with the Google account that owns the channel. After that it's automatic.
 
 Videos uploaded by an unaudited Google Cloud project stay private. To be able to publish them, submit YouTube's API audit form for the project.
+
+## How Mr. Hope learns
+
+After every run, Mr. Hope reviews the day: cost, what was made, and (once YouTube is connected) each Short's views, likes and comments. He rewrites `lessons.md` with his strategy, business goals and a section of lessons for each agent; every agent automatically follows its own section on the next run. Delete `lessons.md` to make him start fresh. Each run's cost is logged in `runs/history.jsonl`.

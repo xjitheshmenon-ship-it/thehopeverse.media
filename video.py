@@ -162,26 +162,41 @@ def render(package_path: Path) -> Path:
     return out
 
 
-def upload(video: Path, package: dict) -> str:
-    """Upload as a private video, so nothing goes public until the owner checks it in YouTube Studio."""
+def youtube(interactive: bool = True):
+    """A signed-in YouTube API client. Upload, plus read-only access so Mr. Hope can see view counts."""
     from google.auth.transport.requests import Request
     from google.oauth2.credentials import Credentials
     from google_auth_oauthlib.flow import InstalledAppFlow
     from googleapiclient.discovery import build
-    from googleapiclient.http import MediaFileUpload
 
-    scopes = ["https://www.googleapis.com/auth/youtube.upload"]
+    scopes = ["https://www.googleapis.com/auth/youtube.upload",
+              "https://www.googleapis.com/auth/youtube.readonly"]
     creds = Credentials.from_authorized_user_file(str(TOKEN), scopes) if TOKEN.exists() else None
     if creds and creds.expired and creds.refresh_token:
         creds.refresh(Request())
-    elif not creds or not creds.valid:
+    elif not creds or not creds.valid or not set(scopes) <= set(creds.scopes or []):
+        if not interactive:
+            raise RuntimeError("YouTube not connected yet; run python video.py once by hand")
         creds = InstalledAppFlow.from_client_secrets_file(str(SECRET), scopes).run_local_server(port=0)
     TOKEN.write_text(creds.to_json())
+    return build("youtube", "v3", credentials=creds)
+
+
+def stats(video_ids: list) -> dict:
+    """Views, likes and comments per uploaded video id."""
+    items = youtube(interactive=False).videos().list(part="statistics,status", id=",".join(video_ids)).execute()
+    return {i["id"]: {**i["statistics"], "privacy": i["status"]["privacyStatus"]} for i in items["items"]}
+
+
+def upload(video: Path, package: dict) -> str:
+    """Upload as a private video, so nothing goes public until the owner checks it in YouTube Studio."""
+    from googleapiclient.http import MediaFileUpload
+
     body = {"snippet": {"title": package["title"][:100], "description": package["description"][:5000],
                         "categoryId": "28"},  # Science & Technology
             "status": {"privacyStatus": "private", "selfDeclaredMadeForKids": False,
                        "containsSyntheticMedia": True}}
-    request = build("youtube", "v3", credentials=creds).videos().insert(
+    request = youtube().videos().insert(
         part="snippet,status", body=body, media_body=MediaFileUpload(str(video), resumable=True))
     response = None
     while response is None:

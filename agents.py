@@ -26,6 +26,8 @@ CHANNELS = HERE / "channels.json"
 OUTBOX = HERE / "outbox"
 CAST = HERE / "characters.md"
 TEAM_FILE = HERE / "team.md"
+LESSONS = HERE / "lessons.md"  # Mr. Hope writes this himself after every run
+HISTORY = HERE / "runs" / "history.jsonl"
 LOG = HERE / "runs" / f"{datetime.now():%Y-%m-%d_%H%M}.md"
 WEB_SEARCH = {"type": "web_search_20260209", "name": "web_search", "max_uses": 3}
 WEB_FETCH = {"type": "web_fetch_20260209", "name": "web_fetch", "max_uses": 4}
@@ -48,10 +50,12 @@ def _cost(model: str, usage) -> float:
 client = anthropic.Anthropic()
 
 
-def _load_team() -> dict:
-    """Each agent's instructions live in team.md under a "## <name>" heading, so they can be edited as text."""
+def _sections(path: Path) -> dict:
+    """Split a Markdown file into {heading: text} on "## <name>" headings."""
+    if not path.exists():
+        return {}
     team, name = {}, None
-    for line in TEAM_FILE.read_text(encoding="utf-8").splitlines():
+    for line in path.read_text(encoding="utf-8").splitlines():
         if line.startswith("## "):
             name = line[3:].strip()
             team[name] = []
@@ -60,7 +64,8 @@ def _load_team() -> dict:
     return {k: "\n".join(v).strip() for k, v in team.items()}
 
 
-TEAM = _load_team()
+# Each agent's instructions live in team.md under a "## <name>" heading, so they can be edited as text.
+TEAM = _sections(TEAM_FILE)
 
 
 def run_agent(name: str, system: str, prompt: str, tools: list, effort: str = "medium",
@@ -70,6 +75,9 @@ def run_agent(name: str, system: str, prompt: str, tools: list, effort: str = "m
     if spent >= BUDGET:
         return f"[budget of ${BUDGET:.2f} reached; stop now and summarize what you have]"
     print(f"... {name} is working (spent so far ${spent:.2f})", flush=True)
+    lessons = _sections(LESSONS).get(name)
+    if lessons:
+        system += "\n\nLessons Mr. Hope has learned from past runs (follow them):\n" + lessons
     runner = client.beta.messages.tool_runner(
         model=model,
         max_tokens=16000,
@@ -162,6 +170,44 @@ def propose_channel(channel_id: str, platform: str, name: str, niche: str, audie
                      "audience": audience, "status": "needs_setup", "url": ""})
     CHANNELS.write_text(json.dumps(channels, indent=2))
     return f"saved '{name}' as needs_setup"
+
+
+@beta_tool
+def performance() -> str:
+    """Past Shorts with their YouTube views, likes and comments (once YouTube is connected), plus the cost of recent runs."""
+    drafts = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(OUTBOX.glob("*.json"))]
+    ids = [d["youtube_id"] for d in drafts if d.get("youtube_id")]
+    numbers, note = {}, ""
+    if ids:
+        try:
+            from video import stats
+            numbers = stats(ids)
+        except Exception as e:
+            note = f"Could not read YouTube numbers: {e}"
+    else:
+        note = "Nothing uploaded to YouTube yet, so there are no view counts."
+    shorts = [{"title": d["title"], "youtube_id": d.get("youtube_id"), **numbers.get(d.get("youtube_id"), {})}
+              for d in drafts]
+    runs = HISTORY.read_text(encoding="utf-8").splitlines()[-14:] if HISTORY.exists() else []
+    return json.dumps({"shorts": shorts, "recent_runs": [json.loads(r) for r in runs], "note": note}, indent=1)
+
+
+@beta_tool
+def read_lessons() -> str:
+    """Read Mr. Hope's lessons file: strategy, business goals and per-agent lessons."""
+    return LESSONS.read_text(encoding="utf-8") if LESSONS.exists() else "(no lessons yet)"
+
+
+@beta_tool
+def save_lessons(lessons: str) -> str:
+    """Replace the lessons file. Pass the whole file, using "## Mr. Hope", "## Mr. Focus", "## Mr. Cast", "## Mr. Pen",
+    "## Mr. Cut", "## Mr. Spark" and "## Mr. Post" headings: each agent automatically receives its own section.
+
+    Args:
+        lessons: The full lessons file in Markdown.
+    """
+    LESSONS.write_text(lessons, encoding="utf-8")
+    return "saved"
 
 
 # ---------- sub-agents, exposed to Hope as tools ----------
@@ -272,9 +318,16 @@ if __name__ == "__main__":
     goal = " ".join(sys.argv[1:]) or (
         "Scheduled run: get today's 5 topics from Mr. Focus, check the outbox, then draft and queue "
         "the single best new YouTube Short for the live YouTube channel.")
-    print(run_agent("Mr. Hope", HOPE, goal, [list_channels, list_outbox, propose_channel, focus,
-                                          cast, pen, cut, spark,
-                                          post],
-                    effort="medium", model=MODEL))
-    print(f"\nEstimated cost of this run: ${spent:.2f} (cap ${BUDGET:.2f})")
+    summary = run_agent("Mr. Hope", HOPE, goal, [list_channels, list_outbox, propose_channel, focus,
+                                                 cast, pen, cut, spark, post],
+                        effort="medium", model=MODEL)
+    print(summary)
+    HISTORY.parent.mkdir(exist_ok=True)
+    with HISTORY.open("a", encoding="utf-8") as f:
+        f.write(json.dumps({"date": f"{datetime.now():%Y-%m-%d %H:%M}", "cost_usd": round(spent, 2)}) + "\n")
+    cap, BUDGET = BUDGET, spent + 0.25  # ponytail: fixed $0.25 for the review; raise if lessons get cut off
+    print(run_agent("Mr. Hope (review)", TEAM["Mr. Hope (review)"],
+                    f"Today's run cost ${spent:.2f}. Mr. Hope's summary of today:\n\n{summary}",
+                    [performance, read_lessons, save_lessons], effort="low", model=MODEL))
+    print(f"\nEstimated cost of this run: ${spent:.2f} (cap ${cap:.2f} + $0.25 review)")
     print(f"Full scripts and research saved in {LOG}")
