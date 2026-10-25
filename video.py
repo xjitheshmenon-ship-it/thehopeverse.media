@@ -11,6 +11,7 @@ the same footage, once that channel is signed in:  python video.py --connect hi
 import asyncio
 import json
 import os
+import re
 import subprocess
 import sys
 import textwrap
@@ -27,7 +28,7 @@ from moviepy.config import FFMPEG_BINARY
 from PIL import Image, ImageDraw, ImageFont
 from pydantic import BaseModel
 
-from agents import HELPER_MODEL, OUTBOX, _channels, client, read_cast
+from agents import HELPER_MODEL, OUTBOX, TEAM, _channels, client, read_cast
 from approve import approved
 
 HERE = Path(__file__).parent
@@ -320,8 +321,13 @@ def upload(video: Path, package: dict, token: Path = TOKEN) -> str:
     """Upload as a public video (the owner chose public by default on 2026-10-25)."""
     from googleapiclient.http import MediaFileUpload
 
-    body = {"snippet": {"title": package["title"][:100], "description": package["description"][:5000],
-                        "categoryId": "28"},  # Science & Technology
+    footer = TEAM.get("YouTube footer", "")  # edit it in team.md
+    tags = list(dict.fromkeys(["Hopeverse Media", "Shorts", *re.findall(r"#(\w+)", package["description"])]))
+    while len(",".join(tags)) > 450:  # YouTube allows 500 characters of tags
+        tags.pop()
+    body = {"snippet": {"title": package["title"][:100],
+                        "description": f"{package['description']}\n\n{footer}".strip()[:5000],
+                        "tags": tags, "categoryId": "28"},  # Science & Technology
             "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False,
                        "containsSyntheticMedia": True}}
     request = youtube(token=token).videos().insert(
