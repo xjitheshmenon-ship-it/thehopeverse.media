@@ -30,6 +30,10 @@ STYLE = ("photorealistic real photograph, shot on 35mm film camera, natural ligh
          "not a cartoon, not an illustration, not CGI, no text, no words")
 SECRET, TOKEN = HERE / "client_secret.json", HERE / "token.json"
 LOGO = HERE / "logo.png"  # replace this file to change the watermark
+# Stock sites refuse Python's default user agent (HTTP 403), so every download identifies as a browser.
+_opener = urllib.request.build_opener()
+_opener.addheaders = [("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36")]
+urllib.request.install_opener(_opener)
 
 
 class Scene(BaseModel):
@@ -79,7 +83,7 @@ def _pixabay(kind: str, query: str) -> list:
     params = {"key": os.environ["PIXABAY_API_KEY"], "q": query[:100], "safesearch": "true", "per_page": 10,
               "video_type": "film", "image_type": "photo"}  # real footage and photos only, no animation
     url = f"https://pixabay.com/api/{kind}?" + urllib.parse.urlencode(params)
-    return json.load(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "hopeverse"}), timeout=20))["hits"]
+    return json.load(urllib.request.urlopen(url, timeout=20))["hits"]
 
 
 def _nasa(query: str, used: set, work: Path):
