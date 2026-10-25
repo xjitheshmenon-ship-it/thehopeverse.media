@@ -234,14 +234,14 @@ def caption(text: str, size: tuple, lang: str = "") -> np.ndarray:
 def speak(text: str, voice: str, path: Path) -> bool:
     """Edge's free voice service sometimes returns an empty or broken file, so check it and try again.
     Returns False if it never works, so the caller can drop that scene instead of losing the whole video."""
-    for attempt in range(3):
+    for attempt in range(6):  # about 2.5 minutes in all, so a short internet drop doesn't cost a scene
         try:
             asyncio.run(edge_tts.Communicate(text, voice).save(str(path)))
             AudioFileClip(str(path)).close()  # raises if ffmpeg can't read it
             return True
         except Exception as e:
             print(f"    voice failed ({e.__class__.__name__}), size {path.stat().st_size if path.exists() else 0} bytes")
-            time.sleep(5 * (attempt + 1))
+            time.sleep(10 * (attempt + 1))
     print(f"    skipping this scene; the voice could not read: {text!r}")
     return False
 
