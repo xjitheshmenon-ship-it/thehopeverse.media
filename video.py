@@ -28,6 +28,7 @@ VOICE = os.environ.get("HOPE_VOICE", "en-US-AndrewNeural")
 FAL_MODEL = "fal-ai/flux/schnell"  # about $0.006 per Short-sized image
 STYLE = "vertical 9:16, cinematic, hopeful mood, soft glowing light, rich colour, high detail, no text, no words"
 SECRET, TOKEN = HERE / "client_secret.json", HERE / "token.json"
+LOGO = HERE / "logo.png"  # replace this file to change the watermark
 
 
 class Scene(BaseModel):
@@ -156,8 +157,12 @@ def render(package_path: Path) -> Path:
                   ImageClip(caption(scene.on_screen_text, size), transparent=True).with_duration(duration)]
         clips.append(CompositeVideoClip(layers, size=size).with_duration(duration).with_audio(sound))
         print(f"    scene {i + 1}/{len(board.scenes)}")
+    video = concatenate_videoclips(clips)
+    if LOGO.exists():  # channel watermark, top-left, clear of the Shorts buttons on the right
+        logo = ImageClip(str(LOGO), transparent=True).resized(width=150).with_opacity(0.85)
+        video = CompositeVideoClip([video, logo.with_position((60, 170)).with_duration(video.duration)], size=size)
     out = package_path.with_suffix(".mp4")
-    concatenate_videoclips(clips).write_videofile(str(out), fps=30, codec="libx264", audio_codec="aac",
+    video.write_videofile(str(out), fps=30, codec="libx264", audio_codec="aac",
                                                   ffmpeg_params=["-pix_fmt", "yuv420p"], logger=None)
     return out
 
