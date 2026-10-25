@@ -9,6 +9,7 @@ import asyncio
 import json
 import os
 import subprocess
+import sys
 import textwrap
 import time
 import urllib.parse
@@ -300,6 +301,8 @@ if __name__ == "__main__":
         if not video.exists():
             print(f"Making video for {path.name}")
             render(path)
+        if "--no-upload" in sys.argv:  # the 4 PM run only makes videos; the 6 PM run posts them
+            continue
         if platform.get(package["channel_id"]) == "youtube" and "youtube_id" not in package:
             if not SECRET.exists():
                 print("Skipping upload: client_secret.json not found (see README).")
