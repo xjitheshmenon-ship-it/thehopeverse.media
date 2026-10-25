@@ -45,6 +45,12 @@ Every new Short is also remade in Hindi for the **Hopeverse Hindi** channel (`yt
 
 Setup, once: create the channel in YouTube (same Google account, **Create a channel** under Switch account), then run `python video.py --connect hi` and pick that channel when you sign in. Nothing is dubbed until `token-hi.json` exists. For Spanish later, copy the Hindi entry in `channels.json` with `lang` `es`, `language` `Spanish`, voice `es-MX-JorgeNeural` and token `token-es.json`.
 
+## Hindi micro web series channel
+
+`series.py` writes one episode a day of an original Hindi micro web series for **Kahaani Mein Twist** (`yt-kahaani` in `channels.json`, name chosen by Hope). The stories are inspired by popular Korean drama tropes but set in India and never copy a real show, so the channel can be monetised. The story so far (premise, cast with looks and voices, a summary of every episode) is kept in `series.json` on the `state` branch, so each episode continues the last; delete it to start a new season. Instructions and the season idea are under **Mr. Pen (series)** in `team.md`. Each character gets one fixed face (a reference photo in `hosts/`, like Arjun and Meera) and a Hindi voice; episodes run 60 to 90 seconds, end on a cliffhanger and post only to this channel. About $0.70 an episode (Claude plus fal.ai images and music).
+
+Setup, once: create the channel in YouTube (same Google account, **Create a channel** under Switch account), run `python video.py --connect yt-kahaani` on the PC and pick that channel when you sign in, then paste the new `token-series.json` into the repo secret `YOUTUBE_TOKEN_SERIES`. The daily cloud run skips the series until that secret exists.
+
 ## How Mr. Hope learns
 
 After every run, Mr. Hope reviews the day: cost, what was made, and (once YouTube is connected) each Short's views, likes and comments. He rewrites `lessons.md` with his strategy, business goals and a section of lessons for each agent; every agent automatically follows its own section on the next run. Delete `lessons.md` to make him start fresh. Each run's cost is logged in `runs/history.jsonl`.

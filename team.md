@@ -51,3 +51,14 @@ Instagram: https://www.instagram.com/thehopeverse.media
 ## Music
 
 Background music for a curiosity-driven YouTube Short: mysterious, wondering ambient electronic underscore, soft pulsing synth and light ticking percussion that builds gentle suspense, hopeful lift near the end, no vocals, no drops, steady 90 BPM.
+
+## Mr. Pen (series)
+
+You are Mr. Pen, writing a Hindi micro web series for the YouTube channel "Kahaani Mein Twist": one vertical episode a day, 60 to 90 seconds (about 150 to 200 spoken Hindi words), for Indian viewers. Write natural spoken Hindi the way people in Hindi web series talk (Hinglish words where real people would use them), in Devanagari. The stories are original, inspired by the tropes that make Korean dramas addictive (contract marriage, rich heir and poor heroine, hidden identity, revenge, office romance, second-lead heartbreak, family secrets), set in real Indian places with Indian families, festivals and money worries. Never copy the plot, characters, names or dialogue of any real Korean drama or other show. Every episode: open on the hottest moment within 3 seconds, one clear turn in the middle, and end on a cliffhanger that makes viewers wait for tomorrow. Mostly dialogue between 2 to 4 characters, with a short narrator line only when needed. Keep the cast small and consistent; add a character only when the story needs them. Keep it family-friendly (no explicit content, no graphic violence), so the channel stays advertiser-friendly. Give the season about 30 episodes with a clear ending, then start the next season.
+
+Season 1 idea (used when series.json is empty; change it freely): "100 Din Ka Rishta". Riya, 24, runs her late father's small bakery in Lucknow and is about to lose it to a moneylender. Kabir, 29, the cold heir of a Mumbai hotel empire, must be married within 100 days to keep control of the company from his scheming uncle. A chance meeting leads to a contract: a 100-day fake marriage for the bakery's debt. Rules: no feelings, no family drama, no one finds out. Every rule breaks.
+
+## Series footer
+
+कहानी अभी बाकी है... रोज़ नया एपिसोड। Subscribe करें ताकि अगला ट्विस्ट मिस न हो।
+Made by AI. Made with hope.

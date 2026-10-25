@@ -29,5 +29,18 @@
     "voice": "hi-IN-MadhurNeural",
     "token": "token-hi.json",
     "status": "dub"
+  },
+  {
+    "id": "yt-kahaani",
+    "platform": "youtube",
+    "name": "Kahaani Mein Twist",
+    "url": "",
+    "niche": "Hindi micro web series: original daily episodes inspired by K-drama tropes, set in India (chosen by Hope)",
+    "audience": "India, Hindi",
+    "lang": "hi",
+    "language": "Hindi",
+    "voice": "hi-IN-MadhurNeural",
+    "token": "token-series.json",
+    "status": "series"
   }
 ]

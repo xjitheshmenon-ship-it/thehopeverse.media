@@ -45,10 +45,12 @@ jobs:
           CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           TOKEN: ${{ secrets.YOUTUBE_TOKEN }}
           TOKEN_HI: ${{ secrets.YOUTUBE_TOKEN_HI }}
+          TOKEN_SERIES: ${{ secrets.YOUTUBE_TOKEN_SERIES }}
         run: |
           [ -n "$CLIENT_SECRET" ] && printf '%s' "$CLIENT_SECRET" > client_secret.json
           [ -n "$TOKEN" ] && printf '%s' "$TOKEN" > token.json
           [ -n "$TOKEN_HI" ] && printf '%s' "$TOKEN_HI" > token-hi.json
+          [ -n "$TOKEN_SERIES" ] && printf '%s' "$TOKEN_SERIES" > token-series.json
           true
       - run: python state.py load
 
@@ -57,6 +59,12 @@ jobs:
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core > /dev/null  # Hindi captions
           python agents.py
+          python video.py
+      - name: Write and post today's Hindi series episode
+        if: always() && (github.event.schedule == '45 11 * * *' || inputs.job == 'daily')
+        run: |
+          [ -f token-series.json ] || { echo "Series channel not connected yet (YOUTUBE_TOKEN_SERIES)"; exit 0; }
+          python series.py
           python video.py
       - name: Save Hope's memory
         if: always() && (github.event.schedule == '45 11 * * *' || inputs.job == 'daily')
