@@ -35,6 +35,12 @@ One-time YouTube setup:
 
 Videos uploaded by an unaudited Google Cloud project stay private. To be able to publish them, submit YouTube's API audit form for the project.
 
+## Hindi dub channel
+
+Every new Short is also remade in Hindi for the **Hopeverse Hindi** channel (`yt-hopeverse-hi` in `channels.json`): Claude adapts the script into natural spoken Hindi, the `hi-IN-MadhurNeural` voice reads it, and the captions use Windows' Nirmala UI font. It reuses the English video's footage, so each dub costs one small Claude call. Dubs go only to their own YouTube channel, never to Instagram or Facebook.
+
+Setup, once: create the channel in YouTube (same Google account, **Create a channel** under Switch account), then run `python video.py --connect hi` and pick that channel when you sign in. Nothing is dubbed until `token-hi.json` exists. For Spanish later, copy the Hindi entry in `channels.json` with `lang` `es`, `language` `Spanish`, voice `es-MX-JorgeNeural` and token `token-es.json`.
+
 ## How Mr. Hope learns
 
 After every run, Mr. Hope reviews the day: cost, what was made, and (once YouTube is connected) each Short's views, likes and comments. He rewrites `lessons.md` with his strategy, business goals and a section of lessons for each agent; every agent automatically follows its own section on the next run. Delete `lessons.md` to make him start fresh. Each run's cost is logged in `runs/history.jsonl`.
