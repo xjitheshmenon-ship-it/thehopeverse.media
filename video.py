@@ -264,29 +264,24 @@ def upload(video: Path, package: dict) -> str:
     return response["id"]
 
 
-GRAPH = "https://graph.facebook.com/v21.0"
+GRAPH = "https://graph.instagram.com/v21.0"
 
 
 def _graph(path: str, method: str = "GET", **params) -> dict:
-    url = f"{GRAPH}/{path}"
-    data = urllib.parse.urlencode(params).encode() if method == "POST" else None
-    if method == "GET":
-        url += "?" + urllib.parse.urlencode(params)
-    req = urllib.request.Request(url, data=data, method=method,
-                                 headers={"Authorization": f"OAuth {os.environ['INSTAGRAM_TOKEN']}"})
+    params["access_token"] = os.environ["INSTAGRAM_TOKEN"]
+    query = urllib.parse.urlencode(params)
+    req = (urllib.request.Request(f"{GRAPH}/{path}", data=query.encode(), method="POST") if method == "POST"
+           else f"{GRAPH}/{path}?{query}")
     return json.load(urllib.request.urlopen(req, timeout=60))
 
 
 def instagram(video: Path, caption: str) -> str:
-    """Post the video as an Instagram Reel (public). Needs INSTAGRAM_TOKEN from a Meta app (see README)."""
-    pages = _graph("me/accounts", fields="instagram_business_account")["data"]
-    ig = next(p["instagram_business_account"]["id"] for p in pages if "instagram_business_account" in p)
-    container = _graph(f"{ig}/media", "POST", media_type="REELS", upload_type="resumable",
-                       caption=caption[:2200])["id"]
-    urllib.request.urlopen(urllib.request.Request(
-        f"https://rupload.facebook.com/ig-api-upload/v21.0/{container}", data=video.read_bytes(), method="POST",
-        headers={"Authorization": f"OAuth {os.environ['INSTAGRAM_TOKEN']}", "offset": "0",
-                 "file_size": str(video.stat().st_size)}), timeout=600)
+    """Post the video as an Instagram Reel (public), with Instagram Login: no Facebook Page needed.
+    Instagram fetches the video from a public link, so it is first uploaded to fal.ai's file storage (FAL_KEY)."""
+    import fal_client
+    url = fal_client.upload_file(str(video))
+    ig = _graph("me", fields="user_id")["user_id"]
+    container = _graph(f"{ig}/media", "POST", media_type="REELS", video_url=url, caption=caption[:2200])["id"]
     for _ in range(60):  # Instagram processes the video before it can be published
         status = _graph(container, fields="status_code,status")
         if status["status_code"] == "FINISHED":

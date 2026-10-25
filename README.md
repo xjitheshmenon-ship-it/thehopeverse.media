@@ -39,4 +39,4 @@ After every run, Mr. Hope reviews the day: cost, what was made, and (once YouTub
 
 ## Instagram Reels
 
-Once you make a video **public** on YouTube, the next `python video.py` also posts it to Instagram as a Reel (Instagram has no private drafts, so YouTube is the review step). It needs `INSTAGRAM_TOKEN`: a Facebook Login token with `instagram_basic`, `instagram_content_publish`, `pages_show_list`, `pages_read_engagement` and `business_management`, for a Facebook Page linked to the Instagram professional account. Make one in the Graph API Explorer and extend it to 60 days in the Access Token Debugger.
+Once you make a video **public** on YouTube, the next `python video.py` also posts it to Instagram as a Reel (Instagram has no private drafts, so YouTube is the review step). It needs `INSTAGRAM_TOKEN` (Instagram Login, no Facebook Page): a token for the Instagram professional account from a Meta app's "API setup with Instagram login" page, with `instagram_business_basic` and `instagram_business_content_publish`. It lasts 60 days. The video is handed to Instagram through a temporary public link on fal.ai storage, so `FAL_KEY` is needed too.
