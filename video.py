@@ -34,6 +34,8 @@ from approve import approved
 HERE = Path(__file__).parent
 VOICE = os.environ.get("HOPE_VOICE", "en-US-AndrewNeural")
 FAL_MODEL = "fal-ai/flux/schnell"  # about $0.006 per Short-sized image
+MUSIC_MODEL = "fal-ai/stable-audio-3/medium/base/text-to-audio"  # about $0.05 per track
+MUSIC_VOLUME = 0.12  # background music level under the voice (1 = full)
 STYLE = ("photorealistic real photograph, shot on 35mm film camera, natural light, documentary style, vertical 9:16, "
          "not a cartoon, not an illustration, not CGI, no text, no words")
 SECRET, TOKEN = HERE / "client_secret.json", HERE / "token.json"
@@ -247,6 +249,23 @@ def speak(text: str, voice: str, path: Path) -> bool:
     return False
 
 
+def music(work: Path, seconds: float) -> Path | None:
+    """One background track per Short from fal.ai, in the mood set by "## Music" in team.md. Dubs reuse it."""
+    path = work / "music.mp3"
+    if path.exists() or not os.environ.get("FAL_KEY"):
+        return path if path.exists() else None
+    try:
+        import fal_client
+        result = fal_client.subscribe(MUSIC_MODEL, arguments={
+            "prompt": TEAM.get("Music", "mysterious, curious ambient underscore, no vocals"),
+            "duration": min(seconds + 2, 380), "negative_prompt": "vocals, singing, speech"})
+        urllib.request.urlretrieve(result["audio"]["url"], path)
+        return path
+    except Exception as e:  # no music is better than no video
+        print(f"    no background music: {e}")
+        return None
+
+
 def render(package_path: Path, voice: str = VOICE) -> Path:
     package = json.loads(package_path.read_text(encoding="utf-8"))
     size = (1080, 1920)  # YouTube Shorts are vertical
@@ -261,7 +280,7 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
     logo = None
     if LOGO.exists():  # channel watermark, top-left, clear of the Shorts buttons on the right
         logo = ImageClip(str(LOGO), transparent=True).resized(width=150).with_opacity(0.85).with_position((60, 170))
-    parts, used = [], set()
+    parts, used, seconds = [], set(), 0.0
     for i, scene in enumerate(board.scenes):
         if not any(ch.isalnum() for ch in scene.narration):  # nothing to say, so no sound file would come back
             continue
@@ -270,6 +289,7 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
             continue
         sound = AudioFileClip(str(audio))
         duration = sound.duration + 0.3
+        seconds += duration
         layers = [background(scene, size, duration, work, used),
                   ImageClip(caption(scene.on_screen_text, size, lang), transparent=True).with_duration(duration)]
         if logo:
@@ -284,10 +304,19 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
         parts.append(part)
         print(f"    scene {i + 1}/{len(board.scenes)}")
     out = package_path.with_suffix(".mp4")
+    voiced = work / f"{prefix}voice.mp4"
     listing = work / f"{prefix}scenes.txt"
     listing.write_text("".join(f"file '{p.resolve().as_posix()}'\n" for p in parts), encoding="utf-8")
     subprocess.run([FFMPEG_BINARY, "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(listing),
-                    "-c", "copy", str(out)], check=True)
+                    "-c", "copy", str(voiced)], check=True)
+    track = music(work, seconds)
+    if not track:
+        voiced.replace(out)
+        return out
+    # Music loops if it's short and stops when the voice ends; the video is copied, only the sound is re-encoded.
+    subprocess.run([FFMPEG_BINARY, "-y", "-loglevel", "error", "-i", str(voiced), "-stream_loop", "-1", "-i", str(track),
+                    "-filter_complex", f"[1:a]volume={MUSIC_VOLUME}[m];[0:a][m]amix=inputs=2:duration=first:normalize=0[a]",
+                    "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", str(out)], check=True)
     return out
 
 

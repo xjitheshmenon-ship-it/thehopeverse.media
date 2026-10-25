@@ -47,3 +47,7 @@ Base lessons on evidence: view counts, likes and comments when they exist, cost 
 Made by AI. Made with hope.
 Subscribe for a hopeful Short every day: https://www.youtube.com/@HopeverseMedia?sub_confirmation=1
 Instagram: https://www.instagram.com/thehopeverse.media
+
+## Music
+
+Background music for a curiosity-driven YouTube Short: mysterious, wondering ambient electronic underscore, soft pulsing synth and light ticking percussion that builds gentle suspense, hopeful lift near the end, no vocals, no drops, steady 90 BPM.
