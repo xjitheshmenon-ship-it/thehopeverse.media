@@ -18,6 +18,10 @@ To run Hope automatically on Windows, double-click `schedule_hope.bat` once. It 
 
 Every run saves all helpers' outputs to `runs/`. Finished packages go to `outbox/` for you to review and upload by hand.
 
+## Run in the cloud (no PC)
+
+`.github/workflows/hope.yml` runs Hope on GitHub's servers: every day at 17:15 IST it researches, makes and posts the Short (`agents.py`, then `video.py`), and every hour it updates the dashboard. Keys go in the repo's **Settings > Secrets and variables > Actions**: `ANTHROPIC_API_KEY`, `PIXABAY_API_KEY`, `FAL_KEY`, `INSTAGRAM_TOKEN`, optional `PERPLEXITY_API_KEY`, and the YouTube files pasted as text: `YOUTUBE_CLIENT_SECRET` (client_secret.json), `YOUTUBE_TOKEN` (token.json), optional `YOUTUBE_TOKEN_HI` (token-hi.json). Hope's memory (outbox packages, `lessons.md`, `characters.md`, run logs) is kept on the `state` branch by `state.py`; videos and tokens are never saved there. To move from the PC, run `python state.py save` there once, then delete the Task Scheduler tasks so the Short isn't posted twice. Start a run by hand from the **Actions** tab > Hope > Run workflow.
+
 ## Channels
 
 `channels.json` lists the channels. Hope proposes new ones as `needs_setup`; create them by hand (YouTube and Instagram don't allow automated channel creation), then set `status` to `live` and fill in `url`.
