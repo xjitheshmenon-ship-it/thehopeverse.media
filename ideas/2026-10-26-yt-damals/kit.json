@@ -1,0 +1,37 @@
+{
+  "id": "yt-damals",
+  "name": "Damals",
+  "handle": "DamalsGeschichte",
+  "label": "geschichte kurz erzählt",
+  "audience": "Germany, Austria and Switzerland (DACH, EU), adults 18-54, German",
+  "language": "German (Edge TTS de-DE-ConradNeural / de-DE-KatjaNeural)",
+  "niche": "Short, well-sourced stories about everyday history: inventions, cities, old customs, forgotten people and the origins of familiar things, told in German",
+  "why": "Germany is one of YouTube's biggest European markets, with about 65 million users (AIR, 2025), and vidiQ reports that German viewers earn 5 to 10 times the ad rates of viewers in India, Indonesia or Brazil. The network has no German-language or history channel yet, and calm history storytelling made from public-domain archive images, stock footage and AI illustrations is advertiser-friendly and fully original.",
+  "first_videos": [
+    "Warum hat jedes deutsche Dorf eine Lindenstraße? Die Antwort ist 800 Jahre alt.",
+    "Vor 1893 hatte jede deutsche Stadt ihre eigene Uhrzeit. Was dann passierte.",
+    "Der Döner wurde nicht in der Türkei erfunden, sondern 1972 in Berlin. Oder doch nicht?",
+    "Warum Gummibärchen ausgerechnet Bären sind: die Geschichte von Hans Riegel aus Bonn.",
+    "Dieser Mann erfand 1817 in Mannheim das Fahrrad, weil es keine Pferde mehr gab."
+  ],
+  "tagline": "Geschichte, kurz erzählt.",
+  "description": "Damals erzählt die Geschichte hinter den Dingen, die wir jeden Tag sehen: Straßennamen, Erfindungen, alte Bräuche, vergessene Menschen und Städte, die sich neu erfunden haben. Jede Folge dauert weniger als eine Minute und beginnt mit einer Frage, die Sie sich vielleicht noch nie gestellt haben.\n\nSie bekommen ruhige, sorgfältig recherchierte Geschichten mit Archivbildern, Illustrationen und klarer Sprache. Wir zeigen keine Gewalt um ihrer selbst willen. Uns interessiert, wie Menschen früher gelebt, gedacht und Neues geschaffen haben. Jeden Tag erscheinen sechs neue Shorts.\n\nDamals ist ein KI-gemachter Kanal von Hopeverse Media. Made by AI. Made with hope.",
+  "keywords": [
+    "Geschichte",
+    "Geschichte kurz erklärt",
+    "deutsche Geschichte",
+    "Alltagsgeschichte",
+    "Erfindungen",
+    "Wissen",
+    "Damals",
+    "Geschichte Shorts",
+    "Mittelalter",
+    "Kulturgeschichte",
+    "Stadtgeschichte",
+    "Ursprung",
+    "Fakten",
+    "Bildung",
+    "Hopeverse"
+  ],
+  "accent": "sand"
+}

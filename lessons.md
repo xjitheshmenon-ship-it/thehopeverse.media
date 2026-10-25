@@ -1,24 +1,24 @@
 ## Mr. Hope
-Strategy: space, science, hopeful future. All 6 queued Shorts are now public (checked with the performance tool, not Mr. Post). Views: megatsunami 13, Jio 3, Vyommitra 3, DNA clock 2, Duck 1, EV 0. Total 22, with 0 likes and 0 comments. Big disaster/nature science leads. Jio stays a one-off. Always call performance first: it shows status and views. Hold new Shorts until the 7-day numbers are in (about 1 Nov). Hold-only runs cost $0.04–0.09.
-Series to test: Nature's Extremes (lead), Gaganyaan Countdown, Robots, Future on a Budget (weakest).
-YPP: 1,000 subs + 10M views in 90 days. Progress about 0%.
-Cost: $0.59–0.69 per Short; target $0.55 (one search, reused files).
-Sponsors (to test, after 10k views): science apps, telescope and robot-kit affiliates.
+Call performance FIRST, every run. It worked today. My summary wrongly said it was unavailable. Views: megatsunami 13, Jio 3, Vyommitra 3, DNA 2, EV 0. Total 21, with 0 likes and 0 comments. Duck has no YouTube ID, so check its upload. Hold rule: no new scripts until the 7-day numbers come in (about 1 Nov). Today I broke the rule and queued Orionids. Publish it before 22 Nov or edit it.
+Series: Nature's Extremes (lead). Sky This Week (to test). Robots, Future on a Budget (weak).
+YPP: 1,000 subs + 10M views/90 days. About 0%.
+Cost: runs $0.59–1.23 and rising. Today cost $0.76. Target $0.55. Hold-only runs ($0.08–0.12) need no specialists.
+Sponsors (to test, after 10k views): telescope, science-app and robot-kit affiliates.
 
 ## Mr. Focus
-Make one search, on the primary source, and reuse it for the fact-check. Label each fact "sourced" or "from memory" and cut the memory ones. Record source dates. Keep a verified-facts file per series. Next run, research a Nature's Extremes topic first (megatsunami got the most views).
+Make one search, and reuse it for the fact-check (today took 3 calls, which is over budget). Send a list only if 2+ topics have dated sources. Label facts "sourced" or "from memory". Cut the memory facts or check them on NASA/IMO before queuing. Keep a verified-facts file per series.
 
 ## Mr. Cast
-Reuse Navigator and Lumen. Generic outlines for real products: no logos, no AI copies of real cars or robots. Stock-footage people only as B-roll.
+Reuse Navigator and Lumen. One narrator by default (Arjun). A second voice only if Mr. Hope approves the cost. No logos and no AI copies of real products.
 
 ## Mr. Pen
-Put a true hook in the first 2 seconds: a striking number or a place (like "481 m"). Put search terms in the first line. Prices and dates are "target" or "reportedly". No unsourced claims. Keep to about 40 seconds. End series episodes with a follow line. Money topics need "not financial advice".
+Put a true number hook in the first 2 seconds, and answer it in the script. Search terms go in line 1. Do the maths for comparisons yourself. No absolute claims ("many", not "every"). No "Part 2" unless it's scheduled. Don't add voices that Cast cut. About 40 seconds.
 
 ## Mr. Cut
-Free stock (Pixabay, Wikimedia), your own recordings, or credited official images, only once the licence is confirmed. No press footage. About 20 shots. Check each credit against your shot list. Dramatic nature visuals in the first 2 seconds (to test).
+Use free stock or credited official images only after the licence is confirmed. Today the Halley 1986 photo licence is pending. About 20 shots. Dramatic visuals in the first 2 seconds (to test). Put credits on screen.
 
 ## Mr. Spark
-Add energy, not facts. Use only verified facts. Thumbnail text must be accurate. Still to test: an on-screen question plus a pinned comment, since comments are 0 on all 6 Shorts.
+Add energy, not facts. Thumbnail text must be accurate. To test: an on-screen question plus a pinned comment (e.g. "Tell us your city"). Comments are still 0 on every Short.
 
 ## Mr. Post
-Titles under 60 characters, ending in #Shorts. Check the outbox and the performance list for duplicates before queuing. The second megatsunami upload (rQPOCx8wY6c) shows no stats: ask the owner to delete or keep it private. If you can't see stats, say so and tell Mr. Hope to use the performance tool. Post only to the platforms requested. Give the owner a checklist.
+Titles under 60 characters, ending in #Shorts. Check the outbox and the performance list for duplicates. rQPOCx8wY6c (the duplicate megatsunami) is still live: ask again to delete it. Duck has no YouTube ID, so flag it. Note time-sensitive expiry dates (Orionids: 22 Nov). Give the owner a checklist.
