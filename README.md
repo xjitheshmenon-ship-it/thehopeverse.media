@@ -1,6 +1,6 @@
 # Hopeverse Media agents
 
-Mr. Hope, the primary decision maker, makes YouTube Shorts for Hopeverse Media and directs his mini agents: Mr. Focus (the researcher, who finds the 5 best topics of the day, researches them and fact-checks scripts), Mr. Cast (character designer, keeps a recurring cast in `characters.md`), Mr. Pen (script writer), Mr. Cut (video editor), Mr. Spark (thumbnail and title), and Mr. Post (channel manager).
+Mr. Hope, the primary decision maker, makes YouTube Shorts for Hopeverse Media and directs his mini agents: Mr. Focus (the researcher, who finds the 5 best topics of the day, researches them and fact-checks scripts), Mr. Cast (character designer, keeps a recurring cast in `characters.md`), Mr. Pen (script writer), Mr. Cut (video editor), Mr. Spark (thumbnail and title), Mr. Post (channel manager), and Mr. Grow (audience growth: every morning he reads the numbers and today's trends and writes `runs/growth.md`, with notes each agent follows that day and a to-do list for you, such as pinned comments, community posts and cross-promotion, which appears in the daily report).
 
 ## Change what the agents do
 
@@ -21,6 +21,14 @@ Every run saves all helpers' outputs to `runs/`. Finished packages go to `outbox
 ## Run in the cloud (no PC)
 
 `.github/workflows/hope.yml` runs Hope on GitHub's servers: every day at 17:15 IST it researches, makes and posts the Short (`agents.py`, then `video.py`), and every hour it updates the dashboard. Keys go in the repo's **Settings > Secrets and variables > Actions**: `ANTHROPIC_API_KEY`, `PIXABAY_API_KEY`, `FAL_KEY`, `INSTAGRAM_TOKEN`, optional `PERPLEXITY_API_KEY`, and the YouTube files pasted as text: `YOUTUBE_CLIENT_SECRET` (client_secret.json), `YOUTUBE_TOKEN` (token.json), optional `YOUTUBE_TOKEN_HI` (token-hi.json). Hope's memory (outbox packages, `lessons.md`, `characters.md`, run logs) is kept on the `state` branch by `state.py`; videos and tokens are never saved there. To move from the PC, run `python state.py save` there once, then delete the Task Scheduler tasks so the Short isn't posted twice. Start a run by hand from the **Actions** tab > Hope > Run workflow.
+
+## 100-day plan: 6 Shorts per channel, a new channel idea every day
+
+The daily cloud run makes `SHORTS_PER_DAY` Shorts (default 6) for every channel in `channels.json` with platform `youtube` and status `live`, and the same number of series episodes when the series channel is connected. Mr. Hope reviews and rewrites `lessons.md` once, after the day's last Short. All runs stop once the day's spend reaches `DAILY_BUDGET` (default $20). Change both under **Settings > Secrets and variables > Actions > Variables**, no code edit needed.
+
+YouTube's API allows about 6 uploads a day per Google Cloud project (10,000 quota units, 1,600 per upload), shared by every channel that uses the same `client_secret.json`. Uploads over the limit wait for the next run. Before connecting more channels, ask Google for more quota: Google Cloud Console > APIs & Services > YouTube Data API v3 > Quotas > the YouTube quota extension form (free; it takes a few days to weeks).
+
+Every day `scout.py` also proposes one new channel for an audience the network doesn't reach yet, with a finished brand kit in the Signal style: name, handle, tagline, About text, keywords, first video ideas, profile picture, banner and watermark. They are saved in `ideas/<date>-<id>/` on the `state` branch, and the idea appears at the end of `runs/spend-report.md`. `python scout.py --demo` renders a sample kit locally.
 
 ## Channels
 
