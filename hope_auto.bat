@@ -10,6 +10,8 @@ rem Fetch the latest code and instructions from GitHub first.
 git pull --rebase --autostash >> runs\auto.log 2>&1
 if /i "%1"=="post" (
   python video.py >> runs\auto.log 2>&1
+  rem Show today's spending report on screen.
+  if exist runs\spend-report.md start "" notepad runs\spend-report.md
 ) else (
   python agents.py >> runs\auto.log 2>&1
   python video.py --no-upload >> runs\auto.log 2>&1

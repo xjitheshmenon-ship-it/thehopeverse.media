@@ -313,6 +313,33 @@ def post(task: str) -> str:
 
 
 HOPE = TEAM["Mr. Hope"]
+SPEND = HERE / "runs" / "spend-report.md"
+
+
+def spend_report() -> str:
+    """Write runs/spend-report.md from history.jsonl: today, last 7 days, this month and a daily table."""
+    runs = [json.loads(r) for r in HISTORY.read_text(encoding="utf-8").splitlines() if r.strip()] \
+        if HISTORY.exists() else []
+    days = {}
+    for r in runs:
+        d = days.setdefault(r["date"][:10], [0, 0.0])
+        d[0] += 1
+        d[1] += r["cost_usd"]
+    now = datetime.now()
+    total = lambda keep: sum(c for day, (_, c) in days.items() if keep(datetime.strptime(day, "%Y-%m-%d")))
+    lines = [f"# Hopeverse spending report, {now:%d %b %Y %H:%M}", "",
+             f"- Today: ${days.get(f'{now:%Y-%m-%d}', [0, 0])[1]:.2f} ({days.get(f'{now:%Y-%m-%d}', [0])[0]} runs)",
+             f"- Last 7 days: ${total(lambda d: (now - d).days < 7):.2f}",
+             f"- This month: ${total(lambda d: (d.year, d.month) == (now.year, now.month)):.2f}",
+             f"- All time: ${sum(c for _, c in days.values()):.2f}", "",
+             "Claude (Anthropic) costs as estimated by agents.py, review included. Video images from fal.ai add",
+             "about $0.006 each (about $0.06 a Short). Exact bills: console.anthropic.com and fal.ai/dashboard.", "",
+             "| Day | Runs | Cost |", "| --- | --- | --- |"]
+    lines += [f"| {day} | {n} | ${c:.2f} |" for day, (n, c) in sorted(days.items(), reverse=True)[:14]]
+    SPEND.parent.mkdir(exist_ok=True)
+    SPEND.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return "\n".join(lines)
+
 
 if __name__ == "__main__":
     goal = " ".join(sys.argv[1:]) or (
@@ -322,12 +349,13 @@ if __name__ == "__main__":
                                                  cast, pen, cut, spark, post],
                         effort="medium", model=MODEL)
     print(summary)
-    HISTORY.parent.mkdir(exist_ok=True)
-    with HISTORY.open("a", encoding="utf-8") as f:
-        f.write(json.dumps({"date": f"{datetime.now():%Y-%m-%d %H:%M}", "cost_usd": round(spent, 2)}) + "\n")
     cap, BUDGET = BUDGET, spent + 0.25  # ponytail: fixed $0.25 for the review; raise if lessons get cut off
     print(run_agent("Mr. Hope (review)", TEAM["Mr. Hope (review)"],
                     f"Today's run cost ${spent:.2f}. Mr. Hope's summary of today:\n\n{summary}",
                     [performance, read_lessons, save_lessons], effort="low", model=MODEL))
+    HISTORY.parent.mkdir(exist_ok=True)
+    with HISTORY.open("a", encoding="utf-8") as f:  # logged after the review so its cost is counted too
+        f.write(json.dumps({"date": f"{datetime.now():%Y-%m-%d %H:%M}", "cost_usd": round(spent, 2)}) + "\n")
     print(f"\nEstimated cost of this run: ${spent:.2f} (cap ${cap:.2f} + $0.25 review)")
+    print(spend_report())
     print(f"Full scripts and research saved in {LOG}")
