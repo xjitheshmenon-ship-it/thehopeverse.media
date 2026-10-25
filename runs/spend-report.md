@@ -1,60 +1,69 @@
-# Hopeverse spending report, 26 Oct 2026 02:49
+# Hopeverse spending report, 26 Oct 2026 03:43
 
-- Today: $5.67 (9 runs)
-- Last 7 days: $8.37
-- This month: $8.37
-- All time: $8.37
+- Today: $6.45 (14 runs)
+- Last 7 days: $9.15
+- This month: $9.15
+- All time: $9.15
 
 Claude (Anthropic) costs as estimated by agents.py, review included. Video images from fal.ai add
 about $0.006 each (about $0.06 a Short). Exact bills: console.anthropic.com and fal.ai/dashboard.
 
 | Day | Runs | Cost |
 | --- | --- | --- |
-| 2026-10-26 | 9 | $5.67 |
+| 2026-10-26 | 14 | $6.45 |
 | 2026-10-25 | 5 | $2.70 |
 
-## Today's new channel idea (folder ideas/2026-10-26-yt-damals)
+## Today's new channel idea (folder ideas/2026-10-26-yt-instinct)
 
-# Damals  (@DamalsGeschichte)
+# Instinct  (@InstinctNatureFR)
 
-**Geschichte, kurz erzählt.**
+**Le vivant, vu de près.**
 
-- Audience: Germany, Austria and Switzerland (DACH, EU), adults 18-54, German (German (Edge TTS de-DE-ConradNeural / de-DE-KatjaNeural))
-- Niche: Short, well-sourced stories about everyday history: inventions, cities, old customs, forgotten people and the origins of familiar things, told in German
-- Why now: Germany is one of YouTube's biggest European markets, with about 65 million users (AIR, 2025), and vidiQ reports that German viewers earn 5 to 10 times the ad rates of viewers in India, Indonesia or Brazil. The network has no German-language or history channel yet, and calm history storytelling made from public-domain archive images, stock footage and AI illustrations is advertiser-friendly and fully original.
+- Audience: France, Belgium, Switzerland and Luxembourg (EU), plus Quebec, adults and families 18-54, French (French (fr-FR, Edge TTS voice such as fr-FR-DeniseNeural or fr-FR-HenriNeural))
+- Niche: Short, well-checked stories about animal behaviour and nature's strangest adaptations, told in French with stock wildlife footage and AI images
+- Why now: Fluxnote's 2026 guides put average YouTube CPMs in France at about €8-25, or €6-14 for faceless channels, which makes France one of Europe's stronger ad markets. Studios like Bright Side already reach a huge Romance-language audience with this kind of curious, faceless fact video: its Spanish channel GENIAL has about 32 million subscribers. Animal and nature stories are brand-safe, never go out of date, and suit plentiful stock wildlife footage.
 
 ## Channel description (paste into YouTube > Customisation > Basic info)
 
-Damals erzählt die Geschichte hinter den Dingen, die wir jeden Tag sehen: Straßennamen, Erfindungen, alte Bräuche, vergessene Menschen und Städte, die sich neu erfunden haben. Jede Folge dauert weniger als eine Minute und beginnt mit einer Frage, die Sie sich vielleicht noch nie gestellt haben.
+Instinct raconte en moins d'une minute les comportements les plus étonnants du monde animal et de la nature : des corbeaux qui reconnaissent les visages, des pieuvres qui résolvent des énigmes, des plantes qui communiquent. Chaque histoire repose sur des études publiées et des sources vérifiables.
 
-Sie bekommen ruhige, sorgfältig recherchierte Geschichten mit Archivbildern, Illustrationen und klarer Sprache. Wir zeigen keine Gewalt um ihrer selbst willen. Uns interessiert, wie Menschen früher gelebt, gedacht und Neues geschaffen haben. Jeden Tag erscheinen sechs neue Shorts.
+Six nouveaux Shorts chaque jour, pour apprendre quelque chose de vrai sur le vivant et regarder la nature autrement, seul ou en famille.
 
-Damals ist ein KI-gemachter Kanal von Hopeverse Media. Made by AI. Made with hope.
+Instinct est une chaîne Hopeverse Media, réalisée par l'IA et faite avec espoir.
 
 ## Keywords
 
-Geschichte, Geschichte kurz erklärt, deutsche Geschichte, Alltagsgeschichte, Erfindungen, Wissen, Damals, Geschichte Shorts, Mittelalter, Kulturgeschichte, Stadtgeschichte, Ursprung, Fakten, Bildung, Hopeverse
+animaux, faits sur les animaux, nature, comportement animal, le saviez-vous, biodiversité, faune sauvage, science de la nature, animaux étonnants, océan, insectes, oiseaux, documentaire animalier, Shorts en français, Hopeverse
 
 ## First videos
 
-1. Warum hat jedes deutsche Dorf eine Lindenstraße? Die Antwort ist 800 Jahre alt.
-2. Vor 1893 hatte jede deutsche Stadt ihre eigene Uhrzeit. Was dann passierte.
-3. Der Döner wurde nicht in der Türkei erfunden, sondern 1972 in Berlin. Oder doch nicht?
-4. Warum Gummibärchen ausgerechnet Bären sind: die Geschichte von Hans Riegel aus Bonn.
-5. Dieser Mann erfand 1817 in Mannheim das Fahrrad, weil es keine Pferde mehr gab.
+1. Ce poisson change de sexe quand le chef du groupe meurt, et ce n'est pas une légende
+2. Pourquoi les corbeaux se souviennent de votre visage pendant des années
+3. L'animal qui survit au vide spatial mesure moins d'un millimètre
+4. Les éléphants ont un 'prénom' pour chacun d'entre eux, la science vient de le prouver
+5. Cette pieuvre a couvé ses œufs 53 mois sans jamais manger
 
 ## Mr. Grow's to-dos for you today
 
-- **Pinned comments:**
-  - Hopeverse Media: "A wave 481 m tall: what would you do in the first 10 seconds?"
-  - Hopeverse Hindi: "आपको कौन सा विज्ञान तथ्य सबसे हैरान करता है?"
-  - Kissa: "आपके हिसाब से अगला twist क्या होगा?"
-- **Community posts:**
-  - Hopeverse Media: "Next topic?" Poll options: Volcanoes, Mars, Robots, Deep sea.
-  - Hindi: "कौन सा विषय?" Poll options: ISRO, रोबोट, प्रकृति.
-  - Kissa: "Ending: happy or sad?" Poll options: Happy, Sad.
-- **Cross-promotion:**
-  - Share the megatsunami Short to Instagram with this caption: "481 m of water. Full story on YouTube, link in bio. #space #science".
-  - Put the Hindi dub link in the Hopeverse Hindi caption and in the English Short's pinned comment.
-  - Share one Kissa episode to Instagram Reels with the caption "आज का twist 👀 रोज़ शाम 6 बजे".
-- **Posting time:** no change. There is no timing data yet, so re-check after 1 Nov.
+**Pinned comments**
+- Hopeverse Media: "Which city are you watching the sky from? 🌍"
+- Hindi: "आप कौन से शहर से हैं? कमेंट करें 👇"
+- Kissa: "अगर आप हीरो होते, तो क्या करते? 👇"
+
+**Community posts**
+- Hopeverse Media: "Which would you rather see first: a Mars landing or a Moon base?" Poll options: Mars, Moon, Both, Neither.
+- Hindi: "ISRO का अगला बड़ा मिशन कौन सा देखना चाहेंगे?" Poll options: गगनयान, चंद्रयान, शुक्रयान, सब.
+- Kissa: "कहानी में अगला ट्विस्ट क्या हो?" Poll options: राज़ खुलेगा, शादी टूटेगी, नया किरदार, प्यार.
+
+**Cross-promotion**
+- Instagram Reel: the megatsunami Short, captioned "A wave 481 m high. Guess where? 🌊 Full story on YouTube, link in bio."
+- Hindi channel: link to the Vyommitra Short from the English channel's description, and the reverse.
+- Kissa: share each episode's cliffhanger clip as a Story, captioned "आज का ट्विस्ट 👀".
+
+**Posting time**
+- No change yet. There are too few views to judge. Re-check on 1 Nov.
+- Test: Hopeverse Media at 6–8 pm IST, with Kissa staying at 6 pm.
+
+**Cleanup**
+- Delete the duplicate megatsunami Short rQPOCx8wY6c by hand.
+- Check the duck Short's upload.

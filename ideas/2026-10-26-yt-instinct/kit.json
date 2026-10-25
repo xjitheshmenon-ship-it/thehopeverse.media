@@ -1,0 +1,37 @@
+{
+  "id": "yt-instinct",
+  "name": "Instinct",
+  "handle": "InstinctNatureFR",
+  "label": "le génie du vivant",
+  "audience": "France, Belgium, Switzerland and Luxembourg (EU), plus Quebec, adults and families 18-54, French",
+  "language": "French (fr-FR, Edge TTS voice such as fr-FR-DeniseNeural or fr-FR-HenriNeural)",
+  "niche": "Short, well-checked stories about animal behaviour and nature's strangest adaptations, told in French with stock wildlife footage and AI images",
+  "why": "Fluxnote's 2026 guides put average YouTube CPMs in France at about €8-25, or €6-14 for faceless channels, which makes France one of Europe's stronger ad markets. Studios like Bright Side already reach a huge Romance-language audience with this kind of curious, faceless fact video: its Spanish channel GENIAL has about 32 million subscribers. Animal and nature stories are brand-safe, never go out of date, and suit plentiful stock wildlife footage.",
+  "first_videos": [
+    "Ce poisson change de sexe quand le chef du groupe meurt, et ce n'est pas une légende",
+    "Pourquoi les corbeaux se souviennent de votre visage pendant des années",
+    "L'animal qui survit au vide spatial mesure moins d'un millimètre",
+    "Les éléphants ont un 'prénom' pour chacun d'entre eux, la science vient de le prouver",
+    "Cette pieuvre a couvé ses œufs 53 mois sans jamais manger"
+  ],
+  "tagline": "Le vivant, vu de près.",
+  "description": "Instinct raconte en moins d'une minute les comportements les plus étonnants du monde animal et de la nature : des corbeaux qui reconnaissent les visages, des pieuvres qui résolvent des énigmes, des plantes qui communiquent. Chaque histoire repose sur des études publiées et des sources vérifiables.\n\nSix nouveaux Shorts chaque jour, pour apprendre quelque chose de vrai sur le vivant et regarder la nature autrement, seul ou en famille.\n\nInstinct est une chaîne Hopeverse Media, réalisée par l'IA et faite avec espoir.",
+  "keywords": [
+    "animaux",
+    "faits sur les animaux",
+    "nature",
+    "comportement animal",
+    "le saviez-vous",
+    "biodiversité",
+    "faune sauvage",
+    "science de la nature",
+    "animaux étonnants",
+    "océan",
+    "insectes",
+    "oiseaux",
+    "documentaire animalier",
+    "Shorts en français",
+    "Hopeverse"
+  ],
+  "accent": "mint"
+}
