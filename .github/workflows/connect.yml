@@ -1,0 +1,44 @@
+# Sign a YouTube channel in, no PC needed. Actions > "Connect a channel" > Run workflow.
+# Run 1: leave signin_url empty; the Google link is in the log under "Sign the channel in".
+# Run 2: paste the address the browser lands on ("can't connect to localhost") as signin_url.
+name: Connect a channel
+
+on:
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: "Which channel"
+        default: yt-kissa
+        type: choice
+        options: [yt-kissa, yt-hopeverse-hi, yt-hopeverse]
+      signin_url:
+        description: "Leave empty for the sign-in link, then paste the address the browser lands on"
+        default: ""
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  connect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install google-api-python-client google-auth-oauthlib
+      - run: printf '%s' "$CLIENT_SECRET" > client_secret.json
+        env:
+          CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+      - run: python state.py load
+      - name: Sign the channel in
+        env:
+          TOKEN_KEY: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          SIGNIN_URL: ${{ inputs.signin_url }}
+          CHANNEL: ${{ inputs.channel }}
+        run: python connect.py "$CHANNEL" "$SIGNIN_URL"
+      - name: Save the sign-in
+        if: inputs.signin_url != ''
+        run: python state.py save

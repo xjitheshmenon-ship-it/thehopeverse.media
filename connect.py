@@ -1,4 +1,4 @@
-"""Sign a YouTube channel in from GitHub, no PC needed: Actions > Hope > Run workflow, job "connect".
+"""Sign a YouTube channel in from GitHub, no PC needed: Actions > Connect a channel > Run workflow.
 
     Run 1 (signin_url empty): prints a Google sign-in link in the run's log. Open it on any phone or computer,
         sign in and pick the channel. The browser then shows a "can't connect to localhost" page: copy its whole
