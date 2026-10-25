@@ -9,10 +9,19 @@ on:
   workflow_dispatch:
     inputs:
       job:
-        description: "daily = make and post a Short, stats = dashboard numbers only"
+        description: "daily = make and post a Short, stats = dashboard numbers only, connect = sign a channel in (see connect.py)"
         default: daily
         type: choice
-        options: [daily, stats]
+        options: [daily, stats, connect]
+      channel:
+        description: "connect only: which channel"
+        default: yt-kissa
+        type: choice
+        options: [yt-kissa, yt-hopeverse-hi, yt-hopeverse]
+      signin_url:
+        description: "connect only: leave empty for the sign-in link, then paste the address the browser lands on"
+        default: ""
+        type: string
 
 permissions:
   contents: write
@@ -45,12 +54,30 @@ jobs:
           CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           TOKEN: ${{ secrets.YOUTUBE_TOKEN }}
           TOKEN_HI: ${{ secrets.YOUTUBE_TOKEN_HI }}
+          TOKEN_SERIES: ${{ secrets.YOUTUBE_TOKEN_SERIES }}
         run: |
           [ -n "$CLIENT_SECRET" ] && printf '%s' "$CLIENT_SECRET" > client_secret.json
           [ -n "$TOKEN" ] && printf '%s' "$TOKEN" > token.json
           [ -n "$TOKEN_HI" ] && printf '%s' "$TOKEN_HI" > token-hi.json
+          [ -n "$TOKEN_SERIES" ] && printf '%s' "$TOKEN_SERIES" > token-series.json
           true
       - run: python state.py load
+      - name: Unlock channel sign-ins saved by connect
+        env:
+          TOKEN_KEY: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+        run: |
+          for f in tokens/*.enc; do
+            [ -f "$f" ] && openssl enc -d -aes-256-cbc -pbkdf2 -pass env:TOKEN_KEY -in "$f" -out "$(basename "$f" .enc)"
+          done
+          true
+
+      - name: Sign a channel in
+        if: inputs.job == 'connect'
+        env:
+          TOKEN_KEY: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          SIGNIN_URL: ${{ inputs.signin_url }}
+          CHANNEL: ${{ inputs.channel }}
+        run: python connect.py "$CHANNEL" "$SIGNIN_URL"
 
       - name: Research, script and make the Short
         if: github.event.schedule == '45 11 * * *' || inputs.job == 'daily'
@@ -58,8 +85,14 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core > /dev/null  # Hindi captions
           python agents.py
           python video.py
-      - name: Save Hope's memory
+      - name: Write and post today's Hindi series episode
         if: always() && (github.event.schedule == '45 11 * * *' || inputs.job == 'daily')
+        run: |
+          [ -f token-series.json ] || { echo "Series channel not connected yet: run the workflow with job connect"; exit 0; }
+          python series.py
+          python video.py
+      - name: Save Hope's memory
+        if: always() && (github.event.schedule == '45 11 * * *' || inputs.job == 'daily' || inputs.job == 'connect')
         run: python state.py save
 
       - name: Dashboard numbers

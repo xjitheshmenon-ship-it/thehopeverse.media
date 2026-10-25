@@ -1,6 +1,6 @@
 """Keep Hope's memory (outbox packages, run logs, lessons.md, characters.md,
-the hosts' reference photos) on the `state` branch on GitHub,
-so the daily run can happen on GitHub's servers instead of one PC. Videos and sign-in tokens are never saved.
+the hosts' reference photos, the series story so far) on the `state` branch on GitHub,
+so the daily run can happen on GitHub's servers instead of one PC. Videos are never saved; sign-ins only encrypted (tokens/*.enc).
 
     python state.py load    -> copy the saved files into this folder
     python state.py save    -> save this folder's files as a new commit on the state branch
@@ -24,8 +24,8 @@ def git(*args, **kw) -> str:
 def files() -> list:
     runs = HERE / "runs"
     found = [*OUTBOX.glob("*.json"), *OUTBOX.glob("*/board.json"), *runs.glob("*.md"), *runs.glob("*.jsonl"),
-             *(HERE / "hosts").glob("*.png"),
-             LESSONS, CAST]
+             *(HERE / "hosts").glob("*.png"), *(HERE / "tokens").glob("*.enc"),
+             LESSONS, CAST, HERE / "series.json"]
     return [str(p.relative_to(HERE)) for p in found if p.exists()]
 
 

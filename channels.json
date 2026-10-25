@@ -29,5 +29,24 @@
     "voice": "hi-IN-MadhurNeural",
     "token": "token-hi.json",
     "status": "dub"
+  },
+  {
+    "id": "yt-kissa",
+    "platform": "youtube",
+    "name": "Kissa",
+    "url": "",
+    "niche": "Hindi micro web series: original daily episodes inspired by K-drama tropes, set in India (chosen by Hope)",
+    "audience": "India, Hindi",
+    "lang": "hi",
+    "language": "Hindi",
+    "voice": "hi-IN-MadhurNeural",
+    "token": "token-series.json",
+    "status": "series",
+    "branding": {
+      "description": "किस्सा — रोज़ एक नई कहानी, हर एपिसोड में एक ट्विस्ट।\nOriginal Hindi micro web series: love, revenge, family secrets and contract marriages, told in short episodes you can watch in a minute.\nनया एपिसोड हर रोज़ शाम 6 बजे। Subscribe करें ताकि अगला ट्विस्ट मिस न हो।\nEk kahaani. Roz ek twist.\nMade by AI. Made with hope.",
+      "keywords": "\"hindi web series\" \"micro drama\" \"hindi drama\" \"love story\" kahani \"short series\" \"contract marriage\" \"revenge drama\" kahaniyan",
+      "country": "IN",
+      "banner": "brand/kissa-banner.png"
+    }
   }
 ]

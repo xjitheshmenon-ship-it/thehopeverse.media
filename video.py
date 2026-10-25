@@ -7,6 +7,9 @@ for each shot in Mr. Cut's edit plan, else a photo-real AI image from fal.ai (FA
 
 Dub channels: every new Short is also re-voiced for each channel in channels.json with a "lang" (e.g. Hindi), reusing
 the same footage, once that channel is signed in:  python video.py --connect hi
+
+Series channels (series.py writes one Hindi episode a day) bring their own scenes and cast; sign in once with
+python video.py --connect <channel id>
 """
 import asyncio
 import json
@@ -277,12 +280,12 @@ def caption(text: str, size: tuple, lang: str = "") -> np.ndarray:
     return np.array(img)
 
 
-def speak(text: str, voice: str, path: Path) -> bool:
+def speak(text: str, voice: str, path: Path, pitch: str = "+0Hz") -> bool:
     """Edge's free voice service sometimes returns an empty or broken file, so check it and try again.
     Returns False if it never works, so the caller can drop that scene instead of losing the whole video."""
     for attempt in range(6):  # about 2.5 minutes in all, so a short internet drop doesn't cost a scene
         try:
-            asyncio.run(edge_tts.Communicate(text, voice).save(str(path)))
+            asyncio.run(edge_tts.Communicate(text, voice, pitch=pitch).save(str(path)))
             AudioFileClip(str(path)).close()  # raises if ffmpeg can't read it
             return True
         except Exception as e:
@@ -292,7 +295,7 @@ def speak(text: str, voice: str, path: Path) -> bool:
     return False
 
 
-def music(work: Path, seconds: float) -> Path | None:
+def music(work: Path, seconds: float, mood: str = "") -> Path | None:
     """One background track per Short from fal.ai, in the mood set by "## Music" in team.md. Dubs reuse it."""
     path = work / "music.mp3"
     if path.exists() or not os.environ.get("FAL_KEY"):
@@ -300,7 +303,7 @@ def music(work: Path, seconds: float) -> Path | None:
     try:
         import fal_client
         result = fal_client.subscribe(MUSIC_MODEL, arguments={
-            "prompt": TEAM.get("Music", "mysterious, curious ambient underscore, no vocals"),
+            "prompt": mood or TEAM.get("Music", "mysterious, curious ambient underscore, no vocals"),
             "duration": min(seconds + 2, 380), "negative_prompt": "vocals, singing, speech"})
         urllib.request.urlretrieve(result["audio"]["url"], path)
         return path
@@ -312,9 +315,12 @@ def music(work: Path, seconds: float) -> Path | None:
 def render(package_path: Path, voice: str = VOICE) -> Path:
     package = json.loads(package_path.read_text(encoding="utf-8"))
     size = (1080, 1920)  # YouTube Shorts are vertical
-    lang = package_path.suffixes[0][1:] if len(package_path.suffixes) > 1 else ""
-    if "dub_of" in package:  # a dub reuses the original's folder, so its footage is already downloaded
-        board, work = Storyboard(scenes=package["scenes"]), OUTBOX / package["dub_of"]
+    lang = package_path.suffixes[0][1:] if len(package_path.suffixes) > 1 else package.get("lang", "")
+    # A series episode's characters are shown and voiced the same way as the hosts.
+    HOSTS.update({c["name"]: c for c in package.get("cast", [])})
+    if "scenes" in package:  # a dub reuses the original's folder, so its footage is already downloaded
+        board, work = Storyboard(scenes=package["scenes"]), OUTBOX / package.get("dub_of", package_path.stem)
+        work.mkdir(exist_ok=True)
     else:
         board, work = storyboard(package), package_path.with_suffix("")
         work.mkdir(exist_ok=True)
@@ -329,7 +335,8 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
             continue
         audio = work / f"{prefix}{i:03}.mp3"
         # Dubs keep their channel's voice; English lines are read by the host who says them.
-        if not speak(scene.narration, voice if lang else HOSTS.get(scene.speaker, {}).get("voice", voice), audio):
+        who = {} if "dub_of" in package else HOSTS.get(scene.speaker, {})
+        if not speak(scene.narration, who.get("voice", voice), audio, who.get("pitch", "+0Hz")):
             continue
         sound = AudioFileClip(str(audio))
         duration = sound.duration + 0.3
@@ -353,7 +360,7 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
     listing.write_text("".join(f"file '{p.resolve().as_posix()}'\n" for p in parts), encoding="utf-8")
     subprocess.run([FFMPEG_BINARY, "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(listing),
                     "-c", "copy", str(voiced)], check=True)
-    track = music(work, seconds)
+    track = music(work, seconds, package.get("music", ""))
     if not track:
         voiced.replace(out)
         return out
@@ -394,13 +401,13 @@ def upload(video: Path, package: dict, token: Path = TOKEN) -> str:
     """Upload as a public video (the owner chose public by default on 2026-10-25)."""
     from googleapiclient.http import MediaFileUpload
 
-    footer = TEAM.get("YouTube footer", "")  # edit it in team.md
+    footer = package.get("footer", TEAM.get("YouTube footer", ""))  # edit it in team.md
     tags = list(dict.fromkeys(["Hopeverse Media", "Shorts", *re.findall(r"#(\w+)", package["description"])]))
     while len(",".join(tags)) > 450:  # YouTube allows 500 characters of tags
         tags.pop()
     body = {"snippet": {"title": package["title"][:100],
                         "description": f"{package['description']}\n\n{footer}".strip()[:5000],
-                        "tags": tags, "categoryId": "28"},  # Science & Technology
+                        "tags": tags, "categoryId": package.get("category", "28")},  # 28 = Science & Technology
             "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False,
                        "containsSyntheticMedia": True}}
     request = youtube(token=token).videos().insert(
@@ -441,19 +448,19 @@ def instagram(video: Path, caption: str) -> str:
 
 if __name__ == "__main__":
     channels = {c["id"]: c for c in _channels()}
-    if "--connect" in sys.argv:  # sign a dub channel in once: python video.py --connect hi
+    if "--connect" in sys.argv:  # sign a channel in once: python video.py --connect hi (or a channel id)
         lang = sys.argv[sys.argv.index("--connect") + 1]
-        c = next(c for c in channels.values() if c.get("lang") == lang)
+        c = next(c for c in channels.values() if lang in (c.get("lang"), c["id"]))
         print(f"Sign in and pick the {c['name']} channel in the browser.")
         youtube(token=HERE / c["token"])
         sys.exit()
-    dubs = [c for c in channels.values() if c.get("lang") and (HERE / c["token"]).exists()]
+    dubs = [c for c in channels.values() if c.get("status") == "dub" and (HERE / c["token"]).exists()]
     platform = {i: c["platform"] for i, c in channels.items()}
     for path in sorted(OUTBOX.glob("*.json")):
         package = json.loads(path.read_text(encoding="utf-8"))
         video = path.with_suffix(".mp4")
         voice = channels.get(package["channel_id"], {}).get("voice", VOICE)
-        if not video.exists():
+        if not video.exists() and "youtube_id" not in package:  # cloud runs don't keep videos; never remake posted ones
             print(f"Making video for {path.name}")
             render(path, voice)
         # Only Shorts made from now on have board.json, so older ones are never dubbed.
@@ -477,7 +484,7 @@ if __name__ == "__main__":
             package["youtube_id"] = upload(video, package, HERE / channels[package["channel_id"]].get("token", "token.json"))
             path.write_text(json.dumps(package, indent=2), encoding="utf-8")
             print(f"    https://youtu.be/{package['youtube_id']}")
-        if "dub_of" in package:  # dubs go to their own YouTube channel only
+        if channels.get(package["channel_id"], {}).get("lang"):  # Hindi dubs and series stay on their own channel
             continue
         # A video is cross-posted to Instagram once it is public on YouTube; set a YouTube video to
         # private in Studio to keep it off Instagram.
