@@ -232,8 +232,8 @@ def read_cast() -> str:
     """Read the channel's recurring characters (names, looks, voices, personalities)."""
     if CAST.exists():
         return CAST.read_text(encoding="utf-8")
-    return ("- The Hopeverse Navigator: the channel's narrator; look and voice not set yet.\n"
-            "- Lumen: the mascot, a glowing point of light.")
+    return ("- The Hopeverse Navigator: the channel's narrator, a real person in their 30s in a dark jacket, "
+            "shown in live-action footage looking up at the night sky.")
 
 
 @beta_tool

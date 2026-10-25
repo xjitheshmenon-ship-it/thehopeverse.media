@@ -2,8 +2,8 @@
 
     python video.py            # every outbox package that has no video yet
 
-Voice: free Microsoft Edge voices (edge-tts). Pictures: an AI image per scene from fal.ai when FAL_KEY is
-set, otherwise Pexels stock clips when PEXELS_API_KEY is set, otherwise plain coloured backgrounds. Upload: needs client_secret.json from Google Cloud (see README).
+Voice: free Microsoft Edge voices (edge-tts). Pictures: real moving stock footage from Pexels (free, PEXELS_API_KEY)
+for each shot in Mr. Cut's edit plan, else a photo-real AI image from fal.ai (FAL_KEY), else a plain colour. Upload: needs client_secret.json from Google Cloud (see README).
 """
 import asyncio
 import json
@@ -26,7 +26,8 @@ from agents import HELPER_MODEL, OUTBOX, _channels, client, read_cast
 HERE = Path(__file__).parent
 VOICE = os.environ.get("HOPE_VOICE", "en-US-AndrewNeural")
 FAL_MODEL = "fal-ai/flux/schnell"  # about $0.006 per Short-sized image
-STYLE = "vertical 9:16, cinematic, hopeful mood, soft glowing light, rich colour, high detail, no text, no words"
+STYLE = ("photorealistic real photograph, shot on 35mm film camera, natural light, documentary style, vertical 9:16, "
+         "not a cartoon, not an illustration, not CGI, no text, no words")
 SECRET, TOKEN = HERE / "client_secret.json", HERE / "token.json"
 LOGO = HERE / "logo.png"  # replace this file to change the watermark
 
@@ -49,11 +50,14 @@ def storyboard(package: dict) -> Storyboard:
         max_tokens=16000,
         output_config={"effort": "low"},
         messages=[{"role": "user", "content":
-                   "Split this video package into scenes for narration. narration: exactly what the voice says "
-                   "(only spoken words, no stage directions). on_screen_text: at most 8 words. picture_search: "
-                   "2-4 concrete, filmable words to search a stock video site (e.g. 'ocean waves aerial'). image_prompt: a vivid "
-                   "description of one AI image for the scene (subject, setting, camera angle); when a recurring "
-                   "character appears, copy their look from the cast below word for word so they stay consistent. "
+                   "Split this video package into scenes for narration, following Mr. Cut's edit plan shot by shot: Mr. Pen "
+                   "and Mr. Cut have already chosen which character and which background each shot shows. narration: "
+                   "exactly what the voice says (only spoken words, no stage directions). on_screen_text: at most 8 words. "
+                   "picture_search: Mr. Cut's footage search for the shot, or else 2-5 concrete words for real live-action "
+                   "stock video showing that character in that background (e.g. 'woman astronaut looking at earth'). "
+                   "image_prompt: a photo-real description of the same shot (person, setting, camera angle); when a "
+                   "recurring character appears, copy their look from the cast below word for word. Real footage only, "
+                   "never cartoon. "
                    "It is a YouTube Short: keep it under 60 seconds "
                    "of narration.\n\nCast:\n" + read_cast.call({}) + "\n\nPackage:\n"
                    + json.dumps(package)}],
@@ -88,7 +92,28 @@ def _zoom(img: Image.Image, size: tuple, duration: float):
 
 
 def background(scene: "Scene", size: tuple, duration: float, work: Path, used: set):
-    """An AI image from fal.ai (FAL_KEY), else Pexels stock footage (PEXELS_API_KEY), else a plain colour."""
+    """Real stock footage from Pexels (PEXELS_API_KEY), else a photo-real AI image from fal.ai (FAL_KEY),
+    else a Pexels photo, else a plain colour."""
+    query = scene.picture_search
+    if os.environ.get("PEXELS_API_KEY"):
+        try:
+            for orientation in ("portrait", "landscape"):  # landscape clips get centre-cropped to vertical
+                for video in _pexels("videos/search", {"query": query, "orientation": orientation, "per_page": 8})["videos"]:
+                    if video["id"] in used:
+                        continue
+                    files = [f for f in video["video_files"] if f.get("file_type") == "video/mp4" and (f.get("height") or 0) >= 720]
+                    if not files:
+                        continue
+                    used.add(video["id"])
+                    path = work / f"clip-{video['id']}.mp4"
+                    if not path.exists():
+                        urllib.request.urlretrieve(min(files, key=lambda f: f["height"])["link"], path)
+                    clip = _fill(VideoFileClip(str(path)).without_audio(), size)
+                    if clip.duration < duration:
+                        clip = clip.with_effects([vfx.Loop(duration=duration)])
+                    return clip.subclipped(0, duration)
+        except Exception as e:  # missing footage is not worth losing the video over
+            print(f"    no footage for '{query}': {e}")
     if os.environ.get("FAL_KEY"):
         try:
             import fal_client
@@ -101,28 +126,13 @@ def background(scene: "Scene", size: tuple, duration: float, work: Path, used: s
             return _zoom(Image.open(path), size, duration)
         except Exception as e:
             print(f"    no AI image for this scene: {e}")
-    query = scene.picture_search
     if os.environ.get("PEXELS_API_KEY"):
         try:
-            for video in _pexels("videos/search", {"query": query, "orientation": "portrait", "per_page": 5})["videos"]:
-                if video["id"] in used:
-                    continue
-                files = [f for f in video["video_files"] if f.get("file_type") == "video/mp4" and (f.get("height") or 0) >= 1280]
-                if not files:
-                    continue
-                used.add(video["id"])
-                path = work / f"clip-{video['id']}.mp4"
-                if not path.exists():
-                    urllib.request.urlretrieve(min(files, key=lambda f: f["height"])["link"], path)
-                clip = _fill(VideoFileClip(str(path)).without_audio(), size)
-                if clip.duration < duration:
-                    clip = clip.with_effects([vfx.Loop(duration=duration)])
-                return clip.subclipped(0, duration)
             photo = _pexels("v1/search", {"query": query, "orientation": "portrait", "per_page": 1})["photos"][0]
             img = Image.open(BytesIO(urllib.request.urlopen(photo["src"]["large2x"], timeout=30).read())).convert("RGB")
             return _zoom(img, size, duration)
-        except Exception as e:  # missing footage is not worth losing the video over
-            print(f"    no footage for '{query}': {e}")
+        except Exception as e:
+            print(f"    no photo for '{query}': {e}")
     return ColorClip(size, color=(12, 18, 48), duration=duration)
 
 
