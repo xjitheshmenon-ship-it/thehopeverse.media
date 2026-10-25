@@ -2,7 +2,7 @@
 
     python video.py            # every outbox package that has no video yet
 
-Voice: free Microsoft Edge voices (edge-tts). Pictures: real moving stock footage from Pexels (free, PEXELS_API_KEY)
+Voice: free Microsoft Edge voices (edge-tts). Pictures: real moving stock footage from Pixabay (free, PIXABAY_API_KEY)
 for each shot in Mr. Cut's edit plan, else a photo-real AI image from fal.ai (FAL_KEY), else a plain colour. Upload: needs client_secret.json from Google Cloud (see README).
 """
 import asyncio
@@ -74,10 +74,12 @@ def _font(size: int):
     return ImageFont.load_default(size=size)
 
 
-def _pexels(path: str, params: dict) -> dict:
-    url = f"https://api.pexels.com/{path}?" + urllib.parse.urlencode(params)
-    req = urllib.request.Request(url, headers={"Authorization": os.environ["PEXELS_API_KEY"], "User-Agent": "hopeverse"})
-    return json.load(urllib.request.urlopen(req, timeout=20))
+def _pixabay(kind: str, query: str) -> list:
+    """Search Pixabay's free library: kind is "videos/" for footage or "" for photos."""
+    params = {"key": os.environ["PIXABAY_API_KEY"], "q": query[:100], "safesearch": "true", "per_page": 10,
+              "video_type": "film", "image_type": "photo"}  # real footage and photos only, no animation
+    url = f"https://pixabay.com/api/{kind}?" + urllib.parse.urlencode(params)
+    return json.load(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "hopeverse"}), timeout=20))["hits"]
 
 
 def _fill(clip, size: tuple):
@@ -92,26 +94,22 @@ def _zoom(img: Image.Image, size: tuple, duration: float):
 
 
 def background(scene: "Scene", size: tuple, duration: float, work: Path, used: set):
-    """Real stock footage from Pexels (PEXELS_API_KEY), else a photo-real AI image from fal.ai (FAL_KEY),
-    else a Pexels photo, else a plain colour."""
+    """Real stock footage from Pixabay (PIXABAY_API_KEY), else a photo-real AI image from fal.ai (FAL_KEY),
+    else a Pixabay photo, else a plain colour."""
     query = scene.picture_search
-    if os.environ.get("PEXELS_API_KEY"):
+    if os.environ.get("PIXABAY_API_KEY"):
         try:
-            for orientation in ("portrait", "landscape"):  # landscape clips get centre-cropped to vertical
-                for video in _pexels("videos/search", {"query": query, "orientation": orientation, "per_page": 8})["videos"]:
-                    if video["id"] in used:
-                        continue
-                    files = [f for f in video["video_files"] if f.get("file_type") == "video/mp4" and (f.get("height") or 0) >= 720]
-                    if not files:
-                        continue
-                    used.add(video["id"])
-                    path = work / f"clip-{video['id']}.mp4"
-                    if not path.exists():
-                        urllib.request.urlretrieve(min(files, key=lambda f: f["height"])["link"], path)
-                    clip = _fill(VideoFileClip(str(path)).without_audio(), size)
-                    if clip.duration < duration:
-                        clip = clip.with_effects([vfx.Loop(duration=duration)])
-                    return clip.subclipped(0, duration)
+            for video in _pixabay("videos/", query):
+                if video["id"] in used:
+                    continue
+                used.add(video["id"])
+                path = work / f"clip-{video['id']}.mp4"
+                if not path.exists():
+                    urllib.request.urlretrieve(video["videos"]["medium"]["url"], path)  # 1080p, or 720p on old clips
+                clip = _fill(VideoFileClip(str(path)).without_audio(), size)
+                if clip.duration < duration:
+                    clip = clip.with_effects([vfx.Loop(duration=duration)])
+                return clip.subclipped(0, duration)
         except Exception as e:  # missing footage is not worth losing the video over
             print(f"    no footage for '{query}': {e}")
     if os.environ.get("FAL_KEY"):
@@ -126,10 +124,10 @@ def background(scene: "Scene", size: tuple, duration: float, work: Path, used: s
             return _zoom(Image.open(path), size, duration)
         except Exception as e:
             print(f"    no AI image for this scene: {e}")
-    if os.environ.get("PEXELS_API_KEY"):
+    if os.environ.get("PIXABAY_API_KEY"):
         try:
-            photo = _pexels("v1/search", {"query": query, "orientation": "portrait", "per_page": 1})["photos"][0]
-            img = Image.open(BytesIO(urllib.request.urlopen(photo["src"]["large2x"], timeout=30).read())).convert("RGB")
+            photo = _pixabay("", query)[0]
+            img = Image.open(BytesIO(urllib.request.urlopen(photo["largeImageURL"], timeout=30).read())).convert("RGB")
             return _zoom(img, size, duration)
         except Exception as e:
             print(f"    no photo for '{query}': {e}")
