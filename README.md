@@ -22,7 +22,7 @@ Every run saves all helpers' outputs to `runs/`. Finished packages go to `outbox
 
 ## Videos and YouTube upload
 
-`python video.py` turns every outbox package without a video into an `.mp4` next to it (free Edge AI voice, captions, real stock footage from Pixabay when `PIXABAY_API_KEY` is set, else photo-real fal.ai images when `FAL_KEY` is set), then uploads YouTube packages as **private** videos. The daily run does this automatically after the agents finish.
+`python video.py` turns every outbox package without a video into an `.mp4` next to it (free Edge AI voice, captions, real stock footage from Pixabay when `PIXABAY_API_KEY` is set, else photo-real fal.ai images when `FAL_KEY` is set), then uploads YouTube packages as **public** videos. The daily run does this automatically after the agents finish.
 
 One-time YouTube setup:
 

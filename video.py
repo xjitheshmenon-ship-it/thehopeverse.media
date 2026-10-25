@@ -1,4 +1,4 @@
-"""Turn outbox packages into videos and upload them to YouTube as private drafts.
+"""Turn outbox packages into videos and upload them to YouTube as public videos.
 
     python video.py            # every outbox package that has no video yet
 
@@ -249,12 +249,12 @@ def stats(video_ids: list) -> dict:
 
 
 def upload(video: Path, package: dict) -> str:
-    """Upload as a private video, so nothing goes public until the owner checks it in YouTube Studio."""
+    """Upload as a public video (the owner chose public by default on 2026-10-25)."""
     from googleapiclient.http import MediaFileUpload
 
     body = {"snippet": {"title": package["title"][:100], "description": package["description"][:5000],
                         "categoryId": "28"},  # Science & Technology
-            "status": {"privacyStatus": "private", "selfDeclaredMadeForKids": False,
+            "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False,
                        "containsSyntheticMedia": True}}
     request = youtube().videos().insert(
         part="snippet,status", body=body, media_body=MediaFileUpload(str(video), resumable=True))
@@ -304,12 +304,12 @@ if __name__ == "__main__":
             if not SECRET.exists():
                 print("Skipping upload: client_secret.json not found (see README).")
                 continue
-            print(f"Uploading {video.name} to YouTube as private")
+            print(f"Uploading {video.name} to YouTube as public")
             package["youtube_id"] = upload(video, package)
             path.write_text(json.dumps(package, indent=2), encoding="utf-8")
-            print(f"    https://youtu.be/{package['youtube_id']} (private)")
-        # Instagram has no private drafts, so a video is cross-posted there only after the owner has
-        # checked it and made it public on YouTube.
+            print(f"    https://youtu.be/{package['youtube_id']}")
+        # A video is cross-posted to Instagram once it is public on YouTube; set a YouTube video to
+        # private in Studio to keep it off Instagram.
         if os.environ.get("INSTAGRAM_TOKEN") and "youtube_id" in package and "instagram_id" not in package:
             try:
                 if stats([package["youtube_id"]]).get(package["youtube_id"], {}).get("privacy") == "public":
