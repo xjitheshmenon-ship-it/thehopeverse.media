@@ -71,7 +71,7 @@ def save(only: list = None) -> None:
 
 def approve(body: str) -> dict:
     """Record the owner's Approve/Reject choices from the dashboard (an issue body) and save them."""
-    got = {i: v.lower() for v, i in re.findall(r"^\W*(ok|no)\s+([0-9a-f]{8})\b", body, re.M | re.I)}
+    got = {i: v.lower() for v, i in re.findall(r"\b(ok|no)\s+([0-9a-f]{8})\b", body, re.I)}
     if got:
         APPROVALS.write_text(json.dumps({**approvals(), **got}, indent=1), encoding="utf-8")
         save([APPROVALS.name])
