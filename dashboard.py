@@ -2,17 +2,27 @@
 
     python dashboard.py      (Task Scheduler runs it every hour: see schedule_hope.bat)
 
-Writes runs/dashboard.json: every Short with its YouTube and Instagram views, likes and comments,
-Claude spend per day, and how many tasks each agent did per day. The dashboard reads it from GitHub.
+Writes runs/dashboard.json: every Short with its channel, upload time, views, likes and comments; spend per day
+and channel; the budget limits; today's upload slots per channel; recent GitHub Actions runs; and how many tasks
+each agent did per day. The dashboard reads it from GitHub.
 """
 import json
 import os
 import re
 import subprocess
+import urllib.request
 from collections import Counter
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 
-from agents import HERE, HISTORY, OUTBOX
+from agents import DAILY_BUDGET, HERE, HISTORY, OUTBOX, _channels
+
+IST = ZoneInfo("Asia/Kolkata")
+NOW = datetime.now(IST)
+TODAY = f"{NOW:%Y-%m-%d}"
+SLOTS = [7, 9, 11, 13, 15, 17]  # IST hours of hope.yml's six 2-hour runs
+SHORTS_PER_DAY = min(6, int(os.environ.get("SHORTS_PER_DAY") or 6))
+SERIES_PER_DAY = int(os.environ.get("SERIES_PER_DAY") or 2)
 
 OUT = HERE / "runs" / "dashboard.json"
 BRANCH = "dashboard-data"
@@ -48,7 +58,11 @@ def shorts() -> list:
         num = lambda k: int(s[k]) if k in s else None
         status = "On Instagram" if d.get("instagram_id") else "On YouTube" if d.get("youtube_id") else \
             "Video made" if p.with_suffix(".mp4").exists() else "Scripted"
-        rows.append({"id": p.stem, "day": f"{datetime.fromtimestamp(p.stat().st_mtime):%Y-%m-%d}",
+        published = datetime.fromisoformat(s["published"].replace("Z", "+00:00")).astimezone(IST) \
+            if "published" in s else None
+        rows.append({"id": p.stem, "channel": d["channel_id"], "day": f"{published:%Y-%m-%d}" if published else None,
+                     "published": f"{published:%Y-%m-%d %H:%M}" if published else None,
+                     "url": f"https://youtu.be/{d['youtube_id']}" if d.get("youtube_id") else None,
                      "title": d["title"], "status": status,
                      "youtube_id": d.get("youtube_id"), "yt_views": num("viewCount"),
                      "yt_likes": num("likeCount"), "yt_comments": num("commentCount"),
@@ -58,14 +72,104 @@ def shorts() -> list:
 
 
 def spend() -> list:
+    """Cost per day and channel from history.jsonl; channel "" is shared work (Mr. Grow, reviews, channel ideas)
+    and every run logged before runs carried their channel (26 Oct 2026)."""
     days = {}
     for line in (HISTORY.read_text(encoding="utf-8").splitlines() if HISTORY.exists() else []):
         if line.strip():
             r = json.loads(line)
-            d = days.setdefault(r["date"][:10], {"day": r["date"][:10], "runs": 0, "cost_usd": 0.0})
+            key = (r["date"][:10], r.get("channel", ""))
+            d = days.setdefault(key, {"day": key[0], "channel": key[1], "runs": 0, "cost_usd": 0.0})
             d["runs"] += 1
             d["cost_usd"] = round(d["cost_usd"] + r["cost_usd"], 2)
-    return sorted(days.values(), key=lambda d: d["day"])
+    return sorted(days.values(), key=lambda d: (d["day"], d["channel"]))
+
+
+def planned_slots(channel: dict) -> list:
+    """Which of the six slots (1-6) post for this channel, as hope.yml decides."""
+    if channel.get("status") == "series":
+        every = 6 // SERIES_PER_DAY
+        return [s for s in range(1, 7) if (6 - s) % every == 0]
+    if channel["platform"] == "youtube" and channel.get("status") == "live":
+        return list(range(1, SHORTS_PER_DAY + 1))
+    return []
+
+
+def slots(rows: list) -> list:
+    """Today's upload slots per signed-in channel: posted (with the Short), due later, or missed.
+    A Short counts for the slot whose 2-hour window it went up in."""
+    out = []
+    for c in _channels():
+        if not os.path.exists(HERE / c.get("token", "token.json")):
+            continue
+        posted = [r for r in rows if r["channel"] == c["id"] and r["day"] == TODAY]
+        for n in planned_slots(c):
+            start = NOW.replace(hour=SLOTS[n - 1], minute=0, second=0, microsecond=0)
+            end = start + timedelta(hours=2 if n < 6 else 7)  # the 5 PM slot runs until midnight
+            short = next((r for r in posted if f"{start:%H:%M}" <= r["published"][11:] < f"{end:%H:%M}"
+                          or n == 6 and r["published"][11:] >= "17:00"), None)
+            status = "Posted" if short else "Running" if start <= NOW < start + timedelta(minutes=110) \
+                else "Upcoming" if NOW < start else "Missed"
+            out.append({"key": f"{c['id']}-{n}", "channel": c["id"], "name": c["name"], "slot": n,
+                        "time": f"{start:%H:%M}", "status": status,
+                        "title": short["title"] if short else None, "url": short["url"] if short else None})
+    return out
+
+
+def channels(rows: list, costs: list, plan: list) -> list:
+    """One row per channel: today's uploads against plan, today's and 7-day spend, all-time views."""
+    week = f"{NOW - timedelta(days=6):%Y-%m-%d}"
+    names = {c["id"]: c["name"] for c in _channels()}
+    ids = list(dict.fromkeys([p["channel"] for p in plan] + [r["channel"] for r in rows] + [c["channel"] for c in costs]))
+    out = []
+    for i in ids:
+        mine = [p for p in plan if p["channel"] == i]
+        out.append({"channel": i or "shared",
+                    "name": f"{names.get(i, i)} ({i.split('-')[0].upper()})" if i.startswith("ig-") else
+                    names.get(i, i) if i else "Shared work and older runs",
+                    "planned": len(mine), "posted_today": sum(r["channel"] == i and r["day"] == TODAY for r in rows),
+                    "due_now": sum(p["status"] in ("Posted", "Missed") for p in mine),
+                    "missed": sum(p["status"] == "Missed" for p in mine),
+                    "spend_today": round(sum(c["cost_usd"] for c in costs if c["channel"] == i and c["day"] == TODAY), 2),
+                    "spend_7d": round(sum(c["cost_usd"] for c in costs if c["channel"] == i and c["day"] >= week), 2),
+                    "yt_views": sum(r["yt_views"] or 0 for r in rows if r["channel"] == i),
+                    "ig_views": sum(r["ig_views"] or 0 for r in rows if r["channel"] == i),
+                    "updated": f"{NOW:%Y-%m-%d %H:%M}"})
+    return [r for r in out if r["planned"] or r["posted_today"] or r["spend_7d"] or r["yt_views"] or r["ig_views"]]
+
+
+def limits(costs: list) -> list:
+    """The spending limits as the workflow sets them (repo variables), with today's spend against the daily cap."""
+    today = round(sum(c["cost_usd"] for c in costs if c["day"] == TODAY), 2)
+    clips = int(os.environ.get("AI_CLIPS_PER_SHORT") or 3)
+    return [
+        {"item": "Daily budget", "value": DAILY_BUDGET, "unit": "usd", "note": "All channels together; runs stop once reached (DAILY_BUDGET)"},
+        {"item": "Spent today", "value": today, "unit": "usd", "note": f"{TODAY}, India time"},
+        {"item": "Left today", "value": round(max(0, DAILY_BUDGET - today), 2), "unit": "usd", "note": "Before the cap stops runs"},
+        {"item": "Shorts per channel a day", "value": SHORTS_PER_DAY, "unit": "count", "note": "One per 2-hour slot, 7 AM to 5 PM IST (SHORTS_PER_DAY)"},
+        {"item": "Kissa episodes a day", "value": SERIES_PER_DAY, "unit": "count", "note": "Fully acted, about $4-5 each, inside the daily budget (SERIES_PER_DAY)"},
+        {"item": "Paid AI clips per Short", "value": clips, "unit": "count", "note": "Kling video shots, about $0.35 each (AI_CLIPS_PER_SHORT)"},
+        {"item": "HeyGen talking shot", "value": 0.05, "unit": "usd_per_s", "note": "Avatar IV, per second of speech"},
+        {"item": "Kling talking shot (fallback)", "value": 0.0562, "unit": "usd_per_s", "note": "Used when HeyGen fails"},
+        {"item": "Review allowance per run", "value": 0.25, "unit": "usd", "note": "Mr. Hope's lessons after the day's last Short"},
+    ]
+
+
+def runs() -> list:
+    """The last 40 GitHub Actions runs, so failures show on the dashboard. Needs GH_TOKEN (hope.yml passes it)."""
+    repo, token = os.environ.get("GITHUB_REPOSITORY"), os.environ.get("GH_TOKEN")
+    if not (repo and token):
+        return []
+    req = urllib.request.Request(f"https://api.github.com/repos/{repo}/actions/runs?per_page=40",
+                                 headers={"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"})
+    try:
+        items = json.load(urllib.request.urlopen(req, timeout=30))["workflow_runs"]
+    except Exception as e:
+        print(f"    GitHub runs: {e}")
+        return []
+    return [{"id": r["id"], "workflow": r["name"], "number": r["run_number"], "event": r["event"],
+             "started": f"{datetime.fromisoformat(r['run_started_at'].replace('Z', '+00:00')).astimezone(IST):%Y-%m-%d %H:%M}",
+             "result": r["conclusion"] or r["status"], "url": r["html_url"]} for r in items]
 
 
 def agent_work() -> list:
@@ -89,10 +193,13 @@ def push(path) -> None:
 
 
 if __name__ == "__main__":
+    rows, costs = shorts(), spend()
+    plan = slots(rows)
     data = {"updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-            "shorts": shorts(), "spend": spend(), "agent_work": agent_work()}
+            "shorts": rows, "spend": costs, "agent_work": agent_work(), "limits": limits(costs),
+            "slots": plan, "channels": channels(rows, costs, plan), "runs": runs()}
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(data, indent=1, ensure_ascii=False), encoding="utf-8")
-    print(f"Saved {OUT} ({len(data['shorts'])} Shorts)")
+    print(f"Saved {OUT} ({len(rows)} Shorts)")
     push(OUT)
     print(f"Pushed to the {BRANCH} branch")

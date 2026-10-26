@@ -367,6 +367,14 @@ def spent_today() -> float:
     return sum(r["cost_usd"] for r in map(json.loads, filter(str.strip, runs)) if r["date"].startswith(today))
 
 
+def log_spend(cost: float, channel: str = "") -> None:
+    """Add a run's cost to history.jsonl; channel (a channels.json id, "" for shared work) feeds the dashboard."""
+    HISTORY.parent.mkdir(exist_ok=True)
+    with HISTORY.open("a", encoding="utf-8") as f:
+        f.write(json.dumps({"date": f"{datetime.now():%Y-%m-%d %H:%M}", "cost_usd": round(cost, 2),
+                            "channel": channel}) + "\n")
+
+
 def spend_report() -> str:
     """Write runs/spend-report.md from history.jsonl: today, last 7 days, this month and a daily table."""
     runs = [json.loads(r) for r in HISTORY.read_text(encoding="utf-8").splitlines() if r.strip()] \
@@ -409,8 +417,7 @@ if __name__ == "__main__":
         if "## " in notes:  # keep yesterday's notes if the run was cut off by the budget
             GROWTH.parent.mkdir(exist_ok=True)
             GROWTH.write_text(notes[notes.index("## "):], encoding="utf-8")
-        with HISTORY.open("a", encoding="utf-8") as f:
-            f.write(json.dumps({"date": f"{datetime.now():%Y-%m-%d %H:%M}", "cost_usd": round(spent, 2)}) + "\n")
+        log_spend(spent)
         print(notes)
         sys.exit()
     goal = " ".join(sys.argv[1:]) or (
@@ -425,9 +432,7 @@ if __name__ == "__main__":
         print(run_agent("Mr. Hope (review)", TEAM["Mr. Hope (review)"],
                         f"Today's run cost ${spent:.2f}. Mr. Hope's summary of today:\n\n{summary}",
                         [performance, read_lessons, save_lessons], effort="low", model=MODEL))
-    HISTORY.parent.mkdir(exist_ok=True)
-    with HISTORY.open("a", encoding="utf-8") as f:  # logged after the review so its cost is counted too
-        f.write(json.dumps({"date": f"{datetime.now():%Y-%m-%d %H:%M}", "cost_usd": round(spent, 2)}) + "\n")
+    log_spend(spent, os.environ.get("HOPE_CHANNEL", ""))  # logged after the review so its cost is counted too
     print(f"\nEstimated cost of this run: ${spent:.2f} (cap ${cap:.2f} + $0.25 review)")
     print(spend_report())
     print(f"Full scripts and research saved in {LOG}")
