@@ -39,6 +39,12 @@
  ],
  "yt-instinct": [
   {
+   "when": "2026-10-26 17:00",
+   "topic": "Le dauphin à gros nez qui se donne un « nom » : chaque dauphin développe un sifflement signature, auquel ses congénères répondent quand ils l'entendent (étude de l'université de St Andrews, publiée dans PNAS en 2013)",
+   "why": "Sujet intemporel et bien sourcé, avec une accroche forte (« les dauphins ont un prénom »). Il diffère des éléphants déjà prévus, car il s'agit d'un autre animal, d'une autre étude et d'un autre mécanisme (sifflement signature). Les images de dauphins en stock sont abondantes. Convient à tous les publics francophones, familles comprises, et se raconte en moins de 45 secondes.",
+   "planned": "2026-10-26 16:52"
+  },
+  {
    "when": "2026-10-27 07:00",
    "topic": "Les corbeaux reconnaissent les visages humains et gardent rancune pendant des années (étude de l'université de Washington)",
    "why": "Étude scientifique solide et histoire à tension narrative (vengeance, transmission aux autres corbeaux) ; mardi 07h IST (03h30 Paris, 21h30 Québec lundi) cible le public du soir au Québec.",
@@ -71,10 +77,16 @@
  ],
  "yt-hopeverse": [
   {
+   "when": "2026-10-26 17:00",
+   "topic": "Slot Mon 26 Oct 17:00 IST (international): Lula's 4th-term win at 80 is already planned, so use a different story. Pick the biggest world story dated 25-26 Oct 2026 from a wire service such as Reuters or AP, and name the who, what and one number in the script. I could not name it because web search failed.",
+   "why": "My web_search tool hit its usage limit before it returned any results, so I could not confirm a real, dated story. I did not want to invent a headline or figure. Run one search for 'world news 26 Oct 2026' and fill in the story. It should be an international-interest item, not India-specific, and should not repeat the Alaska, Jio IPO, Surrey, EV or DNA-clock Shorts.",
+   "planned": "2026-10-26 16:52"
+  },
+  {
    "when": "2026-10-27 07:00",
-   "topic": "15 Punjabi-origin candidates win British Columbia polls as Conservatives sweep Surrey. Mandeep Dhaliwal holds Surrey North, which he won in 2024 by beating NDP minister Rachna Singh",
-   "why": "This ties Canadian politics to the Indian diaspora, so it should draw high interest from Indian viewers in the 07:00 morning slot. The 15-winner count gives it a concrete number.",
-   "planned": "2026-10-26 15:33"
+   "topic": "Slot Tue 27 Oct 07:00 IST (Indian viewers): Pick the top India morning-news story from 26-27 Oct 2026, such as a market move, a policy or court decision, or a cricket result. Name the specific event, the people involved and one number. It must not be the Jamia polls, the Rahul Gandhi-Puri-Epstein row, the Kharge 'baap' complaint or the Jio IPO, because those are already made or planned.",
+   "why": "A 07:00 IST slot suits a quick 'what you need to know today' Short. Search failed, so I could not verify a specific story and have not made one up. Before scripting, confirm the story and its date from a source such as PTI, The Hindu or Indian Express. Prefer a story with a clear number and a direct effect on viewers' day.",
+   "planned": "2026-10-26 16:52"
   },
   {
    "when": "2026-10-27 09:00",

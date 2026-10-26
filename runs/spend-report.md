@@ -1,16 +1,16 @@
-# Hopeverse spending report, 26 Oct 2026 16:04
+# Hopeverse spending report, 26 Oct 2026 16:52
 
-- Today: $20.13 (45 runs)
-- Last 7 days: $22.83
-- This month: $22.83
-- All time: $22.83
+- Today: $22.43 (48 runs)
+- Last 7 days: $25.13
+- This month: $25.13
+- All time: $25.13
 
 Claude (Anthropic) costs as estimated by agents.py, review included. Video images from fal.ai add
 about $0.006 each (about $0.06 a Short). Exact bills: console.anthropic.com and fal.ai/dashboard.
 
 | Day | Runs | Cost |
 | --- | --- | --- |
-| 2026-10-26 | 45 | $20.13 |
+| 2026-10-26 | 48 | $22.43 |
 | 2026-10-25 | 5 | $2.70 |
 
 ## Today's new channel idea (folder ideas/2026-10-26-yt-rumbo)
@@ -42,6 +42,14 @@ geografía, curiosidades del mundo, fronteras, mapas, lugares increíbles, datos
 3. Bolivia has no coastline, so why does it still have a navy?
 4. The point on Earth farthest from any human being lies directly below astronauts
 5. In this town the border runs through the middle of cafés and houses: Baarle-Nassau
+
+## Credits left
+
+- fal.ai: ? usd (Couldn't read the balance (HTTP Error 403: Forbidden); add a fal.ai READONLY key as the FAL_BILLING_KEY secret)
+- HeyGen: 10.0 usd (Talking hosts; Kling on fal.ai takes over when it runs out)
+- ElevenLabs: ? characters (Couldn't read the balance (HTTP Error 401: Unauthorized); turn on User: Read for the key in ElevenLabs)
+- Anthropic: ? usd (No balance API: see console.anthropic.com > Billing. Spend is logged per run)
+- Perplexity: ? usd (No balance API: see perplexity.ai/account/api. About $0.006 a search)
 
 ## Mr. Grow's to-dos for you today
 
