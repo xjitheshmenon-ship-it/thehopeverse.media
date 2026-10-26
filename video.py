@@ -672,7 +672,7 @@ if __name__ == "__main__":
         sys.exit()
     dubs = [c for c in channels.values() if c.get("status") == "dub" and (HERE / c["token"]).exists()]
     platform = {i: c["platform"] for i, c in channels.items()}
-    quota_left = True
+    quota_left, failed, posted = True, [], 0
     for path in sorted(OUTBOX.glob("*.json")):
         package = json.loads(path.read_text(encoding="utf-8"))
         if "--only" in sys.argv and package["channel_id"] != sys.argv[sys.argv.index("--only") + 1]:
@@ -685,6 +685,7 @@ if __name__ == "__main__":
                 render(path, voice)
             except Exception as e:  # with many Shorts a day, one broken package shouldn't stop the rest
                 print(f"    failed: {e}")
+                failed.append(path.name)
                 continue
         # Only Shorts made from now on have board.json, so older ones are never dubbed.
         english = "dub_of" not in package and not channels.get(package["channel_id"], {}).get("lang")
@@ -711,10 +712,12 @@ if __name__ == "__main__":
                 package["youtube_id"] = upload(video, package, HERE / channels[package["channel_id"]].get("token", "token.json"))
             except Exception as e:  # the daily API quota fits about 6 uploads; the rest go up on the next run
                 print(f"    upload failed: {e}")
+                failed.append(path.name)
                 quota_left = "quota" not in str(e).lower() and "uploadLimitExceeded" not in str(e)
                 continue
             path.write_text(json.dumps(package, indent=2), encoding="utf-8")
             print(f"    https://youtu.be/{package['youtube_id']}")
+            posted += 1
         if channels.get(package["channel_id"], {}).get("lang"):  # Hindi dubs and series stay on their own channel
             continue
         # A video is cross-posted to Instagram once it is public on YouTube; set a YouTube video to
@@ -728,3 +731,5 @@ if __name__ == "__main__":
                     print("    posted")
             except Exception as e:  # one failed Reel shouldn't stop the other videos
                 print(f"    Instagram post failed: {e}")
+    if failed and not posted:  # nothing went up: show the run as failed instead of a quiet green tick
+        sys.exit(f"No video was posted; failed: {', '.join(failed)}")
