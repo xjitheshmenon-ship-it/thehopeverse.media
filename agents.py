@@ -32,7 +32,7 @@ LESSONS = HERE / "lessons.md"  # Mr. Hope writes this himself after every run
 GROWTH = HERE / "runs" / "growth.md"  # Mr. Grow rewrites this every morning; each agent gets its own section
 HISTORY = HERE / "runs" / "history.jsonl"
 LOG = HERE / "runs" / f"{datetime.now():%Y-%m-%d_%H%M}.md"
-WEB_SEARCH = {"type": "web_search_20260209", "name": "web_search", "max_uses": 3}
+WEB_SEARCH = {"type": "web_search_20260209", "name": "web_search", "max_uses": 6}  # 3 ran out when the daily topics and a fact-check shared a call
 WEB_FETCH = {"type": "web_fetch_20260209", "name": "web_fetch", "max_uses": 4}
 
 # Hard spending cap per run, in US dollars. Change it with: setx HOPE_BUDGET 3
