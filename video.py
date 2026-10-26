@@ -36,7 +36,7 @@ from moviepy.config import FFMPEG_BINARY
 from PIL import Image, ImageDraw, ImageFont
 from pydantic import BaseModel
 
-from agents import DAILY_BUDGET, HELPER_MODEL, HISTORY, OUTBOX, TEAM, _channels, client, read_cast, spent_today
+from agents import DAILY_BUDGET, HELPER_MODEL, _cost, HISTORY, OUTBOX, TEAM, _channels, client, read_cast, spent_today
 from approve import approved
 
 HERE = Path(__file__).parent
@@ -136,7 +136,10 @@ def storyboard(package: dict) -> Storyboard:
                    "and Mr. Cut have already chosen which character and which background each shot shows. narration: "
                    "exactly what the voice says (only spoken words, no stage directions). on_screen_text: at most 8 words. "
                    "picture_search: Mr. Cut's footage search for the shot, or else 2-5 concrete words for real live-action "
-                   "stock video showing that character in that background (e.g. 'woman astronaut looking at earth'). "
+                   "stock video of the literal subject of that line, the thing a viewer must see (e.g. 'rocket "
+                   "launch night', 'astronaut training centrifuge', 'Mumbai street traffic'), never a mood or "
+                   "metaphor and never a brand or mission name a stock site won't know (say 'Indian rocket launch', "
+                   "not 'Gaganyaan'). "
                    "image_prompt: a photo-real description of the same shot (person, setting, camera angle); when a "
                    "recurring character appears, copy their look from the cast below word for word. Real footage only, "
                    "never cartoon. "
@@ -172,23 +175,24 @@ def _pixabay(kind: str, query: str) -> list:
     return json.load(urllib.request.urlopen(url, timeout=20))["hits"]
 
 
-def _nasa(query: str, used: set, work: Path):
-    """Download a public-domain clip from NASA's video library (no key needed), or return None."""
+def _nasa(scene: "Scene", query: str, used: set, work: Path):
+    """A public-domain NASA clip (no key needed) that Claude agrees shows the shot, or None."""
     url = "https://images-api.nasa.gov/search?" + urllib.parse.urlencode({"q": query, "media_type": "video", "page_size": 10})
-    for item in json.load(urllib.request.urlopen(url, timeout=20))["collection"]["items"]:
-        nasa_id = item["data"][0]["nasa_id"]
-        if nasa_id in used:
-            continue
-        files = json.load(urllib.request.urlopen(urllib.parse.quote(item["href"], safe=":/~"), timeout=20))
-        mp4 = next((f for size in ("~medium.mp4", "~small.mp4", "~mobile.mp4") for f in files if f.endswith(size)), None)
-        if not mp4:
-            continue
-        used.add(nasa_id)
-        path = work / f"nasa-{len(used):03}.mp4"
-        if not path.exists():  # ponytail: downloads the whole clip; long NASA videos can be 100+ MB
-            urllib.request.urlretrieve(urllib.parse.quote(mp4, safe=":/~"), path)
-        return path
-    return None
+    items = [it for it in json.load(urllib.request.urlopen(url, timeout=20))["collection"]["items"]
+             if it["data"][0]["nasa_id"] not in used and it.get("links")]
+    k = _pick(scene, [it["links"][0]["href"] for it in items])
+    if k < 0:
+        return None
+    item = items[k]
+    files = json.load(urllib.request.urlopen(urllib.parse.quote(item["href"], safe=":/~"), timeout=20))
+    mp4 = next((f for size in ("~medium.mp4", "~small.mp4", "~mobile.mp4") for f in files if f.endswith(size)), None)
+    if not mp4:
+        return None
+    used.add(item["data"][0]["nasa_id"])
+    path = work / f"nasa-{len(used):03}.mp4"
+    if not path.exists():  # ponytail: downloads the whole clip; long NASA videos can be 100+ MB
+        urllib.request.urlretrieve(urllib.parse.quote(mp4, safe=":/~"), path)
+    return path
 
 
 def _clip(path: Path, size: tuple, duration: float, skip: float = 0):
@@ -220,24 +224,48 @@ def host_photo(name: str) -> Path:
     return path
 
 
-paid = {"clips": 0, "usd": 0.0}  # fal.ai spending of the video being made; render() resets it
+paid = {"clips": 0, "usd": 0.0}  # spending (fal.ai, footage checks) of the video being made; render() resets it
+shots = []  # stock clips already matched in this video, reused when nothing else fits a later line
 
 
 def _can_pay() -> bool:
     return paid["clips"] < AI_CLIPS and spent_today() + paid["usd"] < DAILY_BUDGET
 
 
-def _stock(query: str, size: tuple, duration: float, work: Path, used: set):
-    """A real Pixabay clip for the query, or None."""
-    for video in _pixabay("videos/", query):
-        if video["id"] in used:
-            continue
-        used.add(video["id"])
-        path = work / f"clip-{video['id']}.mp4"
-        if not path.exists():
-            urllib.request.urlretrieve(video["videos"]["medium"]["url"], path)  # 1080p, or 720p on old clips
-        return _clip(path, size, duration)
-    return None
+def _pick(scene: "Scene", thumbnails: list) -> int:
+    """Claude looks at the candidate clips' thumbnails and returns the index of the one that really shows what the
+    line is about, or -1 when none does, so a car never stands in for a rocket."""
+    if not thumbnails:
+        return -1
+    try:
+        response = client.messages.create(model=HELPER_MODEL, max_tokens=20, messages=[{"role": "user", "content": [
+            *({"type": "image", "source": {"type": "url", "url": u}} for u in thumbnails),
+            {"type": "text", "text": f"These are {len(thumbnails)} stock video thumbnails, numbered 0 to "
+             f"{len(thumbnails) - 1} in order. A YouTube Short says: \"{scene.narration}\" and this shot should "
+             f"show: {scene.picture_search} ({scene.image_prompt}). Reply with only the number of the thumbnail that "
+             "clearly shows that subject. Reply -1 if none does: a generic or loosely related picture (a car for a "
+             "rocket, a random city for a named place, the wrong country) counts as none."}]}])
+        paid["usd"] += _cost(HELPER_MODEL, response.usage)
+        k = int(re.search(r"-?\d+", response.content[0].text).group())
+        return k if k < len(thumbnails) else -1
+    except Exception as e:  # can't check: take the search's best match, as before
+        print(f"    could not check the footage: {e}")
+        return 0
+
+
+def _stock(scene: "Scene", query: str, size: tuple, duration: float, work: Path, used: set):
+    """A real Pixabay clip for the query that Claude agrees shows the shot, or None."""
+    hits = [v for v in _pixabay("videos/", query) if v["id"] not in used and v["videos"]["medium"].get("thumbnail")]
+    k = _pick(scene, [v["videos"]["medium"]["thumbnail"] for v in hits])
+    if k < 0:
+        return None
+    video = hits[k]
+    used.add(video["id"])
+    path = work / f"clip-{video['id']}.mp4"
+    if not path.exists():
+        urllib.request.urlretrieve(video["videos"]["medium"]["url"], path)  # 1080p, or 720p on old clips
+    shots.append(path)
+    return _clip(path, size, duration)
 
 
 def heygen(still: Path, audio: Path, path: Path) -> float:
@@ -262,8 +290,9 @@ def heygen(still: Path, audio: Path, path: Path) -> float:
 
 
 def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float, work: Path, used: set):
-    """Moving video only: the host really talking (Kling avatar), else Pixabay footage, else a Kling AI clip,
-    else NASA footage, else Pixabay footage for a shorter search, else a plain colour."""
+    """Moving video only: the host really talking (HeyGen or Kling), else Pixabay footage, else NASA
+    footage (stock only when Claude agrees it shows the line), else a Kling AI clip, else Pixabay for a shorter
+    search, else more of a clip this video already uses, else a plain colour."""
     query = scene.picture_search
     if scene.host_on_screen and scene.speaker in HOSTS and os.environ.get("FAL_KEY"):
         path = work / f"avatar-{audio.stem}.mp4"  # per language, since the lips follow the voice
@@ -297,10 +326,17 @@ def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float
                 print(f"    no talking shot of {scene.speaker}: {e}")
     if os.environ.get("PIXABAY_API_KEY"):
         try:
-            if clip := _stock(query, size, duration, work, used):
+            if clip := _stock(scene, query, size, duration, work, used):
                 return clip
         except Exception as e:  # missing footage is not worth losing the video over
             print(f"    no footage for '{query}': {e}")
+    try:
+        path = _nasa(scene, query, used, work)
+        if path:
+            shots.append(path)
+            return _clip(path, size, duration, skip=0.2)  # skip NASA title cards at the start
+    except Exception as e:
+        print(f"    no NASA footage for '{query}': {e}")
     if os.environ.get("FAL_KEY"):
         path = work / f"ai-{i:03}.mp4"  # no lips to match, so dubs reuse it
         if path.exists() or _can_pay():
@@ -316,18 +352,14 @@ def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float
                 return _clip(path, size, duration)
             except Exception as e:
                 print(f"    no AI video for this scene: {e}")
-    try:
-        path = _nasa(query, used, work)
-        if path:
-            return _clip(path, size, duration, skip=0.2)  # skip NASA title cards at the start
-    except Exception as e:
-        print(f"    no NASA footage for '{query}': {e}")
     if os.environ.get("PIXABAY_API_KEY") and len(query.split()) > 2:
         try:
-            if clip := _stock(" ".join(query.split()[:2]), size, duration, work, used):
+            if clip := _stock(scene, " ".join(query.split()[:2]), size, duration, work, used):
                 return clip
         except Exception as e:
             print(f"    no footage for a shorter search: {e}")
+    if shots:  # a later moment of a clip that already fits this video beats an off-topic one
+        return _clip(shots[len(used) % len(shots)], size, duration, skip=0.5)
     return ColorClip(size, color=(12, 18, 48), duration=duration)
 
 
@@ -443,6 +475,7 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
     if mark.exists():
         logo = ImageClip(str(mark), transparent=True).resized(width=150).with_opacity(0.85).with_position((60, 170))
     paid.update(clips=0, usd=0.0)
+    shots.clear()
     # 1. Every line into one voice track, back to back with GAP between them: nothing can overlap or cut off.
     lines, voice_track = [], work / f"{prefix}voice.wav"
     spoken = [(i, s) for i, s in enumerate(board.scenes) if any(ch.isalnum() for ch in s.narration)]
