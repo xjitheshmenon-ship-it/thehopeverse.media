@@ -13,6 +13,7 @@ from pathlib import Path
 from pydantic import BaseModel
 
 from agents import DAILY_BUDGET, MODEL, OUTBOX, TEAM, _channels, _cost, client, log_spend, spent_today
+from plan import next_topic
 from video import Scene
 
 HERE = Path(__file__).parent
@@ -42,6 +43,7 @@ def write_episode() -> Path:
     channel = next(c for c in _channels() if c.get("status") == "series")
     story = json.loads(STORY.read_text(encoding="utf-8")) if STORY.exists() else {"premise": "", "cast": [], "episodes": []}
     n = len(story["episodes"]) + 1
+    planned = next_topic(channel["id"])  # the logline shown on the dashboard, from plan.py
     response = client.messages.parse(
         model=MODEL,
         max_tokens=16000,
@@ -49,6 +51,8 @@ def write_episode() -> Path:
         messages=[{"role": "user", "content":
                    f"Write episode {n} of the series for the YouTube channel {channel['name']}.\n\n"
                    f"Story so far:\n{json.dumps(story, ensure_ascii=False, indent=1)}\n\n"
+                   + (f"Planned for this episode (follow it unless it breaks the story): {planned}\n\n" if planned else "")
+                   +
                    "Return: title (Hindi in Devanagari, starting 'Ep " + str(n) + " |', under 90 characters); "
                    "description (2-3 gripping Hindi lines, then 3-5 hashtags ending with #Shorts); music (an English "
                    "prompt for the background score's mood, no vocals); summary (2 lines in English of what happens, "

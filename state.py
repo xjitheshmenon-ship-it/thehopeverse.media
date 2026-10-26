@@ -25,7 +25,7 @@ def files() -> list:
     runs = HERE / "runs"
     found = [*OUTBOX.glob("*.json"), *OUTBOX.glob("*/board.json"), *runs.glob("*.md"), *runs.glob("*.jsonl"),
              *(HERE / "hosts").glob("*.png"), *(HERE / "tokens").glob("*.enc"), *(HERE / "ideas").glob("*/*"),
-             LESSONS, CAST, HERE / "series.json"]
+             LESSONS, CAST, HERE / "series.json", runs / "plan.json"]
     return [str(p.relative_to(HERE)) for p in found if p.exists()]
 
 

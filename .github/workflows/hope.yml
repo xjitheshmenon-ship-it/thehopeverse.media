@@ -9,10 +9,10 @@ on:
   workflow_dispatch:
     inputs:
       job:
-        description: "daily = run the 5 PM slot now (a Short per channel, review, channel idea, report), one = make and post a single Short now for the channel below, stats = dashboard numbers only (to sign a channel in, use the Connect a channel workflow; a Kissa episode: Post a Kissa episode)"
+        description: "daily = run the 5 PM slot now (a Short per channel, review, channel idea, report), one = make and post the next planned Short now for the channel below, stats = dashboard numbers only, plan = plan the next 6 topics per channel (to sign a channel in, use the Connect a channel workflow; a Kissa episode: Post a Kissa episode)"
         default: daily
         type: choice
-        options: [daily, one, stats]
+        options: [daily, one, stats, plan]
       channel:
         description: "For job one: which channel's Short to post now"
         default: yt-hopeverse
@@ -103,6 +103,8 @@ jobs:
             else
               goal="check list_channels and list_outbox, then draft and queue one new YouTube Short for $id that fits its niche, audience and language, on a topic it hasn't had yet."
             fi
+            topic=$(python plan.py --next "$id" || true)  # the topic the dashboard showed for this slot
+            [ -n "$topic" ] && goal="make the Short on the planned topic \"$topic\" (check list_outbox and that it is still accurate and new; if not, pick the best alternative), then $goal"
             HOPE_CHANNEL=$id HOPE_REVIEW=$REVIEW python agents.py "Scheduled run, Short $SLOT of $SHORTS_PER_DAY today for channel $id: $goal" || true
           done
           python video.py
@@ -117,6 +119,8 @@ jobs:
           else
             goal="check list_channels and list_outbox, then draft and queue one new YouTube Short for $CHANNEL that fits its niche, audience and language, on a topic it hasn't had yet."
           fi
+          topic=$(python plan.py --next "$CHANNEL" || true)  # post the next planned topic now
+          [ -n "$topic" ] && goal="make the Short on the planned topic \"$topic\" (check list_outbox and that it is still accurate and new; if not, pick the best alternative), then $goal"
           HOPE_CHANNEL=$CHANNEL HOPE_REVIEW=0 python agents.py "One-off run requested by the owner: $goal"
           python video.py
       - name: Write and post this slot's Hindi series episode
@@ -130,8 +134,11 @@ jobs:
       - name: 5 PM report with today's new channel idea and its brand kit
         if: always() && env.SLOT == '6'
         run: python scout.py || true  # also rewrites runs/spend-report.md
+      - name: Plan the next 6 topics per channel (shown on the dashboard)
+        if: always() && (env.SLOT != '' || inputs.job == 'one' || inputs.job == 'plan')
+        run: python plan.py || true
       - name: Save Hope's memory
-        if: always() && (env.SLOT != '' || inputs.job == 'one')
+        if: always() && (env.SLOT != '' || inputs.job == 'one' || inputs.job == 'plan')
         run: python state.py save
 
       - name: Dashboard numbers
