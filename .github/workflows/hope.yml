@@ -37,6 +37,7 @@ env:
   INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
   # Settings > Secrets and variables > Actions > Variables: change these without editing this file
   SHORTS_PER_DAY: ${{ vars.SHORTS_PER_DAY || '6' }}  # per channel, one per 2-hour slot (at most 6)
+  SERIES_PER_DAY: ${{ vars.SERIES_PER_DAY || '6' }}  # Kissa episodes a day: 1, 2, 3 or 6 (owner's pick: 6, one every 2 hours)
   DAILY_BUDGET: ${{ vars.DAILY_BUDGET || '20' }}     # US dollars a day across everything; runs stop once reached
 
 jobs:
@@ -106,9 +107,11 @@ jobs:
           HOPE_REVIEW=0 python agents.py "One-off run requested by the owner: get today's topics from Mr. Focus, check list_outbox, then draft and queue one new current-affairs YouTube Short for yt-hopeverse, aimed at Indian viewers, on the top-viewed story of the last 48 hours that is not already drafted."
           python video.py
       - name: Write and post this slot's Hindi series episode
-        if: always() && env.MAKE == '1'
+        if: always() && env.SLOT != ''
         run: |
           [ -f token-series.json ] || { echo "Series channel not connected yet: run the Connect a channel workflow"; exit 0; }
+          every=$(( 6 / SERIES_PER_DAY ))  # episodes are spaced evenly and always include the 17:00 slot
+          [ "$SLOT" -ge 1 ] && [ "$SLOT" -le 6 ] && [ $(( (6 - SLOT) % every )) = 0 ] || { echo "No episode in slot $SLOT"; exit 0; }
           python series.py || true
           python video.py
       - name: 5 PM report with today's new channel idea and its brand kit
