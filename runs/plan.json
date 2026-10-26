@@ -1,42 +1,4 @@
 {
- "yt-hopeverse": [
-  {
-   "when": "2026-10-26 17:00",
-   "topic": "Top global headline of the day (Mon 26 Oct, 17:00 IST, international): a 60-second explainer on the biggest world story, to be confirmed with a news check just before filming",
-   "why": "I did not search the news, so I can't name a verified story. This slot needs a global story with broad appeal, such as a major election, a conflict update or a market move. It must not repeat the Alaska megatsunami, Jio IPO, ISRO or EV stories already made.",
-   "planned": "2026-10-26 15:30"
-  },
-  {
-   "when": "2026-10-27 07:00",
-   "topic": "India's biggest morning headline (Tue 27 Oct, 07:00 IST): a quick explainer on the top national story overnight, such as a policy decision, a court ruling or a major event",
-   "why": "Indian viewers check the news first thing in the morning, so a clear 'what happened overnight' Short fits. The story should be chosen from the latest verified reports. It should not be the Jio IPO or ISRO.",
-   "planned": "2026-10-26 15:30"
-  },
-  {
-   "when": "2026-10-27 09:00",
-   "topic": "Indian economy and markets (Tue 27 Oct, 09:00 IST): what today's market open, an RBI move or a price change means for ordinary people",
-   "why": "Just before the markets open, viewers want to know how money news affects them. This slot should use the story that is moving that day.",
-   "planned": "2026-10-26 15:30"
-  },
-  {
-   "when": "2026-10-27 11:00",
-   "topic": "Politics or governance in India (Tue 27 Oct, 11:00 IST): a Supreme Court, Parliament or state-level development explained simply",
-   "why": "Mid-morning is a good time for a story that has developed since early morning. Framing it as 'what it means for you' keeps the Short useful rather than just reporting events.",
-   "planned": "2026-10-26 15:30"
-  },
-  {
-   "when": "2026-10-27 13:00",
-   "topic": "Trending India story (Tue 27 Oct, 13:00 IST): a sports, entertainment or society story that is spreading widely online",
-   "why": "Lunchtime viewers respond to lighter, shareable stories. This slot should go to a topic still developing, so it can use the latest information at filming time.",
-   "planned": "2026-10-26 15:30"
-  },
-  {
-   "when": "2026-10-27 15:00",
-   "topic": "Global developing story update (Tue 27 Oct, 15:00 IST, international): a follow-up on the biggest world story, covering what changed in the last 24 hours",
-   "why": "This slot reaches Europe's daytime and the US's early morning. A development update on a story that is still moving gives it the most timely value. The topic should be verified just before publishing.",
-   "planned": "2026-10-26 15:30"
-  }
- ],
  "yt-kissa": [
   {
    "when": "2026-10-26 17:00",
