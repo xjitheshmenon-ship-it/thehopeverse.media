@@ -106,6 +106,11 @@ def slots(rows: list) -> list:
 ACTIONS = "https://github.com/" + (os.environ.get("GITHUB_REPOSITORY") or "xjitheshmenon-ship-it/thehopeverse.media") + "/actions/workflows/"
 
 
+def one_click(cid: str) -> bool:
+    """A Post-now workflow with nothing to choose exists for this channel."""
+    return (HERE / ".github" / "workflows" / f"post-now-{cid}.yml").exists()
+
+
 def upcoming() -> list:
     """The next 6 uploads by time across the signed-in channels, with the topic plan.py planned for each slot."""
     plan = load()
@@ -117,8 +122,10 @@ def upcoming() -> list:
             e = planned.get(f"{when:%Y-%m-%d %H:%M}", {})
             out.append({"key": f"{c['id']}-{when:%Y%m%d%H}", "when": f"{when:%Y-%m-%d %H:%M}", "channel": c["id"],
                         "name": c["name"], "plan": e.get("topic") or "Not planned yet: picked when the video is made",
-                        "why": e.get("why"), "post_now": ACTIONS + ("episode.yml" if series else "hope.yml"),
-                        "how": "Run workflow" if series else f"Run workflow, job: one, channel: {c['id']}"})
+                        "why": e.get("why"), "post_now": ACTIONS + (
+                            "episode.yml" if series else f"post-now-{c['id']}.yml" if one_click(c["id"]) else "hope.yml"),
+                        "how": "Run workflow, then the green Run workflow" if series or one_click(c["id"])
+                        else f"Run workflow, job: one, channel: {c['id']}"})
     return sorted(out, key=lambda r: r["when"])[:6]
 
 

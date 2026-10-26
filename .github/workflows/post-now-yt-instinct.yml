@@ -1,0 +1,19 @@
+# Dashboard "Post now" for yt-instinct: Run workflow > Run workflow, nothing to choose.
+# It starts hope.yml job=one at once (own concurrency group, ahead of the queue and the daily budget).
+# A new channel gets a copy of this file with its id (and an entry in hope.yml's channel options).
+name: Post now yt-instinct
+
+on:
+  workflow_dispatch:
+
+permissions:
+  actions: write
+
+jobs:
+  start:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh workflow run hope.yml --ref main -f job=one -f channel=yt-instinct
