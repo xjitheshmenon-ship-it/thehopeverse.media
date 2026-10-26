@@ -17,7 +17,7 @@ from zoneinfo import ZoneInfo
 
 import credits
 from agents import DAILY_BUDGET, HERE, HISTORY, OUTBOX, _channels
-from plan import SERIES_PER_DAY, SHORTS_PER_DAY, SLOTS, live_channels, load, next_slots, planned_slots
+from plan import SERIES_PER_DAY, SHORTS_PER_DAY, live_channels, load, next_slots, planned_slots, slot_start
 
 IST = ZoneInfo("Asia/Kolkata")
 NOW = datetime.now(IST)
@@ -91,12 +91,12 @@ def slots(rows: list) -> list:
     for c in _channels():
         if not os.path.exists(HERE / c.get("token", "token.json")):
             continue
-        posted = [r for r in rows if r["channel"] == c["id"] and r["day"] == TODAY]
+        posted = [r for r in rows if r["channel"] == c["id"]]
+        local = NOW.astimezone(ZoneInfo(c.get("tz", "Asia/Kolkata")))  # the channel's own today
         for n in planned_slots(c):
-            start = NOW.replace(hour=SLOTS[n - 1], minute=0, second=0, microsecond=0)
-            end = start + timedelta(hours=2 if n < 6 else 7)  # the 5 PM slot runs until midnight
-            short = next((r for r in posted if f"{start:%H:%M}" <= r["published"][11:] < f"{end:%H:%M}"
-                          or n == 6 and r["published"][11:] >= "17:00"), None)
+            start = slot_start(c, n, local)
+            end = start + timedelta(hours=2 if n < 6 else 7)  # the last slot runs until about midnight
+            short = next((r for r in posted if r["published"] and f"{start:%Y-%m-%d %H:%M}" <= r["published"] < f"{end:%Y-%m-%d %H:%M}"), None)
             status = "Posted" if short else "Running" if start <= NOW < start + timedelta(minutes=110) \
                 else "Upcoming" if NOW < start else "Missed"
             out.append({"key": f"{c['id']}-{n}", "channel": c["id"], "name": c["name"], "slot": n,
@@ -154,7 +154,7 @@ def limits(costs: list) -> list:
         {"item": "Daily budget", "value": DAILY_BUDGET, "unit": "usd", "note": "All channels together; runs stop once reached (DAILY_BUDGET)"},
         {"item": "Spent today", "value": today, "unit": "usd", "note": f"{TODAY}, India time"},
         {"item": "Left today", "value": round(max(0, DAILY_BUDGET - today), 2), "unit": "usd", "note": "Before the cap stops runs"},
-        {"item": "Shorts per channel a day", "value": SHORTS_PER_DAY, "unit": "count", "note": "One per 2-hour slot, 7 AM to 5 PM IST (SHORTS_PER_DAY)"},
+        {"item": "Hopeverse Shorts a day", "value": SHORTS_PER_DAY, "unit": "count", "note": "Hopeverse Media, one per 2-hour slot (SHORTS_PER_DAY); other channels post 2 a day at their audience's best times"},
         {"item": "Kissa episodes a day", "value": SERIES_PER_DAY, "unit": "count", "note": "Fully acted, about $4-5 each, inside the daily budget (SERIES_PER_DAY)"},
         {"item": "Paid AI clips per Short", "value": clips, "unit": "count", "note": "Kling video shots, about $0.35 each (AI_CLIPS_PER_SHORT)"},
         {"item": "HeyGen talking shot", "value": 0.05, "unit": "usd_per_s", "note": "Avatar IV, per second of speech"},
