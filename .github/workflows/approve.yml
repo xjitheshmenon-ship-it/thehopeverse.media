@@ -35,7 +35,7 @@ jobs:
       - name: Save the approvals and start the next video
         if: startsWith(github.event.issue.title, 'Topics for Hope')
         run: |
-          said=$(python state.py approve)
+          said=$(python state.py approve | tail -n 1)
           gh issue close "$N" -c "Saved: $said. The next approved video starts now; the dashboard shows it within the hour."
           gh workflow run hope.yml --ref main -f job=next  # waits behind a running video; plans new topics for rejected ones
       - name: Save the message for Mr. Hope
