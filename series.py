@@ -30,6 +30,7 @@ class Character(BaseModel):
 
 
 class Episode(BaseModel):
+    screenplay: str  # written first, so the shots follow a real script
     title: str
     description: str
     music: str
@@ -53,19 +54,23 @@ def write_episode() -> Path:
                    f"Story so far:\n{json.dumps(story, ensure_ascii=False, indent=1)}\n\n"
                    + (f"Planned for this episode (follow it unless it breaks the story): {planned}\n\n" if planned else "")
                    +
-                   "Return: title (Hindi in Devanagari, starting 'Ep " + str(n) + " |', under 90 characters); "
+                   "Return: screenplay (the episode as a proper film screenplay: scene headings like 'INT. "
+                   "BAKERY - NIGHT', short English action lines, Hindi dialogue in Devanagari under each character's "
+                   "name; no narrator); title (Hindi in Devanagari, starting 'Ep " + str(n) + " |', under 90 characters); "
                    "description (2-3 gripping Hindi lines, then 3-5 hashtags ending with #Shorts); music (an English "
                    "prompt for the background score's mood, no vocals); summary (2 lines in English of what happens, "
                    "for the next episode); premise (the season's premise and arc in English, kept unless it must "
-                   "change); cast (every character so far plus any new one: look in English, starting with "
+                   "change); cast (only the characters the season still needs, at most 4, the two leads first; drop "
+                   "anyone the story no longer needs, add someone only if the story can't work without them; look "
+                   "in English, starting with "
                    f"'Indian man' or 'Indian woman' then age, face, hair and clothes; voice {VOICES}; pitch); scenes "
-                   "(one per line of dialogue or narration: narration is the spoken Hindi in Devanagari, speaker is "
-                   "the character's name or 'Narrator', on_screen_text the line's key words in Hindi (at most 8), "
-                   "every shot shows one of the characters, never an empty setting: host_on_screen true when the "
-                   "speaker is shown saying the line; on_screen the name of the character shown (for narration, "
-                   "the one the line is about, doing what it describes); image_prompt a photo-real description of "
-                   "that character's action, pose, expression and the setting, like a still from an Indian drama "
-                   "series; picture_search 2-5 English words for the setting)."}],
+                   "(the screenplay cut into shots, one per line of dialogue, in order: narration is the line in "
+                   "Devanagari, speaker the character saying it (never a narrator), on_screen_text the line's key "
+                   "words in Hindi (at most 8), on_screen the character the camera is on (the speaker, or the one "
+                   "reacting to them); image_prompt a cinematic film still: camera framing (close-up, "
+                   "over-the-shoulder, two-shot, low angle), that character's action and expression, the location "
+                   "and light from the scene heading, described the same way in every shot of that scene; "
+                   "picture_search 2-5 English words for the location)."}],
         system=TEAM["Mr. Pen (series)"],
         output_format=Episode,
     )
@@ -78,9 +83,9 @@ def write_episode() -> Path:
             c.pitch = "+0Hz"
     names = [c.name for c in ep.cast]
     for s in ep.scenes:
-        s.speaker = s.speaker if s.speaker in names else ""  # the narrator uses the channel voice
-        s.host_on_screen = bool(s.speaker)  # whoever speaks is seen speaking
+        s.speaker = s.speaker if s.speaker in names else ""  # a stray line falls back to the channel voice
         s.on_screen = s.on_screen if s.on_screen in names else s.speaker or names[0]  # someone is always in shot
+        s.host_on_screen = bool(s.speaker) and s.on_screen == s.speaker  # else a reaction shot, the voice off screen
     story = {"premise": ep.premise, "cast": [c.model_dump() for c in ep.cast],
              "episodes": story["episodes"] + [{"n": n, "title": ep.title, "summary": ep.summary}]}
     OUTBOX.mkdir(exist_ok=True)
@@ -88,7 +93,8 @@ def write_episode() -> Path:
     path.write_text(json.dumps({"channel_id": channel["id"], "title": ep.title, "description": ep.description,
                                 "lang": channel["lang"], "category": "24",  # Entertainment
                                 "footer": TEAM.get("Series footer", ""), "music": ep.music,
-                                "cast": story["cast"], "scenes": [s.model_dump() for s in ep.scenes]},
+                                "cast": story["cast"], "screenplay": ep.screenplay,
+                                "scenes": [s.model_dump() for s in ep.scenes]},
                                indent=2, ensure_ascii=False), encoding="utf-8")
     STORY.write_text(json.dumps(story, indent=2, ensure_ascii=False), encoding="utf-8")
     log_spend(cost, channel["id"])  # counted in the spending report with the other runs
