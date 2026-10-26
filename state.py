@@ -40,9 +40,11 @@ def save() -> None:
     env = {**os.environ, "GIT_INDEX_FILE": os.path.join(tempfile.mkdtemp(), "index"),
            "GIT_AUTHOR_NAME": "Mr. Hope", "GIT_AUTHOR_EMAIL": "hope@localhost",
            "GIT_COMMITTER_NAME": "Mr. Hope", "GIT_COMMITTER_EMAIL": "hope@localhost"}
+    parent = subprocess.run(["git", "fetch", "origin", BRANCH], cwd=HERE, capture_output=True).returncode == 0
+    if parent:  # start from what's saved, so a run that loaded earlier never drops files saved since (sign-ins)
+        git("read-tree", "FETCH_HEAD", env=env)
     git("add", "-f", "--", *files(), env=env)
     tree = git("write-tree", env=env)
-    parent = subprocess.run(["git", "fetch", "origin", BRANCH], cwd=HERE, capture_output=True).returncode == 0
     commit = git("commit-tree", tree, *(["-p", "FETCH_HEAD"] if parent else []), "-m", "Hope's memory", env=env)
     git("push", "origin", f"{commit}:refs/heads/{BRANCH}")
     print(f"Saved {len(files())} files to the {BRANCH} branch")
