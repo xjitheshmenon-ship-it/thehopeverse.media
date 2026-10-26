@@ -1,13 +1,19 @@
 """Plan the next uploads ahead, so the dashboard shows real topics and each video makes the one planned for it.
 
     python plan.py             -> fill runs/plan.json: a topic for each of the next 6 videos of every signed-in channel
-    python plan.py --next ID   -> print the topic planned for channel ID's next upload, and take it off the plan
+    python plan.py --next ID   -> print the next topic the owner approved for channel ID, and take it off the plan
+                                  (--any: the first planned one when none is approved, for Post now)
     python plan.py --due       -> the next video to make (hope.yml), as KEY=value lines for $GITHUB_ENV
 
 From 6 AM India time hope.yml makes one video at a time, one channel after another in channels.json order, round
 after round until each has its daily count (Hopeverse 6, the others 2); each run starts the next when it ends.
 Mr. Hope (or series.py for Kissa) still checks that a news topic is fresh. Existing entries are kept; only empty
 ones are planned, by Mr. Focus (Sonnet).
+
+Owner's rule 2026-10-26: no script is written before the owner approves its topic on the dashboard (approvals.json,
+see approve.yml). A channel whose topics all wait is skipped and the next channel with an approved topic goes
+instead; rejected topics are dropped and planned again. When nothing is approved the chain stops, and the next
+approval starts it again.
 """
 import json
 import os
@@ -17,6 +23,7 @@ from zoneinfo import ZoneInfo
 
 from pydantic import BaseModel
 
+from state import approvals, topic_id
 from agents import (DAILY_BUDGET, HELPER_MODEL, HERE, OUTBOX, WEB_SEARCH, _channels, _cost, client, log_spend,
                     spent_today)
 
@@ -77,10 +84,14 @@ def next_slots(channel: dict, k: int = 6, after: datetime = None) -> list:
 def due(now: datetime = None) -> dict:
     """The next video to make now, as KEY=value env for hope.yml, and mark it started so the next run moves on."""
     now, log = (now or datetime.now()).astimezone(IST), HERE / "runs" / "slots.jsonl"
-    done = made_today(now)
-    todo = [(c, n) for c, n in day_order() if n > done.get(c["id"], 0)]
+    done, said, plan = made_today(now), approvals(), load()
+    ready = {c["id"] for c in live_channels() if any(said.get(topic_id(c["id"], e["topic"])) == "ok" for e in plan.get(c["id"], []))}
+    left = [(c, n) for c, n in day_order() if n > done.get(c["id"], 0)]
+    todo = [(c, n) for c, n in left if c["id"] in ready]  # skip channels whose topics still wait for the owner
     if not todo:
-        return {}
+        if left:
+            print(f"::notice::{len(left)} videos left today wait for topics approved on the dashboard", file=sys.stderr)
+        return {"RAN": 1} if left else {}  # RAN: plan again, so rejected topics get new ones
     c, n = todo[0]
     log.parent.mkdir(exist_ok=True)
     with log.open("a", encoding="utf-8") as f:
@@ -107,7 +118,7 @@ class Plan(BaseModel):
     items: list[Item]
 
 
-def _ask(channel: dict, slots: list, taken: list) -> list:
+def _ask(channel: dict, slots: list, taken: list, rejected: list = ()) -> list:
     """Mr. Focus plans topics for these slots (its cost goes in history.jsonl)."""
     cid = channel["id"]
     if channel.get("status") == "series":
@@ -125,6 +136,7 @@ def _ask(channel: dict, slots: list, taken: list) -> list:
         task = (f"Plan one YouTube Short for each of these upload slots of the channel {channel['name']} "
                 f"(niche: {channel['niche']}; audience: {channel['audience']}):\n{when}\n"
                 f"Already made, don't repeat: {drafted}\nAlready planned: {taken}\n"
+                + (f"The owner rejected these, don't suggest them or anything like them: {list(rejected)}\n" if rejected else "")
                 + ("Current affairs: first run web_search for the top India and world news of the last 24-48 hours. "
                    "Every topic must name one specific, real, dated story you found (who, what, a number), never a "
                    "category like 'top headline'. Pick the stories with the most interest for each slot's audience."
@@ -143,40 +155,49 @@ def _ask(channel: dict, slots: list, taken: list) -> list:
 
 
 def refresh() -> dict:
-    plan, now = load(), datetime.now(IST)
+    plan, now, said = load(), datetime.now(IST), approvals()
+    rejected, old = plan.get("rejected", {}), f"{now - timedelta(hours=36):%Y-%m-%d %H:%M}"
     for c in live_channels():
-        whens = next_slots(c)
-        keep = {e["when"]: e for e in plan.get(c["id"], []) if e["when"] in {f"{w:%Y-%m-%d %H:%M}" for _, w in whens}}
-        empty = [(n, w) for n, w in whens if f"{w:%Y-%m-%d %H:%M}" not in keep]
+        cid, whens, keep = c["id"], next_slots(c), []
+        for e in plan.get(cid, []):
+            verdict = said.get(topic_id(cid, e["topic"]))
+            if verdict == "no":
+                rejected[cid] = (rejected.get(cid, []) + [e["topic"]])[-20:]
+            elif verdict == "ok" or not (c.get("news") and e.get("planned", "") < old):  # unapproved news goes stale
+                keep.append(e)
+        keep = sorted(keep, key=lambda e: said.get(topic_id(cid, e["topic"])) != "ok")[:len(whens)]  # approved go first
+        empty = whens[len(keep):]
         if empty and spent_today() < DAILY_BUDGET:
             try:
-                items = _ask(c, empty, [e["topic"] for e in keep.values()])
-                for (n, w), it in zip(empty, items):
-                    keep[f"{w:%Y-%m-%d %H:%M}"] = {"when": f"{w:%Y-%m-%d %H:%M}", "topic": it.topic, "why": it.why,
-                                                   "planned": f"{now:%Y-%m-%d %H:%M}"}
-            except Exception as e:  # a failed plan shouldn't stop the run; the slot then picks its own topic
-                print(f"    planning {c['id']} failed: {e}")
-        plan[c["id"]] = sorted(keep.values(), key=lambda e: e["when"])
-        print(f"{c['name']}: " + "; ".join(f"{e['when'][5:]} {e['topic']}" for e in plan[c["id"]]))
+                items = _ask(c, empty, [e["topic"] for e in keep], rejected.get(cid, []))
+                keep += [{"topic": it.topic, "why": it.why, "planned": f"{now:%Y-%m-%d %H:%M}"} for it in items]
+            except Exception as e:  # a failed plan shouldn't stop the run; the next run plans again
+                print(f"    planning {cid} failed: {e}")
+        for (n, w), e in zip(whens, keep):  # estimated times, in making order
+            e["when"] = f"{w:%Y-%m-%d %H:%M}"
+        plan[cid] = keep
+        print(f"{c['name']}: " + "; ".join(f"{e['when'][5:]} {e['topic']}" for e in plan[cid]))
+    plan["rejected"] = rejected
     PLAN.parent.mkdir(exist_ok=True)
     PLAN.write_text(json.dumps(plan, indent=1, ensure_ascii=False), encoding="utf-8")
     return plan
 
 
-def next_topic(cid: str) -> str:
-    """Take the earliest planned topic for this channel off the plan and return it ("" if none)."""
-    plan = load()
+def next_topic(cid: str, any_: bool = False) -> str:
+    """Take this channel's first approved topic off the plan and return it ("" if none); any_: else the first one."""
+    plan, said = load(), approvals()
     entries = plan.get(cid) or []
-    if not entries:
+    pick = next((e for e in entries if said.get(topic_id(cid, e["topic"])) == "ok"), entries[0] if any_ and entries else None)
+    if not pick:
         return ""
-    plan[cid] = entries[1:]
+    entries.remove(pick)
     PLAN.write_text(json.dumps(plan, indent=1, ensure_ascii=False), encoding="utf-8")
-    return entries[0]["topic"]
+    return pick["topic"]
 
 
 if __name__ == "__main__":
     if sys.argv[1:2] == ["--next"]:
-        print(next_topic(sys.argv[2]))
+        print(next_topic(sys.argv[2], "--any" in sys.argv))
     elif sys.argv[1:2] == ["--due"]:
         print("\n".join(f"{k}={v}" for k, v in due().items()))
     else:

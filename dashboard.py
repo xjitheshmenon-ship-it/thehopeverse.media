@@ -17,6 +17,7 @@ from zoneinfo import ZoneInfo
 
 import credits
 from agents import DAILY_BUDGET, HERE, HISTORY, OUTBOX, _channels
+from state import approvals, notes, topic_id
 from plan import STEP, SERIES_PER_DAY, SHORTS_PER_DAY, day_order, live_channels, load, made_today, next_slots
 
 IST = ZoneInfo("Asia/Kolkata")
@@ -129,6 +130,24 @@ def upcoming() -> list:
     return sorted(out, key=lambda r: r["when"])[:6]
 
 
+def topics() -> list:
+    """Every planned topic with the owner's choice: Waiting (no script until approved), Approved or Rejected."""
+    plan, said = load(), approvals()
+    return [{"id": topic_id(c["id"], e["topic"]), "channel": c["id"], "name": c["name"], "when": e.get("when", ""),
+             "topic": e["topic"], "why": e.get("why", ""),
+             "status": {"ok": "Approved", "no": "Rejected"}.get(said.get(topic_id(c["id"], e["topic"])), "Waiting")}
+            for c in live_channels() for e in plan.get(c["id"], [])]
+
+
+def talk() -> list:
+    """The owner's messages from the dashboard and Mr. Hope's run summaries, newest last."""
+    said = HERE / "runs" / "hope-said.jsonl"
+    hope = [json.loads(x) for x in said.read_text(encoding="utf-8").splitlines()[-30:]] if said.exists() else []
+    rows = [{"at": n["at"], "who": "You", "text": n["text"]} for n in notes()]
+    rows += [{"at": h["at"], "who": "Mr. Hope" + (f" ({h['channel']})" if h.get("channel") else ""), "text": h["text"]} for h in hope]
+    return [{"key": f"{i}", **r} for i, r in enumerate(sorted(rows, key=lambda r: r["at"])[-40:])]
+
+
 def youtube_totals() -> dict:
     """Per signed-in YouTube channel: YouTube's own all-time views, subscribers and minutes watched."""
     from video import channel_stats, watch_minutes
@@ -236,7 +255,8 @@ if __name__ == "__main__":
     plan = slots(rows)
     data = {"updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "shorts": rows, "spend": costs, "agent_work": agent_work(), "limits": limits(costs),
-            "slots": plan, "channels": channels(rows, costs, plan, youtube_totals()), "runs": runs(), "upcoming": upcoming(), "credits": credits.check()}
+            "slots": plan, "channels": channels(rows, costs, plan, youtube_totals()), "runs": runs(), "upcoming": upcoming(), "credits": credits.check(),
+            "topics": topics(), "talk": talk()}
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(data, indent=1, ensure_ascii=False), encoding="utf-8")
     print(f"Saved {OUT} ({len(rows)} Shorts)")

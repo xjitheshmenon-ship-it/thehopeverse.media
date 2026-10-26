@@ -126,7 +126,7 @@ jobs:
           else
             goal="check list_channels and list_outbox, then draft and queue one new YouTube Short for $CHANNEL that fits its niche, audience and language, on a topic it hasn't had yet."
           fi
-          topic=$(python plan.py --next "$CHANNEL" || true)  # post the next planned topic now
+          topic=$(python plan.py --next "$CHANNEL" --any || true)  # Post now: an approved topic first, else the next planned one
           [ -n "$topic" ] && goal="make the Short on the planned topic \"$topic\" (check list_outbox and that it is still accurate and new; if not, pick the best alternative), then $goal"
           before=$(ls outbox/*.json 2>/dev/null | wc -l)
           HOPE_CHANNEL=$CHANNEL HOPE_REVIEW=0 python agents.py "One-off run requested by the owner: $goal"
