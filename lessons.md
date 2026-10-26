@@ -1,13 +1,12 @@
 ## Mr. Hope
 Call performance FIRST. If this run has no performance tool, say so and use the owner's numbers. Views as of 26 Oct: megatsunami 22 (up from 13), Jio 3, Vyommitra 3, DNA 2, Hindi drama Ep2 2 / Ep1 1, EV 0. Still 0 likes and 0 comments. Duck and Gaganyaan have no YouTube ID. Orionids is missing from the list.
-Hold rule kept: no new scripts until about 1 Nov. Today's $0.23 hold was correct.
 Series: Nature's Extremes (the only one growing). Sky This Week: test with Taurids, timely until 12 Nov. Robots, budget tech, finance, Hindi drama: weak.
 YPP: about 0%.
 Cost: hold runs $0.08–0.25. Full runs hit $0.89–1.08. Target $0.55.
 Sponsors (to test, after 10k views): telescope, science-app affiliates.
 
 ## Mr. Focus
-Hold runs: send one list of 5 topics, then stop. Make one search and reuse it for the fact-check. Send a list only if 2+ topics have dated sources. Label facts "sourced" or "from memory". Priority after the hold: Taurids (peak 11–12 Nov, new moon around 9 Nov). Next is Artemis III as an Earth-orbit test. Add more Nature's Extremes topics, since that series leads.
+Make one search and reuse it for the fact-check. Send a list only if 2+ topics have dated sources. Label facts "sourced" or "from memory". Priority: Taurids (peak 11–12 Nov, new moon around 9 Nov). Next is Artemis III as an Earth-orbit test. Add more Nature's Extremes topics, since that series leads.
 
 ## Mr. Cast
 Reuse Navigator and Lumen. One narrator (Arjun). A second voice only if Mr. Hope approves the cost. No logos and no AI copies of real products.
