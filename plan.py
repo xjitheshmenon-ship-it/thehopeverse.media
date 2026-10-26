@@ -83,14 +83,20 @@ def _ask(channel: dict, slots: list, taken: list) -> tuple[list, float]:
         task = (f"Plan one YouTube Short for each of these upload slots of the channel {channel['name']} "
                 f"(niche: {channel['niche']}; audience: {channel['audience']}):\n{when}\n"
                 f"Already made, don't repeat: {drafted}\nAlready planned: {taken}\n"
-                + ("Current affairs: search the news of the last 24-48 hours and pick the stories with the most "
-                   "interest for each slot's audience; leave later slots for stories still developing."
+                + ("Current affairs: first run web_search for the top India and world news of the last 24-48 hours. "
+                   "Every topic must name one specific, real, dated story you found (who, what, a number), never a "
+                   "category like 'top headline'. Pick the stories with the most interest for each slot's audience."
                    if cid == "yt-hopeverse" else "Evergreen, well-sourced topics with a strong curiosity hook."))
         tools = [WEB_SEARCH] if cid == "yt-hopeverse" else []
-    response = client.messages.parse(model=HELPER_MODEL, max_tokens=4000, output_config={"effort": "low"},
+    response = client.messages.parse(model=HELPER_MODEL, max_tokens=8000,
+                                     output_config={"effort": "medium" if tools else "low"},
                                      tools=tools, output_format=Plan,
                                      messages=[{"role": "user", "content": task + f"\nReturn exactly {len(slots)} items, in slot order."}])
-    return response.parsed_output.items[:len(slots)], _cost(HELPER_MODEL, response.usage)
+    cost = _cost(HELPER_MODEL, response.usage)
+    searched = getattr(getattr(response.usage, "server_tool_use", None), "web_search_requests", 0) or 0
+    if tools and not searched:  # news topics planned without looking at the news are guesses: leave the slots open
+        raise RuntimeError(f"planned without searching the news (${cost:.2f})")
+    return response.parsed_output.items[:len(slots)], cost
 
 
 def refresh() -> dict:
