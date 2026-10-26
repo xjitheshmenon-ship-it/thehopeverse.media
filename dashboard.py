@@ -150,7 +150,8 @@ def youtube_totals() -> dict:
 
 def channels(rows: list, costs: list, plan: list, totals: dict = None) -> list:
     """One row per channel: today's uploads against plan, today's and 7-day spend, all-time views and watch time.
-    YouTube views are the channel's own total when YouTube gives one (it also counts deleted or replaced Shorts)."""
+    YouTube views: the channel's own total (it also counts deleted or replaced Shorts) or, while that total
+    still lags, the sum over its Shorts, whichever is larger."""
     totals = totals or {}
     week = f"{NOW - timedelta(days=6):%Y-%m-%d}"
     names = {c["id"]: c["name"] for c in _channels()}
@@ -166,8 +167,8 @@ def channels(rows: list, costs: list, plan: list, totals: dict = None) -> list:
                     "missed": sum(p["status"] == "Missed" for p in mine),
                     "spend_today": round(sum(c["cost_usd"] for c in costs if c["channel"] == i and c["day"] == TODAY), 2),
                     "spend_7d": round(sum(c["cost_usd"] for c in costs if c["channel"] == i and c["day"] >= week), 2),
-                    "yt_views": totals.get(i, {}).get("views",
-                                                      sum(r["yt_views"] or 0 for r in rows if r["channel"] == i)),
+                    "yt_views": max(totals.get(i, {}).get("views", 0),  # the channel total lags a day or two
+                                    sum(r["yt_views"] or 0 for r in rows if r["channel"] == i)),
                     "yt_subscribers": totals.get(i, {}).get("subscribers"),
                     "ig_views": sum(r["ig_views"] or 0 for r in rows if r["channel"] == i),
                     "yt_watch_min": totals.get(i, {}).get("watch_min"),
