@@ -69,7 +69,7 @@ def _place(glyph: Image.Image, size: int, bg, width_frac: float = 0.52, lift: fl
     return canvas
 
 
-def _banner(kit: Kit, accent) -> Image.Image:
+def _banner(kit: Kit, accent, network: bool = True) -> Image.Image:
     im = Image.new("RGBA", (2560, 1440), INK + (255,))
     glow = Image.new("L", (2560, 1440))
     ImageDraw.Draw(glow).ellipse((380, 270, 2180, 1170), fill=16)
@@ -87,10 +87,11 @@ def _banner(kit: Kit, accent) -> Image.Image:
         d.line([(x - 14, y), (x + 14, y)], fill=DIM, width=2)
         d.line([(x, y - 14), (x, y + 14)], fill=DIM, width=2)
     mono = lambda size: _font("JetBrainsMono-Medium.ttf", size)
-    corner = f"[HV/NETWORK] — {kit.id.upper()} "
+    corner = f"[HV/NETWORK] — {kit.id.upper()} " if network else f"[{kit.id.upper()}] "
     d.text((150, 150), corner, font=mono(20), fill=DIM)
     d.text((150 + d.textlength(corner, font=mono(20)), 150), "●", font=mono(20), fill=accent)
-    d.text((2410, 1290), f"A HOPEVERSE CHANNEL · {kit.language.split('(')[0].strip().upper()}", font=mono(20), fill=DIM, anchor="rd")
+    d.text((2410, 1290), ("A HOPEVERSE CHANNEL · " if network else "") + kit.language.split('(')[0].strip().upper(),
+           font=mono(20), fill=DIM, anchor="rd")
 
     word, size = kit.name.lower(), 262
     # Signal's tight tracking (-7px at 262px); Pillow has no letter-spacing, so letters are placed one by one
@@ -112,7 +113,8 @@ def _banner(kit: Kit, accent) -> Image.Image:
     return im
 
 
-def render(kit: Kit, out: Path) -> None:
+def render(kit: Kit, out: Path, network: bool = True) -> None:
+    """network=False leaves the Hopeverse marks off the banner, for channels kept apart from the brand."""
     out.mkdir(parents=True, exist_ok=True)
     accent = ACCENTS[kit.accent]
     ch = next((c for c in kit.name.lower() if c.isalpha()), "h")
@@ -124,7 +126,7 @@ def render(kit: Kit, out: Path) -> None:
     wm = avatar.resize((600, 600), Image.LANCZOS)
     wm.putalpha(mask)
     wm.resize((150, 150), Image.LANCZOS).save(out / "watermark-150.png")
-    _banner(kit, accent).convert("RGB").save(out / "banner-2560x1440.png", optimize=True)
+    _banner(kit, accent, network).convert("RGB").save(out / "banner-2560x1440.png", optimize=True)
     (out / "kit.json").write_text(kit.model_dump_json(indent=2), encoding="utf-8")
     videos = "\n".join(f"{i}. {v}" for i, v in enumerate(kit.first_videos, 1))
     (out / "kit.md").write_text(f"""# {kit.name}  (@{kit.handle})
@@ -188,7 +190,7 @@ def scout() -> Path:
                    "language); language (just its name, e.g. German); niche (one line); why (2 sentences of evidence, with numbers); "
                    "first_videos (5 Short ideas with curiosity hooks); tagline (under 34 characters, calm and "
                    "confident, like a premium magazine); description (the YouTube About text: 3 short paragraphs, "
-                   "what viewers get, how often (6 Shorts a day), one line saying it's an AI-made Hopeverse "
+                   "what viewers get, how often (2 Shorts a day), one line saying it's an AI-made Hopeverse "
                    "channel, in the audience's language, no emojis, no hype words like 'ultimate' or 'insane'); "
                    "keywords (10-15); accent (the colour that suits the mood)."}],
         output_format=Kit,

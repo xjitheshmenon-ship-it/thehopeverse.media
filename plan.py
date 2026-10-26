@@ -130,8 +130,8 @@ def _ask(channel: dict, slots: list, taken: list) -> list:
                 + ("Current affairs: first run web_search for the top India and world news of the last 24-48 hours. "
                    "Every topic must name one specific, real, dated story you found (who, what, a number), never a "
                    "category like 'top headline'. Pick the stories with the most interest for each slot's audience."
-                   if cid == "yt-hopeverse" else "Evergreen, well-sourced topics with a strong curiosity hook."))
-        tools = [WEB_SEARCH] if cid == "yt-hopeverse" else []
+                   if channel.get("news") else "Evergreen, well-sourced topics with a strong curiosity hook."))
+        tools = [WEB_SEARCH] if channel.get("news") else []
     response = client.messages.parse(model=HELPER_MODEL, max_tokens=8000,
                                      output_config={"effort": "medium" if tools else "low"},
                                      tools=tools, output_format=Plan,

@@ -6,7 +6,8 @@
     "url": "https://www.youtube.com/@HopeverseMedia",
     "niche": "Current affairs explained: today's biggest news in under a minute (changed by the owner, 26 Oct 2026)",
     "audience": "India (4 Shorts a day) and international (2 a day), English",
-    "status": "live"
+    "status": "live",
+    "news": true
   },
   {
     "id": "ig-hopeverse",
@@ -67,12 +68,56 @@
     "footer": "Instinct, une chaîne Hopeverse Media. Made by AI. Made with hope.\nAbonnez-vous pour une histoire du vivant chaque jour.",
     "watermark": "brand/instinct-watermark.png",
     "branding": {
-      "description": "Instinct raconte en moins d'une minute les comportements les plus étonnants du monde animal et de la nature : des corbeaux qui reconnaissent les visages, des pieuvres qui résolvent des énigmes, des plantes qui communiquent. Chaque histoire repose sur des études publiées et des sources vérifiables.\n\nSix nouveaux Shorts chaque jour, pour apprendre quelque chose de vrai sur le vivant et regarder la nature autrement, seul ou en famille.\n\nInstinct est une chaîne Hopeverse Media, réalisée par l'IA et faite avec espoir.",
+      "description": "Instinct raconte en moins d'une minute les comportements les plus étonnants du monde animal et de la nature : des corbeaux qui reconnaissent les visages, des pieuvres qui résolvent des énigmes, des plantes qui communiquent. Chaque histoire repose sur des études publiées et des sources vérifiables.\n\nDeux nouveaux Shorts chaque jour, pour apprendre quelque chose de vrai sur le vivant et regarder la nature autrement, seul ou en famille.\n\nInstinct est une chaîne Hopeverse Media, réalisée par l'IA et faite avec espoir.",
       "keywords": "animaux \"faits sur les animaux\" nature \"comportement animal\" \"le saviez-vous\" biodiversité \"faune sauvage\" \"science de la nature\" \"animaux étonnants\" océan insectes oiseaux \"documentaire animalier\" \"Shorts en français\" Hopeverse",
       "country": "FR",
       "banner": "brand/instinct-banner.png"
     },
     "tz": "Europe/Paris",
+    "first": 11
+  },
+  {
+    "id": "yt-sankalp",
+    "name": "Sankalp",
+    "platform": "youtube",
+    "url": "",
+    "audience": "India, Hindi-speaking adults 18-45 (Hindi belt and diaspora), Hindi",
+    "lang": "hi",
+    "language": "Hindi",
+    "status": "planned",
+    "category": "25",
+    "news": true,
+    "niche": "Indian political news and policy explained daily from a pro-Modi, pro-government viewpoint: every fact double-sourced, opinion clearly marked, no AI faces of real people",
+    "voice": "hi-IN-MadhurNeural",
+    "token": "token-sankalp.json",
+    "footer": "Sankalp: रोज़ की राजनीति, सरकार के नज़रिए से। हर तथ्य दो स्रोतों से जाँचा गया।\nयह टिप्पणी (commentary) है। आवाज़ और कुछ दृश्य AI से बने हैं।",
+    "branding": {
+      "description": "Sankalp पर हर दिन देश की सबसे बड़ी राजनीतिक ख़बर, एक मिनट में: क्या हुआ, कौन-सा तथ्य छूट गया, और सरकार का पक्ष क्या है।\n\nहर दिन दो नए Shorts। हर आँकड़ा दो भरोसेमंद स्रोतों से जाँचा जाता है और स्रोत description में दिए जाते हैं। राय हमारी है, तथ्य सबके।\n\nयह एक टिप्पणी (commentary) चैनल है। वीडियो AI की मदद से बनते हैं: आवाज़ और कुछ दृश्य AI से बने हैं, असली नेताओं की नकली तस्वीर या आवाज़ कभी नहीं।",
+      "keywords": "\"hindi news\" \"political news\" \"modi government\" \"indian politics\" \"bjp\" \"viksit bharat\" \"news analysis\" \"hindi shorts\" राजनीति समाचार",
+      "country": "IN"
+    },
+    "first": 11
+  },
+  {
+    "id": "yt-sawaal",
+    "name": "Sawaal",
+    "platform": "youtube",
+    "url": "",
+    "audience": "India, Hindi-speaking adults 18-45 (Hindi belt and diaspora), Hindi",
+    "lang": "hi",
+    "language": "Hindi",
+    "status": "planned",
+    "category": "25",
+    "news": true,
+    "niche": "Indian political news explained daily from an opposition viewpoint that questions the Modi government: every fact double-sourced, opinion clearly marked, no AI faces of real people",
+    "voice": "hi-IN-SwaraNeural",
+    "token": "token-sawaal.json",
+    "footer": "Sawaal: ख़बर के पीछे का सवाल। हर तथ्य दो स्रोतों से जाँचा गया।\nयह टिप्पणी (commentary) है। आवाज़ और कुछ दृश्य AI से बने हैं।",
+    "branding": {
+      "description": "Sawaal पर हर दिन देश की सबसे बड़ी राजनीतिक ख़बर, एक मिनट में: क्या हुआ, कौन-सा तथ्य छूट गया, और सरकार से कौन-से सवाल पूछे जाने चाहिए।\n\nहर दिन दो नए Shorts। हर आँकड़ा दो भरोसेमंद स्रोतों से जाँचा जाता है और स्रोत description में दिए जाते हैं। राय हमारी है, तथ्य सबके।\n\nयह एक टिप्पणी (commentary) चैनल है। वीडियो AI की मदद से बनते हैं: आवाज़ और कुछ दृश्य AI से बने हैं, असली नेताओं की नकली तस्वीर या आवाज़ कभी नहीं।",
+      "keywords": "\"hindi news\" \"political news\" \"opposition\" \"indian politics\" \"modi government\" \"accountability\" \"news analysis\" \"hindi shorts\" राजनीति सवाल",
+      "country": "IN"
+    },
     "first": 11
   }
 ]
