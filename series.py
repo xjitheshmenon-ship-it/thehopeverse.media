@@ -58,9 +58,11 @@ def write_episode() -> Path:
                    f"'Indian man' or 'Indian woman' then age, face, hair and clothes; voice {VOICES}; pitch); scenes "
                    "(one per line of dialogue or narration: narration is the spoken Hindi in Devanagari, speaker is "
                    "the character's name or 'Narrator', on_screen_text the line's key words in Hindi (at most 8), "
-                   "host_on_screen true when that character is shown speaking, image_prompt a photo-real "
-                   "description of the shot's pose, expression and setting, picture_search 2-5 English words for "
-                   "a stock video of the setting when no character is shown)."}],
+                   "every shot shows one of the characters, never an empty setting: host_on_screen true when the "
+                   "speaker is shown saying the line; on_screen the name of the character shown (for narration, "
+                   "the one the line is about, doing what it describes); image_prompt a photo-real description of "
+                   "that character's action, pose, expression and the setting, like a still from an Indian drama "
+                   "series; picture_search 2-5 English words for the setting)."}],
         system=TEAM["Mr. Pen (series)"],
         output_format=Episode,
     )
@@ -71,8 +73,11 @@ def write_episode() -> Path:
             c.voice = "hi-IN-SwaraNeural" if "woman" in c.look.lower() else "hi-IN-MadhurNeural"
         if not re.fullmatch(r"[+-]\d{1,2}Hz", c.pitch):
             c.pitch = "+0Hz"
+    names = [c.name for c in ep.cast]
     for s in ep.scenes:
-        s.speaker = s.speaker if any(c.name == s.speaker for c in ep.cast) else ""  # the narrator uses the channel voice
+        s.speaker = s.speaker if s.speaker in names else ""  # the narrator uses the channel voice
+        s.host_on_screen = bool(s.speaker)  # whoever speaks is seen speaking
+        s.on_screen = s.on_screen if s.on_screen in names else s.speaker or names[0]  # someone is always in shot
     story = {"premise": ep.premise, "cast": [c.model_dump() for c in ep.cast],
              "episodes": story["episodes"] + [{"n": n, "title": ep.title, "summary": ep.summary}]}
     OUTBOX.mkdir(exist_ok=True)
