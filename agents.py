@@ -81,6 +81,9 @@ def run_agent(name: str, system: str, prompt: str, tools: list, effort: str = "m
     if spent >= BUDGET:
         return f"[budget of ${BUDGET:.2f} reached; stop now and summarize what you have]"
     print(f"... {name} is working (spent so far ${spent:.2f})", flush=True)
+    own = TEAM.get(f"{name} ({os.environ.get('HOPE_CHANNEL')})")  # e.g. "## Mr. Pen (yt-sawaal)" in team.md
+    if own:
+        system += "\n\nRules for this channel (they win over the general rules above):\n" + own
     lessons = _sections(LESSONS).get(name)
     if lessons:
         system += "\n\nLessons Mr. Hope has learned from past runs (follow them):\n" + lessons

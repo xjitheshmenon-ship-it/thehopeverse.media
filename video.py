@@ -144,7 +144,9 @@ def storyboard(package: dict) -> Storyboard:
                    "not 'Gaganyaan'). "
                    "image_prompt: a photo-real description of the same shot (person, setting, camera angle); when a "
                    "recurring character appears, copy their look from the cast below word for word. Real footage only, "
-                   "never cartoon. "
+                   "never cartoon. Never ask for a real, identifiable person in picture_search or image_prompt (no "
+                   "politician, official or celebrity by name or likeness): show the place, building, crowd, document "
+                   "or object instead, so no shot is a fake of a real person. "
                    + ("speaker: always empty and host_on_screen always false: one narrator reads every line, in the "
                       "package's own language, never Arjun or Meera. picture_search stays in English. "
                       if package.get("lang") else
