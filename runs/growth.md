@@ -1,60 +1,58 @@
 ## Mr. Focus
-- The data is thin. All Shorts together have 21 views, 0 likes and 0 comments, so no topic is proven yet. Hold rule: no new scripts until about 1 Nov.
-- Today, look for dated, sourced items:
-  - Nature's Extremes (lead): record-scale natural events.
-  - Sky This Week (to test): the Orionid tail (ends about 22 Nov), plus the Taurid meteors in early November.
-  - India space: ISRO Gaganyaan and Vyommitra.
-- Label each fact "sourced" or "from memory".
-- Kissa: contract marriage and revenge tropes (to test).
+- Topics to look for today (to test):
+  - Nature's Extremes, the lead series. Records and scale give a natural number hook.
+  - Sky This Week. Look for Orionids' tail end, the Taurid fireballs (early November) and the next full Moon.
+  - Space missions with Indian relevance, such as ISRO Gaganyaan.
+  - One-number "future" stories, such as longevity.
+- Use one search for each topic and label each fact "sourced" or "from memory".
+- Don't queue new scripts until about 1 Nov.
+- Skip the weak series, Robots and Future on a Budget.
 
 ## Mr. Pen
-- Best so far, from only 13 views: the megatsunami's true-number hook (481 m). Treat it as a weak signal.
-- Use: a true number in the first 2 seconds, answered in the script. Then a "what would you do?" question at the end (to test).
-- Avoid: absolute words like "every", a "Part 2" that isn't scheduled, and unsourced stats.
-- Kissa (to test): open on the conflict line, then end on a cliffhanger.
+- Use: a true number in the first 2 seconds, answered in the script. Examples: "481 metres", "66 km/s".
+- Use: a "what would you pick?" line at the end, to start comments (to test).
+- Avoid: "Part 2" unless it's scheduled.
+- Avoid: absolute words like "every".
+- Avoid: slow intros and logo cards.
+- Keep to about 40 seconds.
+- Kissa: end each episode on a cliffhanger line, with the twist in the last 3 seconds.
 
 ## Mr. Spark
-- Titles: a number first, under 60 characters, ending in #Shorts. The 481 m title got the most views; the product and finance titles got 0–3.
-- Hopeverse Media hashtags (to test): #Shorts #Space #Science #Facts #Future #Astronomy #MeteorShower
-- Hindi hashtags (to test): #Shorts #ISRO #Space #Vigyan #Facts #India
-- Kissa hashtags (to test): #Shorts #HindiWebSeries #Kahani #MicroDrama #LoveStory #Drama
-- Description: put the search terms in line 1. Add a one-line question and "New Short daily".
+- Titles: under 60 characters, number first, ending in #Shorts. The megatsunami title is the best-viewed so far, but the sample is far too small to call it a pattern.
+- Hashtags for Hopeverse Media on YouTube (to test): #Shorts #Space #Science #Futuretech #Astronomy #Didyouknow
+- Hashtags for Hopeverse Media on Instagram (to test): #space #science #astronomy #futuretech #learnontiktok #didyouknow
+- Hashtags for Hopeverse Hindi (to test): #Shorts #ISRO #अंतरिक्ष #विज्ञान #हिंदी #Facts
+- Hashtags for Kissa (to test): #Shorts #HindiWebSeries #Kissa #LoveStory #ContractMarriage #Drama
+- Description: put the search terms in line 1. Add one question and a subscribe line.
 
 ## Mr. Cut
-- Pace: about 20 shots in 40 seconds, with a dramatic visual in the first 2 seconds (to test).
-- Music: a hopeful, building ambient or cinematic track for science. For Kissa, use a soft emotional piano with a tense sting at the twist.
-- Audio: keep the narration clear over the music, and put credits on screen.
-- Use images only once the licence is confirmed. The Halley 1986 photo is still pending.
+- Open with the most dramatic visual in the first 2 seconds (to test).
+- About 20 shots, with a cut every 2 seconds.
+- Music: soft, awe-inspiring and cinematic, with a swell on the reveal. Keep it quiet under the voice.
+- Put credits on screen, and use no image until its licence is confirmed. The Halley 1986 photo is still pending.
+- Kissa: use tense, emotional piano or strings, with a beat drop at the twist.
 
 ## Mr. Post
-- Hopeverse Media: Nature's Extremes and Sky This Week Shorts.
-- Hindi: dubs of the same Shorts, with ISRO and India angles first.
-- Kissa: the daily episode at 6 pm IST.
-- Instagram: the best-looking science Short, as a Reel.
-- Flag: the duck Short has no YouTube ID. The duplicate rQPOCx8wY6c is still live, so delete it.
-- The Orionid Short must go out before 22 Nov.
-- The 7-day numbers are due about 1 Nov.
+- Hopeverse Media on YouTube: the main space and science Short of the day.
+- Hopeverse Media on Instagram: the same Short, with a hashtag set of up to 5 (to test).
+- Hopeverse Hindi: a Hindi dub of every main Short, from video.py.
+- Kissa: one episode daily at 6 pm IST.
+- Expiry: the Orionids Short must publish before 22 Nov.
+- Flag the duck Short, which has no YouTube ID. Check its upload.
+- Delete the duplicate megatsunami Short (rQPOCx8wY6c).
 
 ## Owner
-**Pinned comments**
-- Hopeverse Media: "Which city are you watching the sky from? 🌍"
-- Hindi: "आप कौन से शहर से हैं? कमेंट करें 👇"
-- Kissa: "अगर आप हीरो होते, तो क्या करते? 👇"
-
-**Community posts**
-- Hopeverse Media: "Which would you rather see first: a Mars landing or a Moon base?" Poll options: Mars, Moon, Both, Neither.
-- Hindi: "ISRO का अगला बड़ा मिशन कौन सा देखना चाहेंगे?" Poll options: गगनयान, चंद्रयान, शुक्रयान, सब.
-- Kissa: "कहानी में अगला ट्विस्ट क्या हो?" Poll options: राज़ खुलेगा, शादी टूटेगी, नया किरदार, प्यार.
-
-**Cross-promotion**
-- Instagram Reel: the megatsunami Short, captioned "A wave 481 m high. Guess where? 🌊 Full story on YouTube, link in bio."
-- Hindi channel: link to the Vyommitra Short from the English channel's description, and the reverse.
-- Kissa: share each episode's cliffhanger clip as a Story, captioned "आज का ट्विस्ट 👀".
-
-**Posting time**
-- No change yet. There are too few views to judge. Re-check on 1 Nov.
-- Test: Hopeverse Media at 6–8 pm IST, with Kissa staying at 6 pm.
-
-**Cleanup**
-- Delete the duplicate megatsunami Short rQPOCx8wY6c by hand.
-- Check the duck Short's upload.
+- **Pinned comments:**
+  - Hopeverse Media: "Which would you want to see first: a Moon base or a Mars city?"
+  - Hopeverse Hindi: "आप किस शहर से देख रहे हैं? कमेंट में बताइए।"
+  - Kissa: "Ep 2 के बाद आपको क्या लगता है, शादी टिकेगी या टूटेगी?"
+- **Community posts** (a poll on each; Hopeverse Media first, the others to follow if they're eligible):
+  - Hopeverse Media: "What should we explore next?" Options: Space, Earth's extremes, Future tech, Health.
+  - Hopeverse Hindi: "अगला Short किस पर चाहिए?" Options: ISRO, ग्रह, मौसम, भविष्य की टेक.
+  - Kissa: "अगला ट्विस्ट कैसा चाहिए?" Options: प्यार, बदला, राज़, कॉमेडी.
+- **Cross-promotion:**
+  - Share the megatsunami Short, the best performer so far, on Instagram. Caption: "A wave 481 metres high. Hope you never see one. 🌊 Follow for daily wonder."
+  - Add "हिंदी में देखें" with the link to Hopeverse Hindi in the Hindi descriptions.
+  - Share Kissa Ep 1 as a Story on Instagram.
+- **Posting time:** There's no evidence yet to justify a change. I'll review after 1 Nov. A test to consider: post Hopeverse Media at about 6–7 pm IST and 9 am US Eastern, one slot per week.
+- **Duplicate:** Delete the duplicate megatsunami Short (rQPOCx8wY6c) by hand.

@@ -1,5 +1,5 @@
 {
-  "premise": "Season 1, '100 Din Ka Rishta': Riya Saxena, 24, runs her late father's small bakery in Lucknow and is about to lose it to moneylender Gupta. Kabir Malhotra, 29, the cold heir of a Mumbai hotel empire, must be married within 100 days to keep control of the company from his scheming uncle Vikram. A chance meeting leads to a contract: a 100-day fake marriage in exchange for the bakery's debt. The rules are no feelings, no family drama and no one finds out. Over about 30 episodes every rule breaks. Riya moves into the Malhotra mansion in Mumbai and faces a suspicious family. Vikram's spy tries to expose the contract, Kabir's childhood friend becomes a second lead, and a family secret ties Riya's father's debt to the Malhotras. The two fall truly in love. The season ends with the contract exposed on day 100, and Kabir has to choose between the company and Riya.",
+  "premise": "Season 1, '100 Din Ka Rishta': Riya Saxena, 24, runs her late father's small bakery in Lucknow and is about to lose it to moneylender Gupta. Kabir Malhotra, 29, the cold heir of a Mumbai hotel empire, must be married within 100 days to keep control of the company from his scheming uncle Vikram. A chance meeting leads to a contract: a 100-day fake marriage in exchange for the bakery's debt. The rules are no feelings, no family drama and no one finds out. Over about 30 episodes every rule breaks. Riya moves into the Malhotra mansion in Mumbai and faces a suspicious family led by stern Dadi. Vikram's spy tries to expose the contract, Kabir's childhood friend becomes a second lead, and a family secret ties Riya's father Ramesh Saxena's debt and Kabir's long-gone mother Meera to the Malhotras. The two fall truly in love. The season ends with the contract exposed on day 100, and Kabir has to choose between the company and Riya.",
   "cast": [
     {
       "name": "Narrator",
@@ -35,6 +35,13 @@
       "look": "Indian man, 58, lean sharp face, thin smirk, salt-and-pepper hair combed back, trimmed grey beard, black bandhgala jacket with a silver brooch, rimless glasses",
       "voice": "hi-IN-MadhurNeural",
       "pitch": "-4Hz"
+    },
+    {
+      "name": "Dadi",
+      "role": "Kabir's stern grandmother, head of the Malhotra family",
+      "look": "Indian woman, 75, stern wrinkled face, sharp grey eyes, silver hair in a tight bun, cream silk saree with a gold border, pearl necklace and reading glasses on a chain",
+      "voice": "hi-IN-SwaraNeural",
+      "pitch": "-8Hz"
     }
   ],
   "episodes": [
@@ -47,6 +54,36 @@
       "n": 2,
       "title": "Ep 2 | 100 दिन का रिश्ता: कॉन्ट्रैक्ट, चाचा का फ़ोन और आज रात की शादी",
       "summary": "Kabir clears Riya's debt in front of a stunned Gupta, and they sign the 100-day contract, with Riya adding her own rule that he forgets her and the bakery afterward. Uncle Vikram calls Kabir with the secret video and threatens to show the family tomorrow, so Kabir tells Riya they must get married tonight."
+    },
+    {
+      "n": 3,
+      "title": "Ep 3 | 100 दिन का रिश्ता: आधी रात की शादी और चाचा का खौफ़नाक राज़",
+      "summary": "Riya and Kabir marry in a silent midnight ceremony at an old Lucknow temple, and a lonely Riya refuses his money, asking only for her bakery keys. Uncle Vikram suddenly arrives clapping, recognises Riya as Ramesh Saxena's daughter and hints that Kabir knows the truth about whose debt it really was."
+    },
+    {
+      "n": 4,
+      "title": "Ep 4 | 100 दिन का रिश्ता: पापा का कर्ज़, कबीर का सच और एक अनजान मैसेज",
+      "summary": "Vikram reveals that Riya's father owed money to the Malhotras and leaves, warning that the family awaits them in Mumbai. Kabir admits his father lent Ramesh Saxena the money over a broken promise, then an anonymous text asks Riya where Kabir was on her father's last night."
+    },
+    {
+      "n": 5,
+      "title": "Ep 5 | 100 दिन का रिश्ता: पापा की आख़िरी रात और दादी का इनकार",
+      "summary": "In the car to the airport, Kabir admits he was at Ramesh Saxena's bakery on his last night to deliver loan-waiver papers, found him collapsed and called an ambulance too late, and the envelope vanished that night. At the Malhotra mansion in Mumbai, Kabir's grandmother stops Riya at the door, refuses to accept Ramesh Saxena's daughter as bahu, and blames him for burning the family's happiness twenty years ago."
+    },
+    {
+      "n": 6,
+      "title": "Ep 6 | 100 दिन का रिश्ता: दादी की शर्त और पापा का पुराना डिब्बा",
+      "summary": "Dadi bars Riya at the door, but Kabir says he won't enter without his wife, so Dadi gives Riya one week to win the family's heart or the marriage ends. That night Riya finds a 20-year-old Saxena Bakery box in her room with a note from her father 'for Meera', and Dadi reveals Meera was Kabir's mother, who never came home after that night."
+    },
+    {
+      "n": 7,
+      "title": "Ep 7 | 100 दिन का रिश्ता: मीरा की चिट्ठी और दादी के काँपते हाथ",
+      "summary": "Kabir finds the old Saxena Bakery box, and Dadi reveals Meera left the house carrying it twenty years ago, so someone placed it in Riya's room on purpose. Inside, a hidden letter from Meera to Ramesh says she planned to leave with little Kabir, and an anonymous text tells them to ask Dadi who turned Meera away at the door that night."
+    },
+    {
+      "n": 8,
+      "title": "Ep 8 | 100 दिन का रिश्ता: बंद दरवाज़ा, दादी का कबूलनामा और एक ज़िंदा राज़",
+      "summary": "Kabir confronts Dadi at midnight, and she confesses she shut the door on Meera twenty years ago after Vikram showed her a letter claiming Meera would ruin the family, while Meera begged in the rain that little Kabir was in danger. Dadi never learned what the danger was, and then the anonymous number texts Riya: 'Dadi is telling half the truth. Meera is alive.'"
     }
   ]
 }

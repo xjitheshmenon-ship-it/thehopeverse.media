@@ -1,0 +1,36 @@
+{
+  "id": "yt-rumbo",
+  "name": "Rumbo",
+  "handle": "RumboMapas",
+  "label": "geografía en un minuto",
+  "audience": "US Hispanics (Spanish-speaking or bilingual), Spain (EU) and secondarily Mexico and Latin America, adults 18-54, Spanish",
+  "language": "Spanish",
+  "niche": "Curious geography in Spanish: strange borders, odd places, maps and why the world is shaped the way it is",
+  "why": "Spanish is one of YouTube's biggest languages, and the US Census counts about 65 million Hispanics, alongside about 48 million people in Spain. Both are high-value advertising markets that Hopeverse doesn't reach yet. Spanish history and geography channels like Academia Play have grown to millions of subscribers, and map and border stories work well with stock aerial footage, simple AI-made maps and a neutral es-US or es-ES Edge TTS voice. Note: web search hit its limit, so these figures come from general knowledge and should be checked before launch.",
+  "first_videos": [
+    "There's a Spanish town completely surrounded by France, and it's no mistake: the story of Llívia",
+    "This island switches countries every six months, and nobody lives on it: Pheasant Island",
+    "Bolivia has no coastline, so why does it still have a navy?",
+    "The point on Earth farthest from any human being lies directly below astronauts",
+    "In this town the border runs through the middle of cafés and houses: Baarle-Nassau"
+  ],
+  "tagline": "El mundo, explicado en un minuto",
+  "description": "Rumbo cuenta en menos de un minuto por qué el mundo es como es: fronteras extrañas, pueblos imposibles, islas sin dueño, ríos que cambian de país y mapas que esconden una historia.\n\nCada historia está contrastada y se cuenta con calma, con imágenes reales, mapas claros y una voz cercana. Publicamos 6 Shorts al día, para que siempre haya un lugar nuevo que descubrir.\n\nRumbo es un canal hecho con inteligencia artificial por Hopeverse Media. Hecho por IA. Hecho con esperanza.",
+  "keywords": [
+    "geografía",
+    "curiosidades del mundo",
+    "fronteras",
+    "mapas",
+    "lugares increíbles",
+    "datos curiosos",
+    "países",
+    "historia y geografía",
+    "shorts en español",
+    "sabías que",
+    "pueblos curiosos",
+    "islas",
+    "cultura general",
+    "viajes"
+  ],
+  "accent": "sand"
+}

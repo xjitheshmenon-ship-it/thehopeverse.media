@@ -1,69 +1,61 @@
-# Hopeverse spending report, 26 Oct 2026 03:43
+# Hopeverse spending report, 26 Oct 2026 14:57
 
-- Today: $6.45 (14 runs)
-- Last 7 days: $9.15
-- This month: $9.15
-- All time: $9.15
+- Today: $17.39 (36 runs)
+- Last 7 days: $20.09
+- This month: $20.09
+- All time: $20.09
 
 Claude (Anthropic) costs as estimated by agents.py, review included. Video images from fal.ai add
 about $0.006 each (about $0.06 a Short). Exact bills: console.anthropic.com and fal.ai/dashboard.
 
 | Day | Runs | Cost |
 | --- | --- | --- |
-| 2026-10-26 | 14 | $6.45 |
+| 2026-10-26 | 36 | $17.39 |
 | 2026-10-25 | 5 | $2.70 |
 
-## Today's new channel idea (folder ideas/2026-10-26-yt-instinct)
+## Today's new channel idea (folder ideas/2026-10-26-yt-rumbo)
 
-# Instinct  (@InstinctNatureFR)
+# Rumbo  (@RumboMapas)
 
-**Le vivant, vu de près.**
+**El mundo, explicado en un minuto**
 
-- Audience: France, Belgium, Switzerland and Luxembourg (EU), plus Quebec, adults and families 18-54, French (French (fr-FR, Edge TTS voice such as fr-FR-DeniseNeural or fr-FR-HenriNeural))
-- Niche: Short, well-checked stories about animal behaviour and nature's strangest adaptations, told in French with stock wildlife footage and AI images
-- Why now: Fluxnote's 2026 guides put average YouTube CPMs in France at about €8-25, or €6-14 for faceless channels, which makes France one of Europe's stronger ad markets. Studios like Bright Side already reach a huge Romance-language audience with this kind of curious, faceless fact video: its Spanish channel GENIAL has about 32 million subscribers. Animal and nature stories are brand-safe, never go out of date, and suit plentiful stock wildlife footage.
+- Audience: US Hispanics (Spanish-speaking or bilingual), Spain (EU) and secondarily Mexico and Latin America, adults 18-54, Spanish (Spanish)
+- Niche: Curious geography in Spanish: strange borders, odd places, maps and why the world is shaped the way it is
+- Why now: Spanish is one of YouTube's biggest languages, and the US Census counts about 65 million Hispanics, alongside about 48 million people in Spain. Both are high-value advertising markets that Hopeverse doesn't reach yet. Spanish history and geography channels like Academia Play have grown to millions of subscribers, and map and border stories work well with stock aerial footage, simple AI-made maps and a neutral es-US or es-ES Edge TTS voice. Note: web search hit its limit, so these figures come from general knowledge and should be checked before launch.
 
 ## Channel description (paste into YouTube > Customisation > Basic info)
 
-Instinct raconte en moins d'une minute les comportements les plus étonnants du monde animal et de la nature : des corbeaux qui reconnaissent les visages, des pieuvres qui résolvent des énigmes, des plantes qui communiquent. Chaque histoire repose sur des études publiées et des sources vérifiables.
+Rumbo cuenta en menos de un minuto por qué el mundo es como es: fronteras extrañas, pueblos imposibles, islas sin dueño, ríos que cambian de país y mapas que esconden una historia.
 
-Six nouveaux Shorts chaque jour, pour apprendre quelque chose de vrai sur le vivant et regarder la nature autrement, seul ou en famille.
+Cada historia está contrastada y se cuenta con calma, con imágenes reales, mapas claros y una voz cercana. Publicamos 6 Shorts al día, para que siempre haya un lugar nuevo que descubrir.
 
-Instinct est une chaîne Hopeverse Media, réalisée par l'IA et faite avec espoir.
+Rumbo es un canal hecho con inteligencia artificial por Hopeverse Media. Hecho por IA. Hecho con esperanza.
 
 ## Keywords
 
-animaux, faits sur les animaux, nature, comportement animal, le saviez-vous, biodiversité, faune sauvage, science de la nature, animaux étonnants, océan, insectes, oiseaux, documentaire animalier, Shorts en français, Hopeverse
+geografía, curiosidades del mundo, fronteras, mapas, lugares increíbles, datos curiosos, países, historia y geografía, shorts en español, sabías que, pueblos curiosos, islas, cultura general, viajes
 
 ## First videos
 
-1. Ce poisson change de sexe quand le chef du groupe meurt, et ce n'est pas une légende
-2. Pourquoi les corbeaux se souviennent de votre visage pendant des années
-3. L'animal qui survit au vide spatial mesure moins d'un millimètre
-4. Les éléphants ont un 'prénom' pour chacun d'entre eux, la science vient de le prouver
-5. Cette pieuvre a couvé ses œufs 53 mois sans jamais manger
+1. There's a Spanish town completely surrounded by France, and it's no mistake: the story of Llívia
+2. This island switches countries every six months, and nobody lives on it: Pheasant Island
+3. Bolivia has no coastline, so why does it still have a navy?
+4. The point on Earth farthest from any human being lies directly below astronauts
+5. In this town the border runs through the middle of cafés and houses: Baarle-Nassau
 
 ## Mr. Grow's to-dos for you today
 
-**Pinned comments**
-- Hopeverse Media: "Which city are you watching the sky from? 🌍"
-- Hindi: "आप कौन से शहर से हैं? कमेंट करें 👇"
-- Kissa: "अगर आप हीरो होते, तो क्या करते? 👇"
-
-**Community posts**
-- Hopeverse Media: "Which would you rather see first: a Mars landing or a Moon base?" Poll options: Mars, Moon, Both, Neither.
-- Hindi: "ISRO का अगला बड़ा मिशन कौन सा देखना चाहेंगे?" Poll options: गगनयान, चंद्रयान, शुक्रयान, सब.
-- Kissa: "कहानी में अगला ट्विस्ट क्या हो?" Poll options: राज़ खुलेगा, शादी टूटेगी, नया किरदार, प्यार.
-
-**Cross-promotion**
-- Instagram Reel: the megatsunami Short, captioned "A wave 481 m high. Guess where? 🌊 Full story on YouTube, link in bio."
-- Hindi channel: link to the Vyommitra Short from the English channel's description, and the reverse.
-- Kissa: share each episode's cliffhanger clip as a Story, captioned "आज का ट्विस्ट 👀".
-
-**Posting time**
-- No change yet. There are too few views to judge. Re-check on 1 Nov.
-- Test: Hopeverse Media at 6–8 pm IST, with Kissa staying at 6 pm.
-
-**Cleanup**
-- Delete the duplicate megatsunami Short rQPOCx8wY6c by hand.
-- Check the duck Short's upload.
+- **Pinned comments:**
+  - Hopeverse Media: "Which would you want to see first: a Moon base or a Mars city?"
+  - Hopeverse Hindi: "आप किस शहर से देख रहे हैं? कमेंट में बताइए।"
+  - Kissa: "Ep 2 के बाद आपको क्या लगता है, शादी टिकेगी या टूटेगी?"
+- **Community posts** (a poll on each; Hopeverse Media first, the others to follow if they're eligible):
+  - Hopeverse Media: "What should we explore next?" Options: Space, Earth's extremes, Future tech, Health.
+  - Hopeverse Hindi: "अगला Short किस पर चाहिए?" Options: ISRO, ग्रह, मौसम, भविष्य की टेक.
+  - Kissa: "अगला ट्विस्ट कैसा चाहिए?" Options: प्यार, बदला, राज़, कॉमेडी.
+- **Cross-promotion:**
+  - Share the megatsunami Short, the best performer so far, on Instagram. Caption: "A wave 481 metres high. Hope you never see one. 🌊 Follow for daily wonder."
+  - Add "हिंदी में देखें" with the link to Hopeverse Hindi in the Hindi descriptions.
+  - Share Kissa Ep 1 as a Story on Instagram.
+- **Posting time:** There's no evidence yet to justify a change. I'll review after 1 Nov. A test to consider: post Hopeverse Media at about 6–7 pm IST and 9 am US Eastern, one slot per week.
+- **Duplicate:** Delete the duplicate megatsunami Short (rQPOCx8wY6c) by hand.
