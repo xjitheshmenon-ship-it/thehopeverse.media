@@ -1,16 +1,16 @@
-# Hopeverse spending report, 26 Oct 2026 14:57
+# Hopeverse spending report, 26 Oct 2026 16:04
 
-- Today: $17.39 (36 runs)
-- Last 7 days: $20.09
-- This month: $20.09
-- All time: $20.09
+- Today: $20.13 (45 runs)
+- Last 7 days: $22.83
+- This month: $22.83
+- All time: $22.83
 
 Claude (Anthropic) costs as estimated by agents.py, review included. Video images from fal.ai add
 about $0.006 each (about $0.06 a Short). Exact bills: console.anthropic.com and fal.ai/dashboard.
 
 | Day | Runs | Cost |
 | --- | --- | --- |
-| 2026-10-26 | 36 | $17.39 |
+| 2026-10-26 | 45 | $20.13 |
 | 2026-10-25 | 5 | $2.70 |
 
 ## Today's new channel idea (folder ideas/2026-10-26-yt-rumbo)
