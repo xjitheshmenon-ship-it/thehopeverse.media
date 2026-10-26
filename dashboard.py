@@ -16,13 +16,11 @@ from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
 from agents import DAILY_BUDGET, HERE, HISTORY, OUTBOX, _channels
+from plan import SERIES_PER_DAY, SHORTS_PER_DAY, SLOTS, live_channels, load, next_slots, planned_slots
 
 IST = ZoneInfo("Asia/Kolkata")
 NOW = datetime.now(IST)
 TODAY = f"{NOW:%Y-%m-%d}"
-SLOTS = [7, 9, 11, 13, 15, 17]  # IST hours of hope.yml's six 2-hour runs
-SHORTS_PER_DAY = min(6, int(os.environ.get("SHORTS_PER_DAY") or 6))
-SERIES_PER_DAY = int(os.environ.get("SERIES_PER_DAY") or 2)
 
 OUT = HERE / "runs" / "dashboard.json"
 BRANCH = "dashboard-data"
@@ -85,16 +83,6 @@ def spend() -> list:
     return sorted(days.values(), key=lambda d: (d["day"], d["channel"]))
 
 
-def planned_slots(channel: dict) -> list:
-    """Which of the six slots (1-6) post for this channel, as hope.yml decides."""
-    if channel.get("status") == "series":
-        every = 6 // SERIES_PER_DAY
-        return [s for s in range(1, 7) if (6 - s) % every == 0]
-    if channel["platform"] == "youtube" and channel.get("status") == "live":
-        return list(range(1, SHORTS_PER_DAY + 1))
-    return []
-
-
 def slots(rows: list) -> list:
     """Today's upload slots per signed-in channel: posted (with the Short), due later, or missed.
     A Short counts for the slot whose 2-hour window it went up in."""
@@ -120,35 +108,19 @@ ACTIONS = "https://github.com/" + (os.environ.get("GITHUB_REPOSITORY") or "xjith
 
 
 def upcoming() -> list:
-    """The next 6 uploads by time across the signed-in channels. Topics are picked by Mr. Hope when the slot runs,
-    so a row shows a drafted package waiting to go up if there is one, else the channel's next episode or Short."""
-    chans = [c for c in _channels() if os.path.exists(HERE / c.get("token", "token.json")) and planned_slots(c)]
-    def waiting(cid):  # drafted packages of this channel not on YouTube yet, oldest first; video.py posts them next
-        found = [p for p in OUTBOX.glob(f"{cid}-*.json") if re.fullmatch(rf"{re.escape(cid)}-\d+", p.stem)]
-        packs = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(found, key=lambda p: int(p.stem.rsplit("-", 1)[1]))]
-        return [d["title"] for d in packs if "youtube_id" not in d]
-    waiting = {c["id"]: waiting(c["id"]) for c in chans}
-    story = HERE / "series.json"
-    episode = len(json.loads(story.read_text(encoding="utf-8"))["episodes"]) if story.exists() else 0
+    """The next 6 uploads by time across the signed-in channels, with the topic plan.py planned for each slot."""
+    plan = load()
     out = []
-    for day in range(3):
-        for n, hour in enumerate(SLOTS, 1):
-            when = (NOW + timedelta(days=day)).replace(hour=hour, minute=0, second=0, microsecond=0)
-            if when <= NOW:
-                continue
-            for c in chans:
-                if n not in planned_slots(c) or len(out) == 6:
-                    continue
-                series = c.get("status") == "series"
-                if series:
-                    episode += 1
-                plan = waiting[c["id"]].pop(0) if waiting[c["id"]] else \
-                    f"Episode {episode}, written at run time" if series else "Topic picked by Mr. Hope at run time"
-                out.append({"key": f"{c['id']}-{when:%Y%m%d%H}", "when": f"{when:%Y-%m-%d %H:%M}", "channel": c["id"],
-                            "name": c["name"], "plan": plan,
-                            "post_now": ACTIONS + ("episode.yml" if series else "hope.yml"),
-                            "how": "Run workflow" if series else f"Run workflow, job: one, channel: {c['id']}"})
-    return out
+    for c in live_channels():
+        planned = {e["when"]: e for e in plan.get(c["id"], [])}
+        series = c.get("status") == "series"
+        for n, when in next_slots(c):
+            e = planned.get(f"{when:%Y-%m-%d %H:%M}", {})
+            out.append({"key": f"{c['id']}-{when:%Y%m%d%H}", "when": f"{when:%Y-%m-%d %H:%M}", "channel": c["id"],
+                        "name": c["name"], "plan": e.get("topic") or "Not planned yet: picked when the slot runs",
+                        "why": e.get("why"), "post_now": ACTIONS + ("episode.yml" if series else "hope.yml"),
+                        "how": "Run workflow" if series else f"Run workflow, job: one, channel: {c['id']}"})
+    return sorted(out, key=lambda r: r["when"])[:6]
 
 
 def channels(rows: list, costs: list, plan: list) -> list:
