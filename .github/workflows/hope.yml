@@ -4,12 +4,12 @@ name: Hope
 
 on:
   schedule:
-    - cron: "45 11 * * *"  # 17:15 IST: research, make and post today's Shorts (6 per channel take 2-4 hours)
+    - cron: "30 1-11/2 * * *"  # every 2 hours, 07:00 to 17:00 IST: one Short per channel; 17:00 also writes the report
     - cron: "15 * * * *"   # hourly: dashboard numbers
   workflow_dispatch:
     inputs:
       job:
-        description: "daily = make and post today's Shorts, one = make and post a single Hopeverse Short now, stats = dashboard numbers only (to sign a channel in, use the Connect a channel workflow)"
+        description: "daily = run the 5 PM slot now (a Short per channel, review, channel idea, report), one = make and post a single Hopeverse Short now, stats = dashboard numbers only (to sign a channel in, use the Connect a channel workflow)"
         default: daily
         type: choice
         options: [daily, one, stats]
@@ -36,13 +36,13 @@ env:
   AI_CLIPS_PER_SHORT: ${{ vars.AI_CLIPS_PER_SHORT || '3' }}  # paid Kling video shots per Short (about $0.30 each)
   INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
   # Settings > Secrets and variables > Actions > Variables: change these without editing this file
-  SHORTS_PER_DAY: ${{ vars.SHORTS_PER_DAY || '6' }}  # per channel, for the 100-day plan
+  SHORTS_PER_DAY: ${{ vars.SHORTS_PER_DAY || '6' }}  # per channel, one per 2-hour slot (at most 6)
   DAILY_BUDGET: ${{ vars.DAILY_BUDGET || '20' }}     # US dollars a day across everything; runs stop once reached
 
 jobs:
   hope:
     runs-on: ubuntu-latest
-    timeout-minutes: 300
+    timeout-minutes: 110  # each 2-hour slot must finish before the next one
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -72,17 +72,26 @@ jobs:
           done
           true
 
-      - name: Research, script and make today's Shorts for every live channel
-        if: github.event.schedule == '45 11 * * *' || inputs.job == 'daily'
+      - name: Which 2-hour slot this is
+        if: github.event.schedule == '30 1-11/2 * * *' || inputs.job == 'daily'
+        run: |
+          slot=$(( ($(date +%-H) - 7) / 2 + 1 ))  # 1 at 07:00 IST ... 6 at 17:00 IST
+          [ "${{ inputs.job }}" = daily ] && slot=6  # a manual run counts as the 5 PM slot
+          last=$(( SHORTS_PER_DAY < 6 ? SHORTS_PER_DAY : 6 ))
+          echo "SLOT=$slot" >> "$GITHUB_ENV"
+          echo "MAKE=$([ "$slot" -ge 1 ] && [ "$slot" -le "$last" ] && echo 1 || echo 0)" >> "$GITHUB_ENV"
+          echo "REVIEW=$([ "$slot" = "$last" ] && echo 1 || echo 0)" >> "$GITHUB_ENV"
+          echo "Slot $slot of the day"
+
+      - name: Research, script and make this slot's Short for every live channel
+        if: env.MAKE == '1'
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core > /dev/null  # Hindi captions
-          python agents.py --grow || true  # Mr. Grow's notes for today's Shorts
+          [ "$SLOT" = 1 ] && { python agents.py --grow || true; }  # Mr. Grow's notes for the day's Shorts
+          aud=$([ $((SLOT * 3)) -le $((SHORTS_PER_DAY * 2)) ] && echo "Indian viewers" || echo "the international market")  # 4 of 6 for India
           for id in $(python -c "import json; print(*[c['id'] for c in json.load(open('channels.json')) if c['platform'] == 'youtube' and c['status'] == 'live'])"); do
-            for i in $(seq "$SHORTS_PER_DAY"); do
-              aud=$([ $((i * 3)) -le $((SHORTS_PER_DAY * 2)) ] && echo "Indian viewers" || echo "the international market")  # 4 of 6 for India
-              HOPE_REVIEW=$([ "$i" = "$SHORTS_PER_DAY" ] && echo 1 || echo 0) python agents.py \
-                "Scheduled run, Short $i of $SHORTS_PER_DAY today for channel $id: get today's topics from Mr. Focus, check list_outbox, then draft and queue the best new current-affairs YouTube Short for $id, aimed at $aud, on a story not already drafted today." || true
-            done
+            HOPE_REVIEW=$REVIEW python agents.py \
+              "Scheduled run, Short $SLOT of $SHORTS_PER_DAY today for channel $id: get today's topics from Mr. Focus, check list_outbox, then draft and queue the best new current-affairs YouTube Short for $id, aimed at $aud, on a story not already drafted today." || true
           done
           python video.py
       - name: Make and post one Hopeverse Short now
@@ -91,17 +100,17 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core > /dev/null
           HOPE_REVIEW=0 python agents.py "One-off run requested by the owner: get today's topics from Mr. Focus, check list_outbox, then draft and queue one new current-affairs YouTube Short for yt-hopeverse, aimed at Indian viewers, on the top-viewed story of the last 48 hours that is not already drafted."
           python video.py
-      - name: Write and post today's Hindi series episode
-        if: always() && (github.event.schedule == '45 11 * * *' || inputs.job == 'daily')
+      - name: Write and post this slot's Hindi series episode
+        if: always() && env.MAKE == '1'
         run: |
           [ -f token-series.json ] || { echo "Series channel not connected yet: run the Connect a channel workflow"; exit 0; }
-          for i in $(seq "$SHORTS_PER_DAY"); do python series.py || true; done
+          python series.py || true
           python video.py
-      - name: Today's new channel idea and its brand kit
-        if: always() && (github.event.schedule == '45 11 * * *' || inputs.job == 'daily')
-        run: python scout.py || true
+      - name: 5 PM report with today's new channel idea and its brand kit
+        if: always() && env.SLOT == '6'
+        run: python scout.py || true  # also rewrites runs/spend-report.md
       - name: Save Hope's memory
-        if: always() && (github.event.schedule == '45 11 * * *' || inputs.job == 'daily' || inputs.job == 'one')
+        if: always() && (env.SLOT != '' || inputs.job == 'one')
         run: python state.py save
 
       - name: Dashboard numbers

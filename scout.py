@@ -90,7 +90,7 @@ def _banner(kit: Kit, accent) -> Image.Image:
     corner = f"[HV/NETWORK] — {kit.id.upper()} "
     d.text((150, 150), corner, font=mono(20), fill=DIM)
     d.text((150 + d.textlength(corner, font=mono(20)), 150), "●", font=mono(20), fill=accent)
-    d.text((2410, 1290), f"A HOPEVERSE CHANNEL · {kit.language.upper()}", font=mono(20), fill=DIM, anchor="rd")
+    d.text((2410, 1290), f"A HOPEVERSE CHANNEL · {kit.language.split('(')[0].strip().upper()}", font=mono(20), fill=DIM, anchor="rd")
 
     word, size = kit.name.lower(), 262
     # Signal's tight tracking (-7px at 262px); Pillow has no letter-spacing, so letters are placed one by one
@@ -185,7 +185,7 @@ def scout() -> Path:
                    "Return: id (slug starting 'yt-'); name (1-3 words, Latin letters, memorable, premium, easy to say "
                    "in the audience's language, no 'TV', 'Official' or numbers); handle (no @, letters and digits, "
                    "probably free on YouTube); label (2-4 words for the banner, lowercase); audience (region, age, "
-                   "language); language; niche (one line); why (2 sentences of evidence, with numbers); "
+                   "language); language (just its name, e.g. German); niche (one line); why (2 sentences of evidence, with numbers); "
                    "first_videos (5 Short ideas with curiosity hooks); tagline (under 34 characters, calm and "
                    "confident, like a premium magazine); description (the YouTube About text: 3 short paragraphs, "
                    "what viewers get, how often (6 Shorts a day), one line saying it's an AI-made Hopeverse "
