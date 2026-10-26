@@ -65,8 +65,8 @@ class Plan(BaseModel):
     items: list[Item]
 
 
-def _ask(channel: dict, slots: list, taken: list) -> tuple[list, float]:
-    """Mr. Focus plans topics for these slots. Returns ([Item], cost)."""
+def _ask(channel: dict, slots: list, taken: list) -> list:
+    """Mr. Focus plans topics for these slots (its cost goes in history.jsonl)."""
     cid = channel["id"]
     if channel.get("status") == "series":
         story = json.loads((HERE / "series.json").read_text(encoding="utf-8")) if (HERE / "series.json").exists() else {}
@@ -93,10 +93,11 @@ def _ask(channel: dict, slots: list, taken: list) -> tuple[list, float]:
                                      tools=tools, output_format=Plan,
                                      messages=[{"role": "user", "content": task + f"\nReturn exactly {len(slots)} items, in slot order."}])
     cost = _cost(HELPER_MODEL, response.usage)
+    log_spend(cost, cid)
     searched = getattr(getattr(response.usage, "server_tool_use", None), "web_search_requests", 0) or 0
     if tools and not searched:  # news topics planned without looking at the news are guesses: leave the slots open
         raise RuntimeError(f"planned without searching the news (${cost:.2f})")
-    return response.parsed_output.items[:len(slots)], cost
+    return response.parsed_output.items[:len(slots)]
 
 
 def refresh() -> dict:
@@ -107,8 +108,7 @@ def refresh() -> dict:
         empty = [(n, w) for n, w in whens if f"{w:%Y-%m-%d %H:%M}" not in keep]
         if empty and spent_today() < DAILY_BUDGET:
             try:
-                items, cost = _ask(c, empty, [e["topic"] for e in keep.values()])
-                log_spend(cost, c["id"])
+                items = _ask(c, empty, [e["topic"] for e in keep.values()])
                 for (n, w), it in zip(empty, items):
                     keep[f"{w:%Y-%m-%d %H:%M}"] = {"when": f"{w:%Y-%m-%d %H:%M}", "topic": it.topic, "why": it.why,
                                                    "planned": f"{now:%Y-%m-%d %H:%M}"}
