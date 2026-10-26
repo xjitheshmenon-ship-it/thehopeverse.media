@@ -11,7 +11,7 @@ import os
 import urllib.request
 
 # Below these, the row turns "low": about a day of normal use.
-LOW = {"fal.ai": 5.0, "HeyGen": 20.0, "ElevenLabs": 20000}
+LOW = {"fal.ai": 5.0, "HeyGen": 3.0, "ElevenLabs": 20000}
 
 
 def _get(url: str, **headers) -> dict:
@@ -34,11 +34,11 @@ def check() -> list:
         rows.append(_row("fal.ai", None, "usd", f"Couldn't read the balance ({e}); add a fal.ai READONLY key as the FAL_BILLING_KEY secret"))
     key = os.environ.get("HEYGEN_API_KEY", "").strip()
     try:
-        q = _get("https://api.heygen.com/v2/user/remaining_quota", **{"x-api-key": key})["data"]
-        rows.append(_row("HeyGen", round(q["remaining_quota"] / 60, 1), "credits",
+        w = _get("https://api.heygen.com/v3/users/me", **{"x-api-key": key})["data"]["wallet"]  # the API key's prepaid wallet
+        rows.append(_row("HeyGen", round(w["remaining_balance"], 2), w.get("currency", "usd"),
                          "Talking hosts; Kling on fal.ai takes over when it runs out", LOW["HeyGen"]))
     except Exception as e:
-        rows.append(_row("HeyGen", None, "credits", f"Couldn't read the balance ({e})"))
+        rows.append(_row("HeyGen", None, "usd", f"Couldn't read the balance ({e})"))
     key = os.environ.get("ELEVENLABS_API_KEY", "").strip()
     try:
         s = _get("https://api.elevenlabs.io/v1/user/subscription", **{"xi-api-key": key})
