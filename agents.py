@@ -135,6 +135,13 @@ def list_outbox() -> str:
     return json.dumps([{"channel_id": d["channel_id"], "title": d["title"]} for d in drafts])
 
 
+def next_outbox_path(channel_id: str) -> Path:
+    """The next free outbox file for a channel. Counting files reused a posted Short's number once a number was
+    skipped (yt-hopeverse-12 was overwritten on 26 Oct), so take the highest number plus one."""
+    nums = [int(p.stem.rsplit("-", 1)[1]) for p in OUTBOX.glob(f"{channel_id}-*.json") if p.stem.rsplit("-", 1)[1].isdigit()]
+    return OUTBOX / f"{channel_id}-{max(nums, default=0) + 1}.json"
+
+
 @beta_tool
 def queue_post(channel_id: str, title: str, description: str, script: str) -> str:
     """Save a finished video package to the outbox for a channel. The outbox is a private review
@@ -152,7 +159,7 @@ def queue_post(channel_id: str, title: str, description: str, script: str) -> st
     if channel.get("status") != "live":
         return f"error: '{channel_id}' is not live yet; the owner must create it by hand and set status to live."
     OUTBOX.mkdir(exist_ok=True)
-    path = OUTBOX / f"{channel_id}-{len(list(OUTBOX.glob(channel_id + '-*'))) + 1}.json"
+    path = next_outbox_path(channel_id)
     path.write_text(json.dumps(
         {"channel_id": channel_id, "title": title, "description": description, "script": script,
          # a channel in another language (Instinct) brings its language, footer and YouTube category
