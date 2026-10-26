@@ -115,12 +115,6 @@
  ],
  "yt-sankalp": [
   {
-   "when": "2026-10-27 07:15",
-   "topic": "Thu 29 Oct 21:00 IST: Weekly explainer on the Cockroach protests and the paper-leak issue: what the government has done so far and what is still open. Include the minister's resignation, the detention of founder Abhijeet Dipke and any new policy announced this week. Verify every figure with two sources before publishing. Mark opinion clearly.",
-   "why": "A weekly recap works as a closing slot and rewards viewers who followed the story across the week. It lets the channel add any new developments in the news by Thursday.",
-   "planned": "2026-10-26 21:58"
-  },
-  {
    "when": "2026-10-27 09:20",
    "topic": "Tue 27 Oct 15:00 IST: Modi government to use 12 AI services to screen about 2.9 lakh investor refund claims for fraud (NewsBytes, published within the last day). Explain what the claims are, how the AI checks work and what it means for ordinary investors. Mark opinion separately. Use Hindi and English versions. Anchors are AI and there are no AI faces of real people. Show only Wikimedia Commons photos of the ministers involved.",
    "why": "It is a fresh, concrete story with real numbers (12 AI services, 2.9 lakh claims). It touches adult investors aged 18-45 and fits the channel's pro-government 'policy explained' angle. It is not one of the Cockroach, paper-leak, crime-boss or cricket topics already made or planned. I could only find this one source, and my search could not confirm which ministry or scheme is involved, so find a second outlet or the official PIB or ministry release before scripting. If that fails, swap in the Cabinet's ₹52,878-crore approval of Fairfax's IDBI Bank bid. That story is about 12 days old, so flag its age on screen.",
@@ -149,6 +143,12 @@
    "topic": "Thu 29 Oct 15:00 IST: Mumbai's India Women's Cricket World Cup win over South Africa in the final at Navi Mumbai (3 Nov 2025, AP via CNN). Show how the win has fed into government sports policy and funding for women's cricket. Check the final score and any current sports ministry announcements before use. Note that the match is older than the 24-48 hour window.",
    "why": "A feel-good story with national pride lifts engagement after a heavy news run. It is the weakest-dated item here, so swap it for a fresh story if one turns up.",
    "planned": "2026-10-26 21:58"
+  },
+  {
+   "topic": "Fri 30 Oct 07:15 IST: BJP's nationwide protests on Mon 26 Oct 2026 over Congress president Mallikarjun Kharge's 'Modi ka baap bhi jayega' remark. Delhi BJP workers were stopped by police on the march to Kharge's Rajaji Marg residence. Sources found: PTI via ThePrint, IANS via Punjab Kesari, ETV Bharat, Hans India. Show the sequence: Kharge's Sunday 25 Oct remarks and the audience comment that prompted them, the BJP's demand for an apology, the protests in Delhi, Patna and Bhubaneswar, and whether Congress has responded or clarified. Open the Short with the facts and use Hindi and English versions. Use Wikimedia Commons photos of Kharge and Modi, plus BJP and Congress flags, and no AI faces. Mark opinion separately and label the BJP's and Congress's positions as their own. Before use, check that the quote is worded the same way in 2 sources and confirm the latest status, because this story is 3-4 days old. If no apology or new development has come by Thursday night, frame the Short as 'where it stands'.",
+   "why": "This is a fresh, dated story from the last few days with a clear who, what and when (26 Oct 2026). It is a high-engagement political flashpoint for adults 18-45, and it fits the channel's pro-government view while keeping facts, party claims and opinion separate. The morning slot suits a quick explainer on the story. It does not repeat the paper-leak, AI-refund, Dipke, Canada plot or women's cricket topics already made or planned.",
+   "planned": "2026-10-27 00:59",
+   "when": "2026-10-30 07:15"
   }
  ],
  "yt-sawaal": [
@@ -160,26 +160,26 @@
   },
   {
    "when": "2026-10-27 09:45",
+   "topic": "Thu 29 Oct 15:00 IST: No verified story. Hold this slot for an India–world story, such as a US trade or tariff update or a foreign policy move, once dated and double-sourced.",
+   "why": "Adding a world angle gives the channel variety. I can't verify a current item.",
+   "planned": "2026-10-26 21:58"
+  },
+  {
+   "when": "2026-10-28 07:40",
    "topic": "Tue 27 Oct 21:00 IST: No verified story. Hold this slot for the day's biggest opposition-versus-government clash, once the who, what and number are confirmed from two sources.",
    "why": "Prime-time slots need a real, dated story. I can't supply one without current search results.",
    "planned": "2026-10-26 21:58"
   },
   {
-   "when": "2026-10-28 07:40",
+   "when": "2026-10-28 09:45",
    "topic": "Wed 28 Oct 15:00 IST: No verified story. Hold this slot for an economy item with a hard number, such as a fuel price, inflation, GDP or jobs figure from an official release, once it is double-sourced.",
    "why": "An afternoon audience of 18–45-year-olds responds to cost-of-living stories. I can't confirm which figure is current.",
    "planned": "2026-10-26 21:58"
   },
   {
-   "when": "2026-10-28 09:45",
+   "when": "2026-10-29 07:40",
    "topic": "Wed 28 Oct 21:00 IST: No verified story. Hold this slot for a parliamentary, court or Election Commission development from 27–28 Oct, with the party and the number named.",
    "why": "Evening viewers want accountability stories. A specific one must come from fresh sources I couldn't retrieve.",
-   "planned": "2026-10-26 21:58"
-  },
-  {
-   "when": "2026-10-29 07:40",
-   "topic": "Thu 29 Oct 15:00 IST: No verified story. Hold this slot for an India–world story, such as a US trade or tariff update or a foreign policy move, once dated and double-sourced.",
-   "why": "Adding a world angle gives the channel variety. I can't verify a current item.",
    "planned": "2026-10-26 21:58"
   },
   {

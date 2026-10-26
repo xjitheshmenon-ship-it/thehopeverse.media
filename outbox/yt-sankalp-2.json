@@ -1,0 +1,26 @@
+{
+  "channel_id": "yt-sankalp",
+  "title": "25 July 2026: Pradhan Resigns, Protests End #Shorts",
+  "description": "Reuters, CNN, ANI: Is a resignation enough, or must exam reform come first?\nOn 25 July 2026, Education Minister Dharmendra Pradhan announced his resignation after youth-led protests over alleged exam paper leaks. CNN reported that the Cockroach Janta Party then called off its protests with immediate effect. Our view: the system responded, and the real test now is safer exams and quick action against anyone who leaks a paper.\nSources: Reuters, CNN, ANI and The Tribune (25 July 2026 resignation); CNN (Cockroach Janta Party calling off protests). Photo of Dharmendra Pradhan: Wikimedia Commons (credit and licence on the file page).\nThis video is commentary, and opinion segments are clearly marked. The anchors and some visuals are AI-made.\n#IndianPolitics #PoliticsExplained #ViksitBharat #Shorts",
+  "script": "SLOT: Short 1 of 2 today, 21:00 IST. English only; Hindi dub is automatic.\n\nROHAN: One cabinet minister. One resignation. Here's the Cockroach protest story so far.\nKAVYA: On 25 July 2026, Education Minister Dharmendra Pradhan announced his resignation, after days of youth-led protests over alleged exam paper leaks. Reuters, CNN and ANI all reported it.\nROHAN: The protests were led by the Cockroach Janta Party, founded by Abhijeet Dipke. CNN reported the group then called off its protests with immediate effect.\nKAVYA: OPINION: The minister stepped down under pressure, and the protest ended. In our view, that shows the system responded instead of digging in.\nROHAN: OPINION: Now the real test is reform: safer exams, and quick action against anyone who leaks a paper.\nKAVYA: Still open: which exam reforms will actually be delivered, and when? Sankalp will track it.\nROHAN: Resignation enough, or reform first? Comment one word. Follow Sankalp for the day's politics, from the government's side.\n\nCAST (fixed, no cast call): Rohan (en-IN-PrabhatNeural, -6Hz; navy suit, white shirt, no tie). Kavya (en-IN-NeerjaNeural, -4Hz; maroon blazer, ivory top, low bun, pearl studs). Tagged as AI anchors.\n\nEDIT PLAN (Mr. Cut, 21 shots, ~50 s, vertical): Hook on Commons photo of Pradhan with \"1 MINISTER. / 1 RESIGNATION.\" Sources as on-screen text. Name card only for Dipke (no photo). Red OPINION badge through both opinion lines (shots 13-17). \"STILL OPEN\" card. End card. Real photos only from Wikimedia Commons with credits; stock exam hall and Parliament exterior; no AI faces or voices of real people.",
+  "footer": "Sankalp: रोज़ की राजनीति, सरकार के नज़रिए से। हर तथ्य दो स्रोतों से जाँचा गया।\nयह टिप्पणी (commentary) है। Anchors and some visuals are AI-made. Anchor और कुछ दृश्य AI से बने हैं।",
+  "category": "25",
+  "hosts": {
+    "Rohan": {
+      "voice": "en-IN-PrabhatNeural",
+      "voice_hi": "hi-IN-MadhurNeural",
+      "pitch": "-6Hz",
+      "look": "Indian man, about 38, news anchor, wheatish skin, neatly side-parted black hair, clean-shaven, navy suit, white shirt, no tie, seated at a modern news desk"
+    },
+    "Kavya": {
+      "voice": "en-IN-NeerjaNeural",
+      "voice_hi": "hi-IN-SwaraNeural",
+      "pitch": "-4Hz",
+      "look": "Indian woman, about 32, news anchor, light-brown skin, black hair in a low bun, small pearl studs, deep-maroon blazer over an ivory top, at a modern news desk"
+    }
+  },
+  "photos": true,
+  "credits": [
+    "Dharmendra Pradhan June 2024.jpg by Ministry of Education (GODL-India), https://commons.wikimedia.org/wiki/File:Dharmendra_Pradhan_June_2024.jpg"
+  ]
+}
