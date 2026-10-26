@@ -53,4 +53,7 @@ jobs:
           said=$(BODY="$TOPICS" python state.py approve | tail -n 1)
           echo "$said"
           [ -z "$N" ] || gh issue close "$N" -c "Saved: $said. The next approved video starts now; the dashboard shows it within the hour."
-          gh workflow run hope.yml --ref main -f job=next  # waits behind a running video; plans new topics for rejected ones
+          # a running or queued "next video" picks the approved topic up anyway; starting another one would only
+          # replace the queued run, which GitHub lists as cancelled
+          busy=$(gh run list --workflow hope.yml --limit 20 --json status,displayTitle -q '[.[] | select(.status != "completed" and .displayTitle == "Hope: next video")] | length')
+          [ "$busy" != 0 ] || gh workflow run hope.yml --ref main -f job=next
