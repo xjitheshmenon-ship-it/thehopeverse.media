@@ -9,10 +9,10 @@ on:
   workflow_dispatch:
     inputs:
       job:
-        description: "daily = make and post today's Shorts, stats = dashboard numbers only (to sign a channel in, use the Connect a channel workflow)"
+        description: "daily = make and post today's Shorts, one = make and post a single Hopeverse Short now, stats = dashboard numbers only (to sign a channel in, use the Connect a channel workflow)"
         default: daily
         type: choice
-        options: [daily, stats]
+        options: [daily, one, stats]
 
 permissions:
   contents: write
@@ -78,10 +78,17 @@ jobs:
           python agents.py --grow || true  # Mr. Grow's notes for today's Shorts
           for id in $(python -c "import json; print(*[c['id'] for c in json.load(open('channels.json')) if c['platform'] == 'youtube' and c['status'] == 'live'])"); do
             for i in $(seq "$SHORTS_PER_DAY"); do
+              aud=$([ $((i * 3)) -le $((SHORTS_PER_DAY * 2)) ] && echo "Indian viewers" || echo "the international market")  # 4 of 6 for India
               HOPE_REVIEW=$([ "$i" = "$SHORTS_PER_DAY" ] && echo 1 || echo 0) python agents.py \
-                "Scheduled run, Short $i of $SHORTS_PER_DAY today for channel $id: get today's topics from Mr. Focus, check list_outbox, then draft and queue the best new YouTube Short for $id on a topic and category not already drafted today." || true
+                "Scheduled run, Short $i of $SHORTS_PER_DAY today for channel $id: get today's topics from Mr. Focus, check list_outbox, then draft and queue the best new current-affairs YouTube Short for $id, aimed at $aud, on a story not already drafted today." || true
             done
           done
+          python video.py
+      - name: Make and post one Hopeverse Short now
+        if: inputs.job == 'one'
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core > /dev/null
+          HOPE_REVIEW=0 python agents.py "One-off run requested by the owner: get today's topics from Mr. Focus, check list_outbox, then draft and queue one new current-affairs YouTube Short for yt-hopeverse, aimed at Indian viewers, on the top-viewed story of the last 48 hours that is not already drafted."
           python video.py
       - name: Write and post today's Hindi series episode
         if: always() && (github.event.schedule == '45 11 * * *' || inputs.job == 'daily')
@@ -93,7 +100,7 @@ jobs:
         if: always() && (github.event.schedule == '45 11 * * *' || inputs.job == 'daily')
         run: python scout.py || true
       - name: Save Hope's memory
-        if: always() && (github.event.schedule == '45 11 * * *' || inputs.job == 'daily')
+        if: always() && (github.event.schedule == '45 11 * * *' || inputs.job == 'daily' || inputs.job == 'one')
         run: python state.py save
 
       - name: Dashboard numbers
