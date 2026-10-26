@@ -153,12 +153,6 @@
  ],
  "yt-sawaal": [
   {
-   "when": "2026-10-27 07:40",
-   "topic": "Tue 27 Oct 15:00 IST: Live search could not be completed, so I can't name a verified, dated story with a number for this slot. Hold this slot until a double-sourced story from 25–27 Oct is confirmed, such as the latest Election Commission voter-roll revision (SIR) update or a Bihar poll campaign claim.",
-   "why": "The search tool hit its usage limit and the few results it returned were generic pages, not news. Naming a story I haven't verified would break Sawaal's double-sourcing rule.",
-   "planned": "2026-10-26 21:58"
-  },
-  {
    "when": "2026-10-27 09:45",
    "topic": "Thu 29 Oct 15:00 IST: No verified story. Hold this slot for an India–world story, such as a US trade or tariff update or a foreign policy move, once dated and double-sourced.",
    "why": "Adding a world angle gives the channel variety. I can't verify a current item.",
@@ -187,6 +181,12 @@
    "topic": "Thu 29 Oct 21:00 IST: No verified story. Hold this slot for the week's main opposition question, chosen from the stories confirmed on 27–29 Oct, with opinion clearly marked.",
    "why": "Closing the week with the strongest accountability story suits the channel. It needs real, dated sourcing that I can't supply right now.",
    "planned": "2026-10-26 21:58"
+  },
+  {
+   "topic": "Fri 30 Oct 07:40 IST: Rahul Gandhi's vow to keep protesting until Chief Election Commissioner Gyanesh Kumar resigns. Rahul, Priyanka Gandhi Vadra and other INDIA bloc MPs were detained for two hours on the night of 7 Oct 2026. Two outlets reported it: The Week (7 Oct) and Nikkei Asia (7 Oct, on the protests over the nationwide voter-roll revision). Angle: 'Why are MPs detained for demanding a CEC's resignation, and what is the Election Commission's answer?' The Short is in English and Hindi, with the opinion segment clearly marked. Use Wikimedia Commons photos of Rahul Gandhi and the Congress flag, and have the AI anchors read the facts. Before scripting, check for any newer development from 27–29 Oct. Also avoid repeating the 3 crore voters SC-notice Short. Cover only the protest, the detention and the resignation demand, and attribute the Nikkei analyst's 'credibility' claim to Nikkei.",
+   "why": "The CEC-resignation demand is the opposition's central confrontation with the government and the Election Commission, and the voter-roll revision is a live issue before early-2027 state polls. A morning Short with a hard number (two hours of detention) and two independent sources fits the channel's double-sourcing rule. It is a different story from the voter-deletion petition and the BRICS cost Shorts already made. Caveat: my search was cut off before I could confirm anything newer than 7 Oct, so swap in a fresher double-sourced clash if one emerges.",
+   "planned": "2026-10-27 01:18",
+   "when": "2026-10-30 07:40"
   }
  ],
  "rejected": {}
