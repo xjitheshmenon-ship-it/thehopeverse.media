@@ -157,7 +157,7 @@ def storyboard(package: dict) -> Storyboard:
                       "2-5 word Wikimedia Commons search for a REAL photo or video of it (e.g. 'Narendra Modi 2024', "
                       "'Flag of the Bharatiya Janata Party', 'Rahul Gandhi rally', 'Parliament House New Delhi'), else "
                       "empty; use it on about half the scenes that aren't anchors talking. "
-                      if package.get("photos") else "photo: always empty. ") +
+                      if package.get("photos") else "photo: always empty. ")
                    + ("speaker: always empty and host_on_screen always false: one narrator reads every line, in the "
                       f"package's own language, never {a} or {b}. picture_search stays in English. "
                       if package.get("lang") else
