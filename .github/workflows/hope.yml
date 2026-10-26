@@ -5,7 +5,7 @@ run-name: "Hope: ${{ github.event.schedule == '15 * * * *' && 'dashboard refresh
 
 on:
   schedule:
-    - cron: "30 1-11/2 * * *"  # every 2 hours, 07:00 to 17:00 IST: one Short per channel; 17:00 also writes the report
+    - cron: "30 1-20 * * *"  # hourly check: each channel posts every 2 hours in its audience's time zone (plan.py --due); 5 PM IST also writes the report
     - cron: "15 * * * *"   # hourly: dashboard numbers
   workflow_dispatch:
     inputs:
@@ -82,35 +82,24 @@ jobs:
           true
 
       - name: Which 2-hour slot this is
-        if: github.event.schedule == '30 1-11/2 * * *' || inputs.job == 'daily' || inputs.job == 'slot'
-        run: |
-          slot=$(( ($(date +%-H) - 7) / 2 + 1 ))  # 1 at 07:00 IST ... 6 at 17:00 IST
-          [ "${{ inputs.job }}" = daily ] && slot=6  # a manual run counts as the 5 PM slot
-          # GitHub's schedule can fire late or twice next to a backup "slot" run: each slot posts once a day
-          mark="{\"slot\": \"$(date +%F) $slot\"}"
-          if [ "${{ inputs.job }}" != daily ] && grep -qxF "$mark" runs/slots.jsonl 2>/dev/null; then
-            echo "Slot $slot already ran today"; exit 0
-          fi
-          mkdir -p runs && echo "$mark" >> runs/slots.jsonl
-          last=$(( SHORTS_PER_DAY < 6 ? SHORTS_PER_DAY : 6 ))
-          echo "SLOT=$slot" >> "$GITHUB_ENV"
-          echo "MAKE=$([ "$slot" -ge 1 ] && [ "$slot" -le "$last" ] && echo 1 || echo 0)" >> "$GITHUB_ENV"
-          echo "REVIEW=$([ "$slot" = "$last" ] && echo 1 || echo 0)" >> "$GITHUB_ENV"
-          echo "Slot $slot of the day"
+        if: github.event.schedule == '30 1-20 * * *' || inputs.job == 'daily' || inputs.job == 'slot'
+        # DUE = channel:slot:review for each channel posting now, SERIES = a Kissa episode, REPORT = the 5 PM report;
+        # a manual daily run counts as the last slot for every channel
+        run: python plan.py --due ${{ inputs.job == 'daily' && '--force 6' || '' }} | tee -a "$GITHUB_ENV"
 
       - name: Stop if today's budget is used up
-        if: env.MAKE == '1' || inputs.job == 'one'
+        if: env.DUE != '' || inputs.job == 'one'
         run: |
           python -c "import sys, agents as a; s = a.spent_today(); sys.exit(f'Daily budget used up: \${s:.2f} of \${a.DAILY_BUDGET:.0f} spent today, so nothing is made until tomorrow (raise DAILY_BUDGET to post more)' if s >= a.DAILY_BUDGET else 0)" || { echo "::error::Daily budget used up, nothing posted"; exit 1; }
       - name: Research, script and make this slot's Short for every live channel
-        if: env.MAKE == '1'
+        if: env.DUE != ''
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core > /dev/null  # Hindi captions
           before=$(ls outbox/*.json 2>/dev/null | wc -l)
           [ "$SLOT" = 1 ] && { python agents.py --grow || true; }  # Mr. Grow's notes for the day's Shorts
-          aud=$([ $((SLOT * 3)) -le $((SHORTS_PER_DAY * 2)) ] && echo "Indian viewers" || echo "the international market")  # 4 of 6 for India
-          # live channels whose sign-in is here (token.json for Hopeverse Media)
-          for id in $(python -c "import json, os; print(*[c['id'] for c in json.load(open('channels.json')) if c['platform'] == 'youtube' and c['status'] == 'live' and os.path.exists(c.get('token', 'token.json'))])"); do
+          for entry in $DUE; do
+            IFS=: read -r id SLOT REVIEW <<< "$entry"
+            aud=$([ $((SLOT * 3)) -le $((SHORTS_PER_DAY * 2)) ] && echo "Indian viewers" || echo "the international market")  # 4 of 6 for India
             if [ "$id" = yt-hopeverse ]; then
               goal="get today's topics from Mr. Focus, check list_outbox, then draft and queue the best new current-affairs YouTube Short for $id, aimed at $aud, on a story not already drafted today."
             else
@@ -141,21 +130,18 @@ jobs:
           [ "$(ls outbox/*.json 2>/dev/null | wc -l)" -gt "$before" ] || { echo "::error::No Short was drafted"; exit 1; }
           python video.py
       - name: Write and post this slot's Hindi series episode
-        if: always() && env.SLOT != ''
+        if: always() && env.SERIES == '1'  # episodes are spaced evenly and always include Kissa's last slot
         run: |
-          [ -f token-series.json ] || { echo "Series channel not connected yet: run the Connect a channel workflow"; exit 0; }
-          every=$(( 6 / SERIES_PER_DAY ))  # episodes are spaced evenly and always include the 17:00 slot
-          [ "$SLOT" -ge 1 ] && [ "$SLOT" -le 6 ] && [ $(( (6 - SLOT) % every )) = 0 ] || { echo "No episode in slot $SLOT"; exit 0; }
           python series.py || true
           python video.py
       - name: 5 PM report with today's new channel idea and its brand kit
-        if: always() && env.SLOT == '6'
+        if: always() && env.REPORT == '1'
         run: python scout.py || true  # also rewrites runs/spend-report.md
       - name: Plan the next 6 topics per channel (shown on the dashboard)
-        if: always() && (env.SLOT != '' || inputs.job == 'one' || inputs.job == 'plan')
+        if: always() && (env.RAN == '1' || inputs.job == 'one' || inputs.job == 'plan')
         run: python plan.py || true
       - name: Save Hope's memory
-        if: always() && (env.SLOT != '' || inputs.job == 'one' || inputs.job == 'plan')
+        if: always() && (env.RAN == '1' || inputs.job == 'one' || inputs.job == 'plan')
         run: python state.py save
 
       - name: Dashboard numbers
