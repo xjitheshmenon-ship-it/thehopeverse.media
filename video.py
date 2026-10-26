@@ -702,6 +702,13 @@ def youtube(interactive: bool = True, token: Path = TOKEN, api: tuple = ("youtub
     return build(*api, credentials=creds)
 
 
+def channel_stats(token: Path) -> dict:
+    """The channel's own all-time totals from YouTube: views, subscribers and public videos."""
+    s = youtube(False, token).channels().list(part="statistics", mine=True).execute()["items"][0]["statistics"]
+    return {"views": int(s.get("viewCount", 0)), "subscribers": int(s.get("subscriberCount", 0)),
+            "videos": int(s.get("videoCount", 0))}
+
+
 def watch_minutes(token: Path) -> int:
     """All-time minutes watched on the channel this token signs in to (YouTube Analytics, about 2 days behind)."""
     report = youtube(False, token, ("youtubeAnalytics", "v2")).reports().query(
