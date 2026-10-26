@@ -225,7 +225,7 @@ def host_photo(name: str) -> Path:
     return path
 
 
-paid = {"clips": 0, "usd": 0.0, "limit": AI_CLIPS}  # spending (fal.ai, footage checks) of the video being made; render() resets it
+paid = {"clips": 0, "usd": 0.0, "blank": 0, "limit": AI_CLIPS}  # spending (fal.ai, footage checks) of the video being made; render() resets it
 shots = []  # stock clips already matched in this video, reused when nothing else fits a later line
 
 
@@ -272,10 +272,20 @@ def _stock(scene: "Scene", query: str, size: tuple, duration: float, work: Path,
 def heygen(still: Path, audio: Path, path: Path) -> float:
     """The still talks, lip-synced to the line, with HeyGen's Avatar IV ($0.05 a second, HEYGEN_API_KEY).
     Saves the video to path and returns its length in seconds."""
-    import fal_client  # public links HeyGen can fetch the photo and the voice from
-    headers = {"x-api-key": os.environ["HEYGEN_API_KEY"].strip(), "Content-Type": "application/json"}
-    body = {"type": "image", "image": {"type": "url", "url": fal_client.upload_file(str(still))},
-            "audio_url": fal_client.upload_file(str(audio)), "aspect_ratio": "9:16", "title": path.stem}
+    key = os.environ["HEYGEN_API_KEY"].strip()
+    headers = {"x-api-key": key, "Content-Type": "application/json"}
+
+    def upload(file: Path) -> str:  # HeyGen's own storage, so a talking shot doesn't depend on fal.ai
+        boundary = "hopeverse" + os.urandom(8).hex()
+        mime = "image/png" if file.suffix == ".png" else "audio/wav" if file.suffix == ".wav" else "audio/mpeg"
+        data = (f'--{boundary}\r\nContent-Disposition: form-data; name="file"; filename="{file.name}"\r\n'
+                f"Content-Type: {mime}\r\n\r\n").encode() + file.read_bytes() + f"\r\n--{boundary}--\r\n".encode()
+        req = urllib.request.Request("https://api.heygen.com/v3/assets", data=data, headers={
+            "x-api-key": key, "Content-Type": f"multipart/form-data; boundary={boundary}"})
+        return json.load(urllib.request.urlopen(req, timeout=120))["data"]["asset_id"]
+
+    body = {"type": "image", "image": {"type": "asset_id", "asset_id": upload(still)},
+            "audio_asset_id": upload(audio), "aspect_ratio": "9:16", "title": path.stem}
     req = urllib.request.Request("https://api.heygen.com/v3/videos", data=json.dumps(body).encode(), headers=headers)
     video_id = json.load(urllib.request.urlopen(req, timeout=60))["data"]["video_id"]
     for _ in range(90):  # usually a few minutes
@@ -316,8 +326,12 @@ def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float
         if path.exists() or _can_pay():
             try:
                 if not path.exists():
+                    try:
+                        still = _pose(scene, scene.speaker, i, work, talking=True)
+                    except Exception as e:  # fal.ai down or out of credit: their usual photo still talks
+                        print(f"    no posed photo ({e}); using {scene.speaker}'s reference photo")
+                        still = host_photo(scene.speaker)
                     import fal_client
-                    still = _pose(scene, scene.speaker, i, work, talking=True)
                     if os.environ.get("HEYGEN_API_KEY"):
                         try:
                             paid["usd"] += 0.05 * (heygen(still, audio, path) or duration)
@@ -390,6 +404,7 @@ def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float
             print(f"    no footage for a shorter search: {e}")
     if shots:  # a later moment of a clip that already fits this video beats an off-topic one
         return _clip(shots[len(used) % len(shots)], size, duration, skip=0.5)
+    paid["blank"] += 1
     return ColorClip(size, color=(12, 18, 48), duration=duration)
 
 
@@ -505,7 +520,7 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
     if mark.exists():
         logo = ImageClip(str(mark), transparent=True).resized(width=150).with_opacity(0.85).with_position((60, 170))
     # A series shows its own characters in every shot, so its AI clips are capped only by DAILY_BUDGET.
-    paid.update(clips=0, usd=0.0, limit=10 ** 6 if package.get("cast") else AI_CLIPS)
+    paid.update(clips=0, usd=0.0, blank=0, limit=10 ** 6 if package.get("cast") else AI_CLIPS)
     shots.clear()
     # 1. Every line into one voice track, back to back with GAP between them: nothing can overlap or cut off.
     lines, voice_track = [], work / f"{prefix}voice.wav"
@@ -552,6 +567,8 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
     if paid["usd"]:  # counted in DAILY_BUDGET with the Claude costs
         log_spend(paid["usd"], package["channel_id"])
         print(f"    fal.ai video cost ${paid['usd']:.2f}")
+    if paid["blank"] * 3 > len(lines):  # never post a Short that is mostly empty frames; the next run retries it
+        raise RuntimeError(f"{paid['blank']} of {len(lines)} shots have no picture (is fal.ai out of credit?)")
     # 3. Picture, voice track and music put together once.
     out = package_path.with_suffix(".mp4")
     picture = work / f"{prefix}picture.mp4"
