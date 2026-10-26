@@ -122,7 +122,7 @@ def dub(path: Path, channel: dict) -> Path:
     scenes = [s.model_copy(update=line.model_dump()) for s, line in zip(board.scenes, out.lines)]
     target = path.with_suffix(f".{channel['lang']}.json")
     target.write_text(json.dumps({"channel_id": channel["id"], "title": out.title, "description": out.description,
-                                  "dub_of": path.stem, "scenes": [s.model_dump() for s in scenes]},
+                                  "dub_of": path.stem, "lang": channel["lang"], "scenes": [s.model_dump() for s in scenes]},
                                  indent=2, ensure_ascii=False), encoding="utf-8")
     return target
 
@@ -659,7 +659,9 @@ def upload(video: Path, package: dict, token: Path = TOKEN) -> str:
         tags.pop()
     body = {"snippet": {"title": package["title"][:100],
                         "description": f"{package['description']}\n\n{footer}".strip()[:5000],
-                        "tags": tags, "categoryId": package.get("category", "25")},  # 25 = News & Politics
+                        "tags": tags, "categoryId": package.get("category", "25"),  # 25 = News & Politics
+                        # tells YouTube who to show it to (French for Instinct, Hindi for dubs and Kissa)
+                        "defaultLanguage": package.get("lang", "en"), "defaultAudioLanguage": package.get("lang", "en")},
             "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False,
                        "containsSyntheticMedia": True}}
     request = youtube(token=token).videos().insert(
