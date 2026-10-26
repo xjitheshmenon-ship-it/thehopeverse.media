@@ -15,6 +15,7 @@ from collections import Counter
 from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
+import credits
 from agents import DAILY_BUDGET, HERE, HISTORY, OUTBOX, _channels
 from plan import SERIES_PER_DAY, SHORTS_PER_DAY, SLOTS, live_channels, load, next_slots, planned_slots
 
@@ -204,9 +205,11 @@ if __name__ == "__main__":
     plan = slots(rows)
     data = {"updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "shorts": rows, "spend": costs, "agent_work": agent_work(), "limits": limits(costs),
-            "slots": plan, "channels": channels(rows, costs, plan), "runs": runs(), "upcoming": upcoming()}
+            "slots": plan, "channels": channels(rows, costs, plan), "runs": runs(), "upcoming": upcoming(), "credits": credits.check()}
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(data, indent=1, ensure_ascii=False), encoding="utf-8")
     print(f"Saved {OUT} ({len(rows)} Shorts)")
+    for w in credits.warnings(data["credits"]):
+        print(f"::warning::{w}")  # shows on the run's page in GitHub Actions
     push(OUT)
     print(f"Pushed to the {BRANCH} branch")

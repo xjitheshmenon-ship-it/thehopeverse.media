@@ -399,6 +399,13 @@ def spend_report() -> str:
     if ideas:
         lines += ["", f"## Today's new channel idea (folder ideas/{ideas[-1].parent.name})", "",
                   ideas[-1].read_text(encoding="utf-8").split("## Images")[0].strip()]
+    try:
+        import credits
+        rows = credits.check()
+        lines += ["", "## Credits left", ""] + [f"- **{w}** - top it up today" for w in credits.warnings(rows)] + \
+            [f"- {r['service']}: {r['left'] if r['left'] is not None else '?'} {r['unit']} ({r['note']})" for r in rows]
+    except Exception as e:  # the report matters more than the credits table
+        lines += ["", f"Credits check failed: {e}"]
     owner = _sections(GROWTH).get("Owner")
     if owner:
         lines += ["", "## Mr. Grow's to-dos for you today", "", owner]
