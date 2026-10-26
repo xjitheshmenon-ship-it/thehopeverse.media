@@ -27,6 +27,12 @@ env:
   PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
   PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
   FAL_KEY: ${{ secrets.FAL_KEY }}
+  ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}  # voices; without it the free Edge voices are used
+  ELEVEN_VOICE_ARJUN: ${{ vars.ELEVEN_VOICE_ARJUN }}  # optional ElevenLabs voice ids (Variables tab)
+  ELEVEN_VOICE_MEERA: ${{ vars.ELEVEN_VOICE_MEERA }}
+  ELEVEN_VOICE_MALE: ${{ vars.ELEVEN_VOICE_MALE }}
+  ELEVEN_VOICE_FEMALE: ${{ vars.ELEVEN_VOICE_FEMALE }}
+  AI_CLIPS_PER_SHORT: ${{ vars.AI_CLIPS_PER_SHORT || '3' }}  # paid Kling video shots per Short (about $0.30 each)
   INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
   # Settings > Secrets and variables > Actions > Variables: change these without editing this file
   SHORTS_PER_DAY: ${{ vars.SHORTS_PER_DAY || '6' }}  # per channel, for the 100-day plan

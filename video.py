@@ -2,8 +2,11 @@
 
     python video.py            # every outbox package that has no video yet
 
-Voice: free Microsoft Edge voices (edge-tts). Pictures: real moving stock footage from Pixabay (free, PIXABAY_API_KEY) or NASA (no key)
-for each shot in Mr. Cut's edit plan, else a photo-real AI image from fal.ai (FAL_KEY), else a plain colour. Upload: needs client_secret.json from Google Cloud (see README).
+Voice: ElevenLabs (ELEVENLABS_API_KEY), else free Microsoft Edge voices (edge-tts). All lines are joined into one
+continuous voice track with a fixed pause between them, then laid under the finished picture, so lines never overlap or cut.
+Pictures (always moving video, never still photos): a host talking on screen is a lip-synced Kling avatar video from fal.ai
+(FAL_KEY); other shots are real stock footage from Pixabay (PIXABAY_API_KEY), else a Kling AI video clip, else NASA (no key).
+Paid AI clips are capped per Short (AI_CLIPS_PER_SHORT) and by DAILY_BUDGET. Upload: needs client_secret.json from Google Cloud (see README).
 
 Dub channels: every new Short is also re-voiced for each channel in channels.json with a "lang" (e.g. Hindi), reusing
 the same footage, once that channel is signed in:  python video.py --connect hi
@@ -21,7 +24,8 @@ import textwrap
 import time
 import urllib.parse
 import urllib.request
-from io import BytesIO
+import wave
+from datetime import datetime
 from pathlib import Path
 
 import edge_tts
@@ -31,13 +35,23 @@ from moviepy.config import FFMPEG_BINARY
 from PIL import Image, ImageDraw, ImageFont
 from pydantic import BaseModel
 
-from agents import HELPER_MODEL, OUTBOX, TEAM, _channels, client, read_cast
+from agents import DAILY_BUDGET, HELPER_MODEL, HISTORY, OUTBOX, TEAM, _channels, client, read_cast, spent_today
 from approve import approved
 
 HERE = Path(__file__).parent
 VOICE = os.environ.get("HOPE_VOICE", "en-US-AndrewNeural")
-FAL_MODEL = "fal-ai/flux/schnell"  # about $0.006 per Short-sized image
-HOST_MODEL = "fal-ai/flux-pro/kontext"  # about $0.04 per image; keeps a host's face from their reference photo
+PORTRAIT_MODEL = "fal-ai/flux-pro/v1.1-ultra"  # about $0.06, once per host; raw mode looks like a real photo, not a render
+HOST_MODEL = "fal-ai/flux-pro/kontext"  # about $0.04; the host's face from their reference photo, posed for the shot
+AVATAR_MODEL = "fal-ai/kling-video/ai-avatar/v2/standard"  # $0.0562 a second: that pose talks, lip-synced to the line
+VIDEO_MODEL = "fal-ai/kling-video/v2.5-turbo/pro/text-to-video"  # $0.35 per 5 s clip, when stock footage has nothing
+AI_CLIPS = int(os.environ.get("AI_CLIPS_PER_SHORT") or "3")  # paid AI video shots per Short; the rest is free stock
+ELEVEN_MODEL = os.environ.get("ELEVEN_MODEL") or "eleven_multilingual_v2"  # speaks English and Hindi
+# ElevenLabs voice ids. Change them in GitHub > Settings > Secrets and variables > Actions > Variables:
+# ELEVEN_VOICE_ARJUN, ELEVEN_VOICE_MEERA (any character by name), or ELEVEN_VOICE_MALE / ELEVEN_VOICE_FEMALE for the rest.
+ELEVEN_MALE = os.environ.get("ELEVEN_VOICE_MALE") or "nPczCjzI2devNBz1zQrb"  # Brian (premade)
+ELEVEN_FEMALE = os.environ.get("ELEVEN_VOICE_FEMALE") or "EXAVITQu4vr4xnVq9mPl"  # Sarah (premade)
+GAP = 0.25  # seconds of quiet between two lines
+RATE = 44100
 HOSTS_DIR = HERE / "hosts"  # one reference photo per host, made once and then reused in every Short
 # The two hosts in every Short. Change a look and delete hosts/<name>.png to give them a new face.
 HOSTS = {
@@ -50,8 +64,8 @@ HOSTS = {
 }
 MUSIC_MODEL = "fal-ai/stable-audio-3/medium/base/text-to-audio"  # about $0.05 per track
 MUSIC_VOLUME = 0.12  # background music level under the voice (1 = full)
-STYLE = ("photorealistic real photograph, shot on 35mm film camera, natural light, documentary style, vertical 9:16, "
-         "not a cartoon, not an illustration, not CGI, no text, no words")
+STYLE = ("photorealistic, real people with natural skin texture, shot on a cinema camera, natural light, documentary "
+         "style, vertical 9:16, not a cartoon, not an illustration, not CGI, not 3D, no text, no words")
 SECRET, TOKEN = HERE / "client_secret.json", HERE / "token.json"
 LOGO = HERE / "logo.png"  # replace this file to change the watermark
 # Stock sites refuse Python's default user agent (HTTP 403), so every download identifies as a browser.
@@ -189,79 +203,100 @@ def _fill(clip, size: tuple):
     return clip.cropped(x_center=clip.w / 2, y_center=clip.h / 2, width=size[0], height=size[1])
 
 
-def _zoom(img: Image.Image, size: tuple, duration: float):
-    clip = _fill(ImageClip(np.array(img.convert("RGB"))), size).with_duration(duration)
-    return clip.resized(lambda t: 1 + 0.06 * t / duration).with_position("center")  # slow push-in
-
-
 def host_photo(name: str) -> Path:
     """The host's reference photo, made once from their look so every Short shows the same person."""
-    path = HOSTS_DIR / f"{name.lower()}.png"
+    path = HOSTS_DIR / f"{name.lower()}-real.png"  # "-real": the old cartoonish photos are left unused
     if not path.exists():
         import fal_client
         HOSTS_DIR.mkdir(exist_ok=True)
-        result = fal_client.subscribe(FAL_MODEL, arguments={
-            "prompt": f"Head-and-shoulders portrait of an {HOSTS[name]['look']}, friendly, looking at the camera, "
-                      f"plain light studio background. {STYLE}", "image_size": "portrait_4_3", "num_images": 1})
+        result = fal_client.subscribe(PORTRAIT_MODEL, arguments={
+            "prompt": f"Candid head-and-shoulders photo of an {HOSTS[name]['look']}, friendly, looking at the camera, "
+                      f"soft daylight. {STYLE}", "aspect_ratio": "3:4", "raw": True})
         urllib.request.urlretrieve(result["images"][0]["url"], path)
+        paid["usd"] += 0.06
     return path
 
 
-def background(scene: "Scene", size: tuple, duration: float, work: Path, used: set):
-    """Real stock footage from Pixabay (PIXABAY_API_KEY), else NASA's free library, else a photo-real AI image
-    from fal.ai (FAL_KEY), else a Pixabay photo, else a plain colour."""
+paid = {"clips": 0, "usd": 0.0}  # fal.ai spending of the video being made; render() resets it
+
+
+def _can_pay() -> bool:
+    return paid["clips"] < AI_CLIPS and spent_today() + paid["usd"] < DAILY_BUDGET
+
+
+def _stock(query: str, size: tuple, duration: float, work: Path, used: set):
+    """A real Pixabay clip for the query, or None."""
+    for video in _pixabay("videos/", query):
+        if video["id"] in used:
+            continue
+        used.add(video["id"])
+        path = work / f"clip-{video['id']}.mp4"
+        if not path.exists():
+            urllib.request.urlretrieve(video["videos"]["medium"]["url"], path)  # 1080p, or 720p on old clips
+        return _clip(path, size, duration)
+    return None
+
+
+def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float, work: Path, used: set):
+    """Moving video only: the host really talking (Kling avatar), else Pixabay footage, else a Kling AI clip,
+    else NASA footage, else Pixabay footage for a shorter search, else a plain colour."""
     query = scene.picture_search
     if scene.host_on_screen and scene.speaker in HOSTS and os.environ.get("FAL_KEY"):
-        try:
-            import fal_client
-            path = work / f"host-{len(used):03}.png"
-            used.add(path.name)
-            if not path.exists():
-                result = fal_client.subscribe(HOST_MODEL, arguments={
-                    "prompt": f"The same person, same face, hair and clothes: {scene.image_prompt}. Talking to camera. "
-                              f"{STYLE}",
-                    "image_url": fal_client.upload_file(str(host_photo(scene.speaker))), "aspect_ratio": "9:16"})
-                urllib.request.urlretrieve(result["images"][0]["url"], path)
-            return _zoom(Image.open(path), size, duration)
-        except Exception as e:
-            print(f"    no host shot of {scene.speaker}: {e}")
+        path = work / f"avatar-{audio.stem}.mp4"  # per language, since the lips follow the voice
+        if path.exists() or _can_pay():
+            try:
+                if not path.exists():
+                    import fal_client
+                    still = work / f"host-{i:03}.png"
+                    if not still.exists():
+                        result = fal_client.subscribe(HOST_MODEL, arguments={
+                            "prompt": f"The same person, same face, hair and clothes: {scene.image_prompt}. Looking at "
+                                      f"the camera. {STYLE}",
+                            "image_url": fal_client.upload_file(str(host_photo(scene.speaker))), "aspect_ratio": "9:16"})
+                        urllib.request.urlretrieve(result["images"][0]["url"], still)
+                        paid["usd"] += 0.04
+                    result = fal_client.subscribe(AVATAR_MODEL, arguments={
+                        "image_url": fal_client.upload_file(str(still)), "audio_url": fal_client.upload_file(str(audio)),
+                        "prompt": "A real person talking naturally to the camera, small head and hand movements"})
+                    urllib.request.urlretrieve(result["video"]["url"], path)
+                    paid["usd"] += 0.0562 * (result.get("duration") or duration)
+                    paid["clips"] += 1
+                return _clip(path, size, duration)
+            except Exception as e:
+                print(f"    no talking shot of {scene.speaker}: {e}")
     if os.environ.get("PIXABAY_API_KEY"):
         try:
-            for video in _pixabay("videos/", query):
-                if video["id"] in used:
-                    continue
-                used.add(video["id"])
-                path = work / f"clip-{video['id']}.mp4"
-                if not path.exists():
-                    urllib.request.urlretrieve(video["videos"]["medium"]["url"], path)  # 1080p, or 720p on old clips
-                return _clip(path, size, duration)
+            if clip := _stock(query, size, duration, work, used):
+                return clip
         except Exception as e:  # missing footage is not worth losing the video over
             print(f"    no footage for '{query}': {e}")
+    if os.environ.get("FAL_KEY"):
+        path = work / f"ai-{i:03}.mp4"  # no lips to match, so dubs reuse it
+        if path.exists() or _can_pay():
+            try:
+                if not path.exists():
+                    import fal_client
+                    result = fal_client.subscribe(VIDEO_MODEL, arguments={  # 5 s, looped if the line is longer
+                        "prompt": f"{scene.image_prompt}. {STYLE}", "duration": "5", "aspect_ratio": "9:16",
+                        "negative_prompt": "cartoon, anime, illustration, CGI, 3D render, plastic skin, text, blur"})
+                    urllib.request.urlretrieve(result["video"]["url"], path)
+                    paid["usd"] += 0.35
+                    paid["clips"] += 1
+                return _clip(path, size, duration)
+            except Exception as e:
+                print(f"    no AI video for this scene: {e}")
     try:
         path = _nasa(query, used, work)
         if path:
             return _clip(path, size, duration, skip=0.2)  # skip NASA title cards at the start
     except Exception as e:
         print(f"    no NASA footage for '{query}': {e}")
-    if os.environ.get("FAL_KEY"):
+    if os.environ.get("PIXABAY_API_KEY") and len(query.split()) > 2:
         try:
-            import fal_client
-            path = work / f"ai-{len(used):03}.png"
-            used.add(path.name)
-            if not path.exists():
-                result = fal_client.subscribe(FAL_MODEL, arguments={
-                    "prompt": f"{scene.image_prompt}. {STYLE}", "image_size": "portrait_16_9", "num_images": 1})
-                urllib.request.urlretrieve(result["images"][0]["url"], path)
-            return _zoom(Image.open(path), size, duration)
+            if clip := _stock(" ".join(query.split()[:2]), size, duration, work, used):
+                return clip
         except Exception as e:
-            print(f"    no AI image for this scene: {e}")
-    if os.environ.get("PIXABAY_API_KEY"):
-        try:
-            photo = _pixabay("", query)[0]
-            img = Image.open(BytesIO(urllib.request.urlopen(photo["largeImageURL"], timeout=30).read())).convert("RGB")
-            return _zoom(img, size, duration)
-        except Exception as e:
-            print(f"    no photo for '{query}': {e}")
+            print(f"    no footage for a shorter search: {e}")
     return ColorClip(size, color=(12, 18, 48), duration=duration)
 
 
@@ -280,9 +315,22 @@ def caption(text: str, size: tuple, lang: str = "") -> np.ndarray:
     return np.array(img)
 
 
-def speak(text: str, voice: str, path: Path, pitch: str = "+0Hz") -> bool:
-    """Edge's free voice service sometimes returns an empty or broken file, so check it and try again.
+def speak(text: str, voice: str, path: Path, pitch: str = "+0Hz", eleven: str = "", before: str = "",
+          after: str = "") -> bool:
+    """ElevenLabs when ELEVENLABS_API_KEY is set (the lines around this one keep the delivery flowing), else Edge.
+    Edge's free voice service sometimes returns an empty or broken file, so check it and try again.
     Returns False if it never works, so the caller can drop that scene instead of losing the whole video."""
+    if eleven and os.environ.get("ELEVENLABS_API_KEY"):
+        try:
+            req = urllib.request.Request(
+                f"https://api.elevenlabs.io/v1/text-to-speech/{eleven}?output_format=mp3_44100_128",
+                data=json.dumps({"text": text, "model_id": ELEVEN_MODEL, "previous_text": before,
+                                 "next_text": after}).encode(),
+                headers={"xi-api-key": os.environ["ELEVENLABS_API_KEY"].strip(), "Content-Type": "application/json"})
+            path.write_bytes(urllib.request.urlopen(req, timeout=120).read())
+            return True
+        except Exception as e:  # out of credits or a bad voice id: the free voice keeps the video coming
+            print(f"    ElevenLabs failed ({e} {getattr(e, 'read', lambda: b'')()[:200]!r}); using Edge for this line")
     for attempt in range(6):  # about 2.5 minutes in all, so a short internet drop doesn't cost a scene
         try:
             asyncio.run(edge_tts.Communicate(text, voice, pitch=pitch).save(str(path)))
@@ -293,6 +341,16 @@ def speak(text: str, voice: str, path: Path, pitch: str = "+0Hz") -> bool:
             time.sleep(10 * (attempt + 1))
     print(f"    skipping this scene; the voice could not read: {text!r}")
     return False
+
+
+def _wav(src: Path) -> bytes:
+    """The line as 16-bit mono samples with the quiet at both ends cut, so lines join with exactly GAP between them."""
+    trim = "silenceremove=start_periods=1:start_threshold=-50dB"
+    out = src.with_suffix(".wav")
+    subprocess.run([FFMPEG_BINARY, "-y", "-loglevel", "error", "-i", str(src), "-af", f"{trim},areverse,{trim},areverse",
+                    "-ac", "1", "-ar", str(RATE), "-c:a", "pcm_s16le", str(out)], check=True)
+    with wave.open(str(out)) as w:
+        return w.readframes(w.getnframes())
 
 
 def music(work: Path, seconds: float, mood: str = "") -> Path | None:
@@ -329,45 +387,66 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
     logo = None
     if LOGO.exists():  # channel watermark, top-left, clear of the Shorts buttons on the right
         logo = ImageClip(str(LOGO), transparent=True).resized(width=150).with_opacity(0.85).with_position((60, 170))
-    parts, used, seconds = [], set(), 0.0
-    for i, scene in enumerate(board.scenes):
-        if not any(ch.isalnum() for ch in scene.narration):  # nothing to say, so no sound file would come back
-            continue
-        audio = work / f"{prefix}{i:03}.mp3"
-        # Dubs keep their channel's voice; English lines are read by the host who says them.
-        who = {} if "dub_of" in package else HOSTS.get(scene.speaker, {})
-        if not speak(scene.narration, who.get("voice", voice), audio, who.get("pitch", "+0Hz")):
-            continue
-        sound = AudioFileClip(str(audio))
-        duration = sound.duration + 0.3
-        seconds += duration
-        layers = [background(scene, size, duration, work, used),
+    paid.update(clips=0, usd=0.0)
+    # 1. Every line into one voice track, back to back with GAP between them: nothing can overlap or cut off.
+    lines, voice_track = [], work / f"{prefix}voice.wav"
+    spoken = [(i, s) for i, s in enumerate(board.scenes) if any(ch.isalnum() for ch in s.narration)]
+    with wave.open(str(voice_track), "wb") as track:
+        track.setnchannels(1)
+        track.setsampwidth(2)
+        track.setframerate(RATE)
+        for k, (i, scene) in enumerate(spoken):
+            audio = work / f"{prefix}{i:03}.mp3"
+            # Dubs keep their channel's voice; English lines are read by the host who says them.
+            who = {} if "dub_of" in package else HOSTS.get(scene.speaker, {})
+            eleven = os.environ.get(f"ELEVEN_VOICE_{scene.speaker.upper()}") or (
+                ELEVEN_FEMALE if "woman" in who.get("look", "").lower() else ELEVEN_MALE)
+            if not speak(scene.narration, who.get("voice", voice), audio, who.get("pitch", "+0Hz"), eleven,
+                         spoken[k - 1][1].narration if k else "",
+                         spoken[k + 1][1].narration if k + 1 < len(spoken) else ""):
+                continue
+            samples = _wav(audio)
+            if not samples:
+                continue
+            start = track.tell() / RATE
+            track.writeframes(samples + b"\0\0" * int(GAP * RATE))
+            lines.append((i, scene, audio.with_suffix(".wav"), start, track.tell() / RATE))
+    # 2. The picture for each line, silent, cut on whole frames so it never drifts from the voice.
+    parts, used = [], set()
+    for i, scene, audio, start, end in lines:
+        duration = (round(end * 30) - round(start * 30)) / 30
+        layers = [background(scene, i, audio, size, duration, work, used),
                   ImageClip(caption(scene.on_screen_text, size, lang), transparent=True).with_duration(duration)]
         if logo:
             layers.append(logo.with_duration(duration))
-        clip = CompositeVideoClip(layers, size=size).with_duration(duration).with_audio(sound)
+        clip = CompositeVideoClip(layers, size=size).with_duration(duration)
         # Each scene is written to disk and closed straight away, so only one scene's footage is in memory.
         part = work / f"{prefix}scene-{i:03}.mp4"
-        clip.write_videofile(str(part), fps=30, codec="libx264", audio_codec="aac",
+        clip.write_videofile(str(part), fps=30, codec="libx264", audio=False,
                              ffmpeg_params=["-pix_fmt", "yuv420p"], logger=None)
-        for c in (clip, sound, *layers):
+        for c in (clip, *layers):
             c.close()
         parts.append(part)
         print(f"    scene {i + 1}/{len(board.scenes)}")
+    if paid["usd"]:  # counted in DAILY_BUDGET with the Claude costs
+        HISTORY.parent.mkdir(exist_ok=True)
+        with HISTORY.open("a", encoding="utf-8") as f:
+            f.write(json.dumps({"date": f"{datetime.now():%Y-%m-%d %H:%M}", "cost_usd": round(paid["usd"], 2)}) + "\n")
+        print(f"    fal.ai video cost ${paid['usd']:.2f}")
+    # 3. Picture, voice track and music put together once.
     out = package_path.with_suffix(".mp4")
-    voiced = work / f"{prefix}voice.mp4"
+    picture = work / f"{prefix}picture.mp4"
     listing = work / f"{prefix}scenes.txt"
     listing.write_text("".join(f"file '{p.resolve().as_posix()}'\n" for p in parts), encoding="utf-8")
     subprocess.run([FFMPEG_BINARY, "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(listing),
-                    "-c", "copy", str(voiced)], check=True)
-    track = music(work, seconds, package.get("music", ""))
-    if not track:
-        voiced.replace(out)
-        return out
-    # Music loops if it's short and stops when the voice ends; the video is copied, only the sound is re-encoded.
-    subprocess.run([FFMPEG_BINARY, "-y", "-loglevel", "error", "-i", str(voiced), "-stream_loop", "-1", "-i", str(track),
-                    "-filter_complex", f"[1:a]volume={MUSIC_VOLUME}[m];[0:a][m]amix=inputs=2:duration=first:normalize=0[a]",
-                    "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", str(out)], check=True)
+                    "-c", "copy", str(picture)], check=True)
+    track = music(work, lines[-1][4], package.get("music", ""))
+    # Music loops if it's short and stops when the voice ends; the video is copied, only the sound is encoded.
+    mix = (["-stream_loop", "-1", "-i", str(track), "-filter_complex",
+            f"[2:a]volume={MUSIC_VOLUME}[m];[1:a][m]amix=inputs=2:duration=first:normalize=0[a]", "-map", "[a]"]
+           if track else ["-map", "1:a"])
+    subprocess.run([FFMPEG_BINARY, "-y", "-loglevel", "error", "-i", str(picture), "-i", str(voice_track), *mix,
+                    "-map", "0:v", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", str(out)], check=True)
     return out
 
 
