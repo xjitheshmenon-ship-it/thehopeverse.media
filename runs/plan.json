@@ -77,12 +77,6 @@
  ],
  "yt-hopeverse": [
   {
-   "when": "2026-10-27 08:05",
-   "topic": "France protests: police arrested more than 1,300 people on Saturday 24 Oct 2026 as hundreds of thousands marched over school funding and the soaring cost of living. Explain what protesters want, why it turned so big, and how the government responded, in under 60 seconds for an international audience.",
-   "why": "It is a fresh world story from the last 48 hours (Democracy Now headlines, 26 Oct 2026) with a hard number, 1,300+ arrests. It has broad international appeal and does not repeat the Lula, Jio, ISRO or Jamia topics already made or planned. The cost-of-living angle also resonates in many countries.",
-   "planned": "2026-10-26 21:58"
-  },
-  {
    "when": "2026-10-27 10:10",
    "topic": "Rahul Gandhi asks 'which traitor is US blackmailing' and targets the BJP and RSS over the Puri-Epstein picture: what was said and how the parties responded",
    "why": "Political rows get strong engagement from Indian viewers. A neutral explainer of the claim and the replies fits the 11:00 IST slot.",
@@ -111,6 +105,12 @@
    "why": "Reuters, CNN, NPR and BBC all reported it on 25-26 Oct. It is a fresh, visual story with a clear arc, and it has not been covered or planned yet. The Indian audience follows US-linked world events and Nobel stories. I could not find a verified India-specific story for this slot because my search limit ran out, so this is the strongest dated world story I confirmed. Swap in a fresh India headline from the morning of 28 Oct if the owner prefers.",
    "planned": "2026-10-27 00:33",
    "when": "2026-10-28 06:00"
+  },
+  {
+   "topic": "Cyclone Arnab, which the IMD expects to hit the Andhra Pradesh coast on Wed 28 Oct 2026. The IMD said on 26 Oct that it should cross between Bapatla and Visakhapatnam (Yanam included) as a very severe cyclonic storm. Winds should be 115-125 kmph, gusting to 140 kmph, by the forenoon of 28 Oct. The Cabinet Secretary has reviewed preparedness, and the Andhra CM has told officials to aim for zero casualties. Cover where and when it lands, which areas are at risk (heavy rain, storm surge), and what people on the coast should do. Keep it under 60 seconds and open with the landfall hour, since the Short goes up at 08:05 IST on landfall morning.",
+   "why": "The cyclone hits on the morning of the upload, so it is the most time-sensitive story for Indian viewers at that hour. It is also a safety story with a hard wind-speed number. None of the Shorts already made or planned cover it. They cover Jio IPO, Gaganyaan, the Jamia polls, Rahul Gandhi and Kharge.",
+   "planned": "2026-10-27 01:30",
+   "when": "2026-10-28 08:05"
   }
  ],
  "yt-sankalp": [
