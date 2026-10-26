@@ -9,10 +9,10 @@ on:
   workflow_dispatch:
     inputs:
       job:
-        description: "daily = run the 5 PM slot now (a Short per channel, review, channel idea, report), one = make and post the next planned Short now for the channel below, stats = dashboard numbers only, plan = plan the next 6 topics per channel (to sign a channel in, use the Connect a channel workflow; a Kissa episode: Post a Kissa episode)"
+        description: "slot = run the current 2-hour slot now (what the schedule does; skipped if it already ran), daily = run the 5 PM slot now (a Short per channel, review, channel idea, report), one = make and post the next planned Short now for the channel below, stats = dashboard numbers only, plan = plan the next 6 topics per channel (to sign a channel in, use the Connect a channel workflow; a Kissa episode: Post a Kissa episode)"
         default: daily
         type: choice
-        options: [daily, one, stats, plan]
+        options: [daily, slot, one, stats, plan]
       channel:
         description: "For job one: which channel's Short to post now"
         default: yt-hopeverse
@@ -24,7 +24,7 @@ permissions:
   actions: read  # dashboard.py lists recent runs and failures
 
 concurrency:
-  group: hope-${{ github.event.schedule == '15 * * * *' && 'stats' || inputs.job || 'daily' }}
+  group: hope-${{ github.event.schedule == '15 * * * *' && 'stats' || inputs.job == 'slot' && 'daily' || inputs.job || 'daily' }}
 
 env:
   TZ: Asia/Kolkata
@@ -80,10 +80,16 @@ jobs:
           true
 
       - name: Which 2-hour slot this is
-        if: github.event.schedule == '30 1-11/2 * * *' || inputs.job == 'daily'
+        if: github.event.schedule == '30 1-11/2 * * *' || inputs.job == 'daily' || inputs.job == 'slot'
         run: |
           slot=$(( ($(date +%-H) - 7) / 2 + 1 ))  # 1 at 07:00 IST ... 6 at 17:00 IST
           [ "${{ inputs.job }}" = daily ] && slot=6  # a manual run counts as the 5 PM slot
+          # GitHub's schedule can fire late or twice next to a backup "slot" run: each slot posts once a day
+          mark="{\"slot\": \"$(date +%F) $slot\"}"
+          if [ "${{ inputs.job }}" != daily ] && grep -qxF "$mark" runs/slots.jsonl 2>/dev/null; then
+            echo "Slot $slot already ran today"; exit 0
+          fi
+          mkdir -p runs && echo "$mark" >> runs/slots.jsonl
           last=$(( SHORTS_PER_DAY < 6 ? SHORTS_PER_DAY : 6 ))
           echo "SLOT=$slot" >> "$GITHUB_ENV"
           echo "MAKE=$([ "$slot" -ge 1 ] && [ "$slot" -le "$last" ] && echo 1 || echo 0)" >> "$GITHUB_ENV"
@@ -94,6 +100,7 @@ jobs:
         if: env.MAKE == '1'
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core > /dev/null  # Hindi captions
+          before=$(ls outbox/*.json 2>/dev/null | wc -l)
           [ "$SLOT" = 1 ] && { python agents.py --grow || true; }  # Mr. Grow's notes for the day's Shorts
           aud=$([ $((SLOT * 3)) -le $((SHORTS_PER_DAY * 2)) ] && echo "Indian viewers" || echo "the international market")  # 4 of 6 for India
           # live channels whose sign-in is here (token.json for Hopeverse Media)
@@ -107,7 +114,9 @@ jobs:
             [ -n "$topic" ] && goal="make the Short on the planned topic \"$topic\" (check list_outbox and that it is still accurate and new; if not, pick the best alternative), then $goal"
             HOPE_CHANNEL=$id HOPE_REVIEW=$REVIEW python agents.py "Scheduled run, Short $SLOT of $SHORTS_PER_DAY today for channel $id: $goal" || true
           done
-          python video.py
+          ok=0; [ "$(ls outbox/*.json 2>/dev/null | wc -l)" -gt "$before" ] || { echo "::error::No Short was drafted in this slot (see Mr. Hope's log above)"; ok=1; }
+          python video.py || ok=1  # fails when a Short couldn't be made or posted, so the run shows red
+          exit $ok
       - name: Make and post one Short now
         if: inputs.job == 'one'
         env:
@@ -121,7 +130,9 @@ jobs:
           fi
           topic=$(python plan.py --next "$CHANNEL" || true)  # post the next planned topic now
           [ -n "$topic" ] && goal="make the Short on the planned topic \"$topic\" (check list_outbox and that it is still accurate and new; if not, pick the best alternative), then $goal"
+          before=$(ls outbox/*.json 2>/dev/null | wc -l)
           HOPE_CHANNEL=$CHANNEL HOPE_REVIEW=0 python agents.py "One-off run requested by the owner: $goal"
+          [ "$(ls outbox/*.json 2>/dev/null | wc -l)" -gt "$before" ] || { echo "::error::No Short was drafted"; exit 1; }
           python video.py
       - name: Write and post this slot's Hindi series episode
         if: always() && env.SLOT != ''
