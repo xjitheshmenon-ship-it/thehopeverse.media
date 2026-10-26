@@ -140,9 +140,12 @@ def storyboard(package: dict) -> Storyboard:
                    "image_prompt: a photo-real description of the same shot (person, setting, camera angle); when a "
                    "recurring character appears, copy their look from the cast below word for word. Real footage only, "
                    "never cartoon. "
-                   "speaker: who says the line, Arjun or Meera (the two hosts; use both in every Short). "
-                   "host_on_screen: true when the shot shows that host talking (about every third scene, including "
-                   "the first), then image_prompt describes only their pose, expression and setting. "
+                   + ("speaker: always empty and host_on_screen always false: one narrator reads every line, in the "
+                      "package's own language, never Arjun or Meera. picture_search stays in English. "
+                      if package.get("lang") else
+                      "speaker: who says the line, Arjun or Meera (the two hosts; use both in every Short). "
+                      "host_on_screen: true when the shot shows that host talking (about every third scene, including "
+                      "the first), then image_prompt describes only their pose, expression and setting. ") +
                    "It is a YouTube Short: keep it under 60 seconds "
                    "of narration.\n\nCast:\n" + read_cast.call({}) + "\n\nPackage:\n"
                    + json.dumps(package)}],
@@ -453,6 +456,8 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
             who = {} if "dub_of" in package else HOSTS.get(scene.speaker, {})
             eleven = os.environ.get(f"ELEVEN_VOICE_{scene.speaker.upper()}") or eleven_voice(
                 "female" if "woman" in who.get("look", "").lower() else "male")
+            if lang not in ("", "hi"):  # ElevenLabs picks Indian-accented voices; French etc. keep the channel's Edge voice
+                eleven = ""
             if not speak(scene.narration, who.get("voice", voice), audio, who.get("pitch", "+0Hz"), eleven,
                          spoken[k - 1][1].narration if k else "",
                          spoken[k + 1][1].narration if k + 1 < len(spoken) else ""):
@@ -602,7 +607,8 @@ if __name__ == "__main__":
                 print(f"    failed: {e}")
                 continue
         # Only Shorts made from now on have board.json, so older ones are never dubbed.
-        for c in dubs if "dub_of" not in package and (path.with_suffix("") / "board.json").exists() else []:
+        english = "dub_of" not in package and not channels.get(package["channel_id"], {}).get("lang")
+        for c in dubs if english and (path.with_suffix("") / "board.json").exists() else []:
             if not path.with_suffix(f".{c['lang']}.json").exists():
                 print(f"Making the {c['language']} version of {path.name}")
                 try:

@@ -153,7 +153,9 @@ def queue_post(channel_id: str, title: str, description: str, script: str) -> st
     OUTBOX.mkdir(exist_ok=True)
     path = OUTBOX / f"{channel_id}-{len(list(OUTBOX.glob(channel_id + '-*'))) + 1}.json"
     path.write_text(json.dumps(
-        {"channel_id": channel_id, "title": title, "description": description, "script": script}, indent=2))
+        {"channel_id": channel_id, "title": title, "description": description, "script": script,
+         # a channel in another language (Instinct) brings its language, footer and YouTube category
+         **{k: channel[k] for k in ("lang", "footer", "category") if k in channel}}, indent=2, ensure_ascii=False))
     # ponytail: writes to outbox only; real upload needs YouTube Data API / Instagram Graph API OAuth per channel
     return f"queued at {path.name}"
 
