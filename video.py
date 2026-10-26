@@ -57,10 +57,10 @@ RATE = 44100
 HOSTS_DIR = HERE / "hosts"  # one reference photo per host, made once and then reused in every Short
 # The two hosts in every Short. Change a look and delete hosts/<name>.png to give them a new face.
 HOSTS = {
-    "Arjun": {"voice": "en-IN-PrabhatNeural",
+    "Arjun": {"voice": "en-IN-PrabhatNeural", "voice_hi": "hi-IN-MadhurNeural",
               "look": "Indian man, about 35, warm brown skin, short neat black hair, trimmed beard, "
                       "deep-teal field jacket over a white shirt"},
-    "Meera": {"voice": "en-IN-NeerjaNeural",
+    "Meera": {"voice": "en-IN-NeerjaNeural", "voice_hi": "hi-IN-SwaraNeural",
               "look": "Indian woman, about 29, medium-brown skin, shoulder-length wavy black hair, "
                       "small gold earrings, rust-coloured kurta-style top"},
 }
@@ -80,9 +80,10 @@ class Scene(BaseModel):
     on_screen_text: str
     picture_search: str
     image_prompt: str
-    speaker: str = ""  # Arjun or Meera: whose voice reads this line
+    speaker: str = ""  # Arjun or Meera (or the channel's own anchors): whose voice reads this line
     host_on_screen: bool = False  # True: the speaker is shown (from their reference photo), not stock footage
     on_screen: str = ""  # series: the character this shot shows when nobody is talking (e.g. during narration)
+    photo: str = ""  # channels with "photos": a Wikimedia Commons search for a real photo or clip (a politician, a flag)
 
 
 class Storyboard(BaseModel):
@@ -122,13 +123,15 @@ def dub(path: Path, channel: dict) -> Path:
     scenes = [s.model_copy(update=line.model_dump()) for s, line in zip(board.scenes, out.lines)]
     target = path.with_suffix(f".{channel['lang']}.json")
     target.write_text(json.dumps({"channel_id": channel["id"], "title": out.title, "description": out.description,
-                                  "dub_of": path.stem, "lang": channel["lang"], "scenes": [s.model_dump() for s in scenes]},
+                                  "dub_of": path.stem, "lang": channel["lang"], "scenes": [s.model_dump() for s in scenes],
+                                  **{k: package[k] for k in ("footer", "category", "hosts", "photos") if k in package}},
                                  indent=2, ensure_ascii=False), encoding="utf-8")
     return target
 
 
 def storyboard(package: dict) -> Storyboard:
     """Ask Claude to cut the package into scenes the renderer can use."""
+    a, b = list(package.get("hosts") or ("Arjun", "Meera"))[:2]
     return client.messages.parse(
         model=HELPER_MODEL,
         max_tokens=16000,
@@ -147,10 +150,15 @@ def storyboard(package: dict) -> Storyboard:
                    "never cartoon. Never ask for a real, identifiable person in picture_search or image_prompt (no "
                    "politician, official or celebrity by name or likeness): show the place, building, crowd, document "
                    "or object instead, so no shot is a fake of a real person. "
+                   + ("photo: when the line is about a named real person, party, flag, election symbol or landmark, a "
+                      "2-5 word Wikimedia Commons search for a REAL photo or video of it (e.g. 'Narendra Modi 2024', "
+                      "'Flag of the Bharatiya Janata Party', 'Rahul Gandhi rally', 'Parliament House New Delhi'), else "
+                      "empty; use it on about half the scenes that aren't anchors talking. "
+                      if package.get("photos") else "photo: always empty. ") +
                    + ("speaker: always empty and host_on_screen always false: one narrator reads every line, in the "
-                      "package's own language, never Arjun or Meera. picture_search stays in English. "
+                      f"package's own language, never {a} or {b}. picture_search stays in English. "
                       if package.get("lang") else
-                      "speaker: who says the line, Arjun or Meera (the two hosts; use both in every Short). "
+                      f"speaker: who says the line, {a} or {b} (the two hosts; use both in every Short). "
                       "host_on_screen: true when the shot shows that host talking (about every third scene, including "
                       "the first), then image_prompt describes only their pose, expression and setting. ") +
                    "It is a YouTube Short: keep it under 60 seconds "
@@ -197,6 +205,42 @@ def _nasa(scene: "Scene", query: str, used: set, work: Path):
     if not path.exists():  # ponytail: downloads the whole clip; long NASA videos can be 100+ MB
         urllib.request.urlretrieve(urllib.parse.quote(mp4, safe=":/~"), path)
     return path
+
+
+credits = []  # Wikimedia Commons files used in the video being made, credited in its description
+
+
+def _commons(scene: "Scene", size: tuple, duration: float, work: Path, used: set):
+    """A real photo or clip from Wikimedia Commons (free licences, credited) that Claude agrees shows scene.photo,
+    or None. Photos get a slow zoom, so the picture still moves."""
+    url = "https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode({
+        "action": "query", "format": "json", "generator": "search", "gsrsearch": scene.photo, "gsrnamespace": 6,
+        "gsrlimit": 10, "prop": "imageinfo", "iiprop": "url|mime|size|extmetadata", "iiurlwidth": 1080})
+    pages = json.load(urllib.request.urlopen(url, timeout=20)).get("query", {}).get("pages", {}).values()
+    hits = [(p["title"], p["imageinfo"][0]) for p in sorted(pages, key=lambda p: p.get("index", 0))
+            if p.get("imageinfo") and p["title"] not in used and p["imageinfo"][0].get("thumburl")
+            and p["imageinfo"][0]["mime"].split("/")[0] in ("image", "video")
+            and not (p["imageinfo"][0]["mime"].startswith("video") and p["imageinfo"][0].get("size", 0) > 80e6)]
+    k = _pick(scene, [info["thumburl"] for _, info in hits])
+    if k < 0:
+        return None
+    title, info = hits[k]
+    used.add(title)
+    meta = info.get("extmetadata", {})
+    artist = re.sub(r"<[^>]+>", "", meta.get("Artist", {}).get("value", "")).strip() or "unknown"
+    credits.append(f"{title[5:]} by {artist} ({meta.get('LicenseShortName', {}).get('value', 'see Commons')}), "
+                   f"{info.get('descriptionurl', '')}")
+    video = info["mime"].startswith("video")
+    path = work / f"commons-{len(used):03}{Path(urllib.parse.urlparse(info['url'] if video else info['thumburl']).path).suffix}"
+    if not path.exists():
+        urllib.request.urlretrieve(info["url"] if video else info["thumburl"], path)
+    if video:
+        shots.append(path)
+        return _clip(path, size, duration)
+    photo = ImageClip(str(path)).with_duration(duration)
+    s = max(size[0] / photo.w, size[1] / photo.h)
+    photo = photo.resized(lambda t: s * (1 + 0.08 * t / duration))  # slow push-in
+    return CompositeVideoClip([photo.with_position(("center", "center"))], size=size).with_duration(duration)
 
 
 def _clip(path: Path, size: tuple, duration: float, skip: float = 0):
@@ -399,6 +443,12 @@ def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float
                 return _clip(path, size, duration)
             except Exception as e:
                 print(f"    no acting shot of {actor}: {e}")
+    if scene.photo:
+        try:
+            if clip := _commons(scene, size, duration, work, used):
+                return clip
+        except Exception as e:
+            print(f"    no Commons picture for '{scene.photo}': {e}")
     if os.environ.get("PIXABAY_API_KEY") and not cast_only:
         try:
             if clip := _stock(scene, query, size, duration, work, used):
@@ -542,6 +592,8 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
     lang = package_path.suffixes[0][1:] if len(package_path.suffixes) > 1 else package.get("lang", "")
     # A series episode's characters are shown and voiced the same way as the hosts.
     HOSTS.update({c["name"]: c for c in package.get("cast", [])})
+    HOSTS.update(package.get("hosts", {}))  # a channel's own anchors (Sankalp, Sawaal)
+    credits.clear()
     if "scenes" in package:  # a dub reuses the original's folder, so its footage is already downloaded
         board, work = Storyboard(scenes=package["scenes"]), OUTBOX / package.get("dub_of", package_path.stem)
         work.mkdir(exist_ok=True)
@@ -570,7 +622,9 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
         for k, (i, scene) in enumerate(spoken):
             audio = work / f"{prefix}{i:03}.mp3"
             # Dubs keep their channel's voice; English lines are read by the host who says them.
-            who = {} if "dub_of" in package else HOSTS.get(scene.speaker, {})
+            who = HOSTS.get(scene.speaker, {})
+            if "dub_of" in package:  # the same anchor in the dub's language, else the channel's voice
+                who = {**who, "voice": who.get(f"voice_{lang}", voice)}
             eleven = os.environ.get(f"ELEVEN_VOICE_{scene.speaker.upper()}") or eleven_voice(
                 "female" if "woman" in who.get("look", "").lower() else "male")
             if lang not in ("", "hi"):  # ElevenLabs picks Indian-accented voices; French etc. keep the channel's Edge voice
@@ -605,6 +659,9 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
     if paid["usd"]:  # counted in DAILY_BUDGET with the Claude costs
         log_spend(paid["usd"], package["channel_id"])
         print(f"    fal.ai video cost ${paid['usd']:.2f}")
+    if credits:  # the description credits every Commons file, as their licences ask
+        package["credits"] = list(dict.fromkeys(credits))
+        package_path.write_text(json.dumps(package, indent=2, ensure_ascii=False), encoding="utf-8")
     if paid["blank"] * 3 > len(lines):  # never post a Short that is mostly empty frames; the next run retries it
         raise RuntimeError(f"{paid['blank']} of {len(lines)} shots have no picture (is fal.ai out of credit?)")
     # 3. Picture, voice track and music put together once.
@@ -665,6 +722,8 @@ def upload(video: Path, package: dict, token: Path = TOKEN) -> str:
     from googleapiclient.http import MediaFileUpload
 
     footer = package.get("footer", TEAM.get("YouTube footer", ""))  # edit it in team.md
+    if package.get("credits"):
+        footer = "Photos and clips: Wikimedia Commons\n" + "\n".join(f"- {c}" for c in package["credits"]) + "\n\n" + footer
     tags = list(dict.fromkeys(["Hopeverse Media", "Shorts", *re.findall(r"#(\w+)", package["description"])]))
     while len(",".join(tags)) > 450:  # YouTube allows 500 characters of tags
         tags.pop()
@@ -722,7 +781,8 @@ if __name__ == "__main__":
     dubs = [c for c in channels.values() if c.get("status") == "dub" and (HERE / c["token"]).exists()]
     platform = {i: c["platform"] for i, c in channels.items()}
     quota_left, failed, posted = True, [], 0
-    for path in sorted(OUTBOX.glob("*.json")):
+    paths = sorted(OUTBOX.glob("*.json"))
+    for path in paths:  # dubs made below are appended, so they go up in the same run
         package = json.loads(path.read_text(encoding="utf-8"))
         if "--only" in sys.argv and package["channel_id"] != sys.argv[sys.argv.index("--only") + 1]:
             continue  # e.g. python video.py --only yt-kissa: post just that channel's videos
@@ -736,13 +796,18 @@ if __name__ == "__main__":
                 print(f"    failed: {e}")
                 failed.append(path.name)
                 continue
+            package = json.loads(path.read_text(encoding="utf-8"))  # render adds photo credits
         # Only Shorts made from now on have board.json, so older ones are never dubbed.
-        english = "dub_of" not in package and not channels.get(package["channel_id"], {}).get("lang")
-        for c in dubs if english and (path.with_suffix("") / "board.json").exists() else []:
+        # Hopeverse's dub channels get a copy; a channel with "dub" (Sankalp, Sawaal) also posts it on itself.
+        home = channels.get(package["channel_id"], {})
+        targets = (dubs if package["channel_id"] == "yt-hopeverse" else []) + \
+                  ([{**home, "lang": home["dub"], "language": home.get("dub_language", home["dub"])}] if home.get("dub") else [])
+        for c in targets if "dub_of" not in package and (path.with_suffix("") / "board.json").exists() else []:
             if not path.with_suffix(f".{c['lang']}.json").exists():
                 print(f"Making the {c['language']} version of {path.name}")
                 try:
-                    render(dub(path, c), c["voice"])
+                    render(target := dub(path, c), c["voice"])
+                    paths.append(target)
                 except Exception as e:  # a failed dub shouldn't stop the English video
                     print(f"    {c['language']} version failed: {e}")
         if "--no-upload" in sys.argv:  # the 4 PM run only makes videos; the 6 PM run posts them
@@ -767,7 +832,8 @@ if __name__ == "__main__":
             path.write_text(json.dumps(package, indent=2), encoding="utf-8")
             print(f"    https://youtu.be/{package['youtube_id']}")
             posted += 1
-        if channels.get(package["channel_id"], {}).get("lang"):  # Hindi dubs and series stay on their own channel
+        if channels.get(package["channel_id"], {}).get("lang") or package["channel_id"] != "yt-hopeverse":
+            # only Hopeverse Media cross-posts to its Instagram; dubs, series and other channels stay on YouTube
             continue
         # A video is cross-posted to Instagram once it is public on YouTube; set a YouTube video to
         # private in Studio to keep it off Instagram.

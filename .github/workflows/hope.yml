@@ -18,7 +18,7 @@ on:
         description: "For job one: which channel's Short to post now"
         default: yt-hopeverse
         type: choice
-        options: [yt-hopeverse, yt-instinct]
+        options: [yt-hopeverse, yt-instinct, yt-sankalp, yt-sawaal]
 
 permissions:
   contents: write

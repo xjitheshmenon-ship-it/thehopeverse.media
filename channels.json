@@ -81,43 +81,77 @@
     "name": "Sankalp",
     "platform": "youtube",
     "url": "",
-    "audience": "India, Hindi-speaking adults 18-45 (Hindi belt and diaspora), Hindi",
-    "lang": "hi",
-    "language": "Hindi",
+    "audience": "India, adults 18-45, every Short in English and again in Hindi on the same channel",
     "status": "planned",
     "category": "25",
     "news": true,
-    "niche": "Indian political news and policy explained daily from a pro-Modi, pro-government viewpoint: every fact double-sourced, opinion clearly marked, no AI faces of real people",
+    "niche": "Indian political news and policy explained daily from a pro-Modi, pro-government viewpoint: every fact double-sourced, opinion clearly marked, two AI news anchors, real photos of politicians and party flags from Wikimedia Commons, no AI faces or voices of real people",
     "voice": "hi-IN-MadhurNeural",
     "token": "token-sankalp.json",
-    "footer": "Sankalp: रोज़ की राजनीति, सरकार के नज़रिए से। हर तथ्य दो स्रोतों से जाँचा गया।\nयह टिप्पणी (commentary) है। आवाज़ और कुछ दृश्य AI से बने हैं।",
+    "footer": "Sankalp: रोज़ की राजनीति, सरकार के नज़रिए से। हर तथ्य दो स्रोतों से जाँचा गया।\nयह टिप्पणी (commentary) है। Anchors and some visuals are AI-made. Anchor और कुछ दृश्य AI से बने हैं।",
     "branding": {
-      "description": "Sankalp पर हर दिन देश की सबसे बड़ी राजनीतिक ख़बर, एक मिनट में: क्या हुआ, कौन-सा तथ्य छूट गया, और सरकार का पक्ष क्या है।\n\nहर दिन दो नए Shorts। हर आँकड़ा दो भरोसेमंद स्रोतों से जाँचा जाता है और स्रोत description में दिए जाते हैं। राय हमारी है, तथ्य सबके।\n\nयह एक टिप्पणी (commentary) चैनल है। वीडियो AI की मदद से बनते हैं: आवाज़ और कुछ दृश्य AI से बने हैं, असली नेताओं की नकली तस्वीर या आवाज़ कभी नहीं।",
+      "description": "Sankalp पर हर दिन देश की सबसे बड़ी राजनीतिक ख़बर, एक मिनट में: क्या हुआ, कौन-सा तथ्य छूट गया, और सरकार का पक्ष क्या है।\n\nहर दिन दो ख़बरें, हर ख़बर English और हिंदी दोनों में। हर आँकड़ा दो भरोसेमंद स्रोतों से जाँचा जाता है और स्रोत description में दिए जाते हैं। राय हमारी है, तथ्य सबके।\n\nयह एक टिप्पणी (commentary) चैनल है। वीडियो AI की मदद से बनते हैं: हमारे दोनों anchors AI से बने हैं। नेताओं की असली तस्वीरें Wikimedia Commons से ली जाती हैं, उनकी नकली तस्वीर या आवाज़ कभी नहीं।",
       "keywords": "\"hindi news\" \"political news\" \"modi government\" \"indian politics\" \"bjp\" \"viksit bharat\" \"news analysis\" \"hindi shorts\" राजनीति समाचार",
-      "country": "IN"
+      "country": "IN",
+      "banner": "brand/sankalp-banner.png"
     },
-    "first": 11
+    "first": 11,
+    "hosts": {
+      "Rohan": {
+        "voice": "en-IN-PrabhatNeural",
+        "voice_hi": "hi-IN-MadhurNeural",
+        "pitch": "-6Hz",
+        "look": "Indian man, about 38, news anchor, wheatish skin, neatly side-parted black hair, clean-shaven, navy suit, white shirt, no tie, seated at a modern news desk"
+      },
+      "Kavya": {
+        "voice": "en-IN-NeerjaNeural",
+        "voice_hi": "hi-IN-SwaraNeural",
+        "pitch": "-4Hz",
+        "look": "Indian woman, about 32, news anchor, light-brown skin, black hair in a low bun, small pearl studs, deep-maroon blazer over an ivory top, at a modern news desk"
+      }
+    },
+    "photos": true,
+    "dub": "hi",
+    "dub_language": "Hindi",
+    "watermark": "brand/sankalp-watermark.png"
   },
   {
     "id": "yt-sawaal",
     "name": "Sawaal",
     "platform": "youtube",
     "url": "",
-    "audience": "India, Hindi-speaking adults 18-45 (Hindi belt and diaspora), Hindi",
-    "lang": "hi",
-    "language": "Hindi",
+    "audience": "India, adults 18-45, every Short in English and again in Hindi on the same channel",
     "status": "planned",
     "category": "25",
     "news": true,
-    "niche": "Indian political news explained daily from an opposition viewpoint that questions the Modi government: every fact double-sourced, opinion clearly marked, no AI faces of real people",
+    "niche": "Indian political news explained daily from an opposition viewpoint that questions the Modi government: every fact double-sourced, opinion clearly marked, two AI news anchors, real photos of politicians and party flags from Wikimedia Commons, no AI faces or voices of real people",
     "voice": "hi-IN-SwaraNeural",
     "token": "token-sawaal.json",
-    "footer": "Sawaal: ख़बर के पीछे का सवाल। हर तथ्य दो स्रोतों से जाँचा गया।\nयह टिप्पणी (commentary) है। आवाज़ और कुछ दृश्य AI से बने हैं।",
+    "footer": "Sawaal: ख़बर के पीछे का सवाल। हर तथ्य दो स्रोतों से जाँचा गया।\nयह टिप्पणी (commentary) है। Anchors and some visuals are AI-made. Anchor और कुछ दृश्य AI से बने हैं।",
     "branding": {
-      "description": "Sawaal पर हर दिन देश की सबसे बड़ी राजनीतिक ख़बर, एक मिनट में: क्या हुआ, कौन-सा तथ्य छूट गया, और सरकार से कौन-से सवाल पूछे जाने चाहिए।\n\nहर दिन दो नए Shorts। हर आँकड़ा दो भरोसेमंद स्रोतों से जाँचा जाता है और स्रोत description में दिए जाते हैं। राय हमारी है, तथ्य सबके।\n\nयह एक टिप्पणी (commentary) चैनल है। वीडियो AI की मदद से बनते हैं: आवाज़ और कुछ दृश्य AI से बने हैं, असली नेताओं की नकली तस्वीर या आवाज़ कभी नहीं।",
+      "description": "Sawaal पर हर दिन देश की सबसे बड़ी राजनीतिक ख़बर, एक मिनट में: क्या हुआ, कौन-सा तथ्य छूट गया, और सरकार से कौन-से सवाल पूछे जाने चाहिए।\n\nहर दिन दो ख़बरें, हर ख़बर English और हिंदी दोनों में। हर आँकड़ा दो भरोसेमंद स्रोतों से जाँचा जाता है और स्रोत description में दिए जाते हैं। राय हमारी है, तथ्य सबके।\n\nयह एक टिप्पणी (commentary) चैनल है। वीडियो AI की मदद से बनते हैं: हमारे दोनों anchors AI से बने हैं। नेताओं की असली तस्वीरें Wikimedia Commons से ली जाती हैं, उनकी नकली तस्वीर या आवाज़ कभी नहीं।",
       "keywords": "\"hindi news\" \"political news\" \"opposition\" \"indian politics\" \"modi government\" \"accountability\" \"news analysis\" \"hindi shorts\" राजनीति सवाल",
-      "country": "IN"
+      "country": "IN",
+      "banner": "brand/sawaal-banner.png"
     },
-    "first": 11
+    "first": 11,
+    "hosts": {
+      "Aditya": {
+        "voice": "en-IN-PrabhatNeural",
+        "voice_hi": "hi-IN-MadhurNeural",
+        "pitch": "+6Hz",
+        "look": "Indian man, about 34, news anchor, medium-brown skin, short curly black hair, light stubble, rimless glasses, charcoal blazer over a black crew-neck, in a dark studio"
+      },
+      "Nisha": {
+        "voice": "en-IN-NeerjaNeural",
+        "voice_hi": "hi-IN-SwaraNeural",
+        "pitch": "+4Hz",
+        "look": "Indian woman, about 30, news anchor, dusky skin, straight shoulder-length black hair, silver hoop earrings, steel-blue blazer over a white shirt, in a dark studio"
+      }
+    },
+    "photos": true,
+    "dub": "hi",
+    "dub_language": "Hindi",
+    "watermark": "brand/sawaal-watermark.png"
   }
 ]
