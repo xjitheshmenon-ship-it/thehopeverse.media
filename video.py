@@ -438,9 +438,9 @@ def eleven_voice(gender: str) -> str:
         voices.sort(key=lambda v: "indian" not in str(v.get("labels", {}).get("accent", "")).lower())
         print(f"    ElevenLabs {gender} voice: {voices[0]['name'] if voices else 'none on the account'}")
         return voices[0]["voice_id"] if voices else ""
-    except Exception as e:
+    except Exception as e:  # e.g. a key without "Voices: read" permission: use a premade voice
         print(f"    could not list ElevenLabs voices: {e}")
-        return ""
+        return {"male": "nPczCjzI2devNBz1zQrb", "female": "21m00Tcm4TlvDq8ykWAM"}[gender]  # Brian, Rachel
 
 
 def speak(text: str, voice: str, path: Path, pitch: str = "+0Hz", eleven: str = "", before: str = "",
