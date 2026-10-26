@@ -10,9 +10,9 @@ on:
         description: "Which channel"
         default: yt-kissa
         type: choice
-        options: [yt-kissa, yt-instinct, yt-hopeverse-hi, yt-hopeverse]
+        options: [yt-kissa, yt-instinct, yt-sankalp, yt-sawaal, yt-hopeverse-hi, yt-hopeverse]
       signin_url:
-        description: "Leave empty for the sign-in link, then paste the address the browser lands on"
+        description: "Leave empty for the sign-in link, then paste the address the browser lands on (or type brand to refresh the About text and banner)"
         default: ""
         type: string
 
@@ -33,6 +33,14 @@ jobs:
         env:
           CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
       - run: python state.py load
+      - name: Unlock saved sign-ins (for signin_url "brand")
+        env:
+          TOKEN_KEY: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+        run: |
+          for f in tokens/*.enc; do
+            [ -f "$f" ] && openssl enc -d -aes-256-cbc -pbkdf2 -pass env:TOKEN_KEY -in "$f" -out "$(basename "$f" .enc)"
+          done
+          true
       - name: Sign the channel in
         env:
           TOKEN_KEY: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
@@ -40,5 +48,5 @@ jobs:
           CHANNEL: ${{ inputs.channel }}
         run: python connect.py "$CHANNEL" "$SIGNIN_URL"
       - name: Save the sign-in
-        if: inputs.signin_url != ''
+        if: inputs.signin_url != '' && inputs.signin_url != 'brand'
         run: python state.py save

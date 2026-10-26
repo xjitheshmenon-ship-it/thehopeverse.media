@@ -31,12 +31,16 @@ def _ig(media_id: str) -> dict:
     """Instagram Reel numbers. Views need the instagram_business_manage_insights permission on the token."""
     from video import _graph
     out = {}
-    try:
-        m = _graph(media_id, fields="like_count,comments_count")
-        out = {"ig_likes": m.get("like_count"), "ig_comments": m.get("comments_count")}
-        out["ig_views"] = _graph(f"{media_id}/insights", metric="views")["data"][0]["values"][0]["value"]
-    except Exception as e:  # one Reel's missing numbers shouldn't stop the rest
-        print(f"    Instagram numbers for {media_id}: {e}")
+    for key, call in [("likes", lambda: _graph(media_id, fields="like_count,comments_count")),
+                      ("views", lambda: _graph(f"{media_id}/insights", metric="views"))]:
+        try:  # separately, so likes still show when the token can't read insights
+            m = call()
+            if key == "likes":
+                out.update(ig_likes=m.get("like_count"), ig_comments=m.get("comments_count"))
+            else:
+                out["ig_views"] = m["data"][0]["values"][0]["value"]
+        except Exception as e:  # one Reel's missing numbers shouldn't stop the rest
+            print(f"    Instagram {key} for {media_id}: {e} {getattr(e, 'read', lambda: b'')()[:300]!r}")
     return out
 
 
@@ -124,8 +128,31 @@ def upcoming() -> list:
     return sorted(out, key=lambda r: r["when"])[:6]
 
 
-def channels(rows: list, costs: list, plan: list) -> list:
-    """One row per channel: today's uploads against plan, today's and 7-day spend, all-time views."""
+def youtube_totals() -> dict:
+    """Per signed-in YouTube channel: YouTube's own all-time views, subscribers and minutes watched."""
+    from video import channel_stats, watch_minutes
+    out = {}
+    for c in _channels():
+        token = HERE / c.get("token", "token.json")
+        if c["platform"] != "youtube" or not token.exists():
+            continue
+        out[c["id"]] = {}
+        try:
+            out[c["id"]].update(channel_stats(token))
+        except Exception as e:
+            print(f"::warning::YouTube totals for {c['id']}: {str(e)[:300]}")
+        try:
+            out[c["id"]]["watch_min"] = watch_minutes(token)
+        except Exception as e:  # e.g. the YouTube Analytics API not enabled in Google Cloud
+            print(f"::warning::Watch time for {c['id']}: {str(e)[:300]}")
+    return out
+
+
+def channels(rows: list, costs: list, plan: list, totals: dict = None) -> list:
+    """One row per channel: today's uploads against plan, today's and 7-day spend, all-time views and watch time.
+    YouTube views: the channel's own total (it also counts deleted or replaced Shorts) or, while that total
+    still lags, the sum over its Shorts, whichever is larger."""
+    totals = totals or {}
     week = f"{NOW - timedelta(days=6):%Y-%m-%d}"
     names = {c["id"]: c["name"] for c in _channels()}
     ids = list(dict.fromkeys([p["channel"] for p in plan] + [r["channel"] for r in rows] + [c["channel"] for c in costs]))
@@ -140,8 +167,11 @@ def channels(rows: list, costs: list, plan: list) -> list:
                     "missed": sum(p["status"] == "Missed" for p in mine),
                     "spend_today": round(sum(c["cost_usd"] for c in costs if c["channel"] == i and c["day"] == TODAY), 2),
                     "spend_7d": round(sum(c["cost_usd"] for c in costs if c["channel"] == i and c["day"] >= week), 2),
-                    "yt_views": sum(r["yt_views"] or 0 for r in rows if r["channel"] == i),
+                    "yt_views": max(totals.get(i, {}).get("views", 0),  # the channel total lags a day or two
+                                    sum(r["yt_views"] or 0 for r in rows if r["channel"] == i)),
+                    "yt_subscribers": totals.get(i, {}).get("subscribers"),
                     "ig_views": sum(r["ig_views"] or 0 for r in rows if r["channel"] == i),
+                    "yt_watch_min": totals.get(i, {}).get("watch_min"),
                     "updated": f"{NOW:%Y-%m-%d %H:%M}"})
     return [r for r in out if r["planned"] or r["posted_today"] or r["spend_7d"] or r["yt_views"] or r["ig_views"]]
 
@@ -205,7 +235,7 @@ if __name__ == "__main__":
     plan = slots(rows)
     data = {"updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "shorts": rows, "spend": costs, "agent_work": agent_work(), "limits": limits(costs),
-            "slots": plan, "channels": channels(rows, costs, plan), "runs": runs(), "upcoming": upcoming(), "credits": credits.check()}
+            "slots": plan, "channels": channels(rows, costs, plan, youtube_totals()), "runs": runs(), "upcoming": upcoming(), "credits": credits.check()}
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(data, indent=1, ensure_ascii=False), encoding="utf-8")
     print(f"Saved {OUT} ({len(rows)} Shorts)")
