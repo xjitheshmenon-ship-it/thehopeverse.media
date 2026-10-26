@@ -92,7 +92,7 @@ jobs:
         if: env.DUE != '' || inputs.job == 'one'
         run: |
           python -c "import sys, agents as a; s = a.spent_today(); sys.exit(f'Daily budget used up: \${s:.2f} of \${a.DAILY_BUDGET:.0f} spent today, so nothing is made until tomorrow (raise DAILY_BUDGET to post more)' if s >= a.DAILY_BUDGET else 0)" || { echo "::error::Daily budget used up, nothing posted"; exit 1; }
-      - name: Research, script and make this slot's Short for every live channel
+      - name: Research, script, make and post this slot's Short for every live channel, one at a time
         if: env.DUE != ''
         run: |
           { sudo apt-get install -y -qq fonts-noto-core || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core; }; } > /dev/null  # Hindi captions
@@ -109,9 +109,10 @@ jobs:
             topic=$(python plan.py --next "$id" || true)  # the topic the dashboard showed for this slot
             [ -n "$topic" ] && goal="make the Short on the planned topic \"$topic\" (check list_outbox and that it is still accurate and new; if not, pick the best alternative), then $goal"
             HOPE_CHANNEL=$id HOPE_REVIEW=$REVIEW python agents.py "Scheduled run, Short $SLOT of $SHORTS_PER_DAY today for channel $id: $goal" || true
+            python video.py --only "$id" || failed=1  # one video at a time: made and posted before the next channel starts
           done
-          ok=0; [ "$(ls outbox/*.json 2>/dev/null | wc -l)" -gt "$before" ] || { echo "::error::No Short was drafted in this slot (see Mr. Hope's log above)"; ok=1; }
-          python video.py || ok=1  # fails when a Short couldn't be made or posted, so the run shows red
+          ok=${failed:-0}; [ "$(ls outbox/*.json 2>/dev/null | wc -l)" -gt "$before" ] || { echo "::error::No Short was drafted in this slot (see Mr. Hope's log above)"; ok=1; }
+          python video.py || ok=1  # anything left over (an earlier failed upload); red when a Short couldn't be made or posted
           exit $ok
       - name: Make and post one Short now
         if: inputs.job == 'one'
