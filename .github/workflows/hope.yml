@@ -9,10 +9,15 @@ on:
   workflow_dispatch:
     inputs:
       job:
-        description: "daily = run the 5 PM slot now (a Short per channel, review, channel idea, report), one = make and post a single Hopeverse Short now, stats = dashboard numbers only (to sign a channel in, use the Connect a channel workflow)"
+        description: "daily = run the 5 PM slot now (a Short per channel, review, channel idea, report), one = make and post a single Short now for the channel below, stats = dashboard numbers only (to sign a channel in, use the Connect a channel workflow; a Kissa episode: Post a Kissa episode)"
         default: daily
         type: choice
         options: [daily, one, stats]
+      channel:
+        description: "For job one: which channel's Short to post now"
+        default: yt-hopeverse
+        type: choice
+        options: [yt-hopeverse, yt-instinct]
 
 permissions:
   contents: write
@@ -101,11 +106,18 @@ jobs:
             HOPE_CHANNEL=$id HOPE_REVIEW=$REVIEW python agents.py "Scheduled run, Short $SLOT of $SHORTS_PER_DAY today for channel $id: $goal" || true
           done
           python video.py
-      - name: Make and post one Hopeverse Short now
+      - name: Make and post one Short now
         if: inputs.job == 'one'
+        env:
+          CHANNEL: ${{ inputs.channel || 'yt-hopeverse' }}
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core > /dev/null
-          HOPE_CHANNEL=yt-hopeverse HOPE_REVIEW=0 python agents.py "One-off run requested by the owner: get today's topics from Mr. Focus, check list_outbox, then draft and queue one new current-affairs YouTube Short for yt-hopeverse, aimed at Indian viewers, on the top-viewed story of the last 48 hours that is not already drafted."
+          if [ "$CHANNEL" = yt-hopeverse ]; then
+            goal="get today's topics from Mr. Focus, check list_outbox, then draft and queue one new current-affairs YouTube Short for yt-hopeverse, aimed at Indian viewers, on the top-viewed story of the last 48 hours that is not already drafted."
+          else
+            goal="check list_channels and list_outbox, then draft and queue one new YouTube Short for $CHANNEL that fits its niche, audience and language, on a topic it hasn't had yet."
+          fi
+          HOPE_CHANNEL=$CHANNEL HOPE_REVIEW=0 python agents.py "One-off run requested by the owner: $goal"
           python video.py
       - name: Write and post this slot's Hindi series episode
         if: always() && env.SLOT != ''
