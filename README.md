@@ -36,7 +36,7 @@ Every day `scout.py` also proposes one new channel for an audience the network d
 
 ## Videos and YouTube upload
 
-`python video.py` turns every outbox package without a video into an `.mp4` next to it (ElevenLabs voice when `ELEVENLABS_API_KEY` is set, else the free Edge voice, joined into one continuous track; captions; moving video only: Arjun and Meera talk on screen as lip-synced Kling avatar videos from fal.ai, other shots are real Pixabay footage, else a Kling AI clip; paid clips capped by `AI_CLIPS_PER_SHORT` and `DAILY_BUDGET`), then uploads YouTube packages as **public** videos. The daily run does this automatically after the agents finish.
+`python video.py` turns every outbox package without a video into an `.mp4` next to it (ElevenLabs voice when `ELEVENLABS_API_KEY` is set, else the free Edge voice, joined into one continuous track; captions; moving video only: Arjun and Meera talk on screen as lip-synced HeyGen Avatar IV videos (`HEYGEN_API_KEY`), else Kling on fal.ai; other shots are real Pixabay footage, else a Kling AI clip; paid clips capped by `AI_CLIPS_PER_SHORT` and `DAILY_BUDGET`), then uploads YouTube packages as **public** videos. The daily run does this automatically after the agents finish.
 
 One-time YouTube setup:
 

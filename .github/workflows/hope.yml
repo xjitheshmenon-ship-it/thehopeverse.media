@@ -27,6 +27,7 @@ env:
   PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
   PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
   FAL_KEY: ${{ secrets.FAL_KEY }}
+  HEYGEN_API_KEY: ${{ secrets.HEYGEN_API_KEY }}  # talking hosts; without it Kling on fal.ai is used
   ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}  # voices; without it the free Edge voices are used
   ELEVEN_VOICE_ARJUN: ${{ vars.ELEVEN_VOICE_ARJUN }}  # optional ElevenLabs voice ids (Variables tab)
   ELEVEN_VOICE_MEERA: ${{ vars.ELEVEN_VOICE_MEERA }}
