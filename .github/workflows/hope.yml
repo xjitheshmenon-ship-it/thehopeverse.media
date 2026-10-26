@@ -30,6 +30,7 @@ concurrency:
 env:
   TZ: Asia/Kolkata
   PYTHONIOENCODING: utf-8
+  PYTHONUNBUFFERED: 1  # log lines show when each step really happened
   ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
   PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
   PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
@@ -94,7 +95,7 @@ jobs:
       - name: Research, script and make this slot's Short for every live channel
         if: env.DUE != ''
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core > /dev/null  # Hindi captions
+          { sudo apt-get install -y -qq fonts-noto-core || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core; }; } > /dev/null  # Hindi captions
           before=$(ls outbox/*.json 2>/dev/null | wc -l)
           [ "$SLOT" = 1 ] && { python agents.py --grow || true; }  # Mr. Grow's notes for the day's Shorts
           for entry in $DUE; do
@@ -117,7 +118,7 @@ jobs:
         env:
           CHANNEL: ${{ inputs.channel || 'yt-hopeverse' }}
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core > /dev/null
+          { sudo apt-get install -y -qq fonts-noto-core || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core; }; } > /dev/null
           if [ "$CHANNEL" = yt-hopeverse ]; then
             goal="get today's topics from Mr. Focus, check list_outbox, then draft and queue one new current-affairs YouTube Short for yt-hopeverse, aimed at Indian viewers, on the top-viewed story of the last 48 hours that is not already drafted."
           else
