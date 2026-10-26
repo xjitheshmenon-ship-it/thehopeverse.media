@@ -624,8 +624,9 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
     return out
 
 
-def youtube(interactive: bool = True, token: Path = TOKEN):
-    """A signed-in YouTube API client. Upload, plus read-only access so Mr. Hope can see view counts."""
+def youtube(interactive: bool = True, token: Path = TOKEN, api: tuple = ("youtube", "v3")):
+    """A signed-in YouTube API client. Upload, plus read-only access so Mr. Hope can see view counts.
+    api=("youtubeAnalytics", "v2") gives the Analytics API with the same sign-in (youtube.readonly covers it)."""
     from google.auth.transport.requests import Request
     from google.oauth2.credentials import Credentials
     from google_auth_oauthlib.flow import InstalledAppFlow
@@ -641,7 +642,15 @@ def youtube(interactive: bool = True, token: Path = TOKEN):
             raise RuntimeError("YouTube not connected yet; run python video.py once by hand")
         creds = InstalledAppFlow.from_client_secrets_file(str(SECRET), scopes).run_local_server(port=0)
     token.write_text(creds.to_json())
-    return build("youtube", "v3", credentials=creds)
+    return build(*api, credentials=creds)
+
+
+def watch_minutes(token: Path) -> int:
+    """All-time minutes watched on the channel this token signs in to (YouTube Analytics, about 2 days behind)."""
+    report = youtube(False, token, ("youtubeAnalytics", "v2")).reports().query(
+        ids="channel==MINE", startDate="2020-01-01", endDate=time.strftime("%Y-%m-%d"),
+        metrics="estimatedMinutesWatched").execute()
+    return int((report.get("rows") or [[0]])[0][0])
 
 
 def stats(video_ids: list) -> dict:
