@@ -46,6 +46,7 @@ HOST_MODEL = "fal-ai/flux-pro/kontext"  # about $0.04; the host's face from thei
 # That pose then talks, lip-synced to the line: HeyGen Avatar IV when HEYGEN_API_KEY is set, else (or if it fails) Kling.
 AVATAR_MODEL = "fal-ai/kling-video/ai-avatar/v2/standard"  # $0.0562 a second
 VIDEO_MODEL = "fal-ai/kling-video/v2.5-turbo/pro/text-to-video"  # $0.35 per 5 s clip, when stock footage has nothing
+ACT_MODEL = "fal-ai/kling-video/v2.5-turbo/pro/image-to-video"  # $0.35 per 5 s: a series character acting, no lines
 AI_CLIPS = int(os.environ.get("AI_CLIPS_PER_SHORT") or "3")  # paid AI video shots per Short; the rest is free stock
 ELEVEN_MODEL = os.environ.get("ELEVEN_MODEL") or "eleven_multilingual_v2"  # speaks English and Hindi
 # ElevenLabs voice ids. Change them in GitHub > Settings > Secrets and variables > Actions > Variables:
@@ -81,6 +82,7 @@ class Scene(BaseModel):
     image_prompt: str
     speaker: str = ""  # Arjun or Meera: whose voice reads this line
     host_on_screen: bool = False  # True: the speaker is shown (from their reference photo), not stock footage
+    on_screen: str = ""  # series: the character this shot shows when nobody is talking (e.g. during narration)
 
 
 class Storyboard(BaseModel):
@@ -224,12 +226,12 @@ def host_photo(name: str) -> Path:
     return path
 
 
-paid = {"clips": 0, "usd": 0.0}  # spending (fal.ai, footage checks) of the video being made; render() resets it
+paid = {"clips": 0, "usd": 0.0, "limit": AI_CLIPS}  # spending (fal.ai, footage checks) of the video being made; render() resets it
 shots = []  # stock clips already matched in this video, reused when nothing else fits a later line
 
 
 def _can_pay() -> bool:
-    return paid["clips"] < AI_CLIPS and spent_today() + paid["usd"] < DAILY_BUDGET
+    return paid["clips"] < paid["limit"] and spent_today() + paid["usd"] < DAILY_BUDGET
 
 
 def _pick(scene: "Scene", thumbnails: list) -> int:
@@ -289,10 +291,26 @@ def heygen(still: Path, audio: Path, path: Path) -> float:
     raise RuntimeError("HeyGen took over 15 minutes")
 
 
-def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float, work: Path, used: set):
+def _pose(scene: "Scene", name: str, i: int, work: Path, talking: bool) -> Path:
+    """A photo of that host or character, same face and clothes, posed for this shot (Kontext)."""
+    import fal_client
+    still = work / f"host-{i:03}.png"
+    if not still.exists():
+        result = fal_client.subscribe(HOST_MODEL, arguments={
+            "prompt": f"The same person, same face, hair and clothes: {scene.image_prompt}. "
+                      f"{'Looking at the camera. ' if talking else ''}{STYLE}",
+            "image_url": fal_client.upload_file(str(host_photo(name))), "aspect_ratio": "9:16"})
+        urllib.request.urlretrieve(result["images"][0]["url"], still)
+        paid["usd"] += 0.04
+    return still
+
+
+def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float, work: Path, used: set,
+               cast_only: bool = False):
     """Moving video only: the host really talking (HeyGen or Kling), else Pixabay footage, else NASA
     footage (stock only when Claude agrees it shows the line), else a Kling AI clip, else Pixabay for a shorter
-    search, else more of a clip this video already uses, else a plain colour."""
+    search, else more of a clip this video already uses, else a plain colour.
+    cast_only (a series): every shot shows one of its characters, talking or acting, never stock footage."""
     query = scene.picture_search
     if scene.host_on_screen and scene.speaker in HOSTS and os.environ.get("FAL_KEY"):
         path = work / f"avatar-{audio.stem}.mp4"  # per language, since the lips follow the voice
@@ -300,14 +318,7 @@ def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float
             try:
                 if not path.exists():
                     import fal_client
-                    still = work / f"host-{i:03}.png"
-                    if not still.exists():
-                        result = fal_client.subscribe(HOST_MODEL, arguments={
-                            "prompt": f"The same person, same face, hair and clothes: {scene.image_prompt}. Looking at "
-                                      f"the camera. {STYLE}",
-                            "image_url": fal_client.upload_file(str(host_photo(scene.speaker))), "aspect_ratio": "9:16"})
-                        urllib.request.urlretrieve(result["images"][0]["url"], still)
-                        paid["usd"] += 0.04
+                    still = _pose(scene, scene.speaker, i, work, talking=True)
                     if os.environ.get("HEYGEN_API_KEY"):
                         try:
                             paid["usd"] += 0.05 * (heygen(still, audio, path) or duration)
@@ -321,17 +332,36 @@ def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float
                         urllib.request.urlretrieve(result["video"]["url"], path)
                         paid["usd"] += 0.0562 * (result.get("duration") or duration)
                     paid["clips"] += 1
+                shots.append(path)
                 return _clip(path, size, duration)
             except Exception as e:
                 print(f"    no talking shot of {scene.speaker}: {e}")
-    if os.environ.get("PIXABAY_API_KEY"):
+    actor = scene.on_screen if scene.on_screen in HOSTS else scene.speaker
+    if cast_only and actor in HOSTS and os.environ.get("FAL_KEY"):
+        path = work / f"act-{i:03}.mp4"  # no lips to match, so dubs reuse it
+        if path.exists() or _can_pay():
+            try:
+                if not path.exists():
+                    import fal_client
+                    result = fal_client.subscribe(ACT_MODEL, arguments={  # 5 s, looped if the line is longer
+                        "prompt": f"{scene.image_prompt}. Natural, subtle real movement, cinematic drama scene. {STYLE}",
+                        "image_url": fal_client.upload_file(str(_pose(scene, actor, i, work, talking=False))),
+                        "duration": "5", "negative_prompt": "cartoon, anime, CGI, plastic skin, text, blur, talking"})
+                    urllib.request.urlretrieve(result["video"]["url"], path)
+                    paid["usd"] += 0.35
+                    paid["clips"] += 1
+                shots.append(path)
+                return _clip(path, size, duration)
+            except Exception as e:
+                print(f"    no acting shot of {actor}: {e}")
+    if os.environ.get("PIXABAY_API_KEY") and not cast_only:
         try:
             if clip := _stock(scene, query, size, duration, work, used):
                 return clip
         except Exception as e:  # missing footage is not worth losing the video over
             print(f"    no footage for '{query}': {e}")
     try:
-        path = _nasa(scene, query, used, work)
+        path = None if cast_only else _nasa(scene, query, used, work)
         if path:
             shots.append(path)
             return _clip(path, size, duration, skip=0.2)  # skip NASA title cards at the start
@@ -349,10 +379,11 @@ def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float
                     urllib.request.urlretrieve(result["video"]["url"], path)
                     paid["usd"] += 0.35
                     paid["clips"] += 1
+                shots.append(path)
                 return _clip(path, size, duration)
             except Exception as e:
                 print(f"    no AI video for this scene: {e}")
-    if os.environ.get("PIXABAY_API_KEY") and len(query.split()) > 2:
+    if os.environ.get("PIXABAY_API_KEY") and len(query.split()) > 2 and not cast_only:
         try:
             if clip := _stock(scene, " ".join(query.split()[:2]), size, duration, work, used):
                 return clip
@@ -474,7 +505,8 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
                        "logo.png")
     if mark.exists():
         logo = ImageClip(str(mark), transparent=True).resized(width=150).with_opacity(0.85).with_position((60, 170))
-    paid.update(clips=0, usd=0.0)
+    # A series shows its own characters in every shot, so its AI clips are capped only by DAILY_BUDGET.
+    paid.update(clips=0, usd=0.0, limit=10 ** 6 if package.get("cast") else AI_CLIPS)
     shots.clear()
     # 1. Every line into one voice track, back to back with GAP between them: nothing can overlap or cut off.
     lines, voice_track = [], work / f"{prefix}voice.wav"
@@ -505,7 +537,7 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
     parts, used = [], set()
     for i, scene, audio, start, end in lines:
         duration = (round(end * 30) - round(start * 30)) / 30
-        layers = [background(scene, i, audio, size, duration, work, used),
+        layers = [background(scene, i, audio, size, duration, work, used, bool(package.get("cast"))),
                   ImageClip(caption(scene.on_screen_text, size, lang), transparent=True).with_duration(duration)]
         if logo:
             layers.append(logo.with_duration(duration))
