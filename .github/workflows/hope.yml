@@ -37,7 +37,7 @@ env:
   INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
   # Settings > Secrets and variables > Actions > Variables: change these without editing this file
   SHORTS_PER_DAY: ${{ vars.SHORTS_PER_DAY || '6' }}  # per channel, one per 2-hour slot (at most 6)
-  SERIES_PER_DAY: ${{ vars.SERIES_PER_DAY || '2' }}  # Kissa episodes a day: 1, 2, 3 or 6 (2 = 11:00 and 17:00 IST)
+  SERIES_PER_DAY: ${{ vars.SERIES_PER_DAY || '6' }}  # Kissa episodes a day: 1, 2, 3 or 6 (owner's pick: 6, one every 2 hours)
   DAILY_BUDGET: ${{ vars.DAILY_BUDGET || '20' }}     # US dollars a day across everything; runs stop once reached
 
 jobs:
