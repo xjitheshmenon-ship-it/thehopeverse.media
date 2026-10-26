@@ -1,6 +1,7 @@
 # Mr. Hope on GitHub's servers: no PC needed. Keys live in Settings > Secrets and variables > Actions.
 # Hope's memory (outbox, lessons.md, characters.md, run logs) is kept on the `state` branch by state.py.
 name: Hope
+run-name: "Hope: ${{ github.event.schedule == '15 * * * *' && 'dashboard refresh (posts nothing)' || inputs.job == 'stats' && 'dashboard refresh (posts nothing)' || inputs.job == 'plan' && 'plan topics (posts nothing)' || inputs.job == 'one' && format('post one Short now for {0}', inputs.channel) || inputs.job == 'daily' && '5 PM slot and report' || '2-hour slot' }}"
 
 on:
   schedule:
@@ -97,6 +98,10 @@ jobs:
           echo "REVIEW=$([ "$slot" = "$last" ] && echo 1 || echo 0)" >> "$GITHUB_ENV"
           echo "Slot $slot of the day"
 
+      - name: Stop if today's budget is used up
+        if: env.MAKE == '1' || inputs.job == 'one'
+        run: |
+          python -c "import sys, agents as a; s = a.spent_today(); sys.exit(f'Daily budget used up: \${s:.2f} of \${a.DAILY_BUDGET:.0f} spent today, so nothing is made until tomorrow (raise DAILY_BUDGET to post more)' if s >= a.DAILY_BUDGET else 0)" || { echo "::error::Daily budget used up, nothing posted"; exit 1; }
       - name: Research, script and make this slot's Short for every live channel
         if: env.MAKE == '1'
         run: |

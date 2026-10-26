@@ -38,7 +38,8 @@ WEB_FETCH = {"type": "web_fetch_20260209", "name": "web_fetch", "max_uses": 4}
 # Hard spending cap per run, in US dollars. Change it with: setx HOPE_BUDGET 3
 BUDGET = float(os.environ.get("HOPE_BUDGET", "2"))
 # Cap for the whole day across all runs (Shorts, series, channel idea). Set it as a repo variable in GitHub.
-DAILY_BUDGET = float(os.environ.get("DAILY_BUDGET") or "20")
+RAISED = {"2026-10-26": 30.0}  # one-day raises the owner approved; the usual cap returns the next day
+DAILY_BUDGET = RAISED.get(f"{datetime.now():%Y-%m-%d}", float(os.environ.get("DAILY_BUDGET") or "20"))
 # $ per million tokens: input, output, cache read, cache write
 PRICES = {MODEL: (4, 20, 0.20, 5), HELPER_MODEL: (2, 10, 0.20, 2.5)}
 spent = 0.0
