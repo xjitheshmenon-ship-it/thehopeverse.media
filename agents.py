@@ -15,7 +15,7 @@ import json
 import os
 import sys
 import urllib.request
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 import anthropic
@@ -87,6 +87,13 @@ def run_agent(name: str, system: str, prompt: str, tools: list, effort: str = "m
     lessons = _sections(LESSONS).get(name)
     if lessons:
         system += "\n\nLessons Mr. Hope has learned from past runs (follow them):\n" + lessons
+    if name == "Mr. Hope":
+        from state import notes
+        recent = [n for n in notes(5) if n["at"] >= f"{datetime.now() - timedelta(days=2):%Y-%m-%d %H:%M}"]
+        if recent:
+            system += ("\n\nMessages from the owner, sent from the dashboard (India time; they win over lessons). "
+                       "Follow them, and start your summary with a one-line reply to any you haven't answered yet:\n"
+                       + "\n".join(f"- {n['at']}: {n['text']}" for n in recent))
     growth = _sections(GROWTH).get(name)
     if growth:
         system += "\n\nToday's growth notes from Mr. Grow (follow them):\n" + growth
@@ -445,6 +452,9 @@ if __name__ == "__main__":
                                                  cast, pen, cut, spark, post],
                         effort="medium", model=MODEL)
     print(summary)
+    with (HERE / "runs" / "hope-said.jsonl").open("a", encoding="utf-8") as f:  # shown on the dashboard next to the owner's messages
+        f.write(json.dumps({"at": f"{datetime.now():%Y-%m-%d %H:%M}", "channel": os.environ.get("HOPE_CHANNEL", ""),
+                            "text": summary[:1500]}, ensure_ascii=False) + "\n")
     cap, BUDGET = BUDGET, spent + 0.25  # ponytail: fixed $0.25 for the review; raise if lessons get cut off
     if os.environ.get("HOPE_REVIEW") != "0":  # the daily loop reviews once, after the day's last Short
         print(run_agent("Mr. Hope (review)", TEAM["Mr. Hope (review)"],
