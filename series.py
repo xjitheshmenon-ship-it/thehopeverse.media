@@ -12,7 +12,7 @@ from pathlib import Path
 
 from pydantic import BaseModel
 
-from agents import DAILY_BUDGET, MODEL, OUTBOX, TEAM, _channels, _cost, client, log_spend, spent_today
+from agents import DAILY_BUDGET, next_outbox_path, MODEL, OUTBOX, TEAM, _channels, _cost, client, log_spend, spent_today
 from plan import next_topic
 from video import Scene
 
@@ -84,7 +84,7 @@ def write_episode() -> Path:
     story = {"premise": ep.premise, "cast": [c.model_dump() for c in ep.cast],
              "episodes": story["episodes"] + [{"n": n, "title": ep.title, "summary": ep.summary}]}
     OUTBOX.mkdir(exist_ok=True)
-    path = OUTBOX / f"{channel['id']}-{len(list(OUTBOX.glob(channel['id'] + '-*.json'))) + 1}.json"
+    path = next_outbox_path(channel['id'])
     path.write_text(json.dumps({"channel_id": channel["id"], "title": ep.title, "description": ep.description,
                                 "lang": channel["lang"], "category": "24",  # Entertainment
                                 "footer": TEAM.get("Series footer", ""), "music": ep.music,
