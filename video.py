@@ -67,7 +67,6 @@ MUSIC_VOLUME = 0.12  # background music level under the voice (1 = full)
 STYLE = ("photorealistic, real people with natural skin texture, shot on a cinema camera, natural light, documentary "
          "style, vertical 9:16, not a cartoon, not an illustration, not CGI, not 3D, no text, no words")
 SECRET, TOKEN = HERE / "client_secret.json", HERE / "token.json"
-LOGO = HERE / "logo.png"  # replace this file to change the watermark
 # Stock sites refuse Python's default user agent (HTTP 403), so every download identifies as a browser.
 _opener = urllib.request.build_opener()
 _opener.addheaders = [("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36")]
@@ -385,8 +384,12 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
         (work / "board.json").write_text(board.model_dump_json(), encoding="utf-8")
     prefix = f"{lang}-" if lang else ""
     logo = None
-    if LOGO.exists():  # channel watermark, top-left, clear of the Shorts buttons on the right
-        logo = ImageClip(str(LOGO), transparent=True).resized(width=150).with_opacity(0.85).with_position((60, 170))
+    # Channel watermark, top-left, clear of the Shorts buttons on the right: a channel's own "watermark" in
+    # channels.json (Kissa), else logo.png (Hopeverse).
+    mark = HERE / next((c.get("watermark", "logo.png") for c in _channels() if c["id"] == package.get("channel_id")),
+                       "logo.png")
+    if mark.exists():
+        logo = ImageClip(str(mark), transparent=True).resized(width=150).with_opacity(0.85).with_position((60, 170))
     paid.update(clips=0, usd=0.0)
     # 1. Every line into one voice track, back to back with GAP between them: nothing can overlap or cut off.
     lines, voice_track = [], work / f"{prefix}voice.wav"
