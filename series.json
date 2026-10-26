@@ -28,6 +28,13 @@
       "look": "Indian man, 55, round face, thick moustache, receding oiled grey hair, cream safari suit, gold rings, a red tilak on his forehead",
       "voice": "hi-IN-MadhurNeural",
       "pitch": "+0Hz"
+    },
+    {
+      "name": "Vikram",
+      "role": "Kabir's scheming uncle who wants control of the Malhotra hotels",
+      "look": "Indian man, 58, lean sharp face, thin smirk, salt-and-pepper hair combed back, trimmed grey beard, black bandhgala jacket with a silver brooch, rimless glasses",
+      "voice": "hi-IN-MadhurNeural",
+      "pitch": "-4Hz"
     }
   ],
   "episodes": [
@@ -35,6 +42,11 @@
       "n": 1,
       "title": "Ep 1 | 100 दिन का रिश्ता: पाँच लाख का कर्ज़ और एक अजनबी का प्रस्ताव",
       "summary": "Moneylender Gupta gives Riya until tomorrow evening to repay 5 lakh or lose her late father's Lucknow bakery. A stranger, Kabir Malhotra, offers to clear the debt if she marries him for 100 days. She throws him out, but as the lock goes on the door she calls him and accepts. His first rule is 'don't fall in love', while someone in a black car secretly records them."
+    },
+    {
+      "n": 2,
+      "title": "Ep 2 | 100 दिन का रिश्ता: कॉन्ट्रैक्ट, चाचा का फ़ोन और आज रात की शादी",
+      "summary": "Kabir clears Riya's debt in front of a stunned Gupta, and they sign the 100-day contract, with Riya adding her own rule that he forgets her and the bakery afterward. Uncle Vikram calls Kabir with the secret video and threatens to show the family tomorrow, so Kabir tells Riya they must get married tonight."
     }
   ]
 }
