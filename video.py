@@ -821,10 +821,13 @@ if __name__ == "__main__":
                 continue
             package = json.loads(path.read_text(encoding="utf-8"))  # render adds photo credits
         # Only Shorts made from now on have board.json, so older ones are never dubbed.
-        # Hopeverse's dub channels get a copy; a channel with "dub" (Sankalp, Sawaal) also posts it on itself.
+        # Hopeverse's dub channels get a copy. A channel with "dub" (Sankalp, Sawaal) alternates: odd-numbered Shorts
+        # go up in English, even-numbered ones only in the dub language (owner's call, 26 Oct: 2 topics a day, one each).
         home = channels.get(package["channel_id"], {})
+        num = path.stem.rsplit("-", 1)[-1]
+        dub_only = bool(home.get("dub")) and "dub_of" not in package and num.isdigit() and int(num) % 2 == 0
         targets = (dubs if package["channel_id"] == "yt-hopeverse" else []) + \
-                  ([{**home, "lang": home["dub"], "language": home.get("dub_language", home["dub"])}] if home.get("dub") else [])
+                  ([{**home, "lang": home["dub"], "language": home.get("dub_language", home["dub"])}] if dub_only else [])
         for c in targets if "dub_of" not in package and (path.with_suffix("") / "board.json").exists() else []:
             if not path.with_suffix(f".{c['lang']}.json").exists():
                 print(f"Making the {c['language']} version of {path.name}")
@@ -833,7 +836,7 @@ if __name__ == "__main__":
                     paths.append(target)
                 except Exception as e:  # a failed dub shouldn't stop the English video
                     print(f"    {c['language']} version failed: {e}")
-        if "--no-upload" in sys.argv:  # the 4 PM run only makes videos; the 6 PM run posts them
+        if "--no-upload" in sys.argv or dub_only:  # the 4 PM run only makes videos; a dub-only Short posts just its dub
             continue
         if "youtube_id" not in package and not approved(package):
             print(f"Not posting {path.name}: not approved on Telegram")
