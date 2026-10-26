@@ -124,8 +124,23 @@ def upcoming() -> list:
     return sorted(out, key=lambda r: r["when"])[:6]
 
 
-def channels(rows: list, costs: list, plan: list) -> list:
-    """One row per channel: today's uploads against plan, today's and 7-day spend, all-time views."""
+def watch_time() -> dict:
+    """All-time YouTube minutes watched per signed-in YouTube channel."""
+    from video import watch_minutes
+    out = {}
+    for c in _channels():
+        token = HERE / c.get("token", "token.json")
+        if c["platform"] == "youtube" and token.exists():
+            try:
+                out[c["id"]] = watch_minutes(token)
+            except Exception as e:  # e.g. the YouTube Analytics API not enabled in Google Cloud yet
+                print(f"::warning::Watch time for {c['id']}: {str(e)[:300]}")
+    return out
+
+
+def channels(rows: list, costs: list, plan: list, watched: dict = None) -> list:
+    """One row per channel: today's uploads against plan, today's and 7-day spend, all-time views and watch time."""
+    watched = watched or {}
     week = f"{NOW - timedelta(days=6):%Y-%m-%d}"
     names = {c["id"]: c["name"] for c in _channels()}
     ids = list(dict.fromkeys([p["channel"] for p in plan] + [r["channel"] for r in rows] + [c["channel"] for c in costs]))
@@ -142,6 +157,7 @@ def channels(rows: list, costs: list, plan: list) -> list:
                     "spend_7d": round(sum(c["cost_usd"] for c in costs if c["channel"] == i and c["day"] >= week), 2),
                     "yt_views": sum(r["yt_views"] or 0 for r in rows if r["channel"] == i),
                     "ig_views": sum(r["ig_views"] or 0 for r in rows if r["channel"] == i),
+                    "yt_watch_min": watched.get(i),
                     "updated": f"{NOW:%Y-%m-%d %H:%M}"})
     return [r for r in out if r["planned"] or r["posted_today"] or r["spend_7d"] or r["yt_views"] or r["ig_views"]]
 
@@ -205,7 +221,7 @@ if __name__ == "__main__":
     plan = slots(rows)
     data = {"updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "shorts": rows, "spend": costs, "agent_work": agent_work(), "limits": limits(costs),
-            "slots": plan, "channels": channels(rows, costs, plan), "runs": runs(), "upcoming": upcoming(), "credits": credits.check()}
+            "slots": plan, "channels": channels(rows, costs, plan, watch_time()), "runs": runs(), "upcoming": upcoming(), "credits": credits.check()}
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(data, indent=1, ensure_ascii=False), encoding="utf-8")
     print(f"Saved {OUT} ({len(rows)} Shorts)")
