@@ -1,15 +1,13 @@
-"""Plan the next uploads ahead, so the dashboard shows real topics and each slot makes the one planned for it.
+"""Plan the next uploads ahead, so the dashboard shows real topics and each video makes the one planned for it.
 
-    python plan.py             -> fill runs/plan.json: a topic for each of the next 6 slots of every signed-in channel
+    python plan.py             -> fill runs/plan.json: a topic for each of the next 6 videos of every signed-in channel
     python plan.py --next ID   -> print the topic planned for channel ID's next upload, and take it off the plan
-    python plan.py --due       -> which channels post now (hope.yml's slot step), as KEY=value lines for $GITHUB_ENV
+    python plan.py --due       -> the next video to make (hope.yml), as KEY=value lines for $GITHUB_ENV
 
-Hopeverse posts every 2 hours from 07:00 India time; other channels post 2 a day on slots counted from their "first" hour
-(default 7) in their audience's time zone "tz" (default India),
-set in channels.json: Instinct on Paris time, Kissa in the Indian evening.
-
-hope.yml runs the first after every slot and passes the second to Mr. Hope (or series.py for Kissa), who still
-checks that a news topic is fresh. Existing entries are kept; only empty slots are planned, by Mr. Focus (Sonnet).
+From 6 AM India time hope.yml makes one video at a time, one channel after another in channels.json order, round
+after round until each has its daily count (Hopeverse 6, the others 2); each run starts the next when it ends.
+Mr. Hope (or series.py for Kissa) still checks that a news topic is fresh. Existing entries are kept; only empty
+ones are planned, by Mr. Focus (Sonnet).
 """
 import json
 import os
@@ -26,69 +24,69 @@ PLAN = HERE / "runs" / "plan.json"
 IST = ZoneInfo("Asia/Kolkata")
 SHORTS_PER_DAY = min(6, int(os.environ.get("SHORTS_PER_DAY") or 6))
 SERIES_PER_DAY = int(os.environ.get("SERIES_PER_DAY") or 2)
+STEP = 25  # minutes a video takes, roughly, for the dashboard's estimated times
 
 
 def planned_slots(channel: dict) -> list:
-    """Which of the six slots (1-6) post for this channel. Hopeverse Media posts SHORTS_PER_DAY; every other channel
-    posts "per_day" (default 2, owner's pick 2026-10-26; Kissa SERIES_PER_DAY), spaced to end on its last slot."""
+    """This channel's videos of the day, 1..its daily count: Hopeverse Media SHORTS_PER_DAY, every other channel
+    "per_day" (default 2, owner's pick 2026-10-26; Kissa SERIES_PER_DAY)."""
     if channel["platform"] != "youtube" or channel.get("status") not in ("live", "series"):
         return []
     if channel["id"] == "yt-hopeverse":
         return list(range(1, SHORTS_PER_DAY + 1))
-    every = 6 // (channel.get("per_day") or (SERIES_PER_DAY if channel.get("status") == "series" else 2))
-    return [s for s in range(1, 7) if (6 - s) % every == 0]
+    return list(range(1, (channel.get("per_day") or (SERIES_PER_DAY if channel.get("status") == "series" else 2)) + 1))
 
 
 def live_channels() -> list:
-    """Channels that post on a schedule and are signed in here."""
+    """Channels that post every day and are signed in here, in channels.json order (the order of each round)."""
     return [c for c in _channels() if planned_slots(c) and (HERE / c.get("token", "token.json")).exists()]
 
 
-def slot_start(channel: dict, n: int, day: datetime) -> datetime:
-    """When slot n starts on `day` (a time in the channel's zone), in India time."""
-    hour = channel.get("first", 7) + 2 * (n - 1)
-    return day.replace(hour=hour, minute=0, second=0, microsecond=0).astimezone(IST)
+def day_order(channels: list = None) -> list:
+    """The day's videos in making order: one video per channel, then the next round, until each channel has its
+    count (owner's rule 2026-10-26: start at 6 AM, one video at a time). [(channel, n), ...]"""
+    channels = live_channels() if channels is None else channels
+    return [(c, n) for n in range(1, 7) for c in channels if n in planned_slots(c)]
+
+
+def made_today(now: datetime = None) -> dict:
+    """How many videos each channel has started today (runs/slots.jsonl, India date)."""
+    now, log = (now or datetime.now()).astimezone(IST), HERE / "runs" / "slots.jsonl"
+    counts = {}
+    for line in log.read_text(encoding="utf-8").splitlines() if log.exists() else []:
+        made = json.loads(line).get("made", "")
+        if made.startswith(f"{now:%Y-%m-%d} "):
+            cid = made.split()[1]
+            counts[cid] = counts.get(cid, 0) + 1
+    return counts
 
 
 def next_slots(channel: dict, k: int = 6, after: datetime = None) -> list:
-    """The channel's next k (slot number, time) pairs after `after` (default now), India time."""
-    after = after or datetime.now(IST)
-    local = after.astimezone(ZoneInfo(channel.get("tz", "Asia/Kolkata")))
-    out = [(n, slot_start(channel, n, local + timedelta(days=d))) for d in range(4) for n in planned_slots(channel)]
-    return [(n, w) for n, w in out if w > after][:k]
+    """The channel's next k (n, estimated time) pairs, India time: the day starts at 06:00 and a video takes about
+    STEP minutes, so the estimate is the video's place in the day's order."""
+    after = (after or datetime.now()).astimezone(IST)
+    order, done = day_order(), made_today(after).get(channel["id"], 0)
+    out = []
+    for d in range(4):
+        start = (after + timedelta(days=d)).replace(hour=6, minute=0, second=0, microsecond=0)
+        out += [(n, start + timedelta(minutes=STEP * i)) for i, (c, n) in enumerate(order)
+                if c["id"] == channel["id"] and (d or n > done)]
+    return out[:k]
 
 
-def due(force: int = 0, now: datetime = None) -> dict:
-    """What posts now: each channel's slot whose 2-hour window this is, once a day (runs/slots.jsonl, so a late
-    schedule next to a backup run doesn't post twice). force = that slot for every channel (the manual 5 PM run)."""
+def due(now: datetime = None) -> dict:
+    """The next video to make now, as KEY=value env for hope.yml, and mark it started so the next run moves on."""
     now, log = (now or datetime.now()).astimezone(IST), HERE / "runs" / "slots.jsonl"
-    done = set(log.read_text(encoding="utf-8").splitlines()) if log.exists() else set()
-    marks, shorts, env = [], [], {}
-    for c in live_channels():
-        local = now.astimezone(ZoneInfo(c.get("tz", "Asia/Kolkata")))
-        slot = force or (local.hour - c.get("first", 7)) // 2 + 1
-        mark = json.dumps({"slot": f"{local:%Y-%m-%d} {c['id']} {slot}"})
-        if slot not in planned_slots(c) or mark in done and not force:
-            continue
-        marks.append(mark)
-        if c.get("status") == "series":
-            env["SERIES"] = "1"
-        else:  # id:slot:review (Mr. Hope reviews the day after the channel's last Short)
-            shorts.append(f"{c['id']}:{slot}:{int(slot == max(planned_slots(c)))}")
-            if c["id"] == "yt-hopeverse":
-                env["SLOT"] = str(slot)
-    report = json.dumps({"report": f"{now:%Y-%m-%d}"})  # the daily report and channel idea, 5 PM India time
-    if force == 6 or (now.hour - 7) // 2 + 1 == 6 and report not in done:
-        marks.append(report)
-        env["REPORT"] = "1"
-    if shorts:
-        env["DUE"] = " ".join(shorts)
-    if marks:
-        env["RAN"] = "1"
-        log.parent.mkdir(exist_ok=True)
-        with log.open("a", encoding="utf-8") as f:
-            f.write("".join(m + "\n" for m in marks))
-    return env
+    done = made_today(now)
+    todo = [(c, n) for c, n in day_order() if n > done.get(c["id"], 0)]
+    if not todo:
+        return {}
+    c, n = todo[0]
+    log.parent.mkdir(exist_ok=True)
+    with log.open("a", encoding="utf-8") as f:
+        f.write(json.dumps({"made": f"{now:%Y-%m-%d} {c['id']} {n}"}) + "\n")
+    return {"NEXT": c["id"], "N": n, "QUOTA": len(planned_slots(c)), "REVIEW": int(n == len(planned_slots(c))),
+            "SERIES": int(c.get("status") == "series"), "GROW": int(not done), "MORE": int(len(todo) > 1), "RAN": 1}
 
 
 def audience(slot: int) -> str:
@@ -180,6 +178,6 @@ if __name__ == "__main__":
     if sys.argv[1:2] == ["--next"]:
         print(next_topic(sys.argv[2]))
     elif sys.argv[1:2] == ["--due"]:
-        print("\n".join(f"{k}={v}" for k, v in due(int(sys.argv[3]) if sys.argv[2:3] == ["--force"] else 0).items()))
+        print("\n".join(f"{k}={v}" for k, v in due().items()))
     else:
         refresh()

@@ -17,7 +17,7 @@ from zoneinfo import ZoneInfo
 
 import credits
 from agents import DAILY_BUDGET, HERE, HISTORY, OUTBOX, _channels
-from plan import SERIES_PER_DAY, SHORTS_PER_DAY, live_channels, load, next_slots, planned_slots, slot_start
+from plan import STEP, SERIES_PER_DAY, SHORTS_PER_DAY, day_order, live_channels, load, made_today, next_slots
 
 IST = ZoneInfo("Asia/Kolkata")
 NOW = datetime.now(IST)
@@ -89,23 +89,17 @@ def spend() -> list:
 
 
 def slots(rows: list) -> list:
-    """Today's upload slots per signed-in channel: posted (with the Short), due later, or missed.
-    A Short counts for the slot whose 2-hour window it went up in."""
-    out = []
-    for c in _channels():
-        if not os.path.exists(HERE / c.get("token", "token.json")):
-            continue
-        posted = [r for r in rows if r["channel"] == c["id"]]
-        local = NOW.astimezone(ZoneInfo(c.get("tz", "Asia/Kolkata")))  # the channel's own today
-        for n in planned_slots(c):
-            start = slot_start(c, n, local)
-            end = start + timedelta(hours=2 if n < 6 else 7)  # the last slot runs until about midnight
-            short = next((r for r in posted if r["published"] and f"{start:%Y-%m-%d %H:%M}" <= r["published"] < f"{end:%Y-%m-%d %H:%M}"), None)
-            status = "Posted" if short else "Running" if start <= NOW < start + timedelta(minutes=110) \
-                else "Upcoming" if NOW < start else "Missed"
-            out.append({"key": f"{c['id']}-{n}", "channel": c["id"], "name": c["name"], "slot": n,
-                        "time": f"{start:%H:%M}", "status": status,
-                        "title": short["title"] if short else None, "url": short["url"] if short else None})
+    """Today's videos per signed-in channel in making order: posted (with the Short), being made, or queued.
+    The nth Short a channel posted today fills its nth video; times are estimates until it is posted."""
+    out, made = [], made_today(NOW)
+    for i, (c, n) in enumerate(day_order()):
+        posted = sorted((r for r in rows if r["channel"] == c["id"] and r["day"] == TODAY), key=lambda r: r["published"])
+        short = posted[n - 1] if len(posted) >= n else None
+        start = NOW.replace(hour=6, minute=0, second=0, microsecond=0) + timedelta(minutes=STEP * i)
+        status = "Posted" if short else "Running" if made.get(c["id"], 0) >= n else "Upcoming"
+        out.append({"key": f"{c['id']}-{n}", "channel": c["id"], "name": c["name"], "slot": n,
+                    "time": short["published"][11:] if short else f"{start:%H:%M}", "status": status,
+                    "title": short["title"] if short else None, "url": short["url"] if short else None})
     return out
 
 
@@ -122,7 +116,7 @@ def upcoming() -> list:
         for n, when in next_slots(c):
             e = planned.get(f"{when:%Y-%m-%d %H:%M}", {})
             out.append({"key": f"{c['id']}-{when:%Y%m%d%H}", "when": f"{when:%Y-%m-%d %H:%M}", "channel": c["id"],
-                        "name": c["name"], "plan": e.get("topic") or "Not planned yet: picked when the slot runs",
+                        "name": c["name"], "plan": e.get("topic") or "Not planned yet: picked when the video is made",
                         "why": e.get("why"), "post_now": ACTIONS + ("episode.yml" if series else "hope.yml"),
                         "how": "Run workflow" if series else f"Run workflow, job: one, channel: {c['id']}"})
     return sorted(out, key=lambda r: r["when"])[:6]
@@ -184,7 +178,7 @@ def limits(costs: list) -> list:
         {"item": "Daily budget", "value": DAILY_BUDGET, "unit": "usd", "note": "All channels together; runs stop once reached (DAILY_BUDGET)"},
         {"item": "Spent today", "value": today, "unit": "usd", "note": f"{TODAY}, India time"},
         {"item": "Left today", "value": round(max(0, DAILY_BUDGET - today), 2), "unit": "usd", "note": "Before the cap stops runs"},
-        {"item": "Hopeverse Shorts a day", "value": SHORTS_PER_DAY, "unit": "count", "note": "Hopeverse Media, one per 2-hour slot (SHORTS_PER_DAY); other channels post 2 a day at their audience's best times"},
+        {"item": "Hopeverse Shorts a day", "value": SHORTS_PER_DAY, "unit": "count", "note": "Hopeverse Media (SHORTS_PER_DAY); other channels 2 a day; from 6 AM IST one video at a time, channel by channel"},
         {"item": "Kissa episodes a day", "value": SERIES_PER_DAY, "unit": "count", "note": "Fully acted, about $4-5 each, inside the daily budget (SERIES_PER_DAY)"},
         {"item": "Paid AI clips per Short", "value": clips, "unit": "count", "note": "Kling video shots, about $0.35 each (AI_CLIPS_PER_SHORT)"},
         {"item": "HeyGen talking shot", "value": 0.05, "unit": "usd_per_s", "note": "Avatar IV, per second of speech"},

@@ -57,8 +57,7 @@
       "country": "IN",
       "banner": "brand/kissa-banner.png",
       "tagline": "Ek kahaani. Roz ek twist."
-    },
-    "first": 11
+    }
   },
   {
     "id": "yt-instinct",
@@ -81,9 +80,7 @@
       "country": "FR",
       "banner": "brand/instinct-banner.png",
       "tagline": "Le vivant, en une minute."
-    },
-    "tz": "Europe/Paris",
-    "first": 11
+    }
   },
   {
     "id": "yt-sankalp",
@@ -105,7 +102,6 @@
       "banner": "brand/sankalp-banner.png",
       "tagline": "देश की राजनीति। सरकार के नज़रिए से।"
     },
-    "first": 11,
     "hosts": {
       "Rohan": {
         "voice": "en-IN-PrabhatNeural",
@@ -145,7 +141,6 @@
       "banner": "brand/sawaal-banner.png",
       "tagline": "हर ख़बर के पीछे एक सवाल।"
     },
-    "first": 11,
     "hosts": {
       "Aditya": {
         "voice": "en-IN-PrabhatNeural",

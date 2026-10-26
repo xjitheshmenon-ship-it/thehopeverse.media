@@ -1,19 +1,20 @@
 # Mr. Hope on GitHub's servers: no PC needed. Keys live in Settings > Secrets and variables > Actions.
 # Hope's memory (outbox, lessons.md, characters.md, run logs) is kept on the `state` branch by state.py.
 name: Hope
-run-name: "Hope: ${{ github.event.schedule == '15 * * * *' && 'dashboard refresh (posts nothing)' || inputs.job == 'stats' && 'dashboard refresh (posts nothing)' || inputs.job == 'plan' && 'plan topics (posts nothing)' || inputs.job == 'one' && format('post one Short now for {0}', inputs.channel) || inputs.job == 'daily' && '5 PM slot and report' || '2-hour slot' }}"
+run-name: "Hope: ${{ github.event.schedule == '15 * * * *' && 'dashboard refresh (posts nothing)' || inputs.job == 'stats' && 'dashboard refresh (posts nothing)' || inputs.job == 'plan' && 'plan topics (posts nothing)' || inputs.job == 'one' && format('post one Short now for {0}', inputs.channel) || (github.event.schedule == '30 11 * * *' || inputs.job == 'report' || inputs.job == 'daily') && '5 PM report (posts nothing)' || 'next video' }}"
 
 on:
   schedule:
-    - cron: "30 1-20 * * *"  # hourly check: each channel posts every 2 hours in its audience's time zone (plan.py --due); 5 PM IST also writes the report
+    - cron: "30 0 * * *"   # 06:00 IST: start the day's videos; each run makes one and starts the next (plan.py --due)
+    - cron: "30 11 * * *"  # 17:00 IST: the daily report and new channel idea
     - cron: "15 * * * *"   # hourly: dashboard numbers
   workflow_dispatch:
     inputs:
       job:
-        description: "slot = run the current 2-hour slot now (what the schedule does; skipped if it already ran), daily = run the 5 PM slot now (a Short per channel, review, channel idea, report), one = make and post the next planned Short now for the channel below, stats = dashboard numbers only, plan = plan the next 6 topics per channel (to sign a channel in, use the Connect a channel workflow; a Kissa episode: Post a Kissa episode)"
-        default: daily
+        description: "next = make and post the next video of the day (one channel at a time, then it starts the next; stops when every channel has its count), report = the 5 PM report and channel idea, one = make and post the next planned Short now for the channel below, stats = dashboard numbers only, plan = plan the next 6 topics per channel (slot is the same as next; to sign a channel in, use the Connect a channel workflow)"
+        default: next
         type: choice
-        options: [daily, slot, one, stats, plan]
+        options: [next, report, one, stats, plan, slot]
       channel:
         description: "For job one: which channel's Short to post now"
         default: yt-hopeverse
@@ -22,10 +23,11 @@ on:
 
 permissions:
   contents: write
-  actions: read  # dashboard.py lists recent runs and failures
+  actions: write  # dashboard.py lists recent runs; each video run starts the next one
 
 concurrency:
-  group: hope-${{ github.event.schedule == '15 * * * *' && 'stats' || inputs.job == 'slot' && 'daily' || inputs.job || 'daily' }}
+  # one video at a time: every "next" run (and Kissa's episode workflow) waits in hope-daily
+  group: hope-${{ github.event.schedule == '15 * * * *' && 'stats' || github.event.schedule == '30 11 * * *' && 'report' || inputs.job == 'slot' && 'daily' || inputs.job == 'next' && 'daily' || inputs.job || 'daily' }}
 
 env:
   TZ: Asia/Kolkata
@@ -82,37 +84,34 @@ jobs:
           done
           true
 
-      - name: Which 2-hour slot this is
-        if: github.event.schedule == '30 1-20 * * *' || inputs.job == 'daily' || inputs.job == 'slot'
-        # DUE = channel:slot:review for each channel posting now, SERIES = a Kissa episode, REPORT = the 5 PM report;
-        # a manual daily run counts as the last slot for every channel
-        run: python plan.py --due ${{ inputs.job == 'daily' && '--force 6' || '' }} | tee -a "$GITHUB_ENV"
+      - name: Which video is next
+        if: github.event.schedule == '30 0 * * *' || inputs.job == 'next' || inputs.job == 'slot'
+        # NEXT = the channel, N = its video number today, QUOTA its daily count, REVIEW on its last, SERIES for Kissa,
+        # GROW before the day's first video, MORE when another video follows; nothing when the day's videos are done
+        run: python plan.py --due | tee -a "$GITHUB_ENV"
 
       - name: Stop if today's budget is used up
-        if: env.DUE != '' || inputs.job == 'one'
+        if: env.NEXT != '' || inputs.job == 'one'
         run: |
-          python -c "import sys, agents as a; s = a.spent_today(); sys.exit(f'Daily budget used up: \${s:.2f} of \${a.DAILY_BUDGET:.0f} spent today, so nothing is made until tomorrow (raise DAILY_BUDGET to post more)' if s >= a.DAILY_BUDGET else 0)" || { echo "::error::Daily budget used up, nothing posted"; exit 1; }
-      - name: Research, script, make and post this slot's Short for every live channel, one at a time
-        if: env.DUE != ''
+          python -c "import sys, agents as a; s = a.spent_today(); sys.exit(f'Daily budget used up: \${s:.2f} of \${a.DAILY_BUDGET:.0f} spent today, so nothing is made until tomorrow (raise DAILY_BUDGET to post more)' if s >= a.DAILY_BUDGET else 0)" || { echo "::error::Daily budget used up, nothing posted"; echo "MORE=0" >> "$GITHUB_ENV"; exit 1; }
+      - name: Research, script, make and post the next Short
+        if: env.NEXT != '' && env.SERIES != '1'
         run: |
           { sudo apt-get install -y -qq fonts-noto-core || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core; }; } > /dev/null  # Hindi captions
+          [ "$GROW" = 1 ] && { python agents.py --grow || true; }  # Mr. Grow's notes for the day's Shorts
+          id=$NEXT
+          aud=$([ $((N * 3)) -le $((SHORTS_PER_DAY * 2)) ] && echo "Indian viewers" || echo "the international market")  # 4 of 6 for India
+          if [ "$id" = yt-hopeverse ]; then
+            goal="get today's topics from Mr. Focus, check list_outbox, then draft and queue the best new current-affairs YouTube Short for $id, aimed at $aud, on a story not already drafted today."
+          else
+            goal="check list_channels and list_outbox, then draft and queue one new YouTube Short for $id that fits its niche, audience and language, on a topic it hasn't had yet."
+          fi
+          topic=$(python plan.py --next "$id" || true)  # the topic the dashboard showed for this video
+          [ -n "$topic" ] && goal="make the Short on the planned topic \"$topic\" (check list_outbox and that it is still accurate and new; if not, pick the best alternative), then $goal"
           before=$(ls outbox/*.json 2>/dev/null | wc -l)
-          [ "$SLOT" = 1 ] && { python agents.py --grow || true; }  # Mr. Grow's notes for the day's Shorts
-          for entry in $DUE; do
-            IFS=: read -r id SLOT REVIEW <<< "$entry"
-            aud=$([ $((SLOT * 3)) -le $((SHORTS_PER_DAY * 2)) ] && echo "Indian viewers" || echo "the international market")  # 4 of 6 for India
-            if [ "$id" = yt-hopeverse ]; then
-              goal="get today's topics from Mr. Focus, check list_outbox, then draft and queue the best new current-affairs YouTube Short for $id, aimed at $aud, on a story not already drafted today."
-            else
-              goal="check list_channels and list_outbox, then draft and queue one new YouTube Short for $id that fits its niche, audience and language, on a topic it hasn't had yet."
-            fi
-            topic=$(python plan.py --next "$id" || true)  # the topic the dashboard showed for this slot
-            [ -n "$topic" ] && goal="make the Short on the planned topic \"$topic\" (check list_outbox and that it is still accurate and new; if not, pick the best alternative), then $goal"
-            HOPE_CHANNEL=$id HOPE_REVIEW=$REVIEW python agents.py "Scheduled run, Short $SLOT of $SHORTS_PER_DAY today for channel $id: $goal" || true
-            python video.py --only "$id" || failed=1  # one video at a time: made and posted before the next channel starts
-          done
-          ok=${failed:-0}; [ "$(ls outbox/*.json 2>/dev/null | wc -l)" -gt "$before" ] || { echo "::error::No Short was drafted in this slot (see Mr. Hope's log above)"; ok=1; }
-          python video.py || ok=1  # anything left over (an earlier failed upload); red when a Short couldn't be made or posted
+          HOPE_CHANNEL=$id HOPE_REVIEW=$REVIEW python agents.py "Scheduled run, Short $N of $QUOTA today for channel $id: $goal" || true
+          ok=0; [ "$(ls outbox/*.json 2>/dev/null | wc -l)" -gt "$before" ] || { echo "::error::No Short was drafted (see Mr. Hope's log above)"; ok=1; }
+          python video.py --only "$id" || ok=1  # red when the Short couldn't be made or posted
           exit $ok
       - name: Make and post one Short now
         if: inputs.job == 'one'
@@ -131,20 +130,33 @@ jobs:
           HOPE_CHANNEL=$CHANNEL HOPE_REVIEW=0 python agents.py "One-off run requested by the owner: $goal"
           [ "$(ls outbox/*.json 2>/dev/null | wc -l)" -gt "$before" ] || { echo "::error::No Short was drafted"; exit 1; }
           python video.py
-      - name: Write and post this slot's Hindi series episode
-        if: always() && env.SERIES == '1'  # episodes are spaced evenly and always include Kissa's last slot
+      - name: Write and post the next Hindi series episode
+        if: env.SERIES == '1'
         run: |
           python series.py || true
-          python video.py
+          python video.py --only "$NEXT"
       - name: 5 PM report with today's new channel idea and its brand kit
-        if: always() && env.REPORT == '1'
-        run: python scout.py || true  # also rewrites runs/spend-report.md
+        if: github.event.schedule == '30 11 * * *' || inputs.job == 'report' || inputs.job == 'daily'
+        run: |
+          mark="{\"report\": \"$(date +%F)\"}"  # once a day, also next to a backup run
+          grep -qxF "$mark" runs/slots.jsonl 2>/dev/null && { echo "Today's report is already written"; exit 0; }
+          mkdir -p runs && echo "$mark" >> runs/slots.jsonl
+          echo "RAN=1" >> "$GITHUB_ENV"
+          python video.py || true  # anything left over from a failed upload today
+          python scout.py || true  # also rewrites runs/spend-report.md
       - name: Plan the next 6 topics per channel (shown on the dashboard)
         if: always() && (env.RAN == '1' || inputs.job == 'one' || inputs.job == 'plan')
         run: python plan.py || true
       - name: Save Hope's memory
         if: always() && (env.RAN == '1' || inputs.job == 'one' || inputs.job == 'plan')
         run: python state.py save
+      - name: Start the next video
+        if: always() && env.MORE == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python -c "import sys, agents as a; sys.exit(a.spent_today() >= a.DAILY_BUDGET)" || { echo "Daily budget used up: no more videos today"; exit 0; }
+          gh workflow run hope.yml --ref "$GITHUB_REF_NAME" -f job=next
 
       - name: Dashboard numbers
         if: always()
