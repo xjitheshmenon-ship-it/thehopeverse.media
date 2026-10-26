@@ -113,16 +113,16 @@ def one_click(cid: str) -> bool:
 
 
 def upcoming() -> list:
-    """The next 6 uploads by time across the signed-in channels, with the topic plan.py planned for each slot."""
-    plan = load()
+    """The next 6 videos the pipeline will make: only approved topics, in each channel's queue order (plan.py makes
+    a channel's approved topics first and skips a channel with none), with estimated times."""
+    plan, said = load(), approvals()
     out = []
     for c in live_channels():
-        planned = {e["when"]: e for e in plan.get(c["id"], [])}
+        approved = [e for e in plan.get(c["id"], []) if said.get(topic_id(c["id"], e["topic"])) == "ok"]
         series = c.get("status") == "series"
-        for n, when in next_slots(c):
-            e = planned.get(f"{when:%Y-%m-%d %H:%M}", {})
+        for (n, when), e in zip(next_slots(c), approved):
             out.append({"key": f"{c['id']}-{when:%Y%m%d%H}", "when": f"{when:%Y-%m-%d %H:%M}", "channel": c["id"],
-                        "name": c["name"], "plan": e.get("topic") or "Not planned yet: picked when the video is made",
+                        "name": c["name"], "plan": e["topic"],
                         "why": e.get("why"), "post_now": ACTIONS + (
                             "episode.yml" if series else f"post-now-{c['id']}.yml" if one_click(c["id"]) else "hope.yml"),
                         "how": "Run workflow, then the green Run workflow" if series or one_click(c["id"])
