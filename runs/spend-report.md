@@ -1,15 +1,16 @@
-# Hopeverse spending report, 26 Oct 2026 22:40
+# Hopeverse spending report, 27 Oct 2026 00:28
 
-- Today: $35.70 (71 runs)
-- Last 7 days: $38.40
-- This month: $38.40
-- All time: $38.40
+- Today: $1.95 (4 runs)
+- Last 7 days: $40.35
+- This month: $40.35
+- All time: $40.35
 
 Claude (Anthropic) costs as estimated by agents.py, review included. Video images from fal.ai add
 about $0.006 each (about $0.06 a Short). Exact bills: console.anthropic.com and fal.ai/dashboard.
 
 | Day | Runs | Cost |
 | --- | --- | --- |
+| 2026-10-27 | 4 | $1.95 |
 | 2026-10-26 | 71 | $35.70 |
 | 2026-10-25 | 5 | $2.70 |
 
@@ -45,25 +46,35 @@ geografía, curiosidades del mundo, fronteras, mapas, lugares increíbles, datos
 
 ## Credits left
 
+- **HeyGen is low: 1.38 usd left** - top it up today
 - fal.ai: ? usd (Couldn't read the balance (HTTP Error 403: Forbidden); add a fal.ai READONLY key as the FAL_BILLING_KEY secret)
-- HeyGen: 3.2 usd (Talking hosts; Kling on fal.ai takes over when it runs out)
+- HeyGen: 1.38 usd (Talking hosts; Kling on fal.ai takes over when it runs out)
 - ElevenLabs: ? characters (Couldn't read the balance (HTTP Error 401: Unauthorized); turn on User: Read for the key in ElevenLabs)
 - Anthropic: ? usd (No balance API: see console.anthropic.com > Billing. Spend is logged per run)
 - Perplexity: ? usd (No balance API: see perplexity.ai/account/api. About $0.006 a search)
 
 ## Mr. Grow's to-dos for you today
 
-- **Pinned comments:**
-  - Hopeverse Media: "Which would you want to see first: a Moon base or a Mars city?"
-  - Hopeverse Hindi: "आप किस शहर से देख रहे हैं? कमेंट में बताइए।"
-  - Kissa: "Ep 2 के बाद आपको क्या लगता है, शादी टिकेगी या टूटेगी?"
-- **Community posts** (a poll on each; Hopeverse Media first, the others to follow if they're eligible):
-  - Hopeverse Media: "What should we explore next?" Options: Space, Earth's extremes, Future tech, Health.
-  - Hopeverse Hindi: "अगला Short किस पर चाहिए?" Options: ISRO, ग्रह, मौसम, भविष्य की टेक.
-  - Kissa: "अगला ट्विस्ट कैसा चाहिए?" Options: प्यार, बदला, राज़, कॉमेडी.
-- **Cross-promotion:**
-  - Share the megatsunami Short, the best performer so far, on Instagram. Caption: "A wave 481 metres high. Hope you never see one. 🌊 Follow for daily wonder."
-  - Add "हिंदी में देखें" with the link to Hopeverse Hindi in the Hindi descriptions.
-  - Share Kissa Ep 1 as a Story on Instagram.
-- **Posting time:** There's no evidence yet to justify a change. I'll review after 1 Nov. A test to consider: post Hopeverse Media at about 6–7 pm IST and 9 am US Eastern, one slot per week.
-- **Duplicate:** Delete the duplicate megatsunami Short (rQPOCx8wY6c) by hand.
+**Pinned comments (one per channel):**
+- Hopeverse: "Which number surprised you most today?"
+- Hindi: "आज की खबर में सबसे चौंकाने वाली बात क्या लगी?"
+- Kissa: "Mira zinda hai ya nahi? Haan ya Na likho."
+- Instinct: "Un animal qui vous a surpris ? Dites-nous."
+- Sankalp: "आज की नीति से किसे फ़ायदा? एक शब्द में लिखें।"
+- Sawaal: "आज सरकार से आप कौन सा एक सवाल पूछेंगे?"
+
+**Community posts (text plus poll):**
+- Hopeverse: "News in 60 seconds or science in 60?" Poll: News / Science / Both.
+- Hindi: Poll on preferred posting time: morning / afternoon / night.
+- Kissa: "Kaun sa ending chahiye?" Poll: Happy / Twist.
+- Instinct: "Quel animal ensuite ?" Poll: Pieuvre / Corbeau / Dauphin / Fourmi.
+- Sankalp and Sawaal: "Which topic next?" Poll: Economy / Jobs / Foreign policy / Elections.
+
+**Cross-promotion:**
+- Post the megatsunami Short on Instagram. Caption: "A wave of 481 m. Do you know where? Follow for daily explainers."
+- Link Kissa Ep 2 from Hopeverse Hindi. Caption: "कहानी आगे क्या मोड़ लेगी?"
+- Send the Instinct dolphin Short to Instagram, with a French caption.
+
+**Posting time:** No change. The data is too thin (0–25 views), and no time of day stands out. Test the Kissa slot at 3 PM against 9 PM for a week.
+
+**Also pending from Mr. Hope:** delete rQPOCx8wY6c, confirm the duck and Surrey uploads, and don't publish Orionids.
