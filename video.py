@@ -25,6 +25,7 @@ import time
 import urllib.parse
 import urllib.request
 import wave
+from functools import cache
 from datetime import datetime
 from pathlib import Path
 
@@ -48,8 +49,7 @@ AI_CLIPS = int(os.environ.get("AI_CLIPS_PER_SHORT") or "3")  # paid AI video sho
 ELEVEN_MODEL = os.environ.get("ELEVEN_MODEL") or "eleven_multilingual_v2"  # speaks English and Hindi
 # ElevenLabs voice ids. Change them in GitHub > Settings > Secrets and variables > Actions > Variables:
 # ELEVEN_VOICE_ARJUN, ELEVEN_VOICE_MEERA (any character by name), or ELEVEN_VOICE_MALE / ELEVEN_VOICE_FEMALE for the rest.
-ELEVEN_MALE = os.environ.get("ELEVEN_VOICE_MALE") or "nPczCjzI2devNBz1zQrb"  # Brian (premade)
-ELEVEN_FEMALE = os.environ.get("ELEVEN_VOICE_FEMALE") or "EXAVITQu4vr4xnVq9mPl"  # Sarah (premade)
+# Unset, a man's or woman's voice is picked from the account's own voices, Indian-accented ones first.
 GAP = 0.25  # seconds of quiet between two lines
 RATE = 44100
 HOSTS_DIR = HERE / "hosts"  # one reference photo per host, made once and then reused in every Short
@@ -314,6 +314,26 @@ def caption(text: str, size: tuple, lang: str = "") -> np.ndarray:
     return np.array(img)
 
 
+@cache
+def eleven_voice(gender: str) -> str:
+    """A voice id from the ElevenLabs account for "male" or "female" (ELEVEN_VOICE_MALE/FEMALE win), or ""."""
+    if os.environ.get(f"ELEVEN_VOICE_{gender.upper()}"):
+        return os.environ[f"ELEVEN_VOICE_{gender.upper()}"]
+    if not os.environ.get("ELEVENLABS_API_KEY"):
+        return ""
+    try:
+        req = urllib.request.Request("https://api.elevenlabs.io/v1/voices",
+                                     headers={"xi-api-key": os.environ["ELEVENLABS_API_KEY"].strip()})
+        voices = [v for v in json.load(urllib.request.urlopen(req, timeout=30))["voices"]
+                  if (v.get("labels") or {}).get("gender") == gender]
+        voices.sort(key=lambda v: "indian" not in str(v.get("labels", {}).get("accent", "")).lower())
+        print(f"    ElevenLabs {gender} voice: {voices[0]['name'] if voices else 'none on the account'}")
+        return voices[0]["voice_id"] if voices else ""
+    except Exception as e:
+        print(f"    could not list ElevenLabs voices: {e}")
+        return ""
+
+
 def speak(text: str, voice: str, path: Path, pitch: str = "+0Hz", eleven: str = "", before: str = "",
           after: str = "") -> bool:
     """ElevenLabs when ELEVENLABS_API_KEY is set (the lines around this one keep the delivery flowing), else Edge.
@@ -402,8 +422,8 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
             audio = work / f"{prefix}{i:03}.mp3"
             # Dubs keep their channel's voice; English lines are read by the host who says them.
             who = {} if "dub_of" in package else HOSTS.get(scene.speaker, {})
-            eleven = os.environ.get(f"ELEVEN_VOICE_{scene.speaker.upper()}") or (
-                ELEVEN_FEMALE if "woman" in who.get("look", "").lower() else ELEVEN_MALE)
+            eleven = os.environ.get(f"ELEVEN_VOICE_{scene.speaker.upper()}") or eleven_voice(
+                "female" if "woman" in who.get("look", "").lower() else "male")
             if not speak(scene.narration, who.get("voice", voice), audio, who.get("pitch", "+0Hz"), eleven,
                          spoken[k - 1][1].narration if k else "",
                          spoken[k + 1][1].narration if k + 1 < len(spoken) else ""):
