@@ -9,10 +9,10 @@ on:
   workflow_dispatch:
     inputs:
       job:
-        description: "daily = make and post today's Shorts, stats = dashboard numbers only (to sign a channel in, use the Connect a channel workflow)"
+        description: "daily = make and post today's Shorts, one = make and post a single Hopeverse Short now, stats = dashboard numbers only (to sign a channel in, use the Connect a channel workflow)"
         default: daily
         type: choice
-        options: [daily, stats]
+        options: [daily, one, stats]
 
 permissions:
   contents: write
@@ -84,6 +84,12 @@ jobs:
             done
           done
           python video.py
+      - name: Make and post one Hopeverse Short now
+        if: inputs.job == 'one'
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core > /dev/null
+          HOPE_REVIEW=0 python agents.py "One-off run requested by the owner: get today's topics from Mr. Focus, check list_outbox, then draft and queue one new current-affairs YouTube Short for yt-hopeverse, aimed at Indian viewers, on the top-viewed story of the last 48 hours that is not already drafted."
+          python video.py
       - name: Write and post today's Hindi series episode
         if: always() && (github.event.schedule == '45 11 * * *' || inputs.job == 'daily')
         run: |
@@ -94,7 +100,7 @@ jobs:
         if: always() && (github.event.schedule == '45 11 * * *' || inputs.job == 'daily')
         run: python scout.py || true
       - name: Save Hope's memory
-        if: always() && (github.event.schedule == '45 11 * * *' || inputs.job == 'daily')
+        if: always() && (github.event.schedule == '45 11 * * *' || inputs.job == 'daily' || inputs.job == 'one')
         run: python state.py save
 
       - name: Dashboard numbers
