@@ -26,7 +26,7 @@ Every run saves all helpers' outputs to `runs/`. Finished packages go to `outbox
 
 The cloud runs make `SHORTS_PER_DAY` Shorts a day (default 6, one per 2-hour slot, at most 6) for every channel in `channels.json` with platform `youtube` and status `live`, and the same number of series episodes when the series channel is connected. Mr. Hope reviews and rewrites `lessons.md` once, after the day's last Short. All runs stop once the day's spend reaches `DAILY_BUDGET` (default $20). Change both under **Settings > Secrets and variables > Actions > Variables**, no code edit needed.
 
-YouTube's API allows about 6 uploads a day per Google Cloud project (10,000 quota units, 1,600 per upload), shared by every channel that uses the same `client_secret.json`. Uploads over the limit wait for the next run. Before connecting more channels, ask Google for more quota: Google Cloud Console > APIs & Services > YouTube Data API v3 > Quotas > the YouTube quota extension form (free; it takes a few days to weeks).
+YouTube's API counts uploads in their own quota: this project allows 100 video uploads a day and 10,000 other queries a day (Google Cloud Console > APIs & Services > YouTube Data API v3 > Quotas & System Limits), shared by every channel that uses the same `client_secret.json`. Uploads over the limit wait for the next run.
 
 Every day `scout.py` also proposes one new channel for an audience the network doesn't reach yet, with a finished brand kit in the Signal style: name, handle, tagline, About text, keywords, first video ideas, profile picture, banner and watermark. They are saved in `ideas/<date>-<id>/` on the `state` branch, and the idea appears at the end of `runs/spend-report.md`. `python scout.py --demo` renders a sample kit locally.
 
