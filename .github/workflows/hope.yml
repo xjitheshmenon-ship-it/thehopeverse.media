@@ -16,6 +16,7 @@ on:
 
 permissions:
   contents: write
+  actions: read  # dashboard.py lists recent runs and failures
 
 concurrency:
   group: hope-${{ github.event.schedule == '15 * * * *' && 'stats' || inputs.job || 'daily' }}
@@ -97,14 +98,14 @@ jobs:
             else
               goal="check list_channels and list_outbox, then draft and queue one new YouTube Short for $id that fits its niche, audience and language, on a topic it hasn't had yet."
             fi
-            HOPE_REVIEW=$REVIEW python agents.py "Scheduled run, Short $SLOT of $SHORTS_PER_DAY today for channel $id: $goal" || true
+            HOPE_CHANNEL=$id HOPE_REVIEW=$REVIEW python agents.py "Scheduled run, Short $SLOT of $SHORTS_PER_DAY today for channel $id: $goal" || true
           done
           python video.py
       - name: Make and post one Hopeverse Short now
         if: inputs.job == 'one'
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core > /dev/null
-          HOPE_REVIEW=0 python agents.py "One-off run requested by the owner: get today's topics from Mr. Focus, check list_outbox, then draft and queue one new current-affairs YouTube Short for yt-hopeverse, aimed at Indian viewers, on the top-viewed story of the last 48 hours that is not already drafted."
+          HOPE_CHANNEL=yt-hopeverse HOPE_REVIEW=0 python agents.py "One-off run requested by the owner: get today's topics from Mr. Focus, check list_outbox, then draft and queue one new current-affairs YouTube Short for yt-hopeverse, aimed at Indian viewers, on the top-viewed story of the last 48 hours that is not already drafted."
           python video.py
       - name: Write and post this slot's Hindi series episode
         if: always() && env.SLOT != ''
@@ -123,4 +124,6 @@ jobs:
 
       - name: Dashboard numbers
         if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: python dashboard.py

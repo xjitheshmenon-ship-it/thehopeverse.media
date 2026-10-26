@@ -26,7 +26,6 @@ import urllib.parse
 import urllib.request
 import wave
 from functools import cache
-from datetime import datetime
 from pathlib import Path
 
 import edge_tts
@@ -36,7 +35,7 @@ from moviepy.config import FFMPEG_BINARY
 from PIL import Image, ImageDraw, ImageFont
 from pydantic import BaseModel
 
-from agents import DAILY_BUDGET, HELPER_MODEL, _cost, HISTORY, OUTBOX, TEAM, _channels, client, read_cast, spent_today
+from agents import DAILY_BUDGET, HELPER_MODEL, _cost, OUTBOX, TEAM, _channels, client, log_spend, read_cast, spent_today
 from approve import approved
 
 HERE = Path(__file__).parent
@@ -551,9 +550,7 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
         parts.append(part)
         print(f"    scene {i + 1}/{len(board.scenes)}")
     if paid["usd"]:  # counted in DAILY_BUDGET with the Claude costs
-        HISTORY.parent.mkdir(exist_ok=True)
-        with HISTORY.open("a", encoding="utf-8") as f:
-            f.write(json.dumps({"date": f"{datetime.now():%Y-%m-%d %H:%M}", "cost_usd": round(paid["usd"], 2)}) + "\n")
+        log_spend(paid["usd"], package["channel_id"])
         print(f"    fal.ai video cost ${paid['usd']:.2f}")
     # 3. Picture, voice track and music put together once.
     out = package_path.with_suffix(".mp4")
@@ -593,9 +590,10 @@ def youtube(interactive: bool = True, token: Path = TOKEN):
 
 
 def stats(video_ids: list) -> dict:
-    """Views, likes and comments per uploaded video id."""
-    items = youtube(interactive=False).videos().list(part="statistics,status", id=",".join(video_ids)).execute()
-    return {i["id"]: {**i["statistics"], "privacy": i["status"]["privacyStatus"]} for i in items["items"]}
+    """Views, likes, comments and upload time per uploaded video id."""
+    items = youtube(interactive=False).videos().list(part="statistics,status,snippet", id=",".join(video_ids)).execute()
+    return {i["id"]: {**i["statistics"], "privacy": i["status"]["privacyStatus"],
+                      "published": i["snippet"]["publishedAt"]} for i in items["items"]}
 
 
 def upload(video: Path, package: dict, token: Path = TOKEN) -> str:

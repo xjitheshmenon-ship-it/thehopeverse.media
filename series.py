@@ -8,12 +8,11 @@ Delete series.json to start a new season.
 """
 import json
 import re
-from datetime import datetime
 from pathlib import Path
 
 from pydantic import BaseModel
 
-from agents import DAILY_BUDGET, HISTORY, MODEL, OUTBOX, TEAM, _channels, _cost, client, spent_today
+from agents import DAILY_BUDGET, MODEL, OUTBOX, TEAM, _channels, _cost, client, log_spend, spent_today
 from video import Scene
 
 HERE = Path(__file__).parent
@@ -88,9 +87,7 @@ def write_episode() -> Path:
                                 "cast": story["cast"], "scenes": [s.model_dump() for s in ep.scenes]},
                                indent=2, ensure_ascii=False), encoding="utf-8")
     STORY.write_text(json.dumps(story, indent=2, ensure_ascii=False), encoding="utf-8")
-    HISTORY.parent.mkdir(exist_ok=True)
-    with HISTORY.open("a", encoding="utf-8") as f:  # counted in the spending report with the other runs
-        f.write(json.dumps({"date": f"{datetime.now():%Y-%m-%d %H:%M}", "cost_usd": round(cost, 2)}) + "\n")
+    log_spend(cost, channel["id"])  # counted in the spending report with the other runs
     print(f"Episode {n}: {ep.title} (${cost:.2f}) -> {path.name}")
     return path
 

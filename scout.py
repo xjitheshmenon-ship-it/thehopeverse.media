@@ -162,7 +162,7 @@ def render(kit: Kit, out: Path) -> None:
 
 
 def scout() -> Path:
-    from agents import DAILY_BUDGET, HISTORY, MODEL, WEB_SEARCH, _channels, _cost, client, spent_today
+    from agents import DAILY_BUDGET, MODEL, WEB_SEARCH, _channels, _cost, client, log_spend, spent_today
     if spent_today() >= DAILY_BUDGET:
         sys.exit(f"Daily budget of ${DAILY_BUDGET:.2f} reached; no channel idea today.")
     past = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(IDEAS.glob("*/kit.json"))]
@@ -196,8 +196,7 @@ def scout() -> Path:
     kit, cost = response.parsed_output, _cost(MODEL, response.usage)
     out = IDEAS / f"{datetime.now():%Y-%m-%d}-{kit.id}"
     render(kit, out)
-    with HISTORY.open("a", encoding="utf-8") as f:
-        f.write(json.dumps({"date": f"{datetime.now():%Y-%m-%d %H:%M}", "cost_usd": round(cost, 2)}) + "\n")
+    log_spend(cost)
     print(f"New channel idea: {kit.name} (${cost:.2f}) -> {out}")
     return out
 
