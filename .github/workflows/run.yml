@@ -1,0 +1,30 @@
+# Start any workflow by pushing a branch, so Claude can run things without the "Run workflow" button.
+# Push a branch named run/<workflow file without .yml>, e.g. run/hope, run/episode, run/connect.
+# Inputs go in the commit message as key=value lines, e.g. "job=one" or "channel=yt-kissa".
+# The workflow then runs from main with those inputs, and the run/ branch is deleted.
+name: Run on push
+
+on:
+  push:
+    branches: ["run/**"]
+
+permissions:
+  actions: write
+  contents: write
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          BRANCH: ${{ github.ref_name }}
+          MESSAGE: ${{ github.event.head_commit.message }}
+        run: |
+          args=()
+          while IFS= read -r line; do
+            [[ $line =~ ^[a-z_]+=.*$ ]] && args+=(-f "$line")
+          done <<< "$MESSAGE"
+          gh workflow run "${BRANCH#run/}.yml" --ref main "${args[@]}"
+          gh api -X DELETE "repos/$GH_REPO/git/refs/heads/$BRANCH"
