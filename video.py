@@ -16,6 +16,7 @@ Series channels (series.py writes one Hindi episode a day) bring their own scene
 python video.py --connect <channel id>
 """
 import asyncio
+import base64
 import json
 import os
 import re
@@ -292,6 +293,12 @@ def _can_pay() -> bool:
         return False
 
 
+def _image(url: str) -> dict:
+    """A thumbnail sent as data: Claude can't fetch Pixabay's thumbnail links itself ("Unable to download")."""
+    with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"}), timeout=30) as r:
+        return {"type": "base64", "media_type": r.headers.get_content_type(), "data": base64.b64encode(r.read()).decode()}
+
+
 def _pick(scene: "Scene", thumbnails: list) -> int:
     """Claude looks at the candidate clips' thumbnails and returns the index of the one that really shows what the
     line is about, or -1 when none does, so a car never stands in for a rocket."""
@@ -299,7 +306,7 @@ def _pick(scene: "Scene", thumbnails: list) -> int:
         return -1
     try:
         response = client.messages.create(model=HELPER_MODEL, max_tokens=200, thinking={"type": "between_tools"}, messages=[{"role": "user", "content": [
-            *({"type": "image", "source": {"type": "url", "url": u}} for u in thumbnails),
+            *({"type": "image", "source": _image(u)} for u in thumbnails),
             {"type": "text", "text": f"These are {len(thumbnails)} stock video thumbnails, numbered 0 to "
              f"{len(thumbnails) - 1} in order. A YouTube Short says: \"{scene.narration}\" and this shot should "
              f"show: {scene.picture_search} ({scene.image_prompt}). Reply with only the number of the thumbnail that "
