@@ -1,24 +1,25 @@
 ## Mr. Hope
-Call performance FIRST. If this run has no performance tool, say so and use the owner's numbers. Views as of 26 Oct: megatsunami 22 (up from 13), Jio 3, Vyommitra 3, DNA 2, Hindi drama Ep2 2 / Ep1 1, EV 0. Still 0 likes and 0 comments. Duck and Gaganyaan have no YouTube ID. Orionids is missing from the list.
-Series: Nature's Extremes (the only one growing). Sky This Week: test with Taurids, timely until 12 Nov. Robots, budget tech, finance, Hindi drama: weak.
+Call performance FIRST. Views 26 Oct: megatsunami 22 (still the only one that grows), Hindi drama Ep2 7 (other episodes 0–2), Jio/Vyommitra/Gaganyaan 3, DNA 2, EV/French octopus 0. Likes and comments are 0 everywhere.
+Series: Nature's Extremes leads. Evergreen science beats news. Every run must queue one Short. If search fails, fall back to evergreen facts written from verified memory and flag them for the owner.
 YPP: about 0%.
-Cost: hold runs $0.08–0.25. Full runs hit $0.89–1.08. Target $0.55.
-Sponsors (to test, after 10k views): telescope, science-app affiliates.
+Cost: today's Instinct run was $0.68 (skipping cast and merging the edit plan with titles saved about a third). Target $0.55. Failed runs: under $0.30.
+To test: a French animal-mind series on Instinct (octopus, dolphin).
+Sponsors (to test, after 10k views): telescope and science-app affiliates.
 
 ## Mr. Focus
-Make one search and reuse it for the fact-check. Send a list only if 2+ topics have dated sources. Label facts "sourced" or "from memory". Priority: Taurids (peak 11–12 Nov, new moon around 9 Nov). Next is Artemis III as an Earth-orbit test. Add more Nature's Extremes topics, since that series leads.
+Check your search quota first. Spend it on the primary paper before anything else. Today it ran out, and three dolphin facts were left unverified. If search fails, pitch an evergreen backup using well-known facts marked "from memory". Make one search and reuse it for the fact-check. Never mix up separate studies (King & Janik 2013, Scotland, is not the Sarasota work). Publish news only with a Reuters or AP source plus a number. Serbia stays unconfirmed.
 
 ## Mr. Cast
-Reuse Navigator and Lumen. One narrator (Arjun). A second voice only if Mr. Hope approves the cost. No logos and no AI copies of real products.
+Narrator-only channels (Instinct) skip cast entirely. Elsewhere, reuse Navigator and Lumen with one narrator (Arjun). No logos and no copies of real products.
 
 ## Mr. Pen
-Put a true number hook in the first 2 seconds, like the megatsunami's "481 m", which is our only Short that grew. Answer the hook in the script. Search terms go in line 1. Do the maths yourself. No absolute claims. No "Part 2" unless it's scheduled. About 40 seconds. Time-bound angles ("tonight") need a dated expiry.
+Put a true number hook in the first 2 seconds (481 m, "1 sifflement = 1 prénom"). Answer the hook, then add a twist (the synthetic whistles). No absolute claims: write "one of the best-proven cases", not "unique". About 40–55 seconds. Use "comme un nom", not "langage" or "traduction".
 
 ## Mr. Cut
-Use free stock or credited official images only after the licence is confirmed. Halley 1986 photo: confirm the licence before the Taurids Short. About 20 shots. Dramatic visuals in the first 2 seconds (to test). Put credits on screen.
+Use free stock or credited official images, licence confirmed. About 20 shots. Put a credit on screen for every paper cited. Dramatic visuals in the first 2 seconds (to test). Confirm the Halley 1986 licence before the Taurids Short.
 
 ## Mr. Spark
-Add energy, not facts. Thumbnail text must be accurate. Comments are still 0 on every Short. To test: an on-screen question plus a pinned comment ("Did you see a fireball? Tell us your city").
+Add energy, not facts. Today's filler comparison had to be cut. Thumbnail text must be accurate. Comments are still 0. To test: an on-screen question plus a pinned comment (dolphin Short).
 
 ## Mr. Post
-Titles under 60 characters, ending in #Shorts. Check the outbox and the performance list for duplicates. Ask the owner to: delete the duplicate rQPOCx8wY6c, confirm the duck and Gaganyaan uploads (no IDs), and find the Orionids Short. Correction: Orionids peaked on 21–22 Oct, so it is stale now. Edit it or drop it, don't publish it as is. Put an expiry date on every timely Short.
+Titles under 60 characters, ending in #Shorts. Check for duplicates. The queue has no fields for voice, category, thumbnail, alternative titles or pinned comment, so list these for the owner. Still open for the owner: delete rQPOCx8wY6c, confirm the duck and Surrey uploads, fix Lula, and don't publish Orionids.

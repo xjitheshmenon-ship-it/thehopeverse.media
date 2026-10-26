@@ -49,6 +49,13 @@
       "look": "Indian woman, 52, gentle tired face with soft sad eyes, faint lines, greying black hair in a low bun, plain off-white cotton saree with a white woollen shawl over her head, one gold bangle",
       "voice": "hi-IN-SwaraNeural",
       "pitch": "-4Hz"
+    },
+    {
+      "name": "Kavita",
+      "role": "Woman in the white shawl who claims to be Meera's younger sister, hiding a secret",
+      "look": "Indian woman, 50, gentle tired face with soft guarded eyes, faint lines, greying black hair in a low bun, plain off-white cotton saree with a white woollen shawl over her head, holding a gold bangle and an old bakery box",
+      "voice": "hi-IN-SwaraNeural",
+      "pitch": "-6Hz"
     }
   ],
   "episodes": [
@@ -101,6 +108,11 @@
       "n": 10,
       "title": "Ep 10 | 100 दिन का रिश्ता: बानगंगा पर विक्रम, कंगन और बीस साल बाद 'माँ'",
       "summary": "At Banganga, Vikram warns Riya to stop digging into Meera and threatens to show the contract to Dadi, until Kabir arrives and defends his wife. Meera's bangle and a note in her handwriting lead Kabir to a back door, where the woman in the white shawl calls him 'beta' and he whispers 'Maa?'"
+    },
+    {
+      "n": 11,
+      "title": "Ep 11 | 100 दिन का रिश्ता: 'माँ' नहीं, मौसी? कविता का राज़ और कलाई का निशान",
+      "summary": "At Banganga, the woman in the white shawl says she is Kavita, Meera's younger sister, who has kept Meera's bangle and the bakery box for twenty years, and that Meera never returned after that rainy night, leaving Kabir shattered. Riya notices a deep bangle mark on Kavita's wrist, as if she had worn it for years, then overhears her on the phone saying 'he didn't recognise me, but that girl understands everything.'"
     }
   ]
 }

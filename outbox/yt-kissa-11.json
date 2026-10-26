@@ -1,0 +1,214 @@
+{
+  "channel_id": "yt-kissa",
+  "title": "Ep 11 | 100 \u0926\u093f\u0928 \u0915\u093e \u0930\u093f\u0936\u094d\u0924\u093e: '\u092e\u093e\u0901' \u0928\u0939\u0940\u0902, \u092e\u094c\u0938\u0940? \u0915\u0935\u093f\u0924\u093e \u0915\u093e \u0930\u093e\u091c\u093c \u0914\u0930 \u0915\u0932\u093e\u0908 \u0915\u093e \u0928\u093f\u0936\u093e\u0928",
+  "description": "\u092c\u0940\u0938 \u0938\u093e\u0932 \u092c\u093e\u0926 \u0915\u092c\u0940\u0930 \u0928\u0947 \u091c\u093f\u0938\u0947 '\u092e\u093e\u0901' \u0915\u0939\u093e, \u0935\u094b \u092c\u094b\u0932\u0940, '\u092e\u0948\u0902 \u092e\u0940\u0930\u093e \u0928\u0939\u0940\u0902, \u0909\u0938\u0915\u0940 \u092c\u0939\u0928 \u0915\u0935\u093f\u0924\u093e \u0939\u0942\u0901\u0964' \u091f\u0942\u091f\u0947 \u0939\u0941\u090f \u0915\u092c\u0940\u0930 \u0915\u094b \u0930\u093f\u092f\u093e \u0928\u0947 \u0938\u0902\u092d\u093e\u0932\u093e, \u092a\u0930 \u0909\u0938\u0915\u0940 \u0928\u091c\u093c\u0930 \u0915\u0935\u093f\u0924\u093e \u0915\u0940 \u0915\u0932\u093e\u0908 \u092a\u0930 \u0905\u091f\u0915 \u0917\u0908\u0964 \u0914\u0930 \u092b\u093f\u0930 \u090f\u0915 \u092b\u093c\u094b\u0928 \u0915\u0949\u0932 \u0928\u0947 \u0938\u092c \u092c\u0926\u0932 \u0926\u093f\u092f\u093e\u0964\n#Kissa #100DinKaRishta #HindiWebSeries #KDramaHindi #Shorts",
+  "lang": "hi",
+  "category": "24",
+  "footer": "Ek kahaani. Roz ek twist. \u0930\u094b\u091c\u093c \u0928\u092f\u093e \u090f\u092a\u093f\u0938\u094b\u0921\u0964 Subscribe \u0915\u0930\u0947\u0902 \u0924\u093e\u0915\u093f \u0905\u0917\u0932\u093e \u091f\u094d\u0935\u093f\u0938\u094d\u091f \u092e\u093f\u0938 \u0928 \u0939\u094b\u0964\nMade by AI. Made with hope.",
+  "music": "Melancholic emotional piano with soft strings, misty morning atmosphere, slow heartbreak build, shifting into low suspenseful cello pulses and a tense rising drone for a mysterious cliffhanger ending, no vocals",
+  "cast": [
+    {
+      "name": "Narrator",
+      "role": "Storyteller voice",
+      "look": "Indian man, 40s, calm face, short neat black hair, plain dark kurta, unseen voice-over",
+      "voice": "hi-IN-MadhurNeural",
+      "pitch": "+0Hz"
+    },
+    {
+      "name": "Riya",
+      "role": "Heroine, 24, runs her late father's bakery in Lucknow",
+      "look": "Indian woman, 24, expressive large brown eyes, warm wheatish face, long black hair in a loose braid, flour-dusted pastel cotton kurta with a bakery apron",
+      "voice": "hi-IN-SwaraNeural",
+      "pitch": "+0Hz"
+    },
+    {
+      "name": "Kabir",
+      "role": "Cold heir of the Malhotra hotel empire, 29",
+      "look": "Indian man, 29, sharp jawline, light stubble, intense cold eyes, neatly styled black hair, tailored charcoal suit with an open-collar white shirt and an expensive watch",
+      "voice": "hi-IN-MadhurNeural",
+      "pitch": "+0Hz"
+    },
+    {
+      "name": "Gupta",
+      "role": "Greedy Lucknow moneylender",
+      "look": "Indian man, 55, round face, thick moustache, receding oiled grey hair, cream safari suit, gold rings, a red tilak on his forehead",
+      "voice": "hi-IN-MadhurNeural",
+      "pitch": "+0Hz"
+    },
+    {
+      "name": "Vikram",
+      "role": "Kabir's scheming uncle who wants control of the Malhotra hotels",
+      "look": "Indian man, 58, lean sharp face, thin smirk, salt-and-pepper hair combed back, trimmed grey beard, black bandhgala jacket with a silver brooch, rimless glasses",
+      "voice": "hi-IN-MadhurNeural",
+      "pitch": "-4Hz"
+    },
+    {
+      "name": "Dadi",
+      "role": "Kabir's stern grandmother, head of the Malhotra family",
+      "look": "Indian woman, 75, stern wrinkled face, sharp grey eyes, silver hair in a tight bun, cream silk saree with a gold border, pearl necklace and reading glasses on a chain",
+      "voice": "hi-IN-SwaraNeural",
+      "pitch": "-8Hz"
+    },
+    {
+      "name": "Meera",
+      "role": "Kabir's long-lost mother, believed dead for twenty years",
+      "look": "Indian woman, 52, gentle tired face with soft sad eyes, faint lines, greying black hair in a low bun, plain off-white cotton saree with a white woollen shawl over her head, one gold bangle",
+      "voice": "hi-IN-SwaraNeural",
+      "pitch": "-4Hz"
+    },
+    {
+      "name": "Kavita",
+      "role": "Woman in the white shawl who claims to be Meera's younger sister, hiding a secret",
+      "look": "Indian woman, 50, gentle tired face with soft guarded eyes, faint lines, greying black hair in a low bun, plain off-white cotton saree with a white woollen shawl over her head, holding a gold bangle and an old bakery box",
+      "voice": "hi-IN-SwaraNeural",
+      "pitch": "-6Hz"
+    }
+  ],
+  "scenes": [
+    {
+      "narration": "\u0928\u0939\u0940\u0902 \u092c\u0947\u091f\u093e... \u092e\u0948\u0902 \u0924\u0941\u092e\u094d\u0939\u093e\u0930\u0940 \u092e\u093e\u0901 \u0928\u0939\u0940\u0902 \u0939\u0942\u0901\u0964 \u092e\u0948\u0902 \u0915\u0935\u093f\u0924\u093e \u0939\u0942\u0901, \u092e\u0940\u0930\u093e \u0915\u0940 \u091b\u094b\u091f\u0940 \u092c\u0939\u0928\u0964",
+      "on_screen_text": "\u092e\u0948\u0902 \u092e\u093e\u0901 \u0928\u0939\u0940\u0902... \u0915\u0935\u093f\u0924\u093e \u0939\u0942\u0901",
+      "picture_search": "old Mumbai back door",
+      "image_prompt": "Indian woman, 50, in off-white saree and white woollen shawl over her head, standing at a weathered wooden back door in a narrow misty lane near Banganga Tank at dawn, eyes wet, shaking her head gently, cinematic Indian drama still",
+      "speaker": "Kavita",
+      "host_on_screen": true,
+      "on_screen": "Kavita"
+    },
+    {
+      "narration": "\u092c\u0939\u0928? \u0924\u094b \u092f\u0947 \u0915\u0902\u0917\u0928... \u092f\u0947 \u091a\u093f\u091f\u094d\u0920\u0940... \u092f\u0947 \u0938\u092c \u0915\u094d\u092f\u093e \u0925\u093e?",
+      "on_screen_text": "\u0924\u094b \u092f\u0947 \u0915\u0902\u0917\u0928... \u092f\u0947 \u091a\u093f\u091f\u094d\u0920\u0940?",
+      "picture_search": "misty narrow Mumbai lane",
+      "image_prompt": "Indian man, 29, sharp jawline, light stubble, charcoal suit, standing frozen in a misty old Mumbai lane at dawn, voice breaking, eyes red with disbelief, one hand half raised, photo-real Indian drama still",
+      "speaker": "Kabir",
+      "host_on_screen": true,
+      "on_screen": "Kabir"
+    },
+    {
+      "narration": "\u092c\u0940\u0938 \u0938\u093e\u0932 \u0938\u0947 \u092f\u0947 \u0915\u0902\u0917\u0928 \u0914\u0930 \u092f\u0947 \u0921\u093f\u092c\u094d\u092c\u093e \u0938\u0902\u092d\u093e\u0932 \u0930\u0939\u0940 \u0939\u0942\u0901\u0964 \u0926\u0940\u0926\u0940 \u0915\u0940 \u0906\u0916\u093c\u093f\u0930\u0940 \u0905\u092e\u093e\u0928\u0924 \u0939\u0948\u0964",
+      "on_screen_text": "\u092c\u0940\u0938 \u0938\u093e\u0932 \u0915\u0940 \u0905\u092e\u093e\u0928\u0924",
+      "picture_search": "old bakery box bangle",
+      "image_prompt": "Indian woman, 50, in white shawl holding an old faded Saxena Bakery cardboard box and a gold bangle close to her chest, standing at an old wooden doorway in morning mist, sorrowful expression, cinematic still",
+      "speaker": "Kavita",
+      "host_on_screen": true,
+      "on_screen": "Kavita"
+    },
+    {
+      "narration": "\u0906\u0916\u093c\u093f\u0930\u0940? \u092e\u0924\u0932\u092c... \u092e\u093e\u0901 \u0938\u091a \u092e\u0947\u0902 \u0905\u092c \u0928\u0939\u0940\u0902 \u0930\u0939\u0940\u0902?",
+      "on_screen_text": "\u092e\u093e\u0901 \u0938\u091a \u092e\u0947\u0902 \u0928\u0939\u0940\u0902 \u0930\u0939\u0940\u0902?",
+      "picture_search": "old stone lane dawn",
+      "image_prompt": "Indian man, 29, in charcoal suit, stepping closer in a stone lane at dawn, face crumbling with pain, jaw clenched, eyes glistening, soft morning fog, Indian drama still",
+      "speaker": "Kabir",
+      "host_on_screen": true,
+      "on_screen": "Kabir"
+    },
+    {
+      "narration": "\u0909\u0938 \u092c\u0930\u0938\u093e\u0924 \u0915\u0940 \u0930\u093e\u0924 \u0915\u0947 \u092c\u093e\u0926 \u0926\u0940\u0926\u0940 \u0915\u092d\u0940 \u0928\u0939\u0940\u0902 \u0932\u094c\u091f\u0940\u0902\u0964 \u092e\u0941\u091d\u0947 \u092e\u093e\u092b\u093c \u0915\u0930 \u0926\u094b, \u092c\u0947\u091f\u093e\u0964",
+      "on_screen_text": "\u0926\u0940\u0926\u0940 \u0915\u092d\u0940 \u0928\u0939\u0940\u0902 \u0932\u094c\u091f\u0940\u0902",
+      "picture_search": "weathered wooden doorway",
+      "image_prompt": "Indian woman, 50, in off-white saree and white shawl, lowering her eyes and folding her hands in apology at a weathered wooden doorway, mist around her, tears on her cheeks, photo-real still",
+      "speaker": "Kavita",
+      "host_on_screen": true,
+      "on_screen": "Kavita"
+    },
+    {
+      "narration": "\u0915\u092c\u0940\u0930 \u0915\u0947 \u0932\u093f\u090f \u091c\u094b \u0909\u092e\u094d\u092e\u0940\u0926 \u092a\u0932 \u092d\u0930 \u092e\u0947\u0902 \u091c\u093e\u0917\u0940 \u0925\u0940, \u0935\u094b \u0909\u0924\u0928\u0940 \u0939\u0940 \u091c\u0932\u094d\u0926\u0940 \u091f\u0942\u091f \u0917\u0908\u0964",
+      "on_screen_text": "\u0909\u092e\u094d\u092e\u0940\u0926 \u091f\u0942\u091f \u0917\u0908",
+      "picture_search": "Banganga Tank steps mist",
+      "image_prompt": "Indian man, 29, in charcoal suit, slowly sinking down onto old stone steps of Banganga Tank in morning mist, head lowered, hands trembling, heartbroken, cinematic Indian drama still",
+      "speaker": "Narrator",
+      "host_on_screen": true,
+      "on_screen": "Kabir"
+    },
+    {
+      "narration": "\u092c\u0940\u0938 \u0938\u093e\u0932... \u0914\u0930 \u0906\u091c \u092e\u0948\u0902\u0928\u0947 \u0909\u0928\u094d\u0939\u0947\u0902 \u092b\u093f\u0930 \u0938\u0947 \u0916\u094b \u0926\u093f\u092f\u093e\u0964",
+      "on_screen_text": "\u0906\u091c \u092b\u093f\u0930 \u0916\u094b \u0926\u093f\u092f\u093e",
+      "picture_search": "Banganga Tank stone steps",
+      "image_prompt": "Indian man, 29, sitting on misty stone steps of Banganga Tank, staring at the water with empty wet eyes, whispering, cold face finally broken, photo-real still",
+      "speaker": "Kabir",
+      "host_on_screen": true,
+      "on_screen": "Kabir"
+    },
+    {
+      "narration": "\u0915\u092c\u0940\u0930, \u0938\u0902\u092d\u093e\u0932\u093f\u090f \u0916\u0941\u0926 \u0915\u094b\u0964 \u092e\u0948\u0902 \u0939\u0942\u0901 \u0928\u093e, \u092f\u0939\u0940\u0902 \u0939\u0942\u0901\u0964",
+      "on_screen_text": "\u092e\u0948\u0902 \u0939\u0942\u0901 \u0928\u093e, \u092f\u0939\u0940\u0902",
+      "picture_search": "Banganga Tank morning",
+      "image_prompt": "Indian woman, 24, long black braid, pastel cotton kurta, kneeling beside a seated man on misty Banganga stone steps, holding his hand firmly, eyes full of concern, warm tender expression, Indian drama still",
+      "speaker": "Riya",
+      "host_on_screen": true,
+      "on_screen": "Riya"
+    },
+    {
+      "narration": "\u0915\u0935\u093f\u0924\u093e \u091c\u0940, \u0905\u0917\u0930 \u0906\u092a \u092e\u0940\u0930\u093e \u091c\u0940 \u0915\u0940 \u092c\u0939\u0928 \u0939\u0948\u0902, \u0924\u094b \u0935\u094b \u0921\u093f\u092c\u094d\u092c\u093e \u092e\u0947\u0930\u0947 \u0915\u092e\u0930\u0947 \u092e\u0947\u0902 \u0915\u093f\u0938\u0928\u0947 \u0930\u0916\u093e?",
+      "on_screen_text": "\u0921\u093f\u092c\u094d\u092c\u093e \u0915\u092e\u0930\u0947 \u092e\u0947\u0902 \u0915\u093f\u0938\u0928\u0947 \u0930\u0916\u093e?",
+      "picture_search": "old Mumbai lane doorway",
+      "image_prompt": "Indian woman, 24, in pastel kurta with loose braid, standing up and turning sharply toward a doorway in a misty lane, eyes narrowed with suspicion, firm questioning expression, photo-real still",
+      "speaker": "Riya",
+      "host_on_screen": true,
+      "on_screen": "Riya"
+    },
+    {
+      "narration": "\u0915\u0941\u091b \u0938\u0935\u093e\u0932\u094b\u0902 \u0915\u0947 \u091c\u0935\u093e\u092c \u0926\u0947\u0928\u0947 \u0915\u093e \u0905\u092d\u0940 \u0935\u0915\u093c\u094d\u0924 \u0928\u0939\u0940\u0902 \u0906\u092f\u093e, \u092c\u0939\u0942\u0964",
+      "on_screen_text": "\u0905\u092d\u0940 \u0935\u0915\u093c\u094d\u0924 \u0928\u0939\u0940\u0902 \u0906\u092f\u093e, \u092c\u0939\u0942",
+      "picture_search": "weathered wooden back door",
+      "image_prompt": "Indian woman, 50, in white shawl, avoiding eye contact, pulling the shawl tighter around her face at an old wooden back door, guarded nervous expression, morning fog, Indian drama still",
+      "speaker": "Kavita",
+      "host_on_screen": true,
+      "on_screen": "Kavita"
+    },
+    {
+      "narration": "\u0914\u0930 \u0906\u092a\u0915\u094b \u0915\u0948\u0938\u0947 \u092a\u0924\u093e \u0915\u093f \u092e\u0948\u0902 \u0909\u0928\u0915\u0940 \u092c\u0939\u0942 \u0939\u0942\u0901?",
+      "on_screen_text": "\u0906\u092a\u0915\u094b \u0915\u0948\u0938\u0947 \u092a\u0924\u093e?",
+      "picture_search": "misty narrow lane",
+      "image_prompt": "Indian woman, 24, in pastel kurta, taking a step forward in a narrow misty lane, eyebrows raised, sharp suspicious gaze, arms tense, cinematic still",
+      "speaker": "Riya",
+      "host_on_screen": true,
+      "on_screen": "Riya"
+    },
+    {
+      "narration": "\u092a\u0942\u0930\u093e \u092e\u0941\u0902\u092c\u0908 \u091c\u093e\u0928\u0924\u093e \u0939\u0948, \u092c\u0947\u091f\u093e... \u0905\u092c \u092e\u0941\u091d\u0947 \u091c\u093e\u0928\u093e \u0939\u094b\u0917\u093e\u0964",
+      "on_screen_text": "\u092e\u0941\u091d\u0947 \u091c\u093e\u0928\u093e \u0939\u094b\u0917\u093e",
+      "picture_search": "old Mumbai back lane",
+      "image_prompt": "Indian woman, 50, in off-white saree and white shawl, forcing a faint smile and turning away into a narrow misty back lane, clutching the bakery box, hurried nervous body language, photo-real still",
+      "speaker": "Kavita",
+      "host_on_screen": true,
+      "on_screen": "Kavita"
+    },
+    {
+      "narration": "\u091c\u093e\u0924\u0947 \u0939\u0941\u090f \u0915\u0935\u093f\u0924\u093e \u0928\u0947 \u0936\u0949\u0932 \u0920\u0940\u0915 \u0915\u0940, \u0914\u0930 \u0930\u093f\u092f\u093e \u0915\u0940 \u0928\u091c\u093c\u0930 \u0909\u0938\u0915\u0940 \u0915\u0932\u093e\u0908 \u092a\u0930 \u0905\u091f\u0915 \u0917\u0908\u0964 \u0935\u0939\u093e\u0901 \u0915\u0902\u0917\u0928 \u0915\u093e \u0917\u0939\u0930\u093e \u0928\u093f\u0936\u093e\u0928 \u0925\u093e, \u091c\u0948\u0938\u0947 \u092c\u0930\u0938\u094b\u0902 \u0938\u0947 \u092a\u0939\u0928\u093e \u0939\u094b\u0964",
+      "on_screen_text": "\u0915\u0932\u093e\u0908 \u092a\u0930 \u0915\u0902\u0917\u0928 \u0915\u093e \u0928\u093f\u0936\u093e\u0928",
+      "picture_search": "wrist bangle mark closeup",
+      "image_prompt": "Indian woman, 50, in white shawl, adjusting her shawl as she walks away, close view of her wrist showing a deep pale bangle-shaped mark on her skin, misty lane behind, cinematic Indian drama still",
+      "speaker": "Narrator",
+      "host_on_screen": true,
+      "on_screen": "Kavita"
+    },
+    {
+      "narration": "\u0905\u0917\u0930 \u0938\u093f\u0930\u094d\u092b\u093c \u0938\u0902\u092d\u093e\u0932\u093e \u0925\u093e... \u0924\u094b \u092f\u0947 \u0928\u093f\u0936\u093e\u0928 \u0915\u0948\u0938\u0947?",
+      "on_screen_text": "\u0924\u094b \u092f\u0947 \u0928\u093f\u0936\u093e\u0928 \u0915\u0948\u0938\u0947?",
+      "picture_search": "foggy Mumbai lane",
+      "image_prompt": "Indian woman, 24, in pastel kurta with long braid, staring after a departing figure in a foggy lane, whispering to herself, eyes wide with dawning suspicion, photo-real still",
+      "speaker": "Riya",
+      "host_on_screen": true,
+      "on_screen": "Riya"
+    },
+    {
+      "narration": "\u0939\u093e\u0901... \u0909\u0938\u0928\u0947 \u092e\u0941\u091d\u0947 \u0928\u0939\u0940\u0902 \u092a\u0939\u091a\u093e\u0928\u093e\u0964 \u092a\u0930 \u0935\u094b \u0932\u0921\u093c\u0915\u0940... \u0935\u094b \u0938\u092c \u0938\u092e\u091d \u0930\u0939\u0940 \u0939\u0948\u0964",
+      "on_screen_text": "\u0935\u094b \u0932\u0921\u093c\u0915\u0940 \u0938\u092c \u0938\u092e\u091d \u0930\u0939\u0940 \u0939\u0948",
+      "picture_search": "lane corner phone call",
+      "image_prompt": "Indian woman, 50, in white shawl, hiding around a stone lane corner, speaking secretly into an old mobile phone, glancing back over her shoulder, tense fearful eyes, misty dawn, Indian drama still",
+      "speaker": "Kavita",
+      "host_on_screen": true,
+      "on_screen": "Kavita"
+    },
+    {
+      "narration": "\u0915\u094c\u0928 \u0939\u0948 \u092f\u0947 \u0914\u0930\u0924? \u0914\u0930 \u092b\u093c\u094b\u0928 \u0915\u0947 \u0909\u0938 \u092a\u093e\u0930 \u0915\u094c\u0928 \u0939\u0948? \u0915\u0932 \u0915\u093e \u0915\u093f\u0938\u094d\u0938\u093e \u0938\u092c \u092c\u0926\u0932 \u0926\u0947\u0917\u093e\u0964",
+      "on_screen_text": "\u092b\u093c\u094b\u0928 \u0915\u0947 \u0909\u0938 \u092a\u093e\u0930 \u0915\u094c\u0928?",
+      "picture_search": "misty lane mystery woman",
+      "image_prompt": "Indian woman, 50, in off-white saree and white shawl, lowering the phone and disappearing into thick morning mist down an old Mumbai lane, face half hidden, mysterious mood, cinematic still",
+      "speaker": "Narrator",
+      "host_on_screen": true,
+      "on_screen": "Kavita"
+    }
+  ],
+  "youtube_id": "VvR2WCbiAOM"
+}
