@@ -42,6 +42,13 @@
       "look": "Indian woman, 75, stern wrinkled face, sharp grey eyes, silver hair in a tight bun, cream silk saree with a gold border, pearl necklace and reading glasses on a chain",
       "voice": "hi-IN-SwaraNeural",
       "pitch": "-8Hz"
+    },
+    {
+      "name": "Meera",
+      "role": "Kabir's long-lost mother, believed dead for twenty years",
+      "look": "Indian woman, 52, gentle tired face with soft sad eyes, faint lines, greying black hair in a low bun, plain off-white cotton saree with a white woollen shawl over her head, one gold bangle",
+      "voice": "hi-IN-SwaraNeural",
+      "pitch": "-4Hz"
     }
   ],
   "episodes": [
@@ -89,6 +96,11 @@
       "n": 9,
       "title": "Ep 9 | 100 दिन का रिश्ता: मीरा ज़िंदा है? बानगंगा की तस्वीर और विक्रम",
       "summary": "After the 'Meera is alive' text, Dadi reveals Vikram told her Meera died in an accident with no body found, and the anonymous number sends a photo of a woman at Banganga Tank wearing Meera's bangle and holding a Saxena Bakery box. It invites Riya to come alone at 6 am, and as she faces the woman in a white shawl on the misty steps, Vikram's voice suddenly calls out from behind her."
+    },
+    {
+      "n": 10,
+      "title": "Ep 10 | 100 दिन का रिश्ता: बानगंगा पर विक्रम, कंगन और बीस साल बाद 'माँ'",
+      "summary": "At Banganga, Vikram warns Riya to stop digging into Meera and threatens to show the contract to Dadi, until Kabir arrives and defends his wife. Meera's bangle and a note in her handwriting lead Kabir to a back door, where the woman in the white shawl calls him 'beta' and he whispers 'Maa?'"
     }
   ]
 }
