@@ -1,17 +1,10 @@
 {
-  "premise": "Season 1, '100 Din Ka Rishta': Riya Saxena, 24, runs her late father's small bakery in Lucknow and is about to lose it to moneylender Gupta. Kabir Malhotra, 29, the cold heir of a Mumbai hotel empire, must be married within 100 days to keep control of the company from his scheming uncle Vikram. A chance meeting leads to a contract: a 100-day fake marriage in exchange for the bakery's debt. The rules are no feelings, no family drama and no one finds out. Over about 30 episodes every rule breaks. Riya moves into the Malhotra mansion in Mumbai and faces a suspicious family led by stern Dadi. Vikram's spy tries to expose the contract, Kabir's childhood friend becomes a second lead, and a family secret ties Riya's father Ramesh Saxena's debt and Kabir's long-gone mother Meera to the Malhotras. The two fall truly in love. The season ends with the contract exposed on day 100, and Kabir has to choose between the company and Riya.",
+  "premise": "Season 1, '100 Din Ka Rishta': Riya Saxena, 24, runs her late father's small bakery in Lucknow and is about to lose it to moneylender Gupta. Kabir Malhotra, 29, the cold heir of a Mumbai hotel empire, must be married within 100 days to keep control of the company from his scheming uncle Vikram. A chance meeting leads to a contract: a 100-day fake marriage in exchange for the bakery's debt. The rules are no feelings, no family drama and no one finds out. Over about 30 episodes every rule breaks. Riya moves into the Malhotra mansion in Mumbai and faces a suspicious family led by stern Dadi. Vikram's spy tries to expose the contract, Kabir's childhood friend Aarav becomes a second lead who secretly guards a hidden woman in a Mumbai chawl, and a family secret ties Riya's father Ramesh Saxena's debt and Kabir's long-gone mother Meera to the Malhotras. The two fall truly in love. The season ends with the contract exposed on day 100, and Kabir has to choose between the company and Riya.",
   "cast": [
     {
-      "name": "Narrator",
-      "role": "Storyteller voice",
-      "look": "Indian man, 40s, calm face, short neat black hair, plain dark kurta, unseen voice-over",
-      "voice": "hi-IN-MadhurNeural",
-      "pitch": "+0Hz"
-    },
-    {
       "name": "Riya",
-      "role": "Heroine, 24, runs her late father's bakery in Lucknow",
-      "look": "Indian woman, 24, expressive large brown eyes, warm wheatish face, long black hair in a loose braid, flour-dusted pastel cotton kurta with a bakery apron",
+      "role": "Heroine, 24, runs her late father's bakery in Lucknow, now Kabir's contract wife",
+      "look": "Indian woman, 24, expressive large brown eyes, warm wheatish face, long black hair in a loose braid, pastel peach cotton kurta with a light dupatta",
       "voice": "hi-IN-SwaraNeural",
       "pitch": "+0Hz"
     },
@@ -23,39 +16,18 @@
       "pitch": "+0Hz"
     },
     {
-      "name": "Gupta",
-      "role": "Greedy Lucknow moneylender",
-      "look": "Indian man, 55, round face, thick moustache, receding oiled grey hair, cream safari suit, gold rings, a red tilak on his forehead",
-      "voice": "hi-IN-MadhurNeural",
-      "pitch": "+0Hz"
-    },
-    {
-      "name": "Vikram",
-      "role": "Kabir's scheming uncle who wants control of the Malhotra hotels",
-      "look": "Indian man, 58, lean sharp face, thin smirk, salt-and-pepper hair combed back, trimmed grey beard, black bandhgala jacket with a silver brooch, rimless glasses",
-      "voice": "hi-IN-MadhurNeural",
-      "pitch": "-4Hz"
-    },
-    {
-      "name": "Dadi",
-      "role": "Kabir's stern grandmother, head of the Malhotra family",
-      "look": "Indian woman, 75, stern wrinkled face, sharp grey eyes, silver hair in a tight bun, cream silk saree with a gold border, pearl necklace and reading glasses on a chain",
-      "voice": "hi-IN-SwaraNeural",
-      "pitch": "-8Hz"
-    },
-    {
-      "name": "Meera",
-      "role": "Kabir's long-lost mother, believed dead for twenty years",
-      "look": "Indian woman, 52, gentle tired face with soft sad eyes, faint lines, greying black hair in a low bun, plain off-white cotton saree with a white woollen shawl over her head, one gold bangle",
-      "voice": "hi-IN-SwaraNeural",
-      "pitch": "-4Hz"
-    },
-    {
       "name": "Kavita",
       "role": "Woman in the white shawl who claims to be Meera's younger sister, hiding a secret",
-      "look": "Indian woman, 50, gentle tired face with soft guarded eyes, faint lines, greying black hair in a low bun, plain off-white cotton saree with a white woollen shawl over her head, holding a gold bangle and an old bakery box",
+      "look": "Indian woman, 50, gentle tired face with soft guarded eyes, faint lines, greying black hair in a low bun, plain off-white cotton saree with a white woollen shawl over her head, carrying a cloth bag of medicines",
       "voice": "hi-IN-SwaraNeural",
       "pitch": "-6Hz"
+    },
+    {
+      "name": "Aarav",
+      "role": "Kabir's childhood friend and second lead, secretly helping Kavita for years",
+      "look": "Indian man, 29, warm friendly face with worried kind eyes, short wavy black hair, neatly trimmed beard, navy denim jacket over a grey t-shirt, carrying a brown leather medicine bag",
+      "voice": "hi-IN-MadhurNeural",
+      "pitch": "+4Hz"
     }
   ],
   "episodes": [
@@ -113,6 +85,11 @@
       "n": 11,
       "title": "Ep 11 | 100 दिन का रिश्ता: 'माँ' नहीं, मौसी? कविता का राज़ और कलाई का निशान",
       "summary": "At Banganga, the woman in the white shawl says she is Kavita, Meera's younger sister, who has kept Meera's bangle and the bakery box for twenty years, and that Meera never returned after that rainy night, leaving Kabir shattered. Riya notices a deep bangle mark on Kavita's wrist, as if she had worn it for years, then overhears her on the phone saying 'he didn't recognise me, but that girl understands everything.'"
+    },
+    {
+      "n": 12,
+      "title": "Ep 12 | 100 दिन का रिश्ता: चॉल का पर्दा, आरव का राज़ और 'मरी हुई' औरत",
+      "summary": "Riya secretly follows Kavita to a Girgaon chawl and finds a frail bedridden woman hidden behind a curtain, with a childhood photo of Kabir on the wall. Kabir's childhood friend Aarav arrives, admits he has quietly brought medicines for seven years, hints the woman is the one the world thinks dead, and stops Riya from answering Kabir's call, warning 'they' will kill her this time, as the woman's eyes open."
     }
   ]
 }
