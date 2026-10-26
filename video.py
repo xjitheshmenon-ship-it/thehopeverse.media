@@ -5,7 +5,7 @@
 Voice: ElevenLabs (ELEVENLABS_API_KEY), else free Microsoft Edge voices (edge-tts). All lines are joined into one
 continuous voice track with a fixed pause between them, then laid under the finished picture, so lines never overlap or cut.
 Pictures (always moving video, never still photos): a host talking on screen is a lip-synced Kling avatar video from fal.ai
-(FAL_KEY); other shots are real stock footage from Pixabay (PIXABAY_API_KEY), else a Kling AI video clip, else NASA (no key).
+(FAL_KEY), or HeyGen when HEYGEN_API_KEY is set; other shots are real stock footage from Pixabay (PIXABAY_API_KEY), else a Kling AI video clip, else NASA (no key).
 Paid AI clips are capped per Short (AI_CLIPS_PER_SHORT) and by DAILY_BUDGET. Upload: needs client_secret.json from Google Cloud (see README).
 
 Dub channels: every new Short is also re-voiced for each channel in channels.json with a "lang" (e.g. Hindi), reusing
@@ -25,6 +25,7 @@ import time
 import urllib.parse
 import urllib.request
 import wave
+from functools import cache
 from datetime import datetime
 from pathlib import Path
 
@@ -42,14 +43,14 @@ HERE = Path(__file__).parent
 VOICE = os.environ.get("HOPE_VOICE", "en-US-AndrewNeural")
 PORTRAIT_MODEL = "fal-ai/flux-pro/v1.1-ultra"  # about $0.06, once per host; raw mode looks like a real photo, not a render
 HOST_MODEL = "fal-ai/flux-pro/kontext"  # about $0.04; the host's face from their reference photo, posed for the shot
-AVATAR_MODEL = "fal-ai/kling-video/ai-avatar/v2/standard"  # $0.0562 a second: that pose talks, lip-synced to the line
+# That pose then talks, lip-synced to the line: HeyGen Avatar IV when HEYGEN_API_KEY is set, else (or if it fails) Kling.
+AVATAR_MODEL = "fal-ai/kling-video/ai-avatar/v2/standard"  # $0.0562 a second
 VIDEO_MODEL = "fal-ai/kling-video/v2.5-turbo/pro/text-to-video"  # $0.35 per 5 s clip, when stock footage has nothing
 AI_CLIPS = int(os.environ.get("AI_CLIPS_PER_SHORT") or "3")  # paid AI video shots per Short; the rest is free stock
 ELEVEN_MODEL = os.environ.get("ELEVEN_MODEL") or "eleven_multilingual_v2"  # speaks English and Hindi
 # ElevenLabs voice ids. Change them in GitHub > Settings > Secrets and variables > Actions > Variables:
 # ELEVEN_VOICE_ARJUN, ELEVEN_VOICE_MEERA (any character by name), or ELEVEN_VOICE_MALE / ELEVEN_VOICE_FEMALE for the rest.
-ELEVEN_MALE = os.environ.get("ELEVEN_VOICE_MALE") or "nPczCjzI2devNBz1zQrb"  # Brian (premade)
-ELEVEN_FEMALE = os.environ.get("ELEVEN_VOICE_FEMALE") or "EXAVITQu4vr4xnVq9mPl"  # Sarah (premade)
+# Unset, a man's or woman's voice is picked from the account's own voices, Indian-accented ones first.
 GAP = 0.25  # seconds of quiet between two lines
 RATE = 44100
 HOSTS_DIR = HERE / "hosts"  # one reference photo per host, made once and then reused in every Short
@@ -236,6 +237,27 @@ def _stock(query: str, size: tuple, duration: float, work: Path, used: set):
     return None
 
 
+def heygen(still: Path, audio: Path, path: Path) -> float:
+    """The still talks, lip-synced to the line, with HeyGen's Avatar IV ($0.05 a second, HEYGEN_API_KEY).
+    Saves the video to path and returns its length in seconds."""
+    import fal_client  # public links HeyGen can fetch the photo and the voice from
+    headers = {"x-api-key": os.environ["HEYGEN_API_KEY"].strip(), "Content-Type": "application/json"}
+    body = {"type": "image", "image": {"type": "url", "url": fal_client.upload_file(str(still))},
+            "audio_url": fal_client.upload_file(str(audio)), "aspect_ratio": "9:16", "title": path.stem}
+    req = urllib.request.Request("https://api.heygen.com/v3/videos", data=json.dumps(body).encode(), headers=headers)
+    video_id = json.load(urllib.request.urlopen(req, timeout=60))["data"]["video_id"]
+    for _ in range(90):  # usually a few minutes
+        time.sleep(10)
+        req = urllib.request.Request(f"https://api.heygen.com/v3/videos/{video_id}", headers=headers)
+        video = json.load(urllib.request.urlopen(req, timeout=60))["data"]
+        if video["status"] == "completed":
+            urllib.request.urlretrieve(video["video_url"], path)
+            return video.get("duration") or 0
+        if video["status"] == "failed":
+            raise RuntimeError(video.get("failure_message") or video.get("failure_code"))
+    raise RuntimeError("HeyGen took over 15 minutes")
+
+
 def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float, work: Path, used: set):
     """Moving video only: the host really talking (Kling avatar), else Pixabay footage, else a Kling AI clip,
     else NASA footage, else Pixabay footage for a shorter search, else a plain colour."""
@@ -254,11 +276,18 @@ def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float
                             "image_url": fal_client.upload_file(str(host_photo(scene.speaker))), "aspect_ratio": "9:16"})
                         urllib.request.urlretrieve(result["images"][0]["url"], still)
                         paid["usd"] += 0.04
-                    result = fal_client.subscribe(AVATAR_MODEL, arguments={
-                        "image_url": fal_client.upload_file(str(still)), "audio_url": fal_client.upload_file(str(audio)),
-                        "prompt": "A real person talking naturally to the camera, small head and hand movements"})
-                    urllib.request.urlretrieve(result["video"]["url"], path)
-                    paid["usd"] += 0.0562 * (result.get("duration") or duration)
+                    if os.environ.get("HEYGEN_API_KEY"):
+                        try:
+                            paid["usd"] += 0.05 * (heygen(still, audio, path) or duration)
+                        except Exception as e:  # Kling below still gives a talking shot
+                            print(f"    HeyGen failed ({e} {getattr(e, 'read', lambda: b'')()[:200]!r}); using Kling")
+                    if not path.exists():
+                        result = fal_client.subscribe(AVATAR_MODEL, arguments={
+                            "image_url": fal_client.upload_file(str(still)),
+                            "audio_url": fal_client.upload_file(str(audio)),
+                            "prompt": "A real person talking naturally to the camera, small head and hand movements"})
+                        urllib.request.urlretrieve(result["video"]["url"], path)
+                        paid["usd"] += 0.0562 * (result.get("duration") or duration)
                     paid["clips"] += 1
                 return _clip(path, size, duration)
             except Exception as e:
@@ -312,6 +341,26 @@ def caption(text: str, size: tuple, lang: str = "") -> np.ndarray:
         w = draw.textlength(line, font=font)
         draw.text(((size[0] - w) / 2, top + i * line_h), line, font=font, fill="white")
     return np.array(img)
+
+
+@cache
+def eleven_voice(gender: str) -> str:
+    """A voice id from the ElevenLabs account for "male" or "female" (ELEVEN_VOICE_MALE/FEMALE win), or ""."""
+    if os.environ.get(f"ELEVEN_VOICE_{gender.upper()}"):
+        return os.environ[f"ELEVEN_VOICE_{gender.upper()}"]
+    if not os.environ.get("ELEVENLABS_API_KEY"):
+        return ""
+    try:
+        req = urllib.request.Request("https://api.elevenlabs.io/v1/voices",
+                                     headers={"xi-api-key": os.environ["ELEVENLABS_API_KEY"].strip()})
+        voices = [v for v in json.load(urllib.request.urlopen(req, timeout=30))["voices"]
+                  if (v.get("labels") or {}).get("gender") == gender]
+        voices.sort(key=lambda v: "indian" not in str(v.get("labels", {}).get("accent", "")).lower())
+        print(f"    ElevenLabs {gender} voice: {voices[0]['name'] if voices else 'none on the account'}")
+        return voices[0]["voice_id"] if voices else ""
+    except Exception as e:
+        print(f"    could not list ElevenLabs voices: {e}")
+        return ""
 
 
 def speak(text: str, voice: str, path: Path, pitch: str = "+0Hz", eleven: str = "", before: str = "",
@@ -402,8 +451,8 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
             audio = work / f"{prefix}{i:03}.mp3"
             # Dubs keep their channel's voice; English lines are read by the host who says them.
             who = {} if "dub_of" in package else HOSTS.get(scene.speaker, {})
-            eleven = os.environ.get(f"ELEVEN_VOICE_{scene.speaker.upper()}") or (
-                ELEVEN_FEMALE if "woman" in who.get("look", "").lower() else ELEVEN_MALE)
+            eleven = os.environ.get(f"ELEVEN_VOICE_{scene.speaker.upper()}") or eleven_voice(
+                "female" if "woman" in who.get("look", "").lower() else "male")
             if not speak(scene.narration, who.get("voice", voice), audio, who.get("pitch", "+0Hz"), eleven,
                          spoken[k - 1][1].narration if k else "",
                          spoken[k + 1][1].narration if k + 1 < len(spoken) else ""):
