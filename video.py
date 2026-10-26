@@ -489,7 +489,7 @@ def upload(video: Path, package: dict, token: Path = TOKEN) -> str:
         tags.pop()
     body = {"snippet": {"title": package["title"][:100],
                         "description": f"{package['description']}\n\n{footer}".strip()[:5000],
-                        "tags": tags, "categoryId": package.get("category", "28")},  # 28 = Science & Technology
+                        "tags": tags, "categoryId": package.get("category", "25")},  # 25 = News & Politics
             "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False,
                        "containsSyntheticMedia": True}}
     request = youtube(token=token).videos().insert(

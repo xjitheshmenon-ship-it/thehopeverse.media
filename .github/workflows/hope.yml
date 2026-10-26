@@ -78,8 +78,9 @@ jobs:
           python agents.py --grow || true  # Mr. Grow's notes for today's Shorts
           for id in $(python -c "import json; print(*[c['id'] for c in json.load(open('channels.json')) if c['platform'] == 'youtube' and c['status'] == 'live'])"); do
             for i in $(seq "$SHORTS_PER_DAY"); do
+              aud=$([ $((i * 3)) -le $((SHORTS_PER_DAY * 2)) ] && echo "Indian viewers" || echo "the international market")  # 4 of 6 for India
               HOPE_REVIEW=$([ "$i" = "$SHORTS_PER_DAY" ] && echo 1 || echo 0) python agents.py \
-                "Scheduled run, Short $i of $SHORTS_PER_DAY today for channel $id: get today's topics from Mr. Focus, check list_outbox, then draft and queue the best new YouTube Short for $id on a topic and category not already drafted today." || true
+                "Scheduled run, Short $i of $SHORTS_PER_DAY today for channel $id: get today's topics from Mr. Focus, check list_outbox, then draft and queue the best new current-affairs YouTube Short for $id, aimed at $aud, on a story not already drafted today." || true
             done
           done
           python video.py
