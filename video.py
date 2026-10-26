@@ -22,10 +22,12 @@ import re
 import subprocess
 import sys
 import textwrap
+import threading
 import time
 import urllib.parse
 import urllib.request
 import wave
+from concurrent.futures import ThreadPoolExecutor
 from functools import cache
 from pathlib import Path
 
@@ -48,6 +50,7 @@ AVATAR_MODEL = "fal-ai/kling-video/ai-avatar/v2/standard"  # $0.0562 a second
 VIDEO_MODEL = "fal-ai/kling-video/v2.5-turbo/pro/text-to-video"  # $0.35 per 5 s clip, when stock footage has nothing
 ACT_MODEL = "fal-ai/kling-video/v2.5-turbo/pro/image-to-video"  # $0.35 per 5 s: a series character acting, no lines
 AI_CLIPS = int(os.environ.get("AI_CLIPS_PER_SHORT") or "3")  # paid AI video shots per Short; the rest is free stock
+SCENE_WORKERS = int(os.environ.get("SCENE_WORKERS") or "6")  # scenes made at once
 ELEVEN_MODEL = os.environ.get("ELEVEN_MODEL") or "eleven_multilingual_v2"  # speaks English and Hindi
 # ElevenLabs voice ids. Change them in GitHub > Settings > Secrets and variables > Actions > Variables:
 # ELEVEN_VOICE_ARJUN, ELEVEN_VOICE_MEERA (any character by name), or ELEVEN_VOICE_MALE / ELEVEN_VOICE_FEMALE for the rest.
@@ -276,8 +279,17 @@ paid = {"clips": 0, "usd": 0.0, "blank": 0, "limit": AI_CLIPS}  # spending (fal.
 shots = []  # stock clips already matched in this video, reused when nothing else fits a later line
 
 
+_paying = threading.Lock()
+
+
 def _can_pay() -> bool:
-    return paid["clips"] < paid["limit"] and spent_today() + paid["usd"] < DAILY_BUDGET
+    """Reserve one AI clip if the video's cap and DAILY_BUDGET allow it. Scenes are made in parallel, so the
+    check and the count happen together."""
+    with _paying:
+        if paid["clips"] < paid["limit"] and spent_today() + paid["usd"] < DAILY_BUDGET:
+            paid["clips"] += 1
+            return True
+        return False
 
 
 def _pick(scene: "Scene", thumbnails: list) -> int:
@@ -409,7 +421,6 @@ def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float
                             "prompt": "A real person talking naturally to the camera, small head and hand movements"})
                         urllib.request.urlretrieve(result["video"]["url"], path)
                         paid["usd"] += 0.0562 * (result.get("duration") or duration)
-                    paid["clips"] += 1
                 shots.append(path)
                 return _clip(path, size, duration)
             except Exception as e:
@@ -438,7 +449,6 @@ def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float
                             "duration": "5", "negative_prompt": "cartoon, anime, CGI, plastic skin, text, blur, talking"})
                         urllib.request.urlretrieve(result["video"]["url"], path)
                         paid["usd"] += 0.35
-                    paid["clips"] += 1
                 shots.append(path)
                 return _clip(path, size, duration)
             except Exception as e:
@@ -479,7 +489,6 @@ def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float
                             "negative_prompt": "cartoon, anime, illustration, CGI, 3D render, plastic skin, text, blur"})
                         urllib.request.urlretrieve(result["video"]["url"], path)
                         paid["usd"] += 0.35
-                    paid["clips"] += 1
                 shots.append(path)
                 return _clip(path, size, duration)
             except Exception as e:
@@ -639,23 +648,30 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
             start = track.tell() / RATE
             track.writeframes(samples + b"\0\0" * int(GAP * RATE))
             lines.append((i, scene, audio.with_suffix(".wav"), start, track.tell() / RATE))
-    # 2. The picture for each line, silent, cut on whole frames so it never drifts from the voice.
-    parts, used = [], set()
-    for i, scene, audio, start, end in lines:
+    # 2. The picture for each line, silent, cut on whole frames so it never drifts from the voice. Scenes are made
+    # in parallel: most of the time is spent waiting on HeyGen, fal.ai and the footage check, not on this machine.
+    used = set()
+
+    def make(line):
+        i, scene, audio, start, end = line
         duration = (round(end * 30) - round(start * 30)) / 30
         layers = [background(scene, i, audio, size, duration, work, used, bool(package.get("cast"))),
                   ImageClip(caption(scene.on_screen_text, size, lang), transparent=True).with_duration(duration)]
         if logo:
             layers.append(logo.with_duration(duration))
         clip = CompositeVideoClip(layers, size=size).with_duration(duration)
-        # Each scene is written to disk and closed straight away, so only one scene's footage is in memory.
+        # Each scene is written to disk and closed straight away, so only a few scenes' footage is in memory.
         part = work / f"{prefix}scene-{i:03}.mp4"
         clip.write_videofile(str(part), fps=30, codec="libx264", audio=False,
                              ffmpeg_params=["-pix_fmt", "yuv420p"], logger=None)
         for c in (clip, *layers):
             c.close()
-        parts.append(part)
-        print(f"    scene {i + 1}/{len(board.scenes)}")
+        print(f"    scene {i + 1}/{len(board.scenes)} ({time.time() - began:.0f} s)")
+        return part
+
+    began = time.time()
+    with ThreadPoolExecutor(SCENE_WORKERS) as pool:
+        parts = list(pool.map(make, lines))  # in line order, whatever order they finish in
     if paid["usd"]:  # counted in DAILY_BUDGET with the Claude costs
         log_spend(paid["usd"], package["channel_id"])
         print(f"    fal.ai video cost ${paid['usd']:.2f}")
