@@ -1,16 +1,16 @@
-# Hopeverse spending report, 26 Oct 2026 17:30
+# Hopeverse spending report, 26 Oct 2026 22:04
 
-- Today: $23.68 (52 runs)
-- Last 7 days: $26.38
-- This month: $26.38
-- All time: $26.38
+- Today: $32.12 (64 runs)
+- Last 7 days: $34.82
+- This month: $34.82
+- All time: $34.82
 
 Claude (Anthropic) costs as estimated by agents.py, review included. Video images from fal.ai add
 about $0.006 each (about $0.06 a Short). Exact bills: console.anthropic.com and fal.ai/dashboard.
 
 | Day | Runs | Cost |
 | --- | --- | --- |
-| 2026-10-26 | 52 | $23.68 |
+| 2026-10-26 | 64 | $32.12 |
 | 2026-10-25 | 5 | $2.70 |
 
 ## Today's new channel idea (folder ideas/2026-10-26-yt-rumbo)
@@ -46,7 +46,7 @@ geografía, curiosidades del mundo, fronteras, mapas, lugares increíbles, datos
 ## Credits left
 
 - fal.ai: ? usd (Couldn't read the balance (HTTP Error 403: Forbidden); add a fal.ai READONLY key as the FAL_BILLING_KEY secret)
-- HeyGen: 10.0 usd (Talking hosts; Kling on fal.ai takes over when it runs out)
+- HeyGen: 7.28 usd (Talking hosts; Kling on fal.ai takes over when it runs out)
 - ElevenLabs: ? characters (Couldn't read the balance (HTTP Error 401: Unauthorized); turn on User: Read for the key in ElevenLabs)
 - Anthropic: ? usd (No balance API: see console.anthropic.com > Billing. Spend is logged per run)
 - Perplexity: ? usd (No balance API: see perplexity.ai/account/api. About $0.006 a search)
