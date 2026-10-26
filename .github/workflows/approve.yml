@@ -1,13 +1,22 @@
-# The dashboard talks to Hope through GitHub issues: its "Send to Hope" buttons open a filled-in new issue, and
-# pressing Submit runs this. Only the repo owner's issues count.
+# The dashboard talks to Hope. Its Approve/Reject buttons and "Talk to Hope" box save to the dashboard's own store,
+# and the "Hopeverse HQ inbox" scheduled task starts this workflow within a few minutes (through run.yml, branch
+# run/approve, inputs topics and note). The older path still works too: a GitHub issue from the repo owner titled
 #   "Topics for Hope": lines "ok <id>" / "no <id>" approve or reject planned topics (no script before approval)
 #   "Note for Hope":   a message Mr. Hope reads on his next runs and answers in his summary
 name: Dashboard to Hope
-run-name: "Dashboard: ${{ github.event.issue.title }}"
+run-name: "Dashboard: ${{ github.event.issue.title || (inputs.topics && 'topic choices' || 'message for Mr. Hope') }}"
 
 on:
   issues:
     types: [opened]
+  workflow_dispatch:
+    inputs:
+      topics:
+        description: "Topic choices: ok <id> / no <id>, separated by spaces or commas"
+        default: ""
+      note:
+        description: "A message for Mr. Hope"
+        default: ""
 
 permissions:
   contents: write
@@ -19,10 +28,11 @@ concurrency:
 
 jobs:
   save:
-    if: github.event.issue.user.login == github.repository_owner && (startsWith(github.event.issue.title, 'Topics for Hope') || startsWith(github.event.issue.title, 'Note for Hope'))
+    if: github.event_name == 'workflow_dispatch' || (github.event.issue.user.login == github.repository_owner && (startsWith(github.event.issue.title, 'Topics for Hope') || startsWith(github.event.issue.title, 'Note for Hope')))
     runs-on: ubuntu-latest
     env:
-      BODY: ${{ github.event.issue.body }}
+      TOPICS: ${{ inputs.topics || (startsWith(github.event.issue.title, 'Topics for Hope') && github.event.issue.body) || '' }}
+      NOTE: ${{ inputs.note || (startsWith(github.event.issue.title, 'Note for Hope') && github.event.issue.body) || '' }}
       GH_TOKEN: ${{ github.token }}
       GH_REPO: ${{ github.repository }}
       N: ${{ github.event.issue.number }}
@@ -32,14 +42,15 @@ jobs:
         with:
           python-version: "3.12"
       - run: python state.py load
-      - name: Save the approvals and start the next video
-        if: startsWith(github.event.issue.title, 'Topics for Hope')
-        run: |
-          said=$(python state.py approve | tail -n 1)
-          gh issue close "$N" -c "Saved: $said. The next approved video starts now; the dashboard shows it within the hour."
-          gh workflow run hope.yml --ref main -f job=next  # waits behind a running video; plans new topics for rejected ones
       - name: Save the message for Mr. Hope
-        if: startsWith(github.event.issue.title, 'Note for Hope')
+        if: env.NOTE != ''
         run: |
-          python state.py note
-          gh issue close "$N" -c "Saved. Mr. Hope reads it on his next run and replies in his summary on the dashboard."
+          BODY="$NOTE" python state.py note
+          [ -z "$N" ] || gh issue close "$N" -c "Saved. Mr. Hope reads it on his next run and replies in his summary on the dashboard."
+      - name: Save the approvals and start the next video
+        if: env.TOPICS != ''
+        run: |
+          said=$(BODY="$TOPICS" python state.py approve | tail -n 1)
+          echo "$said"
+          [ -z "$N" ] || gh issue close "$N" -c "Saved: $said. The next approved video starts now; the dashboard shows it within the hour."
+          gh workflow run hope.yml --ref main -f job=next  # waits behind a running video; plans new topics for rejected ones
