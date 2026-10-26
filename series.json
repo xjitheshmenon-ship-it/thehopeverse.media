@@ -1,5 +1,5 @@
 {
-  "premise": "Season 1, '100 Din Ka Rishta': Riya Saxena, 24, runs her late father's small bakery in Lucknow and is about to lose it to moneylender Gupta. Kabir Malhotra, 29, the cold heir of a Mumbai hotel empire, must be married within 100 days to keep control of the company from his scheming uncle Vikram. A chance meeting leads to a contract: a 100-day fake marriage in exchange for the bakery's debt. The rules are no feelings, no family drama and no one finds out. Over about 30 episodes every rule breaks. Riya moves into the Malhotra mansion in Mumbai and faces a suspicious family led by stern Dadi. Vikram's spy tries to expose the contract, Kabir's childhood friend Aarav becomes a second lead who secretly guards a hidden woman in a Mumbai chawl, and a family secret ties Riya's father Ramesh Saxena's debt and Kabir's long-gone mother Meera to the Malhotras. The two fall truly in love. The season ends with the contract exposed on day 100, and Kabir has to choose between the company and Riya.",
+  "premise": "Season 1, '100 Din Ka Rishta': Riya Saxena, 24, runs her late father's small bakery in Lucknow and is about to lose it to moneylender Gupta. Kabir Malhotra, 29, the cold heir of a Mumbai hotel empire, must be married within 100 days to keep control of the company from his scheming uncle Vikram. A chance meeting leads to a contract: a 100-day fake marriage in exchange for the bakery's debt. The rules are no feelings, no family drama and no one finds out. Over about 30 episodes every rule breaks. Riya moves into the Malhotra mansion in Mumbai and faces a suspicious family led by stern Dadi. Vikram's spy tries to expose the contract, Kabir's childhood friend Aarav becomes a second lead who secretly guards a hidden woman in a Mumbai chawl, and a family secret ties Riya's father Ramesh Saxena's debt and Kabir's long-gone mother Meera to the Malhotras. Meera's last diary, kept by her old nurse Sharda, holds the name Meera feared. The two fall truly in love. The season ends with the contract exposed on day 100, and Kabir has to choose between the company and Riya.",
   "cast": [
     {
       "name": "Riya",
@@ -24,7 +24,7 @@
     },
     {
       "name": "Aarav",
-      "role": "Kabir's childhood friend and second lead, secretly helping Kavita for years",
+      "role": "Kabir's childhood friend and second lead, secretly helping Kavita and Sharda for years",
       "look": "Indian man, 29, warm friendly face with worried kind eyes, short wavy black hair, neatly trimmed beard, navy denim jacket over a grey t-shirt, carrying a brown leather medicine bag",
       "voice": "hi-IN-MadhurNeural",
       "pitch": "+4Hz"
@@ -90,6 +90,11 @@
       "n": 12,
       "title": "Ep 12 | 100 दिन का रिश्ता: चॉल का पर्दा, आरव का राज़ और 'मरी हुई' औरत",
       "summary": "Riya secretly follows Kavita to a Girgaon chawl and finds a frail bedridden woman hidden behind a curtain, with a childhood photo of Kabir on the wall. Kabir's childhood friend Aarav arrives, admits he has quietly brought medicines for seven years, hints the woman is the one the world thinks dead, and stops Riya from answering Kabir's call, warning 'they' will kill her this time, as the woman's eyes open."
+    },
+    {
+      "n": 13,
+      "title": "Ep 13 | 100 दिन का रिश्ता: नर्स शारदा, मीरा की डायरी और दादी के पास पहुँची तस्वीर",
+      "summary": "Kavita reveals the bedridden woman is Sharda, Meera's former nurse, who has guarded Meera's last diary naming the person Meera feared, and gives it to Riya to read alone, while dodging questions about her own bangle mark. A spy photographs Aarav holding Riya's wrist on the chawl stairs and Dadi sends it to Kabir, who catches Riya lying about where she was and says Dadi is waiting downstairs."
     }
   ]
 }

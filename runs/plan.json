@@ -1,12 +1,6 @@
 {
  "yt-kissa": [
   {
-   "when": "2026-10-27 06:25",
-   "topic": "Ep 13: Kavita confesses the sick woman is not Meera but Meera's former nurse, who holds Meera's last diary, and Vikram's spy photographs Riya meeting Aarav alone and sends it to Dadi, framing her as unfaithful.",
-   "why": "Resolves the 'is Meera alive' tension with a partial answer and a new clue (the diary), while the spy's photo sets up the suspicion of Riya and a jealousy triangle between Kabir and Aarav.",
-   "planned": "2026-10-26 21:58"
-  },
-  {
    "when": "2026-10-27 08:30",
    "topic": "Ep 14: Dadi confronts Riya over the photo, and Kabir, forced to defend her publicly as his wife, slips and says 'I trust her more than anyone', breaking the 'no feelings' rule in front of the whole family.",
    "why": "Makes the first rule crack in public and forces Kabir to show feeling, raising romantic stakes and keeping Dadi's one-week test alive.",
@@ -35,6 +29,12 @@
    "why": "It builds on Ep 17's ultimatum by forcing the secret into the open and escalating the 'no feelings' rule-breaking, with Kabir choosing Riya over the contract. The twist, that the original contract is still with Vikram's spy, keeps the threat of exposure alive and raises the stakes toward the day-100 reveal, while giving Aarav a bigger role as the second lead.",
    "planned": "2026-10-27 00:33",
    "when": "2026-10-29 08:30"
+  },
+  {
+   "topic": "Ep 19: Riya and Kabir race to find the spy holding the original contract, and the trail leads to Sharda's chawl, where the diary's last line finally shows the name Meera feared. Before Riya can read it aloud, Dadi walks in with the spy and the contract in her hands.",
+   "why": "Ep 18 ended on the original contract being in the spy's hands, so Ep 19 pays that off by tying the hunt to the Sharda and diary thread. It also brings the main secret and the contract exposure to one tense cliffhanger at the halfway mark. Dadi arriving at the chawl raises the stakes for Meera's story and for the fake marriage.",
+   "planned": "2026-10-27 00:44",
+   "when": "2026-10-30 06:25"
   }
  ],
  "yt-instinct": [
@@ -84,14 +84,14 @@
   },
   {
    "when": "2026-10-27 10:10",
-   "topic": "Jamia Millia Islamia agrees to hold student union polls after 21 years, ending a hunger strike. It revokes suspensions and orders a probe into security personnel conduct",
-   "why": "A campus story with a clear sequence of events and a '21 years' number. It suits the student-heavy Indian audience at 09:00 IST.",
+   "topic": "Rahul Gandhi asks 'which traitor is US blackmailing' and targets the BJP and RSS over the Puri-Epstein picture: what was said and how the parties responded",
+   "why": "Political rows get strong engagement from Indian viewers. A neutral explainer of the claim and the replies fits the 11:00 IST slot.",
    "planned": "2026-10-26 15:33"
   },
   {
    "when": "2026-10-27 10:35",
-   "topic": "Rahul Gandhi asks 'which traitor is US blackmailing' and targets the BJP and RSS over the Puri-Epstein picture: what was said and how the parties responded",
-   "why": "Political rows get strong engagement from Indian viewers. A neutral explainer of the claim and the replies fits the 11:00 IST slot.",
+   "topic": "Jamia Millia Islamia agrees to hold student union polls after 21 years, ending a hunger strike. It revokes suspensions and orders a probe into security personnel conduct",
+   "why": "A campus story with a clear sequence of events and a '21 years' number. It suits the student-heavy Indian audience at 09:00 IST.",
    "planned": "2026-10-26 15:33"
   },
   {
@@ -116,38 +116,38 @@
  "yt-sankalp": [
   {
    "when": "2026-10-27 07:15",
+   "topic": "Thu 29 Oct 21:00 IST: Weekly explainer on the Cockroach protests and the paper-leak issue: what the government has done so far and what is still open. Include the minister's resignation, the detention of founder Abhijeet Dipke and any new policy announced this week. Verify every figure with two sources before publishing. Mark opinion clearly.",
+   "why": "A weekly recap works as a closing slot and rewards viewers who followed the story across the week. It lets the channel add any new developments in the news by Thursday.",
+   "planned": "2026-10-26 21:58"
+  },
+  {
+   "when": "2026-10-27 09:20",
    "topic": "Tue 27 Oct 15:00 IST: Modi government to use 12 AI services to screen about 2.9 lakh investor refund claims for fraud (NewsBytes, published within the last day). Explain what the claims are, how the AI checks work and what it means for ordinary investors. Mark opinion separately. Use Hindi and English versions. Anchors are AI and there are no AI faces of real people. Show only Wikimedia Commons photos of the ministers involved.",
    "why": "It is a fresh, concrete story with real numbers (12 AI services, 2.9 lakh claims). It touches adult investors aged 18-45 and fits the channel's pro-government 'policy explained' angle. It is not one of the Cockroach, paper-leak, crime-boss or cricket topics already made or planned. I could only find this one source, and my search could not confirm which ministry or scheme is involved, so find a second outlet or the official PIB or ministry release before scripting. If that fails, swap in the Cabinet's ₹52,878-crore approval of Fairfax's IDBI Bank bid. That story is about 12 days old, so flag its age on screen.",
    "planned": "2026-10-26 22:38"
   },
   {
-   "when": "2026-10-27 09:20",
+   "when": "2026-10-28 07:15",
    "topic": "Tue 27 Oct 21:00 IST: Indian police again detain 'Cockroach Janta Party' founder Abhijeet Dipke before a protest in New Delhi (CNN, Thursday press-conference report). Cover the facts of the detention, the legal basis for it and the protest permission rules. Mark opinion separately. Verify the date and the reason police gave with a second source.",
    "why": "This is the evening follow-up that viewers will search for. It gives a balanced, double-sourced account of the protest-versus-policing question without relying on rumours.",
    "planned": "2026-10-26 21:58"
   },
   {
-   "when": "2026-10-28 07:15",
+   "when": "2026-10-28 09:20",
    "topic": "Wed 28 Oct 15:00 IST: A CNN analysis asks whether a weeks-old Gen-Z protest group got Modi to 'blink', after the education minister's exit. Explain the government's response to the paper-leak issue as a sequence: what was announced, when, and what remains pending. Mark the 'what next' view as opinion. Confirm each step with two sources.",
    "why": "Viewers are asking what happens next, and a pro-government explainer can frame the response as accountability. Each step in the sequence has to be double-sourced.",
    "planned": "2026-10-26 21:58"
   },
   {
-   "when": "2026-10-28 09:20",
+   "when": "2026-10-29 07:15",
    "topic": "Wed 28 Oct 21:00 IST: US files charges against an Indian crime boss over the assassination plot that strained Canada-India ties (CNN India page). Explain the charge, the India-Canada background and India's official position. Confirm the accused's name, the charge details and the date with two outlets, plus the MEA statement if one exists.",
    "why": "It is a foreign-policy story with a direct link to India's diplomacy. The audience cares about India's global standing, and the story needs careful, sourced framing.",
    "planned": "2026-10-26 21:58"
   },
   {
-   "when": "2026-10-29 07:15",
+   "when": "2026-10-29 09:20",
    "topic": "Thu 29 Oct 15:00 IST: Mumbai's India Women's Cricket World Cup win over South Africa in the final at Navi Mumbai (3 Nov 2025, AP via CNN). Show how the win has fed into government sports policy and funding for women's cricket. Check the final score and any current sports ministry announcements before use. Note that the match is older than the 24-48 hour window.",
    "why": "A feel-good story with national pride lifts engagement after a heavy news run. It is the weakest-dated item here, so swap it for a fresh story if one turns up.",
-   "planned": "2026-10-26 21:58"
-  },
-  {
-   "when": "2026-10-29 09:20",
-   "topic": "Thu 29 Oct 21:00 IST: Weekly explainer on the Cockroach protests and the paper-leak issue: what the government has done so far and what is still open. Include the minister's resignation, the detention of founder Abhijeet Dipke and any new policy announced this week. Verify every figure with two sources before publishing. Mark opinion clearly.",
-   "why": "A weekly recap works as a closing slot and rewards viewers who followed the story across the week. It lets the channel add any new developments in the news by Thursday.",
    "planned": "2026-10-26 21:58"
   }
  ],
