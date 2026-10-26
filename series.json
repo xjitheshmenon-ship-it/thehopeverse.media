@@ -1,5 +1,5 @@
 {
-  "premise": "Season 1, '100 Din Ka Rishta': Riya Saxena, 24, runs her late father's small bakery in Lucknow and is about to lose it to moneylender Gupta. Kabir Malhotra, 29, the cold heir of a Mumbai hotel empire, must be married within 100 days to keep control of the company from his scheming uncle Vikram. A chance meeting leads to a contract: a 100-day fake marriage in exchange for the bakery's debt. The rules are no feelings, no family drama and no one finds out. Over about 30 episodes every rule breaks. Riya moves into the Malhotra mansion in Mumbai and faces a suspicious family led by stern Dadi. Vikram's spy tries to expose the contract, Kabir's childhood friend Aarav becomes a second lead who secretly guards a hidden woman in a Mumbai chawl, and a family secret ties Riya's father Ramesh Saxena's debt and Kabir's long-gone mother Meera to the Malhotras. Meera's last diary, kept by her old nurse Sharda, holds the name Meera feared. The two fall truly in love. The season ends with the contract exposed on day 100, and Kabir has to choose between the company and Riya.",
+  "premise": "Season 1, '100 Din Ka Rishta': Riya Saxena, 24, runs her late father's small bakery in Lucknow and is about to lose it to moneylender Gupta. Kabir Malhotra, 29, the cold heir of a Mumbai hotel empire, must be married within 100 days to keep control of the company from his scheming uncle Vikram. A chance meeting leads to a contract: a 100-day fake marriage in exchange for the bakery's debt. The rules are no feelings, no family drama and no one finds out. Over about 30 episodes every rule breaks. Riya moves into the Malhotra mansion in Mumbai and faces a suspicious family led by stern Dadi. Vikram's spy tries to expose the contract, Kabir's childhood friend Aarav becomes a second lead who secretly guards a hidden woman in a Mumbai chawl, and a family secret ties Riya's father Ramesh Saxena's debt and Kabir's long-gone mother Meera to the Malhotras. Meera's last diary, kept by her old nurse Sharda and handed to Riya by Kavita, holds the name Meera feared, until someone inside the mansion steals it. The two fall truly in love. The season ends with the contract exposed on day 100, and Kabir has to choose between the company and Riya.",
   "cast": [
     {
       "name": "Riya",
@@ -16,11 +16,11 @@
       "pitch": "+0Hz"
     },
     {
-      "name": "Kavita",
-      "role": "Woman in the white shawl who claims to be Meera's younger sister, hiding a secret",
-      "look": "Indian woman, 50, gentle tired face with soft guarded eyes, faint lines, greying black hair in a low bun, plain off-white cotton saree with a white woollen shawl over her head, carrying a cloth bag of medicines",
+      "name": "Dadi",
+      "role": "Kabir's stern grandmother, head of the Malhotra family, who once shut the door on Meera",
+      "look": "Indian woman, 72, stern proud face with sharp eyes behind gold-rimmed spectacles, deep lines, silver hair in a tight bun, cream silk saree with a maroon border, pearl necklace, carved wooden walking stick",
       "voice": "hi-IN-SwaraNeural",
-      "pitch": "-6Hz"
+      "pitch": "-10Hz"
     },
     {
       "name": "Aarav",
@@ -95,6 +95,11 @@
       "n": 13,
       "title": "Ep 13 | 100 दिन का रिश्ता: नर्स शारदा, मीरा की डायरी और दादी के पास पहुँची तस्वीर",
       "summary": "Kavita reveals the bedridden woman is Sharda, Meera's former nurse, who has guarded Meera's last diary naming the person Meera feared, and gives it to Riya to read alone, while dodging questions about her own bangle mark. A spy photographs Aarav holding Riya's wrist on the chawl stairs and Dadi sends it to Kabir, who catches Riya lying about where she was and says Dadi is waiting downstairs."
+    },
+    {
+      "n": 14,
+      "title": "Ep 14 | 100 दिन का रिश्ता: दादी का इल्ज़ाम, कबीर का भरोसा और गायब डायरी",
+      "summary": "Dadi confronts Riya over the chawl photo in front of the family, and Kabir publicly defends her, slipping that he trusts her more than anyone, which Dadi says his father once said about Meera; Kabir later calls it acting. Back in her room Riya finds Meera's diary stolen from her drawer, and an unknown number texts: 'Trust is good, bahu, but the diary is with me now.'"
     }
   ]
 }
