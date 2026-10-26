@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: hope-daily  # never at the same time as a daily run, so they don't overwrite each other's memory
+  group: hope-episode-${{ github.run_id }}  # Post now: starts at once, never waits behind the daily queue (state.py saves merge)
 
 env:
   TZ: Asia/Kolkata
@@ -25,7 +25,7 @@ env:
   ELEVEN_VOICE_MALE: ${{ vars.ELEVEN_VOICE_MALE }}
   ELEVEN_VOICE_FEMALE: ${{ vars.ELEVEN_VOICE_FEMALE }}
   AI_CLIPS_PER_SHORT: ${{ vars.AI_CLIPS_PER_SHORT || '3' }}  # paid Kling video shots per Short (about $0.30 each)
-  DAILY_BUDGET: ${{ vars.DAILY_BUDGET || '20' }}
+  DAILY_BUDGET: "1000"  # Post now overrules the daily budget
 
 jobs:
   episode:

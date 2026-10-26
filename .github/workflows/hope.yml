@@ -26,8 +26,9 @@ permissions:
   actions: write  # dashboard.py lists recent runs; each video run starts the next one
 
 concurrency:
-  # one video at a time: every "next" run (and Kissa's episode workflow) waits in hope-daily
-  group: hope-${{ github.event.schedule == '15 * * * *' && 'stats' || github.event.schedule == '30 11 * * *' && 'report' || inputs.job == 'slot' && 'daily' || inputs.job == 'next' && 'daily' || inputs.job || 'daily' }}
+  # one video at a time: every "next" run waits in hope-daily. Post now (job one) gets a group of its own, so it
+  # starts at once and never waits behind the queue or another Post now
+  group: hope-${{ inputs.job == 'one' && format('one-{0}', github.run_id) || github.event.schedule == '15 * * * *' && 'stats' || github.event.schedule == '30 11 * * *' && 'report' || inputs.job == 'slot' && 'daily' || inputs.job == 'next' && 'daily' || inputs.job || 'daily' }}
 
 env:
   TZ: Asia/Kolkata
@@ -91,7 +92,7 @@ jobs:
         run: python plan.py --due | tee -a "$GITHUB_ENV"
 
       - name: Stop if today's budget is used up
-        if: env.NEXT != '' || inputs.job == 'one'
+        if: env.NEXT != ''  # Post now (job one) overrules the daily budget: the owner asked for it
         run: |
           python -c "import sys, agents as a; s = a.spent_today(); sys.exit(f'Daily budget used up: \${s:.2f} of \${a.DAILY_BUDGET:.0f} spent today, so nothing is made until tomorrow (raise DAILY_BUDGET to post more)' if s >= a.DAILY_BUDGET else 0)" || { echo "::error::Daily budget used up, nothing posted"; echo "MORE=0" >> "$GITHUB_ENV"; exit 1; }
       - name: Research, script, make and post the next Short
@@ -117,6 +118,7 @@ jobs:
         if: inputs.job == 'one'
         env:
           CHANNEL: ${{ inputs.channel || 'yt-hopeverse' }}
+          DAILY_BUDGET: "1000"  # Post now overrules the daily budget
         run: |
           { sudo apt-get install -y -qq fonts-noto-core || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core; }; } > /dev/null
           if [ "$CHANNEL" = yt-hopeverse ]; then
