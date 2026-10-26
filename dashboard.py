@@ -116,6 +116,41 @@ def slots(rows: list) -> list:
     return out
 
 
+ACTIONS = "https://github.com/" + (os.environ.get("GITHUB_REPOSITORY") or "xjitheshmenon-ship-it/thehopeverse.media") + "/actions/workflows/"
+
+
+def upcoming() -> list:
+    """The next 6 uploads by time across the signed-in channels. Topics are picked by Mr. Hope when the slot runs,
+    so a row shows a drafted package waiting to go up if there is one, else the channel's next episode or Short."""
+    chans = [c for c in _channels() if os.path.exists(HERE / c.get("token", "token.json")) and planned_slots(c)]
+    def waiting(cid):  # drafted packages of this channel not on YouTube yet, oldest first; video.py posts them next
+        found = [p for p in OUTBOX.glob(f"{cid}-*.json") if re.fullmatch(rf"{re.escape(cid)}-\d+", p.stem)]
+        packs = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(found, key=lambda p: int(p.stem.rsplit("-", 1)[1]))]
+        return [d["title"] for d in packs if "youtube_id" not in d]
+    waiting = {c["id"]: waiting(c["id"]) for c in chans}
+    story = HERE / "series.json"
+    episode = len(json.loads(story.read_text(encoding="utf-8"))["episodes"]) if story.exists() else 0
+    out = []
+    for day in range(3):
+        for n, hour in enumerate(SLOTS, 1):
+            when = (NOW + timedelta(days=day)).replace(hour=hour, minute=0, second=0, microsecond=0)
+            if when <= NOW:
+                continue
+            for c in chans:
+                if n not in planned_slots(c) or len(out) == 6:
+                    continue
+                series = c.get("status") == "series"
+                if series:
+                    episode += 1
+                plan = waiting[c["id"]].pop(0) if waiting[c["id"]] else \
+                    f"Episode {episode}, written at run time" if series else "Topic picked by Mr. Hope at run time"
+                out.append({"key": f"{c['id']}-{when:%Y%m%d%H}", "when": f"{when:%Y-%m-%d %H:%M}", "channel": c["id"],
+                            "name": c["name"], "plan": plan,
+                            "post_now": ACTIONS + ("episode.yml" if series else "hope.yml"),
+                            "how": "Run workflow" if series else f"Run workflow, job: one, channel: {c['id']}"})
+    return out
+
+
 def channels(rows: list, costs: list, plan: list) -> list:
     """One row per channel: today's uploads against plan, today's and 7-day spend, all-time views."""
     week = f"{NOW - timedelta(days=6):%Y-%m-%d}"
@@ -197,7 +232,7 @@ if __name__ == "__main__":
     plan = slots(rows)
     data = {"updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "shorts": rows, "spend": costs, "agent_work": agent_work(), "limits": limits(costs),
-            "slots": plan, "channels": channels(rows, costs, plan), "runs": runs()}
+            "slots": plan, "channels": channels(rows, costs, plan), "runs": runs(), "upcoming": upcoming()}
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(data, indent=1, ensure_ascii=False), encoding="utf-8")
     print(f"Saved {OUT} ({len(rows)} Shorts)")
