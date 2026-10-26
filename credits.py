@@ -25,13 +25,13 @@ def _row(service: str, left, unit: str, note: str, low: float = None) -> dict:
 
 def check() -> list:
     rows = []
-    key = os.environ.get("FAL_KEY", "").strip()
+    key = (os.environ.get("FAL_BILLING_KEY") or os.environ.get("FAL_KEY", "")).strip()  # a READONLY key can read billing
     try:
         bal = _get("https://api.fal.ai/v1/account/billing?expand=credits", Authorization=f"Key {key}")["credits"]
         rows.append(_row("fal.ai", round(bal["current_balance"], 2), bal.get("currency", "USD").lower(),
                          "Images, Kling clips, music, Instagram uploads", LOW["fal.ai"]))
     except Exception as e:  # e.g. a key without billing:usage:read
-        rows.append(_row("fal.ai", None, "usd", f"Couldn't read the balance ({e}); needs a key with billing read access"))
+        rows.append(_row("fal.ai", None, "usd", f"Couldn't read the balance ({e}); add a fal.ai READONLY key as the FAL_BILLING_KEY secret"))
     key = os.environ.get("HEYGEN_API_KEY", "").strip()
     try:
         q = _get("https://api.heygen.com/v2/user/remaining_quota", **{"x-api-key": key})["data"]
@@ -46,7 +46,7 @@ def check() -> list:
                          f"Voices; free Edge voices take over when it runs out. Plan: {s.get('tier', '?')}",
                          LOW["ElevenLabs"]))
     except Exception as e:  # a restricted key needs "User: read" permission
-        rows.append(_row("ElevenLabs", None, "characters", f"Couldn't read the balance ({e}); needs User read permission"))
+        rows.append(_row("ElevenLabs", None, "characters", f"Couldn't read the balance ({e}); turn on User: Read for the key in ElevenLabs"))
     for service, note in [("Anthropic", "No balance API: see console.anthropic.com > Billing. Spend is logged per run"),
                           ("Perplexity", "No balance API: see perplexity.ai/account/api. About $0.006 a search")]:
         rows.append(_row(service, None, "usd", note))
