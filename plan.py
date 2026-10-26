@@ -4,7 +4,8 @@
     python plan.py --next ID   -> print the topic planned for channel ID's next upload, and take it off the plan
     python plan.py --due       -> which channels post now (hope.yml's slot step), as KEY=value lines for $GITHUB_ENV
 
-Each channel posts every 2 hours from its "first" hour (default 7) in its audience's time zone "tz" (default India),
+Hopeverse posts every 2 hours from 07:00 India time; other channels post 2 a day on slots counted from their "first" hour
+(default 7) in their audience's time zone "tz" (default India),
 set in channels.json: Instinct on Paris time, Kissa in the Indian evening.
 
 hope.yml runs the first after every slot and passes the second to Mr. Hope (or series.py for Kissa), who still
@@ -28,13 +29,14 @@ SERIES_PER_DAY = int(os.environ.get("SERIES_PER_DAY") or 2)
 
 
 def planned_slots(channel: dict) -> list:
-    """Which of the six slots (1-6) post for this channel, as hope.yml decides."""
-    if channel.get("status") == "series":
-        every = 6 // SERIES_PER_DAY
-        return [s for s in range(1, 7) if (6 - s) % every == 0]
-    if channel["platform"] == "youtube" and channel.get("status") == "live":
+    """Which of the six slots (1-6) post for this channel. Hopeverse Media posts SHORTS_PER_DAY; every other channel
+    posts "per_day" (default 2, owner's pick 2026-10-26; Kissa SERIES_PER_DAY), spaced to end on its last slot."""
+    if channel["platform"] != "youtube" or channel.get("status") not in ("live", "series"):
+        return []
+    if channel["id"] == "yt-hopeverse":
         return list(range(1, SHORTS_PER_DAY + 1))
-    return []
+    every = 6 // (channel.get("per_day") or (SERIES_PER_DAY if channel.get("status") == "series" else 2))
+    return [s for s in range(1, 7) if (6 - s) % every == 0]
 
 
 def live_channels() -> list:

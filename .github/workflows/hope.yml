@@ -44,7 +44,7 @@ env:
   AI_CLIPS_PER_SHORT: ${{ vars.AI_CLIPS_PER_SHORT || '3' }}  # paid Kling video shots per Short (about $0.30 each)
   INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
   # Settings > Secrets and variables > Actions > Variables: change these without editing this file
-  SHORTS_PER_DAY: ${{ vars.SHORTS_PER_DAY || '6' }}  # per channel, one per 2-hour slot (at most 6)
+  SHORTS_PER_DAY: ${{ vars.SHORTS_PER_DAY || '6' }}  # Hopeverse Media, one per 2-hour slot (at most 6); other channels post 2 a day (channels.json per_day)
   SERIES_PER_DAY: ${{ vars.SERIES_PER_DAY || '2' }}  # Kissa episodes a day: 1, 2, 3 or 6 (owner's pick 2026-10-26: 2, each fully acted, within DAILY_BUDGET)
   DAILY_BUDGET: ${{ vars.DAILY_BUDGET || '20' }}     # US dollars a day across everything; runs stop once reached
 

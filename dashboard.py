@@ -154,7 +154,7 @@ def limits(costs: list) -> list:
         {"item": "Daily budget", "value": DAILY_BUDGET, "unit": "usd", "note": "All channels together; runs stop once reached (DAILY_BUDGET)"},
         {"item": "Spent today", "value": today, "unit": "usd", "note": f"{TODAY}, India time"},
         {"item": "Left today", "value": round(max(0, DAILY_BUDGET - today), 2), "unit": "usd", "note": "Before the cap stops runs"},
-        {"item": "Shorts per channel a day", "value": SHORTS_PER_DAY, "unit": "count", "note": "One per 2-hour slot in each audience's time zone (SHORTS_PER_DAY)"},
+        {"item": "Hopeverse Shorts a day", "value": SHORTS_PER_DAY, "unit": "count", "note": "Hopeverse Media, one per 2-hour slot (SHORTS_PER_DAY); other channels post 2 a day at their audience's best times"},
         {"item": "Kissa episodes a day", "value": SERIES_PER_DAY, "unit": "count", "note": "Fully acted, about $4-5 each, inside the daily budget (SERIES_PER_DAY)"},
         {"item": "Paid AI clips per Short", "value": clips, "unit": "count", "note": "Kling video shots, about $0.35 each (AI_CLIPS_PER_SHORT)"},
         {"item": "HeyGen talking shot", "value": 0.05, "unit": "usd_per_s", "note": "Avatar IV, per second of speech"},
