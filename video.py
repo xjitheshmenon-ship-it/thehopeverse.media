@@ -239,7 +239,7 @@ def _pick(scene: "Scene", thumbnails: list) -> int:
     if not thumbnails:
         return -1
     try:
-        response = client.messages.create(model=HELPER_MODEL, max_tokens=20, messages=[{"role": "user", "content": [
+        response = client.messages.create(model=HELPER_MODEL, max_tokens=200, thinking={"type": "between_tools"}, messages=[{"role": "user", "content": [
             *({"type": "image", "source": {"type": "url", "url": u}} for u in thumbnails),
             {"type": "text", "text": f"These are {len(thumbnails)} stock video thumbnails, numbered 0 to "
              f"{len(thumbnails) - 1} in order. A YouTube Short says: \"{scene.narration}\" and this shot should "
@@ -247,7 +247,7 @@ def _pick(scene: "Scene", thumbnails: list) -> int:
              "clearly shows that subject. Reply -1 if none does: a generic or loosely related picture (a car for a "
              "rocket, a random city for a named place, the wrong country) counts as none."}]}])
         paid["usd"] += _cost(HELPER_MODEL, response.usage)
-        k = int(re.search(r"-?\d+", response.content[0].text).group())
+        k = int(re.search(r"-?\d+", next(b.text for b in response.content if b.type == "text")).group())
         return k if k < len(thumbnails) else -1
     except Exception as e:  # can't check: take the search's best match, as before
         print(f"    could not check the footage: {e}")
