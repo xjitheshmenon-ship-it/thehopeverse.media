@@ -7,6 +7,7 @@
         sets the channel's description, keywords, country and banner from its "branding" in channels.json.
 
     python connect.py <channel id> [signin_url]
+    python connect.py <channel id> brand   -> set the description, keywords and banner again with the saved sign-in
 """
 import json
 import os
@@ -31,6 +32,12 @@ def main(channel_id: str, signin_url: str = "") -> None:
     # The two runs are separate machines, so no PKCE verifier can be carried over; Google allows that for desktop apps.
     flow = Flow.from_client_secrets_file(str(HERE / "client_secret.json"), SCOPES, redirect_uri="http://localhost",
                                          autogenerate_code_verifier=False)
+    if signin_url == "brand":  # the channel is signed in already: just refresh its About page and banner
+        from google.oauth2.credentials import Credentials
+        creds = Credentials.from_authorized_user_file(str(HERE / channel.get("token", "token.json")))
+        yt = build("youtube", "v3", credentials=creds)
+        brand(yt, yt.channels().list(part="id", mine=True).execute()["items"][0]["id"], channel)
+        return
     if not signin_url:
         url, _ = flow.authorization_url(access_type="offline", prompt="consent")
         print(f"\nOpen this link, sign in and pick the {channel['name']} channel:\n\n{url}\n\n"
@@ -50,9 +57,16 @@ def main(channel_id: str, signin_url: str = "") -> None:
                     "-in", str(token), "-out", str(TOKENS / f"{token.name}.enc")], check=True)
     print(f"Saved the sign-in for {channel['name']}; daily runs will now post there.")
 
+    brand(yt, me["id"], channel)
+
+
+def brand(yt, channel_yt_id: str, channel: dict) -> None:
+    """The channel's description, keywords, country, banner and 'not made for kids', from channels.json.
+    YouTube's API can't set the profile picture: upload brand/<name>-profile.png in Studio > Customisation."""
     branding = channel.get("branding")
     if not branding:
         return
+    me = {"id": channel_yt_id}
     settings = {"channel": {"description": branding["description"], "keywords": branding["keywords"],
                             "country": branding.get("country", "IN"), "defaultLanguage": channel.get("lang", "en")}}
     if branding.get("banner"):
