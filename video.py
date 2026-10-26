@@ -5,7 +5,8 @@
 Voice: ElevenLabs (ELEVENLABS_API_KEY), else free Microsoft Edge voices (edge-tts). All lines are joined into one
 continuous voice track with a fixed pause between them, then laid under the finished picture, so lines never overlap or cut.
 Pictures (always moving video, never still photos): a host talking on screen is a lip-synced Kling avatar video from fal.ai
-(FAL_KEY), or HeyGen when HEYGEN_API_KEY is set; other shots are real stock footage from Pixabay (PIXABAY_API_KEY), else a Kling AI video clip, else NASA (no key).
+(FAL_KEY), or HeyGen when HEYGEN_API_KEY is set; other shots are real stock footage from Pixabay (PIXABAY_API_KEY), else NASA, else an AI
+clip from HeyGen Video (HEYGEN_API_KEY), else Kling.
 Paid AI clips are capped per Short (AI_CLIPS_PER_SHORT) and by DAILY_BUDGET. Upload: needs client_secret.json from Google Cloud (see README).
 
 Dub channels: every new Short is also re-voiced for each channel in channels.json with a "lang" (e.g. Hindi), reusing
@@ -269,35 +270,53 @@ def _stock(scene: "Scene", query: str, size: tuple, duration: float, work: Path,
     return _clip(path, size, duration)
 
 
-def heygen(still: Path, audio: Path, path: Path) -> float:
-    """The still talks, lip-synced to the line, with HeyGen's Avatar IV ($0.05 a second, HEYGEN_API_KEY).
-    Saves the video to path and returns its length in seconds."""
-    key = os.environ["HEYGEN_API_KEY"].strip()
-    headers = {"x-api-key": key, "Content-Type": "application/json"}
+def _heygen_upload(file: Path) -> str:
+    """Put a file in HeyGen's own storage, so HeyGen shots don't depend on fal.ai. Returns its asset id."""
+    boundary = "hopeverse" + os.urandom(8).hex()
+    mime = {".png": "image/png", ".jpg": "image/jpeg", ".wav": "audio/wav"}.get(file.suffix, "audio/mpeg")
+    data = (f'--{boundary}\r\nContent-Disposition: form-data; name="file"; filename="{file.name}"\r\n'
+            f"Content-Type: {mime}\r\n\r\n").encode() + file.read_bytes() + f"\r\n--{boundary}--\r\n".encode()
+    req = urllib.request.Request("https://api.heygen.com/v3/assets", data=data, headers={
+        "x-api-key": os.environ["HEYGEN_API_KEY"].strip(), "Content-Type": f"multipart/form-data; boundary={boundary}"})
+    return json.load(urllib.request.urlopen(req, timeout=120))["data"]["asset_id"]
 
-    def upload(file: Path) -> str:  # HeyGen's own storage, so a talking shot doesn't depend on fal.ai
-        boundary = "hopeverse" + os.urandom(8).hex()
-        mime = "image/png" if file.suffix == ".png" else "audio/wav" if file.suffix == ".wav" else "audio/mpeg"
-        data = (f'--{boundary}\r\nContent-Disposition: form-data; name="file"; filename="{file.name}"\r\n'
-                f"Content-Type: {mime}\r\n\r\n").encode() + file.read_bytes() + f"\r\n--{boundary}--\r\n".encode()
-        req = urllib.request.Request("https://api.heygen.com/v3/assets", data=data, headers={
-            "x-api-key": key, "Content-Type": f"multipart/form-data; boundary={boundary}"})
-        return json.load(urllib.request.urlopen(req, timeout=120))["data"]["asset_id"]
 
-    body = {"type": "image", "image": {"type": "asset_id", "asset_id": upload(still)},
-            "audio_asset_id": upload(audio), "aspect_ratio": "9:16", "title": path.stem}
-    req = urllib.request.Request("https://api.heygen.com/v3/videos", data=json.dumps(body).encode(), headers=headers)
-    video_id = json.load(urllib.request.urlopen(req, timeout=60))["data"]["video_id"]
+def _heygen_wait(url: str, path: Path) -> float:
+    """Poll a HeyGen job until done, save the video to path and return its length in seconds."""
+    headers = {"x-api-key": os.environ["HEYGEN_API_KEY"].strip()}
     for _ in range(90):  # usually a few minutes
         time.sleep(10)
-        req = urllib.request.Request(f"https://api.heygen.com/v3/videos/{video_id}", headers=headers)
-        video = json.load(urllib.request.urlopen(req, timeout=60))["data"]
+        video = json.load(urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=60))["data"]
         if video["status"] == "completed":
             urllib.request.urlretrieve(video["video_url"], path)
             return video.get("duration") or 0
-        if video["status"] == "failed":
+        if video["status"] in ("failed", "cancelled"):
             raise RuntimeError(video.get("failure_message") or video.get("failure_code"))
     raise RuntimeError("HeyGen took over 15 minutes")
+
+
+def heygen_clip(prompt: str, path: Path, image: Path = None) -> float:
+    """A 5 s silent-use shot from HeyGen Video ($0.018 a second at 768p): from the prompt alone, or starting on
+    image (a character acting). Saves it to path and returns its cost in dollars."""
+    body = {"model": "heygen-video-1", "prompt": prompt + " No music, no dialogue, no logos or printed words.",
+            "duration": 5, "resolution": "768p"}
+    body.update({"mode": "image_to_video", "image": {"type": "asset_id", "asset_id": _heygen_upload(image)}} if image
+                else {"mode": "text_to_video", "aspect_ratio": "9:16"})
+    req = urllib.request.Request("https://api.heygen.com/v3/models/videos", data=json.dumps(body).encode(), headers={
+        "x-api-key": os.environ["HEYGEN_API_KEY"].strip(), "Content-Type": "application/json"})
+    video_id = json.load(urllib.request.urlopen(req, timeout=60))["data"]["video_id"]
+    return 0.018 * (_heygen_wait(f"https://api.heygen.com/v3/models/videos/{video_id}", path) or 5)
+
+
+def heygen(still: Path, audio: Path, path: Path) -> float:
+    """The still talks, lip-synced to the line, with HeyGen's Avatar IV ($0.05 a second, HEYGEN_API_KEY).
+    Saves the video to path and returns its length in seconds."""
+    headers = {"x-api-key": os.environ["HEYGEN_API_KEY"].strip(), "Content-Type": "application/json"}
+    body = {"type": "image", "image": {"type": "asset_id", "asset_id": _heygen_upload(still)},
+            "audio_asset_id": _heygen_upload(audio), "aspect_ratio": "9:16", "title": path.stem}
+    req = urllib.request.Request("https://api.heygen.com/v3/videos", data=json.dumps(body).encode(), headers=headers)
+    video_id = json.load(urllib.request.urlopen(req, timeout=60))["data"]["video_id"]
+    return _heygen_wait(f"https://api.heygen.com/v3/videos/{video_id}", path)
 
 
 def _pose(scene: "Scene", name: str, i: int, work: Path, talking: bool) -> Path:
@@ -321,7 +340,7 @@ def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float
     search, else more of a clip this video already uses, else a plain colour.
     cast_only (a series): every shot shows one of its characters, talking or acting, never stock footage."""
     query = scene.picture_search
-    if scene.host_on_screen and scene.speaker in HOSTS and os.environ.get("FAL_KEY"):
+    if scene.host_on_screen and scene.speaker in HOSTS and (os.environ.get("HEYGEN_API_KEY") or os.environ.get("FAL_KEY")):
         path = work / f"avatar-{audio.stem}.mp4"  # per language, since the lips follow the voice
         if path.exists() or _can_pay():
             try:
@@ -350,18 +369,29 @@ def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float
             except Exception as e:
                 print(f"    no talking shot of {scene.speaker}: {e}")
     actor = scene.on_screen if scene.on_screen in HOSTS else scene.speaker
-    if cast_only and actor in HOSTS and os.environ.get("FAL_KEY"):
+    if cast_only and actor in HOSTS and (os.environ.get("HEYGEN_API_KEY") or os.environ.get("FAL_KEY")):
         path = work / f"act-{i:03}.mp4"  # no lips to match, so dubs reuse it
         if path.exists() or _can_pay():
             try:
                 if not path.exists():
-                    import fal_client
-                    result = fal_client.subscribe(ACT_MODEL, arguments={  # 5 s, looped if the line is longer
-                        "prompt": f"{scene.image_prompt}. Natural, subtle real movement, cinematic drama scene. {STYLE}",
-                        "image_url": fal_client.upload_file(str(_pose(scene, actor, i, work, talking=False))),
-                        "duration": "5", "negative_prompt": "cartoon, anime, CGI, plastic skin, text, blur, talking"})
-                    urllib.request.urlretrieve(result["video"]["url"], path)
-                    paid["usd"] += 0.35
+                    prompt = f"{scene.image_prompt}. Natural, subtle real movement, cinematic drama scene. {STYLE}"
+                    try:
+                        still = _pose(scene, actor, i, work, talking=False)
+                    except Exception as e:  # fal.ai down or out of credit: their usual photo acts
+                        print(f"    no posed photo ({e}); using {actor}'s reference photo")
+                        still = host_photo(actor)
+                    if os.environ.get("HEYGEN_API_KEY"):
+                        try:
+                            paid["usd"] += heygen_clip(prompt, path, image=still)
+                        except Exception as e:  # Kling below
+                            print(f"    HeyGen Video failed ({e} {getattr(e, 'read', lambda: b'')()[:200]!r}); using Kling")
+                    if not path.exists():
+                        import fal_client
+                        result = fal_client.subscribe(ACT_MODEL, arguments={  # 5 s, looped if the line is longer
+                            "prompt": prompt, "image_url": fal_client.upload_file(str(still)),
+                            "duration": "5", "negative_prompt": "cartoon, anime, CGI, plastic skin, text, blur, talking"})
+                        urllib.request.urlretrieve(result["video"]["url"], path)
+                        paid["usd"] += 0.35
                     paid["clips"] += 1
                 shots.append(path)
                 return _clip(path, size, duration)
@@ -380,17 +410,23 @@ def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float
             return _clip(path, size, duration, skip=0.2)  # skip NASA title cards at the start
     except Exception as e:
         print(f"    no NASA footage for '{query}': {e}")
-    if os.environ.get("FAL_KEY"):
+    if os.environ.get("HEYGEN_API_KEY") or os.environ.get("FAL_KEY"):
         path = work / f"ai-{i:03}.mp4"  # no lips to match, so dubs reuse it
         if path.exists() or _can_pay():
             try:
                 if not path.exists():
-                    import fal_client
-                    result = fal_client.subscribe(VIDEO_MODEL, arguments={  # 5 s, looped if the line is longer
-                        "prompt": f"{scene.image_prompt}. {STYLE}", "duration": "5", "aspect_ratio": "9:16",
-                        "negative_prompt": "cartoon, anime, illustration, CGI, 3D render, plastic skin, text, blur"})
-                    urllib.request.urlretrieve(result["video"]["url"], path)
-                    paid["usd"] += 0.35
+                    if os.environ.get("HEYGEN_API_KEY"):  # HeyGen Video first: about $0.09 a clip against Kling's $0.35
+                        try:
+                            paid["usd"] += heygen_clip(f"{scene.image_prompt}. {STYLE}", path)
+                        except Exception as e:
+                            print(f"    HeyGen Video failed ({e} {getattr(e, 'read', lambda: b'')()[:200]!r}); using Kling")
+                    if not path.exists():
+                        import fal_client
+                        result = fal_client.subscribe(VIDEO_MODEL, arguments={  # 5 s, looped if the line is longer
+                            "prompt": f"{scene.image_prompt}. {STYLE}", "duration": "5", "aspect_ratio": "9:16",
+                            "negative_prompt": "cartoon, anime, illustration, CGI, 3D render, plastic skin, text, blur"})
+                        urllib.request.urlretrieve(result["video"]["url"], path)
+                        paid["usd"] += 0.35
                     paid["clips"] += 1
                 shots.append(path)
                 return _clip(path, size, duration)
