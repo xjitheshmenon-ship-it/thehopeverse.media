@@ -818,6 +818,9 @@ if __name__ == "__main__":
             continue  # e.g. python video.py --only yt-kissa: post just that channel's videos
         video = path.with_suffix(".mp4")
         voice = channels.get(package["channel_id"], {}).get("voice", VOICE)
+        dub_path = path.with_suffix(f".{channels.get(package['channel_id'], {}).get('dub')}.json")
+        if "youtube_id" not in package and dub_path.exists() and "youtube_id" in json.loads(dub_path.read_text(encoding="utf-8")):
+            continue  # a dub-only channel's English cut is never posted: once its dub is up, don't remake it every run
         if not video.exists() and "youtube_id" not in package:  # cloud runs don't keep videos; never remake posted ones
             print(f"Making video for {path.name}")
             try:
