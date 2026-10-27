@@ -62,13 +62,15 @@ def shorts() -> list:
         s = yt.get(d.get("youtube_id"), {})
         num = lambda k: int(s[k]) if k in s else None
         status = "On Instagram" if d.get("instagram_id") else "On YouTube" if d.get("youtube_id") else \
-            "Video made" if p.with_suffix(".mp4").exists() else "Scripted"
+            "Held: low relevance" if d.get("held") else "Video made" if p.with_suffix(".mp4").exists() else "Scripted"
+        rel = d.get("relevance") or {}
         published = datetime.fromisoformat(s["published"].replace("Z", "+00:00")).astimezone(IST) \
             if "published" in s else None
         rows.append({"id": p.stem, "channel": d["channel_id"], "day": f"{published:%Y-%m-%d}" if published else None,
                      "published": f"{published:%Y-%m-%d %H:%M}" if published else None,
                      "url": f"https://youtu.be/{d['youtube_id']}" if d.get("youtube_id") else None,
                      "title": d["title"], "status": status,
+                     "relevance": rel.get("score"), "relevance_why": rel.get("why"),
                      "youtube_id": d.get("youtube_id"), "yt_views": num("viewCount"),
                      "yt_likes": num("likeCount"), "yt_comments": num("commentCount"),
                      "instagram_id": d.get("instagram_id"), "ig_views": None, "ig_likes": None, "ig_comments": None,
