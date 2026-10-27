@@ -1,0 +1,60 @@
+# Make one sample sponsored Short per live channel, to show brands what we can make. Nothing is posted:
+# the videos are attached to the run as "brand-samples" (Actions > this run > Artifacts), and Hope's memory isn't saved.
+# Start it with Actions > "Make brand samples" > Run workflow, or by pushing a branch named run/sample.
+name: Make brand samples
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  TZ: Asia/Kolkata
+  PYTHONIOENCODING: utf-8
+  PYTHONUNBUFFERED: 1
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+  PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+  FAL_KEY: ${{ secrets.FAL_KEY }}
+  HEYGEN_API_KEY: ${{ secrets.HEYGEN_API_KEY }}
+  ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+  ELEVEN_VOICE_ARJUN: ${{ vars.ELEVEN_VOICE_ARJUN }}
+  ELEVEN_VOICE_MEERA: ${{ vars.ELEVEN_VOICE_MEERA }}
+  ELEVEN_VOICE_MALE: ${{ vars.ELEVEN_VOICE_MALE }}
+  ELEVEN_VOICE_FEMALE: ${{ vars.ELEVEN_VOICE_FEMALE }}
+  AI_CLIPS_PER_SHORT: ${{ vars.AI_CLIPS_PER_SHORT || '3' }}
+  DAILY_BUDGET: "1000"  # asked for by the owner, like Post now
+
+jobs:
+  samples:
+    runs-on: ubuntu-latest
+    timeout-minutes: 110
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: |  # Hindi captions
+          { sudo apt-get install -y -qq fonts-noto-core || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core; }; } > /dev/null
+      - name: Load the hosts' photos and lessons, with an empty outbox
+        run: |
+          python state.py load
+          rm -rf outbox  # the real drafts stay on the state branch; only the samples are made here
+      - name: Write and make one sample per channel
+        run: |
+          for id in yt-hopeverse yt-instinct yt-sankalp yt-sawaal; do
+            HOPE_CHANNEL=$id HOPE_REVIEW=0 python agents.py "Brand sample run requested by the owner, NOT for posting: draft and queue one YouTube Short for $id in its usual style, niche, language and hosts, on a real current topic that fits the channel. Build a natural 6 to 8 second sponsor segment into the middle, read by the hosts, for an invented brand that suits this channel's audience (a made-up name, never a real company or product). The title starts with 'SAMPLE |' and the description says it is a sample paid partnership with an invented brand. Keep every fact double-sourced as usual." || true
+          done
+          python video.py --no-upload
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: brand-samples
+          path: |
+            outbox/*.mp4
+            outbox/*.json
+          if-no-files-found: warn
+          retention-days: 30
