@@ -80,7 +80,14 @@
  ],
  "yt-hopeverse": [
   {
-   "when": "2026-10-28 04:00",
+   "topic": "Houthis claim ballistic missiles hit Saudi Arabia's Ras Tanura refinery and Defence Ministry in Riyadh (Tue 27 Oct 2026). Saudi Civil Defence says it intercepted missiles over Riyadh and that falling debris damaged a building, a construction site and a vehicle, with no casualties reported. Angle: Brent is about $115 a barrel, up roughly 80% in a year, and Ras Tanura is the kingdom's biggest refinery. Explain why a claimed strike moves your fuel price. Label the Houthi claims as unverified.",
+   "why": "A breaking Middle East escalation tied to oil prices, which matters to US, UK, EU and India audiences. The explainer links the claim, Saudi's denial of major damage and the pump price. The Houthi hit claims are unconfirmed, so they must be framed that way. Brent figures vary by source, so check them before publishing.",
+   "score": 82,
+   "planned": "2026-10-28 02:00",
+   "when": "2026-10-28 06:05"
+  },
+  {
+   "when": "2026-10-28 08:10",
    "topic": "Bihar BJP worker files a police complaint at Patna's Kotwali station over Kharge's 'baap' remark aimed at Modi, filed Sunday evening: what he said and what the complaint means",
    "why": "A fast-moving political story from the last 24 hours with a clear who and what. It suits the 13:00 IST slot, when Indian viewers are looking for the day's political updates.",
    "planned": "2026-10-26 15:33"
@@ -89,33 +96,26 @@
    "topic": "Venezuela's opposition leader and Nobel Peace laureate María Corina Machado returned home on Sunday 25 Oct 2026 after more than 10 months in exile. Tens of thousands cheered her on the road to Caracas. Explain why she left, how the US toppled Maduro a month after she went, and why her return could challenge the interim government and push for an election date. Under 60 seconds.",
    "why": "Reuters, CNN, NPR and BBC all reported it on 25-26 Oct. It is a fresh, visual story with a clear arc, and it has not been covered or planned yet. The Indian audience follows US-linked world events and Nobel stories. I could not find a verified India-specific story for this slot because my search limit ran out, so this is the strongest dated world story I confirmed. Swap in a fresh India headline from the morning of 28 Oct if the owner prefers.",
    "planned": "2026-10-27 00:33",
-   "when": "2026-10-28 06:05"
+   "when": "2026-10-28 09:00"
   },
   {
    "topic": "Cyclone Arnab landfall update, Wed 28 Oct 2026. Cover where the very severe cyclonic storm crossed the Andhra Pradesh coast between Bapatla and Visakhapatnam, the wind speeds recorded against the IMD forecast of 115-125 kmph gusting to 140, and what damage or evacuations were reported. Close with what coastal residents should do in the next 24 hours. Before publishing, check the IMD bulletin for the actual landfall time and figures. Don't use the forecast numbers as if they were observed.",
    "why": "Landfall is the biggest India story on this date, and a 10:10 post-landfall Short is a different angle from the 08:05 forecast Short. My web search quota ran out, so I could not confirm any newer story from the last 48 hours. This pick builds on a story already in the plan. Check it against live news before production.",
    "planned": "2026-10-27 09:49",
-   "when": "2026-10-28 08:10"
+   "when": "2026-10-29 04:00"
   },
   {
    "topic": "Anthropic's $80.7 billion 'loss' that isn't really a loss: Anthropic filed its IPO papers (S-1) on Mon 26 Oct 2026 to list on Nasdaq as 'ANT', with a raise of up to $100 billion reported and a valuation reportedly up to $2 trillion. Its first-half 2026 revenue was $16.3 billion, up 1,300%. The little-known angle is that the $80.7 billion H1 loss is mostly an accounting effect. About $72 billion of it comes from investor notes, held by backers like Amazon, that convert to shares at the IPO. Those shares rose in value, and accounting rules book that rise as a loss. The actual operating loss was only $693 million. Explain this in under 60 seconds. Open with the $80.7B number, then give the $693M reveal. Mention that the SpaceX IPO in June raised a record $86B. Before publishing, check the S-1 or the SEC filing for the exact figures, and don't state the IPO price or date as confirmed, because they are not yet set.",
    "why": "It is the biggest global business story of the last 24 hours (filed 26 Oct), and it is a worldwide, English-speaking audience draw. Most coverage leads with the size of the IPO. The curious angle is the paper loss compared with the real loss, a surprising number that answers 'how can a company growing 1,300% lose $80B?'. It is different from every made and planned topic, and it suits a 10:35 IST slot for the US and UK audience.",
    "planned": "2026-10-27 10:59",
-   "when": "2026-10-28 09:00"
-  },
-  {
-   "topic": "Serbia's leaderless student list ends Vučić's 14-year rule: Sunday 25 Oct 2026 election. The Student List won an outright majority and Vučić conceded after the SNS got about 1.72M votes. The angle: a brand-new list with no leader, no hierarchy and no political experience beat a Moscow-friendly strongman. Next question: who becomes PM? Verify seat counts against CeSID/Ipsos or official results before publishing.",
-   "why": "Fresh 48-hour story and a big European upset with international coverage. The 'no leader, no hierarchy' angle is more distinctive than the usual 'Vučić loses' headlines. It is not yet covered in the made or planned lists. Seat totals and the next-PM question still need checking.",
-   "score": 84,
-   "planned": "2026-10-28 02:00",
-   "when": "2026-10-29 04:00"
-  },
-  {
-   "topic": "Houthis claim ballistic missiles hit Saudi Arabia's Ras Tanura refinery and Defence Ministry in Riyadh (Tue 27 Oct 2026). Saudi Civil Defence says it intercepted missiles over Riyadh and that falling debris damaged a building, a construction site and a vehicle, with no casualties reported. Angle: Brent is about $115 a barrel, up roughly 80% in a year, and Ras Tanura is the kingdom's biggest refinery. Explain why a claimed strike moves your fuel price. Label the Houthi claims as unverified.",
-   "why": "A breaking Middle East escalation tied to oil prices, which matters to US, UK, EU and India audiences. The explainer links the claim, Saudi's denial of major damage and the pump price. The Houthi hit claims are unconfirmed, so they must be framed that way. Brent figures vary by source, so check them before publishing.",
-   "score": 82,
-   "planned": "2026-10-28 02:00",
    "when": "2026-10-29 06:05"
+  },
+  {
+   "topic": "90 Minutes, Not 20: Why Finland and Norway Just Called Putin",
+   "why": "On Tue 27 Oct 2026 Finnish President Alexander Stubb and Norwegian PM Jonas Gahr Støre held a call with Putin that ran about 90 minutes against a planned 20. Reports say it is Putin's first direct contact with prominent pro-Kyiv European leaders since France's. The curious angle is why two Russia-border states made the call. They say it was coordinated with Kyiv and the Nordic Council countries, and Zelenskyy got a readout afterwards. Denmark's PM criticised the call. ABC reports US-Ukraine ties are at an 18-month low. Explain what it signals about Europe going direct to Moscow. Attribute the readouts to the leaders and don't present Kremlin claims as fact. Before publishing, check the Yle, NRK or Reuters reports for the final details.",
+   "score": 78,
+   "planned": "2026-10-28 02:11",
+   "when": "2026-10-29 08:10"
   }
  ],
  "yt-sankalp": [
