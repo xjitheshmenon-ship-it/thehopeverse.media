@@ -39,10 +39,11 @@ STEP = 25  # minutes a video takes, roughly, for the dashboard's estimated times
 
 def planned_slots(channel: dict) -> list:
     """This channel's videos of the day, 1..its daily count: Hopeverse Media SHORTS_PER_DAY, every other channel
-    "per_day" (default 2, owner's pick 2026-10-26; Kissa SERIES_PER_DAY)."""
+    "per_day" (default 2, owner's pick 2026-10-26; Kissa SERIES_PER_DAY). Since 2026-10-28 Hopeverse and Instinct
+    post 4 a day (channels.json per_day, which overrides SHORTS_PER_DAY)."""
     if channel["platform"] != "youtube" or channel.get("status") not in ("live", "series"):
         return []
-    if channel["id"] == "yt-hopeverse":
+    if channel["id"] == "yt-hopeverse" and not channel.get("per_day"):
         return list(range(1, SHORTS_PER_DAY + 1))
     return list(range(1, (channel.get("per_day") or (SERIES_PER_DAY if channel.get("status") == "series" else 2)) + 1))
 
