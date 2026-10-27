@@ -102,13 +102,13 @@ jobs:
           [ "$GROW" = 1 ] && { python agents.py --grow || true; }  # Mr. Grow's notes for the day's Shorts
           id=$NEXT
           if [ "$id" = yt-hopeverse ]; then
-            goal="check list_outbox, then draft and queue the best new current-affairs YouTube Short for $id, aimed at a global audience, on a story not already drafted today."
+            goal="get today's topics from Mr. Focus, check list_outbox, then draft and queue the best new current-affairs YouTube Short for $id, aimed at a global audience, on a story not already drafted today."
           else
             goal="check list_channels and list_outbox, then draft and queue one new YouTube Short for $id that fits its niche, audience and language, on a topic it hasn't had yet."
           fi
           cp runs/plan.json "$RUNNER_TEMP/plan.json" 2>/dev/null || true
           topic=$(python plan.py --next "$id" || true)  # the topic the dashboard showed for this video
-          [ -n "$topic" ] && goal="make the Short on the planned topic \"$topic\" (it was already picked from a news search, so skip Mr. Focus's DAILY topics request and go straight to the TOPIC research; check list_outbox and that it is still accurate and new; if not, ask for the DAILY topics and pick the best alternative), then $goal"
+          [ -n "$topic" ] && goal="make the Short on the planned topic \"$topic\" (check list_outbox and that it is still accurate and new; if not, pick the best alternative), then $goal"
           before=$(ls outbox/*.json 2>/dev/null | wc -l)
           HOPE_CHANNEL=$id HOPE_REVIEW=$REVIEW python agents.py "Scheduled run, Short $N of $QUOTA today for channel $id: $goal" || true
           ok=0; [ "$(ls outbox/*.json 2>/dev/null | wc -l)" -gt "$before" ] || { echo "::error::No Short was drafted (see Mr. Hope's log above)"; ok=1
@@ -124,12 +124,12 @@ jobs:
         run: |
           { sudo apt-get install -y -qq fonts-noto-core || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core; }; } > /dev/null
           if [ "$CHANNEL" = yt-hopeverse ]; then
-            goal="check list_outbox, then draft and queue one new current-affairs YouTube Short for yt-hopeverse, aimed at a global audience, on the top-viewed story of the last 48 hours that is not already drafted."
+            goal="get today's topics from Mr. Focus, check list_outbox, then draft and queue one new current-affairs YouTube Short for yt-hopeverse, aimed at a global audience, on the top-viewed story of the last 48 hours that is not already drafted."
           else
             goal="check list_channels and list_outbox, then draft and queue one new YouTube Short for $CHANNEL that fits its niche, audience and language, on a topic it hasn't had yet."
           fi
           topic=$(python plan.py --next "$CHANNEL" --any || true)  # Post now: an approved topic first, else the next planned one
-          [ -n "$topic" ] && goal="make the Short on the planned topic \"$topic\" (it was already picked from a news search, so skip Mr. Focus's DAILY topics request and go straight to the TOPIC research; check list_outbox and that it is still accurate and new; if not, ask for the DAILY topics and pick the best alternative), then $goal"
+          [ -n "$topic" ] && goal="make the Short on the planned topic \"$topic\" (check list_outbox and that it is still accurate and new; if not, pick the best alternative), then $goal"
           before=$(ls outbox/*.json 2>/dev/null | wc -l)
           HOPE_CHANNEL=$CHANNEL HOPE_REVIEW=0 python agents.py "One-off run requested by the owner: $goal"
           [ "$(ls outbox/*.json 2>/dev/null | wc -l)" -gt "$before" ] || { echo "::error::No Short was drafted"; exit 1; }
