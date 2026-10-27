@@ -13,6 +13,7 @@ from pathlib import Path
 from pydantic import BaseModel
 
 from agents import DAILY_BUDGET, next_outbox_path, MODEL, OUTBOX, TEAM, _channels, _cost, client, log_spend, spent_today
+from breakout import rules
 from plan import next_topic
 from video import Scene
 
@@ -71,7 +72,8 @@ def write_episode() -> Path:
                    "over-the-shoulder, two-shot, low angle), that character's action and expression, the location "
                    "and light from the scene heading, described the same way in every shot of that scene; "
                    "picture_search 2-5 English words for the location)."}],
-        system=TEAM["Mr. Pen (series)"],
+        system=TEAM["Mr. Pen (series)"] + (f"\n\nLearned from this channel's breakout episodes, approved by the owner "
+                                           f"(follow them):\n{learned}" if (learned := rules(channel["id"])) else ""),
         output_format=Episode,
     )
     ep = response.parsed_output

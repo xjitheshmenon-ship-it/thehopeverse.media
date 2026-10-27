@@ -25,6 +25,7 @@ from zoneinfo import ZoneInfo
 
 from pydantic import BaseModel
 
+from breakout import rules
 from state import approvals, topic_id
 from agents import (DAILY_BUDGET, HELPER_MODEL, HERE, OUTBOX, WEB_SEARCH, _channels, _cost, client, log_spend,
                     spent_today)
@@ -172,7 +173,8 @@ def _ask(channel: dict, slots: list, taken: list, rejected: list = ()) -> list:
                    "question) and make that the topic; every topic a different story. Never plan a placeholder like 'no "
                    "verified story': if the news is thin, pick a well-sourced curious explainer instead."
                    if channel.get("news") else "Evergreen, well-sourced topics with a strong curiosity hook.")
-                + (f"\nChannel rules: {channel['plan_note']}" if channel.get("plan_note") else ""))
+                + (f"\nChannel rules: {channel['plan_note']}" if channel.get("plan_note") else "")
+                + (f"\nLearned from this channel's breakout Shorts (owner-approved):\n{learned}" if (learned := rules(cid, "Mr. Focus")) else ""))
         tools = [WEB_SEARCH] if channel.get("news") else []
     response = client.messages.parse(model=HELPER_MODEL, max_tokens=8000,
                                      output_config={"effort": "medium" if tools else "low"},

@@ -15,6 +15,7 @@ from collections import Counter
 from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
+import breakout
 import credits
 from agents import DAILY_BUDGET, HERE, HISTORY, OUTBOX, _channels
 from state import approvals, notes, topic_id
@@ -155,6 +156,17 @@ def talk() -> list:
     return [{"key": f"{i}", **r} for i, r in enumerate(sorted(rows, key=lambda r: r["at"])[-40:])]
 
 
+def breakouts() -> list:
+    """Breakout studies (breakout.py), newest first, with the owner's choice: Waiting, Approved or Rejected."""
+    said, names = approvals(), {c["id"]: c["name"] for c in _channels()}
+    return [{"id": i, "channel": s["channel"], "name": names.get(s["channel"], s["channel"]), "title": s["title"],
+             "url": s["url"], "views": s["views"], "usual": round(s["usual"]), "times": round(s["views"] / max(s["usual"], 1), 1),
+             "studied": s["studied"], "summary": s["summary"], "report": s["report"], "owner": s["owner"],
+             "changes": "\n".join(f"{c['agent']}: {c['rule']}" for c in s["changes"]),
+             "status": {"ok": "Approved", "no": "Rejected"}.get(said.get(i), "Waiting")}
+            for i, s in sorted(breakout.load().items(), key=lambda x: x[1]["studied"], reverse=True)]
+
+
 def youtube_totals() -> dict:
     """Per signed-in YouTube channel: YouTube's own all-time views, subscribers and minutes watched."""
     from video import channel_stats, watch_minutes
@@ -259,11 +271,13 @@ def push(path) -> None:
 
 if __name__ == "__main__":
     rows, costs = shorts(), spend()
+    if os.environ.get("BREAKOUTS") == "true":  # the hourly numbers run only, so two runs never study the same Short
+        breakout.run(rows)
     plan = slots(rows)
     data = {"updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "shorts": rows, "spend": costs, "agent_work": agent_work(), "limits": limits(costs),
             "slots": plan, "channels": channels(rows, costs, plan, youtube_totals()), "runs": runs(), "upcoming": upcoming(), "credits": credits.check(),
-            "topics": topics(), "talk": talk()}
+            "topics": topics(), "talk": talk(), "breakouts": breakouts()}
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(data, indent=1, ensure_ascii=False), encoding="utf-8")
     print(f"Saved {OUT} ({len(rows)} Shorts)")

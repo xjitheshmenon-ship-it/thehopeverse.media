@@ -164,8 +164,11 @@ jobs:
           python -c "import sys, agents as a; sys.exit(a.spent_today() >= a.DAILY_BUDGET)" || { echo "Daily budget used up: no more videos today"; exit 0; }
           gh workflow run hope.yml --ref "$GITHUB_REF_NAME" -f job=next
 
-      - name: Dashboard numbers
+      - name: Dashboard numbers (and a deep study of any Short that broke out, on the hourly run)
         if: always()
         env:
           GH_TOKEN: ${{ github.token }}
+          BREAKOUTS: ${{ inputs.job == 'stats' || github.event.schedule == '15 * * * *' }}
+          BREAKOUT_X: ${{ vars.BREAKOUT_X || '3' }}  # a Short with this many times its channel's usual views counts as a breakout
+          BREAKOUT_MIN_VIEWS: ${{ vars.BREAKOUT_MIN_VIEWS || '300' }}
         run: python dashboard.py
