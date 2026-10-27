@@ -39,12 +39,6 @@
  ],
  "yt-instinct": [
   {
-   "when": "2026-10-27 06:50",
-   "topic": "Le tardigrade : l'animal qui survit au vide spatial (cryptobiose) #Shorts",
-   "why": "Créneau 01:30 IST = 21:00 à Paris, 16:00 à Montréal : pic de soirée pour l'UE. Hook fort (survivre dans l'espace), fait confirmé par l'expérience FOTON-M3 de 2007 et très partageable.",
-   "planned": "2026-10-26 21:58"
-  },
-  {
    "when": "2026-10-27 08:55",
    "topic": "Le corbeau qui fabrique des outils : l'intelligence d'un enfant de 7 ans #Shorts",
    "why": "19:30 IST = 16:00 à Paris, 10:00 à Montréal : début d'après-midi pour les familles, créneau matinée au Québec. Études sur le corbeau calédonien (Oxford) solides, vidéo stock facile.",
@@ -77,22 +71,22 @@
  ],
  "yt-hopeverse": [
   {
-   "when": "2026-10-27 10:35",
+   "topic": "Israel votes Tue 27 Oct 2026, its first election since the 7 Oct 2023 Hamas attacks. Explain why it is a referendum on Netanyahu. Polls show Gadi Eisenkot's bloc ahead by about 4.5 seats, but neither bloc reaches the 61-seat majority. Netanyahu's outgoing coalition averages about 50 seats, which is 11 short. Cover what is at stake, how the coalition math works, and what happens if the Knesset deadlocks. Under 60 seconds, for an international audience.",
+   "why": "The vote takes place on the day of this slot, and every major outlet (CNBC, NPR, CBS, JPost) was leading with it on 25-26 Oct. It is a big, clear story with numbers, and international viewers will be searching for it as results come in.",
+   "planned": "2026-10-27 00:33",
+   "when": "2026-10-27 10:35"
+  },
+  {
+   "when": "2026-10-27 11:00",
    "topic": "Jamia Millia Islamia agrees to hold student union polls after 21 years, ending a hunger strike. It revokes suspensions and orders a probe into security personnel conduct",
    "why": "A campus story with a clear sequence of events and a '21 years' number. It suits the student-heavy Indian audience at 09:00 IST.",
    "planned": "2026-10-26 15:33"
   },
   {
-   "when": "2026-10-27 11:00",
+   "when": "2026-10-27 11:25",
    "topic": "Bihar BJP worker files a police complaint at Patna's Kotwali station over Kharge's 'baap' remark aimed at Modi, filed Sunday evening: what he said and what the complaint means",
    "why": "A fast-moving political story from the last 24 hours with a clear who and what. It suits the 13:00 IST slot, when Indian viewers are looking for the day's political updates.",
    "planned": "2026-10-26 15:33"
-  },
-  {
-   "topic": "Israel votes Tue 27 Oct 2026, its first election since the 7 Oct 2023 Hamas attacks. Explain why it is a referendum on Netanyahu. Polls show Gadi Eisenkot's bloc ahead by about 4.5 seats, but neither bloc reaches the 61-seat majority. Netanyahu's outgoing coalition averages about 50 seats, which is 11 short. Cover what is at stake, how the coalition math works, and what happens if the Knesset deadlocks. Under 60 seconds, for an international audience.",
-   "why": "The vote takes place on the day of this slot, and every major outlet (CNBC, NPR, CBS, JPost) was leading with it on 25-26 Oct. It is a big, clear story with numbers, and international viewers will be searching for it as results come in.",
-   "planned": "2026-10-27 00:33",
-   "when": "2026-10-27 11:25"
   },
   {
    "topic": "Venezuela's opposition leader and Nobel Peace laureate María Corina Machado returned home on Sunday 25 Oct 2026 after more than 10 months in exile. Tens of thousands cheered her on the road to Caracas. Explain why she left, how the US toppled Maduro a month after she went, and why her return could challenge the interim government and push for an election date. Under 60 seconds.",
@@ -110,20 +104,20 @@
  "yt-sankalp": [
   {
    "when": "2026-10-27 09:20",
+   "topic": "Wed 28 Oct 15:00 IST: A CNN analysis asks whether a weeks-old Gen-Z protest group got Modi to 'blink', after the education minister's exit. Explain the government's response to the paper-leak issue as a sequence: what was announced, when, and what remains pending. Mark the 'what next' view as opinion. Confirm each step with two sources.",
+   "why": "Viewers are asking what happens next, and a pro-government explainer can frame the response as accountability. Each step in the sequence has to be double-sourced.",
+   "planned": "2026-10-26 21:58"
+  },
+  {
+   "when": "2026-10-28 07:15",
    "topic": "Tue 27 Oct 15:00 IST: Modi government to use 12 AI services to screen about 2.9 lakh investor refund claims for fraud (NewsBytes, published within the last day). Explain what the claims are, how the AI checks work and what it means for ordinary investors. Mark opinion separately. Use Hindi and English versions. Anchors are AI and there are no AI faces of real people. Show only Wikimedia Commons photos of the ministers involved.",
    "why": "It is a fresh, concrete story with real numbers (12 AI services, 2.9 lakh claims). It touches adult investors aged 18-45 and fits the channel's pro-government 'policy explained' angle. It is not one of the Cockroach, paper-leak, crime-boss or cricket topics already made or planned. I could only find this one source, and my search could not confirm which ministry or scheme is involved, so find a second outlet or the official PIB or ministry release before scripting. If that fails, swap in the Cabinet's ₹52,878-crore approval of Fairfax's IDBI Bank bid. That story is about 12 days old, so flag its age on screen.",
    "planned": "2026-10-26 22:38"
   },
   {
-   "when": "2026-10-28 07:15",
+   "when": "2026-10-28 09:20",
    "topic": "Tue 27 Oct 21:00 IST: Indian police again detain 'Cockroach Janta Party' founder Abhijeet Dipke before a protest in New Delhi (CNN, Thursday press-conference report). Cover the facts of the detention, the legal basis for it and the protest permission rules. Mark opinion separately. Verify the date and the reason police gave with a second source.",
    "why": "This is the evening follow-up that viewers will search for. It gives a balanced, double-sourced account of the protest-versus-policing question without relying on rumours.",
-   "planned": "2026-10-26 21:58"
-  },
-  {
-   "when": "2026-10-28 09:20",
-   "topic": "Wed 28 Oct 15:00 IST: A CNN analysis asks whether a weeks-old Gen-Z protest group got Modi to 'blink', after the education minister's exit. Explain the government's response to the paper-leak issue as a sequence: what was announced, when, and what remains pending. Mark the 'what next' view as opinion. Confirm each step with two sources.",
-   "why": "Viewers are asking what happens next, and a pro-government explainer can frame the response as accountability. Each step in the sequence has to be double-sourced.",
    "planned": "2026-10-26 21:58"
   },
   {
@@ -147,34 +141,34 @@
  ],
  "yt-sawaal": [
   {
-   "when": "2026-10-28 07:40",
+   "topic": "Fri 30 Oct 07:40 IST: Rahul Gandhi's vow to keep protesting until Chief Election Commissioner Gyanesh Kumar resigns. Rahul, Priyanka Gandhi Vadra and other INDIA bloc MPs were detained for two hours on the night of 7 Oct 2026. Two outlets reported it: The Week (7 Oct) and Nikkei Asia (7 Oct, on the protests over the nationwide voter-roll revision). Angle: 'Why are MPs detained for demanding a CEC's resignation, and what is the Election Commission's answer?' The Short is in English and Hindi, with the opinion segment clearly marked. Use Wikimedia Commons photos of Rahul Gandhi and the Congress flag, and have the AI anchors read the facts. Before scripting, check for any newer development from 27–29 Oct. Also avoid repeating the 3 crore voters SC-notice Short. Cover only the protest, the detention and the resignation demand, and attribute the Nikkei analyst's 'credibility' claim to Nikkei.",
+   "why": "The CEC-resignation demand is the opposition's central confrontation with the government and the Election Commission, and the voter-roll revision is a live issue before early-2027 state polls. A morning Short with a hard number (two hours of detention) and two independent sources fits the channel's double-sourcing rule. It is a different story from the voter-deletion petition and the BRICS cost Shorts already made. Caveat: my search was cut off before I could confirm anything newer than 7 Oct, so swap in a fresher double-sourced clash if one emerges.",
+   "planned": "2026-10-27 01:18",
+   "when": "2026-10-28 07:40"
+  },
+  {
+   "when": "2026-10-28 09:45",
    "topic": "Tue 27 Oct 21:00 IST: No verified story. Hold this slot for the day's biggest opposition-versus-government clash, once the who, what and number are confirmed from two sources.",
    "why": "Prime-time slots need a real, dated story. I can't supply one without current search results.",
    "planned": "2026-10-26 21:58"
   },
   {
-   "when": "2026-10-28 09:45",
+   "when": "2026-10-29 07:40",
    "topic": "Wed 28 Oct 15:00 IST: No verified story. Hold this slot for an economy item with a hard number, such as a fuel price, inflation, GDP or jobs figure from an official release, once it is double-sourced.",
    "why": "An afternoon audience of 18–45-year-olds responds to cost-of-living stories. I can't confirm which figure is current.",
    "planned": "2026-10-26 21:58"
   },
   {
-   "when": "2026-10-29 07:40",
+   "when": "2026-10-29 09:45",
    "topic": "Wed 28 Oct 21:00 IST: No verified story. Hold this slot for a parliamentary, court or Election Commission development from 27–28 Oct, with the party and the number named.",
    "why": "Evening viewers want accountability stories. A specific one must come from fresh sources I couldn't retrieve.",
    "planned": "2026-10-26 21:58"
   },
   {
-   "when": "2026-10-29 09:45",
+   "when": "2026-10-30 07:40",
    "topic": "Thu 29 Oct 21:00 IST: No verified story. Hold this slot for the week's main opposition question, chosen from the stories confirmed on 27–29 Oct, with opinion clearly marked.",
    "why": "Closing the week with the strongest accountability story suits the channel. It needs real, dated sourcing that I can't supply right now.",
    "planned": "2026-10-26 21:58"
-  },
-  {
-   "topic": "Fri 30 Oct 07:40 IST: Rahul Gandhi's vow to keep protesting until Chief Election Commissioner Gyanesh Kumar resigns. Rahul, Priyanka Gandhi Vadra and other INDIA bloc MPs were detained for two hours on the night of 7 Oct 2026. Two outlets reported it: The Week (7 Oct) and Nikkei Asia (7 Oct, on the protests over the nationwide voter-roll revision). Angle: 'Why are MPs detained for demanding a CEC's resignation, and what is the Election Commission's answer?' The Short is in English and Hindi, with the opinion segment clearly marked. Use Wikimedia Commons photos of Rahul Gandhi and the Congress flag, and have the AI anchors read the facts. Before scripting, check for any newer development from 27–29 Oct. Also avoid repeating the 3 crore voters SC-notice Short. Cover only the protest, the detention and the resignation demand, and attribute the Nikkei analyst's 'credibility' claim to Nikkei.",
-   "why": "The CEC-resignation demand is the opposition's central confrontation with the government and the Election Commission, and the voter-roll revision is a live issue before early-2027 state polls. A morning Short with a hard number (two hours of detention) and two independent sources fits the channel's double-sourcing rule. It is a different story from the voter-deletion petition and the BRICS cost Shorts already made. Caveat: my search was cut off before I could confirm anything newer than 7 Oct, so swap in a fresher double-sourced clash if one emerges.",
-   "planned": "2026-10-27 01:18",
-   "when": "2026-10-30 07:40"
   }
  ],
  "rejected": {}
