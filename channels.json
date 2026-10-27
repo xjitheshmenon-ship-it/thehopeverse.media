@@ -119,7 +119,8 @@
     "photos": true,
     "dub": "hi",
     "dub_language": "Hindi",
-    "watermark": "brand/sankalp-watermark.png"
+    "watermark": "brand/sankalp-watermark.png",
+    "plan_note": "Every Short is posted in Hindi only (never write 'English and Hindi'). Topics are reported neutrally: never ask for opinion, 'mark opinion', the channel's own view, or loaded framing (e.g. 'Modi blinked', 'U-turn', 'masterstroke'). Frame each topic around national pride: what it means for India and its people. Prefer stories about what the government has done, decided or delivered and India's progress (schemes, infrastructure, economy, technology, defence, diplomacy, sport) with a curious, little-known fact; not protests or party spats."
   },
   {
     "id": "yt-sawaal",
@@ -158,6 +159,7 @@
     "photos": true,
     "dub": "hi",
     "dub_language": "Hindi",
-    "watermark": "brand/sawaal-watermark.png"
+    "watermark": "brand/sawaal-watermark.png",
+    "plan_note": "Every Short is posted in Hindi only (never write 'English and Hindi'). Topics are reported neutrally: never ask for opinion, 'mark opinion', the channel's own view, or loaded framing (e.g. 'Modi blinked', 'U-turn', 'masterstroke'). Frame each topic around national pride: what it means for India and its people. Prefer stories where a promise, policy or decision leaves an open question, told through a curious, little-known fact (data, Parliament answers, CAG, RTI, court records); not party spats or personal remarks."
   }
 ]

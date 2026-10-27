@@ -133,8 +133,12 @@ def _ask(channel: dict, slots: list, taken: list, rejected: list = ()) -> list:
                 + (f"The owner rejected these, don't suggest them or anything like them: {list(rejected)}\n" if rejected else "")
                 + ("Current affairs: first run web_search for the top news of the last 24-48 hours for this channel's audience. "
                    "Every topic must name one specific, real, dated story you found (who, what, a number), never a "
-                   "category like 'top headline'. Pick the stories with the most interest for the channel's audience."
-                   if channel.get("news") else "Evergreen, well-sourced topics with a strong curiosity hook."))
+                   "category like 'top headline'. Follow the curiosity: for each, find the unique, little-known angle that "
+                   "the big outlets missed (a surprising number, a hidden cause or consequence, a 'why does this happen' "
+                   "question) and make that the topic; every topic a different story. Never plan a placeholder like 'no "
+                   "verified story': if the news is thin, pick a well-sourced curious explainer instead."
+                   if channel.get("news") else "Evergreen, well-sourced topics with a strong curiosity hook.")
+                + (f"\nChannel rules: {channel['plan_note']}" if channel.get("plan_note") else ""))
         tools = [WEB_SEARCH] if channel.get("news") else []
     response = client.messages.parse(model=HELPER_MODEL, max_tokens=8000,
                                      output_config={"effort": "medium" if tools else "low"},
