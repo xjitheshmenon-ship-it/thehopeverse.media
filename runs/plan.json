@@ -113,74 +113,13 @@
    "when": "2026-10-28 10:10"
   }
  ],
- "yt-sankalp": [
-  {
-   "when": "2026-10-28 07:15",
-   "topic": "Tue 27 Oct 15:00 IST: Modi government to use 12 AI services to screen about 2.9 lakh investor refund claims for fraud (NewsBytes, published within the last day). Explain what the claims are, how the AI checks work and what it means for ordinary investors. Mark opinion separately. Use Hindi and English versions. Anchors are AI and there are no AI faces of real people. Show only Wikimedia Commons photos of the ministers involved.",
-   "why": "It is a fresh, concrete story with real numbers (12 AI services, 2.9 lakh claims). It touches adult investors aged 18-45 and fits the channel's pro-government 'policy explained' angle. It is not one of the Cockroach, paper-leak, crime-boss or cricket topics already made or planned. I could only find this one source, and my search could not confirm which ministry or scheme is involved, so find a second outlet or the official PIB or ministry release before scripting. If that fails, swap in the Cabinet's ₹52,878-crore approval of Fairfax's IDBI Bank bid. That story is about 12 days old, so flag its age on screen.",
-   "planned": "2026-10-26 22:38"
-  },
-  {
-   "when": "2026-10-28 09:20",
-   "topic": "Tue 27 Oct 21:00 IST: Indian police again detain 'Cockroach Janta Party' founder Abhijeet Dipke before a protest in New Delhi (CNN, Thursday press-conference report). Cover the facts of the detention, the legal basis for it and the protest permission rules. Mark opinion separately. Verify the date and the reason police gave with a second source.",
-   "why": "This is the evening follow-up that viewers will search for. It gives a balanced, double-sourced account of the protest-versus-policing question without relying on rumours.",
-   "planned": "2026-10-26 21:58"
-  },
-  {
-   "when": "2026-10-29 07:15",
-   "topic": "Wed 28 Oct 21:00 IST: US files charges against an Indian crime boss over the assassination plot that strained Canada-India ties (CNN India page). Explain the charge, the India-Canada background and India's official position. Confirm the accused's name, the charge details and the date with two outlets, plus the MEA statement if one exists.",
-   "why": "It is a foreign-policy story with a direct link to India's diplomacy. The audience cares about India's global standing, and the story needs careful, sourced framing.",
-   "planned": "2026-10-26 21:58"
-  },
-  {
-   "when": "2026-10-29 09:20",
-   "topic": "Thu 29 Oct 15:00 IST: Mumbai's India Women's Cricket World Cup win over South Africa in the final at Navi Mumbai (3 Nov 2025, AP via CNN). Show how the win has fed into government sports policy and funding for women's cricket. Check the final score and any current sports ministry announcements before use. Note that the match is older than the 24-48 hour window.",
-   "why": "A feel-good story with national pride lifts engagement after a heavy news run. It is the weakest-dated item here, so swap it for a fresh story if one turns up.",
-   "planned": "2026-10-26 21:58"
-  },
-  {
-   "topic": "Fri 30 Oct 07:15 IST: BJP's nationwide protests on Mon 26 Oct 2026 over Congress president Mallikarjun Kharge's 'Modi ka baap bhi jayega' remark. Delhi BJP workers were stopped by police on the march to Kharge's Rajaji Marg residence. Sources found: PTI via ThePrint, IANS via Punjab Kesari, ETV Bharat, Hans India. Show the sequence: Kharge's Sunday 25 Oct remarks and the audience comment that prompted them, the BJP's demand for an apology, the protests in Delhi, Patna and Bhubaneswar, and whether Congress has responded or clarified. Open the Short with the facts and use Hindi and English versions. Use Wikimedia Commons photos of Kharge and Modi, plus BJP and Congress flags, and no AI faces. Mark opinion separately and label the BJP's and Congress's positions as their own. Before use, check that the quote is worded the same way in 2 sources and confirm the latest status, because this story is 3-4 days old. If no apology or new development has come by Thursday night, frame the Short as 'where it stands'.",
-   "why": "This is a fresh, dated story from the last few days with a clear who, what and when (26 Oct 2026). It is a high-engagement political flashpoint for adults 18-45, and it fits the channel's pro-government view while keeping facts, party claims and opinion separate. The morning slot suits a quick explainer on the story. It does not repeat the paper-leak, AI-refund, Dipke, Canada plot or women's cricket topics already made or planned.",
-   "planned": "2026-10-27 00:59",
-   "when": "2026-10-30 07:15"
-  }
- ],
+ "yt-sankalp": [],
  "yt-sawaal": [
   {
    "topic": "Fri 30 Oct 07:40 IST: Rahul Gandhi's vow to keep protesting until Chief Election Commissioner Gyanesh Kumar resigns. Rahul, Priyanka Gandhi Vadra and other INDIA bloc MPs were detained for two hours on the night of 7 Oct 2026. Two outlets reported it: The Week (7 Oct) and Nikkei Asia (7 Oct, on the protests over the nationwide voter-roll revision). Angle: 'Why are MPs detained for demanding a CEC's resignation, and what is the Election Commission's answer?' The Short is in English and Hindi, with the opinion segment clearly marked. Use Wikimedia Commons photos of Rahul Gandhi and the Congress flag, and have the AI anchors read the facts. Before scripting, check for any newer development from 27–29 Oct. Also avoid repeating the 3 crore voters SC-notice Short. Cover only the protest, the detention and the resignation demand, and attribute the Nikkei analyst's 'credibility' claim to Nikkei.",
    "why": "The CEC-resignation demand is the opposition's central confrontation with the government and the Election Commission, and the voter-roll revision is a live issue before early-2027 state polls. A morning Short with a hard number (two hours of detention) and two independent sources fits the channel's double-sourcing rule. It is a different story from the voter-deletion petition and the BRICS cost Shorts already made. Caveat: my search was cut off before I could confirm anything newer than 7 Oct, so swap in a fresher double-sourced clash if one emerges.",
    "planned": "2026-10-27 01:18",
    "when": "2026-10-28 07:40"
-  },
-  {
-   "when": "2026-10-28 09:45",
-   "topic": "Tue 27 Oct 21:00 IST: No verified story. Hold this slot for the day's biggest opposition-versus-government clash, once the who, what and number are confirmed from two sources.",
-   "why": "Prime-time slots need a real, dated story. I can't supply one without current search results.",
-   "planned": "2026-10-26 21:58"
-  },
-  {
-   "when": "2026-10-29 07:40",
-   "topic": "Wed 28 Oct 15:00 IST: No verified story. Hold this slot for an economy item with a hard number, such as a fuel price, inflation, GDP or jobs figure from an official release, once it is double-sourced.",
-   "why": "An afternoon audience of 18–45-year-olds responds to cost-of-living stories. I can't confirm which figure is current.",
-   "planned": "2026-10-26 21:58"
-  },
-  {
-   "when": "2026-10-29 09:45",
-   "topic": "Wed 28 Oct 21:00 IST: No verified story. Hold this slot for a parliamentary, court or Election Commission development from 27–28 Oct, with the party and the number named.",
-   "why": "Evening viewers want accountability stories. A specific one must come from fresh sources I couldn't retrieve.",
-   "planned": "2026-10-26 21:58"
-  },
-  {
-   "when": "2026-10-30 07:40",
-   "topic": "Thu 29 Oct 21:00 IST: No verified story. Hold this slot for the week's main opposition question, chosen from the stories confirmed on 27–29 Oct, with opinion clearly marked.",
-   "why": "Closing the week with the strongest accountability story suits the channel. It needs real, dated sourcing that I can't supply right now.",
-   "planned": "2026-10-26 21:58"
-  },
-  {
-   "topic": "Fri 30 Oct 09:45 IST (English and Hindi): Opposition parties' march to the Supreme Court over the voter-roll purge, after police detained thousands of activists in Delhi. NPR reported the march on Mon 12 Oct 2026. Angle: 'The opposition took the voter-roll fight to the Supreme Court. What are the specific objections, and what do the BJP and the Election Commission say?' Opinion segment clearly marked. Use Wikimedia Commons photos of Rahul Gandhi and the Congress flag. AI anchors read the facts. Do not use the voter-roll protest or the detentions of Rahul and Priyanka Gandhi from the 07:40 slot. Do not use the '3 crore voters cut' story or the electoral bonds story. Before scripting, I need a second source for the NPR report. The search quota ran out, so I could not check for newer developments from 27–29 Oct or find that second source. If no newer story with a number from two sources turns up, run this Short on the Supreme Court march and give the NPR figure for the detentions only if a second outlet confirms it.",
-   "why": "It is the one verified story I found, and it comes from NPR. It is a distinct event from the 07:40 slot: the march to the court and the court-versus-Commission question, not the CEC resignation demand. It also suits adults aged 18-45 who care about voting rights, and the facts and the opinion can be kept apart. The risks are that it is about two weeks old and shares a theme with other slots. So check for a fresher double-sourced story with a hard number first.",
-   "planned": "2026-10-27 09:49",
-   "when": "2026-10-30 09:45"
   }
  ],
  "rejected": {}
