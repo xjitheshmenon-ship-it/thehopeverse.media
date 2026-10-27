@@ -83,13 +83,19 @@
    "when": "2026-10-27 10:35"
   },
   {
-   "when": "2026-10-27 11:00",
+   "topic": "Cyclone Arnab, which the IMD expects to hit the Andhra Pradesh coast on Wed 28 Oct 2026. The IMD said on 26 Oct that it should cross between Bapatla and Visakhapatnam (Yanam included) as a very severe cyclonic storm. Winds should be 115-125 kmph, gusting to 140 kmph, by the forenoon of 28 Oct. The Cabinet Secretary has reviewed preparedness, and the Andhra CM has told officials to aim for zero casualties. Cover where and when it lands, which areas are at risk (heavy rain, storm surge), and what people on the coast should do. Keep it under 60 seconds and open with the landfall hour, since the Short goes up at 08:05 IST on landfall morning.",
+   "why": "The cyclone hits on the morning of the upload, so it is the most time-sensitive story for Indian viewers at that hour. It is also a safety story with a hard wind-speed number. None of the Shorts already made or planned cover it. They cover Jio IPO, Gaganyaan, the Jamia polls, Rahul Gandhi and Kharge.",
+   "planned": "2026-10-27 01:30",
+   "when": "2026-10-27 11:00"
+  },
+  {
+   "when": "2026-10-27 11:25",
    "topic": "Jamia Millia Islamia agrees to hold student union polls after 21 years, ending a hunger strike. It revokes suspensions and orders a probe into security personnel conduct",
    "why": "A campus story with a clear sequence of events and a '21 years' number. It suits the student-heavy Indian audience at 09:00 IST.",
    "planned": "2026-10-26 15:33"
   },
   {
-   "when": "2026-10-27 11:25",
+   "when": "2026-10-28 06:00",
    "topic": "Bihar BJP worker files a police complaint at Patna's Kotwali station over Kharge's 'baap' remark aimed at Modi, filed Sunday evening: what he said and what the complaint means",
    "why": "A fast-moving political story from the last 24 hours with a clear who and what. It suits the 13:00 IST slot, when Indian viewers are looking for the day's political updates.",
    "planned": "2026-10-26 15:33"
@@ -98,12 +104,6 @@
    "topic": "Venezuela's opposition leader and Nobel Peace laureate María Corina Machado returned home on Sunday 25 Oct 2026 after more than 10 months in exile. Tens of thousands cheered her on the road to Caracas. Explain why she left, how the US toppled Maduro a month after she went, and why her return could challenge the interim government and push for an election date. Under 60 seconds.",
    "why": "Reuters, CNN, NPR and BBC all reported it on 25-26 Oct. It is a fresh, visual story with a clear arc, and it has not been covered or planned yet. The Indian audience follows US-linked world events and Nobel stories. I could not find a verified India-specific story for this slot because my search limit ran out, so this is the strongest dated world story I confirmed. Swap in a fresh India headline from the morning of 28 Oct if the owner prefers.",
    "planned": "2026-10-27 00:33",
-   "when": "2026-10-28 06:00"
-  },
-  {
-   "topic": "Cyclone Arnab, which the IMD expects to hit the Andhra Pradesh coast on Wed 28 Oct 2026. The IMD said on 26 Oct that it should cross between Bapatla and Visakhapatnam (Yanam included) as a very severe cyclonic storm. Winds should be 115-125 kmph, gusting to 140 kmph, by the forenoon of 28 Oct. The Cabinet Secretary has reviewed preparedness, and the Andhra CM has told officials to aim for zero casualties. Cover where and when it lands, which areas are at risk (heavy rain, storm surge), and what people on the coast should do. Keep it under 60 seconds and open with the landfall hour, since the Short goes up at 08:05 IST on landfall morning.",
-   "why": "The cyclone hits on the morning of the upload, so it is the most time-sensitive story for Indian viewers at that hour. It is also a safety story with a hard wind-speed number. None of the Shorts already made or planned cover it. They cover Jio IPO, Gaganyaan, the Jamia polls, Rahul Gandhi and Kharge.",
-   "planned": "2026-10-27 01:30",
    "when": "2026-10-28 08:05"
   },
   {
@@ -113,13 +113,80 @@
    "when": "2026-10-28 10:10"
   }
  ],
- "yt-sankalp": [],
+ "yt-sankalp": [
+  {
+   "topic": "UPI: एक महीने में 20 अरब से ज़्यादा लेन-देन (अगस्त 2025, NPCI आँकड़े)। सवाल: एक चाय वाले से लेकर मॉल तक, भारत ने यह रफ़्तार कैसे पकड़ी, और दुनिया के कितने देश अब UPI अपना रहे हैं?",
+   "why": "लाइव वेब सर्च इस सत्र में चल नहीं पाई, इसलिए यह पहले से दर्ज और NPCI व RBI दोनों से जाँचे जा सकने वाले आँकड़े वाला विषय है। स्क्रिप्ट से पहले ताज़ा मासिक आँकड़ा NPCI और एक दूसरे स्रोत से मिलाएँ। यह डिजिटल भारत की उपलब्धि और राष्ट्रीय गौरव का विषय है और कम लोग जानते हैं कि UPI कई देशों में चलता है।",
+   "planned": "2026-10-27 10:47",
+   "when": "2026-10-28 07:15"
+  },
+  {
+   "topic": "आयुष्मान भारत: 70 साल से ऊपर के सभी बुज़ुर्गों को ₹5 लाख तक मुफ़्त इलाज (अक्टूबर 2024 से लागू)। सवाल: इसमें कितने बुज़ुर्ग आते हैं और कार्ड कैसे बनता है?",
+   "why": "यह सरकार की डिलीवरी वाली योजना है और सीधे परिवारों को छूती है, इसलिए 18-45 साल के दर्शक अपने माता-पिता के लिए इसे देखेंगे। लाभार्थियों की ताज़ा संख्या PIB और NHA से मिलाएँ। जिन्हें पता नहीं कि पात्रता आय पर निर्भर नहीं है, उनके लिए यह उपयोगी तथ्य है।",
+   "planned": "2026-10-27 10:47",
+   "when": "2026-10-28 09:20"
+  },
+  {
+   "topic": "राष्ट्रीय एकता दिवस (31 अक्टूबर) से एक दिन पहले: सरदार पटेल ने 562 से ज़्यादा रियासतों को भारत में कैसे जोड़ा, और स्टैच्यू ऑफ़ यूनिटी दुनिया की सबसे ऊँची प्रतिमा (182 मीटर) कैसे बनी?",
+   "why": "दिन के हिसाब से सटीक और दोहरे स्रोत वाला विषय है। पटेल की जयंती पर PIB के आधिकारिक आँकड़े और ऐतिहासिक रिकॉर्ड मौजूद हैं। राष्ट्रीय गर्व का सीधा फ़्रेम है। असली तस्वीरें Wikimedia Commons से ली जाएँगी और AI से कोई चेहरा नहीं बनेगा।",
+   "planned": "2026-10-27 10:47",
+   "when": "2026-10-29 07:15"
+  },
+  {
+   "topic": "भारत का विदेशी मुद्रा भंडार 600 अरब डॉलर के पार रहता है, यानी दुनिया के शीर्ष भंडारों में। सवाल: यह भंडार असल में किस चीज़ का बना होता है, और आम आदमी को इससे क्या फ़ायदा है?",
+   "why": "यह एक 'क्यों होता है' वाला आर्थिक विषय है जिसे बड़े चैनल कम समझाते हैं। RBI के साप्ताहिक आँकड़े और दूसरे स्रोत से मिलान करें, और स्क्रिप्ट में ताज़ा आँकड़ा डालें। यह भारत की आर्थिक मज़बूती दिखाता है, बिना किसी दल का पक्ष लिए।",
+   "planned": "2026-10-27 10:47",
+   "when": "2026-10-29 09:20"
+  },
+  {
+   "topic": "वंदे भारत: ट्रेन की डिज़ाइन और निर्माण भारत में चेन्नई की ICF फ़ैक्टरी में होता है। सवाल: एक रेक में कितने कोच होते हैं, उसकी रफ़्तार क्या है, और कितने रूट चालू हैं?",
+   "why": "यह 'मेक इन इंडिया' और बुनियादी ढाँचे की प्रगति का उदाहरण है। रेल मंत्रालय और PIB से दोहरा स्रोत मिल सकता है। चालू रूटों की ताज़ा संख्या शूट से पहले जाँचें। इसमें पर्दे के पीछे की जानकारी है जो ज़्यादातर दर्शकों को नहीं पता।",
+   "planned": "2026-10-27 10:47",
+   "when": "2026-10-30 07:15"
+  },
+  {
+   "topic": "जन धन योजना: 50 करोड़ से ज़्यादा खाते खुले। सवाल: अगस्त 2014 में शुरू हुई इस योजना में कितने खाते महिलाओं के हैं, और सीधे खाते में पैसा (DBT) से कितनी रकम बची?",
+   "why": "सरकार की योजना और उसकी उपलब्धि पर आधारित, आँकड़ों वाला विषय है। वित्त मंत्रालय और PIB दोनों से स्रोत मिलते हैं। महिलाओं की हिस्सेदारी का कोण कम चर्चित है और राष्ट्रीय गर्व से जुड़ता है। पोस्ट करने से पहले नवीनतम संख्या दोनों स्रोतों से पुष्ट करें।",
+   "planned": "2026-10-27 10:47",
+   "when": "2026-10-30 09:20"
+  }
+ ],
  "yt-sawaal": [
   {
    "topic": "Fri 30 Oct 07:40 IST: Rahul Gandhi's vow to keep protesting until Chief Election Commissioner Gyanesh Kumar resigns. Rahul, Priyanka Gandhi Vadra and other INDIA bloc MPs were detained for two hours on the night of 7 Oct 2026. Two outlets reported it: The Week (7 Oct) and Nikkei Asia (7 Oct, on the protests over the nationwide voter-roll revision). Angle: 'Why are MPs detained for demanding a CEC's resignation, and what is the Election Commission's answer?' The Short is in English and Hindi, with the opinion segment clearly marked. Use Wikimedia Commons photos of Rahul Gandhi and the Congress flag, and have the AI anchors read the facts. Before scripting, check for any newer development from 27–29 Oct. Also avoid repeating the 3 crore voters SC-notice Short. Cover only the protest, the detention and the resignation demand, and attribute the Nikkei analyst's 'credibility' claim to Nikkei.",
    "why": "The CEC-resignation demand is the opposition's central confrontation with the government and the Election Commission, and the voter-roll revision is a live issue before early-2027 state polls. A morning Short with a hard number (two hours of detention) and two independent sources fits the channel's double-sourcing rule. It is a different story from the voter-deletion petition and the BRICS cost Shorts already made. Caveat: my search was cut off before I could confirm anything newer than 7 Oct, so swap in a fresher double-sourced clash if one emerges.",
    "planned": "2026-10-27 01:18",
    "when": "2026-10-28 07:40"
+  },
+  {
+   "topic": "Wed 28 Oct 09:45 IST. जनगणना 2027: 16 साल बाद गिनती, पहली बार जाति के आँकड़े भी। सरकार ने जून 2025 में इसकी घोषणा की थी, और संदर्भ तिथि 1 मार्च 2027 है। सवाल यह है कि जनगणना के आँकड़े देश को कब मिलेंगे, और क्या परिसीमन तथा महिला आरक्षण की समय-सारिणी उसके बाद तय होगी। दोनों स्रोत: गृह मंत्रालय/PIB की अधिसूचना और Registrar General of India का पन्ना। पोस्ट करने से पहले ताज़ा ख़बर जाँचें। Wikimedia Commons की तस्वीरें और AI एंकर, हिंदी में।",
+   "why": "भारत की सबसे बड़ी गिनती है, इसलिए राष्ट्र-गौरव का सीधा कोण बनता है। खुला सवाल यह है कि आँकड़े कब आएँगे और उनके आधार पर आगे के फ़ैसले कब होंगे। यह दल-विवाद नहीं बल्कि दस्तावेज़ों पर टिकी बात है। पिछले Shorts (SIR/SC, BRICS, बॉन्ड) से अलग विषय है।",
+   "planned": "2026-10-27 10:47",
+   "when": "2026-10-28 09:45"
+  },
+  {
+   "topic": "Thu 29 Oct 07:40 IST. CAG की आयुष्मान भारत रिपोर्ट (अगस्त 2023): लाभार्थी डेटाबेस में लगभग 7.5 लाख लोग एक ही मोबाइल नंबर से जुड़े मिले। जानकारी भी सामने आई कि मृत घोषित मरीज़ों के नाम पर इलाज के दावे दर्ज थे। एक सवाल खुला है कि इन ख़ामियों के बाद सत्यापन कैसे मज़बूत हुआ। दोनों स्रोत: CAG की मूल रिपोर्ट और राष्ट्रीय स्वास्थ्य प्राधिकरण (NHA) या स्वास्थ्य मंत्रालय का जवाब। संख्याएँ पोस्ट से पहले मूल रिपोर्ट से मिलाएँ। हिंदी में।",
+   "why": "आयुष्मान भारत करोड़ों परिवारों का स्वास्थ्य-कवच है। इसलिए आँकड़ों की सटीकता देश की साख से जुड़ी है। CAG का एक छोटा-सा आँकड़ा, यानी एक नंबर से 7.5 लाख लोग, जिज्ञासा जगाता है और रिपोर्ट के दावे के रूप में तटस्थ रहता है। इसमें किसी दल या व्यक्ति पर टिप्पणी नहीं है।",
+   "planned": "2026-10-27 10:47",
+   "when": "2026-10-29 07:40"
+  },
+  {
+   "topic": "Thu 29 Oct 09:45 IST. डेटा सुरक्षा क़ानून (DPDP Act 2023) के नियम: निजी डेटा की सुरक्षा का भारत का पहला व्यापक क़ानून, जिसके नियम नवंबर 2025 में अधिसूचित हुए। जिज्ञासु सवाल यह है कि इस क़ानून की धारा 44(3) RTI अधिनियम में बदलाव करती है। इसके बाद व्यक्तिगत जानकारी के RTI जवाब कैसे तय होंगे, और सरकार और आलोचक क्या कहते हैं। दोनों पक्ष तटस्थ रूप से बताएँ। दोनों स्रोत: मूल गज़ट अधिसूचना (MeitY) और PRS Legislative Research या संसद की बहस का रिकॉर्ड। हिंदी में। पोस्ट से पहले ताज़ा स्थिति जाँचें, जिसमें अदालत में चल रही याचिकाएँ भी शामिल हैं।",
+   "why": "डेटा और पारदर्शिता, दोनों भारत के डिजिटल गौरव से जुड़े हैं। आम नागरिक के लिए यह जानना काम का है कि उसका डेटा और उसका सूचना का अधिकार, दोनों कैसे सुरक्षित रहेंगे। खुला सवाल क़ानून के पाठ में दर्ज है, इसलिए यह नेताओं की बयानबाज़ी पर निर्भर नहीं है।",
+   "planned": "2026-10-27 10:47",
+   "when": "2026-10-29 09:45"
+  },
+  {
+   "topic": "Fri 30 Oct 07:40 IST. विरोध-प्रदर्शन और चुनाव आयोग का जवाब: 7 अक्टूबर 2026 की रात राहुल गांधी, प्रियंका गांधी वाड्रा और INDIA गठबंधन के अन्य सांसदों को क़रीब दो घंटे हिरासत में रखा गया। मुद्दा था मुख्य चुनाव आयुक्त ज्ञानेश कुमार के इस्तीफ़े की माँग और देशव्यापी मतदाता सूची पुनरीक्षण पर विरोध। रिपोर्ट करने वाले दो स्रोत: The Week (7 अक्टूबर) और Nikkei Asia (7 अक्टूबर)। Nikkei के विश्लेषक की 'विश्वसनीयता' वाली बात Nikkei के नाम से ही बताएँ। केंद्र में सवाल रहेगा: चुनाव आयोग इस पर क्या कहता है, और हिरासत किस नियम के तहत हुई। केवल प्रदर्शन, हिरासत और इस्तीफ़े की माँग कवर करें। स्क्रिप्ट से पहले 27–29 अक्टूबर की किसी नई ख़बर की जाँच करें। 3 करोड़ वोटर वाले SC नोटिस वाले Short को न दोहराएँ। Wikimedia Commons की तस्वीरें (राहुल गांधी, कांग्रेस ध्वज) और AI एंकर तथ्य पढ़ें। सिर्फ़ हिंदी में, कोई राय-खंड नहीं।",
+   "why": "यह पहले से तय विषय है, जिसे चैनल के नियमों के हिसाब से ठीक किया गया है। अब यह सिर्फ़ हिंदी में है, बिना राय-खंड के और तटस्थ रूप में। सवाल लोकतांत्रिक संस्थाओं की पारदर्शिता का है, जो देश की साख से जुड़ा है। हर दावे को उसके स्रोत के नाम से बताया जाएगा, और चुनाव आयोग का पक्ष बराबर जगह पाएगा।",
+   "planned": "2026-10-27 10:47",
+   "when": "2026-10-30 07:40"
+  },
+  {
+   "topic": "Fri 30 Oct 09:45 IST. 'एक देश, एक चुनाव': संविधान (129वाँ संशोधन) विधेयक दिसंबर 2024 में लोकसभा में पेश हुआ और संयुक्त संसदीय समिति (JPC) को भेजा गया। जिज्ञासु सवाल यह है कि सभी चुनाव एक साथ कराने के लिए कितनी EVM/VVPAT और कितने संसाधन चाहिए, और समिति की रिपोर्ट कब आएगी। दोनों स्रोत: लोकसभा सचिवालय/PRS का विधेयक-रिकॉर्ड और चुनाव आयोग या क़ानून मंत्रालय का बयान। रिपोर्ट की स्थिति पोस्ट से पहले जाँचें। हिंदी में, तटस्थ।",
+   "why": "दुनिया के सबसे बड़े लोकतंत्र के चुनाव कराने का तरीक़ा सीधे राष्ट्र-गौरव से जुड़ता है। इसमें खुला सवाल लागत और समय-सीमा का है, जो संसदीय दस्तावेज़ों में दर्ज है। इसमें कोई पक्ष नहीं लिया जाएगा, और पक्ष-विपक्ष के तर्क बराबर रखे जाएँगे।",
+   "planned": "2026-10-27 10:47",
+   "when": "2026-10-30 09:45"
   }
  ],
  "rejected": {}
