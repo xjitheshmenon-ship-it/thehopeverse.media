@@ -40,24 +40,30 @@
  "yt-instinct": [
   {
    "when": "2026-10-27 08:55",
+   "topic": "Le corbeau qui fabrique des outils : l'intelligence d'un enfant de 7 ans #Shorts",
+   "why": "19:30 IST = 16:00 à Paris, 10:00 à Montréal : début d'après-midi pour les familles, créneau matinée au Québec. Études sur le corbeau calédonien (Oxford) solides, vidéo stock facile.",
+   "planned": "2026-10-26 21:58"
+  },
+  {
+   "when": "2026-10-28 06:50",
    "topic": "La grenouille de bois qui gèle complètement puis ressuscite #Shorts",
    "why": "Soirée en Europe (21:00 Paris) et après-midi au Québec. Adaptation extrême, bien documentée (Rana sylvatica, glucose antigel), hook de 'mort puis retour à la vie'.",
    "planned": "2026-10-26 21:58"
   },
   {
-   "when": "2026-10-28 06:50",
+   "when": "2026-10-28 08:55",
    "topic": "Le poulpe mimétique qui imite d'autres animaux pour survivre #Shorts",
    "why": "Créneau 16:00 Paris / 10:00 Montréal. Sujet visuel, curiosité forte, comportement décrit en 1998 en Indonésie. Contenu différent du Short déjà fait sur les 3 cœurs du poulpe : angle camouflage et imitation.",
    "planned": "2026-10-26 21:58"
   },
   {
-   "when": "2026-10-28 08:55",
+   "when": "2026-10-29 06:50",
    "topic": "Pourquoi les éléphants se souviennent des morts et reviennent sur leurs os #Shorts",
    "why": "Soirée en Europe, public adulte réceptif à l'émotion. Comportement documenté par des chercheurs (Douglas-Hamilton, McComb), narration simple avec images stock.",
    "planned": "2026-10-26 21:58"
   },
   {
-   "when": "2026-10-29 06:50",
+   "when": "2026-10-29 08:55",
    "topic": "Le poisson-archer qui crache de l'eau pour chasser avec précision #Shorts",
    "why": "Après-midi européen et matinée québécoise, idéal pour les familles. Fait solide (correction de la réfraction, étude de Schuster), hook visuel immédiat et facile à illustrer avec des images IA.",
    "planned": "2026-10-26 21:58"
@@ -66,18 +72,12 @@
    "topic": "Le tardigrade : l'animal microscopique qui survit au vide spatial, à la déshydratation et aux radiations en se mettant en pause (état de cryptobiose) #Shorts",
    "why": "Slot Fri 30 Oct 06:50 IST (soit 03:20 en France, publié pour le public francophone du matin et de Québec la veille au soir). Sujet intemporel, solide scientifiquement (expérience FOTON-M3 de 2007 en orbite), au hook fort : « un animal qui survit dans l'espace ». Il ne répète ni le poulpe, ni le dauphin, ni les sujets déjà planifiés (corbeau, grenouille de bois, poulpe mimétique, éléphants, poisson-archer), et il apporte de la variété avec un invertébré microscopique, idéal pour des images de synthèse IA en complément d'images d'archives.",
    "planned": "2026-10-27 09:49",
-   "when": "2026-10-29 08:55"
+   "when": "2026-10-30 06:50"
   }
  ],
  "yt-hopeverse": [
   {
    "when": "2026-10-27 11:25",
-   "topic": "Jamia Millia Islamia agrees to hold student union polls after 21 years, ending a hunger strike. It revokes suspensions and orders a probe into security personnel conduct",
-   "why": "A campus story with a clear sequence of events and a '21 years' number. It suits the student-heavy Indian audience at 09:00 IST.",
-   "planned": "2026-10-26 15:33"
-  },
-  {
-   "when": "2026-10-28 06:00",
    "topic": "Bihar BJP worker files a police complaint at Patna's Kotwali station over Kharge's 'baap' remark aimed at Modi, filed Sunday evening: what he said and what the complaint means",
    "why": "A fast-moving political story from the last 24 hours with a clear who and what. It suits the 13:00 IST slot, when Indian viewers are looking for the day's political updates.",
    "planned": "2026-10-26 15:33"
@@ -86,19 +86,19 @@
    "topic": "Venezuela's opposition leader and Nobel Peace laureate María Corina Machado returned home on Sunday 25 Oct 2026 after more than 10 months in exile. Tens of thousands cheered her on the road to Caracas. Explain why she left, how the US toppled Maduro a month after she went, and why her return could challenge the interim government and push for an election date. Under 60 seconds.",
    "why": "Reuters, CNN, NPR and BBC all reported it on 25-26 Oct. It is a fresh, visual story with a clear arc, and it has not been covered or planned yet. The Indian audience follows US-linked world events and Nobel stories. I could not find a verified India-specific story for this slot because my search limit ran out, so this is the strongest dated world story I confirmed. Swap in a fresh India headline from the morning of 28 Oct if the owner prefers.",
    "planned": "2026-10-27 00:33",
-   "when": "2026-10-28 08:05"
+   "when": "2026-10-28 06:00"
   },
   {
    "topic": "Cyclone Arnab landfall update, Wed 28 Oct 2026. Cover where the very severe cyclonic storm crossed the Andhra Pradesh coast between Bapatla and Visakhapatnam, the wind speeds recorded against the IMD forecast of 115-125 kmph gusting to 140, and what damage or evacuations were reported. Close with what coastal residents should do in the next 24 hours. Before publishing, check the IMD bulletin for the actual landfall time and figures. Don't use the forecast numbers as if they were observed.",
    "why": "Landfall is the biggest India story on this date, and a 10:10 post-landfall Short is a different angle from the 08:05 forecast Short. My web search quota ran out, so I could not confirm any newer story from the last 48 hours. This pick builds on a story already in the plan. Check it against live news before production.",
    "planned": "2026-10-27 09:49",
-   "when": "2026-10-28 10:10"
+   "when": "2026-10-28 08:05"
   },
   {
    "topic": "Anthropic's $80.7 billion 'loss' that isn't really a loss: Anthropic filed its IPO papers (S-1) on Mon 26 Oct 2026 to list on Nasdaq as 'ANT', with a raise of up to $100 billion reported and a valuation reportedly up to $2 trillion. Its first-half 2026 revenue was $16.3 billion, up 1,300%. The little-known angle is that the $80.7 billion H1 loss is mostly an accounting effect. About $72 billion of it comes from investor notes, held by backers like Amazon, that convert to shares at the IPO. Those shares rose in value, and accounting rules book that rise as a loss. The actual operating loss was only $693 million. Explain this in under 60 seconds. Open with the $80.7B number, then give the $693M reveal. Mention that the SpaceX IPO in June raised a record $86B. Before publishing, check the S-1 or the SEC filing for the exact figures, and don't state the IPO price or date as confirmed, because they are not yet set.",
    "why": "It is the biggest global business story of the last 24 hours (filed 26 Oct), and it is a worldwide, English-speaking audience draw. Most coverage leads with the size of the IPO. The curious angle is the paper loss compared with the real loss, a surprising number that answers 'how can a company growing 1,300% lose $80B?'. It is different from every made and planned topic, and it suits a 10:35 IST slot for the US and UK audience.",
    "planned": "2026-10-27 10:59",
-   "when": "2026-10-28 10:35"
+   "when": "2026-10-28 10:10"
   }
  ],
  "yt-sankalp": [
