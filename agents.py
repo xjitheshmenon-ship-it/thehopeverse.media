@@ -84,6 +84,10 @@ def run_agent(name: str, system: str, prompt: str, tools: list, effort: str = "m
     own = TEAM.get(f"{name} ({os.environ.get('HOPE_CHANNEL')})")  # e.g. "## Mr. Pen (yt-sawaal)" in team.md
     if own:
         system += "\n\nRules for this channel (they win over the general rules above):\n" + own
+    from breakout import rules  # changes from breakout studies the owner approved on the dashboard
+    found = rules(os.environ.get("HOPE_CHANNEL", ""), name.split(" (")[0])
+    if found:
+        system += "\n\nLearned from this channel's breakout Shorts, approved by the owner (follow them):\n" + found
     lessons = _sections(LESSONS).get(name)
     if lessons:
         system += "\n\nLessons Mr. Hope has learned from past runs (follow them):\n" + lessons
