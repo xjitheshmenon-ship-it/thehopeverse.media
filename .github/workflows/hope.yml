@@ -170,5 +170,5 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           BREAKOUTS: ${{ inputs.job == 'stats' || github.event.schedule == '15 * * * *' }}
           BREAKOUT_X: ${{ vars.BREAKOUT_X || '3' }}  # a Short with this many times its channel's usual views counts as a breakout
-          BREAKOUT_MIN_VIEWS: ${{ vars.BREAKOUT_MIN_VIEWS || '300' }}
+          BREAKOUT_MIN_VIEWS: ${{ vars.BREAKOUT_MIN_VIEWS || '50' }}
         run: python dashboard.py

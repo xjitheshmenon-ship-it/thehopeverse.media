@@ -6,7 +6,7 @@ study waits on Hopeverse HQ; once the owner approves it, its changes go into eve
     python breakout.py --demo -> check the detector without any API
 
 A breakout: at least BREAKOUT_X (default 3) times the median views of the channel's other Shorts and at least
-BREAKOUT_MIN_VIEWS (default 300), posted in the last 14 days, the channel having 3+ other Shorts to compare with.
+BREAKOUT_MIN_VIEWS (default 50; 300 missed Sawaal's 78-view Short against a usual 9), posted in the last 14 days, the channel having 3+ other Shorts to compare with.
 Studies live in runs/breakouts.json on the state branch; the owner's Approve/Reject goes in approvals.json under
 the study's id, the same way as topics (state.py approve).
 """
@@ -25,7 +25,7 @@ from state import approvals, topic_id
 HERE = Path(__file__).parent
 FILE = HERE / "runs" / "breakouts.json"
 X = float(os.environ.get("BREAKOUT_X") or 3)
-MIN_VIEWS = int(os.environ.get("BREAKOUT_MIN_VIEWS") or 300)
+MIN_VIEWS = int(os.environ.get("BREAKOUT_MIN_VIEWS") or 50)
 KEEP = 3  # approved studies per channel whose changes the agents follow; older ones give way to new ones
 
 
@@ -141,6 +141,8 @@ def demo():
     hits = [r["id"] for r in find(rows, {}, now)]
     assert hits == ["a", "b"], hits  # f: no channel history; g: too old
     assert find(rows, {topic_id("yt-x", "a"): {}}, now)[0]["id"] == "b"  # already studied
+    small = [row("s1", 78, "yt-s"), row("s2", 20, "yt-s"), row("s3", 9, "yt-s"), row("s4", 7, "yt-s"), row("s5", 0, "yt-s")]
+    assert [r["id"] for r in find(small, {}, now)] == ["s1"]  # Sawaal, 27 Oct: a breakout on a small channel
     print("ok")
 
 
