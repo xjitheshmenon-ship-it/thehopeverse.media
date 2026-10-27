@@ -2,6 +2,7 @@
   {
     "id": "yt-hopeverse",
     "platform": "youtube",
+    "per_day": 4,
     "name": "Hopeverse Media",
     "url": "https://www.youtube.com/@HopeverseMedia",
     "niche": "Global current affairs explained: the world's biggest news in under a minute (changed by the owner, 27 Oct 2026; little Indian politics)",
@@ -62,6 +63,7 @@
   {
     "id": "yt-instinct",
     "platform": "youtube",
+    "per_day": 4,
     "name": "Instinct",
     "url": "https://www.youtube.com/@Instinct.natureFR",
     "niche": "Short, well-checked stories about animal behaviour and nature's strangest adaptations, told in French with stock wildlife footage and AI images",
