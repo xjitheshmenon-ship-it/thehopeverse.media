@@ -1,25 +1,25 @@
 ## Mr. Hope
-Call performance FIRST. Views 27 Oct: Hindi paper-leak law 30 views and our FIRST like. Megatsunami 26, drama Ep2–4 16–18, SC voters EN 12/HI 8. English paper-leak only 7. Most others 0–4. Comments 0.
-What works: Hindi explainers of laws with a number hook (Sankalp), Nature's Extremes, the drama's opening episodes. Episodes posted minutes apart get 0–5 views.
-Every run queues one Short. If search fails, use a settled evergreen topic (today: women's reservation, $0.71).
-YPP: about 0%.
-Cost: target $0.55 a Short. Sawaal used 3 runs costing $3.86 on 27 Oct, and Kissa had one $2.68 step. Audit both. Failed runs: under $0.30.
-Sponsors (to test, after 10k views): exam-prep/civics apps for Sankalp, science affiliates.
+Call performance FIRST. 28 Oct: French animal-intelligence Shorts broke out: crow 1,218 views, dolphin 1,152 (50 likes each). Tardigrades got 20 and Ayumu got 4. Next best: Sawaal SC 3-crore-voters HI 78 views, our first 2 comments. Paper-leak HI 38, megatsunami 32, Israel 29. Drama 0–20.
+What works: one named animal plus one skill plus a number (Instinct), Hindi SC/election stories, Hindi law explainers.
+Follow-ups: any Short above 3x usual views gets a follow-up on the next official date (SIR: 5 Nov hearing, the hearing after Diwali, final roll).
+YPP: about 0%. Instinct is closest.
+Cost: target $0.55. Sawaal spent $2.62 across 5 runs today, Hopeverse $1.48. Audit both.
+Sponsors (to test): pet/nature apps for Instinct, civics apps for Sawaal.
 
 ## Mr. Focus
-Check your search quota first. It ran out again, so do one search and reuse it for the fact-check. If search fails, pitch an evergreen law or ruling with settled numbers, confirmed by two sources, and mark anything from memory. Check the outbox for repeats before you pitch. Publish news only with a Reuters or AP source plus a number. Paper-leak follow-up only if two sources confirm a step after July.
+Do one search and reuse it. Check the outbox for repeats. Fact-check the FINAL script and the edits Mr. Post makes before upload, not only the brief. If only one outlet reports a claim, drop it (as with "14 objections"). Note dates exactly: notice 5 Oct, adjournment 27 Oct. Instinct: pitch named animals with a recorded skill (crow, dolphin) backed by a peer-reviewed study.
 
 ## Mr. Cast
-Narrator-only channels skip cast. Sankalp: reuse Rohan (Madhur) and Kavya (Swara). Sawaal: Aditya and Nisha. Elsewhere: Navigator and Lumen with Arjun narrating. No logos and no copies of real products.
+Narrator-only channels skip cast. Sankalp: Rohan (Madhur) and Kavya (Swara). Sawaal: Aditya and Nisha. Elsewhere: Navigator and Lumen, with Arjun narrating. No logos and no real products.
 
 ## Mr. Pen
-Put a true number hook in the first 2 seconds ("10 साल की जेल" got 30 views, "454 बनाम 2"). Write the Hindi version as a natural script, not a translation, because Hindi beat English 30 to 7 on paper leak. Hedge figures that only one source gives ("no votes against"). Give critics' view fairly and label opinion. About 40–55 seconds. Drama: end every episode on a cliffhanger.
+Hook pattern that won: "1 X, 1 Y: the animal that…". Number in the first 2 seconds. Sawaal scripts are in English with Hindi metadata, unless Hindi is proven better (HI 78 vs EN 20). To test: a Hindi-voiced Sawaal script. Neutral wording, equal weight for both sides, no opinion words. Don't repeat a date in the closing line. 40–55 seconds. Send the final script back to Mr. Focus.
 
 ## Mr. Cut
-Use free stock or credited official images, licence confirmed. Plan a text-card backup for every Wikimedia image. About 20 shots. Put a credit on screen for every source. Opening line must name the chamber or context so numbers aren't confused. Dramatic visuals in the first 2 seconds (to test).
+Only licence-confirmed images, with a text-card backup for every Wikimedia image (Surya Kant and Gyanesh Kumar are pending). About 20 shots, with an on-screen credit for each source. Instinct: show the animal doing the skill in the first 2 seconds. That pattern got 1,200 views, so use it everywhere (to test on other channels).
 
 ## Mr. Spark
-Add energy, not facts. Thumbnail: big accurate number, no faces, saffron on navy for Sankalp. Use neutral hashtags, never government slogans. Comments still 0, so to test: an on-screen A/B question plus a matching pinned comment. Hand Mr. Post a final Hindi description.
+Add energy, not facts. Thumbnail: a big accurate number and no faces (except the animal for Instinct). Neutral hashtags. Sawaal bans asking viewers for opinions, so to test: a factual question as the pinned comment ("what should the court ask next?"). The SC voters Short got 2 comments without a poll. Hand over the final Hindi description.
 
 ## Mr. Post
-Titles under 60 characters, ending in #Shorts. Use Mr. Spark's Hindi description unless it contains an error, and say why if you change it. The queue has no fields for voice, category, thumbnail, pinned comment or time, so list them for the owner. Still open for the owner: delete rQPOCx8wY6c, confirm the duck and Surrey uploads, fix Lula, don't publish Orionids, confirm the electoral-bonds licences. To test: spacing drama episodes hours apart.
+Titles under 60 characters, ending in #Shorts. Every change you make goes back to Mr. Focus before upload. List voice, category, thumbnail, pinned comment and time for the owner. Owner, still open: delete rQPOCx8wY6c, the duck/Surrey/Lula/BRICS/CEC/SIR uploads with no YouTube ID yet, and the electoral-bonds licences. Two French Shorts are private: confirm they're meant to stay private. Schedule the SIR follow-up for the hearing after Diwali and compare it with the 78 views. To test: spacing drama episodes hours apart.

@@ -1,0 +1,30 @@
+{
+  "channel_id": "yt-sawaal",
+  "title": "3 आयुक्त, SIR पर फैसला? याचिका का दावा #Shorts",
+  "description": "3 आयुक्त, और सवाल यह कि चुनाव आयोग में फैसले कैसे होते हैं। याचिकाओं का दावा है कि मुख्य चुनाव आयुक्त ने SIR के आदेश बाकी दो आयुक्तों की सहमति के बिना लिए, जबकि आयोग ने 248 पन्नों के हलफ़नामे में कहा है कि तीनों सदस्यों ने उन्हें सर्वसम्मति से मंज़ूर किया। सुप्रीम कोर्ट ने याचिकाकर्ताओं को जवाब के लिए 10 दिन दिए हैं, और दिवाली की छुट्टी के बाद सुनवाई होगी।\n\nसवाल: क्या आयोग के हर फैसले में आयुक्तों के अलग-अलग मत सार्वजनिक होते हैं? अगली सुनवाई के लिए जुड़े रहिए।\n\nSources: LiveLaw, Deccan Herald, The Pioneer (27 Oct 2026), The Leaflet (5 Oct 2026)\n\nAnchor और कुछ दृश्य AI से बने हैं।\n\n#हिंदीन्यूज #भारत #कानून #समाचार #Shorts",
+  "script": "SAWAAL Short 2 of 2 (9 PM slot). English source below; system adapts to Hindi, posts Hindi only. ~50 s, 9:16.\nCAST: Aditya (man ~34, curly hair, rimless glasses, charcoal blazer; en-IN-PrabhatNeural / hi-IN-MadhurNeural) and Nisha (woman ~30, shoulder-length hair, silver hoops, steel-blue blazer; en-IN-NeerjaNeural / hi-IN-SwaraNeural). No Arjun/Meera. Real people only as Wikimedia Commons photos (CJI Surya Kant, Gyanesh Kumar); no AI faces.\n\n1. Aditya (on screen): \"Three Commissioners. Who decides for the Election Commission? The question is now in the Supreme Court.\"\n2. Nisha (VO): \"On Tuesday, a bench led by Chief Justice Surya Kant heard Rakesh Kumar Singh's petition and others.\"\n3. Aditya (VO): \"The petitions allege Chief Election Commissioner Gyanesh Kumar took SIR voter-list decisions without the other two Commissioners agreeing. These are claims, not findings.\"\n4. Nisha (on screen): \"In a 248-page affidavit, the Election Commission says all three members approved the orders unanimously.\"\n5. Aditya (VO): \"The petitioners get 10 days to reply. When the court issued notice on 5 October, it did not suspend the CEC.\"\n6. Nisha (VO): \"Background: under the law, the Commission tries to decide unanimously. If members differ, the majority view prevails.\"\n7. Aditya (on screen): \"So are Commissioners' views on each decision made public?\"\n8. Nisha (VO): \"The next hearing is after the Diwali break. The case is about how the body that runs India's elections takes its decisions.\"\n9. Aditya (on screen) [CHANGED from the yes/no opinion ask]: \"The next hearing is after the Diwali break. Follow Sawaal for what the court asks next.\"\n\nEDIT PLAN (Mr. Cut, 21 shots, 9:16, ~50 s): hard cuts every 2-3 s, slow push-ins on stills. Shots: SC building hook with text \"3 कमिश्नर? फैसला कौन?\"; Aditya desk; Nirvachan Sadan; SC \"Tue, 27 Oct 2026\"; CJI Surya Kant photo; Gyanesh Kumar photo; \"Petitions allege\" / \"Claim, not a finding\" cards; Nisha desk with Nirvachan Sadan panel, \"248-page affidavit, approved unanimously\"; \"10 days for petitioners' reply\"; \"Notice: 5 Oct\", \"CEC not suspended\"; three-seat graphic (labelled illustrative) \"Unanimous where practicable / If they differ: majority\"; Aditya punch-in question card; Diwali lamps stock \"Next hearing: after Diwali break\"; closing card \"Follow Sawaal\". Low tense royalty-free news bed, ducked. Confirm Wikimedia licences and credit each photo; text-card backups if a licence fails.\n\nTHUMBNAIL: real Wikimedia Commons photo of Supreme Court building, dark overlay, no faces; text \"3 आयुक्त, 1 सवाल\"; navy background, saffron number, white small text. (Alt: Nirvachan Sadan, \"10 दिन, जवाब?\")\n\nOWNER TO SET MANUALLY (no queue fields): voice (Aditya hi-IN-MadhurNeural, Nisha hi-IN-SwaraNeural), category 25, thumbnail, publish time (9 PM slot), pinned comment.\nPINNED COMMENT (changed, factual instead of A/B opinion poll): \"क्या आयुक्तों के अलग-अलग मत हर फैसले के साथ सार्वजनिक होते हैं? अगली सुनवाई दिवाली की छुट्टी के बाद है; अपडेट के लिए जुड़े रहिए।\"\nFOLLOW-UP: schedule a Short on the next hearing (about 17 Nov reported, unconfirmed).",
+  "footer": "Sawaal: ख़बर के पीछे का सवाल। हर तथ्य दो स्रोतों से जाँचा गया।\nAnchor और कुछ दृश्य AI से बने हैं।",
+  "category": "25",
+  "hosts": {
+    "Aditya": {
+      "voice": "en-IN-PrabhatNeural",
+      "voice_hi": "hi-IN-MadhurNeural",
+      "pitch": "+6Hz",
+      "look": "Indian man, about 34, news anchor, medium-brown skin, short curly black hair, light stubble, rimless glasses, charcoal blazer over a black crew-neck, in a dark studio"
+    },
+    "Nisha": {
+      "voice": "en-IN-NeerjaNeural",
+      "voice_hi": "hi-IN-SwaraNeural",
+      "pitch": "+4Hz",
+      "look": "Indian woman, about 30, news anchor, dusky skin, straight shoulder-length black hair, silver hoop earrings, steel-blue blazer over a white shirt, in a dark studio"
+    }
+  },
+  "photos": true,
+  "relevance": {
+    "score": 80,
+    "why": "The search confirms the story is current. The Supreme Court gave petitioners 10 days after the EC's 248-page affidavit said all three members approved the orders unanimously, and I found no newer contradicting news. It suits the audience, and the script matches its title. Two small gaps: the hearing date was reported only as 'Tuesday', and the 17 Nov date is unconfirmed."
+  },
+  "credits": [
+    "Election Commissioner Shri Gyanesh Kumar.jpg by Election Commission of India (GODL-India), https://commons.wikimedia.org/wiki/File:Election_Commissioner_Shri_Gyanesh_Kumar.jpg"
+  ]
+}
