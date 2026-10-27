@@ -828,11 +828,10 @@ if __name__ == "__main__":
                 continue
             package = json.loads(path.read_text(encoding="utf-8"))  # render adds photo credits
         # Only Shorts made from now on have board.json, so older ones are never dubbed.
-        # Hopeverse's dub channels get a copy. A channel with "dub" (Sankalp, Sawaal) alternates: odd-numbered Shorts
-        # go up in English, even-numbered ones only in the dub language (owner's call, 26 Oct: 2 topics a day, one each).
+        # Hopeverse's dub channels get a copy. A channel with "dub" (Sankalp, Sawaal) posts only the dub: the agents
+        # write in English and viewers see Hindi only (owner's call, 27 Oct).
         home = channels.get(package["channel_id"], {})
-        num = path.stem.rsplit("-", 1)[-1]
-        dub_only = bool(home.get("dub")) and "dub_of" not in package and num.isdigit() and int(num) % 2 == 0
+        dub_only = bool(home.get("dub")) and "dub_of" not in package
         targets = (dubs if package["channel_id"] == "yt-hopeverse" else []) + \
                   ([{**home, "lang": home["dub"], "language": home.get("dub_language", home["dub"])}] if dub_only else [])
         for c in targets if "dub_of" not in package and (path.with_suffix("") / "board.json").exists() else []:

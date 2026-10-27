@@ -87,20 +87,20 @@
     "name": "Sankalp",
     "platform": "youtube",
     "url": "https://www.youtube.com/@TheSankalpDesk",
-    "audience": "India, adults 18-45, every Short in English and again in Hindi on the same channel",
+    "audience": "India, Hindi-speaking adults 18-45; every Short is posted in Hindi only",
     "status": "live",
     "category": "25",
     "news": true,
     "niche": "Indian political news and policy explained daily from a pro-Modi, pro-government viewpoint: every fact double-sourced, opinion clearly marked, two AI news anchors, real photos of politicians and party flags from Wikimedia Commons, no AI faces or voices of real people",
     "voice": "hi-IN-MadhurNeural",
     "token": "token-sankalp.json",
-    "footer": "Sankalp: रोज़ की राजनीति, सरकार के नज़रिए से। हर तथ्य दो स्रोतों से जाँचा गया।\nयह टिप्पणी (commentary) है। Anchors and some visuals are AI-made. Anchor और कुछ दृश्य AI से बने हैं।",
+    "footer": "Sankalp: देश की ख़बर, देश के गौरव के साथ। हर तथ्य दो स्रोतों से जाँचा गया।\nयह टिप्पणी (commentary) है। Anchor और कुछ दृश्य AI से बने हैं।",
     "branding": {
-      "description": "देश की राजनीति। सरकार के नज़रिए से।\nIndia's politics, from the government's side.\n\nSankalp पर हर दिन देश की सबसे बड़ी राजनीतिक ख़बर, एक मिनट में: क्या हुआ, कौन-सा तथ्य छूट गया, और सरकार का पक्ष क्या है। हमारे anchors Rohan और Kavya हर ख़बर English और हिंदी दोनों में लाते हैं।\n\nEvery day, India's biggest political story in under a minute: what happened, the fact most people missed, and the government's case, in English and in Hindi.\n\nहर दिन दो ख़बरें, दोपहर 3 बजे और रात 9 बजे। हर आँकड़ा दो भरोसेमंद स्रोतों से जाँचा जाता है और स्रोत हर वीडियो के नीचे दिए जाते हैं। राय हमारी है, तथ्य सबके।\n\nSankalp is a commentary channel made with AI: the anchors and some visuals are AI-generated. Photos of real leaders come from Wikimedia Commons; we never fake a real person's face or voice.",
-      "keywords": "\"hindi news\" \"political news\" \"modi government\" \"indian politics\" \"bjp\" \"viksit bharat\" \"news analysis\" \"hindi shorts\" राजनीति समाचार",
+      "description": "देश की ख़बर। देश के गौरव के साथ।\n\nSankalp पर हर दिन देश की सबसे बड़ी ख़बर, एक मिनट में: क्या हुआ, कौन-सा तथ्य छूट गया, और भारत के लिए इसका क्या मतलब है। हमारे anchors रोहन और काव्या हर ख़बर आसान हिंदी में लाते हैं।\n\nहर दिन दो ख़बरें, दोपहर 3 बजे और रात 9 बजे। हर आँकड़ा दो भरोसेमंद स्रोतों से जाँचा जाता है और स्रोत हर वीडियो के नीचे दिए जाते हैं।\n\nSankalp एक टिप्पणी (commentary) चैनल है जो AI की मदद से बनता है: anchor और कुछ दृश्य AI से बने हैं। असली नेताओं की तस्वीरें Wikimedia Commons से आती हैं; हम किसी असली व्यक्ति का चेहरा या आवाज़ कभी नकली नहीं बनाते।",
+      "keywords": "\"hindi news\" \"desh ki khabar\" \"bharat\" \"indian politics\" \"national pride\" \"news analysis\" \"hindi shorts\" राजनीति समाचार भारत",
       "country": "IN",
       "banner": "brand/sankalp-banner.png",
-      "tagline": "देश की राजनीति। सरकार के नज़रिए से।"
+      "tagline": "देश की ख़बर। देश के गौरव के साथ।"
     },
     "hosts": {
       "Rohan": {
@@ -126,17 +126,17 @@
     "name": "Sawaal",
     "platform": "youtube",
     "url": "https://www.youtube.com/@PoochoSawaal",
-    "audience": "India, adults 18-45, every Short in English and again in Hindi on the same channel",
+    "audience": "India, Hindi-speaking adults 18-45; every Short is posted in Hindi only",
     "status": "live",
     "category": "25",
     "news": true,
     "niche": "Indian political news explained daily from an opposition viewpoint that questions the Modi government: every fact double-sourced, opinion clearly marked, two AI news anchors, real photos of politicians and party flags from Wikimedia Commons, no AI faces or voices of real people",
     "voice": "hi-IN-SwaraNeural",
     "token": "token-sawaal.json",
-    "footer": "Sawaal: ख़बर के पीछे का सवाल। हर तथ्य दो स्रोतों से जाँचा गया।\nयह टिप्पणी (commentary) है। Anchors and some visuals are AI-made. Anchor और कुछ दृश्य AI से बने हैं।",
+    "footer": "Sawaal: ख़बर के पीछे का सवाल। हर तथ्य दो स्रोतों से जाँचा गया।\nयह टिप्पणी (commentary) है। Anchor और कुछ दृश्य AI से बने हैं।",
     "branding": {
-      "description": "हर ख़बर के पीछे एक सवाल।\nEvery story has a question behind it.\n\nSawaal पर हर दिन देश की सबसे बड़ी राजनीतिक ख़बर, एक मिनट में: क्या हुआ, कौन-सा तथ्य छूट गया, और सरकार से कौन-से सवाल पूछे जाने चाहिए। हमारे anchors Aditya और Nisha हर ख़बर English और हिंदी दोनों में लाते हैं।\n\nEvery day, India's biggest political story in under a minute: what happened, the fact most people missed, and the questions the government must answer, in English and in Hindi.\n\nहर दिन दो ख़बरें, दोपहर 3 बजे और रात 9 बजे। हर आँकड़ा दो भरोसेमंद स्रोतों से जाँचा जाता है और स्रोत हर वीडियो के नीचे दिए जाते हैं। राय हमारी है, तथ्य सबके।\n\nSawaal is a commentary channel made with AI: the anchors and some visuals are AI-generated. Photos of real leaders come from Wikimedia Commons; we never fake a real person's face or voice.",
-      "keywords": "\"hindi news\" \"political news\" \"opposition\" \"indian politics\" \"modi government\" \"accountability\" \"news analysis\" \"hindi shorts\" राजनीति सवाल",
+      "description": "हर ख़बर के पीछे एक सवाल।\n\nSawaal पर हर दिन देश की सबसे बड़ी ख़बर, एक मिनट में: क्या हुआ, कौन-सा तथ्य छूट गया, और एक बेहतर भारत के लिए कौन-से सवाल पूछे जाने चाहिए। हमारे anchors आदित्य और निशा हर ख़बर आसान हिंदी में लाते हैं।\n\nहर दिन दो ख़बरें, दोपहर 3 बजे और रात 9 बजे। हर आँकड़ा दो भरोसेमंद स्रोतों से जाँचा जाता है और स्रोत हर वीडियो के नीचे दिए जाते हैं।\n\nSawaal एक टिप्पणी (commentary) चैनल है जो AI की मदद से बनता है: anchor और कुछ दृश्य AI से बने हैं। असली नेताओं की तस्वीरें Wikimedia Commons से आती हैं; हम किसी असली व्यक्ति का चेहरा या आवाज़ कभी नकली नहीं बनाते।",
+      "keywords": "\"hindi news\" \"sawaal\" \"bharat\" \"indian politics\" \"accountability\" \"news analysis\" \"hindi shorts\" राजनीति सवाल भारत",
       "country": "IN",
       "banner": "brand/sawaal-banner.png",
       "tagline": "हर ख़बर के पीछे एक सवाल।"
