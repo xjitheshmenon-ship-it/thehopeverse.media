@@ -5,7 +5,7 @@ run-name: "Hope: ${{ github.event.schedule == '15 * * * *' && 'dashboard refresh
 
 on:
   schedule:
-    - cron: "30 0 * * *"   # 06:00 IST: start the day's videos; each run makes one and starts the next (plan.py --due)
+    - cron: "30 22 * * *"  # 04:00 IST (next day): start the day's videos; each run makes one and starts the next (plan.py --due)
     - cron: "30 11 * * *"  # 17:00 IST: the daily report and new channel idea
     - cron: "15 * * * *"   # hourly: dashboard numbers
   workflow_dispatch:
@@ -50,6 +50,7 @@ env:
   # Settings > Secrets and variables > Actions > Variables: change these without editing this file
   SHORTS_PER_DAY: ${{ vars.SHORTS_PER_DAY || '6' }}  # Hopeverse Media, one per 2-hour slot (at most 6); other channels post 2 a day (channels.json per_day)
   SERIES_PER_DAY: ${{ vars.SERIES_PER_DAY || '2' }}  # Kissa episodes a day: 1, 2, 3 or 6 (owner's pick 2026-10-26: 2, each fully acted, within DAILY_BUDGET)
+  RELEVANCE_MIN: ${{ vars.RELEVANCE_MIN || '60' }}  # a finished Short must score this (0-100) on its relevance check to be made and posted
   DAILY_BUDGET: ${{ vars.DAILY_BUDGET || '20' }}     # US dollars a day across everything; runs stop once reached
 
 jobs:
@@ -86,7 +87,7 @@ jobs:
           true
 
       - name: Which video is next
-        if: github.event.schedule == '30 0 * * *' || inputs.job == 'next' || inputs.job == 'slot'
+        if: github.event.schedule == '30 22 * * *' || inputs.job == 'next' || inputs.job == 'slot'
         # NEXT = the channel, N = its video number today, QUOTA its daily count, REVIEW on its last, SERIES for Kissa,
         # GROW before the day's first video, MORE when another video follows; nothing when the day's videos are done
         run: python plan.py --due | tee -a "$GITHUB_ENV"

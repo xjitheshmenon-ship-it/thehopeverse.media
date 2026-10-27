@@ -39,7 +39,7 @@ from moviepy.config import FFMPEG_BINARY
 from PIL import Image, ImageDraw, ImageFont
 from pydantic import BaseModel
 
-from agents import DAILY_BUDGET, HELPER_MODEL, _cost, OUTBOX, TEAM, _channels, client, log_spend, read_cast, spent_today
+from agents import DAILY_BUDGET, HELPER_MODEL, WEB_SEARCH, _cost, OUTBOX, TEAM, _channels, client, log_spend, read_cast, spent_today
 from approve import approved
 
 HERE = Path(__file__).parent
@@ -704,6 +704,36 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
     return out
 
 
+RELEVANCE_MIN = int(os.environ.get("RELEVANCE_MIN") or 60)  # the final script must score this much to be made and posted
+
+
+class Relevance(BaseModel):
+    score: int  # 0-100
+    why: str    # one line
+
+
+def relevance(package: dict, channel: dict) -> Relevance:
+    """Score the finished Short just before it is made and posted (owner's rule 2026-10-27): is the story still current,
+    does the script deliver what the title promises, does it fit the channel. Checked on the final script, which is
+    what the video says, so a failing Short costs no render."""
+    news = bool(channel.get("news") or channel.get("dub"))
+    response = client.messages.parse(
+        model=HELPER_MODEL, max_tokens=4000, output_config={"effort": "low"}, output_format=Relevance,
+        tools=[{**WEB_SEARCH, "max_uses": 3}] if news else [],
+        messages=[{"role": "user", "content":
+                   f"Today is {time.strftime('%d %b %Y')}. This YouTube Short is about to be posted on {channel.get('name')} "
+                   f"(niche: {channel.get('niche')}; audience: {channel.get('audience')}).\n"
+                   f"Title: {package.get('title')}\nScript:\n{package.get('script')}\n\n"
+                   + ("First web_search the story: is it still current, has anything newer changed or contradicted it? "
+                      if news else "")
+                   + "Score its relevance right now from 0 to 100: timeliness (0-30), fit for the channel's audience, "
+                     "region and language (0-30), viewer demand today (0-25), and whether the script delivers what the "
+                     "title promises without stale or wrong facts (0-15). A story overtaken by newer events, or a "
+                     "script that doesn't match its title, scores under 50. why: one line."}])
+    log_spend(_cost(HELPER_MODEL, response.usage), package["channel_id"])
+    return response.parsed_output
+
+
 def youtube(interactive: bool = True, token: Path = TOKEN, api: tuple = ("youtube", "v3")):
     """A signed-in YouTube API client. Upload, plus read-only access so Mr. Hope can see view counts.
     api=("youtubeAnalytics", "v2") gives the Analytics API with the same sign-in (youtube.readonly covers it)."""
@@ -816,11 +846,35 @@ if __name__ == "__main__":
         package = json.loads(path.read_text(encoding="utf-8"))
         if "--only" in sys.argv and package["channel_id"] != sys.argv[sys.argv.index("--only") + 1]:
             continue  # e.g. python video.py --only yt-kissa: post just that channel's videos
+        if package.get("held"):
+            continue  # failed its relevance check: never made or posted
         video = path.with_suffix(".mp4")
         voice = channels.get(package["channel_id"], {}).get("voice", VOICE)
         dub_path = path.with_suffix(f".{channels.get(package['channel_id'], {}).get('dub')}.json")
         if "youtube_id" not in package and dub_path.exists() and "youtube_id" in json.loads(dub_path.read_text(encoding="utf-8")):
             continue  # a dub-only channel's English cut is never posted: once its dub is up, don't remake it every run
+        home = channels.get(package["channel_id"], {})
+        if ("youtube_id" not in package and "relevance" not in package and "dub_of" not in package
+                and home.get("status") != "series" and "--no-upload" not in sys.argv):  # Kissa is fiction: no check
+            try:
+                r = relevance(package, home)
+            except Exception as e:  # a broken check shouldn't block the day's videos
+                print(f"    relevance check failed, posting anyway: {e}")
+                r = None
+            if r:
+                package["relevance"] = {"score": r.score, "why": r.why}
+                print(f"Relevance of {path.name}: {r.score}/100 ({r.why})")
+                if r.score < RELEVANCE_MIN:
+                    package["held"] = f"relevance {r.score}/100 under {RELEVANCE_MIN}: {r.why}"
+                path.write_text(json.dumps(package, indent=2), encoding="utf-8")
+                if package.get("held"):
+                    print(f"::warning::Not making {path.name}: {package['held']}")
+                    from plan import redo
+                    if os.environ.get("NEXT") == package["channel_id"] and redo(package["channel_id"]):
+                        print("    this channel's video is made again with its next approved topic")
+                        with open(os.environ.get("GITHUB_ENV", os.devnull), "a") as f:
+                            f.write("MORE=1\n")
+                    continue
         if not video.exists() and "youtube_id" not in package:  # cloud runs don't keep videos; never remake posted ones
             print(f"Making video for {path.name}")
             try:
@@ -833,7 +887,6 @@ if __name__ == "__main__":
         # Only Shorts made from now on have board.json, so older ones are never dubbed.
         # Hopeverse's dub channels get a copy. A channel with "dub" (Sankalp, Sawaal) posts only the dub: the agents
         # write in English and viewers see Hindi only (owner's call, 27 Oct).
-        home = channels.get(package["channel_id"], {})
         dub_only = bool(home.get("dub")) and "dub_of" not in package
         targets = (dubs if package["channel_id"] == "yt-hopeverse" else []) + \
                   ([{**home, "lang": home["dub"], "language": home.get("dub_language", home["dub"])}] if dub_only else [])
