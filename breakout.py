@@ -58,7 +58,7 @@ def find(rows: list, studied: dict, now: datetime) -> list:
     """Shorts (dashboard rows: channel, youtube_id, yt_views, published) that beat their channel's median by X."""
     out = []
     for r in rows:
-        if r.get("yt_views") is None or not r.get("published") or topic_id(r["channel"], r["youtube_id"]) in studied:
+        if r.get("yt_views") is None or not r.get("published") or not r.get("youtube_id") or topic_id(r["channel"], r["youtube_id"]) in studied:
             continue
         others = [o["yt_views"] for o in rows if o["channel"] == r["channel"] and o is not r and o.get("yt_views") is not None]
         if len(others) < 3 or now - datetime.fromisoformat(r["published"]) > timedelta(days=14):
@@ -87,9 +87,29 @@ def analytics(channel: dict, video_id: str, since: str) -> dict:
     return out
 
 
+def uploads(channel: dict, known: set) -> list:
+    """The channel's last 50 uploads read from YouTube itself, as dashboard-style rows, minus the ones Hope already
+    knows; so Shorts posted outside the outbox (brand samples, 27 Oct 2026) can break out too."""
+    from zoneinfo import ZoneInfo
+    from video import youtube
+    yt = youtube(False, HERE / channel.get("token", "token.json"))
+    pl = yt.channels().list(part="contentDetails", mine=True).execute()["items"][0]["contentDetails"]["relatedPlaylists"]["uploads"]
+    ids = [i["contentDetails"]["videoId"] for i in
+           yt.playlistItems().list(part="contentDetails", playlistId=pl, maxResults=50).execute()["items"]]
+    ids = [i for i in ids if i not in known]
+    items = yt.videos().list(part="statistics,snippet", id=",".join(ids)).execute()["items"] if ids else []
+    num = lambda st, k: int(st[k]) if k in st else None
+    return [{"id": None, "channel": channel["id"], "youtube_id": v["id"], "title": v["snippet"]["title"],
+             "description": v["snippet"]["description"], "url": f"https://youtu.be/{v['id']}",
+             "published": f"{datetime.fromisoformat(v['snippet']['publishedAt'].replace('Z', '+00:00')).astimezone(ZoneInfo('Asia/Kolkata')):%Y-%m-%d %H:%M}",
+             "yt_views": num(v["statistics"], "viewCount"), "yt_likes": num(v["statistics"], "likeCount"),
+             "yt_comments": num(v["statistics"], "commentCount"), "ig_views": None} for v in items]
+
+
 def study(r: dict, rows: list, channel: dict) -> Study:
     from agents import MODEL, TEAM, WEB_SEARCH, _cost, client, log_spend
-    package = json.loads((HERE / "outbox" / f"{r['id']}.json").read_text(encoding="utf-8"))
+    path = HERE / "outbox" / f"{r['id']}.json"
+    package = json.loads(path.read_text(encoding="utf-8")) if r["id"] and path.exists() else {"description": r.get("description")}
     others = [{k: o[k] for k in ("title", "published", "yt_views", "yt_likes", "yt_comments")}
               for o in rows if o["channel"] == r["channel"] and o is not r and o.get("youtube_id")]
     facts = {"short": {k: r[k] for k in ("title", "url", "published", "yt_views", "yt_likes", "yt_comments", "ig_views")},
@@ -112,6 +132,13 @@ def run(rows: list) -> list:
     """Study every new breakout in the dashboard's rows and save them; returns the new study ids."""
     from agents import DAILY_BUDGET, _channels, spent_today
     studies, channels = load(), {c["id"]: c for c in _channels()}
+    known = {r["youtube_id"] for r in rows if r.get("youtube_id")}
+    for c in channels.values():
+        if c["platform"] == "youtube" and (HERE / c.get("token", "token.json")).exists():
+            try:
+                rows = rows + uploads(c, known)
+            except Exception as e:  # a channel's sign-in problem shouldn't stop the others
+                print(f"::warning::Uploads of {c['id']}: {str(e)[:300]}")
     new = []
     for r in find(rows, studies, datetime.now()):
         if spent_today() >= DAILY_BUDGET or r["channel"] not in channels:
