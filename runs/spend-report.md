@@ -1,16 +1,17 @@
-# Hopeverse spending report, 27 Oct 2026 19:05
+# Hopeverse spending report, 28 Oct 2026 01:56
 
-- Today: $31.12 (51 runs)
-- Last 7 days: $69.52
-- This month: $69.52
-- All time: $69.52
+- Today: $0.89 (2 runs)
+- Last 7 days: $72.31
+- This month: $72.31
+- All time: $72.31
 
 Claude (Anthropic) costs as estimated by agents.py, review included. Video images from fal.ai add
 about $0.006 each (about $0.06 a Short). Exact bills: console.anthropic.com and fal.ai/dashboard.
 
 | Day | Runs | Cost |
 | --- | --- | --- |
-| 2026-10-27 | 51 | $31.12 |
+| 2026-10-28 | 2 | $0.89 |
+| 2026-10-27 | 53 | $33.02 |
 | 2026-10-26 | 71 | $35.70 |
 | 2026-10-25 | 5 | $2.70 |
 
@@ -47,33 +48,28 @@ geografía, curiosidades del mundo, fronteras, mapas, lugares increíbles, datos
 ## Credits left
 
 - fal.ai: ? usd (Couldn't read the balance (HTTP Error 403: Forbidden); add a fal.ai READONLY key as the FAL_BILLING_KEY secret)
-- HeyGen: 10.03 usd (Talking hosts; Kling on fal.ai takes over when it runs out)
-- ElevenLabs: 114897 characters (Voices; free Edge voices take over when it runs out. Plan: creator)
+- HeyGen: 9.12 usd (Talking hosts; Kling on fal.ai takes over when it runs out)
+- ElevenLabs: 114502 characters (Voices; free Edge voices take over when it runs out. Plan: creator)
 - Anthropic: ? usd (No balance API: see console.anthropic.com > Billing. Spend is logged per run)
 - Perplexity: ? usd (No balance API: see perplexity.ai/account/api. About $0.006 a search)
 
 ## Mr. Grow's to-dos for you today
 
-**Pinned comments (one per channel):**
-- Hopeverse: "Which number surprised you most today?"
-- Hindi: "आज की खबर में सबसे चौंकाने वाली बात क्या लगी?"
-- Kissa: "Mira zinda hai ya nahi? Haan ya Na likho."
-- Instinct: "Un animal qui vous a surpris ? Dites-nous."
-- Sankalp: "आज की नीति से किसे फ़ायदा? एक शब्द में लिखें।"
-- Sawaal: "आज सरकार से आप कौन सा एक सवाल पूछेंगे?"
+- **Pinned comments:**
+  - Instinct: "Le corbeau ou le dauphin : lequel est le plus malin ?"
+  - Hopeverse: "Which story should we explain tomorrow?"
+  - Sankalp: "किस कानून को अगले वीडियो में समझाएँ?"
+  - Sawaal: "आप कौन सा सवाल पूछना चाहेंगे?"
+  - Kissa: "मीरा ज़िंदा है या नहीं?"
+- **Community posts, each with a poll:** Instinct "Quel animal ensuite : pieuvre, éléphant, pie?"; Hopeverse "Tech, science or business tomorrow?"; Sankalp "योजना, कानून या खेल?"; Sawaal "RTI, संसद या अदालत?"; Kissa "अगला twist: प्यार या राज़?"
+- **Instagram:** share the best number-hook Short from Hopeverse with the caption "One number, one minute. Full explainer on YouTube." Do not link our own channels to each other. Pin the YouTube link in the bio only.
+- **Posting times:** no change; too few numbers.
 
-**Community posts (text plus poll):**
-- Hopeverse: "News in 60 seconds or science in 60?" Poll: News / Science / Both.
-- Hindi: Poll on preferred posting time: morning / afternoon / night.
-- Kissa: "Kaun sa ending chahiye?" Poll: Happy / Twist.
-- Instinct: "Quel animal ensuite ?" Poll: Pieuvre / Corbeau / Dauphin / Fourmi.
-- Sankalp and Sawaal: "Which topic next?" Poll: Economy / Jobs / Foreign policy / Elections.
+## Sponsorship and collab leads
 
-**Cross-promotion:**
-- Post the megatsunami Short on Instagram. Caption: "A wave of 481 m. Do you know where? Follow for daily explainers."
-- Link Kissa Ep 2 from Hopeverse Hindi. Caption: "कहानी आगे क्या मोड़ लेगी?"
-- Send the Instinct dolphin Short to Instagram, with a French caption.
-
-**Posting time:** No change. The data is too thin (0–25 views), and no time of day stands out. Test the Kissa slot at 3 PM against 9 PM for a week.
-
-**Also pending from Mr. Hope:** delete rQPOCx8wY6c, confirm the duck and Surrey uploads, and don't publish Orionids.
+All unverified from memory (search was down). Check the entry bars before applying.
+1. **Hopeverse:** Ground News creator/affiliate programme (groundnews.com), a news-app affiliate. Apply by hand.
+2. **Instinct and Hopeverse:** Collabstr (collabstr.com), a creator marketplace. Check its minimum follower bar.
+3. **Kissa and Sankalp:** Plixxo (plixxo.com), an Indian creator-campaign platform that takes micro-creators.
+4. **Instinct:** Hivency or Influence4You (hivency.com, influence4you.com), French brand campaigns; check for pet and nature briefs.
+5. **All:** find similar-size outside creators for a Collaborations tag or remix.
