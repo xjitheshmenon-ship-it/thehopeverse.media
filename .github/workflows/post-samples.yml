@@ -1,0 +1,64 @@
+# Post the brand samples from a "Make brand samples" run to their own YouTube channels (owner's call, 27 Oct 2026).
+# Each one is labelled as a sample ad for an invented brand, never as a real paid promotion. Hope's memory isn't
+# saved, so running this twice posts the samples twice.
+# Start it by pushing a branch named run/post-samples with "run_id=<the samples run>" in the commit message.
+name: Post brand samples
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: The Make brand samples run whose videos to post
+        required: true
+
+permissions:
+  contents: read
+  actions: read
+
+env:
+  PYTHONIOENCODING: utf-8
+  PYTHONUNBUFFERED: 1
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: YouTube sign-in files
+        env:
+          CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          TOKEN: ${{ secrets.YOUTUBE_TOKEN }}
+          TOKEN_KEY: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+        run: |
+          printf '%s' "$CLIENT_SECRET" > client_secret.json
+          [ -n "$TOKEN" ] && printf '%s' "$TOKEN" > token.json
+          python state.py load
+          for f in tokens/*.enc; do
+            [ -f "$f" ] && openssl enc -d -aes-256-cbc -pbkdf2 -pass env:TOKEN_KEY -in "$f" -out "$(basename "$f" .enc)"
+          done
+          rm -rf outbox  # only the samples are posted here
+      - uses: actions/download-artifact@v5
+        with:
+          name: brand-samples
+          path: outbox
+          run-id: ${{ inputs.run_id }}
+          github-token: ${{ github.token }}
+      - name: Label every sample as an ad for an invented brand
+        run: |
+          python - <<'EOF'
+          import json, pathlib
+          note = "Sample ad: the brand in this video is invented. This is not a paid promotion. Brands: DM us to make one for you."
+          for p in pathlib.Path("outbox").glob("*.json"):
+              d = json.loads(p.read_text(encoding="utf-8"))
+              if not d["title"].startswith("SAMPLE"):
+                  d["title"] = "SAMPLE | " + d["title"]
+              d["description"] = note + "\n\n" + d["description"]
+              p.write_text(json.dumps(d, indent=2, ensure_ascii=False), encoding="utf-8")
+              print(d["channel_id"], "|", d["title"])
+          EOF
+      - run: python video.py  # Sankalp and Sawaal post only their Hindi cut; no Instagram (no token here)
