@@ -779,7 +779,7 @@ def stats(video_ids: list) -> dict:
 
 def next_publish(times: list, tz: str, taken=(), now=None) -> str:
     """The next free one of a channel's local publish times ("19:30"), as UTC ISO for YouTube's publishAt; "" if it's
-    under 20 minutes away (then post at once). Instinct's breakouts took off in the French evening (study, 27 Oct 2026)."""
+    under 20 minutes away (then post at once). Instinct: two at 5 AM Paris, two at francophone peak hours (owner, 27 Oct 2026)."""
     from datetime import datetime, timedelta
     from zoneinfo import ZoneInfo
     now = now or datetime.now(ZoneInfo(tz))
