@@ -777,8 +777,22 @@ def stats(video_ids: list) -> dict:
                       "published": i["snippet"]["publishedAt"]} for i in items["items"]}
 
 
-def upload(video: Path, package: dict, token: Path = TOKEN) -> str:
-    """Upload as a public video (the owner chose public by default on 2026-10-25)."""
+def next_publish(times: list, tz: str, taken=(), now=None) -> str:
+    """The next free one of a channel's local publish times ("19:30"), as UTC ISO for YouTube's publishAt; "" if it's
+    under 20 minutes away (then post at once). Instinct's breakouts took off in the French evening (study, 27 Oct 2026)."""
+    from datetime import datetime, timedelta
+    from zoneinfo import ZoneInfo
+    now = now or datetime.now(ZoneInfo(tz))
+    slots = sorted(now.replace(hour=int(h), minute=int(m), second=0, microsecond=0) + timedelta(days=d)
+                   for d in (0, 1) for h, m in (x.split(":") for x in times))
+    iso = lambda s: s.astimezone(ZoneInfo("UTC")).strftime("%Y-%m-%dT%H:%M:%SZ")
+    slot = next((s for s in slots if s > now and iso(s) not in taken), None)
+    return "" if not slot or slot - now < timedelta(minutes=20) else iso(slot)
+
+
+def upload(video: Path, package: dict, token: Path = TOKEN, channel: dict = None) -> str:
+    """Upload as a public video (the owner chose public by default on 2026-10-25), or scheduled for the channel's
+    next "publish_at" time (local to its "tz") when it has them."""
     from googleapiclient.http import MediaFileUpload
 
     footer = package.get("footer", TEAM.get("YouTube footer", ""))  # edit it in team.md
@@ -788,12 +802,19 @@ def upload(video: Path, package: dict, token: Path = TOKEN) -> str:
     while len(",".join(tags)) > 450:  # YouTube allows 500 characters of tags
         tags.pop()
     body = {"snippet": {"title": package["title"][:100],
-                        "description": f"{package['description']}\n\n{footer}".strip()[:5000],
+                        # Mr. Spark often ends the description with the footer already: don't print it twice
+                        "description": (package['description'] if footer.strip() in package['description']
+                                        else f"{package['description']}\n\n{footer}").strip()[:5000],
                         "tags": tags, "categoryId": package.get("category", "25"),  # 25 = News & Politics
                         # tells YouTube who to show it to (French for Instinct, Hindi for dubs and Kissa)
                         "defaultLanguage": package.get("lang", "en"), "defaultAudioLanguage": package.get("lang", "en")},
             "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False,
                        "containsSyntheticMedia": True}}
+    if (channel or {}).get("publish_at"):
+        taken = {json.loads(p.read_text(encoding="utf-8")).get("publish_at") for p in OUTBOX.glob(f"{channel['id']}-*.json")}
+        if when := next_publish(channel["publish_at"], channel.get("tz", "UTC"), taken):
+            body["status"].update(privacyStatus="private", publishAt=when)  # YouTube makes it public at that time
+            package["publish_at"] = when  # saved with the package by the caller, so the next Short takes the next slot
     request = youtube(token=token).videos().insert(
         part="snippet,status", body=body, media_body=MediaFileUpload(str(video), resumable=True))
     response = None
@@ -911,7 +932,8 @@ if __name__ == "__main__":
                 continue
             print(f"Uploading {video.name} to YouTube as public")
             try:
-                package["youtube_id"] = upload(video, package, HERE / channels[package["channel_id"]].get("token", "token.json"))
+                package["youtube_id"] = upload(video, package, HERE / channels[package["channel_id"]].get("token", "token.json"),
+                                               channels[package["channel_id"]])
             except Exception as e:  # the daily API quota fits about 6 uploads; the rest go up on the next run
                 print(f"    upload failed: {e}")
                 failed.append(path.name)
