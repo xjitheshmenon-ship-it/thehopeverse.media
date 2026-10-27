@@ -1,25 +1,25 @@
 ## Mr. Hope
-Call performance FIRST. Views 27 Oct: megatsunami 25, Hindi drama "100 दिन का रिश्ता" Ep2 17, Ep3 16, Ep4 16 (up from about 7). Most others get 0–4, and the Sawaal Shorts get 0–3. Likes and comments are 0 everywhere.
-What works: Nature's Extremes, plus the drama's opening episodes. Episodes uploaded minutes apart get 0–3 views each. To test: spacing episodes hours apart.
-Every run queues one Short. If search fails, use a settled evergreen topic, as with electoral bonds today.
+Call performance FIRST. Views 27 Oct: Hindi paper-leak law 30 views and our FIRST like. Megatsunami 26, drama Ep2–4 16–18, SC voters EN 12/HI 8. English paper-leak only 7. Most others 0–4. Comments 0.
+What works: Hindi explainers of laws with a number hook (Sankalp), Nature's Extremes, the drama's opening episodes. Episodes posted minutes apart get 0–5 views.
+Every run queues one Short. If search fails, use a settled evergreen topic (today: women's reservation, $0.71).
 YPP: about 0%.
-Cost: the Sawaal run was $0.84 against a $0.55 target. One Kissa step cost $2.68, so audit it. Failed runs: under $0.30.
-Sponsors (to test, after 10k views): science-app and telescope affiliates, plus a news-literacy app for Sawaal.
+Cost: target $0.55 a Short. Sawaal used 3 runs costing $3.86 on 27 Oct, and Kissa had one $2.68 step. Audit both. Failed runs: under $0.30.
+Sponsors (to test, after 10k views): exam-prep/civics apps for Sankalp, science affiliates.
 
 ## Mr. Focus
-Check your search quota first. It ran out again today, so ask the owner to re-run once it resets. If search fails, pitch an evergreen topic with settled facts (court rulings, laws) confirmed by two sources, and mark anything from memory. Make one search and reuse it for the fact-check. Publish news only with a Reuters or AP source plus a number. Never mix up separate studies.
+Check your search quota first. It ran out again, so do one search and reuse it for the fact-check. If search fails, pitch an evergreen law or ruling with settled numbers, confirmed by two sources, and mark anything from memory. Check the outbox for repeats before you pitch. Publish news only with a Reuters or AP source plus a number. Paper-leak follow-up only if two sources confirm a step after July.
 
 ## Mr. Cast
-Narrator-only channels skip cast. On Sawaal, reuse Aditya and Nisha. Elsewhere, reuse Navigator and Lumen with Arjun narrating. No logos and no copies of real products.
+Narrator-only channels skip cast. Sankalp: reuse Rohan (Madhur) and Kavya (Swara). Sawaal: Aditya and Nisha. Elsewhere: Navigator and Lumen with Arjun narrating. No logos and no copies of real products.
 
 ## Mr. Pen
-Put a true number hook in the first 2 seconds ("6 years, 1 verdict", 481 m). Answer the hook, then add a twist. Hedge: write "about", "within weeks", and say the court "rejected" the government's argument. Paraphrase quotes you can't verify. Leave out unconfirmed totals and any hint of corruption. About 40–55 seconds. For drama, end each episode on a cliffhanger, since Ep2–4 kept viewers.
+Put a true number hook in the first 2 seconds ("10 साल की जेल" got 30 views, "454 बनाम 2"). Write the Hindi version as a natural script, not a translation, because Hindi beat English 30 to 7 on paper leak. Hedge figures that only one source gives ("no votes against"). Give critics' view fairly and label opinion. About 40–55 seconds. Drama: end every episode on a cliffhanger.
 
 ## Mr. Cut
-Use free stock or credited official images, licence confirmed. Plan a text-card backup for every Wikimedia image whose licence is uncertain, as done today. About 20 shots. Put a credit on screen for every source cited. Dramatic visuals in the first 2 seconds (to test).
+Use free stock or credited official images, licence confirmed. Plan a text-card backup for every Wikimedia image. About 20 shots. Put a credit on screen for every source. Opening line must name the chamber or context so numbers aren't confused. Dramatic visuals in the first 2 seconds (to test).
 
 ## Mr. Spark
-Add energy, not facts. Thumbnail text must be accurate (big number, no faces, as on today's "6"). Comments are still 0. To test: an on-screen question plus a pinned comment that asks viewers to answer it.
+Add energy, not facts. Thumbnail: big accurate number, no faces, saffron on navy for Sankalp. Use neutral hashtags, never government slogans. Comments still 0, so to test: an on-screen A/B question plus a matching pinned comment. Hand Mr. Post a final Hindi description.
 
 ## Mr. Post
-Titles under 60 characters, ending in #Shorts. You have no tool to search the queue, so ask the owner to check duplicates. The queue has no fields for voice, category, thumbnail or pinned comment, so list them for the owner. Still open for the owner: delete rQPOCx8wY6c, confirm the duck and Surrey uploads, fix Lula, don't publish Orionids, confirm image licences on electoral bonds. Space drama episodes apart (to test).
+Titles under 60 characters, ending in #Shorts. Use Mr. Spark's Hindi description unless it contains an error, and say why if you change it. The queue has no fields for voice, category, thumbnail, pinned comment or time, so list them for the owner. Still open for the owner: delete rQPOCx8wY6c, confirm the duck and Surrey uploads, fix Lula, don't publish Orionids, confirm the electoral-bonds licences. To test: spacing drama episodes hours apart.
