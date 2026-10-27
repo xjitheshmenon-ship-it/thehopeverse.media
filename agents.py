@@ -176,8 +176,8 @@ def queue_post(channel_id: str, title: str, description: str, script: str) -> st
     path = next_outbox_path(channel_id)
     path.write_text(json.dumps(
         {"channel_id": channel_id, "title": title, "description": description, "script": script,
-         # a channel brings its language (Instinct), footer, YouTube category, anchors and photo rule (Sankalp, Sawaal)
-         **{k: channel[k] for k in ("lang", "footer", "category", "hosts", "photos") if k in channel}}, indent=2, ensure_ascii=False))
+         # a channel brings its language and voice language (Instinct), footer, YouTube category, anchors and photo rule (Sankalp, Sawaal)
+         **{k: channel[k] for k in ("lang", "audio_lang", "footer", "category", "hosts", "photos") if k in channel}}, indent=2, ensure_ascii=False))
     # ponytail: writes to outbox only; real upload needs YouTube Data API / Instagram Graph API OAuth per channel
     return f"queued at {path.name}"
 
