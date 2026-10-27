@@ -160,7 +160,7 @@ def storyboard(package: dict) -> Storyboard:
                       "empty; use it on about half the scenes that aren't anchors talking. "
                       if package.get("photos") else "photo: always empty. ")
                    + ("speaker: always empty and host_on_screen always false: one narrator reads every line, in the "
-                      f"package's audio_lang if it has one, else its lang, never {a} or {b}. picture_search stays in English. "
+                      f"package's own language, never {a} or {b}. picture_search stays in English. "
                       if package.get("lang") else
                       f"speaker: who says the line, {a} or {b} (the two hosts; use both in every Short). "
                       "host_on_screen: true when the shot shows that host talking (about every third scene, including "
@@ -605,7 +605,7 @@ def music(work: Path, seconds: float, mood: str = "") -> Path | None:
 def render(package_path: Path, voice: str = VOICE) -> Path:
     package = json.loads(package_path.read_text(encoding="utf-8"))
     size = (1080, 1920)  # YouTube Shorts are vertical
-    lang = package_path.suffixes[0][1:] if len(package_path.suffixes) > 1 else package.get("audio_lang") or package.get("lang", "")
+    lang = package_path.suffixes[0][1:] if len(package_path.suffixes) > 1 else package.get("lang", "")
     # A series episode's characters are shown and voiced the same way as the hosts.
     HOSTS.update({c["name"]: c for c in package.get("cast", [])})
     HOSTS.update(package.get("hosts", {}))  # a channel's own anchors (Sankalp, Sawaal)
@@ -643,7 +643,7 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
                 who = {**who, "voice": who.get(f"voice_{lang}", voice)}
             eleven = os.environ.get(f"ELEVEN_VOICE_{scene.speaker.upper()}") or eleven_voice(
                 "female" if "woman" in who.get("look", "").lower() else "male")
-            if lang not in ("", "hi"):  # ElevenLabs picks Indian-accented voices; other channels (Instinct too) keep their Edge voice
+            if lang not in ("", "hi"):  # ElevenLabs picks Indian-accented voices; French etc. keep the channel's Edge voice
                 eleven = ""
             if not speak(scene.narration, who.get("voice", voice), audio, who.get("pitch", "+0Hz"), eleven,
                          spoken[k - 1][1].narration if k else "",
@@ -806,10 +806,8 @@ def upload(video: Path, package: dict, token: Path = TOKEN, channel: dict = None
                         "description": (package['description'] if footer.strip() in package['description']
                                         else f"{package['description']}\n\n{footer}").strip()[:5000],
                         "tags": tags, "categoryId": package.get("category", "25"),  # 25 = News & Politics
-                        # tells YouTube who to show it to (Hindi for dubs and Kissa) and what is spoken, which its
-                        # automatic dubbing needs (Instinct: French titles, English voice dubbed into fr/hi/ml)
-                        "defaultLanguage": package.get("lang", "en"),
-                        "defaultAudioLanguage": package.get("audio_lang") or package.get("lang", "en")},
+                        # tells YouTube who to show it to (French for Instinct, Hindi for dubs and Kissa)
+                        "defaultLanguage": package.get("lang", "en"), "defaultAudioLanguage": package.get("lang", "en")},
             "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False,
                        "containsSyntheticMedia": True}}
     if (channel or {}).get("publish_at"):
