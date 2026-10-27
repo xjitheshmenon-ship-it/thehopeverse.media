@@ -427,6 +427,9 @@ def spend_report() -> str:
     owner = _sections(GROWTH).get("Owner")
     if owner:
         lines += ["", "## Mr. Grow's to-dos for you today", "", owner]
+    leads = _sections(GROWTH).get("Leads")
+    if leads:
+        lines += ["", "## Sponsorship and collab leads", "", leads]
     SPEND.parent.mkdir(exist_ok=True)
     SPEND.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return "\n".join(lines)
@@ -437,7 +440,8 @@ if __name__ == "__main__":
         sys.exit(f"Daily budget of ${DAILY_BUDGET:.2f} reached; no more Shorts today.")
     if sys.argv[1:] == ["--grow"]:
         notes = run_agent("Mr. Grow", TEAM["Mr. Grow"],
-                          f"Today is {datetime.now():%A %d %B %Y}. Channels:\n{list_channels()}",
+                          f"Today is {datetime.now():%A %d %B %Y}. Channels:\n{list_channels()}\n\n"
+                          f"Yesterday's leads (don't repeat them):\n{_sections(GROWTH).get('Leads', 'none')}",
                           [performance, read_lessons, *([perplexity] if PPLX_KEY else []), WEB_SEARCH])
         if "## " in notes:  # keep yesterday's notes if the run was cut off by the budget
             GROWTH.parent.mkdir(exist_ok=True)
