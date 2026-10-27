@@ -11,7 +11,9 @@ Mr. Hope (or series.py for Kissa) still checks that a news topic is fresh. Exist
 ones are planned, by Mr. Focus (Sonnet).
 
 Owner's rule 2026-10-26: no script is written before the owner approves its topic on the dashboard (approvals.json,
-see approve.yml). A channel whose topics all wait is skipped and the next channel with an approved topic goes
+see approve.yml). Since 2026-10-27 a topic Mr. Focus scored AUTO_OK (80) or more counts as approved until the owner
+answers it; the owner's own approvals go first and a Reject still drops it. A channel whose topics all wait is
+skipped and the next channel with an approved topic goes
 instead; rejected topics are dropped and planned again. When nothing is approved the chain stops, and the next
 approval starts it again.
 """
@@ -86,7 +88,7 @@ def due(now: datetime = None) -> dict:
     """The next video to make now, as KEY=value env for hope.yml, and mark it started so the next run moves on."""
     now, log = (now or datetime.now()).astimezone(IST), HERE / "runs" / "slots.jsonl"
     done, said, plan = made_today(now), approvals(), load()
-    ready = {c["id"] for c in live_channels() if any(said.get(topic_id(c["id"], e["topic"])) == "ok" for e in plan.get(c["id"], []))}
+    ready = {c["id"] for c in live_channels() if any(verdict(c["id"], e, said) in ("ok", "auto") for e in plan.get(c["id"], []))}
     left = [(c, n) for c, n in day_order() if n > done.get(c["id"], 0)]
     todo = [(c, n) for c, n in left if c["id"] in ready]  # skip channels whose topics still wait for the owner
     if not todo:
@@ -99,6 +101,15 @@ def due(now: datetime = None) -> dict:
         f.write(json.dumps({"made": f"{now:%Y-%m-%d} {c['id']} {n}"}) + "\n")
     return {"NEXT": c["id"], "N": n, "QUOTA": len(planned_slots(c)), "REVIEW": int(n == len(planned_slots(c))),
             "SERIES": int(c.get("status") == "series"), "GROW": int(not done), "MORE": int(len(todo) > 1), "RAN": 1}
+
+
+AUTO_OK = int(os.environ.get("AUTO_APPROVE_SCORE") or 80)  # owner's pick 2026-10-27: topics scoring this go ahead unapproved
+
+
+def verdict(cid: str, e: dict, said: dict) -> str:
+    """"ok" (the owner approved), "auto" (not yet answered but scored AUTO_OK or more), "no" (rejected) or ""."""
+    v = said.get(topic_id(cid, e["topic"]), "")
+    return v or ("auto" if e.get("score", 0) >= AUTO_OK else "")
 
 
 def redo(cid: str, now: datetime = None) -> bool:
@@ -180,12 +191,12 @@ def refresh() -> dict:
     for c in live_channels():
         cid, whens, keep = c["id"], next_slots(c), []
         for e in plan.get(cid, []):
-            verdict = said.get(topic_id(cid, e["topic"]))
-            if verdict == "no":
+            v = said.get(topic_id(cid, e["topic"]))
+            if v == "no":
                 rejected[cid] = (rejected.get(cid, []) + [e["topic"]])[-20:]
-            elif verdict == "ok" or not (c.get("news") and e.get("planned", "") < old):  # unapproved news goes stale
+            elif v == "ok" or not (c.get("news") and e.get("planned", "") < old):  # unapproved news goes stale
                 keep.append(e)
-        keep = sorted(keep, key=lambda e: said.get(topic_id(cid, e["topic"])) != "ok")[:len(whens)]  # approved go first
+        keep = sorted(keep, key=lambda e: ("ok", "auto", "").index(verdict(cid, e, said)))[:len(whens)]  # approved, then 80+, go first
         empty = whens[len(keep):]
         if empty and spent_today() < DAILY_BUDGET:
             try:
@@ -207,7 +218,7 @@ def next_topic(cid: str, any_: bool = False) -> str:
     """Take this channel's first approved topic off the plan and return it ("" if none); any_: else the first one."""
     plan, said = load(), approvals()
     entries = plan.get(cid) or []
-    pick = next((e for e in entries if said.get(topic_id(cid, e["topic"])) == "ok"), entries[0] if any_ and entries else None)
+    pick = next((e for v in ("ok", "auto") for e in entries if verdict(cid, e, said) == v), entries[0] if any_ and entries else None)
     if not pick:
         return ""
     entries.remove(pick)
