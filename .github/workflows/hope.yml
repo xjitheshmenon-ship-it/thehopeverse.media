@@ -101,9 +101,8 @@ jobs:
           { sudo apt-get install -y -qq fonts-noto-core || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core; }; } > /dev/null  # Hindi captions
           [ "$GROW" = 1 ] && { python agents.py --grow || true; }  # Mr. Grow's notes for the day's Shorts
           id=$NEXT
-          aud=$([ $((N * 3)) -le $((SHORTS_PER_DAY * 2)) ] && echo "Indian viewers" || echo "the international market")  # 4 of 6 for India
           if [ "$id" = yt-hopeverse ]; then
-            goal="get today's topics from Mr. Focus, check list_outbox, then draft and queue the best new current-affairs YouTube Short for $id, aimed at $aud, on a story not already drafted today."
+            goal="get today's topics from Mr. Focus, check list_outbox, then draft and queue the best new current-affairs YouTube Short for $id, aimed at a global audience, on a story not already drafted today."
           else
             goal="check list_channels and list_outbox, then draft and queue one new YouTube Short for $id that fits its niche, audience and language, on a topic it hasn't had yet."
           fi
@@ -125,7 +124,7 @@ jobs:
         run: |
           { sudo apt-get install -y -qq fonts-noto-core || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core; }; } > /dev/null
           if [ "$CHANNEL" = yt-hopeverse ]; then
-            goal="get today's topics from Mr. Focus, check list_outbox, then draft and queue one new current-affairs YouTube Short for yt-hopeverse, aimed at Indian viewers, on the top-viewed story of the last 48 hours that is not already drafted."
+            goal="get today's topics from Mr. Focus, check list_outbox, then draft and queue one new current-affairs YouTube Short for yt-hopeverse, aimed at a global audience, on the top-viewed story of the last 48 hours that is not already drafted."
           else
             goal="check list_channels and list_outbox, then draft and queue one new YouTube Short for $CHANNEL that fits its niche, audience and language, on a topic it hasn't had yet."
           fi

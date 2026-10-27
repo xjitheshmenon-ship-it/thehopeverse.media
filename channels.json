@@ -4,14 +4,14 @@
     "platform": "youtube",
     "name": "Hopeverse Media",
     "url": "https://www.youtube.com/@HopeverseMedia",
-    "niche": "Current affairs explained: today's biggest news in under a minute (changed by the owner, 26 Oct 2026)",
-    "audience": "India (4 Shorts a day) and international (2 a day), English",
+    "niche": "Global current affairs explained: the world's biggest news in under a minute (changed by the owner, 27 Oct 2026; little Indian politics)",
+    "audience": "Global, English-speaking (US, UK, Europe, India and worldwide)",
     "status": "live",
     "news": true,
     "branding": {
       "tagline": "Made by AI. Made with hope.",
-      "description": "Made by AI. Made with hope.\n\nHopeverse Media explains the day's biggest news in under a minute: what happened, the one fact most coverage missed, and why it matters to you. Two hosts, Arjun and Meera, take you through India's top stories and the world's, every day.\n\nSix new Shorts a day, from 7 AM to 5 PM India time. Every key fact is checked against at least two independent sources, and the sources are listed under each video.\n\nHopeverse Media is made with AI: the hosts, voices and some visuals are AI-generated, and every script is fact-checked before it goes up. Subscribe for the news, explained in a minute.",
-      "keywords": "\"news explained\" \"current affairs\" \"india news\" \"world news\" \"news in a minute\" \"daily news\" \"news shorts\" explainer \"current affairs india\" Hopeverse",
+      "description": "Made by AI. Made with hope.\n\nHopeverse Media explains the world's biggest news in under a minute: what happened, the one fact most coverage missed, and why it matters to you. Two hosts, Arjun and Meera, take you through the day's top stories in world events, tech, science, business and more.\n\nSix new Shorts a day. Every key fact is checked against at least two independent sources, and the sources are listed under each video.\n\nHopeverse Media is made with AI: the hosts, voices and some visuals are AI-generated, and every script is fact-checked before it goes up. Subscribe for the news, explained in a minute.",
+      "keywords": "\"news explained\" \"world news\" \"current affairs\" \"global news\" \"tech news\" \"science news\" \"news in a minute\" \"daily news\" \"news shorts\" explainer Hopeverse",
       "country": "IN",
       "banner": "brand/hopeverse-banner.png"
     }

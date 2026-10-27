@@ -100,11 +100,6 @@ def due(now: datetime = None) -> dict:
             "SERIES": int(c.get("status") == "series"), "GROW": int(not done), "MORE": int(len(todo) > 1), "RAN": 1}
 
 
-def audience(slot: int) -> str:
-    """Hopeverse Media: 4 of the 6 daily Shorts for India, the rest international (as hope.yml)."""
-    return "Indian viewers" if slot * 3 <= SHORTS_PER_DAY * 2 else "the international market"
-
-
 def load() -> dict:
     return json.loads(PLAN.read_text(encoding="utf-8")) if PLAN.exists() else {}
 
@@ -131,15 +126,14 @@ def _ask(channel: dict, slots: list, taken: list, rejected: list = ()) -> list:
         tools = []
     else:
         drafted = [json.loads(p.read_text(encoding="utf-8")).get("title", "") for p in sorted(OUTBOX.glob(f"{cid}-*.json"))][-40:]
-        when = "\n".join(f"- {w:%a %d %b %H:%M} IST" + (f", for {audience(n)}" if cid == "yt-hopeverse" else "")
-                         for n, w in slots)
+        when = "\n".join(f"- {w:%a %d %b %H:%M} IST" for n, w in slots)
         task = (f"Plan one YouTube Short for each of these upload slots of the channel {channel['name']} "
                 f"(niche: {channel['niche']}; audience: {channel['audience']}):\n{when}\n"
                 f"Already made, don't repeat: {drafted}\nAlready planned: {taken}\n"
                 + (f"The owner rejected these, don't suggest them or anything like them: {list(rejected)}\n" if rejected else "")
-                + ("Current affairs: first run web_search for the top India and world news of the last 24-48 hours. "
+                + ("Current affairs: first run web_search for the top news of the last 24-48 hours for this channel's audience. "
                    "Every topic must name one specific, real, dated story you found (who, what, a number), never a "
-                   "category like 'top headline'. Pick the stories with the most interest for each slot's audience."
+                   "category like 'top headline'. Pick the stories with the most interest for the channel's audience."
                    if channel.get("news") else "Evergreen, well-sourced topics with a strong curiosity hook."))
         tools = [WEB_SEARCH] if channel.get("news") else []
     response = client.messages.parse(model=HELPER_MODEL, max_tokens=8000,
