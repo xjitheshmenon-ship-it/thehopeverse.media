@@ -18,7 +18,7 @@ from zoneinfo import ZoneInfo
 import credits
 from agents import DAILY_BUDGET, HERE, HISTORY, OUTBOX, _channels
 from state import approvals, notes, topic_id
-from plan import STEP, SERIES_PER_DAY, SHORTS_PER_DAY, day_order, live_channels, load, made_today, next_slots
+from plan import START_HOUR, STEP, SERIES_PER_DAY, SHORTS_PER_DAY, day_order, live_channels, load, made_today, next_slots
 
 IST = ZoneInfo("Asia/Kolkata")
 NOW = datetime.now(IST)
@@ -96,7 +96,7 @@ def slots(rows: list) -> list:
     for i, (c, n) in enumerate(day_order()):
         posted = sorted((r for r in rows if r["channel"] == c["id"] and r["day"] == TODAY), key=lambda r: r["published"])
         short = posted[n - 1] if len(posted) >= n else None
-        start = NOW.replace(hour=6, minute=0, second=0, microsecond=0) + timedelta(minutes=STEP * i)
+        start = NOW.replace(hour=START_HOUR, minute=0, second=0, microsecond=0) + timedelta(minutes=STEP * i)
         status = "Posted" if short else "Running" if made.get(c["id"], 0) >= n else "Upcoming"
         out.append({"key": f"{c['id']}-{n}", "channel": c["id"], "name": c["name"], "slot": n,
                     "time": short["published"][11:] if short else f"{start:%H:%M}", "status": status,
@@ -112,6 +112,11 @@ def one_click(cid: str) -> bool:
     return (HERE / ".github" / "workflows" / f"post-now-{cid}.yml").exists()
 
 
+def _why(e: dict) -> str:
+    """The planner's reason, led by the topic's relevance score (plan.RUBRIC) when it has one."""
+    return (f"Relevance {e['score']}/100 · " if "score" in e else "") + (e.get("why") or "")
+
+
 def upcoming() -> list:
     """The next 6 videos the pipeline will make: only approved topics, in each channel's queue order (plan.py makes
     a channel's approved topics first and skips a channel with none), with estimated times."""
@@ -123,7 +128,7 @@ def upcoming() -> list:
         for (n, when), e in zip(next_slots(c), approved):
             out.append({"key": f"{c['id']}-{when:%Y%m%d%H}", "when": f"{when:%Y-%m-%d %H:%M}", "channel": c["id"],
                         "name": c["name"], "plan": e["topic"],
-                        "why": e.get("why"), "post_now": ACTIONS + (
+                        "why": _why(e), "score": e.get("score"), "post_now": ACTIONS + (
                             "episode.yml" if series else f"post-now-{c['id']}.yml" if one_click(c["id"]) else "hope.yml"),
                         "how": "Run workflow, then the green Run workflow" if series or one_click(c["id"])
                         else f"Run workflow, job: one, channel: {c['id']}"})
@@ -134,7 +139,7 @@ def topics() -> list:
     """Every planned topic with the owner's choice: Waiting (no script until approved), Approved or Rejected."""
     plan, said = load(), approvals()
     return [{"id": topic_id(c["id"], e["topic"]), "channel": c["id"], "name": c["name"], "when": e.get("when", ""),
-             "topic": e["topic"], "why": e.get("why", ""),
+             "topic": e["topic"], "why": _why(e), "score": e.get("score"),
              "status": {"ok": "Approved", "no": "Rejected"}.get(said.get(topic_id(c["id"], e["topic"])), "Waiting")}
             for c in live_channels() for e in plan.get(c["id"], [])]
 
@@ -204,7 +209,7 @@ def limits(costs: list) -> list:
         {"item": "Daily budget", "value": DAILY_BUDGET, "unit": "usd", "note": "All channels together; runs stop once reached (DAILY_BUDGET)"},
         {"item": "Spent today", "value": today, "unit": "usd", "note": f"{TODAY}, India time"},
         {"item": "Left today", "value": round(max(0, DAILY_BUDGET - today), 2), "unit": "usd", "note": "Before the cap stops runs"},
-        {"item": "Hopeverse Shorts a day", "value": SHORTS_PER_DAY, "unit": "count", "note": "Hopeverse Media (SHORTS_PER_DAY); other channels 2 a day; from 6 AM IST one video at a time, channel by channel"},
+        {"item": "Hopeverse Shorts a day", "value": SHORTS_PER_DAY, "unit": "count", "note": "Hopeverse Media (SHORTS_PER_DAY); other channels 2 a day; from 4 AM IST one video at a time, channel by channel"},
         {"item": "Kissa episodes a day", "value": SERIES_PER_DAY, "unit": "count", "note": "Fully acted, about $4-5 each, inside the daily budget (SERIES_PER_DAY)"},
         {"item": "Paid AI clips per Short", "value": clips, "unit": "count", "note": "Kling video shots, about $0.35 each (AI_CLIPS_PER_SHORT)"},
         {"item": "HeyGen talking shot", "value": 0.05, "unit": "usd_per_s", "note": "Avatar IV, per second of speech"},

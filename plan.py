@@ -5,7 +5,7 @@
                                   (--any: the first planned one when none is approved, for Post now)
     python plan.py --due       -> the next video to make (hope.yml), as KEY=value lines for $GITHUB_ENV
 
-From 6 AM India time hope.yml makes one video at a time, one channel after another in channels.json order, round
+From 4 AM India time (owner's change 2026-10-27; was 6 AM) hope.yml makes one video at a time, one channel after another in channels.json order, round
 after round until each has its daily count (Hopeverse 6, the others 2); each run starts the next when it ends.
 Mr. Hope (or series.py for Kissa) still checks that a news topic is fresh. Existing entries are kept; only empty
 ones are planned, by Mr. Focus (Sonnet).
@@ -31,6 +31,7 @@ PLAN = HERE / "runs" / "plan.json"
 IST = ZoneInfo("Asia/Kolkata")
 SHORTS_PER_DAY = min(6, int(os.environ.get("SHORTS_PER_DAY") or 6))
 SERIES_PER_DAY = int(os.environ.get("SERIES_PER_DAY") or 2)
+START_HOUR = 4  # the chain starts 04:00 IST (hope.yml cron 30 22 UTC); owner's change 2026-10-27
 STEP = 25  # minutes a video takes, roughly, for the dashboard's estimated times
 
 
@@ -51,7 +52,7 @@ def live_channels() -> list:
 
 def day_order(channels: list = None) -> list:
     """The day's videos in making order: one video per channel, then the next round, until each channel has its
-    count (owner's rule 2026-10-26: start at 6 AM, one video at a time). [(channel, n), ...]"""
+    count (owner's rule 2026-10-26: start early (4 AM IST since 2026-10-28), one video at a time). [(channel, n), ...]"""
     channels = live_channels() if channels is None else channels
     return [(c, n) for n in range(1, 7) for c in channels if n in planned_slots(c)]
 
@@ -69,13 +70,13 @@ def made_today(now: datetime = None) -> dict:
 
 
 def next_slots(channel: dict, k: int = 6, after: datetime = None) -> list:
-    """The channel's next k (n, estimated time) pairs, India time: the day starts at 06:00 and a video takes about
+    """The channel's next k (n, estimated time) pairs, India time: the day starts at START_HOUR and a video takes about
     STEP minutes, so the estimate is the video's place in the day's order."""
     after = (after or datetime.now()).astimezone(IST)
     order, done = day_order(), made_today(after).get(channel["id"], 0)
     out = []
     for d in range(4):
-        start = (after + timedelta(days=d)).replace(hour=6, minute=0, second=0, microsecond=0)
+        start = (after + timedelta(days=d)).replace(hour=START_HOUR, minute=0, second=0, microsecond=0)
         out += [(n, start + timedelta(minutes=STEP * i)) for i, (c, n) in enumerate(order)
                 if c["id"] == channel["id"] and (d or n > done)]
     return out[:k]
@@ -100,6 +101,20 @@ def due(now: datetime = None) -> dict:
             "SERIES": int(c.get("status") == "series"), "GROW": int(not done), "MORE": int(len(todo) > 1), "RAN": 1}
 
 
+def redo(cid: str, now: datetime = None) -> bool:
+    """A Short failed its relevance check before upload: take back its "made" mark so the chain makes this channel's
+    video again with its next approved topic. Once per channel a day, so a bad news day can't loop."""
+    now, log = (now or datetime.now()).astimezone(IST), HERE / "runs" / "slots.jsonl"
+    lines = log.read_text(encoding="utf-8").splitlines() if log.exists() else []
+    mark = json.dumps({"redo": f"{now:%Y-%m-%d} {cid}"})
+    mine = [i for i, l in enumerate(lines) if json.loads(l).get("made", "").startswith(f"{now:%Y-%m-%d} {cid} ")]
+    if mark in lines or not mine:
+        return False
+    del lines[mine[-1]]
+    log.write_text("\n".join(lines + [mark]) + "\n", encoding="utf-8")
+    return True
+
+
 def load() -> dict:
     return json.loads(PLAN.read_text(encoding="utf-8")) if PLAN.exists() else {}
 
@@ -107,6 +122,13 @@ def load() -> dict:
 class Item(BaseModel):
     topic: str  # the Short's subject in one line, in English, specific (names, numbers), like a working title
     why: str    # one short line: why now / why it will get views
+    score: int  # relevance 0-100, see RUBRIC
+
+
+RUBRIC = ("Give each topic a relevance score from 0 to 100, the sum of: timeliness, is it today's story (0-30); "
+          "fit for this channel's audience, region and language (0-30); demand, are people searching and watching "
+          "it right now (0-25); uniqueness, an angle the big outlets missed (0-15). Be strict: 80+ only for a "
+          "fresh story with clear demand. The owner sees it next to the topic.")
 
 
 class Plan(BaseModel):
@@ -143,7 +165,7 @@ def _ask(channel: dict, slots: list, taken: list, rejected: list = ()) -> list:
     response = client.messages.parse(model=HELPER_MODEL, max_tokens=8000,
                                      output_config={"effort": "medium" if tools else "low"},
                                      tools=tools, output_format=Plan,
-                                     messages=[{"role": "user", "content": task + f"\nReturn exactly {len(slots)} items, in slot order."}])
+                                     messages=[{"role": "user", "content": task + "\n" + RUBRIC + f"\nReturn exactly {len(slots)} items, in slot order."}])
     cost = _cost(HELPER_MODEL, response.usage)
     log_spend(cost, cid)
     searched = getattr(getattr(response.usage, "server_tool_use", None), "web_search_requests", 0) or 0
@@ -168,7 +190,7 @@ def refresh() -> dict:
         if empty and spent_today() < DAILY_BUDGET:
             try:
                 items = _ask(c, empty, [e["topic"] for e in keep], rejected.get(cid, []))
-                keep += [{"topic": it.topic, "why": it.why, "planned": f"{now:%Y-%m-%d %H:%M}"} for it in items]
+                keep += [{"topic": it.topic, "why": it.why, "score": max(0, min(100, it.score)), "planned": f"{now:%Y-%m-%d %H:%M}"} for it in items]
             except Exception as e:  # a failed plan shouldn't stop the run; the next run plans again
                 print(f"    planning {cid} failed: {e}")
         for (n, w), e in zip(whens, keep):  # estimated times, in making order
