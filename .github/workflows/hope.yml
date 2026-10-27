@@ -51,6 +51,7 @@ env:
   SHORTS_PER_DAY: ${{ vars.SHORTS_PER_DAY || '6' }}  # Hopeverse Media, one per 2-hour slot (at most 6); other channels post 2 a day (channels.json per_day)
   SERIES_PER_DAY: ${{ vars.SERIES_PER_DAY || '2' }}  # Kissa episodes a day: 1, 2, 3 or 6 (owner's pick 2026-10-26: 2, each fully acted, within DAILY_BUDGET)
   RELEVANCE_MIN: ${{ vars.RELEVANCE_MIN || '60' }}  # a finished Short must score this (0-100) on its relevance check to be made and posted
+  AUTO_APPROVE_SCORE: ${{ vars.AUTO_APPROVE_SCORE || '80' }}  # a planned topic scoring this goes ahead without the owner's Approve (owner's pick 2026-10-27); Reject still stops it
   DAILY_BUDGET: ${{ vars.DAILY_BUDGET || '20' }}     # US dollars a day across everything; runs stop once reached
 
 jobs:

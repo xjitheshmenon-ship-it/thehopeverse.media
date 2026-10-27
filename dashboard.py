@@ -18,7 +18,7 @@ from zoneinfo import ZoneInfo
 import credits
 from agents import DAILY_BUDGET, HERE, HISTORY, OUTBOX, _channels
 from state import approvals, notes, topic_id
-from plan import START_HOUR, STEP, SERIES_PER_DAY, SHORTS_PER_DAY, day_order, live_channels, load, made_today, next_slots
+from plan import AUTO_OK, START_HOUR, verdict, STEP, SERIES_PER_DAY, SHORTS_PER_DAY, day_order, live_channels, load, made_today, next_slots
 
 IST = ZoneInfo("Asia/Kolkata")
 NOW = datetime.now(IST)
@@ -114,7 +114,8 @@ def one_click(cid: str) -> bool:
 
 def _why(e: dict) -> str:
     """The planner's reason, led by the topic's relevance score (plan.RUBRIC) when it has one."""
-    return (f"Relevance {e['score']}/100 · " if "score" in e else "") + (e.get("why") or "")
+    auto = " (goes ahead unless rejected)" if e.get("score", 0) >= AUTO_OK else ""
+    return (f"Relevance {e['score']}/100{auto} · " if "score" in e else "") + (e.get("why") or "")
 
 
 def upcoming() -> list:
@@ -123,7 +124,8 @@ def upcoming() -> list:
     plan, said = load(), approvals()
     out = []
     for c in live_channels():
-        approved = [e for e in plan.get(c["id"], []) if said.get(topic_id(c["id"], e["topic"])) == "ok"]
+        approved = [e for e in plan.get(c["id"], []) if verdict(c["id"], e, said) in ("ok", "auto")]
+        approved.sort(key=lambda e: verdict(c["id"], e, said) != "ok")  # same order as plan.next_topic
         series = c.get("status") == "series"
         for (n, when), e in zip(next_slots(c), approved):
             out.append({"key": f"{c['id']}-{when:%Y%m%d%H}", "when": f"{when:%Y-%m-%d %H:%M}", "channel": c["id"],
@@ -140,7 +142,7 @@ def topics() -> list:
     plan, said = load(), approvals()
     return [{"id": topic_id(c["id"], e["topic"]), "channel": c["id"], "name": c["name"], "when": e.get("when", ""),
              "topic": e["topic"], "why": _why(e), "score": e.get("score"),
-             "status": {"ok": "Approved", "no": "Rejected"}.get(said.get(topic_id(c["id"], e["topic"])), "Waiting")}
+             "status": {"ok": "Approved", "no": "Rejected"}.get(verdict(c["id"], e, said), "Waiting")}
             for c in live_channels() for e in plan.get(c["id"], [])]
 
 
