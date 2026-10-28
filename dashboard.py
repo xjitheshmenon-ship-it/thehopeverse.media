@@ -175,7 +175,8 @@ def predictions() -> list:
     """Per channel: how Hope's 48-hour view predictions did against YouTube (predict.py)."""
     done, names = predict.load(), {c["id"]: c["name"] for c in _channels()}
     return [{"channel": c, "name": names.get(c, c), **predict.accuracy([r for r in done.values() if r["channel"] == c])}
-            for c in sorted({r["channel"] for r in done.values()})]
+            # every YouTube channel gets a row, even before its first 48-hour result: an empty file fails to load on HQ
+            for c in sorted({r["channel"] for r in done.values()} | {c["id"] for c in _channels() if c["platform"] == "youtube"})]
 
 
 def youtube_totals() -> dict:
