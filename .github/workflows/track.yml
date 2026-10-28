@@ -34,8 +34,10 @@ jobs:
           out.mkdir(parents=True, exist_ok=True)
           for take in range(1, track.get("takes", 1) + 1):
               for model in ("music_v2", "music_v1"):  # v2 sounds better; v1 if the plan doesn't offer it
-                  body = {"prompt": track["prompt"], "model_id": model, "force_instrumental": True,
-                          "music_length_ms": int(track["seconds"] * 1000)}
+                  # A composition plan holds each section to its length (no drifting gaps); else the plain prompt.
+                  body = ({"composition_plan": track["plan"], "model_id": model} if "plan" in track else
+                          {"prompt": track["prompt"], "model_id": model, "force_instrumental": True,
+                           "music_length_ms": int(track["seconds"] * 1000)})
                   req = urllib.request.Request(
                       "https://api.elevenlabs.io/v1/music?output_format=mp3_44100_192", method="POST",
                       data=json.dumps(body).encode(),
