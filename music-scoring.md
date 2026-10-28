@@ -85,3 +85,30 @@ Example (a Sankalp Short about a space launch, about 50 s):
 - The same raga, tempo and instruments on every Short of a channel (vary them; keep only the channel's signature lead).
 - Horror or thriller clichés under real tragedies.
 - Copying a famous theme's rhythm and melody shape (a copyright risk, even without the name).
+
+## 8. Measured reference sheet: modern Tamil mass BGM
+
+Jithesh chose these clips as the sound he wants (28 Oct 2026). They were measured with a script (/mnt/project-files/music/tools/analyze.py), not by ear, and only the numbers and traits are kept here, never melodies. As everywhere, **no film, theme or composer name goes into a prompt**.
+
+| Ref | Clip | BPM (half-time) | Key | Sub / bass / mid % | Above 2 kHz % | Hits/s | Percussive % | Sustained sub % | Level dB | Crest dB |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| R1 | Jailer 2, Roddy theme (35 s) | 117 (59) | C# minor | 36 / 37 / 22 | 4 | 4.4 | 25 | 64 | -13, a 1 s dip, then -8 to -10 | 12.4 |
+| R2 | Jailer 2, Roddy entry (27 s) | 117 (59) | C# minor | 19 / 56 / 19 | 5 | 6.0 | 22 | 38 | -13 flat | 12.6 |
+| R3 | Jailer 2, Dileep theme (35 s) | 108 (54) | D minor/major | 45 / 30 / 20 | 4 | 5.1 | 16 | 66 | -10 flat | 10.8 |
+| R4 | OM, Alaakaa Loova BGM (34 s) | 83 (42) | weak key, chromatic around F, F#, G | 24 / 33 / 39 | 4 | 5.4 | 27 | 36 | -10 flat | 10.5 |
+| R5 | OM, Alaakaa Loova song (30 s) | 83 (42) | F minor, chromatic | 24 / 24 / 47 | 5 | 5.6 | 28 | 46 | -10 flat | 10.3 |
+| R6 | Jailer 2, Tiger theme (35 s) | 89 (45) | F# minor | 19 / 36 / 43 | 2 | 1.0 | 17 | 67 | -10, rising to -8 | 9.0 |
+| our v6 | best take so far | 117 | E minor | | | 3.1-3.5 | 22-28 | 50-71 | -16 | 13-14 |
+
+What the six share, and what our takes missed:
+- **Slow, heavy pulse.** 83-117 BPM, felt in half-time (42-59). Swagger, not speed. Our early takes at 128-140 BPM were too fast.
+- **Built from sustained electronic sound, not drums.** Only 16-28% of the energy is percussive, and a held sub or synth bass sounds in 36-67% of frames. The weight is a thick synth bass and layered synth textures, with the drums punching on top. Ask for "distorted synth bass", "layered analogue and digital synths", "processed and resampled hits", "unique electronic sound design" ahead of any live instrument.
+- **Dark.** Only 2-5% of the energy is above 2 kHz (centroid 1.5-2.3 kHz). No bright hi-hats or shimmering pads. Ask for "dark, low-mid heavy, no bright hi-hats".
+- **Minor or chromatic.** C#, D, F, F# minor; two clips bend around neighbouring semitones (F, F#, G), a menacing chromatic colour. Ask for "dark minor key with chromatic semitone bends".
+- **Wall-to-wall loud.** A flat -9 to -13 dB with a crest of 9-12.6 dB (heavily compressed). At most one dip of about a second before an even louder hit. Our takes were 3-6 dB quieter, with a 13-14 dB crest: ask for a "very loud, heavily compressed, wall-to-wall modern mix with no quiet sections".
+- **Regular big impacts** every 1.5-2.5 s (a hard, processed hit on each bar or half bar), not long builds. Few risers.
+- **Vocal energy.** Jithesh says chant and vocal shouts in between add the energy; use wordless crowd chants and shouts (set "instrumental": false in the track brief).
+- **Two styles inside the set.** R1-R3 are a mid-tempo menace groove (108-117 BPM). R4-R6 are a slow, heavy stomp (83-89 BPM), where R6 is almost all held bass and sparse huge hits (1 hit/s).
+
+Prompt shape that follows from the numbers:
+"Dark modern Tamil mass-hero BGM, electronic first: a thick distorted synth bass and layered synth textures carry the track, processed and resampled hits punch on every bar, unique electronic sound design, [96-117] BPM in a half-time swagger, dark minor key with chromatic semitone bends, low-mid heavy with no bright hi-hats, wordless male crowd chants and shouts between phrases, very loud heavily compressed wall-to-wall mix, no quiet sections, at most one 1-second stop before an even louder hit."
