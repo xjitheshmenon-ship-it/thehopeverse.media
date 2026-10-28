@@ -866,6 +866,16 @@ def instagram(video: Path, caption: str) -> str:
 
 if __name__ == "__main__":
     channels = {c["id"]: c for c in _channels()}
+    if "--publish" in sys.argv:  # make a scheduled Short public now: python video.py --publish <youtube id>
+        vid = sys.argv[sys.argv.index("--publish") + 1]
+        path = next(p for p in OUTBOX.glob("*.json") if json.loads(p.read_text(encoding="utf-8")).get("youtube_id") == vid)
+        package = json.loads(path.read_text(encoding="utf-8"))
+        youtube(False, HERE / channels[package["channel_id"]].get("token", "token.json")).videos().update(
+            part="status", body={"id": vid, "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False,
+                                                       "containsSyntheticMedia": True}}).execute()
+        package.pop("publish_at", None)  # frees its slot for the next Short
+        path.write_text(json.dumps(package, indent=2, ensure_ascii=False), encoding="utf-8")
+        sys.exit(print(f"Public now: https://youtu.be/{vid}"))
     if "--connect" in sys.argv:  # sign a channel in once: python video.py --connect hi (or a channel id)
         lang = sys.argv[sys.argv.index("--connect") + 1]
         c = next(c for c in channels.values() if lang in (c.get("lang"), c["id"]))
