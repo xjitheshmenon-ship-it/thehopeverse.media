@@ -1,0 +1,22 @@
+{
+  "title": "The Return v5 (modern Tamil mass-hero BGM)",
+  "story": "A hero walks back into his city after many years away. The city half-remembers him; then the whole street knows he is back.",
+  "brief": {
+    "raga": "Shanmukhapriya (Carnatic melakarta 56): fierce and heroic, minor colour with a raised 4th (prati madhyamam). The hero motif is 4 notes: Sa, Ri, Ga (minor), then a leap to the raised Ma, held.",
+    "tempo": "128 BPM throughout",
+    "lead": "nadaswaram (the hero's voice), with solo cello and bansuri for memory",
+    "cues": [
+      "0-8 s  Hook: a whistle-like synth lead plays the 4-note motif over a pulsing synth ostinato, 808 hits and trap hi-hats from beat one",
+      "8-24 s  The walk: punchy kick and 808 groove, piano and mandolin play the motif with jazzy seventh chords, mridangam and tabla patterns layer in one by one",
+      "24-36 s  Build: parai and thappu kuthu pattern under EDM synths, brass stabs on the off-beats, a riser, stop-start punches on every 4th bar",
+      "36-37 s  A split-second break-stop with a reverse cymbal into the drop",
+      "37-70 s  Mass drop: thundering drums, sub 808, distorted guitar riff, brass stabs, the nadaswaram and whistle synth trade the catchy 4-note hook again and again, kuthu dance groove",
+      "70-80 s  Outro: the hook once more on the whistle synth and nadaswaram over the full groove, ending on a hard hit"
+    ],
+    "notes": "Jithesh 28 Oct: v4 lacked the modern Tamil mass touch (the music.md §13 Anirudh and Sai Abhyankkar trait profiles). v5 = v1's motif and nadaswaram + mass-hero BGM traits (808 bass, trap hats, punchy kick, synth and brass stabs, whistle hook, kuthu parai/thappu under EDM, stop-start punches) + indie-pop layering (piano motif, jazzy 7ths, mandolin, layered groove). Names never go in the prompt.",
+    "sound": "modern Tamil mass-hero film BGM meets Tamil indie pop: club-loud, punchy, wide stereo, heavy 808 sub-bass, crisp trap hats; no vocals, no chants, no named songs or artists"
+  },
+  "seconds": 80,
+  "takes": 2,
+  "prompt": "Modern Tamil mass-hero cinematic BGM, instrumental, 128 BPM, minor key with a triumphant lift. A hero walks back into his city after many years. One catchy 4-note heroic hook, in the mood of Carnatic Raga Shanmukhapriya, repeated again and again by a whistle-like synth lead and the nadaswaram. Club-loud and punchy: heavy 808 bass, punchy kick, crisp trap hi-hats, synth and brass stabs, distorted electric-guitar riff, plus a Tamil kuthu folk dance rhythm of parai and thappu drums under EDM synths. Layered groove that keeps adding parts: a simple piano motif with jazzy seventh chords, mandolin, mridangam and tabla patterns with the pop kick. Busy all the way through, a beat in every second, no slow intro, no quiet passages, no long held pauses. 0-8 s: the whistle synth plays the hook over a pulsing synth ostinato, 808 hits and trap hats from the first beat. 8-24 s: punchy kick and 808 groove, piano and mandolin play the hook with jazzy seventh chords, mridangam and tabla layer in one by one. 24-36 s: parai and thappu kuthu pattern under EDM synths, brass stabs on the off-beats, a rising riser, stop-start punches every fourth bar. 36-37 s: a split-second break with a reverse cymbal straight into the drop. 37-70 s: massive mass drop, thundering drums, sub 808, distorted guitar riff and brass stabs, the nadaswaram and whistle synth trade the 4-note hook over a kuthu dance groove. 70-80 s: the hook once more on whistle synth and nadaswaram over the full groove, ending on one hard hit. Wide stereo, heavy sub-bass, modern loud mix. Instrumental only, no vocals, no singing, no chanting, no spoken words."
+}
