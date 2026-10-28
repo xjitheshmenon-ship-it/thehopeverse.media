@@ -928,6 +928,8 @@ if __name__ == "__main__":
             continue  # e.g. python video.py --only yt-kissa: post just that channel's videos
         if package.get("held"):
             continue  # failed its relevance check: never made or posted
+        if channels.get(package["channel_id"], {}).get("status") == "paused":
+            continue  # the owner paused this channel (Kissa, 28 Oct 2026): nothing is made or posted until it's live again
         video = path.with_suffix(".mp4")
         voice = channels.get(package["channel_id"], {}).get("voice", VOICE)
         dub_path = path.with_suffix(f".{channels.get(package['channel_id'], {}).get('dub')}.json")

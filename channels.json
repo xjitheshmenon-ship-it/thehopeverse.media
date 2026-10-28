@@ -55,7 +55,8 @@
     "token": "token-series.json",
     "tz": "Asia/Kolkata",
     "publish_at": ["12:30", "21:00"],
-    "status": "series",
+    "status": "paused",
+    "paused_note": "Owner paused Kissa on 28 Oct 2026 (no uploads from 29 Oct until they say). To resume, set status back to series.",
     "watermark": "brand/kissa-watermark.png",
     "branding": {
       "description": "Ek kahaani. Roz ek twist.\n\nकिस्सा — रोज़ एक नई कहानी, हर एपिसोड में एक ट्विस्ट।\nOriginal Hindi micro web series: love, revenge, family secrets and contract marriages, told in short episodes you can watch in a minute.\n\nहर रोज़ दो नए एपिसोड, दोपहर 12:30 बजे और रात 9 बजे। Subscribe करें ताकि अगला ट्विस्ट मिस न हो।\n\nKissa is made with AI: the characters, voices and scenes are AI-generated. Made by AI. Made with hope.",
