@@ -1,0 +1,208 @@
+{
+  "title": "The Return (hero introduction)",
+  "story": "A hero walks back into his city after many years away. The city half-remembers him; then the whole street knows he is back.",
+  "brief": {
+    "raga": "Shanmukhapriya (Carnatic melakarta 56): fierce and heroic, minor colour with a raised 4th (prati madhyamam). The hero motif is 4 notes: Sa, Ri, Ga (minor), then a leap to the raised Ma, held.",
+    "tempo": "70 BPM in half-time for the walk, felt as 140 BPM after the drop",
+    "lead": "nadaswaram and shehnai, with veena, sitar, sarod, sarangi, santoor; drums: chenda, thavil, mridangam, tabla, pakhawaj, dhol, parai, urumi, ghatam, kanjira; plus kombu, morsing, khartal, manjira, tanpura",
+    "cues": [
+      "0-5 s  Hook: chenda melam wall + thavil hits, kombu horn blast, nadaswaram blasts the motif",
+      "5-20 s  Low: tanpura drone, veena plays the motif low, morsing, ghatam and kanjira ticking, sarangi swells",
+      "20-30 s  Build: mridangam and tabla rolls, sitar and sarod jhala, parai and urumi, khartal, motif climbs",
+      "30-55 s  Peak: chenda, thavil, dhol, pakhawaj; nadaswaram and shehnai trade the theme; sarod and veena answer; santoor, kombu, manjira",
+      "55-60 s  Ending: tihai on all drums, nadaswaram holds the last note"
+    ],
+    "sound": "Indian classical and folk instruments only (about 22 different ones); no Western orchestra, guitar, piano, synth or drum kit",
+    "revision": "v3, 28 Oct 2026, owner's notes: v1 too slow, gaps too long; use many Indian classical instruments, few Western ones"
+  },
+  "seconds": 60,
+  "takes": 2,
+  "prompt": "Epic modern South Indian cinematic hero-introduction score, instrumental. A hero returns to his city after many years. Lead instrument: nadaswaram, with solo cello and bansuri. Mode: fierce heroic minor with a raised fourth, in the mood of Carnatic Raga Shanmukhapriya; one 4-note heroic motif that keeps returning. 0-12 s: low wind-like drone and deep sub pad, one distant slow nadaswaram phrase of the motif. 12-30 s: slow heartbeat kick at 70 BPM and a low string ostinato in steady walking steps, cello states the motif quietly. 30-45 s: thavil and frame-drum rolls build, brass swells, a rising riser, the motif climbs higher each time. 45-47 s: near-silence, only a held drone. 47-70 s: massive drop with thundering drums, brass stabs and distorted electric guitar, the nadaswaram plays the full heroic theme over a driving Tamil folk dance groove at 140 BPM. 70-80 s: the motif once more on solo bansuri over a held chord, ending on a long held note. Wide cinematic stereo, deep sub-bass, punchy drums, analogue warmth. Instrumental only, no vocals, no singing, no chanting, no spoken words.",
+  "plan": {
+    "positive_global_styles": [
+      "epic South Indian cinematic hero-entry score played only on Indian classical and folk instruments",
+      "instrumental",
+      "Raga Shanmukhapriya mood: fierce heroic minor with a raised fourth",
+      "one 4-note heroic motif passed between many instruments",
+      "a different set of Indian instruments in every section",
+      "continuous driving rhythm, no gaps",
+      "wide cinematic stereo, powerful modern mix"
+    ],
+    "negative_global_styles": [
+      "electric guitar",
+      "western orchestra",
+      "violin section",
+      "string section",
+      "piano",
+      "synthesizer",
+      "brass section",
+      "trumpet",
+      "drum kit",
+      "EDM",
+      "vocals",
+      "singing",
+      "chanting",
+      "spoken words",
+      "long silence",
+      "fade-out",
+      "slow intro",
+      "quiet intro"
+    ],
+    "sections": [
+      {
+        "section_name": "Hook",
+        "duration_ms": 5000,
+        "positive_local_styles": [
+          "instant wall of chenda melam drums and thavil hits on beat one",
+          "kombu horn blast",
+          "nadaswaram blasts the 4-note motif",
+          "full energy from the first second",
+          "140 BPM"
+        ],
+        "negative_local_styles": [
+          "electric guitar",
+          "western orchestra",
+          "violin section",
+          "string section",
+          "piano",
+          "synthesizer",
+          "brass section",
+          "trumpet",
+          "drum kit",
+          "EDM",
+          "vocals",
+          "singing",
+          "chanting",
+          "spoken words",
+          "long silence",
+          "fade-out"
+        ],
+        "lines": []
+      },
+      {
+        "section_name": "Low",
+        "duration_ms": 15000,
+        "positive_local_styles": [
+          "drops low but keeps moving",
+          "tanpura drone",
+          "saraswati veena plucks the motif low and tense",
+          "morsing twang pulse",
+          "ghatam and kanjira ticking",
+          "sarangi swells in the gaps",
+          "70 BPM half-time, steady pulse, no silence"
+        ],
+        "negative_local_styles": [
+          "electric guitar",
+          "western orchestra",
+          "violin section",
+          "string section",
+          "piano",
+          "synthesizer",
+          "brass section",
+          "trumpet",
+          "drum kit",
+          "EDM",
+          "vocals",
+          "singing",
+          "chanting",
+          "spoken words",
+          "long silence",
+          "fade-out"
+        ],
+        "lines": []
+      },
+      {
+        "section_name": "Build",
+        "duration_ms": 10000,
+        "positive_local_styles": [
+          "mridangam and tabla rolls speeding up in layers",
+          "sitar and sarod jhala strumming faster",
+          "parai and urumi drums join",
+          "khartal clappers",
+          "the motif climbs higher each bar",
+          "pushes to 140 BPM"
+        ],
+        "negative_local_styles": [
+          "electric guitar",
+          "western orchestra",
+          "violin section",
+          "string section",
+          "piano",
+          "synthesizer",
+          "brass section",
+          "trumpet",
+          "drum kit",
+          "EDM",
+          "vocals",
+          "singing",
+          "chanting",
+          "spoken words",
+          "long silence",
+          "fade-out"
+        ],
+        "lines": []
+      },
+      {
+        "section_name": "Peak",
+        "duration_ms": 25000,
+        "positive_local_styles": [
+          "massive hero entry",
+          "full chenda melam with thavil, dhol and pakhawaj thundering",
+          "nadaswaram and shehnai trade the full heroic theme",
+          "sarod and veena riffs answer",
+          "santoor shimmer on top",
+          "kombu horns on the accents",
+          "manjira and talam cymbals",
+          "Tamil folk dance groove at 140 BPM, maximum energy"
+        ],
+        "negative_local_styles": [
+          "electric guitar",
+          "western orchestra",
+          "violin section",
+          "string section",
+          "piano",
+          "synthesizer",
+          "brass section",
+          "trumpet",
+          "drum kit",
+          "EDM",
+          "vocals",
+          "singing",
+          "chanting",
+          "spoken words",
+          "long silence",
+          "fade-out"
+        ],
+        "lines": []
+      },
+      {
+        "section_name": "Ending",
+        "duration_ms": 5000,
+        "positive_local_styles": [
+          "a tihai on all the drums landing hard on the final beat",
+          "nadaswaram holds the last note",
+          "short punchy ending, no fade"
+        ],
+        "negative_local_styles": [
+          "electric guitar",
+          "western orchestra",
+          "violin section",
+          "string section",
+          "piano",
+          "synthesizer",
+          "brass section",
+          "trumpet",
+          "drum kit",
+          "EDM",
+          "vocals",
+          "singing",
+          "chanting",
+          "spoken words",
+          "long silence",
+          "fade-out"
+        ],
+        "lines": []
+      }
+    ]
+  }
+}
