@@ -1,9 +1,15 @@
-# Write and post one Kissa episode right now, without the rest of the daily run.
+# Write and post one series episode (Kissa or Uno Reverse) right now, without the rest of the daily run.
 # Actions > "Post a Kissa episode" > Run workflow.
 name: Post a Kissa episode
 
 on:
   workflow_dispatch:
+    inputs:
+      channel:
+        description: "Which series"
+        default: yt-kissa
+        type: choice
+        options: [yt-kissa, yt-unoreverse]
 
 permissions:
   contents: write
@@ -53,10 +59,13 @@ jobs:
           done
           true
       - name: Write and post the episode
+        env:
+          CHANNEL: ${{ inputs.channel || 'yt-kissa' }}
         run: |
-          [ -f token-series.json ] || { echo "Kissa isn't connected: run the Connect a channel workflow"; exit 1; }
-          python series.py
-          python video.py --only yt-kissa
+          token=$(python -c "import json; print(next(c['token'] for c in json.load(open('channels.json')) if c['id'] == '$CHANNEL'))")
+          [ -f "$token" ] || { echo "$CHANNEL isn't connected: run the Connect a channel workflow"; exit 1; }
+          python series.py "$CHANNEL"
+          python video.py --only "$CHANNEL"
       - name: Save Hope's memory
         if: always()
         run: python state.py save

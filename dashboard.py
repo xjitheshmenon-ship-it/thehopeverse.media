@@ -137,7 +137,8 @@ def upcoming() -> list:
                         "name": c["name"], "plan": e["topic"],
                         "why": _why(e), "score": e.get("score"), "views48": e.get("views48"), "post_now": ACTIONS + (
                             "episode.yml" if series else f"post-now-{c['id']}.yml" if one_click(c["id"]) else "hope.yml"),
-                        "how": "Run workflow, then the green Run workflow" if series or one_click(c["id"])
+                        "how": f"Run workflow, channel: {c['id']}" if series and c["id"] != "yt-kissa"
+                        else "Run workflow, then the green Run workflow" if series or one_click(c["id"])
                         else f"Run workflow, job: one, channel: {c['id']}"})
     return sorted(out, key=lambda r: r["when"])[:6]
 

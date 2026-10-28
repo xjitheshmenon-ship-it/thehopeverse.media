@@ -21,6 +21,7 @@ import json
 import os
 import sys
 from datetime import datetime, timedelta
+from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from pydantic import BaseModel
@@ -37,6 +38,11 @@ SHORTS_PER_DAY = min(6, int(os.environ.get("SHORTS_PER_DAY") or 6))
 SERIES_PER_DAY = int(os.environ.get("SERIES_PER_DAY") or 2)
 START_HOUR = 4  # the chain starts 04:00 IST (hope.yml cron 30 22 UTC); owner's change 2026-10-27
 STEP = 25  # minutes a video takes, roughly, for the dashboard's estimated times
+
+
+def story_file(cid: str) -> Path:
+    """A series channel's story so far: series.json for Kissa (the first), series-<id>.json for the others."""
+    return HERE / ("series.json" if cid == "yt-kissa" else f"series-{cid}.json")
 
 
 def planned_slots(channel: dict) -> list:
@@ -154,9 +160,9 @@ def _ask(channel: dict, slots: list, taken: list, rejected: list = ()) -> list:
     """Mr. Focus plans topics for these slots (its cost goes in history.jsonl)."""
     cid = channel["id"]
     if channel.get("status") == "series":
-        story = json.loads((HERE / "series.json").read_text(encoding="utf-8")) if (HERE / "series.json").exists() else {}
+        story = json.loads(story_file(cid).read_text(encoding="utf-8")) if story_file(cid).exists() else {}
         first = len(story.get("episodes", [])) + 1 + len(taken)
-        task = (f"Plan the next {len(slots)} episodes of the Hindi micro web series {channel['name']}, starting at episode "
+        task = (f"Plan the next {len(slots)} episodes of the series {channel['name']} ({channel['niche']}), starting at episode "
                 f"{first}. Premise: {story.get('premise', '')}\n"
                 f"Last episodes: {json.dumps(story.get('episodes', [])[-10:], ensure_ascii=False)}\n"
                 f"Already planned: {taken}\nFor each, topic = 'Ep <n>: <one-line logline in English with the twist>'.")

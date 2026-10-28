@@ -1,24 +1,25 @@
-"""Mr. Pen (series): writes today's episode of the Hindi micro web series for the series channel in channels.json.
+"""Mr. Pen (series): writes today's episode for a series channel in channels.json (status "series").
 
-    python series.py    -> one new episode in outbox/, which video.py then makes and posts
+    python series.py                 -> one new Kissa episode in outbox/, which video.py then makes and posts
+    python series.py yt-unoreverse   -> the same for another series channel
 
-The story so far (premise, cast with looks and voices, every episode's summary) is kept in series.json, so each
-episode continues the last one. Instructions and the season idea are under "## Mr. Pen (series)" in team.md.
-Delete series.json to start a new season.
+The story so far (premise, cast with looks and voices, every episode's summary) is kept in series.json (Kissa) or
+series-<channel id>.json, so each episode continues the last one. Instructions are under "## Mr. Pen (<channel id>)"
+in team.md, else "## Mr. Pen (series)". Delete the story file to start a new season.
 """
 import json
 import re
+import sys
 from pathlib import Path
 
 from pydantic import BaseModel
 
 from agents import DAILY_BUDGET, next_outbox_path, MODEL, OUTBOX, TEAM, _channels, _cost, client, log_spend, spent_today
 from breakout import rules
-from plan import next_topic
+from plan import next_topic, story_file
 from video import Scene
 
 HERE = Path(__file__).parent
-STORY = HERE / "series.json"
 VOICES = "hi-IN-MadhurNeural (male) or hi-IN-SwaraNeural (female)"  # the two free Hindi Edge voices
 
 
@@ -41,8 +42,9 @@ class Episode(BaseModel):
     scenes: list[Scene]
 
 
-def write_episode() -> Path:
-    channel = next(c for c in _channels() if c.get("status") == "series")
+def write_episode(cid: str = "") -> Path:
+    channel = next(c for c in _channels() if c.get("status") == "series" and c["id"] == (cid or c["id"]))
+    STORY = story_file(channel["id"])
     story = json.loads(STORY.read_text(encoding="utf-8")) if STORY.exists() else {"premise": "", "cast": [], "episodes": []}
     n = len(story["episodes"]) + 1
     planned = next_topic(channel["id"])  # the logline shown on the dashboard, from plan.py
@@ -57,7 +59,8 @@ def write_episode() -> Path:
                    +
                    "Return: screenplay (the episode as a proper film screenplay: scene headings like 'INT. "
                    "BAKERY - NIGHT', short English action lines, Hindi dialogue in Devanagari under each character's "
-                   "name; no narrator); title (Hindi in Devanagari, starting 'Ep " + str(n) + " |', under 90 characters); "
+                   "name; no narrator); title (" + channel.get("title_rule", f"Hindi in Devanagari, starting 'Ep {n} |'")
+                   + ", under 90 characters); "
                    "description (2-3 gripping Hindi lines, then 3-5 hashtags ending with #Shorts); music (an English "
                    "prompt for the background score's mood, no vocals); summary (2 lines in English of what happens, "
                    "for the next episode); premise (the season's premise and arc in English, kept unless it must "
@@ -72,8 +75,9 @@ def write_episode() -> Path:
                    "over-the-shoulder, two-shot, low angle), that character's action and expression, the location "
                    "and light from the scene heading, described the same way in every shot of that scene; "
                    "picture_search 2-5 English words for the location)."}],
-        system=TEAM["Mr. Pen (series)"] + (f"\n\nLearned from this channel's breakout episodes, approved by the owner "
-                                           f"(follow them):\n{learned}" if (learned := rules(channel["id"])) else ""),
+        system=TEAM.get(f"Mr. Pen ({channel['id']})", TEAM["Mr. Pen (series)"])  # a channel's own section first
+        + (f"\n\nLearned from this channel's breakout episodes, approved by the owner "
+           f"(follow them):\n{learned}" if (learned := rules(channel["id"])) else ""),
         output_format=Episode,
     )
     ep = response.parsed_output
@@ -93,8 +97,8 @@ def write_episode() -> Path:
     OUTBOX.mkdir(exist_ok=True)
     path = next_outbox_path(channel['id'])
     path.write_text(json.dumps({"channel_id": channel["id"], "title": ep.title, "description": ep.description,
-                                "lang": channel["lang"], "category": "24",  # Entertainment
-                                "footer": TEAM.get("Series footer", ""), "music": ep.music,
+                                "lang": channel["lang"], "category": channel.get("category", "24"),  # Entertainment
+                                "footer": channel.get("footer", TEAM.get("Series footer", "")), "music": ep.music,
                                 "cast": story["cast"], "screenplay": ep.screenplay,
                                 "scenes": [s.model_dump() for s in ep.scenes]},
                                indent=2, ensure_ascii=False), encoding="utf-8")
@@ -107,4 +111,4 @@ def write_episode() -> Path:
 if __name__ == "__main__":
     if spent_today() >= DAILY_BUDGET:
         raise SystemExit(f"Daily budget of ${DAILY_BUDGET:.2f} reached; no more episodes today.")
-    write_episode()
+    write_episode(sys.argv[1] if len(sys.argv) > 1 else "")

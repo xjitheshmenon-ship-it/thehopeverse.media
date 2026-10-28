@@ -166,5 +166,30 @@
     "dub_language": "Hindi",
     "watermark": "brand/sawaal-watermark.png",
     "plan_note": "Every Short is posted in Hindi only (never write 'English and Hindi'). Topics are reported neutrally: never ask for opinion, 'mark opinion', the channel's own view, or loaded framing (e.g. 'Modi blinked', 'U-turn', 'masterstroke'). Frame each topic around national pride: what it means for India and its people. Prefer stories where a promise, policy or decision leaves an open question, told through a curious, little-known fact (data, Parliament answers, CAG, RTI, court records); not party spats or personal remarks."
+  },
+  {
+    "id": "yt-unoreverse",
+    "platform": "youtube",
+    "name": "Uno Reverse",
+    "url": "",
+    "per_day": 2,
+    "niche": "Hinglish role-swap couple comedy: a man and a woman keep their own looks but swap how they act and react in everyday moments, with a 'double reverse' punchline (owner's idea, 28 Oct 2026)",
+    "audience": "India, Hindi/Hinglish-speaking couples and young adults 16-35",
+    "lang": "hi",
+    "language": "Hindi",
+    "voice": "hi-IN-MadhurNeural",
+    "token": "token-unoreverse.json",
+    "status": "series",
+    "category": "23",
+    "title_rule": "Hinglish in Latin letters, a relatable situation or question that names who swapped (e.g. 'Jab husband ready hone mein 1 ghanta lagaye'), no episode number",
+    "footer": "Uno Reverse: wahi jodi, ulta reaction. Roz 2 naye sketches.\nSunny aur Tara AI se bane hain. Made by AI. Made with hope.",
+    "watermark": "brand/unoreverse-watermark.png",
+    "branding": {
+      "tagline": "Same couple. Swapped reactions.",
+      "description": "Wahi jodi. Ulta reaction.\n\nUno Reverse par Sunny aur Tara roz ki zindagi jeete hain, bas reactions ulte hain: Sunny shaadi ki video dekh kar ro padta hai aur ready hone mein ek ghanta lagata hai, Tara do minute mein ready hoti hai aur har problem ka jawab hai \"chill kar\". Har sketch ke end mein ek double reverse.\n\nRoz do naye comedy Shorts. Comment mein batao, aapke ghar mein Sunny kaun hai?\n\nUno Reverse ek Hopeverse Media channel hai: Sunny, Tara aur unki awaazein AI se bani hain. Made by AI. Made with hope.",
+      "keywords": "\"husband wife comedy\" \"couple comedy\" \"role swap\" \"pati patni comedy\" \"hinglish comedy\" \"comedy shorts\" \"funny couple\" \"relatable comedy\" \"desi couple\" \"indian comedy\" \"uno reverse\"",
+      "country": "IN",
+      "banner": "brand/unoreverse-banner.png"
+    }
   }
 ]
