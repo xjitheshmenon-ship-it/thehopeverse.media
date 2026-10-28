@@ -38,14 +38,6 @@
  ],
  "yt-instinct": [
   {
-   "topic": "1 abeille, 1 zéro : l'insecte qui compte le vide #Shorts",
-   "why": "Howard et al. 2018 (Science) : les abeilles comprennent le zéro comme nombre, compétence qu'on croyait réservée aux humains et à quelques primates. Insecte sous-estimé, hook fort.",
-   "score": 67,
-   "views48": 760,
-   "planned": "2026-10-29 02:34",
-   "when": "2026-10-29 06:05"
-  },
-  {
    "topic": "1 poisson, 1 visage : l'archer qui reconnaît un humain #Shorts",
    "why": "Étude Newport et al. 2016 (Scientific Reports) : le poisson archer a appris à distinguer des visages humains pour obtenir une récompense. Animal sous-estimé, compétence qu'on croit humaine, image avant/après claire.",
    "score": 66,
@@ -84,6 +76,14 @@
    "views48": 780,
    "planned": "2026-10-29 04:06",
    "when": "2026-10-30 07:45"
+  },
+  {
+   "topic": "1 mot, 1 objet : la chienne Rico qui comprend plus de 200 mots #Shorts",
+   "why": "Rico, border collie étudié en 2004 dans Science (Kaminski, Call, Fischer), associe plus de 200 mots à des objets et déduit le nom d'un objet inconnu par exclusion, comme un jeune enfant. Le fait se montre en une image avant/après (jouets alignés, un nouveau parmi eux). Histoire de lien humain-animal, publiée, avec comparaison enfant. Le chien surprend ici par l'inférence par exclusion. Attention: un sujet proche (1 jouet, 1 nom : la chienne qui retient) existe déjà, d'où un score modéré.",
+   "score": 38,
+   "views48": 420,
+   "planned": "2026-10-29 04:17",
+   "when": "2026-10-30 08:35"
   }
  ],
  "yt-hopeverse": [
