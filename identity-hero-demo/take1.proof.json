@@ -1,0 +1,19 @@
+{
+  "title": "Hopeverse identity demo: The Return (Broken Heritage + sonic logo)",
+  "take": 1,
+  "made_at_utc": "2026-10-28T21:37:27.351412+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "t3aSl0V2003wE1f7GoKl",
+  "request": {
+    "prompt": "Dark modern Tamil mass-hero introduction film score with a unique signature sound built from broken, processed Carnatic instruments. 108 BPM half-time swagger, C sharp minor. Signature motif: a rising 3-note call (root, up a minor third, up to the fifth, the last note held and bent upward) on a gritty synth lead in the first 5 seconds and again at the end. The electronic layer is made of chopped and processed Carnatic sounds: a stuttering, glitch-chopped veena riff partners the synth lead; a mridangam pitched down and time-stretched becomes the deep bass hit; reversed, pitch-shifted nadaswaram phrases become the risers; ghatam and kanjira are cut into tight glitchy percussion. Underneath, a thick steady synth bass, deep cinematic drums and low brass and strings. Vocals: deep male crowd chants and wordless shouts like 'hey!' and 'ho!' answering the theme, no lyrics, no singer. Signature sound: a reversed veena swell rising into a big hit at every section change. 0-12 s: tease with the synth bass, a ticking glitched ghatam pulse, the 3-note call, stuttered veena fragments. 12-14 s: reversed veena swell, one huge hit, crowd 'hey!', the full theme. 14-40 s: the 4-bar theme returns on the synth lead with the chopped veena answering, chants between phrases. 40-52 s: everything at full power with the brass and the pitched mridangam bass. 52-60 s: the theme one last time, a hard final hit, then the 3-note call rings out. No clean unprocessed Carnatic solos; no silence or long pauses, no side-chain pumping, no EDM drops; clear, tonal, punchy, very loud cinematic mix; no white-noise sweeps, no harsh fuzz.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 60000
+  },
+  "brief": {
+    "notes": "Demo of music-scoring.md section 9 (Jithesh chose Broken Heritage + logo; asked for just one track)."
+  },
+  "story": "The hero walks back into his city, scored in our own signature sound.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
