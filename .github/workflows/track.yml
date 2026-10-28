@@ -1,0 +1,65 @@
+# Make one music track for the future music channel on the owner's ElevenLabs plan (Mr. Raga's brief in
+# tracks/<name>.json). Each take and its proof record (prompt, model, time, ElevenLabs song id) land on the
+# music-tracks branch. Start it by pushing a branch named run/track with "name=<name>" in the commit message.
+name: Make a music track
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Track file in tracks/, without .json"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    env:
+      ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+      NAME: ${{ inputs.name }}
+    steps:
+      - uses: actions/checkout@v5
+      - run: git fetch origin music-tracks && git worktree add out origin/music-tracks || (mkdir out && git -C out init -q)
+      - name: Takes from ElevenLabs Music
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          from datetime import datetime, timezone
+          from pathlib import Path
+          name = os.environ["NAME"]
+          track = json.loads(Path(f"tracks/{name}.json").read_text(encoding="utf-8"))
+          out = Path("out") / name
+          out.mkdir(parents=True, exist_ok=True)
+          for take in range(1, track.get("takes", 1) + 1):
+              for model in ("music_v2", "music_v1"):  # v2 sounds better; v1 if the plan doesn't offer it
+                  body = {"prompt": track["prompt"], "model_id": model, "force_instrumental": True,
+                          "music_length_ms": int(track["seconds"] * 1000)}
+                  req = urllib.request.Request(
+                      "https://api.elevenlabs.io/v1/music?output_format=mp3_44100_192", method="POST",
+                      data=json.dumps(body).encode(),
+                      headers={"xi-api-key": os.environ["ELEVENLABS_API_KEY"].strip(), "Content-Type": "application/json"})
+                  try:
+                      with urllib.request.urlopen(req, timeout=600) as r:
+                          (out / f"take{take}.mp3").write_bytes(r.read())
+                          song = r.headers.get("song-id", "")
+                  except Exception as e:
+                      print(f"take {take} with {model} failed: {e}")
+                      continue
+                  # The proof record keeps who made what, when and how, for copyright and distributor questions.
+                  (out / f"take{take}.proof.json").write_text(json.dumps({
+                      "title": track["title"], "take": take, "made_at_utc": datetime.now(timezone.utc).isoformat(),
+                      "maker": "ElevenLabs Music API on the owner's paid plan", "model": model,
+                      "elevenlabs_song_id": song, "request": body, "brief": track["brief"], "story": track["story"],
+                      "human_work": "to be added by the owner: melody, take choice, edits, mix"}, indent=2), encoding="utf-8")
+                  print(f"take {take}: {model}, song id {song}")
+                  break
+          if not list(out.glob("*.mp3")):
+              raise SystemExit("no take was made")
+          PY
+      - run: |
+          cd out
+          git checkout -q -B music-tracks
+          git add . && git -c user.name=hope -c user.email=hope@users.noreply.github.com commit -qm "Track: $NAME"
+          git push "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" music-tracks
