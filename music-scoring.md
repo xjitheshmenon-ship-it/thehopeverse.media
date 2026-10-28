@@ -136,3 +136,17 @@ Rules for the next briefs (on top of section 8):
 5. **Clean tones, not noise:** "clear, tonal, punchy; no white-noise sweeps, no distorted noise layers, no harsh fuzz".
 6. **Always one Carnatic instrument, never the lead** (Jithesh, 28 Oct): mridangam, veena or flute (venu) as the second or third layer, answering the theme and adding fast ornamented gamaka fills. Electronic sounds lead: a synth lead carries the theme and a synth bass drives the track.
 7. **Hero-introduction shape** (Mr. Raga decides structure; Jithesh judges by ear): 0-12 s tease (hero unseen: low drone, ticking pulse, rising chants, theme only hinted), 12-14 s reveal (one huge hit, a split-second hold, then the full hook), 14-40 s swagger walk (theme every 4 bars, chants answering), 40-52 s mass moment (everything), 52-60 s punch (stinger, hard final hit). The tease is quieter by design but never empty: the pulse and drone run throughout.
+
+### 8c. Three more references (28 Oct 2026, measured the same way)
+
+| Ref | Clip | BPM (half) | Key | Sub / bass / mid % | Percussive % | Noise (median) | Theme repeat | Lead range | Shape |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| R7 | The Wild theme (23 s) | 129 (65) | F# minor | 44 / 35 / 19 | 23 | 0.0066 | every 8 beats, 3.49 (very strong) | 11 st, sparse lead | every layer full and steady from second 0 |
+| R8 | They Call Him OG, BGM (30 s) | 92 (46) | B minor (very clear) | 17 / 27 / 49 | 43 (drum-led) | 0.0111 | every 16 beats, 3.56 (very strong) | 36 st | first 8 s are hard stabs with short gaps (hit, gap, hit), then everything locks in full |
+| R9 | DC, The Rose BGM (35 s) | 144 (72) | D major | 14 / 34 / 47 | 7 (almost no drums) | 0.0014 (cleanest) | weak, a long lyrical line | 36 st | steady, lyrical and orchestral; the clearest tones of all nine (spectral contrast 23-28) |
+
+What these add to the rules:
+- **Three entry flavours, not one.** A riff-and-bass groove (R7: the theme is a repeating bass and riff figure, hardly any lead melody), a stab entry (R8: hard rhythmic hits with short gaps for the first bars, then full drums and guitar-like mids), and a lyrical theme (R9: a long, wide melody over sustained, nearly drumless orchestra). Choose one per brief; don't mix all three.
+- **Stab gaps are allowed in the tease.** R8's gaps are short (under a second) and rhythmic, between hard hits. That is different from the long empty holes Jithesh rejected. Use "hard rhythmic stabs with short gaps between them" for a tease, never "silence".
+- **Theme strength is the common thread.** The groove references (R7, R8) repeat their theme even more strongly (3.5) than R1-R6 (2.4-3.4). v10 take 1 (2.69) is in range; aim higher.
+- **Mids carry the identity when drums lead.** R8 and R9 put about half their energy in 250-2000 Hz (guitar-like riffs, brass, strings), with little sub. Not every hero track needs the 808 floor.
