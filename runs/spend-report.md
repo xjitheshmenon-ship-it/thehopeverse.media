@@ -1,16 +1,17 @@
-# Hopeverse spending report, 28 Oct 2026 03:24
+# Hopeverse spending report, 29 Oct 2026 02:14
 
-- Today: $16.47 (32 runs)
-- Last 7 days: $87.89
-- This month: $87.89
-- All time: $87.89
+- Today: $1.33 (2 runs)
+- Last 7 days: $94.93
+- This month: $94.93
+- All time: $94.93
 
 Claude (Anthropic) costs as estimated by agents.py, review included. Video images from fal.ai add
 about $0.006 each (about $0.06 a Short). Exact bills: console.anthropic.com and fal.ai/dashboard.
 
 | Day | Runs | Cost |
 | --- | --- | --- |
-| 2026-10-28 | 32 | $16.47 |
+| 2026-10-29 | 2 | $1.33 |
+| 2026-10-28 | 52 | $22.18 |
 | 2026-10-27 | 53 | $33.02 |
 | 2026-10-26 | 71 | $35.70 |
 | 2026-10-25 | 5 | $2.70 |
@@ -48,28 +49,34 @@ geografía, curiosidades del mundo, fronteras, mapas, lugares increíbles, datos
 ## Credits left
 
 - fal.ai: ? usd (Couldn't read the balance (HTTP Error 403: Forbidden); add a fal.ai READONLY key as the FAL_BILLING_KEY secret)
-- HeyGen: 4.02 usd (Talking hosts; Kling on fal.ai takes over when it runs out)
-- ElevenLabs: 111569 characters (Voices; free Edge voices take over when it runs out. Plan: creator)
+- HeyGen: 13.52 usd (Talking hosts; Kling on fal.ai takes over when it runs out)
+- ElevenLabs: 97359 characters (Voices; free Edge voices take over when it runs out. Plan: creator)
 - Anthropic: ? usd (No balance API: see console.anthropic.com > Billing. Spend is logged per run)
 - Perplexity: ? usd (No balance API: see perplexity.ai/account/api. About $0.006 a search)
 
 ## Mr. Grow's to-dos for you today
 
-- **Pinned comments:**
-  - Instinct: "Le corbeau ou le dauphin : lequel est le plus malin ?"
+- **Pinned comments.**
   - Hopeverse: "Which story should we explain tomorrow?"
-  - Sankalp: "किस कानून को अगले वीडियो में समझाएँ?"
-  - Sawaal: "आप कौन सा सवाल पूछना चाहेंगे?"
-  - Kissa: "मीरा ज़िंदा है या नहीं?"
-- **Community posts, each with a poll:** Instinct "Quel animal ensuite : pieuvre, éléphant, pie?"; Hopeverse "Tech, science or business tomorrow?"; Sankalp "योजना, कानून या खेल?"; Sawaal "RTI, संसद या अदालत?"; Kissa "अगला twist: प्यार या राज़?"
-- **Instagram:** share the best number-hook Short from Hopeverse with the caption "One number, one minute. Full explainer on YouTube." Do not link our own channels to each other. Pin the YouTube link in the bio only.
-- **Posting times:** no change; too few numbers.
+  - Instinct: "Quel animal devrait être notre prochain héros ?"
+  - Sankalp: "आज की ख़बर में आपको सबसे अहम बात क्या लगी?"
+  - Sawaal: "इस ख़बर पर आपका कौन-सा सवाल है?"
+  - Uno Reverse: "आपके घर में Sunny कौन है?"
+- **Community posts, each with a poll:**
+  - Hopeverse: tech, science or world news?
+  - Instinct: corbeau, dauphin or pieuvre?
+  - Sankalp, Sawaal: which topic do you want more of?
+- **Instagram:** share the Alaska megatsunami Short with the caption "481 m of water. Full story on YouTube, link in bio." Share only to outside audiences, never between our own channels.
+- **Publish times:** none moved. There is no slot data and fewer than 6 Shorts per slot.
+- Make the Instinct elephant, dog and parrot Shorts public.
 
 ## Sponsorship and collab leads
 
-All unverified from memory (search was down). Check the entry bars before applying.
-1. **Hopeverse:** Ground News creator/affiliate programme (groundnews.com), a news-app affiliate. Apply by hand.
-2. **Instinct and Hopeverse:** Collabstr (collabstr.com), a creator marketplace. Check its minimum follower bar.
-3. **Kissa and Sankalp:** Plixxo (plixxo.com), an Indian creator-campaign platform that takes micro-creators.
-4. **Instinct:** Hivency or Influence4You (hivency.com, influence4you.com), French brand campaigns; check for pet and nature briefs.
-5. **All:** find similar-size outside creators for a Collaborations tag or remix.
+Search was cut off, so these come from memory and are unverified. Check the entry bars first.
+1. **Hopeverse:** Ground News. Look for an affiliate or creator programme and apply by hand (check bar).
+2. **Instinct:** Hivency, Influence4You. Look for French nature and pet briefs (check bar).
+3. **Sankalp, Sawaal:** Plixxo. Check the follower minimum (check bar).
+4. **Kissa:** Collabstr. Check for Hindi drama briefs (check bar).
+5. **Instinct:** a popular-science book publisher. This is a to-test idea: an affiliate or review copy, no link yet.
+
+Also check the news about YouTube's Shorts payout bar. Newsshooter reports that from 1 Feb 2027 Shorts revenue share needs 1,000 subscribers plus 8,000 watch hours, or 20 million Shorts views. This comes from one source, so verify it.
