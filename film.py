@@ -3,7 +3,8 @@
     python film.py films/exiled-king.json   -> films/exiled-king.mp4 (not uploaded; the owner reviews it first)
 
 The shots' "end" times follow the track's sections (tease, hit, walk, drop, mass, punch), so the cuts land on the music.
-About $0.35 per shot up to 5 s and $0.70 up to 10 s (FAL_KEY).
+HeyGen Video first (HEYGEN_API_KEY, about $0.09 a 5 s shot, slowed down to fill longer shots), else Kling on fal.ai
+(FAL_KEY, $0.35 per 5 s shot, $0.70 up to 10 s).
 """
 import json
 import shutil
@@ -15,6 +16,8 @@ from pathlib import Path
 
 import fal_client
 from imageio_ffmpeg import get_ffmpeg_exe
+
+from video import heygen_clip
 
 MODEL = "fal-ai/kling-video/v2.5-turbo/pro/text-to-video"
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
@@ -31,6 +34,11 @@ def make(i: int) -> Path:
     shot, start = film["shots"][i], starts[i]
     raw, part = work / f"raw-{i:02}.mp4", work / f"part-{i:02}.mp4"
     if not raw.exists():
+        try:
+            heygen_clip(f"{shot['prompt']}. {film['look']}", raw)
+        except Exception as e:
+            print(f"shot {i + 1}: HeyGen failed ({e}); using Kling")
+    if not raw.exists():
         result = fal_client.subscribe(MODEL, arguments={
             "prompt": f"{shot['prompt']}. {film['look']}", "aspect_ratio": "9:16",
             "duration": "5" if shot["end"] - start <= 5 else "10",
@@ -39,8 +47,11 @@ def make(i: int) -> Path:
     text = shot.get("text", "").replace("'", "’").replace(":", "\\:")
     caption = (f",drawtext=fontfile={FONT}:text='{text}':fontcolor=white:fontsize=64:borderw=4:bordercolor=black@0.6"
                ":x=(w-tw)/2:y=h*0.72") if text else ""
+    length = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(raw)],
+                                  capture_output=True, text=True).stdout or 5)
+    slow = max(1.0, (shot["end"] - start) / length)  # a 5 s shot fills a longer beat in slow motion
     subprocess.run([FF, "-y", "-loglevel", "error", "-i", str(raw), "-t", f"{shot['end'] - start:.3f}", "-an", "-vf",
-                    "scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,crop=1080:1920,setsar=1,fps=30"
+                    f"setpts={slow:.3f}*PTS,scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,crop=1080:1920,setsar=1,fps=30"
                     + caption, "-c:v", "libx264", "-crf", "16", "-preset", "veryfast", "-pix_fmt", "yuv420p", str(part)],
                    check=True)
     print(f"shot {i + 1}: {start}-{shot['end']} s")

@@ -19,10 +19,11 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FAL_KEY: ${{ secrets.FAL_KEY }}
+      HEYGEN_API_KEY: ${{ secrets.HEYGEN_API_KEY }}
       NAME: ${{ inputs.name }}
     steps:
       - uses: actions/checkout@v5
-      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core && pip install -q fal-client imageio-ffmpeg
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core && pip install -q -r requirements.txt fal-client imageio-ffmpeg
       - run: |
           git fetch origin music-tracks && git worktree add out origin/music-tracks
           mkdir -p "films/$NAME" && cp out/films/"$NAME"/raw-*.mp4 "films/$NAME/" 2>/dev/null || true
