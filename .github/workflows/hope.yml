@@ -20,6 +20,10 @@ on:
         default: yt-hopeverse
         type: choice
         options: [yt-hopeverse, yt-instinct, yt-sankalp, yt-sawaal]
+      topic:
+        description: "For job story: the true story to tell (empty = find one)"
+        default: ""
+        type: string
 
 permissions:
   contents: write
@@ -140,10 +144,11 @@ jobs:
         if: inputs.job == 'story'
         env:
           CHANNEL: ${{ inputs.channel || 'yt-instinct' }}
+          TOPIC: ${{ inputs.topic }}
           DAILY_BUDGET: "1000"  # asked for by the owner, like Post now
         run: |
           { sudo apt-get install -y -qq fonts-noto-core || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core; }; } > /dev/null
-          python story.py "$CHANNEL"
+          python story.py "$CHANNEL" "$TOPIC"
           python video.py --only "$CHANNEL"
       - name: Write and post the next Hindi series episode
         if: env.SERIES == '1'
