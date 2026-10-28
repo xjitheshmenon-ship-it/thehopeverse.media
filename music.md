@@ -176,3 +176,111 @@ Each one is a 45-60 second Short. Mr. Focus must fact-check it before scripting.
 22. Indian Ocean trade routes that carried instruments from Africa to Indonesia.
 
 UNESCO-listed traditions worth a Short (check the year each was listed before scripting): Vedic chanting, Kutiyattam Sanskrit theatre of Kerala, Ramlila, Chhau dance, the Kalbelia songs and dances of Rajasthan, the Sankirtana of Manipur, Buddhist chanting of Ladakh, Nowruz, gamelan (Indonesia, 2021), gagaku (Japan, 2009), the guqin (China, 2003/2008), pansori (Korea, 2003/2008), the Shashmaqom (Uzbekistan and Tajikistan, 2003/2008), and the radif of Iranian music (2009).
+
+## 13. Composer sound profiles (owner's favourites, 28 Oct 2026)
+
+The owner loves these composers. Mr. Raga cannot listen to audio, so these profiles come from what is written about each one's music. Use them to borrow a **sound**, never a tune. **Never put a composer's name, film or song in the music prompt**: ElevenLabs and Lyria refuse artist imitation, and copying a melody is a copyright strike. Write the traits instead. A brief may say internally "Raga-Rahman-90s sound"; the prompt says "1990s Madras digital-orchestral...".
+
+**Early A.R. Rahman (1992-2005, the Madras digital era)**
+- Sound: the first fully digital Indian film scores. Deep sub-bass, very wide reverb and stereo space, glossy layered synth pads under acoustic Indian instruments, and a clean, airy mix that sounded international.
+- Melody: Carnatic and Hindustani ornaments (gamaka, meend) on simple, singable lines; ragas used freely, not strictly. Sufi and qawwali colours (harmonium, handclaps, waves of build), and Tamil folk inside world-music grooves (reggae, Latin, Arabic).
+- Instruments he made famous in film: bansuri and shakuhachi-like breathy flutes, shehnai and nadaswaram over synths, the santoor, the mandolin, the veena, a single solo violin, and big frame drums and ghatam with drum machines.
+- Structure: long, quiet intros (a solo flute over a pad, or silence), sudden key or texture shifts, and slow builds to a big release.
+- Prompt traits: "1990s South Indian digital-orchestral film score: deep sub-bass, wide airy reverb, glossy synth pads under bansuri and nadaswaram, Carnatic-ornamented melody, frame drums with a soft world-music groove, slow build to a soaring release".
+
+**Anirudh Ravichander (2011 onwards, the Tamil mass and pop sound)**
+- Sound: high-energy Tamil pop and "mass" BGM. A punchy kick, 808 bass, trap hi-hats, brass and synth stabs, electric-guitar riffs, and whistled or chant-like hooks (we keep them as instruments: whistle, brass, synth lead). Often 120-140 BPM, in a minor key with a heroic lift.
+- Hero BGM formula: a low, tense ostinato (pulsing synth or strings), a riser, one silent beat, then a huge drop with thundering drums, brass and a simple 3-4-note riff that repeats.
+- Kuthu side: Tamil folk dance rhythms (thappu and parai patterns) under EDM synths.
+- Thriller side: dark minimal electronics, a heartbeat kick, and detuned pads.
+- Prompt traits: "modern Tamil mass-hero cinematic BGM: low pulsing synth ostinato, riser, one beat of silence, then a massive drop with thundering drums, brass stabs, a distorted guitar riff and a catchy 4-note synth hook, 128 BPM, minor key, triumphant".
+
+**Sai Abhyankkar (2024 onwards, the new Tamil indie-pop sound)**
+- Background: a Chennai composer, singer and multi-instrumentalist (keys, tabla, mridangam, piano, drums, guitar), son of playback singers Tippu and Harini. His indie singles "Katchi Sera" (Jan 2024) and "Aasa Kooda" (Jun 2024) went viral; his film scores include Balti (2025), Dude (2025) and Karuppu (2026).
+- Sound: Tamil pop that mixes club-ready hooks with grand, cinematic arrangements. Jazz and blues touches in the chords, grooves built up in layers, a simple piano motif that grows with mandolin, nadaswaram-like reeds and brass, nostalgic layers of older Tamil music, and an unhurried build rather than rushing to the hook.
+- Prompt traits: "modern Tamil indie-pop groove: a simple piano motif, warm bass groove, jazzy seventh chords, light mridangam and tabla patterns with a pop kick, mandolin and brass layers added one by one, nostalgic retro South Indian colour, unhurried build, 100 BPM, feel-good".
+
+**Ilaiyaraaja (1976 onwards, the Maestro)**
+- Sound: Western classical craft (counterpoint, fugue-like string writing, real orchestral harmony) fused with Tamil village folk and Carnatic ragas. He has scored well over 1,000 films and wrote a symphony for London's Royal Philharmonic.
+- Signatures: melodic bass-guitar lines that move like a second melody, flute-and-violin interludes in counterpoint, pastoral village colour (the thavil, urumi, parai and nadaswaram, with the cycle of the folk 6/8), solo violin or flute leitmotifs in the background score, and a warm, analogue 1980s studio sound.
+- Raga use: deep, often hidden inside a pop song; he is known for light-music songs built on classical ragas.
+- Prompt traits: "1980s South Indian film orchestra in the classical-folk fusion tradition: a flute-and-violin counterpoint interlude, a melodic bass guitar line, string section harmony, village thavil and folk 6/8 rhythm, a warm analogue studio sound, pastoral and nostalgic, 90 BPM".
+
+**Which channel gets which sound**: Sankalp gets an early-Rahman pride build or an Ilaiyaraaja pastoral sound for village stories. Uno Reverse gets the Sai Abhyankkar indie groove or an Anirudh kuthu sound for fights and making up. Hopeverse uses the Anirudh-style hero drop only for big wins (a record, a launch). Nima gets the Ilaiyaraaja pastoral flute-and-violin sound (Himalayan instruments instead of Tamil ones). Kissa gets early-Rahman romance. Never use the same composer sound on the same channel twice in a row.
+
+## 14. The full raga catalogue
+
+### The 72 Carnatic melakartas
+Every melakarta has all seven notes (Sa, Ri, Ga, Ma, Pa, Dha, Ni) in a fixed order up and down. They come in 12 groups (chakras) of 6. 1-36 use the natural Ma (shuddha madhyamam); 37-72 use the raised Ma (prati madhyamam). In each chakra, Ri and Ga stay the same and Dha and Ni change.
+
+| Chakra | Melakartas (number: name) |
+| --- | --- |
+| 1 Indu | 1 Kanakangi, 2 Ratnangi, 3 Ganamurti, 4 Vanaspati, 5 Manavati, 6 Tanarupi |
+| 2 Netra | 7 Senavati, 8 Hanumatodi, 9 Dhenuka, 10 Natakapriya, 11 Kokilapriya, 12 Rupavati |
+| 3 Agni | 13 Gayakapriya, 14 Vakulabharanam, 15 Mayamalavagowla, 16 Chakravakam, 17 Suryakantam, 18 Hatakambari |
+| 4 Veda | 19 Jhankaradhwani, 20 Natabhairavi, 21 Keeravani, 22 Kharaharapriya, 23 Gourimanohari, 24 Varunapriya |
+| 5 Bana | 25 Mararanjani, 26 Charukesi, 27 Sarasangi, 28 Harikambhoji, 29 Dheerasankarabharanam, 30 Naganandini |
+| 6 Rutu | 31 Yagapriya, 32 Ragavardhini, 33 Gangeyabhushani, 34 Vagadheeswari, 35 Shulini, 36 Chalanata |
+| 7 Rishi | 37 Salagam, 38 Jalarnavam, 39 Jhalavarali, 40 Navaneetam, 41 Pavani, 42 Raghupriya |
+| 8 Vasu | 43 Gavambhodi, 44 Bhavapriya, 45 Shubhapantuvarali, 46 Shadvidamargini, 47 Suvarnangi, 48 Divyamani |
+| 9 Brahma | 49 Dhavalambari, 50 Namanarayani, 51 Kamavardhini, 52 Ramapriya, 53 Gamanashrama, 54 Vishwambari |
+| 10 Disi | 55 Shamalangi, 56 Shanmukhapriya, 57 Simhendramadhyamam, 58 Hemavati, 59 Dharmavati, 60 Neetimati |
+| 11 Rudra | 61 Kantamani, 62 Rishabhapriya, 63 Latangi, 64 Vachaspati, 65 Mechakalyani, 66 Chitrambari |
+| 12 Aditya | 67 Sucharitra, 68 Jyotiswarupini, 69 Dhatuvardhani, 70 Nasikabhushani, 71 Kosalam, 72 Rasikapriya |
+
+The melakartas that have a Western or Hindustani match (useful, because music AIs know the Western names):
+- 8 Hanumatodi: Phrygian mode; the Bhairavi thaat. Dark and devotional.
+- 14 Vakulabharanam: Phrygian dominant, the Arabic Hijaz sound. Desert and ancient.
+- 15 Mayamalavagowla: the double harmonic scale; the Bhairav thaat. Dawn, temples, the first scale every Carnatic student learns.
+- 20 Natabhairavi: natural minor (Aeolian); the Asavari thaat. Sad and serious.
+- 21 Keeravani: harmonic minor; Hindustani Kirwani. Dramatic and cinematic.
+- 22 Kharaharapriya: Dorian mode; the Kafi thaat. Soulful, folk-like.
+- 28 Harikambhoji: Mixolydian mode; the Khamaj thaat. Light and romantic.
+- 29 Dheerasankarabharanam: the major scale (Ionian); the Bilawal thaat. Bright and grand.
+- 45 Shubhapantuvarali: the Todi thaat. Grief and longing.
+- 51 Kamavardhini (Pantuvarali): the Purvi thaat. Dusk, solemn.
+- 53 Gamanashrama: the Marwa thaat. Restless sunset.
+- 57 Simhendramadhyamam: the Hungarian minor scale. Exotic and dramatic.
+- 59 Dharmavati: close to Hindustani Madhuvanti. Sweet, longing.
+- 64 Vachaspati: Lydian dominant (the acoustic scale). Bright with a twist, a "sci-fi wonder" feel.
+- 65 Mechakalyani (Kalyani): Lydian mode; the Kalyan thaat (Yaman). Serene, majestic.
+
+### Carnatic janya ragas (derived ragas) by mood
+- Joy, celebration: Mohanam, Hamsadhwani, Bilahari, Kadanakuthuhalam, Arabhi, Nattai, Behag (Carnatic).
+- Devotion, peace: Revati, Sama, Ahiri, Saveri, Bhupalam (dawn), Malayamarutham (dawn), Shuddha Dhanyasi.
+- Love, romance: Kapi, Kamas, Khamas, Hamir Kalyani, Yamuna Kalyani, Desh (Carnatic), Behag.
+- Sadness, longing: Shivaranjani, Mukhari, Ahiri, Subhapantuvarali, Neelambari (lullaby), Huseni.
+- Grandeur, heroism: Atana, Kanada, Darbar, Begada, Sri, Kambhoji, Nata.
+- Mystery, night: Hindolam, Abhogi, Ranjani, Bhairavi (Carnatic).
+- Folk-like, lilting: Sindhubhairavi, Anandabhairavi, Kurinji, Navroj, Punnagavarali (the snake-charmer sound).
+- Closing, benediction: Madhyamavati, Surati, Sourashtram.
+
+### More Hindustani ragas, by thaat
+- **Bilawal**: Bilawal (Alhaiya), Durga (pentatonic, heroic and joyful), Deshkar, Hansadhwani (borrowed from Carnatic), Shankara (night, powerful), Bihag (night, romantic), Pahadi (mountain folk feel; the light-music favourite).
+- **Kalyan**: Yaman, Yaman Kalyan, Bhupali, Shuddha Kalyan, Hameer, Kedar, Kamod, Chhayanat, Maru Bihag (yearning).
+- **Khamaj**: Khamaj, Desh, Tilak Kamod, Jaijaiwanti (night, grand), Rageshree, Jhinjhoti, Tilang, Kalawati, Gara, Kafi-Khamaj mixes for thumri.
+- **Kafi**: Kafi, Bageshree, Bhimpalasi, Dhanashree, Brindavani Sarang, Madhmad Sarang, Shuddha Sarang, Miyan ki Malhar, Megh, Gaud Malhar, Bahar, Pilu (light, playful), Barwa, Patdeep, Abhogi Kanada.
+- **Asavari**: Asavari, Jaunpuri, Darbari Kanada, Adana, Kaunsi Kanada, Desi, Sindhu Bhairavi.
+- **Bhairavi**: Bhairavi, Bilaskhani Todi, Malkauns, Komal Rishabh Asavari, Chandrakauns.
+- **Bhairav**: Bhairav, Ahir Bhairav, Nat Bhairav, Ramkali, Jogiya (pathos), Kalingada, Gunakali, Basant Mukhari.
+- **Marwa**: Marwa, Puriya, Sohini (late night, piercing), Lalit, Bhatiyar, Pancham, Vibhas.
+- **Purvi**: Puriya Dhanashree, Shree, Basant, Paraj, Purvi, Gauri.
+- **Todi**: Miyan ki Todi, Gurjari Todi, Multani, Madhuvanti (late afternoon, sweet).
+- Outside the thaats: Kirwani (harmonic minor), Charukeshi (from Carnatic), Jog (bluesy, both Ga notes), Madhukauns, Hemant, Janasammohini.
+- Seasons: Basant, Bahar and Hindol for spring; Megh, Miyan ki Malhar and Gaud Malhar for the monsoon; Hemant for early winter.
+
+### Quick finder: from mood to raga
+| Need | Hindustani | Carnatic |
+| --- | --- | --- |
+| Hope, a new dawn | Lalit, Ahir Bhairav, Bhatiyar | Malayamarutham, Bhupalam |
+| Wonder, discovery | Yaman, Hansadhwani, Maru Bihag | Kalyani, Vachaspati, Hamsadhwani |
+| Pride, victory | Durga, Desh, Shankara | Mohanam, Atana, Nattai |
+| Love, tenderness | Bihag, Bageshree, Khamaj, Tilak Kamod | Kapi, Hamir Kalyani, Khamas |
+| Loss, grief | Bhairavi, Jogiya, Todi, Marwa | Shivaranjani, Mukhari, Subhapantuvarali |
+| Fear, danger | Marwa, Sohini, Puriya | Simhendramadhyamam, Gamanashrama |
+| Calm, meditation | Malkauns, Bhupali, Chandrakauns | Hindolam, Abhogi, Revati |
+| Fun, play | Pilu, Khamaj, Pahadi | Kadanakuthuhalam, Sindhubhairavi |
+| Rain, monsoon | Megh, Miyan ki Malhar | Amritavarshini (a legend says it brings rain) |
+| Night mystery | Darbari, Malkauns, Jog | Hindolam, Ranjani, Abhogi |
+| Ancient, desert | Bhairav, Basant Mukhari | Vakulabharanam, Mayamalavagowla |
+| Tech, future | Kirwani with synths, Madhuvanti | Vachaspati, Keeravani |
