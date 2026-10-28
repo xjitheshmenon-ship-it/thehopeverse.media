@@ -13,6 +13,7 @@ Run:  python agents.py "Decide my first three channels and draft a video for one
 """
 import json
 import os
+import re
 import sys
 import urllib.request
 from datetime import datetime, timedelta
@@ -31,6 +32,7 @@ TEAM_FILE = HERE / "team.md"
 LESSONS = HERE / "lessons.md"  # Mr. Hope writes this himself after every run
 GROWTH = HERE / "runs" / "growth.md"  # Mr. Grow rewrites this every morning; each agent gets its own section
 HISTORY = HERE / "runs" / "history.jsonl"
+SLOTS = HERE / "runs" / "slots.json"  # {channel id: ["HH:MM", ...]}: publish times Mr. Grow moved from channels.json
 LOG = HERE / "runs" / f"{datetime.now():%Y-%m-%d_%H%M}.md"
 WEB_SEARCH = {"type": "web_search_20260209", "name": "web_search", "max_uses": 6}  # 3 ran out when the daily topics and a fact-check shared a call
 WEB_FETCH = {"type": "web_fetch_20260209", "name": "web_fetch", "max_uses": 4}
@@ -133,7 +135,30 @@ def run_agent(name: str, system: str, prompt: str, tools: list, effort: str = "m
 # ---------- channel manager tools (local state only) ----------
 
 def _channels() -> list:
-    return json.loads(CHANNELS.read_text()) if CHANNELS.exists() else []
+    """channels.json, with the publish times Mr. Grow has moved since (runs/slots.json, kept on the state branch)."""
+    channels = json.loads(CHANNELS.read_text()) if CHANNELS.exists() else []
+    moved = json.loads(SLOTS.read_text()) if SLOTS.exists() else {}
+    return [{**c, "publish_at": moved[c["id"]]} if c["id"] in moved else c for c in channels]
+
+
+@beta_tool
+def set_publish_times(channel_id: str, times: list[str]) -> str:
+    """Move a channel's daily publish times (24-hour "HH:MM", local to the channel's "tz"). Keep the same number
+    of times, so the channel still posts as often; only move them when the views per slot show a better hour.
+
+    Args:
+        channel_id: The id of a channel from list_channels that has publish_at.
+        times: The new local times, e.g. ["07:30", "20:00"].
+    """
+    channel = next((c for c in _channels() if c["id"] == channel_id), None)
+    if not channel or not channel.get("publish_at"):
+        return f"error: '{channel_id}' has no publish times"
+    if len(times) != len(channel["publish_at"]) or not all(re.fullmatch(r"([01]\d|2[0-3]):[0-5]\d", t) for t in times):
+        return f"error: give {len(channel['publish_at'])} times as HH:MM"
+    moved = json.loads(SLOTS.read_text()) if SLOTS.exists() else {}
+    SLOTS.parent.mkdir(exist_ok=True)
+    SLOTS.write_text(json.dumps({**moved, channel_id: sorted(times)}, indent=1))
+    return f"{channel['name']} now publishes at {', '.join(sorted(times))} {channel.get('tz', 'UTC')}"
 
 
 @beta_tool
@@ -218,8 +243,8 @@ def performance() -> str:
             note = f"Could not read YouTube numbers: {e}"
     else:
         note = "Nothing uploaded to YouTube yet, so there are no view counts."
-    shorts = [{"title": d["title"], "youtube_id": d.get("youtube_id"), **numbers.get(d.get("youtube_id"), {})}
-              for d in drafts]
+    shorts = [{"channel_id": d["channel_id"], "title": d["title"], "youtube_id": d.get("youtube_id"),
+               "scheduled_for": d.get("publish_at"), **numbers.get(d.get("youtube_id"), {})} for d in drafts]
     runs = HISTORY.read_text(encoding="utf-8").splitlines()[-14:] if HISTORY.exists() else []
     return json.dumps({"shorts": shorts, "recent_runs": [json.loads(r) for r in runs], "note": note}, indent=1)
 
@@ -446,7 +471,7 @@ if __name__ == "__main__":
         notes = run_agent("Mr. Grow", TEAM["Mr. Grow"],
                           f"Today is {datetime.now():%A %d %B %Y}. Channels:\n{list_channels()}\n\n"
                           f"Yesterday's leads (don't repeat them):\n{_sections(GROWTH).get('Leads', 'none')}",
-                          [performance, read_lessons, *([perplexity] if PPLX_KEY else []), WEB_SEARCH])
+                          [performance, read_lessons, set_publish_times, *([perplexity] if PPLX_KEY else []), WEB_SEARCH])
         if "## " in notes:  # keep yesterday's notes if the run was cut off by the budget
             GROWTH.parent.mkdir(exist_ok=True)
             GROWTH.write_text(notes[notes.index("## "):], encoding="utf-8")
