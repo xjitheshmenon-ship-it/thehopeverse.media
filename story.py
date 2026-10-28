@@ -26,7 +26,8 @@ class Story(BaseModel):
     scenes: list[Scene]
 
 
-def write_story(channel_id: str) -> Path:
+def write_story(channel_id: str, topic: str = "") -> Path:
+    """topic: a story the owner picked (e.g. "the Presidio owl that keeps returning to John Murnane"), else one is found."""
     channel = next(c for c in _channels() if c["id"] == channel_id)
     packages = {p: json.loads(p.read_text(encoding="utf-8")) for p in OUTBOX.glob(f"{channel_id}-*.json")}
     for p, package in packages.items():  # one story at a time: a story not posted yet is made again, not a new one
@@ -40,10 +41,14 @@ def write_story(channel_id: str) -> Path:
         messages=[{"role": "user", "content":
                    f"Write a YouTube Short for {channel['name']} ({channel['niche']}; audience: {channel['audience']}; "
                    f"language: {channel['language']}).\n\n"
-                   "First web_search for a REAL, well-documented story of a person rescuing a wild animal that later "
-                   "came back or stayed bonded to them (like the penguin Dindim returning every year to the fisherman "
-                   "who saved him in Brazil), reported by reliable outlets. Not one already told: "
-                   f"{[s for s in told if s] or 'none yet'}. Keep to the facts; you may picture moments the reports "
+                   + (f"First web_search this REAL story and confirm its facts and latest news: {topic}. "
+                      if topic else
+                      "First web_search for a REAL, well-documented story of a person rescuing a wild animal that later "
+                      "came back or stayed bonded to them (like the penguin Dindim returning every year to the fisherman "
+                      "who saved him in Brazil), reported by reliable outlets, from the last 12 months if possible: "
+                      "fresh stories pass the relevance check. Not one already told: "
+                      f"{[s for s in told if s] or 'none yet'}. ")
+                   + "Keep to the facts and to any doubt the reports state; you may picture moments the reports "
                    "describe, never invent events.\n\n"
                    "Tell it the way viral rescue Shorts do: open on the animal in trouble within 3 seconds, one silent "
                    "hero the viewer follows, a ticking clock and a low point, relief, time jumps ('Quelques semaines "
@@ -85,4 +90,4 @@ def write_story(channel_id: str) -> Path:
 if __name__ == "__main__":
     if spent_today() >= DAILY_BUDGET:
         raise SystemExit(f"Daily budget of ${DAILY_BUDGET:.2f} reached; no story today.")
-    write_story(sys.argv[1] if len(sys.argv) > 1 else "yt-instinct")
+    write_story(sys.argv[1] if len(sys.argv) > 1 else "yt-instinct", " ".join(sys.argv[2:]))
