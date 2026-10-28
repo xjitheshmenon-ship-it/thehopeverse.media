@@ -614,12 +614,13 @@ def raga(package: dict) -> str:
     try:
         response = client.messages.create(
             model=HELPER_MODEL, max_tokens=2000, output_config={"effort": "low"},
-            system=[{"type": "text", "text": TEAM["Mr. Raga"] + "\n\n" + (HERE / "music.md").read_text(encoding="utf-8"),
+            system=[{"type": "text", "text": "\n\n".join([TEAM["Mr. Raga"]] + [(HERE / f).read_text(encoding="utf-8")
+                                                                    for f in ("music.md", "music-scoring.md")]),
                      "cache_control": {"type": "ephemeral"}}],
             messages=[{"role": "user", "content":
                        f"Channel: {channel.get('name', '')} ({package.get('channel_id', '')}): {channel.get('niche', '')}\n"
                        f"Writer's music note: {package.get('music') or 'none'}\nTitle: {package.get('title', '')}\n\n"
-                       f"Script:\n{package.get('script', '')[:6000]}"}])
+                       f"Script (about 2.5 spoken words a second, for your cue timings):\n{package.get('script', '')[:6000]}"}])
         log_spend(_cost(HELPER_MODEL, response.usage), package.get("channel_id", ""))
         prompt = "".join(b.text for b in response.content if b.type == "text").strip()
         print(f"    Mr. Raga: {prompt}")
