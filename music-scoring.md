@@ -112,3 +112,26 @@ What the six share, and what our takes missed:
 
 Prompt shape that follows from the numbers:
 "Dark modern Tamil mass-hero BGM, electronic first: a thick distorted synth bass and layered synth textures carry the track, processed and resampled hits punch on every bar, unique electronic sound design, [96-117] BPM in a half-time swagger, dark minor key with chromatic semitone bends, low-mid heavy with no bright hi-hats, wordless male crowd chants and shouts between phrases, very loud heavily compressed wall-to-wall mix, no quiet sections, at most one 1-second stop before an even louder hit."
+
+### 8b. Deep study: why our takes sounded like noise and DJ music (28 Oct 2026)
+
+Jithesh on v7: "the pattern is correct, but it sounds like noise, like DJ music, not cinematic; the high, low, high, low pattern is not correct." A deeper measurement of the six references against v6 and v7 (/mnt/project-files/music/tools/deep.py; full output in deep-study-2026-10-28.txt) shows why:
+
+| Measure | References (6) | v6 take 2 | v7 take 2 | What it means |
+| --- | --- | --- | --- | --- |
+| Noise-like flatness, median | 0.003-0.016 | 0.013 | 0.025 | v7 is 1.5-8x noisier; the references are clear tones |
+| Tone clarity in the mids (spectral contrast, octaves 3-6) | 15-18 | 14-15 | 14-15 | our mids are muddier, the notes don't stand out |
+| How often the theme repeats, and how strongly | every 16 beats (4 bars) in the Jailer clips, every 8 beats (2 bars) in OM; similarity 2.4-3.4 | 16 beats, 2.3 | 2-beat loop, 1.8 | the references carry a real 2-4 bar theme; v7 is a short DJ loop |
+| Loudness change per second | 1.1-2.3 dB, OM and Tiger never drop more than 3 dB | sub-bass toggles on and off every second | sub drops out repeatedly, one -16 dB drop | our "high, low, high, low" is a 1-second pump (EDM side-chain feel); the references hold a steady bed and change only in 4-8 second phrases |
+| Hits inside a beat | clear accents on a few 16th positions with gaps just before the beat (a groove that breathes) | front-heavy | almost even on every 16th | an even 16th-note wash = a DJ hi-hat roll, not a film groove |
+| Low-mid band 250-1000 Hz (brass, strings, veena, voices) | full and steady all the way through, 59-82% tonal | full | weak for the first 18 s | the cinematic body lives here; v7 left it empty |
+| Lead melody | wide range (16-32 semitones), mostly stepwise (70-89%), very short fast notes (0.05-0.08 s, like gamaka runs or fast strings) | 10 semitones | 29 semitones | the references' leads move a lot but smoothly, with fast ornaments |
+| Strongest tonal regions | a bass root at 43-54 Hz plus dense peaks at 150-750 Hz | | | one deep root and a busy, tonal low-mid |
+
+Rules for the next briefs (on top of section 8):
+1. **Cinematic body first:** a full, steady, tonal low-mid layer from start to finish (brass section, low strings, a male choir pad or a veena), never empty. Synths add colour and weight; they don't replace this layer.
+2. **No pumping:** ask for "steady sustained bass, no side-chain pumping, no EDM drops, no on-off bass". Energy changes only at 4-8 second phrase points, by adding layers (more top end, more percussion), never by switching layers off.
+3. **A real theme:** a 2-4 bar (8-16 beat) melodic theme that returns clearly, not a 1-2 beat loop.
+4. **Groove with space:** syncopated accents with small gaps before the beat, not even 16th-note hats.
+5. **Clean tones, not noise:** "clear, tonal, punchy; no white-noise sweeps, no distorted noise layers, no harsh fuzz".
+6. **Always one Carnatic instrument** (Jithesh, 28 Oct): mridangam, veena or flute (venu), clearly audible, playing fast stepwise ornamented runs (gamaka) in the theme or the groove.
