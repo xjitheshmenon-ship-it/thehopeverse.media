@@ -152,3 +152,13 @@ What these add to the rules:
 - **Theme strength is the common thread.** The groove references (R7, R8) repeat their theme even more strongly (3.5) than R1-R6 (2.4-3.4). v10 take 1 (2.69) is in range; aim higher.
 - **Classical melody over a drum groove** (R10): the low end is punchy and percussive (only 35% of the bass band is tonal: kick-and-bass hits, not a held 808), while the mids are very tonal (83-84%, spectral contrast 20-22) and carry a classical-style melody with longer notes and real leaps instead of fast gamaka runs. A fourth flavour, and a good fit for the strings or veena as the melodic layer.
 - **Mids carry the identity when drums lead.** R8 and R9 put about half their energy in 250-2000 Hz (guitar-like riffs, brass, strings), with little sub. Not every hero track needs the 808 floor.
+
+## 9. Our sound identity (proposed 28 Oct 2026, waiting on Jithesh's pick)
+
+Jithesh: "everything is good, but there is no uniqueness; we need our own identity." Identity = a few fixed signatures in every track, so a listener knows it is ours in 3 seconds. Recommended direction, "Carnatic Machine + sonic logo":
+1. **Konnakol crowd chants:** the chants are the spoken Carnatic drum syllables ("ta ka di mi", "ta ka jo nu", "ta di gi na thom") shouted by a deep male crowd in rhythm, never words or lyrics.
+2. **Odd-cycle accents:** the groove stays in 4, but accents and fills group in 7 (3+2+2, misra chapu) or 5 (khanda), so the rhythm pulls against the beat and resolves on the downbeat.
+3. **Tihai ending:** every track ends on a tihai, one phrase played three times that lands exactly on the final hit.
+4. **The Hopeverse motif (sonic logo):** a rising 3-note call (root, up a minor third, up to the fifth, the last note held and bent upward), heard in the first 5 seconds and at the ending of every track, on any lead sound.
+5. **Signature sound:** a reversed veena swell rising into the hit at every section change.
+Alternatives offered: "Broken Heritage" (Carnatic instruments chopped, stuttered and pitched into the electronic layer) or the logo alone.
