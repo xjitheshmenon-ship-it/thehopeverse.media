@@ -1,0 +1,30 @@
+{
+  "title": "The Return v9 (hero-intro structure, electronic lead, Carnatic as support)",
+  "take": 2,
+  "made_at_utc": "2026-10-28T21:04:01.714428+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "MghxrflfS4wAlB3hoCkk",
+  "request": {
+    "prompt": "Dark modern Tamil mass-hero introduction film score. Electronic sounds lead: a gritty but clean synth lead carries the main 4-bar heroic theme and a thick steady synth bass drives the whole track; a cinematic body of low brass and low strings holds dark sustained chords underneath. Carnatic instruments are support only, never the lead: a veena answers the theme with fast ornamented gamaka runs and a mridangam adds syncopated fills, sitting behind the synth lead in the mix. 108 BPM half-time swagger, C sharp minor with menacing chromatic half-step bends, in the mood of Carnatic Raga Shanmukhapriya. Vocals: only deep male crowd chants and wordless shouts between phrases, no lyrics, no singer. Structure of a hero entry: 0-12 s the tease, the hero is not seen yet: a low synth drone, a ticking electronic pulse and a steady sub bass, crowd chants rising, the theme only hinted at; quieter but never empty. 12-14 s the reveal: one huge processed hit, a split-second hold, then the full hook on the synth lead. 14-40 s the swagger walk: the synth lead theme returns every 4 bars over the synth bass and brass, the veena answers, the mridangam fills, chants answer each phrase. 40-52 s the mass moment: everything together, synth lead and brass on the theme, veena runs as a third layer, full chants. 52-60 s the punch: a short stinger and one hard final hit. Steady sustained sub bass that never cuts out, no side-chain pumping, no EDM drops; clear, tonal, punchy, very loud cinematic mix; no white-noise sweeps, no harsh fuzz, no even sixteenth-note hi-hat rolls.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 60000
+  },
+  "brief": {
+    "raga": "Shanmukhapriya (Carnatic melakarta 56): fierce and heroic, minor colour with a raised 4th (prati madhyamam). The hero motif is 4 notes: Sa, Ri, Ga (minor), then a leap to the raised Ma, held.",
+    "tempo": "108 BPM, half-time swagger",
+    "lead": "nadaswaram (the hero's voice), with solo cello and bansuri for memory",
+    "cues": [
+      "0-12 s  Tease: hero unseen; low synth drone, ticking electronic pulse, steady sub, crowd chants rising, theme only hinted on the synth lead",
+      "12-14 s  Reveal: one huge processed hit, a split-second hold, then the full hook on the synth lead",
+      "14-40 s  Swagger walk: synth lead theme every 4 bars over synth bass and the brass/low-string body; veena answers the theme, mridangam fills; chants answer",
+      "40-52 s  Mass moment: everything, synth lead and brass on the theme, veena gamaka runs as the third layer, full chant",
+      "52-60 s  Punch: short stinger and one hard final hit"
+    ],
+    "notes": "Jithesh 28 Oct: v8 take 2 sound is fine; needs a proper hero-intro structure (my call); Carnatic instrument good but must be 2nd/3rd, electronic must lead. music-scoring.md \u00a78b rules 1-7.",
+    "sound": "electronic lead (synth lead + synth bass), cinematic brass/strings body, Carnatic veena + mridangam as 2nd/3rd layer; clean, tonal, steady"
+  },
+  "story": "A hero walks back into his city after many years away. The city half-remembers him; then the whole street knows he is back.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
