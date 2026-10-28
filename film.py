@@ -6,6 +6,7 @@ The shots' "end" times follow the track's sections (tease, hit, walk, drop, mass
 About $0.35 per shot up to 5 s and $0.70 up to 10 s (FAL_KEY).
 """
 import json
+import shutil
 import subprocess
 import sys
 import urllib.request
@@ -17,7 +18,7 @@ from imageio_ffmpeg import get_ffmpeg_exe
 
 MODEL = "fal-ai/kling-video/v2.5-turbo/pro/text-to-video"
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-FF = get_ffmpeg_exe()
+FF = shutil.which("ffmpeg") or get_ffmpeg_exe()  # the system ffmpeg has drawtext for captions; the pip one does not
 
 film_path = Path(sys.argv[1])
 film = json.loads(film_path.read_text(encoding="utf-8"))
@@ -37,7 +38,7 @@ def make(i: int) -> Path:
         urllib.request.urlretrieve(result["video"]["url"], raw)
     text = shot.get("text", "").replace("'", "’").replace(":", "\\:")
     caption = (f",drawtext=fontfile={FONT}:text='{text}':fontcolor=white:fontsize=64:borderw=4:bordercolor=black@0.6"
-               ":x=(w-tw)/2:y=h*0.72:alpha='min(1,t/0.4)'") if text else ""
+               ":x=(w-tw)/2:y=h*0.72") if text else ""
     subprocess.run([FF, "-y", "-loglevel", "error", "-i", str(raw), "-t", f"{shot['end'] - start:.3f}", "-an", "-vf",
                     "scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,crop=1080:1920,setsar=1,fps=30"
                     + caption, "-c:v", "libx264", "-crf", "16", "-preset", "veryfast", "-pix_fmt", "yuv420p", str(part)],
