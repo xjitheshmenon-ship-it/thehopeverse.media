@@ -72,7 +72,12 @@ HOSTS = {
               "look": "Indian woman, about 29, medium-brown skin, shoulder-length wavy black hair, "
                       "small gold earrings, rust-coloured kurta-style top"},
 }
-MUSIC_MODEL = "fal-ai/stable-audio-3/medium/base/text-to-audio"  # about $0.05 per track
+# Mr. Raga (team.md) writes each Short's music prompt from his knowledge file, music.md.
+MUSIC_MODELS = ("fal-ai/lyria3/pro",  # Google Lyria 3 Pro, about $0.08 a track, strong on real (Indian) instruments
+                "fal-ai/stable-audio-3/medium/base/text-to-audio")  # about $0.05, used if Lyria fails
+# Music is made on the owner's ElevenLabs plan, whose terms leave every right in the track with the owner (owner's
+# pick, 28 Oct 2026). It uses the plan's music minutes; when they run out fal.ai makes it. MUSIC_MAKER=fal skips ElevenLabs.
+MUSIC_MAKER = os.environ.get("MUSIC_MAKER") or "elevenlabs"
 MUSIC_VOLUME = 0.12  # background music level under the voice (1 = full)
 STYLE = ("photorealistic, real people with natural skin texture, handheld smartphone footage at eye level, natural "
          "overcast daylight, documentary style, vertical 9:16, not a cartoon, not an illustration, not CGI, not 3D, no text, no words")
@@ -603,21 +608,58 @@ def _wav(src: Path) -> bytes:
         return w.readframes(w.getnframes())
 
 
-def music(work: Path, seconds: float, mood: str = "") -> Path | None:
-    """One background track per Short from fal.ai, in the mood set by "## Music" in team.md. Dubs reuse it."""
-    path = work / "music.mp3"
-    if path.exists() or not os.environ.get("FAL_KEY"):
-        return path if path.exists() else None
+def raga(package: dict) -> str:
+    """Mr. Raga writes this Short's background-music prompt; the writer's own music note is a hint."""
+    channel = next((c for c in _channels() if c["id"] == package.get("channel_id")), {})
     try:
-        import fal_client
-        result = fal_client.subscribe(MUSIC_MODEL, arguments={
-            "prompt": mood or TEAM.get("Music", "mysterious, curious ambient underscore, no vocals"),
-            "duration": min(seconds + 2, 380), "negative_prompt": "vocals, singing, speech"})
-        urllib.request.urlretrieve(result["audio"]["url"], path)
+        response = client.messages.create(
+            model=HELPER_MODEL, max_tokens=2000, output_config={"effort": "low"},
+            system=[{"type": "text", "text": TEAM["Mr. Raga"] + "\n\n" + (HERE / "music.md").read_text(encoding="utf-8"),
+                     "cache_control": {"type": "ephemeral"}}],
+            messages=[{"role": "user", "content":
+                       f"Channel: {channel.get('name', '')} ({package.get('channel_id', '')}): {channel.get('niche', '')}\n"
+                       f"Writer's music note: {package.get('music') or 'none'}\nTitle: {package.get('title', '')}\n\n"
+                       f"Script:\n{package.get('script', '')[:6000]}"}])
+        log_spend(_cost(HELPER_MODEL, response.usage), package.get("channel_id", ""))
+        prompt = "".join(b.text for b in response.content if b.type == "text").strip()
+        print(f"    Mr. Raga: {prompt}")
+        return prompt
+    except Exception as e:  # the writer's note or the team.md default will do
+        print(f"    Mr. Raga could not help: {e}")
+        return package.get("music") or TEAM.get("Music", "mysterious, curious ambient underscore, no vocals")
+
+
+def music(work: Path, seconds: float, package: dict) -> Path | None:
+    """One background track per Short, prompted by Mr. Raga. Dubs reuse it."""
+    path = work / "music.mp3"
+    if path.exists():
         return path
-    except Exception as e:  # no music is better than no video
-        print(f"    no background music: {e}")
+    prompt = raga(package)
+    if MUSIC_MAKER == "elevenlabs" and os.environ.get("ELEVENLABS_API_KEY"):
+        for model in ("music_v2", "music_v1"):  # v2 sounds better; v1 if the plan doesn't offer it
+            try:
+                req = urllib.request.Request(
+                    "https://api.elevenlabs.io/v1/music", method="POST",
+                    data=json.dumps({"prompt": prompt, "model_id": model, "force_instrumental": True,
+                                     "music_length_ms": int(min(seconds + 1, 60) * 1000)}).encode(),
+                    headers={"xi-api-key": os.environ["ELEVENLABS_API_KEY"].strip(), "Content-Type": "application/json"})
+                with urllib.request.urlopen(req, timeout=300) as r:
+                    path.write_bytes(r.read())
+                return path
+            except Exception as e:  # e.g. the plan's music minutes are used up
+                print(f"    ElevenLabs {model} music failed: {e}")
+    if not os.environ.get("FAL_KEY"):
         return None
+    import fal_client
+    for model in MUSIC_MODELS:
+        try:
+            args = {"prompt": prompt} if "lyria" in model else {
+                "prompt": prompt, "duration": min(seconds + 2, 380), "negative_prompt": "vocals, singing, speech"}
+            urllib.request.urlretrieve(fal_client.subscribe(model, arguments=args)["audio"]["url"], path)
+            return path
+        except Exception as e:  # no music is better than no video
+            print(f"    no background music from {model}: {e}")
+    return None
 
 
 def render(package_path: Path, voice: str = VOICE) -> Path:
@@ -712,7 +754,7 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
     listing.write_text("".join(f"file '{p.resolve().as_posix()}'\n" for p in parts), encoding="utf-8")
     subprocess.run([FFMPEG_BINARY, "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(listing),
                     "-c", "copy", str(picture)], check=True)
-    track = music(work, lines[-1][4], package.get("music", ""))
+    track = music(work, lines[-1][4], package)
     # Music loops if it's short and stops when the voice ends; the video is copied, only the sound is encoded.
     mix = (["-stream_loop", "-1", "-i", str(track), "-filter_complex",
             f"[2:a]volume={MUSIC_VOLUME}[m];[1:a][m]amix=inputs=2:duration=first:normalize=0[a]", "-map", "[a]"]

@@ -19,6 +19,7 @@ env:
   FAL_KEY: ${{ secrets.FAL_KEY }}
   HEYGEN_API_KEY: ${{ secrets.HEYGEN_API_KEY }}
   ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+  MUSIC_MAKER: ${{ vars.MUSIC_MAKER }}  # background music: ElevenLabs (owner keeps the rights) unless set to fal
   ELEVEN_VOICE_ARJUN: ${{ vars.ELEVEN_VOICE_ARJUN }}
   ELEVEN_VOICE_MEERA: ${{ vars.ELEVEN_VOICE_MEERA }}
   ELEVEN_VOICE_MALE: ${{ vars.ELEVEN_VOICE_MALE }}

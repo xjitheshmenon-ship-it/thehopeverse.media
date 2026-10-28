@@ -404,6 +404,20 @@ def post(task: str) -> str:
         task, [list_channels, queue_post], effort="low")
 
 
+@beta_tool
+def raga(request: str) -> str:
+    """Ask Mr. Raga, the music expert (Indian classical, folk, film, Qawwali and old Asian music), for
+    music story ideas or facts to research. Each Short's background music is chosen by him automatically.
+
+    Args:
+        request: What you need, e.g. "3 Short ideas about ragas for Hopeverse Media".
+    """
+    return run_agent(
+        "Mr. Raga",
+        TEAM["Mr. Raga"] + "\n\n" + (HERE / "music.md").read_text(encoding="utf-8"),
+        request, [], effort="low")
+
+
 HOPE = TEAM["Mr. Hope"]
 SPEND = HERE / "runs" / "spend-report.md"
 
@@ -482,7 +496,7 @@ if __name__ == "__main__":
         "Scheduled run: get today's 5 topics from Mr. Focus, check the outbox, then draft and queue "
         "the single best new YouTube Short for the live YouTube channel.")
     summary = run_agent("Mr. Hope", HOPE, goal, [list_channels, list_outbox, propose_channel, focus,
-                                                 cast, pen, cut, spark, post],
+                                                 cast, pen, cut, spark, post, raga],
                         effort="medium", model=MODEL)
     print(summary)
     with (HERE / "runs" / "hope-said.jsonl").open("a", encoding="utf-8") as f:  # shown on the dashboard next to the owner's messages
