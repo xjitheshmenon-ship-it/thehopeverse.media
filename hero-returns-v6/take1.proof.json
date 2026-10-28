@@ -1,0 +1,29 @@
+{
+  "title": "The Return v6 (matched to Jithesh's reference measurements, with chants)",
+  "take": 1,
+  "made_at_utc": "2026-10-28T20:23:50.508216+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "eCjzfxIVz2Zr4MWMUnuh",
+  "request": {
+    "prompt": "Dark modern Tamil mass-hero entry BGM with energetic crowd chants, 117 BPM half-time swagger groove, C sharp minor with a raised fourth for a tense heroic colour, in the mood of Carnatic Raga Shanmukhapriya. A hero walks back into his city after many years. Sound: dark and heavy, the weight in a punchy distorted mid-bass riff and a hard kick, not bright hi-hats; brass stabs, distorted guitar, kuthu parai drums, nadaswaram lead. One catchy 4-note hook played by the nadaswaram and repeated nonstop. Vocals: only a deep male group chant of wordless syllables and shouts like 'hey!', 'ho!', 'ha!' in between the phrases for pure energy; no lyrics, no sung words, no singer. Loud and full the whole time, no quiet parts, no slow intro. 0-16 s: swagger groove with the dark bass riff and hard kick from the first beat, the nadaswaram hook, crowd 'hey!' shouts on the off-beats. 16-17 s: a one-second stop with a reverse cymbal. 17-50 s: a louder hit with everything at once, thundering drums, brass stabs, parai pattern, the hook repeating, the crowd chant answering every phrase. 50-60 s: the hook one last time with the full chant, ending on one huge hit. Modern loud compressed mix.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 60000
+  },
+  "brief": {
+    "raga": "Shanmukhapriya (Carnatic melakarta 56): fierce and heroic, minor colour with a raised 4th (prati madhyamam). The hero motif is 4 notes: Sa, Ri, Ga (minor), then a leap to the raised Ma, held.",
+    "tempo": "117 BPM, half-time swagger feel",
+    "lead": "nadaswaram (the hero's voice), with solo cello and bansuri for memory",
+    "cues": [
+      "0-16 s  Swagger groove: dark distorted mid-bass riff, heavy punchy kick, nadaswaram states the 4-note hook, male group 'hey!' shouts on the off-beats",
+      "16-17 s  One-second stop: only a reverse cymbal and a breath",
+      "17-50 s  Louder hit: everything at once, thundering drums, brass stabs, kuthu parai pattern, the hook repeated nonstop, a deep male crowd chant of wordless syllables ('ho! ha! hey!') answering every phrase",
+      "50-60 s  The hook one last time with the full crowd chant, ending on one huge hit"
+    ],
+    "notes": "Measured from 2 reference clips Jithesh uploaded (28 Oct): ~117 BPM, C# minor with a raised-4th colour, dark tone (centroid ~2.0-2.3 kHz vs v5 2.9 kHz), weight in punchy mid-bass 60-250 Hz rather than sub, flat loud level the whole time with one ~1 s dip before a louder hit (v5 dipped 7 dB for 14 s). He asked for vocal chants in between for energy. Only measurements are used, never melodies.",
+    "sound": "dark, punchy, mid-bass heavy, wall-to-wall loud and compressed; wordless chants only, no lyrics, no named songs or artists"
+  },
+  "story": "A hero walks back into his city after many years away. The city half-remembers him; then the whole street knows he is back.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
