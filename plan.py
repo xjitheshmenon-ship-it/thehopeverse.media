@@ -201,15 +201,17 @@ def refresh() -> dict:
     plan, now, said = load(), datetime.now(IST), approvals()
     rejected, old = plan.get("rejected", {}), f"{now - timedelta(hours=36):%Y-%m-%d %H:%M}"
     for c in live_channels():
-        cid, whens, keep = c["id"], next_slots(c), []
+        cid, whens, keep, stale = c["id"], next_slots(c), [], []
         for e in plan.get(cid, []):
             v = said.get(topic_id(cid, e["topic"]))
             if v == "no":
                 rejected[cid] = (rejected.get(cid, []) + [e["topic"]])[-20:]
-            elif v == "ok" or ("views48" in e and not (c.get("news") and e.get("planned", "") < old)):
+            elif v == "ok" or (("score" if c.get("status") == "series" else "views48") in e and not (c.get("news") and e.get("planned", "") < old)):
                 # unapproved news goes stale; unapproved topics planned before scores (27 Oct) or view guesses (28 Oct)
                 # are planned again with them, so they can be auto-approved and the dashboard shows the guess
                 keep.append(e)
+            elif "score" in e and not (c.get("news") and e.get("planned", "") < old):
+                stale.append(e)  # no view guess yet: replaced below, but kept if nothing new gets planned
         keep = sorted(keep, key=lambda e: ("ok", "auto", "").index(verdict(cid, e, said)))[:len(whens)]  # approved, then 80+, go first
         empty = whens[len(keep):]
         if empty and spent_today() < DAILY_BUDGET:
@@ -219,6 +221,7 @@ def refresh() -> dict:
                           "views48": max(0, it.views48), "planned": f"{now:%Y-%m-%d %H:%M}"} for it in items]
             except Exception as e:  # a failed plan shouldn't stop the run; the next run plans again
                 print(f"    planning {cid} failed: {e}")
+        keep += stale[:len(whens) - len(keep)]  # over budget or failed: the old topics stay rather than none
         for (n, w), e in zip(whens, keep):  # estimated times, in making order
             e["when"] = f"{w:%Y-%m-%d %H:%M}"
         plan[cid] = keep
