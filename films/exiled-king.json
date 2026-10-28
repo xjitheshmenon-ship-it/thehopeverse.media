@@ -1,0 +1,21 @@
+{
+  "title": "They exiled him 3 years ago. Today he came back.",
+  "music": "films/exiled-king.mp3",
+  "look": "cinematic film still, shot on ARRI Alexa with anamorphic lenses, shallow depth of field, moody teal and amber colour grade, film grain, photorealistic, vertical 9:16, no text, no people. The hero is the same horse in every shot: a huge jet-black Friesian-type stallion, long wavy black mane, a thin white scar across his left shoulder, the rival is a young dapple-grey stallion",
+  "shots": [
+    {"end": 3, "text": "They exiled him 3 years ago.", "prompt": "Aerial drone shot pushing in over a black sand beach in a storm, crashing white waves, sea fog, a lone black stallion standing far away at the water's edge"},
+    {"end": 6, "text": "Today he came back.", "prompt": "Extreme close-up of the black stallion's dark eye, rain drops on his lashes, slow blink, lightning reflected in the eye"},
+    {"end": 9, "prompt": "Low angle at ground level, the black stallion's hooves stamping slowly into wet black sand, foam washing over them, slow motion"},
+    {"end": 12, "prompt": "Slow dolly push-in on the black stallion's profile, long mane whipping in the storm wind, lightning flickers behind the clouds"},
+    {"end": 14, "prompt": "Very low angle, the black stallion rears up on his hind legs against a huge lightning bolt in a dark sky, slow motion, rain"},
+    {"end": 19, "prompt": "Side tracking shot at full speed, the black stallion gallops along the surf line of the black sand beach, spray flying, slow motion"},
+    {"end": 24, "prompt": "Top-down drone shot following the black stallion galloping off the black beach towards towering jagged grey mountains and green valleys"},
+    {"end": 29, "prompt": "Wide shot of a herd of wild horses grazing in a green alpine valley under jagged dolomite peaks, one by one they lift their heads and look up"},
+    {"end": 34, "prompt": "Low wide shot, the black stallion appears on the ridge line above the valley, silhouetted against storm clouds, wind in his mane"},
+    {"end": 36, "prompt": "Tight close-up of the young dapple-grey stallion, ears pinned back, nostrils flaring, staring straight ahead, tense stillness"},
+    {"end": 41, "prompt": "The black stallion and the dapple-grey stallion rear up face to face and clash in an alpine meadow, dust and grass flying, slow motion"},
+    {"end": 46, "prompt": "Close-up of the black stallion's head pushing forward, flared nostrils, steam from his breath, determined eye, slow motion"},
+    {"end": 52, "prompt": "The dapple-grey stallion turns away and trots off down the valley, the black stallion stands still and watches, the herd behind him"},
+    {"end": 60, "text": "Kings don't ask. They return.", "prompt": "Slow orbiting drone shot around the black stallion standing on a mountain ridge at golden hour, the herd of wild horses gathered behind him, clouds below the peaks"}
+  ]
+}
