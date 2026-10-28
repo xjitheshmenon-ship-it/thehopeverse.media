@@ -1,0 +1,30 @@
+{
+  "title": "The Return v8 (deep-study rules: cinematic body, steady bed, 4-bar theme, Carnatic instrument)",
+  "take": 2,
+  "made_at_utc": "2026-10-28T20:54:59.547365+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "a7JllBM3D42rMj9jIB9J",
+  "request": {
+    "prompt": "Dark modern Tamil mass-hero film score, cinematic, not EDM or DJ music. 108 BPM in a heavy half-time swagger, C sharp minor with menacing chromatic half-step bends, in the mood of Carnatic Raga Shanmukhapriya. Body: a full, steady low brass section and low strings holding dark sustained chords from start to finish, a deep steady sub bass that never cuts out, and a dark synth bass only doubling the low end as colour. Carnatic instruments clearly audible: a mridangam playing a syncopated groove with small gaps before the beat, a veena carrying the main theme with fast ornamented gamaka runs, and a venu bamboo flute adding fast stepwise runs. One clear 4-bar heroic theme that returns again and again, answered by the brass. Vocals: only deep male crowd chants and wordless shouts like 'hey!' and 'ho!' between phrases, no lyrics, no singer. Arrangement: no intro, start full on beat one; energy only grows by adding layers every 8 bars, never by cutting layers; no side-chain pumping, no EDM drops, no on-off bass, no build-and-drop. 0-8 s: full entry with brass, strings, sub bass, mridangam groove and the veena theme. 8-24 s: theme returns, brass answers, chants between phrases. 24-40 s: add higher strings, bigger drums and fast flute runs. 40-52 s: biggest point with everything and the full chant. 52-60 s: the theme one last time, ending on one huge hit. Clear, tonal, punchy cinematic mix, very loud and steady; no white-noise sweeps, no distorted noise layers, no harsh fuzz, no even sixteenth-note hi-hat rolls.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 60000
+  },
+  "brief": {
+    "raga": "Shanmukhapriya (Carnatic melakarta 56): fierce and heroic, minor colour with a raised 4th (prati madhyamam). The hero motif is 4 notes: Sa, Ri, Ga (minor), then a leap to the raised Ma, held.",
+    "tempo": "108 BPM, half-time swagger",
+    "lead": "nadaswaram (the hero's voice), with solo cello and bansuri for memory",
+    "cues": [
+      "0-8 s  Full cinematic entry on beat one: low brass and low strings on a dark sustained chord, steady sub bass, mridangam groove, the 4-bar theme on veena",
+      "8-24 s  Theme returns every 4 bars, brass answers; a dark synth bass doubles the low end (colour only); deep male crowd chants between phrases",
+      "24-40 s  Add layers (no cuts): higher strings, bigger drums, venu flute fast runs over the theme",
+      "40-52 s  Biggest point: everything plus the full crowd chant, theme on brass and veena together",
+      "52-60 s  Theme one last time, ending on one huge hit"
+    ],
+    "notes": "Built on music-scoring.md \u00a78 + \u00a78b. Jithesh on v7: pattern right but noise/DJ-like; always one Carnatic instrument.",
+    "sound": "cinematic orchestra body + mridangam, veena and venu; synths only as colour; clear, tonal, steady, no pumping, no noise"
+  },
+  "story": "A hero walks back into his city after many years away. The city half-remembers him; then the whole street knows he is back.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
