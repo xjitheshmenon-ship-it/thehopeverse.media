@@ -152,3 +152,12 @@ What these add to the rules:
 - **Theme strength is the common thread.** The groove references (R7, R8) repeat their theme even more strongly (3.5) than R1-R6 (2.4-3.4). v10 take 1 (2.69) is in range; aim higher.
 - **Classical melody over a drum groove** (R10): the low end is punchy and percussive (only 35% of the bass band is tonal: kick-and-bass hits, not a held 808), while the mids are very tonal (83-84%, spectral contrast 20-22) and carry a classical-style melody with longer notes and real leaps instead of fast gamaka runs. A fourth flavour, and a good fit for the strings or veena as the melodic layer.
 - **Mids carry the identity when drums lead.** R8 and R9 put about half their energy in 250-2000 Hz (guitar-like riffs, brass, strings), with little sub. Not every hero track needs the 808 floor.
+
+## 9. Our sound identity: "Broken Heritage + sonic logo" (Jithesh chose it, 28 Oct 2026)
+
+Jithesh: "everything is good, but there is no uniqueness; we need our own identity." Identity = fixed signatures in every track, so a listener knows it is ours in 3 seconds. Every brief must carry all five:
+1. **Broken Heritage, the electronic layer is made of Carnatic sound:** veena, mridangam, nadaswaram and venu are chopped, stuttered, reversed, pitched and time-stretched into the electronic parts. A stuttering, glitch-chopped veena is the synth lead's partner; a mridangam pitched down and stretched becomes the deep bass hit; nadaswaram phrases are reversed and pitch-shifted into risers; ghatam and kanjira are cut into tight glitchy percussion.
+2. **The Hopeverse motif (sonic logo):** a rising 3-note call (root, up a minor third, up to the fifth, the last note held and bent upward), in the first 5 seconds and at the end of every track, on any lead sound.
+3. **Signature sound:** a reversed veena swell rising into the hit at every section change.
+4. **Kept from what Jithesh liked:** electronic lead, cinematic brass and strings body, wordless crowd chants, clean tones, no pumping, no long gaps; the Carnatic instruments are never a clean "live" lead, they appear processed.
+5. **Not used:** clean unprocessed Carnatic solos as the lead, generic EDM drops.
