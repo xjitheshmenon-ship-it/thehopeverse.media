@@ -134,4 +134,5 @@ Rules for the next briefs (on top of section 8):
 3. **A real theme:** a 2-4 bar (8-16 beat) melodic theme that returns clearly, not a 1-2 beat loop.
 4. **Groove with space:** syncopated accents with small gaps before the beat, not even 16th-note hats.
 5. **Clean tones, not noise:** "clear, tonal, punchy; no white-noise sweeps, no distorted noise layers, no harsh fuzz".
-6. **Always one Carnatic instrument** (Jithesh, 28 Oct): mridangam, veena or flute (venu), clearly audible, playing fast stepwise ornamented runs (gamaka) in the theme or the groove.
+6. **Always one Carnatic instrument, never the lead** (Jithesh, 28 Oct): mridangam, veena or flute (venu) as the second or third layer, answering the theme and adding fast ornamented gamaka fills. Electronic sounds lead: a synth lead carries the theme and a synth bass drives the track.
+7. **Hero-introduction shape** (Mr. Raga decides structure; Jithesh judges by ear): 0-12 s tease (hero unseen: low drone, ticking pulse, rising chants, theme only hinted), 12-14 s reveal (one huge hit, a split-second hold, then the full hook), 14-40 s swagger walk (theme every 4 bars, chants answering), 40-52 s mass moment (everything), 52-60 s punch (stinger, hard final hit). The tease is quieter by design but never empty: the pulse and drone run throughout.
