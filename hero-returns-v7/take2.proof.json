@@ -1,0 +1,30 @@
+{
+  "title": "The Return v7 (built from the measured reference sheet)",
+  "take": 2,
+  "made_at_utc": "2026-10-28T20:41:01.293513+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "TGEYjqK9Ddt9hlTVKuvb",
+  "request": {
+    "prompt": "Dark modern Tamil mass-hero entry BGM, electronic first. A thick distorted synth bass and layered analogue and digital synth textures carry the whole track; processed, resampled and glitchy hits punch on every bar; unique electronic sound design with strange metallic synth stabs and growls. 110 BPM in a heavy half-time swagger. Dark minor key in C sharp with menacing chromatic semitone bends. Low-mid heavy and dark: no bright hi-hats, no shimmering pads. Live instruments only as small colour: a nadaswaram doubling the hook. One catchy 4-note hook on a gritty synth lead, repeated again and again. Vocals: only deep male crowd chants and wordless shouts like 'hey!' and 'ho!' between phrases for energy, no lyrics, no singer. 0-2 s: a huge processed hit and a distorted synth-bass growl on the very first beat with a crowd shout, no intro. 2-16 s: menacing groove, synth bass leading, glitchy hits on every bar, metallic stabs answering the hook. 16-17 s: a one-second stop with a reversed synth swell. 17-50 s: louder, everything layered, a huge hit on every bar, the hook nonstop, chants answering every phrase. 50-60 s: the hook one last time with full chants, ending on one huge hit. Very loud, heavily compressed, wall-to-wall modern mix with no quiet sections.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 60000
+  },
+  "brief": {
+    "raga": "Shanmukhapriya (Carnatic melakarta 56): fierce and heroic, minor colour with a raised 4th (prati madhyamam). The hero motif is 4 notes: Sa, Ri, Ga (minor), then a leap to the raised Ma, held.",
+    "tempo": "110 BPM, half-time swagger (felt at 55)",
+    "lead": "nadaswaram (the hero's voice), with solo cello and bansuri for memory",
+    "cues": [
+      "0-2 s  Instant impact: a huge processed hit and a distorted synth-bass growl on beat one, a crowd 'hey!' shout",
+      "2-16 s  Menace groove: thick distorted synth bass carries it, glitchy resampled hits on every bar, a strange metallic synth stab answering, chromatic semitone bends",
+      "16-17 s  One-second stop with a reversed synth swell",
+      "17-50 s  Louder: layered analogue and digital synths, the 4-note hook on a gritty synth lead with a nadaswaram doubling it, a huge processed hit every bar, deep male crowd chants between phrases",
+      "50-60 s  The hook one last time with full chants, ending on one huge hit"
+    ],
+    "notes": "Built from music-scoring.md \u00a78 (six measured reference clips). Jithesh on v6: ending right, middle getting better, opening weak; electronic sound and unique sounds matter more than instruments. So: synth-bass-led, 110 BPM half-time, dark, chromatic minor, wall-to-wall loud, hit on beat one.",
+    "sound": "electronic first: thick distorted synth bass, layered synths, processed and resampled hits, unique sound design; dark (no bright hi-hats), very loud and compressed; wordless chants only"
+  },
+  "story": "A hero walks back into his city after many years away. The city half-remembers him; then the whole street knows he is back.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
