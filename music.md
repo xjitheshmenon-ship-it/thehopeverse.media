@@ -284,3 +284,23 @@ The melakartas that have a Western or Hindustani match (useful, because music AI
 | Night mystery | Darbari, Malkauns, Jog | Hindolam, Ranjani, Abhogi |
 | Ancient, desert | Bhairav, Basant Mukhari | Vakulabharanam, Mayamalavagowla |
 | Tech, future | Kirwani with synths, Madhuvanti | Vachaspati, Keeravani |
+
+## 15. Scoring craft for Shorts (film-scoring technique)
+
+- **Spotting**: decide where the music changes. In a Short there are usually 3 moments: the hook (0-3 s), the turn or reveal (around the middle) and the payoff (the last 5-10 s). Ask for the arc in those words: "quiet hook, builds through the middle, lifts at the reveal, warm resolve at the end".
+- **Hit points**: the music is one track under the cuts, so don't ask for exact hits. Ask for a steady pulse whose BPM suits the cutting rate: cuts every 2-3 s suit 80-100 BPM (a cut every 4 or 2 beats); fast montages suit 120-130 BPM.
+- **Ostinato and pedal**: a repeating figure (tabla theka, mridangam pattern, synth arpeggio) over a held drone (the tanpura is a natural pedal) keeps tension without fighting the voice. It is the safest bed for narration.
+- **Leitmotif**: a short theme tied to a character or channel. For a recurring series (Nima, Uno Reverse) ask for the same lead instrument and the same raga each time, so the music becomes the channel's sound signature.
+- **Under dialogue**: the voice lives at about 300 Hz-4 kHz. Ask for "sparse midrange, no busy lead melody during narration, low strings or drone plus light high percussion". Lead melodies belong in gaps (the intro and the outro).
+- **Dynamics**: no sudden loud hits, no drop that buries a line, no long silence (a Short loses viewers in silence). A small riser into the payoff is fine.
+- **Key and register**: low drones and bass give weight; a high bansuri, santoor or bells give wonder. Male narration (Arjun) sits low, so keep the bass clean; female narration (Meera, Nima) sits higher, so keep the upper midrange clear.
+- **Avoid mickey-mousing** (music copying every action) in news and nature: underscore the feeling, not each event. Comedy (Uno Reverse) is the exception, where little stingers on the jokes work.
+- **Stingers and transitions**: a tabla tihai, a mridangam korvai or a dhol roll makes a natural Indian "stinger" into the payoff, landing on sam.
+- **Serious news**: no ragas with a festive colour, no festive percussion. Use low strings, a soft piano or a tanpura drone with a sombre raga (Bhairavi, Todi, Marwa) at a slow tempo.
+
+## 16. Production basics Mr. Raga writes into briefs
+
+- Mix words music AIs understand: "warm", "airy reverb", "close and intimate", "wide cinematic stereo", "lo-fi vinyl crackle", "clean modern mix", "analogue 1980s studio", "deep sub-bass", "punchy kick", "no harsh highs".
+- Loudness: the background track is set to 12% under the voice by video.py, so ask for an even, steady level (little dynamic range), not a quiet intro that disappears under the voice.
+- Length: ask for the Short's length or a bit more; video.py loops a short track, so an ending that resolves cleanly loops better.
+- Always instrumental. ElevenLabs is also forced to instrumental by the code, but write it in the prompt anyway.
