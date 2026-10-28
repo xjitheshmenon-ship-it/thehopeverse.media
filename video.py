@@ -816,9 +816,12 @@ def upload(video: Path, package: dict, token: Path = TOKEN, channel: dict = None
     from googleapiclient.http import MediaFileUpload
 
     footer = package.get("footer", TEAM.get("YouTube footer", ""))  # edit it in team.md
+    if (channel or {}).get("footer"):  # a package planned before the channel's footer changed gets the new one
+        package = {**package, "description": package["description"].replace(footer.strip(), channel["footer"])}
+        footer = channel["footer"]
     if package.get("credits"):
         footer = "Photos and clips: Wikimedia Commons\n" + "\n".join(f"- {c}" for c in package["credits"]) + "\n\n" + footer
-    tags = list(dict.fromkeys(["Hopeverse Media", "Shorts", *re.findall(r"#(\w+)", package["description"])]))
+    tags = list(dict.fromkeys([(channel or {}).get("name", "Hopeverse Media"), "Shorts", *re.findall(r"#(\w+)", package["description"])]))
     while len(",".join(tags)) > 450:  # YouTube allows 500 characters of tags
         tags.pop()
     body = {"snippet": {"title": package["title"][:100],
@@ -887,6 +890,28 @@ if __name__ == "__main__":
         package.pop("publish_at", None)  # frees its slot for the next Short
         path.write_text(json.dumps(package, indent=2, ensure_ascii=False), encoding="utf-8")
         sys.exit(print(f"Public now: https://youtu.be/{vid}"))
+    if "--refresh" in sys.argv:  # put the channel's current footer on all its uploads: python video.py --refresh yt-instinct
+        from google.oauth2.credentials import Credentials
+        from googleapiclient.discovery import build
+        c = channels[sys.argv[sys.argv.index("--refresh") + 1]]
+        old, new = "Made by AI. Made with hope.", c["footer"].split("\n")[0].split(". ", 1)[1]  # the English sign-off
+        # the saved sign-in carries the full "youtube" scope from connect.py, which editing a video needs
+        yt = build("youtube", "v3", credentials=Credentials.from_authorized_user_file(str(HERE / c["token"])))
+        uploads = yt.channels().list(part="contentDetails", mine=True).execute()["items"][0]["contentDetails"]["relatedPlaylists"]["uploads"]
+        ids = [i["contentDetails"]["videoId"] for i in yt.playlistItems().list(
+            part="contentDetails", playlistId=uploads, maxResults=50).execute()["items"]]
+        for v in yt.videos().list(part="snippet", id=",".join(ids)).execute()["items"]:
+            s = v["snippet"]
+            first, *rest = s["description"].replace(old, new).split(c["footer"])  # keep the footer once
+            desc = re.sub(r"\n{3,}", "\n\n", (first + c["footer"] + "".join(rest)) if rest else first).strip()
+            tags = [c["name"] if t == "Hopeverse Media" else t for t in s.get("tags", [])]
+            if (desc, tags) == (s["description"], s.get("tags", [])):
+                continue
+            yt.videos().update(part="snippet", body={"id": v["id"], "snippet": {
+                **{k: s[k] for k in ("title", "categoryId", "defaultLanguage", "defaultAudioLanguage") if k in s},
+                "description": desc, "tags": tags}}).execute()
+            print(f"Updated https://youtu.be/{v['id']}  {s['title']}")
+        sys.exit()
     if "--connect" in sys.argv:  # sign a channel in once: python video.py --connect hi (or a channel id)
         lang = sys.argv[sys.argv.index("--connect") + 1]
         c = next(c for c in channels.values() if lang in (c.get("lang"), c["id"]))
