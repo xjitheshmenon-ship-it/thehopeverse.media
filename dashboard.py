@@ -17,6 +17,7 @@ from zoneinfo import ZoneInfo
 
 import breakout
 import credits
+import predict
 from agents import DAILY_BUDGET, HERE, HISTORY, OUTBOX, _channels
 from state import approvals, notes, topic_id
 from plan import AUTO_OK, START_HOUR, verdict, STEP, SERIES_PER_DAY, day_order, planned_slots, live_channels, load, made_today, next_slots
@@ -57,7 +58,7 @@ def shorts() -> list:
                 yt.update(stats(ids[i:i + 50]))
         except Exception as e:
             print(f"    YouTube numbers: {e}")
-    rows = []
+    rows, checked = [], predict.load()
     for p, d in packages:
         s = yt.get(d.get("youtube_id"), {})
         num = lambda k: int(s[k]) if k in s else None
@@ -71,6 +72,7 @@ def shorts() -> list:
                      "url": f"https://youtu.be/{d['youtube_id']}" if d.get("youtube_id") else None,
                      "title": d["title"], "status": status,
                      "relevance": rel.get("score"), "relevance_why": rel.get("why"),
+                     "predicted_48h": rel.get("views48"), "actual_48h": checked.get(p.stem, {}).get("actual"),
                      "youtube_id": d.get("youtube_id"), "yt_views": num("viewCount"),
                      "yt_likes": num("likeCount"), "yt_comments": num("commentCount"),
                      "instagram_id": d.get("instagram_id"), "ig_views": None, "ig_likes": None, "ig_comments": None,
@@ -133,7 +135,7 @@ def upcoming() -> list:
         for (n, when), e in zip(next_slots(c), approved):
             out.append({"key": f"{c['id']}-{when:%Y%m%d%H}", "when": f"{when:%Y-%m-%d %H:%M}", "channel": c["id"],
                         "name": c["name"], "plan": e["topic"],
-                        "why": _why(e), "score": e.get("score"), "post_now": ACTIONS + (
+                        "why": _why(e), "score": e.get("score"), "views48": e.get("views48"), "post_now": ACTIONS + (
                             "episode.yml" if series else f"post-now-{c['id']}.yml" if one_click(c["id"]) else "hope.yml"),
                         "how": "Run workflow, then the green Run workflow" if series or one_click(c["id"])
                         else f"Run workflow, job: one, channel: {c['id']}"})
@@ -144,7 +146,7 @@ def topics() -> list:
     """Every planned topic with the owner's choice: Waiting (no script until approved), Approved or Rejected."""
     plan, said = load(), approvals()
     return [{"id": topic_id(c["id"], e["topic"]), "channel": c["id"], "name": c["name"], "when": e.get("when", ""),
-             "topic": e["topic"], "why": _why(e), "score": e.get("score"),
+             "topic": e["topic"], "why": _why(e), "score": e.get("score"), "views48": e.get("views48"),
              "status": {"ok": "Approved", "no": "Rejected"}.get(verdict(c["id"], e, said), "Waiting")}
             for c in live_channels() for e in plan.get(c["id"], [])]
 
@@ -167,6 +169,13 @@ def breakouts() -> list:
              "changes": "\n".join(f"{c['agent']}: {c['rule']}" for c in s["changes"]),
              "status": {"ok": "Approved", "no": "Rejected"}.get(said.get(i), "Waiting")}
             for i, s in sorted(breakout.load().items(), key=lambda x: x[1]["studied"], reverse=True)]
+
+
+def predictions() -> list:
+    """Per channel: how Hope's 48-hour view predictions did against YouTube (predict.py)."""
+    done, names = predict.load(), {c["id"]: c["name"] for c in _channels()}
+    return [{"channel": c, "name": names.get(c, c), **predict.accuracy([r for r in done.values() if r["channel"] == c])}
+            for c in sorted({r["channel"] for r in done.values()})]
 
 
 def youtube_totals() -> dict:
@@ -275,11 +284,12 @@ if __name__ == "__main__":
     rows, costs = shorts(), spend()
     if os.environ.get("BREAKOUTS") == "true":  # the hourly numbers run only, so two runs never study the same Short
         breakout.run(rows)
+        predict.record(rows, NOW.replace(tzinfo=None))  # real 48-hour views next to each prediction
     plan = slots(rows)
     data = {"updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "shorts": rows, "spend": costs, "agent_work": agent_work(), "limits": limits(costs),
             "slots": plan, "channels": channels(rows, costs, plan, youtube_totals()), "runs": runs(), "upcoming": upcoming(), "credits": credits.check(),
-            "topics": topics(), "talk": talk(), "breakouts": breakouts()}
+            "topics": topics(), "talk": talk(), "breakouts": breakouts(), "predictions": predictions()}
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(data, indent=1, ensure_ascii=False), encoding="utf-8")
     print(f"Saved {OUT} ({len(rows)} Shorts)")

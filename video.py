@@ -41,6 +41,7 @@ from pydantic import BaseModel
 
 from agents import DAILY_BUDGET, HELPER_MODEL, WEB_SEARCH, _cost, OUTBOX, TEAM, _channels, client, log_spend, read_cast, spent_today
 from approve import approved
+import predict
 
 HERE = Path(__file__).parent
 VOICE = os.environ.get("HOPE_VOICE", "en-US-AndrewNeural")
@@ -719,6 +720,7 @@ RELEVANCE_MIN = int(os.environ.get("RELEVANCE_MIN") or 60)  # the final script m
 class Relevance(BaseModel):
     score: int  # 0-100
     why: str    # one line
+    views48: int  # predicted YouTube views after 48 hours (predict.py)
 
 
 def relevance(package: dict, channel: dict) -> Relevance:
@@ -738,7 +740,8 @@ def relevance(package: dict, channel: dict) -> Relevance:
                    + "Score its relevance right now from 0 to 100: timeliness (0-30), fit for the channel's audience, "
                      "region and language (0-30), viewer demand today (0-25), and whether the script delivers what the "
                      "title promises without stale or wrong facts (0-15). A story overtaken by newer events, or a "
-                     "script that doesn't match its title, scores under 50. why: one line."}])
+                     "script that doesn't match its title, scores under 50. why: one line.\n"
+                   + predict.ASK + "\n" + predict.track(package["channel_id"])}])
     log_spend(_cost(HELPER_MODEL, response.usage), package["channel_id"])
     return response.parsed_output
 
@@ -906,8 +909,8 @@ if __name__ == "__main__":
                 print(f"    relevance check failed, posting anyway: {e}")
                 r = None
             if r:
-                package["relevance"] = {"score": r.score, "why": r.why}
-                print(f"Relevance of {path.name}: {r.score}/100 ({r.why})")
+                package["relevance"] = {"score": r.score, "why": r.why, "views48": max(0, r.views48)}
+                print(f"Relevance of {path.name}: {r.score}/100, about {r.views48} views in 48 h ({r.why})")
                 if r.score < RELEVANCE_MIN:
                     package["held"] = f"relevance {r.score}/100 under {RELEVANCE_MIN}: {r.why}"
                 path.write_text(json.dumps(package, indent=2), encoding="utf-8")
