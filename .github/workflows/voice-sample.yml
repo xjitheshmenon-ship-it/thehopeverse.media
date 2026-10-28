@@ -32,7 +32,7 @@ jobs:
           male = [v for v in voices if (v.get("labels") or {}).get("gender") == "male"]
           for v in male:
               print(v["name"], v.get("category"), v["voice_id"])
-          pick = [v for v in male if v.get("category") == "premade"][:4] + [v for v in male if v.get("category") != "premade"][:1]
+          pick = [v for n in ns["ELEVEN_PREFER"] for v in male if v["name"].startswith(n + " ")] + [v for v in male if v["name"] == "Kreobox"]
           lines = {"en": "Here's the one fact most coverage missed, and why it matters to you.",
                    "hi": "आज की सबसे बड़ी ख़बर, और वो बात जो ज़्यादातर लोगों ने नहीं बताई।"}
           os.makedirs("samples", exist_ok=True)
