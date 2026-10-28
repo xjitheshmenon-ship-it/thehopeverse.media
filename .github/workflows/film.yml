@@ -1,0 +1,31 @@
+# Make a cinematic Short cut to a music track (film.py), for the owner to review; nothing is uploaded.
+# Start it by pushing a branch named run/film with "name=<name>" in the commit message (films/<name>.json).
+# The finished video lands on the music-tracks branch under films/.
+name: Make a cinematic Short
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Film file in films/, without .json"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  film:
+    runs-on: ubuntu-latest
+    env:
+      FAL_KEY: ${{ secrets.FAL_KEY }}
+      NAME: ${{ inputs.name }}
+    steps:
+      - uses: actions/checkout@v5
+      - run: pip install -q fal-client imageio-ffmpeg
+      - run: python film.py "films/$NAME.json"
+      - run: |
+          git fetch origin music-tracks && git worktree add out origin/music-tracks
+          mkdir -p out/films && cp "films/$NAME.mp4" out/films/
+          cd out && git checkout -q -B music-tracks
+          git add . && git -c user.name=hope -c user.email=hope@users.noreply.github.com commit -qm "Film: $NAME"
+          git push "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" music-tracks
