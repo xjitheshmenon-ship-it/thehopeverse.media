@@ -56,7 +56,10 @@ SCENE_WORKERS = int(os.environ.get("SCENE_WORKERS") or "6")  # scenes made at on
 ELEVEN_MODEL = os.environ.get("ELEVEN_MODEL") or "eleven_multilingual_v2"  # speaks English and Hindi
 # ElevenLabs voice ids. Change them in GitHub > Settings > Secrets and variables > Actions > Variables:
 # ELEVEN_VOICE_ARJUN, ELEVEN_VOICE_MEERA (any character by name), or ELEVEN_VOICE_MALE / ELEVEN_VOICE_FEMALE for the rest.
-# Unset, a man's or woman's voice is picked from the account's own voices, Indian-accented ones first.
+# Unset, a man's or woman's voice is picked from the account's voices: ElevenLabs' own studio voices first, in this order.
+ELEVEN_PREFER = ("Brian", "Daniel", "George", "Sarah", "Alice", "Matilda")
+# Steady, clean delivery: a lower similarity_boost stops a voice copying the noise of the recording it was made from.
+ELEVEN_SETTINGS = {"stability": 0.55, "similarity_boost": 0.6, "style": 0.0, "use_speaker_boost": True}
 GAP = 0.25  # seconds of quiet between two lines
 RATE = 44100
 HOSTS_DIR = HERE / "hosts"  # one reference photo per host, made once and then reused in every Short
@@ -549,7 +552,11 @@ def eleven_voice(gender: str) -> str:
                                      headers={"xi-api-key": os.environ["ELEVENLABS_API_KEY"].strip()})
         voices = [v for v in json.load(urllib.request.urlopen(req, timeout=30))["voices"]
                   if (v.get("labels") or {}).get("gender") == gender]
-        voices.sort(key=lambda v: "indian" not in str(v.get("labels", {}).get("accent", "")).lower())
+        # ElevenLabs' own studio voices first: community library voices (e.g. Kreobox) carry their recording's
+        # background hiss into every line. Then the preferred names, then Indian-accented ones.
+        voices.sort(key=lambda v: (v.get("category") != "premade",
+                                   next((i for i, n in enumerate(ELEVEN_PREFER) if v["name"].startswith(n)), 99),
+                                   "indian" not in str(v.get("labels", {}).get("accent", "")).lower()))
         print(f"    ElevenLabs {gender} voice: {voices[0]['name'] if voices else 'none on the account'}")
         return voices[0]["voice_id"] if voices else ""
     except Exception as e:  # e.g. a key without "Voices: read" permission: use a premade voice
@@ -565,8 +572,9 @@ def speak(text: str, voice: str, path: Path, pitch: str = "+0Hz", eleven: str = 
     if eleven and os.environ.get("ELEVENLABS_API_KEY"):
         try:
             req = urllib.request.Request(
-                f"https://api.elevenlabs.io/v1/text-to-speech/{eleven}?output_format=mp3_44100_128",
-                data=json.dumps({"text": text, "model_id": ELEVEN_MODEL, "previous_text": before,
+                f"https://api.elevenlabs.io/v1/text-to-speech/{eleven}?output_format=mp3_44100_192",
+                data=json.dumps({"text": text, "model_id": ELEVEN_MODEL, "voice_settings": ELEVEN_SETTINGS,
+                                 "previous_text": before,
                                  "next_text": after}).encode(),
                 headers={"xi-api-key": os.environ["ELEVENLABS_API_KEY"].strip(), "Content-Type": "application/json"})
             path.write_bytes(urllib.request.urlopen(req, timeout=120).read())
