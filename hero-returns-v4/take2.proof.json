@@ -1,0 +1,31 @@
+{
+  "title": "The Return v4 (v1 sound, fuller rhythm, a touch of Indian)",
+  "take": 2,
+  "made_at_utc": "2026-10-28T20:08:24.234728+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "wAG90AcjXAiuwB2u26dM",
+  "request": {
+    "prompt": "Epic modern South Indian cinematic hero-introduction score, instrumental. A hero returns to his city after many years. Same core sound as a modern film score: strings, brass, deep drums, distorted electric guitar, sub-bass; with a light touch of Indian colour (nadaswaram lead, a little tabla, mridangam, thavil, veena and sitar fills, bansuri at the end), not too much. Mode: fierce heroic minor with a raised fourth, in the mood of Carnatic Raga Shanmukhapriya; one 4-note heroic motif that keeps returning. Busy and continuous all the way through: a steady rhythm in every second, dense melodic movement, every gap filled with ostinatos, drum patterns and short melodic answers; no silence, no lone drones, no long held pauses. 0-12 s: drone and sub pad with a soft pulsing kick and ticking tabla from the first beat, the nadaswaram states the motif and a veena answers each phrase. 12-30 s: heartbeat kick at 70 BPM, low string ostinato in steady walking steps, mridangam and shaker groove, cello carries the motif without rests, sitar fills between phrases. 30-45 s: thavil and frame-drum rolls build, brass swells, the motif climbs higher every bar. 45-47 s: a fast drum fill and riser straight into the drop, no silence. 47-70 s: massive drop with thundering drums, brass stabs and distorted electric guitar, dhol and thavil drive a Tamil folk dance groove at 140 BPM, the nadaswaram plays the full heroic theme over constant string runs. 70-80 s: the motif on bansuri over a soft tabla groove and a held chord, ending on a long held note. Wide cinematic stereo, deep sub-bass, punchy drums, analogue warmth. Instrumental only, no vocals, no singing, no chanting, no spoken words.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 80000
+  },
+  "brief": {
+    "raga": "Shanmukhapriya (Carnatic melakarta 56): fierce and heroic, minor colour with a raised 4th (prati madhyamam). The hero motif is 4 notes: Sa, Ri, Ga (minor), then a leap to the raised Ma, held.",
+    "tempo": "70 BPM in half-time for the walk, felt as 140 BPM after the drop",
+    "lead": "nadaswaram (the hero's voice), with solo cello and bansuri for memory",
+    "cues": [
+      "0-12 s  Arrival: drone and sub pad with a soft pulsing kick and ticking tabla from the first second; nadaswaram states the motif, a veena answers each phrase",
+      "12-30 s  The walk: heartbeat kick, low string ostinato, mridangam and shaker keep a steady groove; cello carries the motif with no rests, sitar fills between phrases",
+      "30-45 s  Recognition: thavil and frame-drum rolls build, brass swells, the motif climbs every bar, no break",
+      "45-47 s  Lift: a fast drum fill and riser straight into the drop (no silence)",
+      "47-70 s  Entry: thundering drums, brass stabs, distorted guitar, dhol groove at 140 BPM, nadaswaram theme with constant string runs",
+      "70-80 s  Settle: bansuri plays the motif over a soft tabla groove and held chord, ending on a long note"
+    ],
+    "sound": "modern South Indian mass-hero film score: wide cinematic stereo, deep sub-bass, punchy drums, analogue warmth; no vocals, no chants, no named songs or artists",
+    "notes": "Jithesh 28 Oct: v1's sound is the one; v3 (all Indian) was wrong. Keep v1, add a few Indian instruments as colour only, more rhythm and more notes, fill every gap (no silence, no lone drone)."
+  },
+  "story": "A hero walks back into his city after many years away. The city half-remembers him; then the whole street knows he is back.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
