@@ -153,6 +153,14 @@ What these add to the rules:
 - **Classical melody over a drum groove** (R10): the low end is punchy and percussive (only 35% of the bass band is tonal: kick-and-bass hits, not a held 808), while the mids are very tonal (83-84%, spectral contrast 20-22) and carry a classical-style melody with longer notes and real leaps instead of fast gamaka runs. A fourth flavour, and a good fit for the strings or veena as the melodic layer.
 - **Mids carry the identity when drums lead.** R8 and R9 put about half their energy in 250-2000 Hz (guitar-like riffs, brass, strings), with little sub. Not every hero track needs the 808 floor.
 
+### 8d. Study batch 3: 11 phone-recorded clips R11-R22 (28 Oct; R13 was a duplicate of R12)
+Numbers in /mnt/project-files/music/refs-2026-10-28b/study.txt. What they share:
+- **Two tempo lanes:** heavy swagger at 89-112 BPM (8 clips) and fast mass at 129 or 172 BPM (4 clips). Pick one lane per track; don't sit in between.
+- **Low end carries it:** sub + bass make up 60-89% of the energy in 9 of 11. High presence/air stays at 1-8%. Bright and fizzy is wrong; deep and warm is right.
+- **No gaps:** level holds within about 3 dB (-14 to -20 dB) from the first hit to the end, with crest 14.5-18 dB (punchy, not squashed). Only 2 clips have a quiet tease, and it lasts 2-4 s.
+- **Loop hooks:** the groove clips repeat a 2-4 beat riff almost identically (similarity 2.3-3.4); the melodic ones have a lead that spans 26-36 semitones in short, stepwise notes (72-97% steps).
+- **Stereo:** width 0.24-0.56. Natural left-right travel is 0.1-0.38 per s in every band, and even the bass moves a little. So keep studio movement in the in-between parts (rule 9.6) and run the auto-pan pass at about half its 28 Oct strength in the busy sections. The ear-to-ear sweep should stand out, not play all the time.
+
 ## 9. Our sound identity: "Broken Heritage + sonic logo" (Jithesh chose it, 28 Oct 2026)
 
 Jithesh: "everything is good, but there is no uniqueness; we need our own identity." Identity = fixed signatures in every track, so a listener knows it is ours in 3 seconds. Every brief must carry all five:
