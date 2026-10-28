@@ -197,7 +197,9 @@ def refresh() -> dict:
             v = said.get(topic_id(cid, e["topic"]))
             if v == "no":
                 rejected[cid] = (rejected.get(cid, []) + [e["topic"]])[-20:]
-            elif v == "ok" or not (c.get("news") and e.get("planned", "") < old):  # unapproved news goes stale
+            elif v == "ok" or ("score" in e and not (c.get("news") and e.get("planned", "") < old)):
+                # unapproved news goes stale; unapproved topics planned before scores (27 Oct) are planned again with
+                # one, so they can be auto-approved (otherwise they wait for the owner forever)
                 keep.append(e)
         keep = sorted(keep, key=lambda e: ("ok", "auto", "").index(verdict(cid, e, said)))[:len(whens)]  # approved, then 80+, go first
         empty = whens[len(keep):]
