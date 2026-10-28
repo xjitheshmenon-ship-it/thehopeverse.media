@@ -160,10 +160,10 @@ jobs:
         env:
           CHANNEL: ${{ inputs.channel }}
         run: python video.py --refresh "$CHANNEL"
-      - name: Write and post the next Hindi series episode
+      - name: Write and post the next series episode (Kissa, Uno Reverse)
         if: env.SERIES == '1'
         run: |
-          python series.py || true
+          python series.py "$NEXT" || true
           python video.py --only "$NEXT"
       - name: 5 PM report with today's new channel idea and its brand kit
         if: github.event.schedule == '30 11 * * *' || inputs.job == 'report' || inputs.job == 'daily'
