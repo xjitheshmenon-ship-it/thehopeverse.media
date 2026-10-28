@@ -1,0 +1,30 @@
+{
+  "title": "The Return (hero introduction)",
+  "take": 1,
+  "made_at_utc": "2026-10-28T19:54:58.212245+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "JKYd6CtYkCoVqRiXjmRn",
+  "request": {
+    "prompt": "Epic modern South Indian cinematic hero-introduction score, instrumental. A hero returns to his city after many years. Lead instrument: nadaswaram, with solo cello and bansuri. Mode: fierce heroic minor with a raised fourth, in the mood of Carnatic Raga Shanmukhapriya; one 4-note heroic motif that keeps returning. 0-12 s: low wind-like drone and deep sub pad, one distant slow nadaswaram phrase of the motif. 12-30 s: slow heartbeat kick at 70 BPM and a low string ostinato in steady walking steps, cello states the motif quietly. 30-45 s: thavil and frame-drum rolls build, brass swells, a rising riser, the motif climbs higher each time. 45-47 s: near-silence, only a held drone. 47-70 s: massive drop with thundering drums, brass stabs and distorted electric guitar, the nadaswaram plays the full heroic theme over a driving Tamil folk dance groove at 140 BPM. 70-80 s: the motif once more on solo bansuri over a held chord, ending on a long held note. Wide cinematic stereo, deep sub-bass, punchy drums, analogue warmth. Instrumental only, no vocals, no singing, no chanting, no spoken words.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 80000
+  },
+  "brief": {
+    "raga": "Shanmukhapriya (Carnatic melakarta 56): fierce and heroic, minor colour with a raised 4th (prati madhyamam). The hero motif is 4 notes: Sa, Ri, Ga (minor), then a leap to the raised Ma, held.",
+    "tempo": "70 BPM in half-time for the walk, felt as 140 BPM after the drop",
+    "lead": "nadaswaram (the hero's voice), with solo cello and bansuri for memory",
+    "cues": [
+      "0-12 s  Arrival: wind-like low drone, deep sub pad, one distant nadaswaram phrase of the motif, very slow (the city in the distance)",
+      "12-30 s  The walk: heartbeat kick and a low string ostinato in slow steps; the cello states the 4-note motif, quietly (people half-recognise him)",
+      "30-45 s  Recognition: thavil and parai rolls build, brass swells, a rising riser, the motif climbs higher each time",
+      "45-47 s  One beat of near-silence: only the held drone (the reveal)",
+      "47-70 s  Entry: thundering drums, brass stabs, distorted guitar, the nadaswaram plays the full hero theme over a Tamil folk dance groove at 140 BPM",
+      "70-80 s  Settle: the motif once more on solo bansuri over a held chord, ending on a long held note"
+    ],
+    "sound": "modern South Indian mass-hero film score: wide cinematic stereo, deep sub-bass, punchy drums, analogue warmth; no vocals, no chants, no named songs or artists"
+  },
+  "story": "A hero walks back into his city after many years away. The city half-remembers him; then the whole street knows he is back.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
