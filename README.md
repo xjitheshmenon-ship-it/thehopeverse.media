@@ -49,7 +49,7 @@ Videos uploaded by an unaudited Google Cloud project stay private. To be able to
 
 ## Background music
 
-Mr. Raga (`## Mr. Raga` in `team.md`, knowledge in `music.md`, plus the music-degree syllabus in `music-theory.md` for his answers to Mr. Hope) writes one music prompt per Short from the script and the channel's default sound: real raga, tala, instruments and BPM, always instrumental, never a named song or artist. The track is made on the owner's ElevenLabs plan, whose music terms leave the rights in the track with the owner; when the plan's music minutes run out, fal.ai makes it (Google Lyria 3 Pro, then Stable Audio). Set the Actions variable `MUSIC_MAKER` to `fal` to skip ElevenLabs. Don't register these tracks in Content ID: AI music isn't exclusive.
+Mr. Raga (`## Mr. Raga` in `team.md`, knowledge in `music.md` and the film-scoring handbook `music-scoring.md`, plus the music-degree syllabus in `music-theory.md` for his answers to Mr. Hope) writes one music prompt per Short from the script and the channel's default sound: real raga, tala, instruments and BPM, always instrumental, never a named song or artist. The track is made on the owner's ElevenLabs plan, whose music terms leave the rights in the track with the owner; when the plan's music minutes run out, fal.ai makes it (Google Lyria 3 Pro, then Stable Audio). Set the Actions variable `MUSIC_MAKER` to `fal` to skip ElevenLabs. Don't register these tracks in Content ID: AI music isn't exclusive.
 
 ## Hindi dub channel
 

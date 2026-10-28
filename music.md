@@ -13,7 +13,7 @@ Mr. Raga's reference: Indian classical (Hindustani and Carnatic), Indian folk by
 
 ## 2. How to write the prompt (for Google Lyria 3 Pro on fal, also fine for Stable Audio)
 
-One paragraph of 40 to 80 words, in this order:
+One paragraph of 60 to 120 words, in this order (and with the timed cues from music-scoring.md §5 woven into step 5):
 1. Genre and tradition: "Hindustani classical fusion underscore", "Rajasthani folk", "Javanese gamelan-inspired ambient".
 2. Two to four lead instruments, each named exactly: "bansuri flute, santoor, soft tabla", never "Indian instruments" or "ethnic sounds".
 3. Raga, scale or mode, and its feel: "in the mood of Raga Yaman, serene evening devotion" (models know the big ragas by name; add the feel as well in case they don't).
