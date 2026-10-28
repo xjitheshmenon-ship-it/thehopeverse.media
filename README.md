@@ -1,6 +1,6 @@
 # Hopeverse Media agents
 
-Mr. Hope, the primary decision maker, makes YouTube Shorts for Hopeverse Media and directs his mini agents: Mr. Focus (the researcher, who finds the 5 best topics of the day, researches them and fact-checks scripts), Mr. Cast (character designer, keeps a recurring cast in `characters.md`), Mr. Pen (script writer), Mr. Cut (video editor), Mr. Spark (thumbnail and title), Mr. Post (channel manager), and Mr. Grow (audience growth: every morning he reads the numbers and today's trends and writes `runs/growth.md`, with notes each agent follows that day and a to-do list for you, such as pinned comments, community posts and cross-promotion, which appears in the daily report).
+Mr. Hope, the primary decision maker, makes YouTube Shorts for Hopeverse Media and directs his mini agents: Mr. Focus (the researcher, who finds the 5 best topics of the day, researches them and fact-checks scripts), Mr. Cast (character designer, keeps a recurring cast in `characters.md`), Mr. Pen (script writer), Mr. Cut (video editor), Mr. Spark (thumbnail and title), Mr. Post (channel manager), and Mr. Grow (audience growth: every morning he reads the numbers and today's trends and writes `runs/growth.md`, with notes each agent follows that day and a to-do list for you, such as pinned comments, community posts and cross-promotion, which appears in the daily report), and Mr. Raga (music director: he knows Indian classical, folk and film music, Qawwali and old Asian music from `music.md`, writes every Short's background-music prompt, and gives Mr. Hope music story ideas).
 
 ## Change what the agents do
 
@@ -46,6 +46,10 @@ One-time YouTube setup:
 4. Run `python video.py` once by hand and sign in with the Google account that owns the channel. After that it's automatic.
 
 Videos uploaded by an unaudited Google Cloud project stay private. To be able to publish them, submit YouTube's API audit form for the project.
+
+## Background music
+
+Mr. Raga (`## Mr. Raga` in `team.md`, knowledge in `music.md`) writes one music prompt per Short from the script and the channel's default sound: real raga, tala, instruments and BPM, always instrumental, never a named song or artist. The track is made on the owner's ElevenLabs plan, whose music terms leave the rights in the track with the owner; when the plan's music minutes run out, fal.ai makes it (Google Lyria 3 Pro, then Stable Audio). Set the Actions variable `MUSIC_MAKER` to `fal` to skip ElevenLabs. Don't register these tracks in Content ID: AI music isn't exclusive.
 
 ## Hindi dub channel
 
