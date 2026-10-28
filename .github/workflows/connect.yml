@@ -10,7 +10,7 @@ on:
         description: "Which channel"
         default: yt-kissa
         type: choice
-        options: [yt-kissa, yt-instinct, yt-sankalp, yt-sawaal, yt-hopeverse-hi, yt-hopeverse, yt-unoreverse]
+        options: [yt-kissa, yt-instinct, yt-sankalp, yt-sawaal, yt-hopeverse-hi, yt-hopeverse, yt-unoreverse, yt-nima]
       signin_url:
         description: "Leave empty for the sign-in link, then paste the address the browser lands on (or type brand to refresh the About text and banner)"
         default: ""

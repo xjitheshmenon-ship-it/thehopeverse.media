@@ -191,5 +191,29 @@
       "country": "IN",
       "banner": "brand/unoreverse-banner.png"
     }
+  },
+  {
+    "id": "yt-nima",
+    "platform": "youtube",
+    "per_day": 1,
+    "name": "Nima",
+    "url": "",
+    "niche": "Slice-of-life vlog of Nima, 22, in a Himalayan village: her day, the locals, her animals, quiet moments (one fictional AI character, always disclosed as AI)",
+    "audience": "Global, English-speaking: US, UK, Europe, India; adults 18-44 who love cozy, slow-living videos",
+    "language": "English",
+    "voice": "en-IN-NeerjaNeural",
+    "token": "token-nima.json",
+    "status": "planned",
+    "category": "22",
+    "title_rule": "English, starting 'Day <episode number> |', a small cozy moment (e.g. 'Day 3 | First snow, and Bholu loses his mind')",
+    "footer": "Nima is an AI character and Sunpani is a made-up village: this video is made with AI.\nA Hopeverse channel. Made by AI. Made with hope.",
+    "watermark": "brand/nima-watermark.png",
+    "branding": {
+      "tagline": "Life above the clouds.",
+      "description": "Life above the clouds.\n\nI'm Nima, 22, and I live in Sunpani, a tiny village high in the Himalaya. Every day I show you one small piece of my life: chai with my Dadi, my dog Bholu, the shepherds, the snow, the apple harvest, and the quiet moments in between.\n\nA new day every evening. Subscribe and come live slowly with me for a minute.\n\nNima is an AI character and Sunpani is a made-up village: every video on this channel is made with AI (the people, voices and scenes), inspired by real life in the Himalaya. Made by AI. Made with hope.",
+      "keywords": "himalaya \"village life\" \"slow living\" \"cozy vlog\" \"day in my life\" \"mountain life\" himachal pahadi \"village vlog\" \"ai vlog\" \"ai character\" Hopeverse",
+      "country": "IN",
+      "banner": "brand/nima-banner.png"
+    }
   }
 ]

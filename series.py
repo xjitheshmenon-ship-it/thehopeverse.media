@@ -20,7 +20,8 @@ from plan import next_topic, story_file
 from video import Scene
 
 HERE = Path(__file__).parent
-VOICES = "hi-IN-MadhurNeural (male) or hi-IN-SwaraNeural (female)"  # the two free Hindi Edge voices
+# The two free Edge voices (male, female) per channel language; English ones read in an Indian accent
+VOICES = {"hi": ("hi-IN-MadhurNeural", "hi-IN-SwaraNeural"), "": ("en-IN-PrabhatNeural", "en-IN-NeerjaNeural")}
 
 
 class Character(BaseModel):
@@ -44,7 +45,9 @@ class Episode(BaseModel):
 
 def write_episode(cid: str = "") -> Path:
     channel = next(c for c in _channels() if c.get("status") == "series" and c["id"] == (cid or c["id"]))
-    STORY = story_file(channel["id"])
+    STORY, lang = story_file(channel["id"]), channel.get("lang", "")
+    tongue = channel.get("language", "Hindi") + (" in Devanagari" if lang == "hi" else "")  # Nima speaks English
+    male, female = VOICES[lang]
     story = json.loads(STORY.read_text(encoding="utf-8")) if STORY.exists() else {"premise": "", "cast": [], "episodes": []}
     n = len(story["episodes"]) + 1
     planned = next_topic(channel["id"])  # the logline shown on the dashboard, from plan.py
@@ -58,19 +61,20 @@ def write_episode(cid: str = "") -> Path:
                    + (f"Planned for this episode (follow it unless it breaks the story): {planned}\n\n" if planned else "")
                    +
                    "Return: screenplay (the episode as a proper film screenplay: scene headings like 'INT. "
-                   "BAKERY - NIGHT', short English action lines, Hindi dialogue in Devanagari under each character's "
+                   "BAKERY - NIGHT', short English action lines, " + tongue + " dialogue under each character's "
                    "name; no narrator); title (" + channel.get("title_rule", f"Hindi in Devanagari, starting 'Ep {n} |'")
                    + ", under 90 characters); "
-                   "description (2-3 gripping Hindi lines, then 3-5 hashtags ending with #Shorts); music (an English "
+                   f"description (2-3 gripping {tongue} lines, then 3-5 hashtags ending with #Shorts); music (an English "
                    "prompt for the background score's mood, no vocals); summary (2 lines in English of what happens, "
                    "for the next episode); premise (the season's premise and arc in English, kept unless it must "
                    "change); cast (only the characters the season still needs, at most 4, the two leads first; drop "
                    "anyone the story no longer needs, add someone only if the story can't work without them; look "
                    "in English, starting with "
-                   f"'Indian man' or 'Indian woman' then age, face, hair and clothes; voice {VOICES}; pitch); scenes "
+                   f"'Indian man' or 'Indian woman' then age, face, hair and clothes; voice {male} (male) or {female} "
+                   "(female); pitch); scenes "
                    "(the screenplay cut into shots, one per line of dialogue, in order: narration is the line in "
-                   "Devanagari, speaker the character saying it (never a narrator), on_screen_text the line's key "
-                   "words in Hindi (at most 8), on_screen the character the camera is on (the speaker, or the one "
+                   f"{tongue}, speaker the character saying it (never a narrator), on_screen_text the line's key "
+                   f"words in {tongue} (at most 8), on_screen the character the camera is on (the speaker, or the one "
                    "reacting to them); image_prompt a cinematic film still: camera framing (close-up, "
                    "over-the-shoulder, two-shot, low angle), that character's action and expression, the location "
                    "and light from the scene heading, described the same way in every shot of that scene; "
@@ -83,8 +87,8 @@ def write_episode(cid: str = "") -> Path:
     ep = response.parsed_output
     cost = _cost(MODEL, response.usage)
     for c in ep.cast:  # a voice or pitch Edge doesn't know would cost that character every line
-        if c.voice not in ("hi-IN-MadhurNeural", "hi-IN-SwaraNeural"):
-            c.voice = "hi-IN-SwaraNeural" if "woman" in c.look.lower() else "hi-IN-MadhurNeural"
+        if c.voice not in (male, female):
+            c.voice = female if "woman" in c.look.lower() else male
         if not re.fullmatch(r"[+-]\d{1,2}Hz", c.pitch):
             c.pitch = "+0Hz"
     names = [c.name for c in ep.cast]
@@ -97,7 +101,7 @@ def write_episode(cid: str = "") -> Path:
     OUTBOX.mkdir(exist_ok=True)
     path = next_outbox_path(channel['id'])
     path.write_text(json.dumps({"channel_id": channel["id"], "title": ep.title, "description": ep.description,
-                                "lang": channel["lang"], "category": channel.get("category", "24"),  # Entertainment
+                                **({"lang": lang} if lang else {}), "category": channel.get("category", "24"),  # Entertainment
                                 "footer": channel.get("footer", TEAM.get("Series footer", "")), "music": ep.music,
                                 "cast": story["cast"], "screenplay": ep.screenplay,
                                 "scenes": [s.model_dump() for s in ep.scenes]},
