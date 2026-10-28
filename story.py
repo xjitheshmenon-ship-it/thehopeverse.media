@@ -28,7 +28,12 @@ class Story(BaseModel):
 
 def write_story(channel_id: str) -> Path:
     channel = next(c for c in _channels() if c["id"] == channel_id)
-    told = [json.loads(p.read_text(encoding="utf-8")).get("source", "") for p in OUTBOX.glob(f"{channel_id}-*.json")]
+    packages = {p: json.loads(p.read_text(encoding="utf-8")) for p in OUTBOX.glob(f"{channel_id}-*.json")}
+    for p, package in packages.items():  # one story at a time: a story not posted yet is made again, not a new one
+        if package.get("source") and "youtube_id" not in package and not package.get("held"):
+            print(f"Story not posted yet, making it again: {p.name}")
+            return p
+    told = [package.get("source", "") for package in packages.values()]
     response = client.messages.parse(
         model=MODEL, max_tokens=16000, output_config={"effort": "medium"}, output_format=Story,
         tools=[WEB_SEARCH],
@@ -67,6 +72,7 @@ def write_story(channel_id: str) -> Path:
     path.write_text(json.dumps({"channel_id": channel_id, "title": story.title, "description": story.description,
                                 "lang": channel["lang"], "category": channel.get("category", "15"),
                                 "footer": channel.get("footer", ""), "music": story.music, "source": story.source,
+                                "script": "\n".join(s.narration for s in story.scenes),  # what the relevance check reads
                                 "cast": [c.model_dump() for c in story.cast],
                                 "scenes": [s.model_dump() for s in story.scenes]}, indent=2, ensure_ascii=False),
                     encoding="utf-8")
