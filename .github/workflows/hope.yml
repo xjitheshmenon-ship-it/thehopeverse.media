@@ -45,7 +45,8 @@ env:
   FAL_BILLING_KEY: ${{ secrets.FAL_BILLING_KEY }}  # optional READONLY fal.ai key, so the dashboard can show the balance
   HEYGEN_API_KEY: ${{ secrets.HEYGEN_API_KEY }}  # talking hosts; without it Kling on fal.ai is used
   ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}  # voices; without it the free Edge voices are used
-  MUSIC_MAKER: ${{ vars.MUSIC_MAKER }}  # background music: ElevenLabs (owner keeps the rights) unless set to fal
+  MUSIC_RAGA: ${{ vars.MUSIC_RAGA }}  # 1 = Mr. Raga writes the music (kept for the future music channel; off for Shorts)
+  MUSIC_MAKER: ${{ vars.MUSIC_MAKER }}  # with MUSIC_RAGA: ElevenLabs (owner keeps the rights) unless set to fal
   ELEVEN_VOICE_ARJUN: ${{ vars.ELEVEN_VOICE_ARJUN }}  # optional ElevenLabs voice ids (Variables tab)
   ELEVEN_VOICE_MEERA: ${{ vars.ELEVEN_VOICE_MEERA }}
   ELEVEN_VOICE_NIMA: ${{ vars.ELEVEN_VOICE_NIMA }}  # Nima's own voice; else the account's default female voice
