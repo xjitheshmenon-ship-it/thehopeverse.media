@@ -26,6 +26,7 @@ from zoneinfo import ZoneInfo
 from pydantic import BaseModel
 
 from breakout import rules
+from predict import ASK, track
 from state import approvals, topic_id
 from agents import (DAILY_BUDGET, HELPER_MODEL, HERE, OUTBOX, WEB_SEARCH, _channels, _cost, client, log_spend,
                     spent_today)
@@ -136,6 +137,7 @@ class Item(BaseModel):
     topic: str  # the Short's subject in one line, in English, specific (names, numbers), like a working title
     why: str    # one short line: why now / why it will get views
     score: int  # relevance 0-100, see RUBRIC
+    views48: int  # predicted YouTube views 48 hours after posting (predict.py checks it against the real ones)
 
 
 RUBRIC = ("Give each topic a relevance score from 0 to 100, the sum of: timeliness, is it today's story (0-30); "
@@ -179,7 +181,8 @@ def _ask(channel: dict, slots: list, taken: list, rejected: list = ()) -> list:
     response = client.messages.parse(model=HELPER_MODEL, max_tokens=8000,
                                      output_config={"effort": "medium" if tools else "low"},
                                      tools=tools, output_format=Plan,
-                                     messages=[{"role": "user", "content": task + "\n" + RUBRIC + f"\nReturn exactly {len(slots)} items, in slot order."}])
+                                     messages=[{"role": "user", "content": task + "\n" + RUBRIC + "\n" + ASK + "\n" + track(cid)
+                                                + f"\nReturn exactly {len(slots)} items, in slot order."}])
     cost = _cost(HELPER_MODEL, response.usage)
     log_spend(cost, cid)
     searched = getattr(getattr(response.usage, "server_tool_use", None), "web_search_requests", 0) or 0
@@ -206,7 +209,8 @@ def refresh() -> dict:
         if empty and spent_today() < DAILY_BUDGET:
             try:
                 items = _ask(c, empty, [e["topic"] for e in keep], rejected.get(cid, []))
-                keep += [{"topic": it.topic, "why": it.why, "score": max(0, min(100, it.score)), "planned": f"{now:%Y-%m-%d %H:%M}"} for it in items]
+                keep += [{"topic": it.topic, "why": it.why, "score": max(0, min(100, it.score)),
+                          "views48": max(0, it.views48), "planned": f"{now:%Y-%m-%d %H:%M}"} for it in items]
             except Exception as e:  # a failed plan shouldn't stop the run; the next run plans again
                 print(f"    planning {cid} failed: {e}")
         for (n, w), e in zip(whens, keep):  # estimated times, in making order
