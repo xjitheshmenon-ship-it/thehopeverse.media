@@ -1,0 +1,158 @@
+{
+  "title": "The Return (hero introduction)",
+  "take": 2,
+  "made_at_utc": "2026-10-28T20:02:03.001118+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v1",
+  "elevenlabs_song_id": "5V6qD74rQ8q42j3As1de",
+  "request": {
+    "composition_plan": {
+      "positive_global_styles": [
+        "epic modern South Indian mass-hero cinematic score",
+        "instrumental",
+        "nadaswaram lead",
+        "heroic minor mode with a raised fourth, Raga Shanmukhapriya mood",
+        "one 4-note heroic motif",
+        "thundering drums",
+        "brass stabs",
+        "deep sub-bass",
+        "wide cinematic stereo",
+        "continuous driving rhythm, no gaps"
+      ],
+      "negative_global_styles": [
+        "vocals",
+        "singing",
+        "chanting",
+        "spoken words",
+        "long silence",
+        "fade-out",
+        "ambient pause",
+        "slow intro",
+        "quiet intro",
+        "sparse texture"
+      ],
+      "sections": [
+        {
+          "section_name": "Hook",
+          "duration_ms": 5000,
+          "positive_local_styles": [
+            "instant massive drum hit and brass stab on beat one",
+            "nadaswaram blasts the 4-note hero motif",
+            "full energy from the first second",
+            "140 BPM"
+          ],
+          "negative_local_styles": [
+            "vocals",
+            "singing",
+            "chanting",
+            "spoken words",
+            "long silence",
+            "fade-out",
+            "ambient pause"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Low",
+          "duration_ms": 15000,
+          "positive_local_styles": [
+            "drops down but keeps moving",
+            "pulsing low string ostinato and heartbeat kick",
+            "cello plays the motif low and tense",
+            "tabla and thavil ticking underneath",
+            "70 BPM half-time feel, steady pulse, no silence"
+          ],
+          "negative_local_styles": [
+            "vocals",
+            "singing",
+            "chanting",
+            "spoken words",
+            "long silence",
+            "fade-out",
+            "ambient pause"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Build",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "thavil and frame-drum rolls building",
+            "rising riser",
+            "brass swells",
+            "motif climbs higher each bar",
+            "tempo pushes back to 140 BPM"
+          ],
+          "negative_local_styles": [
+            "vocals",
+            "singing",
+            "chanting",
+            "spoken words",
+            "long silence",
+            "fade-out",
+            "ambient pause"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Peak",
+          "duration_ms": 25000,
+          "positive_local_styles": [
+            "massive mass-hero drop",
+            "thundering drums and Tamil folk dance groove at 140 BPM",
+            "nadaswaram plays the full heroic theme",
+            "distorted electric guitar riff",
+            "brass stabs on the accents",
+            "maximum energy"
+          ],
+          "negative_local_styles": [
+            "vocals",
+            "singing",
+            "chanting",
+            "spoken words",
+            "long silence",
+            "fade-out",
+            "ambient pause"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Ending",
+          "duration_ms": 5000,
+          "positive_local_styles": [
+            "final big hit on the motif",
+            "short punchy ending, no fade",
+            "last note held briefly"
+          ],
+          "negative_local_styles": [
+            "vocals",
+            "singing",
+            "chanting",
+            "spoken words",
+            "long silence",
+            "fade-out",
+            "ambient pause"
+          ],
+          "lines": []
+        }
+      ]
+    },
+    "model_id": "music_v1"
+  },
+  "brief": {
+    "raga": "Shanmukhapriya (Carnatic melakarta 56): fierce and heroic, minor colour with a raised 4th (prati madhyamam). The hero motif is 4 notes: Sa, Ri, Ga (minor), then a leap to the raised Ma, held.",
+    "tempo": "70 BPM in half-time for the walk, felt as 140 BPM after the drop",
+    "lead": "nadaswaram (the hero's voice), with solo cello and bansuri for memory",
+    "cues": [
+      "0-5 s  Hook: instant drum hit + brass stab, nadaswaram blasts the motif (grab attention)",
+      "5-20 s  Low: drops down but keeps moving, low strings and heartbeat kick, cello motif, no silence",
+      "20-30 s  Build: thavil rolls, riser, brass swells, the motif climbs",
+      "30-55 s  Peak: mass drop at 140 BPM, full nadaswaram theme, guitar, brass",
+      "55-60 s  Ending: one big final hit, no fade"
+    ],
+    "sound": "modern South Indian mass-hero film score: wide cinematic stereo, deep sub-bass, punchy drums, analogue warmth; no vocals, no chants, no named songs or artists",
+    "revision": "v2, 28 Oct 2026, owner's notes: v1 opened too slow; wanted an attention-grabbing start, then a low, then the peak; gaps too long"
+  },
+  "story": "A hero walks back into his city after many years away. The city half-remembers him; then the whole street knows he is back.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
