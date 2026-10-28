@@ -47,6 +47,7 @@ env:
   ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}  # voices; without it the free Edge voices are used
   ELEVEN_VOICE_ARJUN: ${{ vars.ELEVEN_VOICE_ARJUN }}  # optional ElevenLabs voice ids (Variables tab)
   ELEVEN_VOICE_MEERA: ${{ vars.ELEVEN_VOICE_MEERA }}
+  ELEVEN_VOICE_NIMA: ${{ vars.ELEVEN_VOICE_NIMA }}  # Nima's own voice; else the account's default female voice
   ELEVEN_VOICE_MALE: ${{ vars.ELEVEN_VOICE_MALE }}
   ELEVEN_VOICE_FEMALE: ${{ vars.ELEVEN_VOICE_FEMALE }}
   AI_CLIPS_PER_SHORT: ${{ vars.AI_CLIPS_PER_SHORT || '3' }}  # paid Kling video shots per Short (about $0.30 each)
@@ -160,7 +161,7 @@ jobs:
         env:
           CHANNEL: ${{ inputs.channel }}
         run: python video.py --refresh "$CHANNEL"
-      - name: Write and post the next series episode (Kissa, Uno Reverse)
+      - name: Write and post the next series episode (Kissa, Uno Reverse, Nima)
         if: env.SERIES == '1'
         run: |
           python series.py "$NEXT" || true
