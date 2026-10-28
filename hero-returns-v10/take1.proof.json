@@ -1,0 +1,30 @@
+{
+  "title": "The Return v10 (blend of the style anchors: v1 + v9 take 1 vocals + v9 take 2 background)",
+  "take": 1,
+  "made_at_utc": "2026-10-28T21:13:32.943114+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "sIw539coE6gFfh8bfF5I",
+  "request": {
+    "prompt": "Epic dark modern Tamil mass-hero introduction film score. A hero walks back into his city after many years. Electronic sounds lead: a clean, gritty synth lead carries one 4-note heroic motif that keeps returning, and a thick steady synth bass with a steady sub bass drives the track and never cuts out. Underneath, an epic film orchestra body of low strings and brass, which explodes in full at the climax. Carnatic instruments only as support: a nadaswaram doubling the motif at the climax, a veena and a mridangam answering in the gaps. 108 BPM half-time swagger, C sharp minor with a raised fourth, in the mood of Carnatic Raga Shanmukhapriya. Vocals are important: a deep male crowd chant in call-and-response with the motif, powerful wordless shouts like 'hey!', 'ho!' and 'ha!' landing on the accents, a huge crowd 'HEY!' on the reveal, and the chant rising with the energy; no lyrics, no singer. 0-12 s tease: the hero is not seen yet, only the steady synth bass, a ticking pulse and a low drone, the motif hinted on a distant synth, chants starting low and rising; quieter but never empty. 12-14 s reveal: one huge hit, a split-second hold, the crowd 'HEY!', then the full motif. 14-40 s swagger walk: the motif every 4 bars over the steady bed, strings and brass underneath, chants answering each phrase, veena and mridangam fills. 40-52 s mass moment: a full epic orchestra explosion with thundering drums, brass and strings together with the synth lead, nadaswaram doubling the motif, the full chant. 52-60 s punch: the motif one last time, a short stinger, one hard final hit. No silence and no long pauses, no side-chain pumping, no EDM drops; clear, tonal, punchy, very loud cinematic mix; no white-noise sweeps, no harsh fuzz, no even sixteenth-note hi-hat rolls.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 60000
+  },
+  "brief": {
+    "raga": "Shanmukhapriya (Carnatic melakarta 56): fierce and heroic, minor colour with a raised 4th (prati madhyamam). The hero motif is 4 notes: Sa, Ri, Ga (minor), then a leap to the raised Ma, held.",
+    "tempo": "108 BPM, half-time swagger",
+    "lead": "nadaswaram (the hero's voice), with solo cello and bansuri for memory",
+    "cues": [
+      "0-12 s  Tease: v9 take 2's steady synth bass and ticking pulse, a low drone; the v1 4-note motif hinted on a distant synth lead; crowd chants start low and rise",
+      "12-14 s  Reveal: one huge hit, a split-second hold, a big crowd 'HEY!', then the full 4-note motif",
+      "14-40 s  Swagger walk: synth lead states the motif every 4 bars over the steady bed, low strings and brass underneath; chants in call-and-response with the motif; veena and mridangam answer in the gaps",
+      "40-52 s  Mass moment: v1's full epic film-orchestra explosion (thundering drums, brass, strings) together with the synth lead; nadaswaram doubles the motif; full chant",
+      "52-60 s  Punch: the motif one last time, a short stinger, one hard final hit"
+    ],
+    "notes": "Jithesh 28 Oct: style anchors are v1 (epic film-score body, 4-note motif; cleanest and strongest repeat, but had a 13 s silent gap), v9 take 1 (vocals 'damn good') and v9 take 2 (background 'really nice': steady sub, tease-to-mass layer build). Blend them; Carnatic stays support.",
+    "sound": "electronic lead (synth lead + synth bass), cinematic brass/strings body, Carnatic veena + mridangam as 2nd/3rd layer; clean, tonal, steady"
+  },
+  "story": "A hero walks back into his city after many years away. The city half-remembers him; then the whole street knows he is back.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
