@@ -1,0 +1,19 @@
+{
+  "title": "Little Paws (sweet cute dog theme)",
+  "take": 1,
+  "made_at_utc": "2026-10-28T21:27:40.789309+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "VyrYvySjoZhB5fO8tmUZ",
+  "request": {
+    "prompt": "Sweet, cute and playful cinematic theme for a fluffy little puppy, bouncy and happy. 118 BPM, light and springy, G major. Lead: a bright plucky synth and a glockenspiel playing a catchy, bouncy 4-bar melody that keeps returning, over a playful bass and light, clean drums with hand claps. Support: pizzicato strings and a ukulele bouncing along, a venu bamboo flute answering the melody with quick happy runs, a mridangam and a kanjira adding light playful fills. Little musical jokes: a cheeky bassoon hop, a xylophone run like a wagging tail, a soft 'boing' slide on the bass. 0-8 s: a curious, tip-toe start with plucks and pizzicato. 8-30 s: the full bouncy melody with all the playful layers. 30-50 s: a bigger, happier chorus, everything bouncing together. 50-60 s: the melody once more and a cute little ending note. Clean, warm, bright and friendly mix, no heavy drums, no dark sounds, no long pauses. Instrumental only, no vocals.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 60000
+  },
+  "brief": {
+    "notes": "Flavour: light, playful slice-of-life with comedy bounce; mickey-mousing allowed. Venu flute and mridangam as support. No vocals."
+  },
+  "story": "A sweet, fluffy little dog: bouncy, curious, playful, wagging tail, makes everyone smile.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
