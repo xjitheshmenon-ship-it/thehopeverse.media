@@ -1,0 +1,53 @@
+# Short ElevenLabs samples of the male voice choices, so the owner can hear them. Nothing is posted.
+# Start it by pushing a branch named run/voice-sample. The mp3s land on the voice-samples branch.
+name: Voice samples
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  samples:
+    runs-on: ubuntu-latest
+    env:
+      ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: One English and one Hindi line per voice
+        run: |
+          python - <<'PY'
+          import json, os, urllib.request
+          from pathlib import Path
+          key = os.environ["ELEVENLABS_API_KEY"].strip()
+          src = Path("video.py").read_text()
+          ns = {}
+          exec(src[src.index("ELEVEN_PREFER ="):src.index("GAP =")], ns)  # the same settings the Shorts use
+          voices = json.load(urllib.request.urlopen(urllib.request.Request(
+              "https://api.elevenlabs.io/v1/voices", headers={"xi-api-key": key})))["voices"]
+          male = [v for v in voices if (v.get("labels") or {}).get("gender") == "male"]
+          for v in male:
+              print(v["name"], v.get("category"), v["voice_id"])
+          pick = [v for v in male if v.get("category") == "premade"][:4] + [v for v in male if v.get("category") != "premade"][:1]
+          lines = {"en": "Here's the one fact most coverage missed, and why it matters to you.",
+                   "hi": "आज की सबसे बड़ी ख़बर, और वो बात जो ज़्यादातर लोगों ने नहीं बताई।"}
+          os.makedirs("samples", exist_ok=True)
+          for v in pick:
+              for lang, text in lines.items():
+                  req = urllib.request.Request(
+                      f"https://api.elevenlabs.io/v1/text-to-speech/{v['voice_id']}?output_format=mp3_44100_192",
+                      data=json.dumps({"text": text, "model_id": "eleven_multilingual_v2",
+                                       "voice_settings": ns["ELEVEN_SETTINGS"]}).encode(),
+                      headers={"xi-api-key": key, "Content-Type": "application/json"})
+                  name = v["name"].split(" - ")[0].replace(" ", "_")
+                  Path(f"samples/{name}-{v.get('category')}-{lang}.mp3").write_bytes(urllib.request.urlopen(req).read())
+          PY
+      - run: |
+          cd samples
+          git init -q -b voice-samples && git add . 
+          git -c user.name=hope -c user.email=hope@users.noreply.github.com commit -qm "Voice samples"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" voice-samples
