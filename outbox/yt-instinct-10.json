@@ -1,12 +1,12 @@
 {
   "channel_id": "yt-instinct",
-  "title": "Il sauve une cigogne… un mâle vole 13 000 km pour elle (histoire vraie)",
-  "description": "Histoire vraie, reconstituée avec des images générées par IA : en Croatie, Stjepan Vokić a sauvé Malena, une cigogne blessée par des chasseurs.\nChaque printemps, le mâle Klepetan revenait d'Afrique pour la retrouver. Source : AFP via France 24 (2018) et CGTN (2020).\n#cigogne #animaux #histoirevraie #nature #Shorts",
+  "title": "Il sauve une cigogne\u2026 un m\u00e2le vole 13 000 km pour elle (histoire vraie)",
+  "description": "Histoire vraie, reconstitu\u00e9e avec des images g\u00e9n\u00e9r\u00e9es par IA : en Croatie, Stjepan Voki\u0107 a sauv\u00e9 Malena, une cigogne bless\u00e9e par des chasseurs.\nChaque printemps, le m\u00e2le Klepetan revenait d'Afrique pour la retrouver. Source : AFP via France 24 (2018) et CGTN (2020).\n#cigogne #animaux #histoirevraie #nature #Shorts",
   "lang": "fr",
   "category": "15",
-  "footer": "Instinct, une chaîne Hopeverse Media. Made by AI. Made with hope.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "footer": "Instinct, une cha\u00eene Hopeverse Media. Made by AI. Made with hope.\nAbonnez-vous pour une histoire du vivant chaque jour.",
   "music": "Tender emotional orchestral score, no vocals: starts with sparse, tense solo piano and low strings for an injured bird at a pond, swells into warm hopeful strings and soft woodwinds for the rescue and the cozy winter, a melancholic dip as the flocks leave, then a soaring, uplifting finale with gentle harp and full strings for the spring reunion, about 55 seconds",
-  "source": "Stjepan Vokić, concierge d'école et veuf, a trouvé en 1993 une cigogne blanche, Malena, près d'un étang de Brodski Varoš (est de la Croatie). Des chasseurs lui avaient tiré dessus et elle ne pouvait plus voler. Il l'a recueillie et soignée. Chaque hiver, il l'installait dans un local chauffé et chaque printemps, il lui construisait un nid sur le toit. Un mâle sauvage, Klepetan, est revenu la rejoindre chaque printemps depuis l'Afrique australe : en 2018, c'était la 16e année de suite. Source principale : AFP, reprise par France 24, « Faithful stork couple keep long-distance love alive », 13/04/2018, https://www.france24.com/en/20180413-faithful-stork-couple-keep-long-distance-love-alive. Le trajet de plus de 13 000 km est vérifié par CGTN (06/06/2020) : https://news.cgtn.com/news/2020-06-06/World-famous-stork-love-story-continues-in-Croatia-R5YGL4mmrK/index.html",
+  "source": "Stjepan Voki\u0107, concierge d'\u00e9cole et veuf, a trouv\u00e9 en 1993 une cigogne blanche, Malena, pr\u00e8s d'un \u00e9tang de Brodski Varo\u0161 (est de la Croatie). Des chasseurs lui avaient tir\u00e9 dessus et elle ne pouvait plus voler. Il l'a recueillie et soign\u00e9e. Chaque hiver, il l'installait dans un local chauff\u00e9 et chaque printemps, il lui construisait un nid sur le toit. Un m\u00e2le sauvage, Klepetan, est revenu la rejoindre chaque printemps depuis l'Afrique australe : en 2018, c'\u00e9tait la 16e ann\u00e9e de suite. Source principale : AFP, reprise par France 24, \u00ab Faithful stork couple keep long-distance love alive \u00bb, 13/04/2018, https://www.france24.com/en/20180413-faithful-stork-couple-keep-long-distance-love-alive. Le trajet de plus de 13 000 km est v\u00e9rifi\u00e9 par CGTN (06/06/2020) : https://news.cgtn.com/news/2020-06-06/World-famous-stork-love-story-continues-in-Croatia-R5YGL4mmrK/index.html",
   "cast": [
     {
       "name": "Stjepan",
@@ -25,8 +25,8 @@
   ],
   "scenes": [
     {
-      "narration": "Au bord d'un étang croate, une cigogne blessée ne peut plus voler.",
-      "on_screen_text": "Une cigogne blessée ne peut plus voler",
+      "narration": "Au bord d'un \u00e9tang croate, une cigogne bless\u00e9e ne peut plus voler.",
+      "on_screen_text": "Une cigogne bless\u00e9e ne peut plus voler",
       "picture_search": "reed pond Croatia",
       "image_prompt": "Handheld phone footage at eye level: Malena the white stork struggles in the reeds, one wing dragging on the mud, eyes wide and frightened, at a reed-fringed pond in flat Slavonian farmland, Croatia, under soft grey overcast daylight",
       "speaker": "",
@@ -35,8 +35,8 @@
       "photo": ""
     },
     {
-      "narration": "En 1993, Stjepan, concierge d'école, la découvre près de l'étang.",
-      "on_screen_text": "1993 : Stjepan la découvre",
+      "narration": "En 1993, Stjepan, concierge d'\u00e9cole, la d\u00e9couvre pr\u00e8s de l'\u00e9tang.",
+      "on_screen_text": "1993 : Stjepan la d\u00e9couvre",
       "picture_search": "reed pond Croatia",
       "image_prompt": "Handheld phone footage at eye level: Stjepan in his faded navy flat cap stops short in the reeds, worried and tender expression, slowly kneeling toward the stork, at a reed-fringed pond in flat Slavonian farmland, Croatia, under soft grey overcast daylight",
       "speaker": "",
@@ -45,7 +45,7 @@
       "photo": ""
     },
     {
-      "narration": "Des chasseurs lui ont tiré dessus. Seule, les renards la mangeraient.",
+      "narration": "Des chasseurs lui ont tir\u00e9 dessus. Seule, les renards la mangeraient.",
       "on_screen_text": "Seule, les renards la mangeraient",
       "picture_search": "reed pond Croatia",
       "image_prompt": "Handheld phone footage at eye level: Malena crouches low in the mud, injured wing hanging, trembling and exhausted, at a reed-fringed pond in flat Slavonian farmland, Croatia, under soft grey overcast daylight",
@@ -55,8 +55,8 @@
       "photo": ""
     },
     {
-      "narration": "Il la soulève doucement et l'emmène chez lui.",
-      "on_screen_text": "Il l'emmène chez lui",
+      "narration": "Il la soul\u00e8ve doucement et l'emm\u00e8ne chez lui.",
+      "on_screen_text": "Il l'emm\u00e8ne chez lui",
       "picture_search": "reed pond Croatia",
       "image_prompt": "Handheld phone footage at eye level: Stjepan in his faded navy flat cap carefully cradles the stork against his chest, focused and gentle, walking out of the reeds, at a reed-fringed pond in flat Slavonian farmland, Croatia, under soft grey overcast daylight",
       "speaker": "",
@@ -65,28 +65,28 @@
       "photo": ""
     },
     {
-      "narration": "Il la soigne, mais son aile ne pourra pas guérir.",
-      "on_screen_text": "Son aile ne guérira pas",
+      "narration": "Il la soigne, mais son aile ne pourra pas gu\u00e9rir.",
+      "on_screen_text": "Son aile ne gu\u00e9rira pas",
       "picture_search": "Croatian village yard",
-      "image_prompt": "Handheld phone footage at eye level: Malena stands in the grass and stretches her wings, one wing hanging lower than the other, calm but unsteady, in the small yard of a village house in Brodski Varoš, Croatia, with a red-tiled brick storage building, in soft morning light",
+      "image_prompt": "Handheld phone footage at eye level: Malena stands in the grass and stretches her wings, one wing hanging lower than the other, calm but unsteady, in the small yard of a village house in Brodski Varo\u0161, Croatia, with a red-tiled brick storage building, in soft morning light",
       "speaker": "",
       "host_on_screen": false,
       "on_screen": "Malena",
       "photo": ""
     },
     {
-      "narration": "À l'automne, les autres cigognes partent pour l'Afrique, sans elle.",
+      "narration": "\u00c0 l'automne, les autres cigognes partent pour l'Afrique, sans elle.",
       "on_screen_text": "Les autres partent, sans elle",
       "picture_search": "storks migrating sky",
-      "image_prompt": "Handheld phone footage at eye level: Malena stands still and looks up at a flock of storks flying south, head tilted, lonely expression, in the small yard of a village house in Brodski Varoš, Croatia, with a red-tiled brick storage building, under a pale autumn sky",
+      "image_prompt": "Handheld phone footage at eye level: Malena stands still and looks up at a flock of storks flying south, head tilted, lonely expression, in the small yard of a village house in Brodski Varo\u0161, Croatia, with a red-tiled brick storage building, under a pale autumn sky",
       "speaker": "",
       "host_on_screen": false,
       "on_screen": "Malena",
       "photo": ""
     },
     {
-      "narration": "Alors Stjepan lui bricole une Afrique improvisée, chauffée, avec aquarium.",
-      "on_screen_text": "Une Afrique improvisée, chauffée",
+      "narration": "Alors Stjepan lui bricole une Afrique improvis\u00e9e, chauff\u00e9e, avec aquarium.",
+      "on_screen_text": "Une Afrique improvis\u00e9e, chauff\u00e9e",
       "picture_search": "warm barn interior",
       "image_prompt": "Handheld phone footage at eye level: Stjepan in his faded navy flat cap arranges straw in a nest next to a heater and an aquarium, proud little smile, inside a small brick storage building turned warm winter room, under warm amber lamp light",
       "speaker": "",
@@ -95,8 +95,8 @@
       "photo": ""
     },
     {
-      "narration": "Il l'emmène pêcher. Le soir, ils regardent la télé ensemble.",
-      "on_screen_text": "Pêche le jour, télé le soir",
+      "narration": "Il l'emm\u00e8ne p\u00eacher. Le soir, ils regardent la t\u00e9l\u00e9 ensemble.",
+      "on_screen_text": "P\u00eache le jour, t\u00e9l\u00e9 le soir",
       "picture_search": "warm barn interior",
       "image_prompt": "Handheld phone footage at eye level: Stjepan in his faded navy flat cap sits on a stool laughing softly beside Malena, both turned toward a small glowing TV, inside a small brick storage building turned warm winter room with a straw nest, heater and aquarium, under warm amber lamp light",
       "speaker": "",
@@ -105,20 +105,20 @@
       "photo": ""
     },
     {
-      "narration": "Au printemps, il lui construit un nid géant sur le toit.",
-      "on_screen_text": "Un nid géant sur le toit",
+      "narration": "Au printemps, il lui construit un nid g\u00e9ant sur le toit.",
+      "on_screen_text": "Un nid g\u00e9ant sur le toit",
       "picture_search": "stork nest rooftop",
-      "image_prompt": "Handheld phone footage at eye level from a ladder: Stjepan in his faded navy flat cap weaves big branches into a huge stick nest, concentrating and smiling, on the red-tiled roof of a small brick storage building in the village of Brodski Varoš, Croatia, under a bright blue spring sky",
+      "image_prompt": "Handheld phone footage at eye level from a ladder: Stjepan in his faded navy flat cap weaves big branches into a huge stick nest, concentrating and smiling, on the red-tiled roof of a small brick storage building in the village of Brodski Varo\u0161, Croatia, under a bright blue spring sky",
       "speaker": "",
       "host_on_screen": false,
       "on_screen": "Stjepan",
       "photo": ""
     },
     {
-      "narration": "Des années plus tard, un mâle sauvage se pose près d'elle.",
-      "on_screen_text": "Un mâle sauvage se pose près d'elle",
+      "narration": "Des ann\u00e9es plus tard, un m\u00e2le sauvage se pose pr\u00e8s d'elle.",
+      "on_screen_text": "Un m\u00e2le sauvage se pose pr\u00e8s d'elle",
       "picture_search": "stork nest rooftop",
-      "image_prompt": "Handheld phone footage at eye level from a ladder: Malena raises her head in surprise and clatters her bill as a wild male stork lands beside her, in the huge stick nest on the red-tiled roof of a small brick storage building in the village of Brodski Varoš, Croatia, under a bright blue spring sky",
+      "image_prompt": "Handheld phone footage at eye level from a ladder: Malena raises her head in surprise and clatters her bill as a wild male stork lands beside her, in the huge stick nest on the red-tiled roof of a small brick storage building in the village of Brodski Varo\u0161, Croatia, under a bright blue spring sky",
       "speaker": "",
       "host_on_screen": false,
       "on_screen": "Malena",
@@ -128,42 +128,47 @@
       "narration": "Stjepan l'appelle Klepetan. Chaque automne, Klepetan s'envole. Malena reste.",
       "on_screen_text": "Il s'envole. Malena reste.",
       "picture_search": "stork nest rooftop",
-      "image_prompt": "Handheld phone footage at eye level from a ladder: Malena stands alone in the nest, watching a single stork fly away into the distance, quiet and patient, in the huge stick nest on the red-tiled roof of a small brick storage building in the village of Brodski Varoš, Croatia, under a pale autumn sky",
+      "image_prompt": "Handheld phone footage at eye level from a ladder: Malena stands alone in the nest, watching a single stork fly away into the distance, quiet and patient, in the huge stick nest on the red-tiled roof of a small brick storage building in the village of Brodski Varo\u0161, Croatia, under a pale autumn sky",
       "speaker": "",
       "host_on_screen": false,
       "on_screen": "Malena",
       "photo": ""
     },
     {
-      "narration": "Il fait plus de 13 000 kilomètres depuis l'Afrique du Sud.",
+      "narration": "Il fait plus de 13 000 kilom\u00e8tres depuis l'Afrique du Sud.",
       "on_screen_text": "Plus de 13 000 km depuis l'Afrique",
       "picture_search": "stork nest rooftop",
-      "image_prompt": "Handheld phone footage at eye level from a ladder: Malena scans the sky from the nest, neck stretched, hopeful expression, in the huge stick nest on the red-tiled roof of a small brick storage building in the village of Brodski Varoš, Croatia, under a bright blue spring sky",
+      "image_prompt": "Handheld phone footage at eye level from a ladder: Malena scans the sky from the nest, neck stretched, hopeful expression, in the huge stick nest on the red-tiled roof of a small brick storage building in the village of Brodski Varo\u0161, Croatia, under a bright blue spring sky",
       "speaker": "",
       "host_on_screen": false,
       "on_screen": "Malena",
       "photo": ""
     },
     {
-      "narration": "En 2018, il revient vers elle pour la seizième année.",
-      "on_screen_text": "2018 : de retour, 16e année",
+      "narration": "En 2018, il revient vers elle pour la seizi\u00e8me ann\u00e9e.",
+      "on_screen_text": "2018 : de retour, 16e ann\u00e9e",
       "picture_search": "stork nest rooftop",
-      "image_prompt": "Handheld phone footage at eye level from a ladder: Malena throws her head back and clatters her bill joyfully as the male stork lands in the nest beside her, in the huge stick nest on the red-tiled roof of a small brick storage building in the village of Brodski Varoš, Croatia, under a bright blue spring sky",
+      "image_prompt": "Handheld phone footage at eye level from a ladder: Malena throws her head back and clatters her bill joyfully as the male stork lands in the nest beside her, in the huge stick nest on the red-tiled roof of a small brick storage building in the village of Brodski Varo\u0161, Croatia, under a bright blue spring sky",
       "speaker": "",
       "host_on_screen": false,
       "on_screen": "Malena",
       "photo": ""
     },
     {
-      "narration": "« J'ai changé son destin, j'en suis responsable », dit Stjepan.",
-      "on_screen_text": "« J'ai changé son destin »",
+      "narration": "\u00ab J'ai chang\u00e9 son destin, j'en suis responsable \u00bb, dit Stjepan.",
+      "on_screen_text": "\u00ab J'ai chang\u00e9 son destin \u00bb",
       "picture_search": "Croatian village yard",
-      "image_prompt": "Handheld phone footage at eye level: Stjepan in his faded navy flat cap looks up at the two storks in the rooftop nest, eyes moist, a quiet happy smile, in the small yard of a village house in Brodski Varoš, Croatia, with a red-tiled brick storage building, in golden spring evening light",
+      "image_prompt": "Handheld phone footage at eye level: Stjepan in his faded navy flat cap looks up at the two storks in the rooftop nest, eyes moist, a quiet happy smile, in the small yard of a village house in Brodski Varo\u0161, Croatia, with a red-tiled brick storage building, in golden spring evening light",
       "speaker": "",
       "host_on_screen": false,
       "on_screen": "Stjepan",
       "photo": ""
     }
   ],
-  "script": "Au bord d'un étang croate, une cigogne blessée ne peut plus voler.\nEn 1993, Stjepan, concierge d'école, la découvre près de l'étang.\nDes chasseurs lui ont tiré dessus. Seule, les renards la mangeraient.\nIl la soulève doucement et l'emmène chez lui.\nIl la soigne, mais son aile ne pourra pas guérir.\nÀ l'automne, les autres cigognes partent pour l'Afrique, sans elle.\nAlors Stjepan lui bricole une Afrique improvisée, chauffée, avec aquarium.\nIl l'emmène pêcher. Le soir, ils regardent la télé ensemble.\nAu printemps, il lui construit un nid géant sur le toit.\nDes années plus tard, un mâle sauvage se pose près d'elle.\nStjepan l'appelle Klepetan. Chaque automne, Klepetan s'envole. Malena reste.\nIl fait plus de 13 000 kilomètres depuis l'Afrique du Sud.\nEn 2018, il revient vers elle pour la seizième année.\n« J'ai changé son destin, j'en suis responsable », dit Stjepan."
+  "script": "Au bord d'un \u00e9tang croate, une cigogne bless\u00e9e ne peut plus voler.\nEn 1993, Stjepan, concierge d'\u00e9cole, la d\u00e9couvre pr\u00e8s de l'\u00e9tang.\nDes chasseurs lui ont tir\u00e9 dessus. Seule, les renards la mangeraient.\nIl la soul\u00e8ve doucement et l'emm\u00e8ne chez lui.\nIl la soigne, mais son aile ne pourra pas gu\u00e9rir.\n\u00c0 l'automne, les autres cigognes partent pour l'Afrique, sans elle.\nAlors Stjepan lui bricole une Afrique improvis\u00e9e, chauff\u00e9e, avec aquarium.\nIl l'emm\u00e8ne p\u00eacher. Le soir, ils regardent la t\u00e9l\u00e9 ensemble.\nAu printemps, il lui construit un nid g\u00e9ant sur le toit.\nDes ann\u00e9es plus tard, un m\u00e2le sauvage se pose pr\u00e8s d'elle.\nStjepan l'appelle Klepetan. Chaque automne, Klepetan s'envole. Malena reste.\nIl fait plus de 13 000 kilom\u00e8tres depuis l'Afrique du Sud.\nEn 2018, il revient vers elle pour la seizi\u00e8me ann\u00e9e.\n\u00ab J'ai chang\u00e9 son destin, j'en suis responsable \u00bb, dit Stjepan.",
+  "relevance": {
+    "score": 58,
+    "why": "Evergreen, well-fitting story for a French wildlife channel (fit ~27/30, demand ~15/25), but timeliness is low (~8/30) as nothing ties it to now. The script delivers the title, though it is dated: it stops at 2018, and Stjepan has reportedly since died (2020) and Klepetan's later returns are unmentioned. The title says 'un m\u00e2le vole' but the script's name for the female (Malena) comes late, and 'Il sauve' is fine. Minor staleness risk gives ~10/15."
+  },
+  "held": "relevance 58/100 under 60: Evergreen, well-fitting story for a French wildlife channel (fit ~27/30, demand ~15/25), but timeliness is low (~8/30) as nothing ties it to now. The script delivers the title, though it is dated: it stops at 2018, and Stjepan has reportedly since died (2020) and Klepetan's later returns are unmentioned. The title says 'un m\u00e2le vole' but the script's name for the female (Malena) comes late, and 'Il sauve' is fine. Minor staleness risk gives ~10/15."
 }
