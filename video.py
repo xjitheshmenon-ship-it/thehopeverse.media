@@ -70,8 +70,8 @@ HOSTS = {
 }
 MUSIC_MODEL = "fal-ai/stable-audio-3/medium/base/text-to-audio"  # about $0.05 per track
 MUSIC_VOLUME = 0.12  # background music level under the voice (1 = full)
-STYLE = ("photorealistic, real people with natural skin texture, shot on a cinema camera, natural light, documentary "
-         "style, vertical 9:16, not a cartoon, not an illustration, not CGI, not 3D, no text, no words")
+STYLE = ("photorealistic, real people with natural skin texture, handheld smartphone footage at eye level, natural "
+         "overcast daylight, documentary style, vertical 9:16, not a cartoon, not an illustration, not CGI, not 3D, no text, no words")
 SECRET, TOKEN = HERE / "client_secret.json", HERE / "token.json"
 # Stock sites refuse Python's default user agent (HTTP 403), so every download identifies as a browser.
 _opener = urllib.request.build_opener()
@@ -219,7 +219,7 @@ def _commons(scene: "Scene", size: tuple, duration: float, work: Path, used: set
     or None. Photos get a slow zoom, so the picture still moves."""
     url = "https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode({
         "action": "query", "format": "json", "generator": "search", "gsrsearch": scene.photo, "gsrnamespace": 6,
-        "gsrlimit": 10, "prop": "imageinfo", "iiprop": "url|mime|size|extmetadata", "iiurlwidth": 1080})
+        "gsrlimit": 10, "prop": "imageinfo", "iiprop": "url|mime|size|extmetadata", "iiurlwidth": 1440})
     pages = json.load(urllib.request.urlopen(url, timeout=20)).get("query", {}).get("pages", {}).values()
     hits = [(p["title"], p["imageinfo"][0]) for p in sorted(pages, key=lambda p: p.get("index", 0))
             if p.get("imageinfo") and p["title"] not in used and p["imageinfo"][0].get("thumburl")
@@ -248,18 +248,26 @@ def _commons(scene: "Scene", size: tuple, duration: float, work: Path, used: set
 
 
 def _clip(path: Path, size: tuple, duration: float, skip: float = 0):
-    """A stock clip filling the frame for `duration` seconds, starting `skip` of the way in."""
-    clip = _fill(VideoFileClip(str(path)).without_audio(), size)
-    clip = clip.subclipped(min(clip.duration * skip, max(0, clip.duration - duration)))
+    """A stock or AI clip filling the frame for `duration` seconds, starting `skip` of the way in. ffmpeg cuts just
+    that stretch and scales and centre-crops it to the frame once (Lanczos, near-lossless), so 4K footage stays sharp
+    and costs no extra render time."""
+    src = VideoFileClip(str(path))
+    start = min(src.duration * skip, max(0, src.duration - duration))
+    src.close()
+    part = path.with_name(f"{path.stem}-{size[1]}p-{start:.2f}-{duration:.2f}.mp4")
+    if not part.exists():
+        w, h = size
+        tmp = part.with_suffix(f".{threading.get_ident()}.mp4")  # scenes run in parallel and can share a shot
+        subprocess.run([FFMPEG_BINARY, "-y", "-loglevel", "error", "-ss", f"{start:.3f}", "-t", f"{duration:.3f}",
+                        "-i", str(path), "-an", "-vf",
+                        f"scale={w}:{h}:force_original_aspect_ratio=increase:flags=lanczos,crop={w}:{h},setsar=1",
+                        "-c:v", "libx264", "-crf", "14", "-preset", "veryfast", "-pix_fmt", "yuv420p", str(tmp)],
+                       check=True)
+        os.replace(tmp, part)
+    clip = VideoFileClip(str(part)).without_audio()
     if clip.duration < duration:
         clip = clip.with_effects([vfx.Loop(duration=duration)])
     return clip.subclipped(0, duration)
-
-
-def _fill(clip, size: tuple):
-    """Scale and centre-crop a clip to exactly fill the frame."""
-    clip = clip.resized(max(size[0] / clip.w, size[1] / clip.h))
-    return clip.cropped(x_center=clip.w / 2, y_center=clip.h / 2, width=size[0], height=size[1])
 
 
 def host_photo(name: str) -> Path:
@@ -330,7 +338,8 @@ def _stock(scene: "Scene", query: str, size: tuple, duration: float, work: Path,
     used.add(video["id"])
     path = work / f"clip-{video['id']}.mp4"
     if not path.exists():
-        urllib.request.urlretrieve(video["videos"]["medium"]["url"], path)  # 1080p, or 720p on old clips
+        # 4K when Pixabay has it: a landscape 1080p clip cropped to a vertical frame is blown up over 2x and looks soft
+        urllib.request.urlretrieve(video["videos"]["large"]["url"] or video["videos"]["medium"]["url"], path)
     shots.append(path)
     return _clip(path, size, duration)
 
@@ -604,7 +613,7 @@ def music(work: Path, seconds: float, mood: str = "") -> Path | None:
 
 def render(package_path: Path, voice: str = VOICE) -> Path:
     package = json.loads(package_path.read_text(encoding="utf-8"))
-    size = (1080, 1920)  # YouTube Shorts are vertical
+    size = (1440, 2560)  # vertical; YouTube streams 1440p+ uploads in its sharper codec (VP9), so Shorts look clearer
     lang = package_path.suffixes[0][1:] if len(package_path.suffixes) > 1 else package.get("lang", "")
     # A series episode's characters are shown and voiced the same way as the hosts.
     HOSTS.update({c["name"]: c for c in package.get("cast", [])})
@@ -624,7 +633,7 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
     mark = HERE / next((c.get("watermark", "logo.png") for c in _channels() if c["id"] == package.get("channel_id")),
                        "logo.png")
     if mark.exists():
-        logo = ImageClip(str(mark), transparent=True).resized(width=150).with_opacity(0.85).with_position((60, 170))
+        logo = ImageClip(str(mark), transparent=True).resized(width=200).with_opacity(0.85).with_position((80, 227))
     # A series shows its own characters in every shot, so its AI clips are capped only by DAILY_BUDGET.
     paid.update(clips=0, usd=0.0, blank=0, limit=10 ** 6 if package.get("cast") else AI_CLIPS)
     shots.clear()
@@ -669,8 +678,8 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
         clip = CompositeVideoClip(layers, size=size).with_duration(duration)
         # Each scene is written to disk and closed straight away, so only a few scenes' footage is in memory.
         part = work / f"{prefix}scene-{i:03}.mp4"
-        clip.write_videofile(str(part), fps=30, codec="libx264", audio=False,
-                             ffmpeg_params=["-pix_fmt", "yuv420p"], logger=None)
+        clip.write_videofile(str(part), fps=30, codec="libx264", audio=False, preset="slow",
+                             ffmpeg_params=["-crf", "17", "-pix_fmt", "yuv420p"], logger=None)  # high quality before YouTube re-encodes
         for c in (clip, *layers):
             c.close()
         print(f"    scene {i + 1}/{len(board.scenes)} ({time.time() - began:.0f} s)")
@@ -838,7 +847,11 @@ def instagram(video: Path, caption: str) -> str:
     """Post the video as an Instagram Reel (public), with Instagram Login: no Facebook Page needed.
     Instagram fetches the video from a public link, so it is first uploaded to fal.ai's file storage (FAL_KEY)."""
     import fal_client
-    url = fal_client.upload_file(str(video))
+    reel = video.with_name(f"{video.stem}-1080.mp4")  # the YouTube file is 1440p; Reels are shown at 1080p, max 25 Mbps
+    subprocess.run([FFMPEG_BINARY, "-y", "-loglevel", "error", "-i", str(video), "-vf", "scale=1080:1920:flags=lanczos",
+                    "-c:v", "libx264", "-crf", "18", "-maxrate", "20M", "-bufsize", "40M", "-pix_fmt", "yuv420p",
+                    "-c:a", "copy", str(reel)], check=True)
+    url = fal_client.upload_file(str(reel))
     ig = _graph("me", fields="user_id")["user_id"]
     container = _graph(f"{ig}/media", "POST", media_type="REELS", video_url=url, caption=caption[:2200])["id"]
     for _ in range(60):  # Instagram processes the video before it can be published
