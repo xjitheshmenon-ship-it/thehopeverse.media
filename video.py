@@ -72,12 +72,14 @@ HOSTS = {
               "look": "Indian woman, about 29, medium-brown skin, shoulder-length wavy black hair, "
                       "small gold earrings, rust-coloured kurta-style top"},
 }
-# Mr. Raga (team.md) writes each Short's music prompt from his knowledge file, music.md.
-MUSIC_MODELS = ("fal-ai/lyria3/pro",  # Google Lyria 3 Pro, about $0.08 a track, strong on real (Indian) instruments
-                "fal-ai/stable-audio-3/medium/base/text-to-audio")  # about $0.05, used if Lyria fails
-# Music is made on the owner's ElevenLabs plan, whose terms leave every right in the track with the owner (owner's
-# pick, 28 Oct 2026). It uses the plan's music minutes; when they run out fal.ai makes it. MUSIC_MAKER=fal skips ElevenLabs.
-MUSIC_MAKER = os.environ.get("MUSIC_MAKER") or "elevenlabs"
+# Mr. Raga (team.md) can write each Short's music prompt from music.md and music-scoring.md, but the owner keeps his
+# music for a future music channel (28 Oct 2026), so Shorts use the old music unless MUSIC_RAGA=1 (Actions variable).
+MUSIC_RAGA = os.environ.get("MUSIC_RAGA") == "1"
+MUSIC_MODELS = (("fal-ai/lyria3/pro",) if MUSIC_RAGA else ()) + (  # Google Lyria 3 Pro, about $0.08 a track
+    "fal-ai/stable-audio-3/medium/base/text-to-audio",)  # about $0.05 per track
+# With Mr. Raga on, music is made on the owner's ElevenLabs plan, whose terms leave every right in the track with the
+# owner; when its music minutes run out fal.ai makes it. MUSIC_MAKER=fal skips ElevenLabs.
+MUSIC_MAKER = os.environ.get("MUSIC_MAKER") or ("elevenlabs" if MUSIC_RAGA else "fal")
 MUSIC_VOLUME = 0.12  # background music level under the voice (1 = full)
 STYLE = ("photorealistic, real people with natural skin texture, handheld smartphone footage at eye level, natural "
          "overcast daylight, documentary style, vertical 9:16, not a cartoon, not an illustration, not CGI, not 3D, no text, no words")
@@ -631,11 +633,12 @@ def raga(package: dict) -> str:
 
 
 def music(work: Path, seconds: float, package: dict) -> Path | None:
-    """One background track per Short, prompted by Mr. Raga. Dubs reuse it."""
+    """One background track per Short, prompted by Mr. Raga when MUSIC_RAGA is on. Dubs reuse it."""
     path = work / "music.mp3"
     if path.exists():
         return path
-    prompt = raga(package)
+    prompt = raga(package) if MUSIC_RAGA else (
+        package.get("music") or TEAM.get("Music", "mysterious, curious ambient underscore, no vocals"))
     if MUSIC_MAKER == "elevenlabs" and os.environ.get("ELEVENLABS_API_KEY"):
         for model in ("music_v2", "music_v1"):  # v2 sounds better; v1 if the plan doesn't offer it
             try:
