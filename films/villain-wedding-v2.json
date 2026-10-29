@@ -1,6 +1,6 @@
 {
   "title": "The villain came to his own wedding in style.",
-  "music": "films/villain-wedding-v2.mp3",
+  "music": "films/villain-wedding-v3.mp3",
   "look": "cinematic film still, shot on ARRI Alexa with anamorphic lenses, smooth stabilized gimbal and steadicam camera movement, shallow depth of field, rich gold and deep red wedding colour grade with teal shadows, film grain, photorealistic, vertical 9:16, no text. The villain is the groom at his own wedding and the same man in every shot: an original fictional character, a lean, wiry South Indian man in his early 30s, sharp cheekbones, intense dark kohl-lined eyes, a thin moustache, slicked-back black hair, dressed as a traditional Tamil groom: a cream silk veshti with a wide gold zari border, a matching cream silk shirt, a gold-bordered silk angavastram over one shoulder, a thick jasmine and rose garland, gold rings and a gold chain. The place is a grand South Indian wedding hall: marigold garlands, brass lamps, a decorated mandap, guests in silk saris and veshtis",
   "negative": "cartoon, anime, CGI, 3D render, text, watermark, blur, shaky handheld camera, celebrity, famous actor, real person, suit, blazer, sherwani, black clothes",
   "shots": [
@@ -10,7 +10,7 @@
     },
     {
       "end": 8,
-      "prompt": "Extreme close-up of his intense kohl-lined eyes opening slowly, the lamp flame reflected in them, the camera slowly pushes in"
+      "prompt": "Extreme close-up of his intense kohl-lined eyes opening slowly, the lamp flame reflected in them, the camera slowly pushes in, upright normal framing"
     },
     {
       "end": 12,
