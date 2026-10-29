@@ -1,0 +1,131 @@
+{
+  "title": "\u00c6THER: Monsoon Duel v2 (the rain and the blades play the music)",
+  "take": 2,
+  "made_at_utc": "2026-10-29T16:53:20.017887+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v1",
+  "elevenlabs_song_id": "aiIT0bhwFbNkrs7p20Ph",
+  "request": {
+    "composition_plan": {
+      "positive_global_styles": [
+        "a cinematic martial-arts duel score in pouring monsoon rain, built from the scene's own sounds, composed like a senior blockbuster film composer, not a DJ mix",
+        "D minor, Carnatic raga feel with gamakam slides, about 132 BPM",
+        "the rain is an instrument: raindrops falling on a Kerala bell-metal vessel and on a steel sword blade ring as tuned bell notes that play the melody",
+        "the swords play the hook: every blade clash is a tuned, ringing metallic note of the 5-note signature riff",
+        "a limping, circling 7-beat Kerala rhythm counted 3+2+2 on chenda and edakka, pitched-down mridangam as deep sub hits",
+        "a Kerala kombu war horn cries out like a battle call",
+        "balanced fusion: real chenda, edakka, veena, strings and low brass share the spotlight equally with fresh electronics (gritty synth lead, glitch-chopped veena, deep melodic sub bass)",
+        "clean, tonal, wide, punchy cinematic mix with big transients",
+        "instrumental"
+      ],
+      "negative_global_styles": [
+        "EDM drop",
+        "white-noise riser",
+        "filter sweep",
+        "side-chain pumping",
+        "DJ transition",
+        "dubstep",
+        "lyrics",
+        "singer",
+        "generic epic trailer",
+        "wall of synths",
+        "lo-fi",
+        "weak drums"
+      ],
+      "sections": [
+        {
+          "section_name": "Rain on steel",
+          "duration_ms": 8000,
+          "positive_local_styles": [
+            "the very first sound: a Kerala kombu horn cries out and bends upward over one deep thunder boom",
+            "then only two sounds: raindrops on a bell-metal vessel ring tuned notes that play a rising 3-note call (root, minor third, fifth, the last note held and bent up), and a sword blade rings the same notes, over a soft low drone"
+          ],
+          "negative_local_styles": [
+            "drums",
+            "brass",
+            "strings",
+            "bass"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Circling",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "an edakka talking drum bends its pitch and sings the 5-note signature riff, the tuned raindrops answer it",
+            "the limping 7-beat rhythm (3+2+2) starts softly on chenda rim taps like circling footsteps, then a glitch-chopped veena joins, then a deep melodic sub bass enters at the end"
+          ],
+          "negative_local_styles": [
+            "full drums",
+            "brass"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Blades meet",
+          "duration_ms": 12000,
+          "positive_local_styles": [
+            "one reversed veena swell into a massive blade clash hit, then the full duel groove in 7 lands: thunderous chenda, tuned sword clashes ringing the riff, low brass, racing string counter-melody",
+            "a call-and-response duel: the chenda plays a phrase, a gritty synth lead answers it, faster and faster"
+          ],
+          "negative_local_styles": [
+            "half-time",
+            "slow"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Time stops",
+          "duration_ms": 6000,
+          "positive_local_styles": [
+            "surprise: the whole band and the rain stop dead",
+            "in slow motion, single heavy raindrops fall one by one, each drop rings one note of the signature riff on bell metal, over a held low hum",
+            "then the kombu horn rises"
+          ],
+          "negative_local_styles": [
+            "drums",
+            "groove"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Storm breaks",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "a thunder crack and the whole band slams back in up a whole step, the rhythm switches from the limping 7 to a straight, driving double-time 4",
+            "wordless warrior chants shout the signature riff, brass and tuned sword clashes play it with them"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "Last exchange",
+          "duration_ms": 8000,
+          "positive_local_styles": [
+            "an interlude showpiece over the held groove: the edakka and a violin trade the riff with Carnatic gamakam slides, faster and faster, chenda rolls building underneath"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "Last blow",
+          "duration_ms": 8000,
+          "positive_local_styles": [
+            "one final massive unison hit with a thunder crack and a deep sub drop, then silence",
+            "only the rain returns, and the sword blade rings the rising 3-note call one last time, slower, the last note held and bent up"
+          ],
+          "negative_local_styles": [
+            "drums"
+          ],
+          "lines": []
+        }
+      ]
+    },
+    "model_id": "music_v1"
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct 16:35 on v1: 'Nothing unique in it' (it was a generic epic chenda + brass + choir cue). v2 builds the track from the scene's own sounds, like Red Line did with the car: (1) rain drops on a Kerala bell-metal uruli and a ringing sword blade are TUNED and play the melody; (2) every blade clash is a note of the hook (the swords play the riff); (3) a Kerala kombu war-horn cry is the attention grab; (4) the duel groove is a limping 7-beat Kerala rhythm (3+2+2) that switches to a straight driving 4 at the storm break; (5) surprise: time stops and single slow-motion raindrops ring the hook one note at a time. Mr. Raga rules kept: 1-2 sound mystery open, layer-by-layer build, about half real instruments and half fresh electronics, a hook at every 8-12 s change, one reversed-veena swell, Hopeverse motif at start and end, composed transitions."
+  },
+  "story": "Two Kalari warriors face each other in monsoon rain. Time stops between drops, then the storm breaks.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
