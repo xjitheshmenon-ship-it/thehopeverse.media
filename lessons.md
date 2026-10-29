@@ -1,24 +1,25 @@
 ## Mr. Hope
-Call performance FIRST. Stats API still failing on 29 Oct ("invalid filter parameter"). Owner: please fix it. Last known (28 Oct): Instinct crow 1,218, dolphin 1,156; Sawaal SC voters HI 81 views, 2 comments.
-What works: Instinct = named animal + skill + number. Sawaal = Hindi SC/SIR stories and closed "क्या…सकते हैं?" questions.
+Call performance FIRST. Stats API still failing on 29 Oct, 2nd run in a row ("invalid filter parameter"). Owner: please fix it. Last known (28 Oct): Instinct crow 1,218, dolphin 1,156; Sawaal SC voters HI 81 views.
+Rules: judge a Short only after 48h. Hit = 300+ views. Tag each one: group, opening (dialogue/statistic), hook (twist/plain), animal fame, past-tense verb, news age, publish hour. Re-rank every 10 Shorts and do a weekly split at 300 views.
+Works: Instinct = named animal + skill + number. Sawaal = Hindi SC/SIR closed questions.
 YPP: about 0%. Instinct is closest.
-Cost: Sawaal 29 Oct came to about $2.5 across runs; today's run was $1.08 for 1 Short. Target $0.60. Self-editing after the fact-check saved a Pen loop, so keep doing that. Owner: please raise the search quota.
-Sponsors (to test): voter-help/civic apps (Form 6 Short), popular-science books, wildlife ID apps.
+Cost: Instinct magpie came to $0.88 (and $0.56 after). Target $0.60. Self-editing saves Pen loops.
+Sponsors (to test): science books, wildlife ID apps, civic apps.
 
 ## Mr. Focus
-Check search quota first. If it's blocked, say so in one line and stop. Never fill gaps from memory. Use 2 sources per fact, one wire/mainstream (PTI, LiveLaw, The Hindu, Indian Express, Dainik Jagran). Save fact-check quota for the final script: re-confirm every fact, including the ones from research. On 29 Oct the four-dates law and the voters.eci.gov.in/BLO line went unconfirmed. Sawaal prefers a hook under 48 hours old. A 13-day-old peg is acceptable only when flagged. Next up: SC questions ECI on Form 6 in Delhi (needs a 2nd outlet), 5 Nov SIR hearing, final roll. Check whether the Model Code of Conduct applies to the states covered.
+Check that search works first. On 29 Oct the fact-check failed with "invalid_tool_input". Check your query format and retry once. If it fails again, say so in one line and stop. Never fill gaps from memory. Use 2 sources per fact. Re-confirm every fact in the final script. Magpie Short: re-run the check before it publishes, and confirm the size of the 2020 Granada sample. Name replication failures. Sawaal: hook under 48h old, wire/mainstream source, next up the 5 Nov SIR hearing.
 
 ## Mr. Cast
-Narrator-only channels skip cast (Instinct included). Sankalp: Rohan (Madhur) and Kavya (Swara). Sawaal: Aditya and Nisha. Elsewhere: Navigator and Lumen, with Arjun narrating. No logos and no real products. Start only after Mr. Focus has delivered verified sources.
+Narrator-only channels skip cast (Instinct included). Sankalp: Rohan (Madhur) and Kavya (Swara). Sawaal: Aditya and Nisha. Elsewhere: Navigator and Lumen, with Arjun narrating. No logos and no real products. Start only after verified sources.
 
 ## Mr. Pen
-Instinct hook: "1 X, 1 Y: the animal that…", with the true number in the first 2 seconds. One caveat. Never "smarter than". Sawaal: Hindi only, closed "क्या…सकते हैं?" titles, neutral wording, 40–55 seconds. Keep the two voter-list reviews (SIR vs routine revision) apart. Never mix their rules. Closing questions stay neutral ("क्या आपने अपना नाम जाँचा?"). Write only from verified facts, and send the final script to Mr. Focus.
+Instinct: French only. Put the true number in the first 2 seconds. Use a statistic opening + twist + past-tense result verb ("2 ont gratté"). Never write "seule", "smarter than" or "se reconnaît" unless a source proves it. One caveat, and name any failed replication. Compare to children only with sourced ages. Sawaal: Hindi only, closed "क्या…सकते हैं?", 40–55s, neutral. Keep SIR and routine-revision rules apart. Send the final script to Mr. Focus.
 
 ## Mr. Cut
-Only licence-confirmed images, with a text-card backup for every Wikimedia image. About 20 shots, with an on-screen credit per source. Instinct: show the skill in the first 2 seconds. Sawaal: no real faces. Use document, calendar or court visuals. To test: whether a first-2-seconds hook shot (big number or document) lifts Sawaal retention.
+Only licence-confirmed images, with a text-card backup for each Wikimedia image. About 20 shots, credits on screen. Every action must match the script exactly (magpie: it scratched its own throat, not the cardboard). Instinct: show the skill in the first 2 seconds. Sawaal: no real faces. Stock notes go in the channel's language, with no wrong sources (no "NASA"). To test: hook shot for Sawaal retention.
 
 ## Mr. Spark
-Add energy, not facts. Thumbnail: a big accurate number, no faces (except the animal for Instinct). Neutral hashtags. The channel never speaks as "us": no "Brands: DM us". Pinned comment = a Hindi factual question, fact-checked by Mr. Focus (to test: does it lift comments above 2?). Hand over the final Hindi description.
+Add energy, not facts. Write in the CHANNEL's language (Instinct French, Sawaal Hindi) even if the brief says otherwise. Flag mismatched briefs. Thumbnail: big accurate number, no human faces. No "us" voice. Pinned comment = a factual question, fact-checked (to test: does it lift comments above 2?). Hand over the final description.
 
 ## Mr. Post
-Titles under 60 characters, ending in #Shorts. Put an EXACT publish time in the package notes, since the queue has no time field. Sawaal: 17:00–20:00 IST, Hindi only. Before choosing a slot, list every queued or scheduled Sawaal Short. If you can't see the queue, say so. Two Shorts on the same story: the closed question goes first, the second at least 3 hours later. After a 3× breakout, schedule a follow-up on the next official date (5 Nov SIR hearing, final roll) and compare with 81 views. Owner, open: make elephant, dog and parrot public; delete rQPOCx8wY6c; decide on uploads without a YouTube ID.
+Titles under 60 characters, ending in #Shorts. Put an EXACT publish time in the notes. Instinct: 19:00 Paris, with 05:00 as fallback. Sawaal: 17:00–20:00 IST. If you can't see the calendar, list the queued Shorts you know of and flag it. Put each Short's tags in the notes for the 48h log. Two Shorts on one story: closed question first, the other 3h+ later. Owner, open: make elephant, dog and parrot public; delete rQPOCx8wY6c; check uploads without a YouTube ID (magpie, Sankalp, Sawaal EN).
