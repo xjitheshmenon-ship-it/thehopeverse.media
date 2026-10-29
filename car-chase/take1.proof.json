@@ -1,0 +1,19 @@
+{
+  "title": "Hopeverse: Car Chase",
+  "take": 1,
+  "made_at_utc": "2026-10-29T05:57:40.242152+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v1",
+  "elevenlabs_song_id": "HP0QkcgnjS1vptEYcXEH",
+  "request": {
+    "prompt": "Relentless, thrilling car chase film score cue, composed and played like a real film composer's action cue, not a DJ mix, with a unique signature sound: the car's own sounds turned into instruments, mixed with broken, processed Carnatic instruments. 164 BPM driving action groove, E minor, lifting up a whole step to F sharp minor for the second chase. The car's sounds ARE part of the band: a deep engine rev tuned to the root note as the growling bass drone, gear-shift clunks as the snare accents, a tyre screech pitched and tuned into a short lead stab, the ticking turn indicator as the hi-hat, a car horn tuned into the low brass section, a distant two-note police siren used as a melodic call, not a riser. Broken Heritage layer: a glitch-chopped veena riff racing in sixteenth notes with the strings, mridangam pitched down as the bass hits, ghatam and kanjira as tight fast percussion. Signature motif: a rising 3-note call (root, up a minor third, up to the fifth, the last note held and bent upward) on a gritty synth lead in the first 5 seconds and again at the end. Underneath: urgent string ostinato in sixteenth notes, big brass stabs, real cinematic drums played by a drummer, taiko hits. Vocals: short deep male shouts 'hey!' on the big accents, no lyrics. Structure with composed transitions, each one different: 0-8 s ignition: the ticking indicator, a key turn, the engine idling on the root note, low pulsing strings, the 3-note call. 8-10 s: transition 1, a drummer's pickup fill and the engine roaring up, the only reversed veena swell of the track into one huge hit. 10-26 s: the chase theme: racing veena-and-strings ostinato, the brass playing a bold 4-bar theme, gear-shift snares, the tyre-screech stab answering each phrase; on the second pass the brass melody is varied and climbs higher. 26-30 s: transition 2, the surprise near-miss: the band falls away and a lone mridangam plays a fast Carnatic rhythmic cadence for two bars over just the engine drone, then the whole orchestra slams back in. 30-44 s: the second chase, up a whole step in F sharp minor, faster-feeling with double-time percussion, the police-siren two-note call woven into the strings as a counter-melody. 44-46 s: transition 3, a brass rip and a drummer's tom fill, no riser. 46-56 s: the climax: everything at full power, the theme in its biggest, highest version on brass and strings, taiko hits on every downbeat. 56-60 s: the escape: one final hit with a tuned tyre screech, then the engine settles and the 3-note call rings out alone on the veena. Something new happens at least every 8 seconds; the drums never thin out in the middle. No white-noise risers or filter sweeps between sections, no build-and-drop, no EDM drops, no stutters, no side-chain pumping, no DJ transitions; clear, tonal, punchy cinematic mix.",
+    "model_id": "music_v1",
+    "force_instrumental": false,
+    "music_length_ms": 60000
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct: 'Now make a car chase scene track'. Built like the locked Naughty Hero v3: rules 9.9 (own sounds) and 9.10 (composed transitions), fast lane (8d)."
+  },
+  "story": "A high-speed car chase through a night city, from ignition to the final escape.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
