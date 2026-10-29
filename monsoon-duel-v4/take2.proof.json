@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Monsoon Duel v4 (South Indian film STYLE, any instruments)",
+  "take": 2,
+  "made_at_utc": "2026-10-29T17:13:31.140126+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "RVZ6Eu5erps3P1b8hCdo",
+  "request": {
+    "prompt": "A modern South Indian blockbuster mass BGM for a sword duel in pouring monsoon rain, instrumental, 62 seconds, about 128 BPM. Played on a modern cinematic palette (gritty synth lead, distorted electric guitar, big strings, heavy modern drums, deep sub bass), but written and performed completely in the South Indian film style, not a Western trailer score. The melody is built on a Carnatic raga in minor mode, phrased like a singer: long notes that bend and slide up into the pitch, gamakam oscillations and grace notes on the synth lead and on the guitar, short repeated-note runs. The harmony sits on one drone and pedal bass, almost no chord changes, the melody carries the emotion. Opening: thunder, rain, and the lead alone sings a slow, aching raga phrase with deep bends over the drone. Then the hero theme arrives: a catchy, whistle-able 5-note mass hook, answered call-and-response by the strings. The groove is the Tamil mass-BGM bounce with hard off-beat accents and tight unison rhythmic stabs that hit with the melody, male chorus shouting 'hey!' on the hook's accents, sword clashes on the stabs. Around 32 seconds: everything stops, only rain, one beat of total silence, then the hook slams back bigger, a whole step higher, full band and chorus, the guitar and synth trading the hook with gamakam slides, faster and faster. Final unison hit and thunder, then rain and the lead sings the opening raga phrase once more, bending upward, fading. Glossy, loud, punchy, wide mix like a current Tamil hit film BGM. No Western epic trailer chord progressions, no choir 'ahh' pads, no EDM drop, no lyrics.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 62000
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct 17:10: 'Indian touch doesn't mean you have to use these instruments; it means the style of music, not the instruments.' v4 keeps a modern cinematic palette (synths, electric guitar, strings, big drums) but writes and plays it the South Indian film way (rule 15): a raga melody with gamakam bends on every lead, modal harmony over a drone pedal, the Tamil mass-BGM bounce and off-beat, the mass structure (whistle-able hero hook, call and response, one beat of silence, hook slams back bigger), chorus shouts on the accents. Rain and blade clashes stay as the scene sounds. Prompt mode (music_v2)."
+  },
+  "story": "Two warriors face each other in monsoon rain. Time stops between drops, then the storm breaks.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
