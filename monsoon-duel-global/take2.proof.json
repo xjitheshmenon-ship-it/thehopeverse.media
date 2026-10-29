@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Monsoon Duel (Global cut)",
+  "take": 2,
+  "made_at_utc": "2026-10-29T17:27:08.435607+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "dqDRGMbQdZlfdKZj0opG",
+  "request": {
+    "prompt": "An epic, international cinematic score for a sword duel in pouring monsoon rain, instrumental, 62 seconds, about 128 BPM, for a worldwide audience: a polished hybrid sound of orchestra, deep synth pulses, distorted cinematic guitar, huge drums and sub bass, wide and glossy. It is written in the South Indian film style: the melody follows a minor raga and is phrased like a singer, long notes that bend and slide into pitch with fast ornaments, played on a soaring synth lead and a solo cello; the harmony stays on one drone and pedal bass. Opening: thunder and rain, then the lone cello sings a slow, aching phrase with deep bends over a dark drone, a soft synth pulse and distant taiko join one at a time. By about 16 seconds the full groove lands with a huge hit: a driving, bouncing rhythm with off-beat accents, tight unison stabs that hit with the melody, sword-clash metallic hits on the stabs, a catchy 5-note hero hook answered call-and-response by the strings. Around 32 seconds everything stops, only rain, one beat of silence, then the hook slams back bigger, a whole step higher, full orchestra, guitar and synth trading the hook with bends, faster and faster. Final unison hit and thunder, then rain and the cello sings the opening phrase once more, bending upward, fading. No lyrics, no choir 'ahh' pads, no EDM drop.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 62000
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct 17:23: post both v4 takes in different ways with slight nuances, take 1 for the global audience and take 2 for the domestic (Indian) one, sounds chosen accordingly. Global cut = take 1's slow-burn shape with a shorter mystery (full by ~16 s, not 30 s), an international hybrid-trailer sound palette (orchestra, synths, guitar, huge drums), still written in the South Indian film style (rule 15) so the melody bends and the hook slams back bigger."
+  },
+  "story": "Two warriors face each other in monsoon rain. Time stops between drops, then the storm breaks.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
