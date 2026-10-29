@@ -1,0 +1,124 @@
+{
+  "title": "Hopeverse: Villain Wedding Theme v3 (stylish, a hook every 8-12 s)",
+  "story": "A stylish, suave villain makes his slow-motion entry at his own grand wedding.",
+  "brief": {
+    "notes": "Jithesh 29 Oct 10:17: every 8-12 s a transition with a proper hook (rule 9.11 tightened). v3 = v2's stylish swagger wedding, re-cut into 8-12 s sections, each landing on the hook; no break longer than 4 s (v2 had an 8 s lull)."
+  },
+  "seconds": 75,
+  "takes": 2,
+  "plan": {
+    "positive_global_styles": [
+      "a stylish, suave, swaggering villain's theme at his own grand South Indian wedding: cool, confident, groovy and celebratory, composed like a senior blockbuster film composer",
+      "slow-motion strut groove, about 90 BPM half-time, heavy and groovy",
+      "a catchy whistled 5-note signature hook that becomes the main melody, in a minor scale with Carnatic gamakam slides",
+      "balanced fusion: a real festive wedding band (nadaswaram, thavil, brass band) and real veena, mridangam and strings share the spotlight equally with fresh slick electronics (fat synth bass, crisp electronic drums, finger snaps)",
+      "a twangy veena riff played like a cool surf guitar, and a slick melodic bass line moving like a second melody",
+      "clean, wide, glossy, punchy mix",
+      "instrumental"
+    ],
+    "negative_global_styles": [
+      "horror",
+      "scary",
+      "eerie",
+      "dark ambient",
+      "sad",
+      "lullaby",
+      "music box",
+      "wall of synths",
+      "noisy",
+      "EDM drop",
+      "side-chain pumping",
+      "white-noise riser",
+      "vocals",
+      "singing",
+      "old-fashioned",
+      "lo-fi"
+    ],
+    "sections": [
+      {
+        "section_name": "Lighter and whistle",
+        "duration_ms": 8000,
+        "positive_local_styles": [
+          "the first sound: a metal lighter flick and a cool deep hit",
+          "then only two sounds: slow finger snaps and the villain's cool whistled 5-note hook"
+        ],
+        "negative_local_styles": [
+          "drums",
+          "bass",
+          "brass",
+          "strings"
+        ],
+        "lines": []
+      },
+      {
+        "section_name": "Bass answers",
+        "duration_ms": 8000,
+        "positive_local_styles": [
+          "transition: a slick melodic bass walks in and answers the whistled hook phrase by phrase"
+        ],
+        "negative_local_styles": [
+          "drums",
+          "brass"
+        ],
+        "lines": []
+      },
+      {
+        "section_name": "Wedding band",
+        "duration_ms": 10000,
+        "positive_local_styles": [
+          "transition: thavil enters, then the wedding nadaswaram plays the hook, brass swells, all locked to the villain's groove",
+          "ends with one full beat of silence"
+        ],
+        "negative_local_styles": [],
+        "lines": []
+      },
+      {
+        "section_name": "Swagger",
+        "duration_ms": 12000,
+        "positive_local_styles": [
+          "transition: a massive slam into the slow-motion strut, the hook on twangy veena like a surf guitar over a heavy half-time groove, finger snaps and fat synth bass"
+        ],
+        "negative_local_styles": [],
+        "lines": []
+      },
+      {
+        "section_name": "Celebration",
+        "duration_ms": 10000,
+        "positive_local_styles": [
+          "transition: the hook becomes a grand, joyous wedding melody on nadaswaram and brass band, festive thavil, strings counter-melody"
+        ],
+        "negative_local_styles": [],
+        "lines": []
+      },
+      {
+        "section_name": "Hook duel",
+        "duration_ms": 10000,
+        "positive_local_styles": [
+          "transition: the veena and the nadaswaram trade the hook back and forth, each answer shorter and faster, over the strut"
+        ],
+        "negative_local_styles": [],
+        "lines": []
+      },
+      {
+        "section_name": "Ketti melam",
+        "duration_ms": 11000,
+        "positive_local_styles": [
+          "transition: the ketti melam, a frenzied wedding drum roll on thavil, crashes in and the hook returns a half step higher, biggest and most stylish"
+        ],
+        "negative_local_styles": [],
+        "lines": []
+      },
+      {
+        "section_name": "Exit",
+        "duration_ms": 6000,
+        "positive_local_styles": [
+          "the whistled hook one last time, a lighter flick, one final cool hit, then stop"
+        ],
+        "negative_local_styles": [
+          "fade out"
+        ],
+        "lines": []
+      }
+    ]
+  }
+}
