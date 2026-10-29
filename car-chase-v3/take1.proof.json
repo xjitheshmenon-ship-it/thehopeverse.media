@@ -1,0 +1,19 @@
+{
+  "title": "Hopeverse: Car Chase v3 (heartbeat chase + konnakol surprise)",
+  "take": 1,
+  "made_at_utc": "2026-10-29T06:09:49.529810+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "IclupF4LFMBeVpnFhzfz",
+  "request": {
+    "prompt": "Breathless car chase film score cue, composed and played like a real film composer's action cue, not a DJ mix and not a generic old action BGM. The core idea: the listener's HEARTBEAT is the rhythm. A deep, close, physical heartbeat 'lub-dub' on a felt kick and low taiko is the spine of the whole track, and the main tune is phrased to lock onto every heartbeat, so the heart and the melody race together. It starts at a nervous heartbeat, then the heartbeat speeds up and doubles into a racing pulse at a true full 160 BPM drive, never half-time; the drums and a sixteenth-note string and veena ostinato run on top of the racing heartbeat. E minor. Signature sounds: the car's own sounds as instruments: a deep engine rev tuned to the root as the growling bass drone that rises in pitch as the car accelerates, gear-shift clunks as snare accents, a tyre screech tuned into a short lead stab, the ticking indicator as the hi-hat; plus a glitch-chopped veena riff and pitched-down mridangam hits. Signature motif: a rising 3-note call (root, up a minor third, up to the fifth, the last note held and bent upward) on a gritty synth lead in the first 5 seconds and again at the end. 0-8 s: silence-close heartbeat alone, slow and nervous, the engine idling on the root, the 3-note call. 8-12 s: the heartbeat speeds up bar by bar, the engine revs with it, a drummer's pickup fill, one reversed veena swell into the first big hit. 12-28 s: the chase: racing heartbeat pulse at full speed, the bold 4-bar brass and synth theme phrased exactly on the heartbeats, sixteenth-note strings and veena racing, tyre-screech stabs answering each phrase. 28-32 s: THE SURPRISE, the near miss: a HARD BRAKE: a long, loud tyre screech tuned to the root note as the whole orchestra plays one falling brass-and-strings slide down with it, the band brakes to a halt, and the engine stalls; then only the pounding heartbeat is left, leaving only the pounding heartbeat, and over it a deep male voice recites a fast Carnatic konnakol rhythm in spoken syllables ('ta ka dhi mi, ta ka jhu nu, ta-ka-dhi-mi-ta-ka-jhu-nu') perfectly on the heartbeat, faster and faster, then on the last syllable the full orchestra and drums slam back in together with a huge hit. 30-46 s: the second chase, up a whole step, the heartbeat even harder, the theme varied and climbing, a strings counter-melody, call-and-response shouts 'hey!'. 46-56 s: the climax, everything at full power, the heartbeat and the tune hitting together on every downbeat. 56-60 s: the escape, a second surprise: after the final hit there is a beat of quiet, a car door slams shut in rhythm, the engine switches off, the heartbeat slows to calm, and the 3-note call rings out alone on the veena. Something new happens at least every 8 seconds; the drive never drops in the middle. No white-noise risers or filter sweeps, no build-and-drop, no EDM drops, no stutters, no side-chain pumping, no DJ transitions; clear, tonal, punchy cinematic mix.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 60000
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct on v2: really good, but missing the surprise factor. v3: same heartbeat chase, plus a composed surprise at 28-32 s (konnakol burst over the heartbeat) and a surprise ending. Jithesh 06:08: add at least one hard braking (now at 28 s, leading into the konnakol)."
+  },
+  "story": "A high-speed car chase through a night city, from ignition to the final escape.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
