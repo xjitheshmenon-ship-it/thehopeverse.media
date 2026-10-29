@@ -1,0 +1,19 @@
+{
+  "title": "Hopeverse: Tamil Dance Number v4 (modern 2020s kuthu anthem)",
+  "take": 1,
+  "made_at_utc": "2026-10-29T08:01:26.621581+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "Uy9Kg3H0VMDFFg3L2JRZ",
+  "request": {
+    "prompt": "Brand-new 2020s Tamil film mass dance anthem, the kind a packed theatre stands up and dances to today. Instrumental, no singing, no words. Tempo about 100 BPM with the bouncy, swinging Tamil kuthu beat: a hard, punchy programmed thappu pattern locked with a big modern kick and a deep, gliding 808 sub bass, crisp claps and tight percussion, very modern, loud, glossy, club-ready mix. The lead is a catchy, simple, instantly hummable Tamil dance hook played on a bright, bent, chopped nadaswaram-style synth that sounds futuristic, answered by fat synth brass stabs and bright plucks. Fresh sound design: kanjira and ghatam hits turned into glitchy electronic percussion, a pitched-down thavil hit as the bass punch, whistles and big crowd 'hey!' shouts only as accents. Structure: the hook synth starts alone, the kuthu beat and the bass slam in by 8 seconds; a new section every 10 to 15 seconds: hook, a bouncier groove section, a short break where the bass steps out and only the hook synth and claps play, then the hook comes back bigger with brass; a dance-step section where the beat switches to a straight, hard four for a few bars as a surprise, then snaps back to the kuthu bounce; the final hook is the biggest, ending on one huge hit. Not old-fashioned, not a folk ensemble recording, not vintage 80s or 90s film music, not lo-fi, not Western pop, not Arabic, not EDM festival drop, no side-chain pumping.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 75000
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct on v3: not Tamil style, not a dance track, sounds 30-40 years old, pathetic. v1 (modern production) he called really good but not Tamil. v4 = v1's modern production + an unmistakable present-day Tamil kuthu beat, no folk-ensemble sound, no words. Prompt mode so music_v2 (better sound) is used."
+  },
+  "story": "A Tamil film hero's mass dance number at a packed night street party.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
