@@ -116,6 +116,13 @@ class Dub(BaseModel):
     lines: list[DubLine]
 
 
+# Sankalp and Sawaal: the Hindi voice read digits as Hindi number words and got them wrong (owner, 29 Oct), and
+# Indian news anchors say numbers in English anyway.
+ENGLISH_NUMBERS = (" In narration, say every number, year, date, percentage and amount the way Hindi news anchors do, "
+                   "in English words written in Devanagari, never as digits or Hindi number words: 'ट्वेंटी फाइव परसेंट', "
+                   "'टू थाउज़ेंड ट्वेंटी फाइव', 'वन पॉइंट फाइव लाख करोड़ रुपये', 'फिफ्टीन अगस्त'. on_screen_text keeps digits.")
+
+
 def dub(path: Path, channel: dict) -> Path:
     """Write a translated copy of an outbox package for a dub channel; the scenes keep the original footage."""
     package = json.loads(path.read_text(encoding="utf-8"))
@@ -130,7 +137,8 @@ def dub(path: Path, channel: dict) -> Path:
                    "translation: keep the curiosity hook, swap examples or units for local ones where it helps, and "
                    "keep every fact true. Give one line per scene, in the same order, so it still matches the "
                    "footage; on_screen_text at most 8 words. Title under 100 characters, description with hashtags "
-                   "ending in #Shorts.\n\nTitle: " + package["title"] + "\n\nDescription: " + package["description"]
+                   "ending in #Shorts." + ENGLISH_NUMBERS * bool(channel.get("dub"))
+                   + "\n\nTitle: " + package["title"] + "\n\nDescription: " + package["description"]
                    + "\n\nScenes:\n" + json.dumps([[s.narration, s.on_screen_text] for s in board.scenes],
                                                     ensure_ascii=False)}],
         output_format=Dub,
