@@ -1,0 +1,149 @@
+{
+  "title": "Hopeverse: Tamil Dance Number v6 (v5 + wow factor)",
+  "take": 1,
+  "made_at_utc": "2026-10-29T09:35:47.247504+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v1",
+  "elevenlabs_song_id": "wGc9W3nJxp8QlFvP7Qaf",
+  "request": {
+    "composition_plan": {
+      "positive_global_styles": [
+        "modern 2020s Tamil film dance number with a bouncy kuthu groove, about 100 BPM",
+        "balanced fusion: real acoustic instruments (veena, mridangam, nadaswaram, bamboo flute, thappu drum, strings, brass) share the spotlight equally with fresh modern electronic sounds (deep 808 sub, crisp electronic kick and claps, a bent synth lead, glitchy textures)",
+        "clean, spacious, punchy mix where every instrument is clearly heard",
+        "instrumental",
+        "one short, catchy 5-note signature riff that is the earworm of the track, repeated with small variations"
+      ],
+      "negative_global_styles": [
+        "wall of synths",
+        "noisy",
+        "distorted",
+        "EDM drop",
+        "side-chain pumping",
+        "white-noise riser",
+        "vocals",
+        "chanting",
+        "old-fashioned",
+        "vintage film music",
+        "lo-fi",
+        "Arabic melody"
+      ],
+      "sections": [
+        {
+          "section_name": "Mystery",
+          "duration_ms": 8000,
+          "positive_local_styles": [
+            "the very first sound is striking: a deep bent veena note with a cinematic low boom",
+            "then only two sounds: the lone real veena plays a slow mysterious phrase (a rising 3-note call: root, minor third, fifth, bent up) over a soft deep electronic drone"
+          ],
+          "negative_local_styles": [
+            "drums",
+            "percussion",
+            "bass",
+            "synth lead",
+            "strings",
+            "brass"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Second voice",
+          "duration_ms": 6000,
+          "positive_local_styles": [
+            "a real mridangam quietly taps the kuthu pattern under the veena",
+            "still no beat, no bass"
+          ],
+          "negative_local_styles": [
+            "kick",
+            "bass",
+            "brass",
+            "strings"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Build",
+          "duration_ms": 8000,
+          "positive_local_styles": [
+            "a soft electronic kick and claps join",
+            "a bent synth answers the veena phrase",
+            "strings swell in slowly",
+            "the build ends with one full beat of total band silence"
+          ],
+          "negative_local_styles": [
+            "brass",
+            "808"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Groove lands",
+          "duration_ms": 12000,
+          "positive_local_styles": [
+            "a massive slam after the silence: huge low thavil hit, brass blast and a whistle",
+            "the full kuthu groove: real thappu drum with the electronic kick and deep 808 bass",
+            "the real nadaswaram states the catchy 5-note signature riff clearly, the synth lead answers it"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "New colour",
+          "duration_ms": 12000,
+          "positive_local_styles": [
+            "a duel: the real nadaswaram and the synth lead trade the signature riff back and forth, each answer shorter and faster",
+            "real bamboo flute and glitchy electronic kanjira textures",
+            "brass punches"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "Breath",
+          "duration_ms": 4000,
+          "positive_local_styles": [
+            "bass and drums step out, played by the band",
+            "only the veena and one soft synth remain"
+          ],
+          "negative_local_styles": [
+            "bass",
+            "drums"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Hook step",
+          "duration_ms": 12000,
+          "positive_local_styles": [
+            "double-time thappu drum rolls crash into it",
+            "surprise: the rhythm switches to a straight, hard four-beat pattern",
+            "the biggest hook: the signature riff on nadaswaram and synth brass in unison"
+          ],
+          "negative_local_styles": [
+            "swing"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Final hook",
+          "duration_ms": 13000,
+          "positive_local_styles": [
+            "the key lifts up a whole step",
+            "back to the kuthu bounce with everything, the signature riff played biggest: real instruments and electronics in balance",
+            "ends on one big unison hit, then stop"
+          ],
+          "negative_local_styles": [
+            "fade out"
+          ],
+          "lines": []
+        }
+      ]
+    },
+    "model_id": "music_v1"
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct liked v5's sounds, instruments and style (real Tamil movie BGM) but it lacks a wow / attention factor. v6 keeps v5 and adds rule 9.13: earworm riff, a grab in the first 3 s, silence-then-slam entry, nadaswaram vs synth duel, double-time rolls, key lift on the last hook."
+  },
+  "story": "A Tamil film hero's mass dance number at a night street festival.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
