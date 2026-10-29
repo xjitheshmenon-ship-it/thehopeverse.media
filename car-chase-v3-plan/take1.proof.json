@@ -1,0 +1,154 @@
+{
+  "title": "Hopeverse: Car Chase v3 (section plan: hard brake + konnakol surprise)",
+  "take": 1,
+  "made_at_utc": "2026-10-29T06:30:10.565251+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v1",
+  "elevenlabs_song_id": "eJKfC6aFmK1bsn4ZKEsr",
+  "request": {
+    "composition_plan": {
+      "positive_global_styles": [
+        "breathless car chase film score cue, composed like a film composer, not a DJ mix",
+        "E minor",
+        "a deep close heartbeat 'lub-dub' on felt kick and low taiko as the rhythmic spine, the tune locked to it",
+        "the car's own sounds as instruments: engine rev tuned to the root as bass drone, gear-shift clunks as snare, tuned tyre-screech stabs, ticking indicator as hi-hat",
+        "glitch-chopped veena riff and pitched-down mridangam hits",
+        "sixteenth-note string ostinato, big brass, real drummer",
+        "clear, tonal, punchy cinematic mix"
+      ],
+      "negative_global_styles": [
+        "EDM drop",
+        "white-noise riser",
+        "filter sweep",
+        "side-chain pumping",
+        "DJ transition",
+        "dubstep",
+        "lyrics",
+        "singer"
+      ],
+      "sections": [
+        {
+          "section_name": "Ignition",
+          "duration_ms": 8000,
+          "positive_local_styles": [
+            "only a slow nervous close heartbeat",
+            "engine idling on the root",
+            "ticking indicator",
+            "a gritty synth plays a rising 3-note call: root, minor third, fifth, held and bent up"
+          ],
+          "negative_local_styles": [
+            "full drums",
+            "brass"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Heartbeat speeds up",
+          "duration_ms": 4000,
+          "positive_local_styles": [
+            "the heartbeat speeds up bar by bar",
+            "engine revs up with it",
+            "drummer's pickup fill",
+            "one reversed veena swell into a huge hit"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "Chase",
+          "duration_ms": 16000,
+          "positive_local_styles": [
+            "racing heartbeat pulse at full 160 BPM drive",
+            "bold 4-bar brass and synth theme phrased on the heartbeats",
+            "sixteenth-note strings and veena racing",
+            "tuned tyre-screech stabs answering each phrase"
+          ],
+          "negative_local_styles": [
+            "half-time",
+            "slow"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Hard brake",
+          "duration_ms": 3000,
+          "positive_local_styles": [
+            "a long loud tyre screech of a car braking hard",
+            "the orchestra slides down in pitch with the brake and stops dead",
+            "engine stalls"
+          ],
+          "negative_local_styles": [
+            "drums continuing"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Konnakol over the heartbeat",
+          "duration_ms": 3000,
+          "positive_local_styles": [
+            "only the pounding heartbeat",
+            "a deep male voice recites fast Carnatic konnakol rhythm syllables exactly on the heartbeat, getting faster"
+          ],
+          "negative_local_styles": [
+            "orchestra",
+            "drums",
+            "engine",
+            "melody"
+          ],
+          "lines": [
+            "ta ka dhi mi, ta ka jhu nu, ta ka dhi mi ta ka jhu nu"
+          ]
+        },
+        {
+          "section_name": "Second chase",
+          "duration_ms": 14000,
+          "positive_local_styles": [
+            "the full orchestra and drums slam back in together with a huge hit",
+            "up a whole step to F sharp minor",
+            "the heartbeat even harder, double-time percussion",
+            "the theme varied and climbing, strings counter-melody",
+            "short male shouts 'hey!'"
+          ],
+          "negative_local_styles": [
+            "half-time"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Climax",
+          "duration_ms": 8000,
+          "positive_local_styles": [
+            "everything at full power",
+            "the theme in its biggest highest version on brass and strings",
+            "taiko and heartbeat hitting together on every downbeat"
+          ],
+          "negative_local_styles": [
+            "thinning out"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Escape",
+          "duration_ms": 4000,
+          "positive_local_styles": [
+            "one final hit",
+            "a beat of quiet, a car door slams shut, the engine switches off",
+            "the heartbeat slows to calm",
+            "the rising 3-note call rings out alone on a veena"
+          ],
+          "negative_local_styles": [
+            "drums",
+            "full orchestra"
+          ],
+          "lines": []
+        }
+      ]
+    },
+    "model_id": "music_v1"
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct: v2 really good but missing the surprise factor; add at least one hard braking. Prompt-only takes ignored the timed brake/konnakol, so this uses an ElevenLabs composition plan that holds each section's length."
+  },
+  "story": "A night car chase, from ignition to escape.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
