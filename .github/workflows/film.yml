@@ -51,6 +51,7 @@ jobs:
         run: |
           mkdir -p "out/films/$NAME" && cp films/"$NAME"/raw-*.mp4 "out/films/$NAME/" 2>/dev/null || true
           cp "films/$NAME.mp4" out/films/ 2>/dev/null || true
+          git config --global user.name hope && git config --global user.email hope@users.noreply.github.com  # rebase on pull needs it too
           cd out && git checkout -q -B music-tracks
           git add . && git -c user.name=hope -c user.email=hope@users.noreply.github.com commit -qm "Film: $NAME" || exit 0
           for i in 1 2 3; do git pull -q --rebase origin music-tracks && git push "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" music-tracks && exit 0; sleep 5; done; exit 1  # a track and a film can finish together
