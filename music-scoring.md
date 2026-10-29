@@ -161,6 +161,28 @@ Numbers in /mnt/project-files/music/refs-2026-10-28b/study.txt. What they share:
 - **Loop hooks:** the groove clips repeat a 2-4 beat riff almost identically (similarity 2.3-3.4); the melodic ones have a lead that spans 26-36 semitones in short, stepwise notes (72-97% steps).
 - **Stereo:** width 0.24-0.56. Natural left-right travel is 0.1-0.38 per s in every band, and even the bass moves a little. So the ear-to-ear travel is a rare moment (rule 9.6), never a constant sweep.
 
+### 8e. Study: Tamil and Telugu film dance numbers, and how we make one fresh (29 Oct 2026)
+
+Jithesh asked for a Tamil film dance track: fusion, a fresh sound, but keeping the style. This study is from knowledge of the genre (no clips measured yet; ask him for phone recordings to add numbers).
+
+The style we must keep (what makes a listener say "kuthu" or "mass song" in two seconds):
+- **Tamil kuthu**: the thappu/parai groove in a triplet swing (tisra nadai, the "dappan" lilt), about 95-105 BPM in the swung beat. Big open drum, low and loud, never a thin loop.
+- **Telugu mass**: the dappu drum and the three-stroke "teen maar" pattern, straighter and faster (about 120-140 BPM), a wedding-band brass and shehnai/nadaswaram hook, and group shouts.
+- **Shared parts**: a hook riff on a reed (nadaswaram/shehnai) or a chant in the first 5 s; call-and-response group "hey" shouts; a "hook step" section where the groove locks and the whole crowd dances one move; a drum-only interlude (the drummers' showdown, speeding up); a final hook louder than the first; an ending on one unison hit and a stop.
+
+What is already everywhere and sounds old (avoid it):
+- The EDM drop over a kuthu beat, trap hi-hats, side-chain pumping, auto-tuned vocals.
+- The same loop of nadaswaram sample, the same brass stab on every beat, the stadium whistle.
+- Endless fast English hook lines over a stock 4-on-the-floor kick.
+
+Our fresh version ("Broken Heritage kuthu"), keeping the style but changing the sounds:
+1. The real groove stays: thappu/parai triplet swing as the spine, played big and live.
+2. The sounds change: the thavil is pitched down into the bass, the nadaswaram is chopped and bent into the lead synth (rule 9.1), ghatam and kanjira are the glitchy top percussion.
+3. The chant hook is konnakol vocables (ta ka dhi mi, ta ka jhu nu), sung as a crowd chant, not lyrics. Nobody has made a kuthu hook out of konnakol.
+4. The surprise (rule 9.7) is a Carnatic nadai change: the hook step switches from triplet swing to a straight four for one section, then snaps back. It is a composed rhythm change, not a DJ trick (rule 9.10).
+5. The drummers' showdown ends on a korvai: a phrase played three times that lands exactly on beat one.
+6. Identity: the 3-note motif in the first 5 s and the last hit; one reversed veena swell into the main hook.
+
 ## 9. Our sound identity: "Broken Heritage + sonic logo" (Jithesh chose it, 28 Oct 2026)
 
 Jithesh: "everything is good, but there is no uniqueness; we need our own identity." Identity = fixed signatures in every track, so a listener knows it is ours in 3 seconds. Every brief must carry all five:

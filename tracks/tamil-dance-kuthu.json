@@ -1,0 +1,58 @@
+{
+  "title": "Hopeverse: Tamil Dance Number (Broken Heritage kuthu)",
+  "story": "A Tamil film dance number: the hero and the crowd take over the street festival.",
+  "brief": {
+    "notes": "Jithesh 29 Oct: a dance track for a Tamil movie, fusion, fresh sounds, but keeping the Tamil/Telugu dance style. Study in music-scoring.md 8e. Composition plan so the nadai-change surprise and the showdown land on time."
+  },
+  "seconds": 90,
+  "takes": 1,
+  "plan": {
+    "positive_global_styles": [
+      "South Indian film dance number, street festival energy, composed like a film composer, not a DJ mix",
+      "kuthu groove: big live thappu and parai frame drums in a swung triplet feel, about 100 BPM",
+      "A minor, bright and festive",
+      "thavil pitched down as the bass, chopped and bent nadaswaram as the lead synth, ghatam and kanjira as glitchy top percussion",
+      "crowd chant of konnakol syllables as the hook, group 'hey' shouts",
+      "wedding-band brass punches, cinematic strings",
+      "loud, clear, punchy mix with deep drums"
+    ],
+    "negative_global_styles": [
+      "EDM drop",
+      "trap hi-hats",
+      "auto-tune",
+      "side-chain pumping",
+      "white-noise riser",
+      "filter sweep",
+      "dubstep",
+      "four-on-the-floor house kick",
+      "lyrics",
+      "solo singer"
+    ],
+    "sections": [
+      {"section_name": "Hook call", "duration_ms": 8000,
+       "positive_local_styles": ["a bent nadaswaram synth plays a rising 3-note call: root, minor third, fifth, held and bent up", "a lone parai teases the swing", "one crowd 'hey'"],
+       "negative_local_styles": ["full drums"], "lines": []},
+      {"section_name": "Drums enter", "duration_ms": 8000,
+       "positive_local_styles": ["full thappu and parai triplet groove crashes in", "call-and-response 'hey' shouts", "pitched-down thavil bass"],
+       "negative_local_styles": [], "lines": ["hey! hey!"]},
+      {"section_name": "Chant groove", "duration_ms": 16000,
+       "positive_local_styles": ["crowd chants konnakol syllables on the groove", "chopped nadaswaram riff answers each chant", "ghatam and kanjira glitch fills"],
+       "negative_local_styles": [], "lines": ["ta ka dhi mi, ta ka jhu nu", "ta ka dhi mi, ta ka jhu nu"]},
+      {"section_name": "Build", "duration_ms": 6000,
+       "positive_local_styles": ["drummers play a pickup fill that speeds up", "brass climbs", "one reversed veena swell into a huge unison hit"],
+       "negative_local_styles": ["white-noise riser"], "lines": []},
+      {"section_name": "Hook step", "duration_ms": 16000,
+       "positive_local_styles": ["the rhythm switches from triplet swing to a straight four-beat dappu pattern, a surprise change of gait", "the main hook: crowd chant and brass in unison", "everyone dances one move"],
+       "negative_local_styles": ["swing"], "lines": ["dhi mi dhi mi, ta ka ta!"]},
+      {"section_name": "Drummers' showdown", "duration_ms": 12000,
+       "positive_local_styles": ["back to the triplet swing", "only drums and konnakol voice trading phrases, speeding up", "ends on a phrase played three times that lands exactly on beat one"],
+       "negative_local_styles": ["synth", "strings"], "lines": ["ta ka dhi mi ta, ta ka dhi mi ta, ta ka dhi mi ta"]},
+      {"section_name": "Final hook", "duration_ms": 16000,
+       "positive_local_styles": ["highest energy: full triplet kuthu groove, brass, strings, crowd chant, nadaswaram synth lead", "louder than the first hook"],
+       "negative_local_styles": [], "lines": ["ta ka dhi mi, ta ka jhu nu, hey!"]},
+      {"section_name": "Ending", "duration_ms": 8000,
+       "positive_local_styles": ["the 3-note call again on the nadaswaram synth over the drums", "one big unison hit, then stop"],
+       "negative_local_styles": ["fade out"], "lines": []}
+    ]
+  }
+}
