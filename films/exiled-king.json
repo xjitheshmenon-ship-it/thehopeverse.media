@@ -1,6 +1,7 @@
 {
   "title": "They exiled him 3 years ago. Today he came back.",
   "music": "films/exiled-king.mp3",
+  "description": "Three years ago the herd drove him out. Today the black stallion came back to the mountains, and the young king of the valley had to answer.\n\nWorld 01 of ÆTHER, where sound becomes a world. Music: The Return by ÆTHER (original score). Turn the volume up.\n\n#cinematic #bgm #horse #epicmusic #shorts",
   "look": "cinematic film still, shot on ARRI Alexa with anamorphic lenses, shallow depth of field, moody teal and amber colour grade, film grain, photorealistic, vertical 9:16, no text, no people. The hero is the same horse in every shot: a huge jet-black Friesian-type stallion, long wavy black mane, a thin white scar across his left shoulder, the rival is a young dapple-grey stallion",
   "shots": [
     {"end": 3, "text": "They exiled him 3 years ago.", "prompt": "Aerial drone shot pushing in over a black sand beach in a storm, crashing white waves, sea fog, a lone black stallion standing far away at the water's edge"},
@@ -16,6 +17,6 @@
     {"end": 41, "prompt": "The black stallion and the dapple-grey stallion rear up face to face and clash in an alpine meadow, dust and grass flying, slow motion"},
     {"end": 46, "prompt": "Close-up of the black stallion's head pushing forward, flared nostrils, steam from his breath, determined eye, slow motion"},
     {"end": 52, "prompt": "The dapple-grey stallion turns away and trots off down the valley, the black stallion stands still and watches, the herd behind him"},
-    {"end": 60, "text": "Kings don't ask. They return.", "prompt": "Slow orbiting drone shot around the black stallion standing on a mountain ridge at golden hour, the herd of wild horses gathered behind him, clouds below the peaks"}
+    {"end": 60, "prompt": "Slow orbiting drone shot around the black stallion standing on a mountain ridge at golden hour, the herd of wild horses gathered behind him, clouds below the peaks"}
   ]
 }
