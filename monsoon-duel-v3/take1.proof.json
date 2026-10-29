@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Monsoon Duel v3 (South Indian film score, raga Amritavarshini)",
+  "take": 1,
+  "made_at_utc": "2026-10-29T17:10:29.372515+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "etyY5U3PZno7uIRVev0Q",
+  "request": {
+    "prompt": "A modern South Indian (Tamil and Malayalam) blockbuster film BGM for a sword duel in pouring monsoon rain, instrumental, 62 seconds, about 128 BPM, unmistakably Indian, not a Western trailer score. The melody is in the Carnatic raga Amritavarshini, the rain raga, sung with heavy gamakam slides and oscillations. At second zero: a Kerala kombu horn cries out over a thunder boom and a chenda slam, then only rain and a lone nadaswaram playing a slow, aching raga phrase over a tanpura drone. An edakka talking drum answers it, bending its pitch. Then a Kerala chenda melam starts, fast rolling chenda strokes with ilathalam cymbals and thavil, building layer by layer, raindrops and sword blades ringing in rhythm. At about 16 seconds the mass groove lands: a huge Tamil mass-BGM bounce with a deep modern kick and sub bass under the chenda and thavil, a South Indian film violin section plays the catchy 5-note hero hook in unison with slides, a male chorus shouts 'hey!' on the off-beats, sword clashes hit on the accents. A venu flute and the nadaswaram trade the hook in fast call and response, each answer faster. At about 32 seconds everything stops dead except the rain; slow single drops and a lone veena plays the hook with deep gamakam bends, one heartbeat of silence. Then a massive slam: the full chenda melam, thavil and kombu horns explode, the violins and nadaswaram play the hook a whole step higher, the chorus chants, the biggest moment of the track. A fast chenda and thavil showdown builds to one final unison hit and thunder, then only rain and the nadaswaram plays the opening raga phrase one last time, fading. Modern, glossy, loud, punchy, wide mix like a current Tamil or Malayalam hit film; Indian instruments up front, modern bass and drums underneath. No Western epic brass, no choir 'ahh' pads, no EDM drop, no synth lead, no lyrics.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 62000
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct 17:07 on v2: 'it's all same, Western music kind of thing. That Indian touch is not coming. I need that Indian touch, especially South Indian movie music touch.' v3: the melody, rhythm and colour are Indian, the West only supports. Melody in raga Amritavarshini (the rain raga) with gamakam on nadaswaram, venu flute and a South Indian film violin section in unison with slides; rhythm is a Kerala chenda melam with thavil, edakka, ilathalam cymbals and kombu horn cries (panchavadyam colour), a Tamil mass-BGM bounce with a big modern kick and sub under it; wordless male chorus chants 'hey' shouts like a Tamil mass BGM. Rain and blade clashes kept as the scene sounds. Prompt mode so it runs on music_v2 (plan mode falls back to music_v1). No odd meter (ElevenLabs ignores it)."
+  },
+  "story": "Two Kalari warriors face each other in monsoon rain. Time stops between drops, then the storm breaks.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
