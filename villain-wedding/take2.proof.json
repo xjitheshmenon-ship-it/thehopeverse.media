@@ -1,0 +1,145 @@
+{
+  "title": "Hopeverse: Villain Wedding Theme v1 (calm menace at his own wedding)",
+  "take": 2,
+  "made_at_utc": "2026-10-29T10:08:06.985531+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v1",
+  "elevenlabs_song_id": "qz35BUV3SDTsUZ1hG1Ix",
+  "request": {
+    "composition_plan": {
+      "positive_global_styles": [
+        "modern South Indian film villain theme set at the villain's own grand wedding, festive on the surface and menacing underneath, cinematic, elegant, composed like a senior blockbuster film composer, about 80 BPM half-time",
+        "melody in a dark raga like a minor scale with a flat second and a raised fourth, with Carnatic gamakam slides; a singable, sinister theme of question-and-answer phrases with a short 5-note signature riff",
+        "balanced fusion: real instruments (veena, low nadaswaram, mridangam, thavil, violin, cello section, low brass) share the spotlight equally with fresh dark electronics (deep sub, distorted bent synth, glitchy textures)",
+        "the villain's own sounds as instruments: slow leather-boot footsteps as the pulse, a metal lighter flick as an accent, temple bells and anklet bells as percussion, a ticking pocket watch as the hi-hat, slow menacing claps",
+        "counterpoint: cellos play a counter-melody and a melodic bass line moves like a second melody",
+        "clean, wide, polished cinematic mix with deep sub and dark reverb",
+        "instrumental"
+      ],
+      "negative_global_styles": [
+        "wall of synths",
+        "noisy",
+        "EDM drop",
+        "dubstep",
+        "side-chain pumping",
+        "white-noise riser",
+        "filter sweep",
+        "horror movie cliche screeches",
+        "vocals",
+        "singing",
+        "old-fashioned",
+        "lo-fi"
+      ],
+      "sections": [
+        {
+          "section_name": "Lighter and footsteps",
+          "duration_ms": 8000,
+          "positive_local_styles": [
+            "the first sound is striking: a metal lighter flick and a deep cinematic boom",
+            "then only two sounds: slow boot footsteps on wet stone and a lone low veena plucking a rising 3-note call (root, minor third, fifth), bent down"
+          ],
+          "negative_local_styles": [
+            "drums",
+            "strings",
+            "brass",
+            "synth lead"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "The whistle",
+          "duration_ms": 6000,
+          "positive_local_styles": [
+            "the villain's theme is whistled softly over the footsteps",
+            "a soft deep sub drone enters"
+          ],
+          "negative_local_styles": [
+            "drums",
+            "brass"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Closing in",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "one layer at a time: a slow low thavil pulse like a heartbeat, a temple bell, a low cello ostinato, then a bent dark synth answering the veena",
+            "the build ends with one full beat of total silence"
+          ],
+          "negative_local_styles": [
+            "brass",
+            "full drums"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Reveal",
+          "duration_ms": 12000,
+          "positive_local_styles": [
+            "a massive slam: huge low brass and a pitched-down mridangam hit",
+            "the full theme on the wedding nadaswaram played dark and low, answered by a distorted synth",
+            "cellos in counterpoint, melodic bass line, half-time crushing groove"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "Calm menace",
+          "duration_ms": 12000,
+          "positive_local_styles": [
+            "surprise: a sweet, festive wedding melody on nadaswaram with light thavil, like a real wedding band, the villain's theme hidden inside it",
+            "a lone violin echoes it softly, the pocket watch ticks",
+            "a soft sub keeps the danger underneath"
+          ],
+          "negative_local_styles": [
+            "heavy drums",
+            "brass"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Breath",
+          "duration_ms": 4000,
+          "positive_local_styles": [
+            "only the ticking watch and a low cello note"
+          ],
+          "negative_local_styles": [
+            "drums",
+            "synth"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Rage",
+          "duration_ms": 13000,
+          "positive_local_styles": [
+            "the ketti melam: a fast, frenzied wedding drum roll on thavil and a racing nadaswaram, as at the tying of the knot, turning into the villain's theme",
+            "the theme lifted up a half step, climbing",
+            "full orchestra and dark electronics in balance, cellos and violins in counterpoint, heavy low drums"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "Exit",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "everything stops for the lone whistled theme and the lighter flick",
+            "the 3-note call one last time on the veena",
+            "one final deep boom, then silence"
+          ],
+          "negative_local_styles": [
+            "fade out"
+          ],
+          "lines": []
+        }
+      ]
+    },
+    "model_id": "music_v1"
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct: a fresh villain BGM, and his wedding (10:05). Built on rules 9.1-9.14: villain's own sounds as instruments (boots, lighter flick, chain, pocket watch, slow claps, whistled theme), mystery start with two sounds, change every 8-18 s, acoustic/electronic balance, wow moments (silence-then-slam, sweet lullaby version of the theme, key lift), senior-composer craft (raga melody, counterpoint, melodic bass). Composition plan. Wedding layer: the wedding nadaswaram and thavil band (melam) played dark, temple bells and anklet bells as percussion, the ketti melam drum frenzy at the knot as the climax."
+  },
+  "story": "The villain's wedding: festive wedding music on the surface, menace underneath; at the knot, the ketti melam drum frenzy becomes his theme.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
