@@ -14,6 +14,9 @@ on:
       post:
         description: "Channel to upload the finished film to (empty = review only)"
         default: ""
+      video:
+        description: "With post: the id of a film already posted there; only its title and description are rewritten"
+        default: ""
 
 permissions:
   contents: write
@@ -26,6 +29,7 @@ jobs:
       HEYGEN_API_KEY: ${{ secrets.HEYGEN_API_KEY }}
       NAME: ${{ inputs.name }}
       POST: ${{ inputs.post }}
+      VIDEO: ${{ inputs.video }}
     steps:
       - uses: actions/checkout@v5
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core && pip install -q -r requirements.txt fal-client imageio-ffmpeg
@@ -47,6 +51,7 @@ jobs:
         run: |
           mkdir -p "out/films/$NAME" && cp films/"$NAME"/raw-*.mp4 "out/films/$NAME/" 2>/dev/null || true
           cp "films/$NAME.mp4" out/films/ 2>/dev/null || true
+          git config --global user.name hope && git config --global user.email hope@users.noreply.github.com  # rebase on pull needs it too
           cd out && git checkout -q -B music-tracks
           git add . && git -c user.name=hope -c user.email=hope@users.noreply.github.com commit -qm "Film: $NAME" || exit 0
           for i in 1 2 3; do git pull -q --rebase origin music-tracks && git push "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" music-tracks && exit 0; sleep 5; done; exit 1  # a track and a film can finish together

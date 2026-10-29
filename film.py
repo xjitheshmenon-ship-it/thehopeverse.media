@@ -2,6 +2,7 @@
 
     python film.py films/exiled-king.json   -> films/exiled-king.mp4 (not uploaded; the owner reviews it first)
     POST=yt-aether python film.py ...       -> also uploads it there (film.yml input "post", after the owner's review)
+    POST=yt-aether VIDEO=<id> python film.py ...  -> only rewrites that posted film's title and description
 
 The shots' "end" times follow the track's sections (tease, hit, walk, drop, mass, punch), so the cuts land on the music.
 HeyGen Video first (HEYGEN_API_KEY, about $0.09 a 5 s shot, slowed down to fill longer shots), else Kling on fal.ai
@@ -28,6 +29,16 @@ FF = shutil.which("ffmpeg") or get_ffmpeg_exe()  # the system ffmpeg has drawtex
 
 film_path = Path(sys.argv[1])
 film = json.loads(film_path.read_text(encoding="utf-8"))
+if video_id := os.environ.get("VIDEO"):
+    from google.oauth2.credentials import Credentials
+    from googleapiclient.discovery import build
+    channel = next(c for c in json.loads(Path("channels.json").read_text(encoding="utf-8")) if c["id"] == os.environ["POST"])
+    yt = build("youtube", "v3", credentials=Credentials.from_authorized_user_file(channel["token"]))  # connect.py's full scope
+    snippet = yt.videos().list(part="snippet", id=video_id).execute()["items"][0]["snippet"]
+    yt.videos().update(part="snippet", body={"id": video_id, "snippet": {
+        **{k: snippet[k] for k in ("categoryId", "tags", "defaultLanguage", "defaultAudioLanguage") if k in snippet},
+        "title": film["title"][:100], "description": f"{film.get('description', film['title'])}\n\n{channel['footer']}"}}).execute()
+    sys.exit(print(f"Updated https://youtu.be/{video_id}"))
 work = film_path.with_suffix("")
 work.mkdir(exist_ok=True)
 starts = [0] + [s["end"] for s in film["shots"][:-1]]
