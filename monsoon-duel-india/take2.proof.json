@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Monsoon Duel (India cut)",
+  "take": 2,
+  "made_at_utc": "2026-10-29T17:26:55.403082+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "G3B8PzabF7Ch5CghMaqx",
+  "request": {
+    "prompt": "A Tamil and Malayalam blockbuster mass BGM for a hero's sword duel in pouring monsoon rain, instrumental, 62 seconds, about 128 BPM, for Indian theatre audiences: the kind that makes the crowd whistle and throw paper. Modern glossy production with a gritty synth lead, distorted electric guitar, big strings, a deep modern kick and sub bass, with thavil and chenda strokes on the accents, a nadaswaram answering the hook with fast gamakam bends, sharp mass whistles and a male crowd shouting 'hey!' on the off-beats. The melody follows a minor Carnatic raga, phrased like a singer with slides and bends. Opening: thunder and rain, a lone synth lead sings a slow raga phrase over a drone, a thavil roll builds; by about 8 seconds the full mass groove lands with a slam: the swinging Tamil mass-BGM bounce with off-beat accents, tight unison stabs with the melody, sword clashes on the stabs, a catchy whistle-able 5-note hero hook, the nadaswaram and the guitar trading it call-and-response, switching into a fast triplet feel. Around 38 seconds everything stops, only rain, one beat of silence, a single whistle, then the hook slams back bigger, a whole step higher, full band, crowd chant and chenda, faster and faster to a korvai-style final hit with thunder, then rain and the lead sings the opening phrase once more, fading. No lyrics, no Western choir pads, no EDM drop.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 62000
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct 17:23: take 2 = the domestic (Indian) version, sounds chosen for Indian listeners. India cut = take 2's shape (full by ~8 s, stop and slam, fade-out) with a Tamil/Malayalam mass-BGM sound: whistles, thavil and chenda accents on the bounce, a nadaswaram answering the hook, crowd 'hey' shouts and a mass whistle on the drop, still with the modern synth lead and guitar."
+  },
+  "story": "Two warriors face each other in monsoon rain. Time stops between drops, then the storm breaks.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
