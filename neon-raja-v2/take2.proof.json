@@ -1,0 +1,124 @@
+{
+  "title": "\u00c6THER: Neon Raja v2 (handpan)",
+  "take": 2,
+  "made_at_utc": "2026-10-29T16:53:49.716856+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v1",
+  "elevenlabs_song_id": "WEin9CVD7Iu53gSoPc20",
+  "request": {
+    "composition_plan": {
+      "positive_global_styles": [
+        "a regal, dark cyberpunk king's theme for a film score: slow-burning 1980s synthwave with a master handpan player as the featured solo voice, mysterious and majestic, composed and played like a senior blockbuster film composer with a virtuoso soloist",
+        "C sharp minor with a raised seventh, like raga Kiravani, about 103 BPM, a slow dark build",
+        "about half real instruments (a handpan played expressively with ghost notes, fingertip rolls, harmonics and slaps; a talkbox nadaswaram; thavil; strings; low brass) and half fresh electronics (deep wide sub bass, analog synth arpeggios, warm retro synth lead, gated 80s drums), each clearly heard",
+        "the handpan is the soul of the track: it plays the melody with human timing, breath-like pauses, small grace notes and dynamics; the talkbox nadaswaram and glitch-chopped veena answer it; a pitched-down mridangam is the deep bass hit",
+        "the neon city's own sounds as instruments: neon-tube buzz as the pad, servo whirs as fills, a hologram-crown chime as the bell, a metal throne clank as the snare, rain on neon signs as the hi-hat",
+        "a singable melody of question-and-answer phrases with a catchy 5-note riff that varies slightly on each repeat, a moving bass line, a string counter-melody, space between phrases",
+        "dark, warm, wide, glossy mix with a very deep sub, the handpan close and intimate in front",
+        "instrumental"
+      ],
+      "negative_global_styles": [
+        "EDM drop",
+        "white-noise riser",
+        "filter sweep",
+        "side-chain pumping",
+        "DJ transition",
+        "dubstep",
+        "lyrics",
+        "singer",
+        "lo-fi",
+        "vaporwave",
+        "wall of synths",
+        "weak drums",
+        "robotic quantised handpan",
+        "busy",
+        "cluttered"
+      ],
+      "sections": [
+        {
+          "section_name": "Neon hum",
+          "duration_ms": 8000,
+          "positive_local_styles": [
+            "the first sound at second zero: one deep handpan note with a low mridangam boom under it, then neon-tube buzz and rain",
+            "the handpan alone, rubato, plays a rising 3-note call (root, minor third, fifth), the last note ringing with a soft harmonic; a small grace note before the second phrase"
+          ],
+          "negative_local_styles": [
+            "drums",
+            "bass",
+            "brass",
+            "many instruments"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "City wakes",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "transition: the handpan plays a short pickup phrase into the next bar; a very deep wide sub bass and a slow analog synth arpeggio join one at a time",
+            "the handpan's ghost-note taps become a soft pulse, the talkbox nadaswaram answers its phrase once; nuance: one fingertip roll on the last beat"
+          ],
+          "negative_local_styles": [
+            "drums",
+            "brass"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Approach",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "transition: the strings enter with a held low note under the handpan, which states the catchy 5-note riff",
+            "tension grows slowly, servo whirs and the neon buzz rise in the background; nuance: the handpan slows the last note of a phrase like a breath, then answers itself"
+          ],
+          "negative_local_styles": [
+            "full drums"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Coronation",
+          "duration_ms": 12000,
+          "positive_local_styles": [
+            "transition: one reversed veena swell into a massive hit, the main reveal: gated drums, bold low brass and the synth lead carry the riff, a deep wordless male choir",
+            "the handpan plays the riff over the full band with slaps on the accents, the nadaswaram answers with gamakam slides; nuance: the riff's last note changes once to a borrowed chord"
+          ],
+          "negative_local_styles": [
+            "quiet"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Handpan solo",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "the band drops to the deep sub and a soft drum pulse; a virtuoso handpan solo with fast rolls, harmonics and slaps, playful and masterly, like an interlude showpiece in a hit film song",
+            "the strings and synth lead answer its last phrase and the full band returns bigger"
+          ],
+          "negative_local_styles": [
+            "silence",
+            "EDM drop"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Long live the king",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "the riff played biggest by the whole band with the choir, then one final unison hit with a deep sub boom",
+            "only neon-tube buzz and rain remain, and the handpan alone plays the rising 3-note call one last time, the last note ringing out"
+          ],
+          "negative_local_styles": [
+            "drums continuing"
+          ],
+          "lines": []
+        }
+      ]
+    },
+    "model_id": "music_v1"
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct 16:49 on v1: picked take 2, 'but need minute nuances and touch of a senior musician with one instrument like a handpan or aerophone'. v2 keeps take 2's character (slow dark burn, deep wide sub, drums only from ~28 s, C# minor, 103 BPM) and adds ONE featured solo voice: a handpan played by a master, rubato and expressive (ghost notes, fingertip rolls, harmonics, slaps, space between phrases). Minute nuances: each section gets one different small played detail, used once. Rules: music-scoring.md section 9 (motif at start and end, one reversed veena swell at the reveal, composed transitions, rule 14 senior craft)."
+  },
+  "story": "A king rules a rain-soaked neon city of the future. The city's power fails, he wakes it again, and it crowns him.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
