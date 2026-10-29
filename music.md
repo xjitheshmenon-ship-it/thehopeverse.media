@@ -304,3 +304,41 @@ The melakartas that have a Western or Hindustani match (useful, because music AI
 - Loudness: the background track is set to 12% under the voice by video.py, so ask for an even, steady level (little dynamic range), not a quiet intro that disappears under the voice.
 - Length: ask for the Short's length or a bit more; video.py loops a short track, so an ending that resolves cleanly loops better.
 - Always instrumental. ElevenLabs is also forced to instrumental by the code, but write it in the prompt anyway.
+
+## 17. Romance in depth: how Indian music writes love (Jithesh, 29 Oct 2026)
+
+Jithesh, after five "First Love" rounds: the takes had the wow factor but "these are not romantic". Our prompts asked for joy, a big chorus, a key lift and full drive, so they came out as **celebration**. The softened v5 was intimate but lost the rhythm. Romance is a journey through several feelings in one track, and the classical traditions already know how each one sounds.
+
+### 17a. The theory (rasa)
+- **Shringara** (love) has two halves: **sambhoga**, love in union, and **vipralambha**, love in separation and longing. A first-love track is **purvaraga**: "love born from sight or hearing before the lovers meet" (Sahityadarpana). Its first stage is **abhilasha**, longing to be near. The classical list goes on: chinta (thinking of her), smriti (replaying the moment), gunakathana (praising her), and then darker stages (agitation, fever) that a happy track never uses.
+- **The body at first sight (sattvika bhava)**, and how each one sounds: stambha, freezing in place = one long held note with the rhythm hanging; vepathu, trembling = kampita gamaka (a fast oscillation on a note) or string tremolo; svarabhanga, the voice breaking = a breathy flute note that cracks or bends; romancha, goosebumps = a sparkle of swarmandal or santoor glints.
+- The **sakhi** (her friend) teases and carries messages between the lovers. In music she is a third, playful voice (a tumbi or plucked line) that makes the love light and smiling, not heavy.
+
+### 17b. Carnatic
+- **Padam**: slow, tender love songs in mellow ragas (Anandabhairavi, Sahana, Nilambari, Ahiri, Mukhari, Huseni, Surati, Punnagavarali) on a subdued tala. The sangatis are gentle: each line comes back a little more ornamented, so the feeling grows line by line. Pallavi, anupallavi and charanam form the song.
+- **Javali**: lighter, playful, flirtatious love songs at a medium tempo (Khamas, Kapi, Behag, Paras).
+- **The film-romance ragas**: Reetigowla (its lilting zig-zag phrase G M N N S is the classic Tamil love-duet colour), Kapi (deep longing), Behag (romantic yearning), Kalyani (wonder: the raised 4th), Mohanam (bright, innocent, the pentatonic of duets), Hamsanandi, Keeravani, Abheri, Hamir Kalyani, Charukesi.
+- **The gamakas carry the feeling**: kampita (trembling) = a trembling heart; jaru (slides) = reaching toward her; a held note that slides into the next = longing.
+
+### 17c. Hindustani
+- **Thumri, dadra**: the classical home of shringara, in Khamaj, Kafi, Pilu, Pahadi, Desh, Tilak Kamod, Jogiya and Bhairavi. The singer may touch notes outside the raga for colour (mishra); one "outside" note is the ache of longing.
+- **The built-in romance structure**: a thumri begins in **bol banao**, slow and ornamented, with each phrase shaded again and again over a lilting tala (Deepchandi's 14 beats, Dadra's 6, Addha, Roopak's 7). It ends in a **laggi**, a switch to fast 8-beat Keherwa where the tabla plays freely. Slow longing that bursts into joyful release is exactly the first-love arc, and it is classical, not a Western build.
+- **The evening love ragas**: Yaman (Kalyani), Bihag, Bageshree, Desh, Khamaj. The voice-like instruments are sarangi, violin and bansuri, with santoor and swarmandal for sparkle.
+
+### 17d. Punjabi
+- The love epics are Heer-Ranjha, Mirza-Sahiban and Sohni-Mahiwal. **Ranjha wins Heer with his flute** (as Krishna does Radha), so the flute is the lover's voice across North India.
+- **The love song forms**: mahiya (short love verses on a fixed tune, longing but sweet), tappe (3-line ABA verses, call and response, romance and teasing, in Khamaj, Kafi, Bhairavi or Des, often on Punjabi taal), dhola (love as the main theme, loose structure), boliyan (teasing call-and-response lines), and Heer (free-time, deeply ornamented singing).
+- **Sounds**: algoza (twin flutes, one holding a drone while the other sings: two lovers in one instrument), tumbi (a bright, high, playful pluck), sarangi, dholak, chimta. The dhol is for celebration only.
+- **Rhythm**: simple and swinging, with a forward lilt (the chaal) that makes even a love song walk.
+
+### 17e. The six parts of a first-love track (the map; use all six, in order)
+1. **The glance (curiosity, stambha)**, about 8 s: free time over a soft drone. One flute or bansuri phrase with Kalyani's raised 4th held and left unresolved, swarmandal glints, no beat. Time freezes.
+2. **Shyness (abhilasha)**, about 10 s: short, hesitant question-and-answer phrases (him on the flute, her on the violin or a hum) with breaths between them. A soft heartbeat on a low tabla starts here and never stops. The sakhi's tumbi teases.
+3. **Attraction (the pull)**: the real melody in slow bol-banao style over a lilting 6-beat dadra. Long notes with kampita and slides, one aching outside note, and each phrase returns more ornamented (sangati).
+4. **Togetherness (sambhoga begins)**: algoza-style, one voice holds while the other sings, then the two play in harmony. Strings warm up, and the rhythm becomes a steady Keherwa sway.
+5. **Dream (gunakathana, the interlude)**: santoor cascades, soaring strings, a short solo showpiece and a gentle key lift.
+6. **Bliss (the laggi)**: the tempo feels doubled, the tabla and dholak play freely, the tumbi bounces, the hums become a soft chorus. Joyful but still tender, never a festival. Then everything falls back to the part-1 phrase, now answered and resolved.
+
+**Rules**: the rhythm, once it enters in part 2, never stops; it only changes (heartbeat, then dadra lilt, then Keherwa sway, then laggi). Celebration lives only in part 6. Write the parts in the prompt as a second-by-second timeline (the Neon Raja lesson). Pick one raga for the whole track so it stays one love story (Kalyani/Yaman for wonder, Reetigowla for the Tamil duet colour, Khamaj for Punjabi-thumri sweetness).
+
+Sources: Sahityadarpana's definition of purvaraga (via wisdomlib), the Wikipedia articles on Thumri and Punjabi folk music, Scroll.in on Deepchandi, 4carnaticmusic on padams, and Shivpreet Singh on Punjabi tappe. The film-raga notes come from published Tamil film raga lists. Ragas and forms only, never a song's tune.
