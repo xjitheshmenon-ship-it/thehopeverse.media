@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: First Love v4 sway (6/8)",
+  "take": 1,
+  "made_at_utc": "2026-10-29T18:16:33.481938+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "B58SsMGtmoyVWE1El0IK",
+  "request": {
+    "prompt": "A brand-new, joyful and deeply romantic theme written the way the great Tamil and Telugu film composers write the moment a boy sees a girl for the first time and falls in love. Bright and positive, G major throughout, never minor, never melancholic. Instrumental, no lyrics. Sound palette (keep exactly this, it is right): a bright breathy bamboo flute, a sparkling felt piano, a glitch-chopped veena pluck, a sweet solo violin with slides, wordless female and male hums, a twinkling music-box shimmer, glass bangles jingling as the shaker; airy, sparkling and wide. The first-love attachment in the opening: a tender, aching, singable melody that tugs at the heart, like the first look between them: long held notes that bend up and melt down, sighing two-note falls, a suspended note that waits and then resolves sweetly, the flute and violin sounding shy and breathless, a soft heartbeat that skips when she smiles; warm and hopeful, never sad. A bright raga like Mohanam with gamakam slides and grace notes; a catchy five-note love hook that returns on a NEW lead sound every 8 to 10 seconds. RHYTHM IS THE PRIORITY: from 14 s to the last 4 seconds the rhythm section NEVER stops, never thins out and never drops to only pads or melody: drums, hand percussion, bangles and a bouncing melodic bass play the whole time, clearly audible and in the front of the mix, with a short drum fill into every new section. Groove: the classic South Indian romantic 6/8 sway (a swinging three-beat folk feel, like a boat rocking), about 66 dotted-quarter beats per minute: a soft kick on one, a dholak and tabla triplet bounce, bangles on every eighth, a bass that rocks with the sway. Timeline: 0-6 s: the shimmer and the flute alone play the rising three-note call (root, major third, fifth, the last note bent upward) and the first aching phrase. 6-14 s: the felt piano and violin answer with the tender love melody, the heartbeat enters softly and skips once. 14-24 s: the full 6/8 sway lands and stays; the hook on the violin. 24-34 s: the hook moves to the female hum answered by the male hum, strings join. 34-44 s: the flute and violin chase each other over the sway. 44-54 s: the veena pluck and piano trade the hook, a triplet dholak fill. 54-66 s: the biggest, happiest moment: the full love melody on soaring strings and flute, joyful wordless chorus, the hook lifted up a whole step, the sway at full drive. 66-72 s: a clean final hit, then the flute's three-note call over the shimmer. Not a slow ballad, not ambient, no section without percussion after 14 s, not Hollywood, not Western pop, no EDM, no white-noise risers, no side-chain pumping.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 72000
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct 18:13 on v3: both takes good after 25 s; before 25 s the sounds, instruments and timing are right but the 'first love attachment' is missing; after 25 s 'we are missing rhythm most of the time'. Instruments fine. v4 keeps the v3 palette, adds an aching heart-tug opening melody, and makes the rhythm section nonstop from 14 s. Something new to try: the classic South Indian romantic 6/8 sway. Prompt mode (music_v2)."
+  },
+  "story": "The first time a boy sees a girl: his heart races, the world sparkles, and he is attached from the first look.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
