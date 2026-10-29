@@ -1,0 +1,155 @@
+{
+  "title": "Hopeverse: Tamil Dance Number v3 (instrumental, clearly Tamil)",
+  "story": "A Tamil film dance number: the hero and the crowd take over the street festival.",
+  "brief": {
+    "notes": "Jithesh 29 Oct on v1: track really good but doesn't sound Tamil, and the konnakol gibberish words don't suit it. v3: no words at all, raw Tamil folk instruments up front (parai, thappu, urumi, thavil, live nadaswaram hook in a Tamil folk mode), processed sounds only as the second layer. Keeps rule 9.11 structure from v2."
+  },
+  "seconds": 80,
+  "takes": 1,
+  "plan": {
+    "positive_global_styles": [
+      "Tamil film kuthu dance number, Chennai street festival, composed like a film composer, not a DJ mix",
+      "raw, loud, live Tamil folk percussion up front: parai and thappu frame drums in the kuthu swing, urumi drum, thavil, about 100 BPM",
+      "a live nadaswaram plays a catchy Tamil folk melody, major with a flat seventh, with gamakam slides; a chopped, bent nadaswaram synth answers it",
+      "pitched-down thavil as the bass, ghatam and kanjira as glitchy top percussion",
+      "wedding-band brass punches, cinematic strings",
+      "instrumental",
+      "loud, clear, punchy mix with deep drums"
+    ],
+    "negative_global_styles": [
+      "EDM drop",
+      "trap hi-hats",
+      "auto-tune",
+      "side-chain pumping",
+      "white-noise riser",
+      "filter sweep",
+      "dubstep",
+      "four-on-the-floor house kick",
+      "lyrics",
+      "solo singer",
+      "vocals",
+      "chanting",
+      "spoken words",
+      "Arabic or Middle Eastern melody",
+      "Bollywood",
+      "Western pop chords"
+    ],
+    "sections": [
+      {
+        "section_name": "Solo call",
+        "duration_ms": 4000,
+        "positive_local_styles": [
+          "ONLY one instrument: a lone live nadaswaram plays a rising 3-note call: root, minor third, fifth, held and bent up"
+        ],
+        "negative_local_styles": [
+          "drums",
+          "bass"
+        ],
+        "lines": []
+      },
+      {
+        "section_name": "Second layer",
+        "duration_ms": 4000,
+        "positive_local_styles": [
+          "a lone parai frame drum joins under the nadaswaram synth, teasing the triplet swing",
+          "still no bass"
+        ],
+        "negative_local_styles": [
+          "bass",
+          "full drums"
+        ],
+        "lines": []
+      },
+      {
+        "section_name": "Full mix lands",
+        "duration_ms": 8000,
+        "positive_local_styles": [
+          "the full kuthu band crashes in: thappu and parai triplet swing, pitched-down thavil bass, brass punches",
+          "the live nadaswaram announces the tune",
+          "deep bass enters here, at 8 seconds"
+        ],
+        "negative_local_styles": [],
+        "lines": []
+      },
+      {
+        "section_name": "Folk tune groove",
+        "duration_ms": 14000,
+        "positive_local_styles": [
+          "new texture: the live nadaswaram plays the main Tamil folk tune on the swing",
+          "chopped nadaswaram riff answers each phrase",
+          "ghatam and kanjira glitch fills"
+        ],
+        "negative_local_styles": [],
+        "lines": []
+      },
+      {
+        "section_name": "Strip-down",
+        "duration_ms": 3000,
+        "positive_local_styles": [
+          "bass and big drums step out, played by the band",
+          "only a kanjira and a lone nadaswaram phrase remain",
+          "ends with one reversed veena swell into a huge unison hit"
+        ],
+        "negative_local_styles": [
+          "bass",
+          "big drums",
+          "filter sweep"
+        ],
+        "lines": []
+      },
+      {
+        "section_name": "Hook step",
+        "duration_ms": 14000,
+        "positive_local_styles": [
+          "surprise change of gait: the rhythm switches from triplet swing to a straight four-beat dappu pattern",
+          "the main hook: live nadaswaram and brass in unison, bigger than everything before"
+        ],
+        "negative_local_styles": [
+          "swing"
+        ],
+        "lines": []
+      },
+      {
+        "section_name": "Drummers' showdown",
+        "duration_ms": 12000,
+        "positive_local_styles": [
+          "the triplet swing returns",
+          "parai, thappu, urumi and thavil trade phrases, speeding up",
+          "ends on a phrase played three times that lands exactly on beat one"
+        ],
+        "negative_local_styles": [
+          "synth",
+          "strings",
+          "brass",
+          "straight beat"
+        ],
+        "lines": []
+      },
+      {
+        "section_name": "Final hook",
+        "duration_ms": 14000,
+        "positive_local_styles": [
+          "new top: strings join the counter-melody",
+          "highest energy triplet kuthu groove, brass, live nadaswaram lead with the synth answering",
+          "louder than the first hook"
+        ],
+        "negative_local_styles": [
+          "straight beat"
+        ],
+        "lines": []
+      },
+      {
+        "section_name": "Ending",
+        "duration_ms": 7000,
+        "positive_local_styles": [
+          "the 3-note call again on the nadaswaram synth over the drums",
+          "one big unison hit, then stop"
+        ],
+        "negative_local_styles": [
+          "fade out"
+        ],
+        "lines": []
+      }
+    ]
+  }
+}

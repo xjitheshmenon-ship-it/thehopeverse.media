@@ -183,6 +183,9 @@ Our fresh version ("Broken Heritage kuthu"), keeping the style but changing the 
 5. The drummers' showdown ends on a korvai: a phrase played three times that lands exactly on beat one.
 6. Identity: the 3-note motif in the first 5 s and the last hit; one reversed veena swell into the main hook.
 
+### 8e-2. Jithesh's verdict on the dance number v1 (29 Oct)
+"Track is really good" but "it doesn't sound like a Tamil one", and the konnakol syllables sung as words ("gibberish") don't suit it. Rule: a Tamil dance track needs the raw folk instruments up front (parai, thappu, urumi, thavil, a live nadaswaram playing a Tamil folk tune with gamakam slides); processed Broken Heritage sounds are the second layer only. No sung syllables or made-up words; instrumental unless real lyrics are written.
+
 ### 8f. Two more references R23-R24: transitions and layer-by-layer starts (29 Oct 2026)
 
 Jithesh's notes on two clips: "a complete transition happening every 8-18 sec", and "it's really good to start with one single instrument and then two and then the mix." Measured (RMS, harmonic/percussive, sub <120 Hz share per 2 s):
