@@ -1,0 +1,176 @@
+{
+  "channel_id": "yt-instinct",
+  "title": "Une girafe orpheline revient voir ceux qui l'ont sauv\u00e9e (histoire vraie)",
+  "description": "Histoire vraie, reconstitu\u00e9e avec des images g\u00e9n\u00e9r\u00e9es par IA et des images d'archives animali\u00e8res : Twiggy, b\u00e9b\u00e9 girafe sauv\u00e9e au Kenya en 2021, revient voir ses soigneurs en 2026.\nSource : Sheldrick Wildlife Trust (mise \u00e0 jour du 6 juillet 2026). On ne sait toujours pas pourquoi elle \u00e9tait orpheline.\n#Girafe #Kenya #SauvetageAnimal #HistoireVraie #Shorts",
+  "lang": "fr",
+  "category": "15",
+  "footer": "Instinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "music": "Tender emotional orchestral score, no vocals: starts with sparse, tense low strings and a soft ticking pulse for danger at dusk, rises into warm piano and strings for the rescue, thins to a lonely solo cello for the long wait, then swells into a hopeful, joyful finale with gentle African kalimba accents for the reunion.",
+  "source": "Who: Twiggy, a female giraffe orphan, and the Sheldrick Wildlife Trust (SWT) team. Where: Tsavo East National Park, Kenya, and SWT's Kaluku Neonate Nursery. When: She was rescued on 29 November 2021 at about one week old (estimated birth date 20 November 2021). Earlier that day she had been reported among a herd of zebras, 'trying to pass herself off as a zebra'. The SWT/KWS Burra Anti-Poaching Team followed her. By late evening it was clear she had no mother, lions were nearby and dusk was coming. The Field Works Manager jumped out of the vehicle and held her. She was raised at Kaluku, where a keeper slept on a raised bunk in her stockade and she would push her head in at night to check on him. She became known as the 'nanny' of the orphans. In November 2025 she left with a wild bull giraffe, and SWT saw the pair several times afterwards. On the morning of 5 July 2026, after more than eight months living wild, she walked up to Kaluku 'as if she had never been away', visited the mud bath and the smaller orphans, and was reported healthy and recognising her keepers. Stated doubts: why she was orphaned is officially unknown. SWT's April 2026 diary mentions giraffe gestation but confirms no pregnancy, so none is claimed. The rescuer's and keepers' names were not checked, so the person in the cast is a re-enacted stand-in. Outlets: Sheldrick Wildlife Trust, 'Twiggy Returns After Eight Months in the Wild' (6 July 2026), https://www.sheldrickwildlifetrust.org/news/updates/twiggy-returns ; SWT orphan profile, https://www.sheldrickwildlifetrust.org/orphans/twiggy ; Goodgoodgood, https://www.goodgoodgood.co/articles/twiggy-baby-giraffe-rescue-wildlife-sanctuary ; SWT on X (November/December 2025 update).",
+  "script": "Tsavo, Kenya : un b\u00e9b\u00e9 girafe erre seul parmi des z\u00e8bres.\nElle a une semaine, et aucune m\u00e8re en vue.\nLes lions r\u00f4dent, et la nuit approche.\nLes rangers la suivent jusqu'au soir : elle est bien orpheline.\nUn homme saute du v\u00e9hicule et la retient d'un geste.\nSauv\u00e9e, elle est emmen\u00e9e \u00e0 Kaluku, la nurserie du Sheldrick Trust.\nQuelques semaines plus tard, un soigneur dort tout pr\u00e8s d'elle.\nLa nuit, elle passe la t\u00eate pour v\u00e9rifier qu'il est l\u00e0.\nLes ann\u00e9es passent : Twiggy devient la nounou des petits orphelins.\nNovembre 2025 : un m\u00e2le sauvage l'emm\u00e8ne. Elle choisit la brousse.\nHuit mois passent. Twiggy ne revient pas \u00e0 Kaluku.\nLe 5 juillet 2026, une silhouette famili\u00e8re s'avance vers Kaluku.\nTwiggy revient, comme si elle n'\u00e9tait jamais partie.\nElle baisse la t\u00eate vers ses soigneurs : elle les reconna\u00eet.",
+  "cast": [
+    {
+      "name": "Joseph",
+      "role": "Silent hero: a Sheldrick Wildlife Trust team member who rescues and raises Twiggy (a re-enacted stand-in for the real rescuer and keepers, whose names were not checked)",
+      "look": "man, Kenyan, about 35, warm round face with kind eyes and a short trimmed black beard, short black hair, olive-green ranger uniform shirt and trousers with dusty boots, always wears a dark wide-brimmed bush hat",
+      "voice": "none, never speaks on screen",
+      "pitch": "medium"
+    },
+    {
+      "name": "Twiggy",
+      "role": "The orphaned giraffe, rescued at one week old, who returns to her keepers",
+      "look": "female giraffe; at rescue a one-week-old calf about 1.8 m tall on wobbly legs, then a tall adult female about 4 to 4.5 m tall at four and a half years old; tan coat with irregular chestnut-brown patches, pale lower legs, small dark-tufted ossicones, large dark eyes with long lashes",
+      "voice": "none, silent",
+      "pitch": "none"
+    }
+  ],
+  "scenes": [
+    {
+      "narration": "Tsavo, Kenya : un b\u00e9b\u00e9 girafe erre seul parmi des z\u00e8bres.",
+      "on_screen_text": "Un b\u00e9b\u00e9 girafe seul parmi des z\u00e8bres",
+      "picture_search": "Tsavo savanna zebras",
+      "image_prompt": "Handheld phone footage at eye level: tiny week-old giraffe calf Twiggy on wobbly legs, walking nervously among a herd of zebras, looking lost and wide-eyed; Tsavo East savanna, a flat red-earth plain with dry golden grass and scattered thorny acacia bushes, late afternoon golden light",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Twiggy",
+      "photo": ""
+    },
+    {
+      "narration": "Elle a une semaine, et aucune m\u00e8re en vue.",
+      "on_screen_text": "Une semaine. Aucune m\u00e8re en vue.",
+      "picture_search": "Tsavo acacia plain",
+      "image_prompt": "Handheld phone footage at eye level: tiny giraffe calf Twiggy standing alone, turning her head left and right, searching, ears forward, anxious expression; Tsavo East savanna, a flat red-earth plain with dry golden grass and scattered thorny acacia bushes, late afternoon golden light",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Twiggy",
+      "photo": ""
+    },
+    {
+      "narration": "Les lions r\u00f4dent, et la nuit approche.",
+      "on_screen_text": "Les lions r\u00f4dent, et la nuit approche.",
+      "picture_search": "Tsavo savanna dusk",
+      "image_prompt": "Handheld phone footage at eye level: tiny giraffe calf Twiggy frozen and alert in the grass, a blurred lion shape far in the background, fearful eyes; Tsavo East savanna, a flat red-earth plain with dry golden grass and scattered thorny acacia bushes, orange dusk light fading",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Twiggy",
+      "photo": ""
+    },
+    {
+      "narration": "Les rangers la suivent jusqu'au soir : elle est bien orpheline.",
+      "on_screen_text": "Le soir venu : elle est orpheline.",
+      "picture_search": "Kenya ranger savanna",
+      "image_prompt": "Handheld phone footage at eye level: Joseph in olive-green ranger uniform and dark wide-brimmed bush hat, crouching by a dusty vehicle, watching the distant calf through binoculars, worried and focused; Tsavo East savanna, a flat red-earth plain with dry golden grass and scattered thorny acacia bushes, deep blue evening light",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Joseph",
+      "photo": ""
+    },
+    {
+      "narration": "Un homme saute du v\u00e9hicule et la retient d'un geste.",
+      "on_screen_text": "Un homme saute et la retient.",
+      "picture_search": "Tsavo bush vehicle",
+      "image_prompt": "Handheld phone footage at eye level, shaky: Joseph in olive-green uniform and dark wide-brimmed bush hat leaping from a slow-moving safari vehicle and gently wrapping his arms around the tiny giraffe calf's body, determined face; Tsavo East savanna, a flat red-earth plain with dry golden grass and scattered thorny acacia bushes, last light of dusk",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Joseph",
+      "photo": ""
+    },
+    {
+      "narration": "Sauv\u00e9e, elle est emmen\u00e9e \u00e0 Kaluku, la nurserie du Sheldrick Trust.",
+      "on_screen_text": "Sauv\u00e9e, direction Kaluku.",
+      "picture_search": "Kenya wildlife nursery",
+      "image_prompt": "Handheld phone footage at eye level: tiny giraffe calf Twiggy resting on soft straw, blinking calmly, Joseph's hand in view stroking her neck; Kaluku nursery, an open sandy compound with a stockade of rough wooden poles, green bushes and Kenyan bush beyond, soft warm lamplight at night",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Twiggy",
+      "photo": ""
+    },
+    {
+      "narration": "Quelques semaines plus tard, un soigneur dort tout pr\u00e8s d'elle.",
+      "on_screen_text": "Un soigneur dort tout pr\u00e8s d'elle.",
+      "picture_search": "Kaluku stockade night",
+      "image_prompt": "Handheld phone footage at eye level: Joseph in olive-green uniform, dark wide-brimmed bush hat hung beside him, lying on a raised wooden bunk inside the stockade, smiling sleepily; Kaluku nursery, an open sandy compound with a stockade of rough wooden poles, green bushes and Kenyan bush beyond, soft warm lamplight at night",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Joseph",
+      "photo": ""
+    },
+    {
+      "narration": "La nuit, elle passe la t\u00eate pour v\u00e9rifier qu'il est l\u00e0.",
+      "on_screen_text": "La nuit, elle vient v\u00e9rifier.",
+      "picture_search": "giraffe calf stockade",
+      "image_prompt": "Handheld phone footage at eye level: young giraffe Twiggy, now taller, gently poking her delicate head towards the raised bunk, curious, soft eyes; Kaluku nursery, an open sandy compound with a stockade of rough wooden poles, green bushes and Kenyan bush beyond, soft warm lamplight at night",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Twiggy",
+      "photo": ""
+    },
+    {
+      "narration": "Les ann\u00e9es passent : Twiggy devient la nounou des petits orphelins.",
+      "on_screen_text": "Twiggy, nounou des orphelins.",
+      "picture_search": "giraffe orphan animals Kenya",
+      "image_prompt": "Handheld phone footage at eye level: tall adult giraffe Twiggy calmly watching over a small warthog, a zebra foal and a young buffalo, peaceful, protective look; Kaluku nursery, an open sandy compound with a stockade of rough wooden poles, green bushes and Kenyan bush beyond, bright morning sunlight",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Twiggy",
+      "photo": ""
+    },
+    {
+      "narration": "Novembre 2025 : un m\u00e2le sauvage l'emm\u00e8ne. Elle choisit la brousse.",
+      "on_screen_text": "Elle part avec un m\u00e2le sauvage.",
+      "picture_search": "two giraffes Tsavo",
+      "image_prompt": "Handheld phone footage at eye level: adult giraffe Twiggy walking away beside a larger wild bull giraffe, glancing back once, calm and free; Tsavo East savanna, a flat red-earth plain with dry golden grass and scattered thorny acacia bushes, hazy golden evening light",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Twiggy",
+      "photo": ""
+    },
+    {
+      "narration": "Huit mois passent. Twiggy ne revient pas \u00e0 Kaluku.",
+      "on_screen_text": "Huit mois. Elle ne revient pas.",
+      "picture_search": "empty wildlife enclosure Kenya",
+      "image_prompt": "Handheld phone footage at eye level: Joseph in olive-green uniform and dark wide-brimmed bush hat leaning on the empty stockade poles, gazing at the horizon, quiet and wistful; Kaluku nursery, an open sandy compound with a stockade of rough wooden poles, green bushes and Kenyan bush beyond, grey overcast morning light",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Joseph",
+      "photo": ""
+    },
+    {
+      "narration": "Le 5 juillet 2026, une silhouette famili\u00e8re s'avance vers Kaluku.",
+      "on_screen_text": "5 juillet 2026 : une silhouette famili\u00e8re.",
+      "picture_search": "giraffe walking Kenya bush",
+      "image_prompt": "Handheld phone footage at eye level: tall adult giraffe Twiggy strolling out of the bush towards the compound, relaxed, head high; Kaluku nursery, an open sandy compound with a stockade of rough wooden poles, green bushes and Kenyan bush beyond, bright clear morning sunlight",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Twiggy",
+      "photo": ""
+    },
+    {
+      "narration": "Twiggy revient, comme si elle n'\u00e9tait jamais partie.",
+      "on_screen_text": "Twiggy revient, comme si de rien n'\u00e9tait.",
+      "picture_search": "giraffe Kenya sanctuary",
+      "image_prompt": "Handheld phone footage at eye level: healthy, strong adult giraffe Twiggy ambling past the mud bath and among small orphan animals, at ease and content; Kaluku nursery, an open sandy compound with a stockade of rough wooden poles, green bushes and Kenyan bush beyond, bright clear morning sunlight",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Twiggy",
+      "photo": ""
+    },
+    {
+      "narration": "Elle baisse la t\u00eate vers ses soigneurs : elle les reconna\u00eet.",
+      "on_screen_text": "Elle reconna\u00eet ses soigneurs.",
+      "picture_search": "keeper giraffe reunion",
+      "image_prompt": "Handheld phone footage at eye level: Joseph in olive-green uniform and dark wide-brimmed bush hat beaming, hand raised, as adult giraffe Twiggy lowers her long neck to bring her face close to his, echoing the night she was rescued; Kaluku nursery, an open sandy compound with a stockade of rough wooden poles, green bushes and Kenyan bush beyond, bright clear morning sunlight",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Joseph",
+      "photo": ""
+    }
+  ],
+  "publish_at": "2026-10-30T18:00:00Z",
+  "relevance": {
+    "score": 82,
+    "why": "R\u00e9cit vrai, \u00e9mouvant et r\u00e9cent (retour de Twiggy le 5 juillet 2026), tr\u00e8s adapt\u00e9 \u00e0 un public francophone familial ; le script tient la promesse du titre, mais les dates et d\u00e9tails exacts sont \u00e0 v\u00e9rifier aupr\u00e8s du Sheldrick Trust.",
+    "views48": 900
+  },
+  "youtube_id": "1LNTl_jLClE"
+}
