@@ -1,0 +1,176 @@
+{
+  "channel_id": "yt-instinct",
+  "title": "Cinq p\u00eacheurs ont vu une petite trompe d\u00e9passer de l'eau (histoire vraie)",
+  "description": "Histoire vraie, reconstitu\u00e9e avec des images g\u00e9n\u00e9r\u00e9es par IA : en septembre 2026, cinq p\u00eacheurs ont sauv\u00e9 un \u00e9l\u00e9phanteau emport\u00e9 par la rivi\u00e8re Teesta, en Inde.\nSource : People, d'apr\u00e8s CNN, ainsi que The Hindu et The Telegraph.\n#elephant #sauvetage #Inde #animaux #Shorts",
+  "lang": "fr",
+  "category": "15",
+  "footer": "Instinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "music": "Emotional cinematic orchestral score, no vocals: starts with tense low strings and a ticking pulse over the sound of rushing water, builds into urgent percussion during the rescue, drops to a fragile solo piano at the low point, then swells into warm, hopeful strings and soft Indian bansuri flute for the reunion, ending gently.",
+  "source": "R\u00e9cit vrai : le 21 septembre 2026, sur la rivi\u00e8re Teesta au Bengale-Occidental (Inde), pr\u00e8s du barrage de Gajoldoba. Un \u00e9l\u00e9phanteau d'Asie de trois ou quatre jours a \u00e9t\u00e9 emport\u00e9 par le courant pendant que son troupeau traversait la rivi\u00e8re. Cinq p\u00eacheurs ont rep\u00e9r\u00e9 sa trompe qui d\u00e9passait de l'eau. Ils l'ont hiss\u00e9 dans leur barque pendant que trois d'entre eux nageaient \u00e0 c\u00f4t\u00e9. Puis ils l'ont confi\u00e9 aux agents forestiers de la division de Baikunthapur (l'officier Mudit Kumar Verma). La m\u00e8re a tout de suite accept\u00e9 son petit et l'a allait\u00e9, puis ils ont rejoint le troupeau. Sur la distance, les m\u00e9dias divergent : environ 2,5 \u00e0 3 miles, soit 4 \u00e0 5 km. Source principale : People, 'Baby Elephant Swept 3 Miles Down River Is Saved by Fishermen and Reunited with Its Mom' (qui cite CNN), republi\u00e9 sur Yahoo : https://nz.news.yahoo.com/baby-elephant-swept-3-miles-132709217.html. Recoup\u00e9 avec Upworthy (https://www.upworthy.com/pn-fishermen-rescue-baby-elephant-teesta-river/), The Cool Down d'apr\u00e8s The Hindu (https://www.thecooldown.com/outdoors/elephant-calf-rescue-in-teesta-river/) et The Telegraph, repris par Animal Survival International. Je n'ai pas pu ouvrir l'article de CNN directement. Les reportages ne donnent le nom d'aucun p\u00eacheur : le h\u00e9ros est donc un p\u00eacheur anonyme parmi les cinq. Aucune nouvelle de l'\u00e9l\u00e9phanteau n'a \u00e9t\u00e9 publi\u00e9e apr\u00e8s les retrouvailles. Pour ne rien inventer, le saut dans le temps se limite donc \u00e0 'Un peu plus tard'.",
+  "script": "Une toute petite trompe d\u00e9passe \u00e0 peine de l'eau boueuse.\nCe b\u00e9b\u00e9 \u00e9l\u00e9phant n'a que trois ou quatre jours.\nEn traversant avec son troupeau, le courant l'a arrach\u00e9.\nSur sa barque, un p\u00eacheur aper\u00e7oit la petite trompe.\nAvec quatre compagnons, il rame de toutes ses forces.\nLe courant l'emporte sur quatre \u00e0 cinq kilom\u00e8tres.\nChaque seconde compte : le petit s'\u00e9puise dans l'eau.\nIls le hissent enfin dans la barque. Il est glac\u00e9.\nTrois hommes nagent \u00e0 c\u00f4t\u00e9 pour stabiliser la barque.\nMais sa m\u00e8re est loin en amont. L'acceptera-t-elle encore ?\nUn peu plus tard, les forestiers le ram\u00e8nent en amont.\nSa m\u00e8re l'accueille aussit\u00f4t et le laisse t\u00e9ter.\nDepuis la rive, le p\u00eacheur regarde, le c\u0153ur l\u00e9ger.\nLe petit repart vers la for\u00eat, avec tout son troupeau.",
+  "cast": [
+    {
+      "name": "Le p\u00eacheur",
+      "role": "L'un des cinq p\u00eacheurs du Bengale-Occidental qui ont rep\u00e9r\u00e9 et sauv\u00e9 l'\u00e9l\u00e9phanteau (son nom n'appara\u00eet pas dans les reportages)",
+      "look": "man, Indian (Bengali), about 40 years old, weathered sun-darkened face with a thick black mustache, short black hair wet from the river, faded blue checked lungi and a plain grey cotton shirt, always wears a red-and-white checked gamcha cotton scarf around his neck",
+      "voice": "aucune, il ne parle pas \u00e0 l'\u00e9cran",
+      "pitch": "aucun"
+    },
+    {
+      "name": "L'\u00e9l\u00e9phanteau",
+      "role": "\u00c9l\u00e9phanteau d'Asie de trois ou quatre jours, emport\u00e9 par la Teesta",
+      "look": "Asian elephant calf, 3 to 4 days old, about 1 metre tall at the shoulder and roughly 100 kg, grey skin covered in fuzzy reddish-brown baby hair on the head and back, small rounded ears, short trunk with a pinkish tip",
+      "voice": "aucune, il ne parle pas \u00e0 l'\u00e9cran",
+      "pitch": "aucun"
+    }
+  ],
+  "scenes": [
+    {
+      "narration": "Une toute petite trompe d\u00e9passe \u00e0 peine de l'eau boueuse.",
+      "on_screen_text": "Une petite trompe d\u00e9passe de l'eau.",
+      "picture_search": "flooded muddy river",
+      "image_prompt": "Handheld phone footage at eye level, shaky and close to the water: only the tiny pink-tipped trunk and fuzzy reddish-haired forehead of an Asian elephant calf poke above the water, eyes wide with panic. The setting is the wide brown flooded Teesta River in West Bengal, with a fast muddy current and green forested banks under overcast monsoon daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "L'\u00e9l\u00e9phanteau",
+      "photo": ""
+    },
+    {
+      "narration": "Ce b\u00e9b\u00e9 \u00e9l\u00e9phant n'a que trois ou quatre jours.",
+      "on_screen_text": "Un b\u00e9b\u00e9 de trois ou quatre jours.",
+      "picture_search": "flooded muddy river",
+      "image_prompt": "Handheld phone footage at eye level: the newborn Asian elephant calf, small with fuzzy reddish-brown hair, paddles weakly with its head tilted up to breathe and looks frightened and exhausted. The setting is the wide brown flooded Teesta River in West Bengal, with a fast muddy current and green forested banks under overcast monsoon daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "L'\u00e9l\u00e9phanteau",
+      "photo": ""
+    },
+    {
+      "narration": "En traversant avec son troupeau, le courant l'a arrach\u00e9.",
+      "on_screen_text": "Le courant l'a arrach\u00e9 au troupeau.",
+      "picture_search": "elephants crossing river",
+      "image_prompt": "Handheld phone footage at eye level from far off: a herd of Asian elephants wades across the river while the tiny calf is pulled away downstream, its trunk raised in distress. The setting is the wide brown flooded Teesta River in West Bengal, with a fast muddy current and green forested banks under overcast monsoon daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "L'\u00e9l\u00e9phanteau",
+      "photo": ""
+    },
+    {
+      "narration": "Sur sa barque, un p\u00eacheur aper\u00e7oit la petite trompe.",
+      "on_screen_text": "Un p\u00eacheur aper\u00e7oit la petite trompe.",
+      "picture_search": "wooden fishing boat river",
+      "image_prompt": "Handheld phone footage at eye level: a Bengali fisherman of about 40 with a black mustache, a faded blue checked lungi and a red-and-white checked gamcha scarf stands in his boat, points at the water and stares in alarm. The setting is a small wooden fishing boat on the wide brown flooded Teesta River in West Bengal, with a fast muddy current and green forested banks under overcast monsoon daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Le p\u00eacheur",
+      "photo": ""
+    },
+    {
+      "narration": "Avec quatre compagnons, il rame de toutes ses forces.",
+      "on_screen_text": "Avec quatre compagnons, il rame.",
+      "picture_search": "wooden fishing boat river",
+      "image_prompt": "Handheld phone footage at eye level: the mustached fisherman in his red-and-white checked gamcha scarf pulls hard on a wooden oar with his jaw clenched and his eyes fixed ahead, other fishermen rowing behind him. The setting is a small wooden fishing boat on the wide brown flooded Teesta River in West Bengal, with a fast muddy current and green forested banks under overcast monsoon daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Le p\u00eacheur",
+      "photo": ""
+    },
+    {
+      "narration": "Le courant l'emporte sur quatre \u00e0 cinq kilom\u00e8tres.",
+      "on_screen_text": "Emport\u00e9 sur quatre \u00e0 cinq kilom\u00e8tres.",
+      "picture_search": "flooded muddy river",
+      "image_prompt": "Handheld phone footage at eye level: the tiny fuzzy elephant calf tumbles in the muddy current with only its head and trunk showing, struggling and tiring. The setting is the wide brown flooded Teesta River in West Bengal, with a fast muddy current and green forested banks under overcast monsoon daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "L'\u00e9l\u00e9phanteau",
+      "photo": ""
+    },
+    {
+      "narration": "Chaque seconde compte : le petit s'\u00e9puise dans l'eau.",
+      "on_screen_text": "Chaque seconde compte.",
+      "picture_search": "wooden fishing boat river",
+      "image_prompt": "Handheld phone footage at eye level: the mustached fisherman in his red-and-white checked gamcha scarf leans far over the side of the boat with his arm stretched toward the sinking calf, his face tense and desperate. The setting is a small wooden fishing boat on the wide brown flooded Teesta River in West Bengal, with a fast muddy current and green forested banks under overcast monsoon daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Le p\u00eacheur",
+      "photo": ""
+    },
+    {
+      "narration": "Ils le hissent enfin dans la barque. Il est glac\u00e9.",
+      "on_screen_text": "Hiss\u00e9 \u00e0 bord. Il est glac\u00e9.",
+      "picture_search": "wooden fishing boat river",
+      "image_prompt": "Handheld phone footage at eye level: the mustached fisherman in his red-and-white checked gamcha scarf, soaked through, holds the shivering wet elephant calf against his chest inside the boat, looking relieved but worried. The setting is a small wooden fishing boat on the wide brown flooded Teesta River in West Bengal, with a fast muddy current and green forested banks under overcast monsoon daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Le p\u00eacheur",
+      "photo": ""
+    },
+    {
+      "narration": "Trois hommes nagent \u00e0 c\u00f4t\u00e9 pour stabiliser la barque.",
+      "on_screen_text": "Trois hommes nagent pour stabiliser la barque.",
+      "picture_search": "fishermen swimming river",
+      "image_prompt": "Handheld phone footage at eye level from the water: the mustached fisherman in his red-and-white checked gamcha scarf swims beside the boat gripping its edge, determined, while the calf sits nervously on board. The setting is a small wooden fishing boat on the wide brown flooded Teesta River in West Bengal, with a fast muddy current and green forested banks under overcast monsoon daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Le p\u00eacheur",
+      "photo": ""
+    },
+    {
+      "narration": "Mais sa m\u00e8re est loin en amont. L'acceptera-t-elle encore ?",
+      "on_screen_text": "Sa m\u00e8re l'acceptera-t-elle encore ?",
+      "picture_search": "wooden fishing boat river",
+      "image_prompt": "Handheld phone footage at eye level, close-up: the small wet elephant calf with fuzzy reddish hair huddles in the bottom of the boat, trembling, with sad eyes and its trunk curled. The setting is a small wooden fishing boat on the wide brown flooded Teesta River in West Bengal, with a fast muddy current and green forested banks under overcast monsoon daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "L'\u00e9l\u00e9phanteau",
+      "photo": ""
+    },
+    {
+      "narration": "Un peu plus tard, les forestiers le ram\u00e8nent en amont.",
+      "on_screen_text": "Un peu plus tard...",
+      "picture_search": "riverbank forest edge",
+      "image_prompt": "Handheld phone footage at eye level: the little elephant calf walks unsteadily on its own across the sand toward the trees, sniffing the air with its trunk raised, hesitant but hopeful. The setting is the sandy bank of the Teesta River at the forest edge upstream, with tall grass and soft late-afternoon light.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "L'\u00e9l\u00e9phanteau",
+      "photo": ""
+    },
+    {
+      "narration": "Sa m\u00e8re l'accueille aussit\u00f4t et le laisse t\u00e9ter.",
+      "on_screen_text": "Sa m\u00e8re l'accueille et le laisse t\u00e9ter.",
+      "picture_search": "elephant mother calf",
+      "image_prompt": "Handheld phone footage at eye level: the tiny fuzzy calf presses under its huge mother's belly and nurses while she wraps her trunk gently around it, and the calf looks calm at last. The setting is the sandy bank of the Teesta River at the forest edge upstream, with tall grass and soft late-afternoon light.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "L'\u00e9l\u00e9phanteau",
+      "photo": ""
+    },
+    {
+      "narration": "Depuis la rive, le p\u00eacheur regarde, le c\u0153ur l\u00e9ger.",
+      "on_screen_text": "Le p\u00eacheur regarde depuis la rive.",
+      "picture_search": "riverbank forest edge",
+      "image_prompt": "Handheld phone footage at eye level: the mustached fisherman in his faded blue checked lungi stands at a distance in the tall grass, touches the red-and-white checked gamcha scarf around his neck and smiles quietly, his eyes moist. The setting is the sandy bank of the Teesta River at the forest edge upstream, with tall grass and soft late-afternoon light.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Le p\u00eacheur",
+      "photo": ""
+    },
+    {
+      "narration": "Le petit repart vers la for\u00eat, avec tout son troupeau.",
+      "on_screen_text": "De retour avec son troupeau.",
+      "picture_search": "elephant herd forest",
+      "image_prompt": "Handheld phone footage at eye level from behind: the tiny fuzzy calf trots between its mother's legs as the herd of Asian elephants walks into the trees, its little tail swinging happily. The setting is the sandy bank of the Teesta River at the forest edge upstream, with tall grass and soft late-afternoon light.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "L'\u00e9l\u00e9phanteau",
+      "photo": ""
+    }
+  ],
+  "publish_at": "2026-10-30T04:00:00Z",
+  "relevance": {
+    "score": 66,
+    "why": "Evergreen, emotional rescue story fits the French-speaking family audience and delivers on the title, but the title says five fishermen while the script has a boat plus three swimmers (a bit confusing), it has no place, date or source, and the 'well-checked' claim is thin.",
+    "views48": 600
+  },
+  "youtube_id": "qLE_3TadZiw"
+}
