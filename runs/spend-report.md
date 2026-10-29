@@ -1,57 +1,57 @@
-# Hopeverse spending report, 29 Oct 2026 16:47
+# Hopeverse spending report, 29 Oct 2026 17:14
 
-- Today: $17.02 (39 runs)
-- Last 7 days: $110.62
-- This month: $110.62
-- All time: $110.62
+- Today: $17.91 (43 runs)
+- Last 7 days: $111.51
+- This month: $111.51
+- All time: $111.51
 
 Claude (Anthropic) costs as estimated by agents.py, review included. Video images from fal.ai add
 about $0.006 each (about $0.06 a Short). Exact bills: console.anthropic.com and fal.ai/dashboard.
 
 | Day | Runs | Cost |
 | --- | --- | --- |
-| 2026-10-29 | 39 | $17.02 |
+| 2026-10-29 | 43 | $17.91 |
 | 2026-10-28 | 52 | $22.18 |
 | 2026-10-27 | 53 | $33.02 |
 | 2026-10-26 | 71 | $35.70 |
 | 2026-10-25 | 5 | $2.70 |
 
-## Today's new channel idea (folder ideas/2026-10-26-yt-rumbo)
+## Today's new channel idea (folder ideas/2026-10-29-yt-orbita-spazio-it)
 
-# Rumbo  (@RumboMapas)
+# Orbita  (@OrbitaSpazio)
 
-**El mundo, explicado en un minuto**
+**Il cielo, una storia alla volta**
 
-- Audience: US Hispanics (Spanish-speaking or bilingual), Spain (EU) and secondarily Mexico and Latin America, adults 18-54, Spanish (Spanish)
-- Niche: Curious geography in Spanish: strange borders, odd places, maps and why the world is shaped the way it is
-- Why now: Spanish is one of YouTube's biggest languages, and the US Census counts about 65 million Hispanics, alongside about 48 million people in Spain. Both are high-value advertising markets that Hopeverse doesn't reach yet. Spanish history and geography channels like Academia Play have grown to millions of subscribers, and map and border stories work well with stock aerial footage, simple AI-made maps and a neutral es-US or es-ES Edge TTS voice. Note: web search hit its limit, so these figures come from general knowledge and should be checked before launch.
+- Audience: Italy (EU) and Italian-speaking Switzerland and San Marino, plus Italian speakers abroad; adults and curious families 18-54; Italian (Italian)
+- Niche: Space and astronomy explained in Italian: planets, missions, strange objects in the sky and what we can actually see tonight
+- Why now: Italy is one of the EU's biggest YouTube markets, with an estimated 40+ million users. Italian space channels already have loyal audiences: Coelum Astronomia has its own YouTube channel, and creators such as Adrian Fartade have built followings in the hundreds of thousands, but almost nobody makes short daily space Shorts in Italian. Space and science content is also advertiser-safe and evergreen, and Italian-language CPMs are among the higher ones in southern Europe. One caveat: today's web search only partly confirmed these figures, so treat the user count and CPM claim as rough estimates to check before launch.
 
 ## Channel description (paste into YouTube > Customisation > Basic info)
 
-Rumbo cuenta en menos de un minuto por qué el mundo es como es: fronteras extrañas, pueblos imposibles, islas sin dueño, ríos que cambian de país y mapas que esconden una historia.
+Orbita racconta lo spazio in meno di un minuto: pianeti, stelle, missioni spaziali e i misteri del cosmo, spiegati con parole semplici e fonti verificate.
 
-Cada historia está contrastada y se cuenta con calma, con imágenes reales, mapas claros y una voz cercana. Publicamos 6 Shorts al día, para que siempre haya un lugar nuevo que descubrir.
+Ogni giorno pubblichiamo 2 Shorts: curiosità sull'universo, le scoperte più recenti delle agenzie spaziali e consigli su cosa osservare nel cielo sopra l'Italia.
 
-Rumbo es un canal hecho con inteligencia artificial por Hopeverse Media. Hecho por IA. Hecho con esperanza.
+Orbita è un canale Hopeverse Media realizzato con l'intelligenza artificiale. Made by AI. Made with hope.
 
 ## Keywords
 
-geografía, curiosidades del mundo, fronteras, mapas, lugares increíbles, datos curiosos, países, historia y geografía, shorts en español, sabías que, pueblos curiosos, islas, cultura general, viajes
+spazio, astronomia, universo, pianeti, stelle, sistema solare, missioni spaziali, curiosità sullo spazio, cielo stasera, astronauti, buchi neri, scienza in italiano, shorts italiano, cosmo, Orbita
 
 ## First videos
 
-1. There's a Spanish town completely surrounded by France, and it's no mistake: the story of Llívia
-2. This island switches countries every six months, and nobody lives on it: Pheasant Island
-3. Bolivia has no coastline, so why does it still have a navy?
-4. The point on Earth farthest from any human being lies directly below astronauts
-5. In this town the border runs through the middle of cafés and houses: Baarle-Nassau
+1. There is a planet where it rains glass sideways, at 8,000 km/h
+2. Why the Moon always shows us the same face, and what is on the other side
+3. The Italian astronaut experiment that is still running in orbit today
+4. Tonight you can see Saturn with your naked eye: here is exactly where to look
+5. A star so big that if it replaced the Sun, it would swallow Jupiter
 
 ## Credits left
 
-- **HeyGen is low: 1.83 usd left** - top it up today
+- **HeyGen is low: 0.03 usd left** - top it up today
 - fal.ai: ? usd (Couldn't read the balance (HTTP Error 403: Forbidden); add a fal.ai READONLY key as the FAL_BILLING_KEY secret)
-- HeyGen: 1.83 usd (Talking hosts; Kling on fal.ai takes over when it runs out)
-- ElevenLabs: 50309 characters (Voices; free Edge voices take over when it runs out. Plan: creator)
+- HeyGen: 0.03 usd (Talking hosts; Kling on fal.ai takes over when it runs out)
+- ElevenLabs: 48247 characters (Voices; free Edge voices take over when it runs out. Plan: creator)
 - Anthropic: ? usd (No balance API: see console.anthropic.com > Billing. Spend is logged per run)
 - Perplexity: ? usd (No balance API: see perplexity.ai/account/api. About $0.006 a search)
 
