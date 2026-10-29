@@ -1,0 +1,145 @@
+{
+  "title": "Hopeverse: Tamil Dance Number v7 (v6 + senior hit-composer craft)",
+  "story": "A Tamil film hero's mass dance number at a night street festival.",
+  "brief": {
+    "notes": "Jithesh 29 Oct: v6 has the wow factor but lacks a senior blockbuster composer's touch. v7 = v6 + rule 9.14 (real raga melody with gamakam, counterpoint, melodic bass, moving harmony with a borrowed chord, interlude showpiece, polish). 2 takes."
+  },
+  "seconds": 75,
+  "takes": 2,
+  "plan": {
+    "positive_global_styles": [
+      "modern 2020s Tamil film dance number with a bouncy kuthu groove, about 100 BPM",
+      "balanced fusion: real acoustic instruments (veena, mridangam, nadaswaram, bamboo flute, thappu drum, strings, brass) share the spotlight equally with fresh modern electronic sounds (deep 808 sub, crisp electronic kick and claps, a bent synth lead, glitchy textures)",
+      "clean, spacious, punchy mix where every instrument is clearly heard",
+      "instrumental",
+      "one short, catchy 5-note signature riff inside a real singable melody of question-and-answer phrases, rooted in a raga like a minor scale with a raised sixth, with Carnatic gamakam slides, that develops and climbs through the track",
+      "counterpoint: strings and flute play a counter-melody answering the lead, and a melodic bass line moves like a second melody",
+      "a moving chord progression with one borrowed chord, not a static one-chord loop",
+      "the polish of a senior blockbuster film composer: every instrument has one clear job, space between phrases, human groove feel, glossy, wide, international mix with deep sub and airy reverb"
+    ],
+    "negative_global_styles": [
+      "wall of synths",
+      "noisy",
+      "distorted",
+      "EDM drop",
+      "side-chain pumping",
+      "white-noise riser",
+      "vocals",
+      "chanting",
+      "old-fashioned",
+      "vintage film music",
+      "lo-fi",
+      "Arabic melody"
+    ],
+    "sections": [
+      {
+        "section_name": "Mystery",
+        "duration_ms": 8000,
+        "positive_local_styles": [
+          "the very first sound is striking: a deep bent veena note with a cinematic low boom",
+          "then only two sounds: the lone real veena plays a slow mysterious phrase (a rising 3-note call: root, minor third, fifth, bent up) over a soft deep electronic drone"
+        ],
+        "negative_local_styles": [
+          "drums",
+          "percussion",
+          "bass",
+          "synth lead",
+          "strings",
+          "brass"
+        ],
+        "lines": []
+      },
+      {
+        "section_name": "Second voice",
+        "duration_ms": 6000,
+        "positive_local_styles": [
+          "a real mridangam quietly taps the kuthu pattern under the veena",
+          "still no beat, no bass"
+        ],
+        "negative_local_styles": [
+          "kick",
+          "bass",
+          "brass",
+          "strings"
+        ],
+        "lines": []
+      },
+      {
+        "section_name": "Build",
+        "duration_ms": 8000,
+        "positive_local_styles": [
+          "a soft electronic kick and claps join",
+          "a bent synth answers the veena phrase",
+          "strings swell in slowly",
+          "the build ends with one full beat of total band silence"
+        ],
+        "negative_local_styles": [
+          "brass",
+          "808"
+        ],
+        "lines": []
+      },
+      {
+        "section_name": "Groove lands",
+        "duration_ms": 12000,
+        "positive_local_styles": [
+          "a massive slam after the silence: huge low thavil hit, brass blast and a whistle",
+          "the full kuthu groove: real thappu drum with the electronic kick and deep 808 bass",
+          "the real nadaswaram states the catchy 5-note signature riff clearly, the synth lead answers it"
+        ],
+        "negative_local_styles": [],
+        "lines": []
+      },
+      {
+        "section_name": "Interlude showpiece",
+        "duration_ms": 12000,
+        "positive_local_styles": [
+          "an interlude showpiece: a virtuoso real bamboo flute and violin counterpoint over the held groove",
+          "then the real nadaswaram and the synth lead trade the signature riff, each answer shorter and faster",
+          "melodic bass line answering underneath"
+        ],
+        "negative_local_styles": [],
+        "lines": []
+      },
+      {
+        "section_name": "Breath",
+        "duration_ms": 4000,
+        "positive_local_styles": [
+          "bass and drums step out, played by the band",
+          "only the veena and one soft synth remain"
+        ],
+        "negative_local_styles": [
+          "bass",
+          "drums"
+        ],
+        "lines": []
+      },
+      {
+        "section_name": "Hook step",
+        "duration_ms": 12000,
+        "positive_local_styles": [
+          "double-time thappu drum rolls crash into it",
+          "surprise: the rhythm switches to a straight, hard four-beat pattern",
+          "the biggest hook: the signature riff on nadaswaram and synth brass in unison"
+        ],
+        "negative_local_styles": [
+          "swing"
+        ],
+        "lines": []
+      },
+      {
+        "section_name": "Final hook",
+        "duration_ms": 13000,
+        "positive_local_styles": [
+          "the key lifts up a whole step",
+          "back to the kuthu bounce with everything, the signature riff played biggest: real instruments and electronics in balance",
+          "ends on one big unison hit, then stop"
+        ],
+        "negative_local_styles": [
+          "fade out"
+        ],
+        "lines": []
+      }
+    ]
+  }
+}
