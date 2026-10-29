@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Neon Raja v3 (South Indian film style)",
+  "take": 2,
+  "made_at_utc": "2026-10-29T17:13:21.171485+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "QwXoyY99t13h4w8yONgR",
+  "request": {
+    "prompt": "A brand-new hero-elevation BGM written exactly the way today's big Tamil and Telugu film composers write a mass hero's entry theme, but played with a futuristic cyberpunk sound: retro analog synths, a bending synth lead, a distorted electric guitar, heavy brass stabs, a huge modern kick and deep sub bass. Instrumental, no lyrics. The South Indian film style is in the writing, not the instruments: the lead melody is shaped like a raga (Kiravani-like, C sharp minor with a raised seventh), with fast ornamented turns, bends and slides between notes on the synth and guitar, the way a nadaswaram or a Carnatic violin would phrase it; the groove has the swinging, bouncing Tamil mass feel and switches into a rolling triplet feel in the build; heavy stop-and-slam punctuation where the whole band hits together and stops; a big wordless male crowd chant ('hey', 'oh') answers each hook like a theatre audience; the hook returns bigger every time, like the build-up before the hero's slow-motion walk. About 100 BPM. Structure: second zero, one bent synth note over a deep boom; the lead alone plays a rising three-note call (root, minor third, fifth, last note bent up) and the proud hook over a soft synth arpeggio; at 8 seconds the mass groove slams in; a new section every 10 seconds, each landing on the hook in a new way (synth lead, then guitar, then brass with the crowd chant); at about 35 seconds the band stops dead for one beat, then a double-time drum build in triplets into the biggest hook, lifted up a whole step; the ending is a rhythmic phrase played three times that lands hard on the final downbeat, then the three-note call alone. Not Western pop, not Hollywood trailer music, not plain synthwave, not EDM, no white-noise risers, no side-chain pumping, not ambient.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 60000
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct 17:10 on v2: concept fine, 'music is pathetic, no Indian touch'. Clarified 17:10 (Monsoon Duel thread): 'Indian touch doesn't mean you have to use these instruments; it means the style of music, not the instruments.' v3 keeps the cyberpunk sound palette (synths, electric guitar, brass, big drums) but WRITES it like today's South Indian (Tamil/Telugu) hero-elevation BGM: raga-shaped melody with gamaka-like bends and slides on synth and guitar, the swinging Tamil mass bounce and triplet (tisram) feel, stop-and-slam punctuation, crowd chant answering the hook, the hook coming back bigger each time, a korvai-style ending (a rhythm phrase three times landing on the downbeat). Prompt mode so it gets music_v2."
+  },
+  "story": "A king rules a rain-soaked neon city of the future; this is his mass entry theme.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
