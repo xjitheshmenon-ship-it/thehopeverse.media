@@ -5,6 +5,7 @@
 The shots' "end" times follow the track's sections (tease, hit, walk, drop, mass, punch), so the cuts land on the music.
 HeyGen Video first (HEYGEN_API_KEY, about $0.09 a 5 s shot, slowed down to fill longer shots), else Kling on fal.ai
 (FAL_KEY, $0.35 per 5 s shot, $0.70 up to 10 s).
+A shot with "image" starts from that photo (HeyGen only), so the same man, face and clothes appear in every shot.
 """
 import json
 import shutil
@@ -35,7 +36,7 @@ def make(i: int) -> Path:
     raw, part = work / f"raw-{i:02}.mp4", work / f"part-{i:02}.mp4"
     if not raw.exists():
         try:
-            heygen_clip(f"{shot['prompt']}. {film['look']}", raw)
+            heygen_clip(f"{shot['prompt']}. {film['look']}", raw, Path(shot["image"]) if shot.get("image") else None)
         except Exception as e:
             print(f"shot {i + 1}: HeyGen failed ({e}); using Kling")
     if not raw.exists():
@@ -49,8 +50,10 @@ def make(i: int) -> Path:
                ":x=(w-tw)/2:y=h*0.72") if text else ""
     length = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(raw)],
                                   capture_output=True, text=True).stdout or 5)
+    skip = film.get("skip", 0) if shot.get("image") else 0  # every photo shot opens on the same frame; cut that start
+    length -= skip
     slow = max(1.0, (shot["end"] - start) / length)  # a 5 s shot fills a longer beat in slow motion
-    subprocess.run([FF, "-y", "-loglevel", "error", "-i", str(raw), "-t", f"{shot['end'] - start:.3f}", "-an", "-vf",
+    subprocess.run([FF, "-y", "-loglevel", "error", "-ss", f"{skip}", "-i", str(raw), "-t", f"{shot['end'] - start:.3f}", "-an", "-vf",
                     f"setpts={slow:.3f}*PTS,scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,crop=1080:1920,setsar=1,fps=30"
                     + caption, "-c:v", "libx264", "-crf", "20", "-preset", "veryfast", "-pix_fmt", "yuv420p", str(part)],
                    check=True)
