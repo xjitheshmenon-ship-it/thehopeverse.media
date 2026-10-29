@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: First Love v3 (take 2 sounds, take 1 groove)",
+  "take": 1,
+  "made_at_utc": "2026-10-29T18:04:46.201542+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "4bGCGm9c5gYV9goBzKTA",
+  "request": {
+    "prompt": "A brand-new, joyful and mesmerizing romantic theme written the way the great Tamil and Telugu film composers write the magical moment a boy sees a girl for the first time: his heart races with happiness and the whole world sparkles. Bright, positive and warm from the first note to the last: G major throughout, never sad, never minor. Instrumental, no lyrics. Sound palette, airy, sparkling and wide: a bright breathy bamboo flute, a sparkling felt piano, a glitch-chopped veena pluck, a sweet solo violin with slides, wordless female and male hums, a twinkling music-box shimmer, glass bangles jingling as the shaker. Structure: a steady, happy, swaying South Indian film-song groove with real drums playing a lively eighth-note pattern, hand percussion and a deep round melodic bass, which keeps driving from 12 s to the end with no breaks or quiet stretches. A singable melody in a bright raga like Mohanam with playful gamakam slides and grace notes; a catchy five-note love hook that returns on a NEW lead sound every 8 to 10 seconds while the groove keeps going. About 92 BPM. Timeline: 0-6 s: the twinkling shimmer and the flute alone play a rising joyful three-note call (root, major third, fifth, the last note bent upward). 6-12 s: the felt piano plays the love hook, the veena pluck answers, and a soft heartbeat kick and the bass enter. 12-22 s: the full happy groove lands with drums and bangles; the hook on the sweet violin. 22-32 s: the hook moves to the female hum, answered by the male hum, strings join. 32-42 s: the flute and violin chase each other playfully over the groove. 42-52 s: the veena pluck and piano trade the hook in quick call-and-response, drums with a playful fill into the next section. 52-64 s: the biggest, happiest moment: the full love melody on soaring strings and flute, the joyful wordless chorus, the hook lifted up a whole step, drums and bass at full drive. 64-72 s: the groove keeps going, then lands on one clean final hit and the flute's three-note call over the shimmer. Not sad, not a slow ballad, not ambient, not floating without drums, no long quiet parts, not Hollywood, not Western pop, no EDM, no white-noise risers, no side-chain pumping.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 72000
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct 18:01 on v2: likes take 2's instrument sounds and how they're used, NOT take 2's track structure; take 1's final part is really good. Measured: v2 take 1 48-72 s = steady full happy groove at 92 BPM in C major, real drums (~30% percussive, ~3.8 drum hits/s, eighth-note feel), deep round bass (sub+bass 63%), level held steady, a new section every 6-10 s, a clean ending. v2 take 2 = airy bright palette (flute, sparkling felt piano, glitchy veena pluck, violin, hums, shimmer; mid/presence-heavy, wide) but floating with no groove, almost no drums or bass, and a 14 s near-silence. v3 = take 2's sounds on take 1's final-part structure, groove in by 12 s and held to the end, major throughout. Prompt mode (music_v2)."
+  },
+  "story": "The first time a boy sees a girl: time slows, the world sparkles, his heart races, pure joy and wonder.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
