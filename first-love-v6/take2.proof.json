@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: First Love v6 (six parts of romance)",
+  "take": 2,
+  "made_at_utc": "2026-10-29T18:46:32.039934+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "YxeR5kWepP678YCHzE1h",
+  "request": {
+    "prompt": "A brand-new, deeply romantic first-love theme in the style of South Indian film music, built like a classical thumri that blossoms: a boy sees a girl for the first time and falls in love. Tender, intimate, longing and sweet, then joyful at the very end. Never sad, never a festival or hero theme. Instrumental, no lyrics. One raga for the whole track: Kalyani (Yaman), a major scale with a raised fourth for wonder, sung-style phrasing with gamakam slides, trembling kampita on long notes, and one aching passing note outside the raga. Sounds: a breathy bamboo flute (him), a sweet solo violin and a soft wordless female hum (her), a sparkling felt piano, a glitch-chopped veena pluck, a bright playful tumbi pluck (the teasing friend), santoor cascades, swarmandal glints, glass bangles, warm strings, a soft tanpura drone; tabla and dholak for the rhythm. Warm, close, wide, with airy reverb. Rhythm rule: once the soft tabla heartbeat enters at 8 s, the rhythm NEVER stops until the last 4 seconds; it only changes: heartbeat, then a lilting 6-beat dadra sway, then a steady swinging 8-beat keherwa, then a faster joyful laggi with free tabla fills. Timeline: 0-8 s, THE GLANCE: free time, no beat, over the tanpura drone; the flute alone plays a rising three-note call (root, major third, fifth) and holds the raised fourth, unresolved, with swarmandal glints; time freezes. 8-18 s, SHYNESS: a soft low tabla heartbeat begins; short hesitant question-and-answer phrases, flute asks and violin answers, with little breaths between; the tumbi teases once. 18-32 s, ATTRACTION: the slow lilting 6-beat dadra sway; the flute sings the real love melody in long aching notes with slides and trembling gamakam; each phrase comes back a little more ornamented; the felt piano and veena pluck answer softly. 32-46 s, TOGETHERNESS: the rhythm becomes a steady swinging keherwa; the violin and female hum sing her answer while the flute holds a note under her, then they play the melody together in sweet harmony; warm strings swell. 46-58 s, THE DREAM: an interlude: santoor cascades and soaring strings, a short virtuoso flute and violin duet, a gentle lift up a whole step, the keherwa still swinging. 58-76 s, BLISS: the laggi: the rhythm feels twice as fast, tabla and dholak play joyful free fills, the tumbi bounces, the hums become a soft happy chorus, the full love melody at its warmest; joyful but tender. 76-82 s: everything falls back to the flute's opening three-note phrase, now answered by the violin and resolved home, ending on one soft bell. Not a party, not heroic, not epic, not a trailer, not a Western ballad, not ambient, no sad minor colour, no big drums before 58 s, no EDM, no white-noise risers, no side-chain pumping.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 82000
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct 18:40: research romance in Carnatic, Hindustani and Punjabi music first, then make the romantic version with all 5-6 parts in one track. v6 follows music.md section 17e: thumri structure (slow bol-banao longing that blossoms into a laggi release), Kalyani/Yaman raga, flute=him / violin+hum=her, tumbi=the teasing friend, rhythm nonstop from 8 s (heartbeat, dadra, keherwa, laggi). Prompt mode (music_v2), 82 s."
+  },
+  "story": "A boy sees a girl for the first time: the glance, shyness, attraction, togetherness, the dream, and bliss.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
