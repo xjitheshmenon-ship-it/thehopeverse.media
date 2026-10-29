@@ -52,7 +52,7 @@ def make(i: int) -> Path:
     slow = max(1.0, (shot["end"] - start) / length)  # a 5 s shot fills a longer beat in slow motion
     subprocess.run([FF, "-y", "-loglevel", "error", "-i", str(raw), "-t", f"{shot['end'] - start:.3f}", "-an", "-vf",
                     f"setpts={slow:.3f}*PTS,scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,crop=1080:1920,setsar=1,fps=30"
-                    + caption, "-c:v", "libx264", "-crf", "16", "-preset", "veryfast", "-pix_fmt", "yuv420p", str(part)],
+                    + caption, "-c:v", "libx264", "-crf", "20", "-preset", "veryfast", "-pix_fmt", "yuv420p", str(part)],
                    check=True)
     print(f"shot {i + 1}: {start}-{shot['end']} s")
     return part
