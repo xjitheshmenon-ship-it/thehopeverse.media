@@ -90,5 +90,6 @@ if post := os.environ.get("POST"):
     from video import upload
     channel = next(c for c in json.loads(Path("channels.json").read_text(encoding="utf-8")) if c["id"] == post)
     package = {"title": film["title"], "description": film.get("description", film["title"]),
-               "category": channel.get("category", "10"), "lang": channel.get("lang", "en")}
+               "category": channel.get("category", "10"), "lang": channel.get("lang", "en"),
+               **({"publish_at": film["publish_at"]} if film.get("publish_at") else {})}  # e.g. "2026-10-29T17:20:00Z": scheduled, not public now
     print(f"Posted on {channel['name']}: https://youtu.be/{upload(out, package, Path(channel['token']), channel)}")
