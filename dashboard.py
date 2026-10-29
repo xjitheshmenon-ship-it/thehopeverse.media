@@ -80,6 +80,48 @@ def shorts() -> list:
     return rows
 
 
+def film_uploads(rows: list) -> list:
+    """Uploads of YouTube channels that post outside the Shorts outbox (ÆTHER's films, posted by film.py), read
+    from the channel itself, so scheduled ones show with their go-live time."""
+    from video import uploads
+    out, piped = [], {r["channel"] for r in rows}
+    for c in _channels():
+        token = HERE / c.get("token", "token.json")
+        if c["platform"] != "youtube" or c["id"] in piped or not token.exists():
+            continue
+        try:
+            videos = uploads(token)
+        except Exception as e:
+            print(f"::warning::Uploads for {c['id']}: {str(e)[:300]}")
+            continue
+        for vid, v in videos.items():
+            scheduled = v["privacy"] == "private" and v.get("publish_at")
+            when = datetime.fromisoformat((v.get("publish_at") if scheduled else v["published"]).replace("Z", "+00:00")).astimezone(IST)
+            num = lambda k: int(v[k]) if k in v else None
+            out.append({"id": f"{c['id']}-{vid}", "channel": c["id"], "day": f"{when:%Y-%m-%d}",
+                        "published": f"{when:%Y-%m-%d %H:%M}", "url": f"https://youtu.be/{vid}", "title": v["title"],
+                        "status": "Scheduled" if scheduled else "On YouTube" if v["privacy"] == "public" else v["privacy"].title(),
+                        "relevance": None, "relevance_why": None, "predicted_48h": None, "actual_48h": None,
+                        "youtube_id": vid, "yt_views": num("viewCount"), "yt_likes": num("likeCount"),
+                        "yt_comments": num("commentCount"), "instagram_id": None, "ig_views": None, "ig_likes": None,
+                        "ig_comments": None})
+    return out
+
+
+# The team card on HQ. Keep in step with team.md and agents.py when an agent is added.
+AGENTS = [
+    {"agent": "Mr. Hope", "role": "Decision maker", "model": "Opus", "does": "Picks the topic, calls each helper in order, fixes the script after the fact-check", "output": "Run summary", "then": "Reviews the day and rewrites lessons.md"},
+    {"agent": "Mr. Grow", "role": "Audience growth", "model": "Sonnet", "does": "Runs first each day: channel numbers and today's trends, notes for the other agents, to-dos for the owner", "output": "Notes per agent, owner to-dos", "then": ""},
+    {"agent": "Mr. Focus", "role": "Research", "model": "Sonnet", "does": "Daily topics for India, US and EU across categories; deep research with the rare detail; fact-check of the script", "output": "Topics, dated sources, claim-by-claim check", "then": ""},
+    {"agent": "Mr. Cast", "role": "Characters", "model": "Sonnet", "does": "Real-looking characters mixed with open-source photos and video of the real subject", "output": "Cast list in characters.md", "then": ""},
+    {"agent": "Mr. Pen", "role": "Script", "model": "Sonnet", "does": "Curiosity-gap hook, an open question, a twist, a payoff; about 130 words", "output": "Timed script", "then": ""},
+    {"agent": "Mr. Cut", "role": "Edit plan", "model": "Sonnet", "does": "Shot list with a cut every 2-3 s and a footage search per shot", "output": "Edit plan", "then": ""},
+    {"agent": "Mr. Spark", "role": "Title and thumbnail", "model": "Sonnet", "does": "3 honest titles, a striking description with the story behind it, hashtags, Instagram caption", "output": "Title, description, thumbnail ideas", "then": ""},
+    {"agent": "Mr. Raga", "role": "Music director", "model": "Sonnet, ElevenLabs Music", "does": "Original cinematic scores for ÆTHER: briefs from ragas, talas and film-scoring craft (music.md), 2 takes per track; Shorts music only when MUSIC_RAGA=1", "output": "Track brief and takes (music-tracks branch)", "then": ""},
+    {"agent": "Mr. Post", "role": "Outbox", "model": "Sonnet", "does": "Queues the finished package for a live channel", "output": "outbox/<channel>-N.json", "then": ""},
+]
+
+
 def spend() -> list:
     """Cost per day and channel from history.jsonl; channel "" is shared work (Mr. Grow, reviews, channel ideas)
     and every run logged before runs carried their channel (26 Oct 2026)."""
@@ -207,14 +249,16 @@ def channels(rows: list, costs: list, plan: list, totals: dict = None) -> list:
     totals = totals or {}
     week = f"{NOW - timedelta(days=6):%Y-%m-%d}"
     names = {c["id"]: c["name"] for c in _channels()}
-    ids = list(dict.fromkeys([p["channel"] for p in plan] + [r["channel"] for r in rows] + [c["channel"] for c in costs]))
+    ids = list(dict.fromkeys([p["channel"] for p in plan] + [r["channel"] for r in rows] + [c["channel"] for c in costs] + list(totals)))
     out = []
     for i in ids:
         mine = [p for p in plan if p["channel"] == i]
+        today = [r for r in rows if r["channel"] == i and r["day"] == TODAY]
         out.append({"channel": i or "shared",
                     "name": f"{names.get(i, i)} ({i.split('-')[0].upper()})" if i.startswith("ig-") else
                     names.get(i, i) if i else "Shared work and older runs",
-                    "planned": len(mine), "posted_today": sum(r["channel"] == i and r["day"] == TODAY for r in rows),
+                    # a channel outside the daily round (ÆTHER) plans what it scheduled for today
+                    "planned": len(mine) or len(today), "posted_today": sum(r["status"] != "Scheduled" for r in today),
                     "due_now": sum(p["status"] in ("Posted", "Missed") for p in mine),
                     "missed": sum(p["status"] == "Missed" for p in mine),
                     "spend_today": round(sum(c["cost_usd"] for c in costs if c["channel"] == i and c["day"] == TODAY), 2),
@@ -287,11 +331,12 @@ if __name__ == "__main__":
     if os.environ.get("BREAKOUTS") == "true":  # the hourly numbers run only, so two runs never study the same Short
         breakout.run(rows)
         predict.record(rows, NOW.replace(tzinfo=None))  # real 48-hour views next to each prediction
+    rows += film_uploads(rows)  # after breakouts and predictions, which are about Shorts
     plan = slots(rows)
     data = {"updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "shorts": rows, "spend": costs, "agent_work": agent_work(), "limits": limits(costs),
             "slots": plan, "channels": channels(rows, costs, plan, youtube_totals()), "runs": runs(), "upcoming": upcoming(), "credits": credits.check(),
-            "topics": topics(), "talk": talk(), "breakouts": breakouts(), "predictions": predictions()}
+            "topics": topics(), "agents": AGENTS, "talk": talk(), "breakouts": breakouts(), "predictions": predictions()}
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(data, indent=1, ensure_ascii=False), encoding="utf-8")
     print(f"Saved {OUT} ({len(rows)} Shorts)")

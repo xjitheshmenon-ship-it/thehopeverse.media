@@ -875,6 +875,17 @@ def watch_minutes(token: Path) -> int:
     return int((report.get("rows") or [[0]])[0][0])
 
 
+def uploads(token: Path) -> dict:
+    """The latest 50 uploads of the channel this token signs in to, scheduled ones included (publish_at set)."""
+    yt = youtube(False, token)
+    playlist = yt.channels().list(part="contentDetails", mine=True).execute()["items"][0]["contentDetails"]["relatedPlaylists"]["uploads"]
+    ids = [i["contentDetails"]["videoId"] for i in yt.playlistItems().list(
+        part="contentDetails", playlistId=playlist, maxResults=50).execute().get("items", [])]
+    items = yt.videos().list(part="statistics,status,snippet", id=",".join(ids)).execute()["items"] if ids else []
+    return {i["id"]: {**i["statistics"], "title": i["snippet"]["title"], "privacy": i["status"]["privacyStatus"],
+                      "published": i["snippet"]["publishedAt"], "publish_at": i["status"].get("publishAt")} for i in items}
+
+
 def stats(video_ids: list) -> dict:
     """Views, likes, comments and upload time per uploaded video id."""
     items = youtube(interactive=False).videos().list(part="statistics,status,snippet", id=",".join(video_ids)).execute()
