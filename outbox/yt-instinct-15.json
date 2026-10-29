@@ -1,0 +1,176 @@
+{
+  "channel_id": "yt-instinct",
+  "title": "Avant de partir, cette chimpanz\u00e9 a fait demi-tour (histoire vraie)",
+  "description": "Histoire vraie, reconstitu\u00e9e avec des images g\u00e9n\u00e9r\u00e9es par IA : Wounda, chimpanz\u00e9 sauv\u00e9e de justesse au centre Tchimpounga de l'Institut Jane Goodall, en R\u00e9publique du Congo.\nSources : Upworthy et Yahoo News, d'apr\u00e8s la vid\u00e9o de la lib\u00e9ration du 20 juin 2013 sur l'\u00eele de Tchindzoulou.\n#Chimpanz\u00e9 #JaneGoodall #Congo #SauvetageAnimal #Shorts",
+  "lang": "fr",
+  "category": "15",
+  "footer": "Instinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "music": "Tender, emotional orchestral score, no vocals: starts with sparse, fragile solo piano and a low cello drone of suspense, a soft ticking pulse in the middle, then warm strings and gentle African kalimba rising into a hopeful, tear-jerking swell for the hug, ending on a quiet, peaceful piano note",
+  "source": "True story: Wounda, a chimpanzee rescued from the bushmeat trade, came into the Jane Goodall Institute's Tchimpounga Chimpanzee Rehabilitation Center near Pointe-Noire, Republic of Congo, close to death. She weighed about half what she should have, and her name means 'close to death'. Dr Rebeca Atencia and the Tchimpounga staff nursed her back to health. On 20 June 2013 she became the 15th chimpanzee released onto Tchindzoulou Island in the Kouilou River. Jane Goodall, who was meeting Wounda for the first time and had no part in her care, rode with her in the truck. Before Wounda went into the forest, she turned back and hugged Goodall, and the moment was filmed. Reports do not say exactly how long the care lasted (Yahoo says 'years'), so the script avoids giving a precise timeline. Latest news: Jane Goodall has since died (October 2025), and the video still circulates. Outlets used: Upworthy, 'A rescued chimp unexpectedly embraced Jane Goodall upon her release' (https://www.upworthy.com/rescued-chimp-hugs-jane-goodall/), Yahoo News, 'A tender hug goodbye between Jane Goodall and a chimp she helped save' (https://au.news.yahoo.com/a-tender-hug-goodbye-between-jane-goodall-and-a-chimp-she-helped-save-21458365.html), Shareably (https://shareably.net/jane-goodall-releases-chimp-wild/) and Wildlife Conservation Network (https://wildnet.org/our-journey-to-tchimpounga-with-dr-jane-goodall/).",
+  "script": "Cette jeune chimpanz\u00e9 est si maigre qu'elle ressemble \u00e0 un squelette.\nVictime du trafic de viande de brousse, elle est mourante.\nElle ne p\u00e8se que la moiti\u00e9 de son poids normal.\nOn l'appelle Wounda : \u00ab proche de la mort \u00bb.\nUne grave maladie la ronge, et chaque jour compte.\nMais l'\u00e9quipe de Tchimpounga refuse de l'abandonner.\nPeu \u00e0 peu, Wounda reprend du poids et des forces.\nBien plus tard, le 20 juin 2013, c'est le grand d\u00e9part.\nJane Goodall l'accompagne et lui envoie des baisers.\nSur l'\u00eele de Tchindzoulou, la porte de la cage s'ouvre.\nElle regarde la for\u00eat\u2026 puis fait soudain demi-tour.\nWounda revient serrer Jane Goodall dans ses bras.\nPuis elle dispara\u00eet dans la for\u00eat, enfin libre.\nJane Goodall nous a quitt\u00e9s en 2025. Ce c\u00e2lin, lui, demeure.",
+  "cast": [
+    {
+      "name": "Jane",
+      "role": "Jane Goodall, the British primatologist who goes with Wounda on her release day and receives her hug",
+      "look": "woman, British, 79 years old, slim, kind deeply lined face, soft eyes, ash-grey hair tied back in a low ponytail, always wears a faded khaki button-up field shirt",
+      "voice": "none, nobody speaks on screen",
+      "pitch": "none"
+    },
+    {
+      "name": "Wounda",
+      "role": "the rescued chimpanzee, the silent hero the viewer follows",
+      "look": "female central chimpanzee, young adult, about 1.1 m tall when standing, black coat, pale pinkish-grey face with amber-brown eyes and large ears; skeletal and patchy-furred when rescued, later full-bodied with a glossy coat",
+      "voice": "none, nobody speaks on screen",
+      "pitch": "none"
+    }
+  ],
+  "scenes": [
+    {
+      "narration": "Cette jeune chimpanz\u00e9 est si maigre qu'elle ressemble \u00e0 un squelette.",
+      "on_screen_text": "Si maigre\u2026 on dirait un squelette.",
+      "picture_search": "sanctuary veterinary room",
+      "image_prompt": "Handheld phone footage at eye level: emaciated young female chimpanzee Wounda lying limp on a woven blanket, ribs showing, patchy fur, eyes half-closed and dull, in a small concrete veterinary room at Tchimpounga sanctuary, Republic of Congo, green-painted walls, metal bed, soft daylight from a barred window",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Wounda",
+      "photo": ""
+    },
+    {
+      "narration": "Victime du trafic de viande de brousse, elle est mourante.",
+      "on_screen_text": "Victime du trafic de viande de brousse.",
+      "picture_search": "sanctuary veterinary room",
+      "image_prompt": "Handheld phone footage at eye level: close-up of Wounda's thin hand and weary, frightened face as she curls up on the blanket, in a small concrete veterinary room at Tchimpounga sanctuary, Republic of Congo, green-painted walls, metal bed, soft daylight from a barred window",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Wounda",
+      "photo": ""
+    },
+    {
+      "narration": "Elle ne p\u00e8se que la moiti\u00e9 de son poids normal.",
+      "on_screen_text": "La moiti\u00e9 de son poids normal.",
+      "picture_search": "sanctuary veterinary room",
+      "image_prompt": "Handheld phone footage at eye level: skeletal Wounda sitting hunched with her arms wrapped around her knees, staring blankly, in a small concrete veterinary room at Tchimpounga sanctuary, Republic of Congo, green-painted walls, metal bed, soft daylight from a barred window",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Wounda",
+      "photo": ""
+    },
+    {
+      "narration": "On l'appelle Wounda : \u00ab proche de la mort \u00bb.",
+      "on_screen_text": "Wounda : \u00ab proche de la mort \u00bb.",
+      "picture_search": "sanctuary veterinary room",
+      "image_prompt": "Handheld phone footage at eye level: Wounda lying still under a blanket, breathing shallowly, sad tired eyes looking at the camera, in a small concrete veterinary room at Tchimpounga sanctuary, Republic of Congo, green-painted walls, metal bed, soft daylight from a barred window",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Wounda",
+      "photo": ""
+    },
+    {
+      "narration": "Une grave maladie la ronge, et chaque jour compte.",
+      "on_screen_text": "Chaque jour compte.",
+      "picture_search": "sanctuary veterinary room",
+      "image_prompt": "Handheld phone footage at eye level: Wounda weak and feverish, eyes closed, head resting on the edge of the metal bed, light fading in the room, in a small concrete veterinary room at Tchimpounga sanctuary, Republic of Congo, green-painted walls, metal bed, dim daylight from a barred window",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Wounda",
+      "photo": ""
+    },
+    {
+      "narration": "Mais l'\u00e9quipe de Tchimpounga refuse de l'abandonner.",
+      "on_screen_text": "L'\u00e9quipe refuse d'abandonner.",
+      "picture_search": "sanctuary veterinary room",
+      "image_prompt": "Handheld phone footage at eye level: Wounda slowly opening her eyes and reaching out to take a piece of fruit offered on the blanket, a faint spark of interest on her face, in a small concrete veterinary room at Tchimpounga sanctuary, Republic of Congo, green-painted walls, metal bed, soft daylight from a barred window",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Wounda",
+      "photo": ""
+    },
+    {
+      "narration": "Peu \u00e0 peu, Wounda reprend du poids et des forces.",
+      "on_screen_text": "Peu \u00e0 peu, elle reprend des forces.",
+      "picture_search": "chimpanzee sanctuary forest",
+      "image_prompt": "Handheld phone footage at eye level: a healthier Wounda with a fuller, glossy black coat sitting in the grass, chewing leaves, eyes bright and curious, in a grassy forest enclosure at Tchimpounga sanctuary, tall tropical trees, warm morning light",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Wounda",
+      "photo": ""
+    },
+    {
+      "narration": "Bien plus tard, le 20 juin 2013, c'est le grand d\u00e9part.",
+      "on_screen_text": "20 juin 2013 : le grand d\u00e9part.",
+      "picture_search": "Congo dirt road truck",
+      "image_prompt": "Handheld phone footage at eye level: strong, healthy Wounda peering out through the bars of a metal transport cage in the back of an open truck, alert and calm, on a red dirt road through green savanna and forest near Pointe-Noire, hazy afternoon light",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Wounda",
+      "photo": ""
+    },
+    {
+      "narration": "Jane Goodall l'accompagne et lui envoie des baisers.",
+      "on_screen_text": "Jane Goodall l'accompagne.",
+      "picture_search": "Congo dirt road truck",
+      "image_prompt": "Handheld phone footage at eye level: elderly British woman Jane with ash-grey ponytail and faded khaki field shirt riding beside the metal transport cage, smiling tenderly and blowing a kiss toward the chimpanzee inside, on a red dirt road through green savanna and forest near Pointe-Noire, hazy afternoon light",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Jane",
+      "photo": ""
+    },
+    {
+      "narration": "Sur l'\u00eele de Tchindzoulou, la porte de la cage s'ouvre.",
+      "on_screen_text": "Sur l'\u00eele, la porte s'ouvre.",
+      "picture_search": "Kouilou River jungle island",
+      "image_prompt": "Handheld phone footage at eye level: Wounda stepping out of the open metal transport cage and looking around in awe at the trees, on the muddy riverbank of Tchindzoulou island on the Kouilou River, dense green jungle wall behind, bright overcast tropical light",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Wounda",
+      "photo": ""
+    },
+    {
+      "narration": "Elle regarde la for\u00eat\u2026 puis fait soudain demi-tour.",
+      "on_screen_text": "Puis elle fait demi-tour.",
+      "picture_search": "Kouilou River jungle island",
+      "image_prompt": "Handheld phone footage at eye level: Wounda pausing at the jungle edge, then turning back toward the people by the cage, thoughtful expression, on the muddy riverbank of Tchindzoulou island on the Kouilou River, dense green jungle wall behind, metal transport cage on the bank, bright overcast tropical light",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Wounda",
+      "photo": ""
+    },
+    {
+      "narration": "Wounda revient serrer Jane Goodall dans ses bras.",
+      "on_screen_text": "Elle revient serrer Jane dans ses bras.",
+      "picture_search": "Kouilou River jungle island",
+      "image_prompt": "Handheld phone footage at eye level: elderly British woman Jane with ash-grey ponytail and faded khaki field shirt, eyes moist and moved, being wrapped in a long gentle hug by the chimpanzee Wounda, on the muddy riverbank of Tchindzoulou island on the Kouilou River, dense green jungle wall behind, metal transport cage on the bank, bright overcast tropical light",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Jane",
+      "photo": ""
+    },
+    {
+      "narration": "Puis elle dispara\u00eet dans la for\u00eat, enfin libre.",
+      "on_screen_text": "Enfin libre.",
+      "picture_search": "Kouilou River jungle island",
+      "image_prompt": "Handheld phone footage at eye level: Wounda walking on all fours into the dense green jungle, glancing back once before vanishing among the leaves, on the muddy riverbank of Tchindzoulou island on the Kouilou River, dense green jungle wall behind, bright overcast tropical light",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Wounda",
+      "photo": ""
+    },
+    {
+      "narration": "Jane Goodall nous a quitt\u00e9s en 2025. Ce c\u00e2lin, lui, demeure.",
+      "on_screen_text": "Ce c\u00e2lin, lui, demeure.",
+      "picture_search": "Kouilou River jungle island",
+      "image_prompt": "Handheld phone footage at eye level: elderly British woman Jane with ash-grey ponytail and faded khaki field shirt standing quietly, hand on her heart, gazing with a soft smile toward the jungle where the chimpanzee disappeared, on the muddy riverbank of Tchindzoulou island on the Kouilou River, dense green jungle wall behind, bright overcast tropical light",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Jane",
+      "photo": ""
+    }
+  ],
+  "publish_at": "2026-10-30T04:00:00Z",
+  "relevance": {
+    "score": 58,
+    "why": "Touching, true Wounda story (Tchimpounga, 2013 release) with an apt Jane Goodall tribute; a francophone Congo link suits the audience. Timeliness is modest: Goodall died Oct 2025, so the anniversary hook is close but not fresh. The script matches the title, though chimp footage is a weak spot for this channel.",
+    "views48": 420
+  },
+  "held": "relevance 58/100 under 60: Touching, true Wounda story (Tchimpounga, 2013 release) with an apt Jane Goodall tribute; a francophone Congo link suits the audience. Timeliness is modest: Goodall died Oct 2025, so the anniversary hook is close but not fresh. The script matches the title, though chimp footage is a weak spot for this channel."
+}
