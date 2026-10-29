@@ -808,6 +808,37 @@ def relevance(package: dict, channel: dict) -> Relevance:
     return response.parsed_output
 
 
+class Check(BaseModel):
+    passed: bool
+    problems: str  # one line per problem, empty when it passes
+
+
+def continuity(video: Path, about: str, channel_id: str = "") -> Check:
+    """Mr. Hope is the approval (owner's rule 2026-10-29): he looks at 16 frames across the finished video, like a film's
+    continuity supervisor, before it is posted. Fails a recurring character whose face, hair, moustache, dress, jewellery
+    or props change between shots, a place that changes, things appearing or vanishing, and broken frames."""
+    from agents import MODEL
+    sheet = video.with_suffix(".sheet.jpg")
+    length = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(video)],
+                                  capture_output=True, text=True).stdout or 60)
+    subprocess.run([FFMPEG_BINARY, "-y", "-loglevel", "error", "-i", str(video), "-vf",
+                    f"fps=16/{length:.2f},scale=270:480,tile=4x4", "-frames:v", "1", "-q:v", "4", str(sheet)], check=True)
+    response = client.messages.parse(
+        model=MODEL, max_tokens=3000, output_config={"effort": "low"}, output_format=Check,
+        messages=[{"role": "user", "content": [
+            {"type": "image", "source": {"type": "base64", "media_type": "image/jpeg",
+                                         "data": base64.b64encode(sheet.read_bytes()).decode()}},
+            {"type": "text", "text": f"16 frames, in order left to right and top to bottom, from a vertical video: {about}. "
+             "You are the final approval before it goes public; check it like a film's continuity supervisor. Fail it for: "
+             "a recurring character (a host or story character) whose face, hair, moustache or beard, makeup, clothes, "
+             "jewellery or props change between shots; a setting that changes when it should be the same place; things "
+             "or people appearing and vanishing; upside-down, warped or melted frames, extra limbs, garbled text. "
+             "Different people in news or stock footage are fine. passed: true only if a careful viewer would see none "
+             "of these. problems: one short line each."}]}])
+    log_spend(_cost(MODEL, response.usage), channel_id)
+    return response.parsed_output
+
+
 def youtube(interactive: bool = True, token: Path = TOKEN, api: tuple = ("youtube", "v3")):
     """A signed-in YouTube API client. Upload, plus read-only access so Mr. Hope can see view counts.
     api=("youtubeAnalytics", "v2") gives the Analytics API with the same sign-in (youtube.readonly covers it)."""
@@ -1038,6 +1069,18 @@ if __name__ == "__main__":
             continue
         if "youtube_id" not in package and not approved(package):
             print(f"Not posting {path.name}: not approved on Telegram")
+            continue
+        if "youtube_id" not in package and "qa" not in package and video.exists():
+            try:
+                c = continuity(video, f"{home.get('name')}: {package.get('title')}", package["channel_id"])
+                package["qa"] = {"passed": c.passed, "problems": c.problems}
+                if not c.passed:
+                    package["held"] = f"continuity: {c.problems}"
+                path.write_text(json.dumps(package, indent=2), encoding="utf-8")
+            except Exception as e:  # a broken check shouldn't block the day's videos
+                print(f"    continuity check failed, posting anyway: {e}")
+        if package.get("held") and "youtube_id" not in package:
+            print(f"::warning::Not posting {path.name}: {package['held']}")
             continue
         if platform.get(package["channel_id"]) == "youtube" and "youtube_id" not in package:
             if not quota_left:
