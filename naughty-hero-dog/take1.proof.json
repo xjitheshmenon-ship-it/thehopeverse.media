@@ -1,0 +1,19 @@
+{
+  "title": "Hopeverse: Naughty Hero (Jithesh's dog theme)",
+  "take": 1,
+  "made_at_utc": "2026-10-29T05:40:08.368389+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "6SMz6ZblhswapDKl1ev6",
+  "request": {
+    "prompt": "Playful, cheeky yet heroic modern Tamil mass-hero film score for a mischievous little dog who turns out to be the hero, with a unique signature sound built from broken, processed Carnatic instruments. 112 BPM bouncy swagger groove, D minor with a cheeky major lift in the hero section. Signature motif: a rising 3-note call (root, up a minor third, up to the fifth, the last note held and bent upward) on a gritty synth lead in the first 5 seconds and again at the end. The electronic layer is made of chopped and processed Carnatic sounds: a sneaky tiptoe riff of glitch-chopped, plucked veena notes; a mridangam pitched down into a bouncy bass hit; reversed nadaswaram phrases as risers; ghatam and kanjira cut into tight, playful glitchy percussion with little stutters. Underneath, a warm bouncy synth bass, deep cinematic drums, low brass stabs and strings. Vocals: deep male crowd chants and wordless shouts like 'hey!' and 'ho!', plus a short playful whistle answering the theme, no lyrics, no singer. Signature sound: a reversed veena swell rising into a big hit at every section change. 0-12 s: sneaky tease, tiptoe plucked veena riff, ticking ghatam, warm bass, the 3-note call. 12-14 s: reversed veena swell, one huge hit, crowd 'hey!', the cheeky main theme. 14-30 s: the bouncy 4-bar theme on the synth lead with the chopped veena answering, chants between phrases, playful stutter fills. 30-32 s: SURPRISE: everything stops dead for one beat like he got caught, a single comic low brass note, then BANG back in. 32-44 s: the hero turn: the main hook returns with full drums at full power, the major lift, call-and-response chants ('hey!'... 'ho!') on every bar, the drums never thin out. 44-52 s: everything at full power with brass and the pitched mridangam bass, a new rising brass counter-line on top. 52-60 s: the theme one last time, a hard final hit, then the 3-note call rings out with one cheeky whistle. Something new happens at least every 8 seconds; the drum density never drops in the middle. No clean unprocessed Carnatic solos; no long pauses except the one-beat surprise stop, no side-chain pumping, no EDM drops; clear, tonal, punchy, very loud cinematic mix; no white-noise sweeps, no harsh fuzz; not childish, a cool cheeky hero.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 60000
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct: fresh BGM for his dog, 'bit naughty but he is a hero'. Identity per music-scoring.md section 9 (Broken Heritage, 3-note motif, reversed veena swell, rare ear travel, micro touches, a surprise, grip rule 9.8)."
+  },
+  "story": "Jithesh's dog: a bit naughty, always up to mischief, but when it matters he is the hero.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
