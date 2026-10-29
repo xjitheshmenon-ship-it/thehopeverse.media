@@ -7,6 +7,7 @@
 | **Crimson Vows** (was Villain Wedding: stylish villain at his own wedding, handpan) | crimson-vows.mp3 | 29 Oct 2026, "Lock it" | tracks/villain-wedding-v7.json (take 2) |
 | **Red Line** (was Car Chase: heartbeat chase, hard brake, konnakol surprise) | red-line.mp3 | 29 Oct 2026, "i want that" | tracks/car-chase-v3-plan.json |
 
+| **The Oath** (emotional sacrifice theme: lone flute rises to a full choir) | the-oath.mp3 | 29 Oct 2026, "Yes lock" | tracks/the-oath-v2.json (take 2, + punch master and ear travel 6.7-12.7 s / 43.2-47 s, tools/moments-oath.py) |
 Each .proof.json is the ElevenLabs request record (model, song id, time) for ownership and distributor questions.
 Post work on both: fixed-gain mastering + tools/moments*.py ear-travel moments.
 
