@@ -71,7 +71,7 @@
       },
       {
         "section_name": "Hard brake",
-        "duration_ms": 2000,
+        "duration_ms": 3000,
         "positive_local_styles": [
           "a long loud tyre screech of a car braking hard",
           "the orchestra slides down in pitch with the brake and stops dead",
@@ -101,7 +101,7 @@
       },
       {
         "section_name": "Second chase",
-        "duration_ms": 15000,
+        "duration_ms": 14000,
         "positive_local_styles": [
           "the full orchestra and drums slam back in together with a huge hit",
           "up a whole step to F sharp minor",
