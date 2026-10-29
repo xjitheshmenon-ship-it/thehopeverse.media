@@ -540,12 +540,12 @@ def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float
     return ColorClip(size, color=(12, 18, 48), duration=duration)
 
 
-def caption(text: str, size: tuple, lang: str = "") -> np.ndarray:
-    """Caption on a transparent layer, laid over the footage."""
+def caption(text: str, size: tuple, lang: str = "", scale: float = 1) -> np.ndarray:
+    """Caption on a transparent layer, laid over the footage. scale: a channel's "caption_scale" (Instinct's older viewers)."""
     img = Image.new("RGBA", size, (0, 0, 0, 0))
     draw = ImageDraw.Draw(img)
-    font = _font(size[0] // 14, lang)
-    lines = textwrap.wrap(text, width=18)
+    font = _font(int(size[0] // 14 * scale), lang)
+    lines = textwrap.wrap(text, width=int(18 / scale))
     line_h = font.size + 16
     top = int(size[1] * 0.72) - line_h * len(lines) // 2
     draw.rectangle((0, top - 30, size[0], top + line_h * len(lines) + 30), fill=(0, 0, 0, 150))
@@ -580,7 +580,7 @@ def eleven_voice(gender: str) -> str:
 
 
 def speak(text: str, voice: str, path: Path, pitch: str = "+0Hz", eleven: str = "", before: str = "",
-          after: str = "") -> bool:
+          after: str = "", rate: str = "+0%") -> bool:
     """ElevenLabs when ELEVENLABS_API_KEY is set (the lines around this one keep the delivery flowing), else Edge.
     Edge's free voice service sometimes returns an empty or broken file, so check it and try again.
     Returns False if it never works, so the caller can drop that scene instead of losing the whole video."""
@@ -598,7 +598,7 @@ def speak(text: str, voice: str, path: Path, pitch: str = "+0Hz", eleven: str = 
             print(f"    ElevenLabs failed ({e} {getattr(e, 'read', lambda: b'')()[:200]!r}); using Edge for this line")
     for attempt in range(6):  # about 2.5 minutes in all, so a short internet drop doesn't cost a scene
         try:
-            asyncio.run(edge_tts.Communicate(text, voice, pitch=pitch).save(str(path)))
+            asyncio.run(edge_tts.Communicate(text, voice, pitch=pitch, rate=rate).save(str(path)))
             AudioFileClip(str(path)).close()  # raises if ffmpeg can't read it
             return True
         except Exception as e:
@@ -693,8 +693,8 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
     logo = None
     # Channel watermark, top-left, clear of the Shorts buttons on the right: a channel's own "watermark" in
     # channels.json (Kissa), else logo.png (Hopeverse).
-    mark = HERE / next((c.get("watermark", "logo.png") for c in _channels() if c["id"] == package.get("channel_id")),
-                       "logo.png")
+    home = next((c for c in _channels() if c["id"] == package.get("channel_id")), {})
+    mark = HERE / home.get("watermark", "logo.png")
     if mark.exists():
         logo = ImageClip(str(mark), transparent=True).resized(width=200).with_opacity(0.85).with_position((80, 227))
     # A series shows its own characters in every shot, so its AI clips are capped only by DAILY_BUDGET.
@@ -719,7 +719,7 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
                 eleven = ""
             if not speak(scene.narration, who.get("voice", voice), audio, who.get("pitch", "+0Hz"), eleven,
                          spoken[k - 1][1].narration if k else "",
-                         spoken[k + 1][1].narration if k + 1 < len(spoken) else ""):
+                         spoken[k + 1][1].narration if k + 1 < len(spoken) else "", home.get("rate", "+0%")):
                 continue
             samples = _wav(audio)
             if not samples:
@@ -735,7 +735,7 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
         i, scene, audio, start, end = line
         duration = (round(end * 30) - round(start * 30)) / 30
         layers = [background(scene, i, audio, size, duration, work, used, bool(package.get("cast"))),
-                  ImageClip(caption(scene.on_screen_text, size, lang), transparent=True).with_duration(duration)]
+                  ImageClip(caption(scene.on_screen_text, size, lang, home.get("caption_scale", 1)), transparent=True).with_duration(duration)]
         if logo:
             layers.append(logo.with_duration(duration))
         clip = CompositeVideoClip(layers, size=size).with_duration(duration)
