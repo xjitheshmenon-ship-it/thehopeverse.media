@@ -74,8 +74,8 @@ def make(i: int) -> Path:
     return part
 
 
-if film.get("video"):  # a finished video (e.g. a music visualizer), only posted
-    out = Path(film["video"])
+if film.get("file"):  # a finished video file (e.g. a music visualizer), only posted
+    out = Path(film["file"])
 else:
     with ThreadPoolExecutor(6) as pool:
         parts = list(pool.map(make, range(len(film["shots"]))))
