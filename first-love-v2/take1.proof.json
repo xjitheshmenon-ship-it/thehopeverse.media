@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: First Love v2 (mesmerized)",
+  "take": 1,
+  "made_at_utc": "2026-10-29T17:55:02.181964+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "DEd69GzjTztaRNj5pWR7",
+  "request": {
+    "prompt": "A brand-new, joyful and mesmerizing romantic theme written the way the great Tamil and Telugu film composers write the magical moment a boy sees a girl for the first time: time slows down, the whole world sparkles, his heart races with happiness. Very positive, warm, bright and dreamy from the first note to the last: a major key throughout, never sad, never melancholic, never minor. Instrumental, no lyrics. South Indian film style in the writing: a sweet singable melody in a bright raga like Mohanam or Hamsadhwani, with playful gamakam slides and sparkling grace notes on every lead, flirty question-and-answer phrases, a light swaying happy groove, a film-song interlude with flute and violin dancing around each other. About 92 BPM. A catchy five-note love hook that returns, happier each time, on a NEW lead sound every 10 seconds. Our sounds: an excited heartbeat is the kick drum, glass bangles jingling are the sparkle and shaker, a glitch-chopped veena pluck is the electronic partner of the lead, a twinkling music-box shimmer. Half warm real instruments, half soft shiny electronic colour. Timeline: 0-8 s: magic, only two sounds: a twinkling shimmer and a bright bamboo flute alone playing a rising joyful three-note call (root, major third, fifth, the last note held and bent upward), he sees her. 8-18 s: a sparkling felt piano plays the playful love hook and the glitch-chopped veena pluck answers it, stolen glances and shy smiles; a warm bright pad. 18-28 s: his heart races: the excited heartbeat kick and a happy swaying groove with hand percussion and finger snaps; the hook moves to a sweet solo violin with slides. 28-38 s: a reversed veena swell opens into pure bliss: lush bright strings and a bouncing melodic bass, the hook moves to a sweet wordless female hum answered by a smiling male hum. 38-48 s: interlude showpiece: bamboo flute and violin chase each other playfully, phrase by phrase, faster and closer, bangles as the shaker. 48-50 s: one beat where time stands still on a single twinkling note. 50-62 s: the happiest, biggest moment: the full love melody on soaring strings and a clean shimmering electric guitar, a joyful wordless chorus, the hook lifted up a whole step. 62-72 s: the flute plays the joyful three-note call once more over the shimmer and ends on one bright bell. Not sad, not melancholic, not a slow ballad, not Hollywood, not Western pop, not lo-fi, not ambient, no EDM, no white-noise risers, no side-chain pumping, no long repeats of the same sound.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 72000
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct 17:52 on v1: 'too sad. This is the first time the guy sees the girl, so it should be very positive, very mesmerizing; you should feel that romantic energy.' v2: major key from the first note to the last (no minor at all), bright, dreamy, sparkling, a happy racing heartbeat, ~92 BPM, the same 10 s new-lead timeline (Neon Raja v4 lesson). The 3-note call is played in major here, so it sounds joyful. Prompt mode (music_v2)."
+  },
+  "story": "The first time a boy sees a girl: time slows, the world sparkles, his heart races, pure joy and wonder.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
