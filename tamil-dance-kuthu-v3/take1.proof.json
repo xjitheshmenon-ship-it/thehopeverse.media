@@ -1,15 +1,15 @@
 {
   "title": "Hopeverse: Tamil Dance Number v3 (instrumental, clearly Tamil)",
   "take": 1,
-  "made_at_utc": "2026-10-29T07:53:55.305729+00:00",
+  "made_at_utc": "2026-10-29T07:55:31.898788+00:00",
   "maker": "ElevenLabs Music API on the owner's paid plan",
   "model": "music_v1",
-  "elevenlabs_song_id": "t4i1SNIwbf5xEwliR9h3",
+  "elevenlabs_song_id": "RdsMdbOmHpFMLSaYbrCh",
   "request": {
     "composition_plan": {
       "positive_global_styles": [
         "Tamil film kuthu dance number, Chennai street festival, composed like a film composer, not a DJ mix",
-        "raw, loud, live Tamil folk percussion up front: parai and thappu frame drums in the kuthu swing, urumi drum, thavil, about 100 BPM",
+        "Tamil folk sound palette: parai, thappu, urumi and thavil drums (only where a section asks for them), about 100 BPM kuthu swing",
         "a live nadaswaram plays a catchy Tamil folk melody, major with a flat seventh, with gamakam slides; a chopped, bent nadaswaram synth answers it",
         "pitched-down thavil as the bass, ghatam and kanjira as glitchy top percussion",
         "wedding-band brass punches, cinematic strings",
@@ -43,7 +43,9 @@
           ],
           "negative_local_styles": [
             "drums",
-            "bass"
+            "percussion",
+            "bass",
+            "band"
           ],
           "lines": []
         },
@@ -56,7 +58,9 @@
           ],
           "negative_local_styles": [
             "bass",
-            "full drums"
+            "full drums",
+            "band",
+            "brass"
           ],
           "lines": []
         },
@@ -155,7 +159,7 @@
     "model_id": "music_v1"
   },
   "brief": {
-    "notes": "Jithesh 29 Oct on v1: track really good but doesn't sound Tamil, and the konnakol gibberish words don't suit it. v3: no words at all, raw Tamil folk instruments up front (parai, thappu, urumi, thavil, live nadaswaram hook in a Tamil folk mode), processed sounds only as the second layer. Keeps rule 9.11 structure from v2."
+    "notes": "Jithesh 29 Oct on v1: track really good but doesn't sound Tamil, and the konnakol gibberish words don't suit it. v3: no words at all, raw Tamil folk instruments up front (parai, thappu, urumi, thavil, live nadaswaram hook in a Tamil folk mode), processed sounds only as the second layer. Keeps rule 9.11 structure from v2. Takes A and B ignored the solo start (full band from 0 s) because the global styles asked for drums 'up front'; the globals now only list the palette."
   },
   "story": "A Tamil film dance number: the hero and the crowd take over the street festival.",
   "human_work": "to be added by the owner: melody, take choice, edits, mix"
