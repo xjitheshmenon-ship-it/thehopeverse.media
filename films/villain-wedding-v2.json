@@ -1,0 +1,68 @@
+{
+  "title": "The villain came to his own wedding in style.",
+  "music": "films/villain-wedding-v2.mp3",
+  "look": "cinematic film still, shot on ARRI Alexa with anamorphic lenses, smooth stabilized gimbal and steadicam camera movement, shallow depth of field, rich gold and deep red wedding colour grade with teal shadows, film grain, photorealistic, vertical 9:16, no text. The villain is the groom at his own wedding and the same man in every shot: an original fictional character, a lean, wiry South Indian man in his early 30s, sharp cheekbones, intense dark kohl-lined eyes, a thin moustache, slicked-back black hair, dressed as a traditional Tamil groom: a cream silk veshti with a wide gold zari border, a matching cream silk shirt, a gold-bordered silk angavastram over one shoulder, a thick jasmine and rose garland, gold rings and a gold chain. The place is a grand South Indian wedding hall: marigold garlands, brass lamps, a decorated mandap, guests in silk saris and veshtis",
+  "negative": "cartoon, anime, CGI, 3D render, text, watermark, blur, shaky handheld camera, celebrity, famous actor, real person, suit, blazer, sherwani, black clothes",
+  "shots": [
+    {
+      "end": 3,
+      "prompt": "Extreme close-up of a gold lighter flicking open in his ringed fingers and lighting a tall brass wedding lamp, the flame bursting to life"
+    },
+    {
+      "end": 8,
+      "prompt": "Extreme close-up of his intense kohl-lined eyes opening slowly, the lamp flame reflected in them, the camera slowly pushes in"
+    },
+    {
+      "end": 12,
+      "prompt": "Steadicam shot from behind him as he walks slowly in his cream silk veshti into the grand wedding hall, guests parting on both sides"
+    },
+    {
+      "end": 16,
+      "prompt": "Slow-motion front tracking shot, he walks towards the camera adjusting the angavastram on his shoulder, a cold half-smile"
+    },
+    {
+      "end": 21,
+      "prompt": "Smooth crane shot rising over the wedding hall, nadaswaram and thavil players playing, every guest turning to look at him"
+    },
+    {
+      "end": 26,
+      "prompt": "Low angle slow push-in, he stops in the centre of the hall, slowly tilts his head and stares straight into the lens"
+    },
+    {
+      "end": 31,
+      "prompt": "Medium shot, locked stable camera, he strikes a sharp dance freeze: a finger snap to the side, then a sharp head tilt"
+    },
+    {
+      "end": 36,
+      "prompt": "Medium shot, stable camera, he does a sharp isolated shoulder popping dance move and freezes, guests frozen behind him"
+    },
+    {
+      "end": 41,
+      "prompt": "Smooth gimbal tracking shot, he glides sideways across the marble floor in a slow-motion dance step, jasmine petals falling"
+    },
+    {
+      "end": 46,
+      "prompt": "Slow 180-degree orbit around him as he does a slow-motion dance spin, his jasmine garland swinging"
+    },
+    {
+      "end": 51,
+      "prompt": "Close-up of his face mid-dance, a bead of sweat, intense unblinking stare, a slight dangerous smile"
+    },
+    {
+      "end": 56,
+      "prompt": "Medium two-shot, a nadaswaram player plays and he answers each phrase with a sharp stylish hand move"
+    },
+    {
+      "end": 62,
+      "prompt": "Low angle stable tracking shot, thavil drummers play a frenzied roll as he dances faster with sharp footwork"
+    },
+    {
+      "end": 67,
+      "prompt": "He spins and stops dead in a final pose, one hand raised, marigold petals bursting around him, slow-motion push-in"
+    },
+    {
+      "end": 75,
+      "prompt": "Extreme close-up, he looks straight into the camera, slowly smiles and snaps the gold lighter shut"
+    }
+  ]
+}
