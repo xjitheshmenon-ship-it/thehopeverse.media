@@ -798,7 +798,9 @@ def relevance(package: dict, channel: dict) -> Relevance:
                    f"(niche: {channel.get('niche')}; audience: {channel.get('audience')}).\n"
                    f"Title: {package.get('title')}\nScript:\n{package.get('script')}\n\n"
                    + ("First web_search the story: is it still current, has anything newer changed or contradicted it? "
-                      if news else "")
+                      if news else "This channel tells evergreen true stories and studies, not news: a story's age doesn't "
+                      "lower its timeliness, only a newer finding that contradicts it does (Instinct's stork story scored 62 "
+                      "for being old and became its biggest hit, 29 Oct 2026). ")
                    + "Score its relevance right now from 0 to 100: timeliness (0-30), fit for the channel's audience, "
                      "region and language (0-30), viewer demand today (0-25), and whether the script delivers what the "
                      "title promises without stale or wrong facts (0-15). A story overtaken by newer events, or a "
