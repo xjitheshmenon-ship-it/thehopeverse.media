@@ -1,0 +1,176 @@
+{
+  "channel_id": "yt-instinct",
+  "title": "Ce b\u00e9b\u00e9 \u00e9l\u00e9phant n'avait plus que sa trompe hors de l'eau (histoire vraie)",
+  "description": "Histoire vraie, reconstitu\u00e9e avec l'IA : le 21 septembre 2026, en Inde, cinq p\u00eacheurs ont sauv\u00e9 un \u00e9l\u00e9phanteau emport\u00e9 par la rivi\u00e8re Teesta, puis les forestiers l'ont ramen\u00e9 \u00e0 sa m\u00e8re.\nSources : People (Yahoo News), CNN et Times of India, d'apr\u00e8s le service forestier du Bengale-Occidental.\n#\u00e9l\u00e9phant #sauvetage #animaux #histoirevraie #Shorts",
+  "lang": "fr",
+  "category": "15",
+  "footer": "Instinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "music": "Emotional cinematic orchestral score, no vocals: opens with tense low strings and a fast ticking pulse like rushing water, builds urgency with deep drums during the river chase, drops to a lonely solo piano at the low point, then swells into warm, hopeful strings and soft Indian bansuri flute for the reunion, ending on a gentle, uplifting resolve. About 55 seconds.",
+  "source": "Who: a newborn wild Asian elephant calf (reported as 3 or 4 days old), five local fishermen in small boats (reports name Bablu Das as their leader) and the West Bengal Forest Department (officer Mudit Kumar Verma, Baikunthapur division). Where: the Teesta River near Apalchand forest, West Bengal, India. When: 21 September 2026. What happened: the calf was crossing the river with its herd when strong currents swept it away. Reports give the distance as about 2.5 to 3 miles (roughly 4 to 5 km). The fishermen pulled the calf into a boat while three men swam alongside it. They handed it to forest officials, who found the mother upstream. She took the calf back straight away and nursed it, and the two rejoined the herd, which forest staff are still watching. Reports disagree on the calf's age (3 or 4 days) and the exact distance. No reports describe what happened to the calf after the reunion. Outlet used: People, syndicated on Yahoo News ('Baby Elephant Swept 3 Miles Down River Is Saved by Fishermen and Reunited with Its Mom in Heartwarming Video'), which cites CNN for the reunion and nursing: https://nz.news.yahoo.com/baby-elephant-swept-3-miles-132709217.html. Checked against The Cooldown/Yahoo (Bablu Das, 'very cold' calf), Upworthy (five fishermen, 2.5 miles, Times of India) and Good Good Good (21 September, Mudit Kumar Verma).",
+  "script": "Un \u00e9l\u00e9phanteau de trois ou quatre jours lutte contre le courant.\nSeule sa petite trompe d\u00e9passe encore de l'eau boueuse.\nSur la Teesta, en Inde, un p\u00eacheur aper\u00e7oit la trompe.\nLe courant l'emporte sur pr\u00e8s de cinq kilom\u00e8tres.\nCinq p\u00eacheurs lancent leurs petites barques \u00e0 sa poursuite.\nEnsemble, ils hissent l'\u00e9l\u00e9phanteau dans leur bateau.\nIl est nerveux, et son petit corps est glac\u00e9.\nTrois hommes nagent \u00e0 c\u00f4t\u00e9 du bateau jusqu'\u00e0 la rive.\nSur la rive, ils le confient aux gardes forestiers.\nMais sa m\u00e8re est loin, quelque part en amont.\nPlus tard, en amont, les forestiers retrouvent enfin sa m\u00e8re.\nElle l'accepte aussit\u00f4t, et il se met \u00e0 t\u00e9ter.\nLe p\u00eacheur regarde de loin, le sourire aux l\u00e8vres.\nAu bord de la m\u00eame rivi\u00e8re, il retrouve son troupeau.",
+  "cast": [
+    {
+      "name": "Bablu",
+      "role": "Local fisherman who leads the five men who pull the elephant calf from the Teesta River",
+      "look": "man, Indian (Bengali), about 40 years old, lean weathered face with a short black stubble beard and kind dark eyes, short black hair wet from the river, wearing a faded blue short-sleeved shirt and a rolled-up checked lungi, always with a faded red-and-white checked gamcha cotton scarf tied around his neck",
+      "voice": "none, he never speaks on screen",
+      "pitch": "none"
+    },
+    {
+      "name": "L'\u00e9l\u00e9phanteau",
+      "role": "Newborn wild Asian elephant calf swept downstream and reunited with its mother",
+      "look": "newborn Asian elephant calf, 3 or 4 days old, about 90 cm tall at the shoulder and about 100 kg, grey-brown wrinkled skin with fuzzy reddish-brown baby hair on its head and back, small floppy ears with pinkish edges, short wiggly trunk, no tusks",
+      "voice": "none, it never speaks on screen",
+      "pitch": "none"
+    }
+  ],
+  "scenes": [
+    {
+      "narration": "Un \u00e9l\u00e9phanteau de trois ou quatre jours lutte contre le courant.",
+      "on_screen_text": "Un b\u00e9b\u00e9 de 3 ou 4 jours emport\u00e9",
+      "picture_search": "flooded river India",
+      "image_prompt": "Handheld phone footage at eye level from a small boat: a newborn Asian elephant calf with fuzzy reddish hair struggles in the water, only its head and short trunk visible, eyes wide with panic. Place: the wide, muddy brown Teesta River in monsoon flood, fast swirling current, green forested banks of Apalchand forest on both sides, under an overcast grey sky with flat daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "L'\u00e9l\u00e9phanteau",
+      "photo": ""
+    },
+    {
+      "narration": "Seule sa petite trompe d\u00e9passe encore de l'eau boueuse.",
+      "on_screen_text": "Seule sa trompe d\u00e9passe",
+      "picture_search": "muddy river current",
+      "image_prompt": "Handheld phone footage at eye level, zoomed in: just the tip of a baby elephant's tiny trunk pokes above the water like a periscope while the calf's head sinks under, water splashing. Place: the wide, muddy brown Teesta River in monsoon flood, fast swirling current, green forested banks of Apalchand forest on both sides, under an overcast grey sky with flat daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "L'\u00e9l\u00e9phanteau",
+      "photo": ""
+    },
+    {
+      "narration": "Sur la Teesta, en Inde, un p\u00eacheur aper\u00e7oit la trompe.",
+      "on_screen_text": "Un p\u00eacheur aper\u00e7oit la trompe",
+      "picture_search": "fishing boat river India",
+      "image_prompt": "Handheld phone footage at eye level: Bablu, an Indian fisherman of about 40 with a stubble beard, faded blue shirt and red-and-white checked gamcha scarf around his neck, stands in a small wooden fishing dinghy, pointing at the water in shock with his mouth open. Place: the wide, muddy brown Teesta River in monsoon flood, fast swirling current, green forested banks of Apalchand forest on both sides, under an overcast grey sky with flat daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Bablu",
+      "photo": ""
+    },
+    {
+      "narration": "Le courant l'emporte sur pr\u00e8s de cinq kilom\u00e8tres.",
+      "on_screen_text": "Emport\u00e9 sur pr\u00e8s de 5 km",
+      "picture_search": "fast river current",
+      "image_prompt": "Handheld phone footage at eye level, shaky: the newborn elephant calf is tumbled downstream by strong brown waves, ears flapping, eyes frightened, drifting away from the camera. Place: the wide, muddy brown Teesta River in monsoon flood, fast swirling current, green forested banks of Apalchand forest on both sides, under an overcast grey sky with flat daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "L'\u00e9l\u00e9phanteau",
+      "photo": ""
+    },
+    {
+      "narration": "Cinq p\u00eacheurs lancent leurs petites barques \u00e0 sa poursuite.",
+      "on_screen_text": "Cinq p\u00eacheurs \u00e0 sa poursuite",
+      "picture_search": "wooden dinghy river",
+      "image_prompt": "Handheld phone footage at eye level from a second boat: Bablu, in his faded blue shirt and red-and-white checked gamcha scarf, paddles hard in a small wooden dinghy with other fishermen, jaw clenched, eyes fixed ahead on the calf. Place: the wide, muddy brown Teesta River in monsoon flood, fast swirling current, green forested banks of Apalchand forest on both sides, under an overcast grey sky with flat daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Bablu",
+      "photo": ""
+    },
+    {
+      "narration": "Ensemble, ils hissent l'\u00e9l\u00e9phanteau dans leur bateau.",
+      "on_screen_text": "Hiss\u00e9 dans le bateau",
+      "picture_search": "fishermen boat rescue",
+      "image_prompt": "Handheld phone footage at eye level: Bablu, wet, in his faded blue shirt and red-and-white checked gamcha scarf, leans over the side of the small wooden dinghy and pulls the dripping baby elephant aboard with other fishermen, straining but determined. Place: the wide, muddy brown Teesta River in monsoon flood, fast swirling current, green forested banks of Apalchand forest on both sides, under an overcast grey sky with flat daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Bablu",
+      "photo": ""
+    },
+    {
+      "narration": "Il est nerveux, et son petit corps est glac\u00e9.",
+      "on_screen_text": "Nerveux, et glac\u00e9",
+      "picture_search": "boat on river",
+      "image_prompt": "Handheld phone footage at eye level, close: the soaked newborn elephant calf lies in the bottom of the small wooden dinghy, shivering, fuzzy reddish hair plastered down, eyes nervous and tired, a man's hand resting gently on its back. Place: the wide, muddy brown Teesta River in monsoon flood, fast swirling current, green forested banks of Apalchand forest on both sides, under an overcast grey sky with flat daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "L'\u00e9l\u00e9phanteau",
+      "photo": ""
+    },
+    {
+      "narration": "Trois hommes nagent \u00e0 c\u00f4t\u00e9 du bateau jusqu'\u00e0 la rive.",
+      "on_screen_text": "Trois hommes nagent \u00e0 c\u00f4t\u00e9",
+      "picture_search": "men swimming river",
+      "image_prompt": "Handheld phone footage at eye level just above the water: Bablu swims in the brown current beside the small wooden dinghy, his red-and-white checked gamcha scarf still tied around his neck, one hand on the boat's edge, face tired but focused, the calf's head visible over the side. Place: the wide, muddy brown Teesta River in monsoon flood, fast swirling current, green forested banks of Apalchand forest on both sides, under an overcast grey sky with flat daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Bablu",
+      "photo": ""
+    },
+    {
+      "narration": "Sur la rive, ils le confient aux gardes forestiers.",
+      "on_screen_text": "Confi\u00e9 aux gardes forestiers",
+      "picture_search": "riverbank forest India",
+      "image_prompt": "Handheld phone footage at eye level: Bablu, dripping wet in his faded blue shirt and red-and-white checked gamcha scarf, kneels beside the baby elephant and watches with relief as forest guards in olive-green uniforms take over. Place: the sandy riverbank at the edge of Apalchand forest, tall grass and sal trees behind, the muddy brown Teesta River beside it, under an overcast grey sky with flat daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Bablu",
+      "photo": ""
+    },
+    {
+      "narration": "Mais sa m\u00e8re est loin, quelque part en amont.",
+      "on_screen_text": "Sa m\u00e8re est loin, en amont",
+      "picture_search": "riverbank tall grass",
+      "image_prompt": "Handheld phone footage at eye level: the small elephant calf stands alone and wobbly on the sand, trunk lifted and searching the air, ears out, looking lost and calling. Place: the sandy riverbank at the edge of Apalchand forest, tall grass and sal trees behind, the muddy brown Teesta River beside it, under an overcast grey sky with flat daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "L'\u00e9l\u00e9phanteau",
+      "photo": ""
+    },
+    {
+      "narration": "Plus tard, en amont, les forestiers retrouvent enfin sa m\u00e8re.",
+      "on_screen_text": "En amont, sa m\u00e8re est retrouv\u00e9e",
+      "picture_search": "Asian elephant forest",
+      "image_prompt": "Handheld phone footage at eye level from a distance: the baby elephant walks forward on shaky legs toward a large adult female Asian elephant stepping out of the tall grass, her trunk reaching toward it. Place: the sandy riverbank at the edge of Apalchand forest, tall grass and sal trees behind, the muddy brown Teesta River beside it, under an overcast grey sky with flat daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "L'\u00e9l\u00e9phanteau",
+      "photo": ""
+    },
+    {
+      "narration": "Elle l'accepte aussit\u00f4t, et il se met \u00e0 t\u00e9ter.",
+      "on_screen_text": "Elle l'accepte aussit\u00f4t",
+      "picture_search": "elephant calf nursing",
+      "image_prompt": "Handheld phone footage at eye level: the newborn elephant calf presses under its mother's belly and nurses, eyes half closed and calm, while the mother wraps her trunk gently around its back. Place: the sandy riverbank at the edge of Apalchand forest, tall grass and sal trees behind, the muddy brown Teesta River beside it, under an overcast grey sky with flat daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "L'\u00e9l\u00e9phanteau",
+      "photo": ""
+    },
+    {
+      "narration": "Le p\u00eacheur regarde de loin, le sourire aux l\u00e8vres.",
+      "on_screen_text": "Le p\u00eacheur sourit",
+      "picture_search": "fisherman river India",
+      "image_prompt": "Handheld phone footage at eye level: Bablu, still damp, in his faded blue shirt with the red-and-white checked gamcha scarf around his neck, stands at a distance among the tall grass and smiles quietly, eyes shining with relief. Place: the sandy riverbank at the edge of Apalchand forest, tall grass and sal trees behind, the muddy brown Teesta River beside it, under an overcast grey sky with flat daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Bablu",
+      "photo": ""
+    },
+    {
+      "narration": "Au bord de la m\u00eame rivi\u00e8re, il retrouve son troupeau.",
+      "on_screen_text": "De retour avec son troupeau",
+      "picture_search": "elephant herd riverbank",
+      "image_prompt": "Handheld phone footage at eye level: the small elephant calf trots happily beside its mother as they rejoin a herd of Asian elephants walking along the water's edge, its tiny trunk swinging, looking safe and content. Place: the sandy riverbank at the edge of Apalchand forest, tall grass and sal trees behind, the muddy brown Teesta River beside it, under an overcast grey sky with flat daylight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "L'\u00e9l\u00e9phanteau",
+      "photo": ""
+    }
+  ],
+  "publish_at": "2026-10-30T04:00:00Z",
+  "relevance": {
+    "score": 58,
+    "why": "Heartwarming, well-structured rescue story fits the animal-behaviour niche and a French audience, but it's an older news item (Teesta rescue) with no tie to today, and the script's ending is muddled (the fisherman 'retrouve son troupeau' makes no sense), which weakens delivery.",
+    "views48": 650
+  },
+  "held": "relevance 58/100 under 60: Heartwarming, well-structured rescue story fits the animal-behaviour niche and a French audience, but it's an older news item (Teesta rescue) with no tie to today, and the script's ending is muddled (the fisherman 'retrouve son troupeau' makes no sense), which weakens delivery."
+}
