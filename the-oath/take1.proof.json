@@ -1,0 +1,137 @@
+{
+  "title": "\u00c6THER: The Oath (new track 6)",
+  "take": 1,
+  "made_at_utc": "2026-10-29T16:41:08.831694+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v1",
+  "elevenlabs_song_id": "J6OFS9ifYC0Cur0eqPi8",
+  "request": {
+    "composition_plan": {
+      "positive_global_styles": [
+        "an emotional, goosebump-raising sacrifice theme for a film: a lone bamboo flute rises to a huge choir, heartbreaking and proud at once, composed like a senior blockbuster film composer",
+        "the whole track walks in a 7-beat cycle (3+2+2, an Indian misra chapu tala), about 76 BPM, never plain 4/4: the limping pulse is the track's signature",
+        "a singable, slow flute melody in a minor raga (like Sivaranjani: a gentle sad flat third) with Carnatic gamakam slides and bends, built from question-and-answer phrases that develop and climb",
+        "the flute player's own breath is chopped into tight rhythmic glitch percussion: breath puffs, key clicks and finger taps on bamboo, stuttered and pitched, in the 7-beat cycle",
+        "a deep human heartbeat is the kick drum, a stretched low mridangam is the bass hit, a reversed veena swell rises into the main reveal",
+        "about half real instruments (bamboo flute, veena, mridangam, cello, violins, low brass, temple bell, a real choir) and half fresh, warm electronics (soft analog synth bass, granular shimmering textures, processed breath)",
+        "a wordless choir that grows from one hummed voice into a huge cinematic choir",
+        "clean, wide, warm, glossy mix with deep sub and a long airy reverb",
+        "instrumental"
+      ],
+      "negative_global_styles": [
+        "4/4",
+        "EDM drop",
+        "white-noise riser",
+        "side-chain pumping",
+        "DJ transition",
+        "dubstep",
+        "lyrics",
+        "singer",
+        "lo-fi",
+        "horror",
+        "wall of synths",
+        "noisy",
+        "generic trailer music",
+        "happy"
+      ],
+      "sections": [
+        {
+          "section_name": "The lamp",
+          "duration_ms": 9000,
+          "positive_local_styles": [
+            "the very first sound, at second zero: one deep temple bell strike with a low sub boom that rings out",
+            "then only ONE instrument: a lone bamboo flute plays a rising 3-note call (root, up a minor third, up to the fifth, the last note held and bent upward), very close and breathy, the flute's breath audible",
+            "a soft low drone enters under it at about 5 seconds, nothing else"
+          ],
+          "negative_local_styles": [
+            "drums",
+            "strings",
+            "choir",
+            "bass"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "The breath",
+          "duration_ms": 9000,
+          "positive_local_styles": [
+            "transition: the flute's last note becomes a chopped, stuttered breath rhythm in the 7-beat cycle (3+2+2), like a limping heartbeat",
+            "a slow human heartbeat enters as the kick, the flute plays the main 5-note hook over the breath rhythm, one hummed female voice answers it"
+          ],
+          "negative_local_styles": [
+            "full drums",
+            "brass"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "The first vow",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "transition: the second temple bell strike, a cello takes the hook and the flute answers it with a counter-melody",
+            "soft analog synth bass moves like a second melody, mridangam joins the 7-beat cycle with the breath glitch percussion, warm granular shimmer around the flute"
+          ],
+          "negative_local_styles": [
+            "brass"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "The march",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "transition: a mridangam fill, then a proud slow march in the 7-beat cycle with big cinematic drums, low brass plays the hook, violins climb in counterpoint",
+            "a small choir of about ten voices hums the hook, growing"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "The sacrifice",
+          "duration_ms": 8000,
+          "positive_local_styles": [
+            "surprise: everything stops, only the heartbeat, slowing down: three beats, then two, then it stops completely",
+            "one full second of total silence, then the lone flute plays the hook, broken and slow, with the third temple bell"
+          ],
+          "negative_local_styles": [
+            "drums continuing",
+            "choir",
+            "brass"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "A hundred voices",
+          "duration_ms": 14000,
+          "positive_local_styles": [
+            "transition: a reversed veena swell rises into a massive slam: a huge full choir of a hundred voices sings the hook, the key lifts up a whole step, big drums, brass and strings in the 7-beat cycle at full power, the most goosebump moment of the track",
+            "the flute soars high above the choir with gamakam bends, the veena and the flute trade the hook phrase"
+          ],
+          "negative_local_styles": [
+            "quiet",
+            "soft"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "His name",
+          "duration_ms": 12000,
+          "positive_local_styles": [
+            "the full band and choir hold one huge final chord with a deep sub drop, then fall away",
+            "only the lone flute is left: it plays the rising 3-note call once more, the last note held and bent upward, ringing into silence"
+          ],
+          "negative_local_styles": [
+            "drums"
+          ],
+          "lines": []
+        }
+      ]
+    },
+    "model_id": "music_v1"
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct: an emotional sacrifice theme, a solo flute that rises to a full choir; he rejected Monsoon Duel as 'nothing unique', so uniqueness is the first job. What makes it ours: (1) the whole track walks in a 7-beat cycle (misra chapu, 3+2+2) instead of the usual 4/4, so the pulse limps like a heartbeat carrying a weight; (2) the flute's own breath is chopped into the rhythm (Broken Heritage: breath chiffs and key clicks as glitch percussion); (3) a heartbeat that is the kick drum and STOPS at the sacrifice; (4) a temple bell struck three times for the three vows; (5) the choir grows from one hummed voice to a hundred, never a choir pad from the start. Rules 9.1-9.14: one sound alone at first, layer by layer, a composed hook at every change every 8-12 s, about half real instruments, a key lift, a full silence and a slam, the motif at both ends."
+  },
+  "story": "A warrior swears an oath at a lamp-lit temple at night, knowing it will cost him his life. He keeps it, and a hundred voices carry his name after him.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
