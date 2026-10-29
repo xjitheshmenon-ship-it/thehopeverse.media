@@ -189,6 +189,9 @@ Our fresh version ("Broken Heritage kuthu"), keeping the style but changing the 
 ### 8e-3. Verdict on v3 (29 Oct): "not Tamil style, not a dance track, sounds 30-40 years back, pathetic"
 Putting live folk instruments up front made it sound old. Rule: a Tamil dance number means TODAY's sound: modern, glossy, loud production (big kick, 808 sub, synth brass, plucks) on the kuthu bounce; Tamil-ness comes from the kuthu beat and a catchy Tamil hook, with folk sounds only as processed accents. Never a folk-ensemble or vintage film-music sound.
 
+### 8e-4. Villain wedding v1 verdict (29 Oct): "music is fine, but not according to occasion and not at all for a stylish villain"
+A villain theme is NOT horror by default. Ask what kind of villain: a stylish one means swagger (a cool whistle hook, finger snaps, slow-motion strut groove, slick bass, twangy riff), confident and groovy, menace shown through cool, never eerie lullabies or ticking clocks. The occasion (a wedding) must be clearly heard: festive, grand wedding band music.
+
 ### 8f. Two more references R23-R24: transitions and layer-by-layer starts (29 Oct 2026)
 
 Jithesh's notes on two clips: "a complete transition happening every 8-18 sec", and "it's really good to start with one single instrument and then two and then the mix." Measured (RMS, harmonic/percussive, sub <120 Hz share per 2 s):
