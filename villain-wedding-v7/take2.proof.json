@@ -1,0 +1,144 @@
+{
+  "title": "Hopeverse: Villain Wedding Theme v7 (hype and punch)",
+  "take": 2,
+  "made_at_utc": "2026-10-29T11:33:47.218070+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v1",
+  "elevenlabs_song_id": "ToxTwdfDa9lc43qNDU1i",
+  "request": {
+    "composition_plan": {
+      "positive_global_styles": [
+        "a hyped, punchy, swaggering mass-entry theme for a stylish villain at his own grand South Indian wedding: high energy, goosebump-raising, every hit lands like a punch, composed like a senior blockbuster film composer",
+        "hard-hitting swagger groove at about 96 BPM, heavy punchy drums with huge low-end hits, crowd-pleasing mass energy",
+        "a huge punch hit (full band stab, deep sub boom and a thavil crack together) on the first beat of every new section",
+        "a catchy whistled 5-note signature hook that becomes the main melody, in a minor scale with Carnatic gamakam slides",
+        "a handpan (steel hang drum) is a signature voice of the track: its warm, mysterious, bell-like tones play the hook and shimmer through the groove",
+        "balanced fusion: a real festive wedding band (nadaswaram, thavil, brass band) and real veena, mridangam and strings share the spotlight equally with fresh slick electronics (fat synth bass, crisp electronic drums, finger snaps)",
+        "a twangy veena riff played like a cool surf guitar, and a slick melodic bass line moving like a second melody",
+        "loud, clean, wide, glossy, very punchy mix with big transients",
+        "instrumental"
+      ],
+      "negative_global_styles": [
+        "horror",
+        "scary",
+        "eerie",
+        "dark ambient",
+        "sad",
+        "lullaby",
+        "music box",
+        "wall of synths",
+        "noisy",
+        "EDM drop",
+        "side-chain pumping",
+        "white-noise riser",
+        "vocals",
+        "singing",
+        "old-fashioned",
+        "lo-fi",
+        "slow-motion strut groove",
+        "soft",
+        "laid-back",
+        "chill",
+        "ambient pads",
+        "weak drums",
+        "polite"
+      ],
+      "sections": [
+        {
+          "section_name": "Lighter and whistle",
+          "duration_ms": 8000,
+          "positive_local_styles": [
+            "the very first sound, at second zero: one massive attention hit, a full brass and thavil stab with a deep sub boom, then instant silence",
+            "then only two sounds: a lone handpan plays the villain's 5-note hook, mysterious, and his whistle answers it, while a low thavil pulse slowly speeds up to build tension"
+          ],
+          "negative_local_styles": [
+            "bass",
+            "strings"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "The walk in",
+          "duration_ms": 8000,
+          "positive_local_styles": [
+            "transition: a punch hit, then a hard-hitting swagger beat slams in with a fat melodic bass under the handpan hook and sharp finger snaps"
+          ],
+          "negative_local_styles": [
+            "brass"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Wedding band",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "transition: a punch hit, the thavil crashes in loud, the wedding nadaswaram blasts the hook over a big brass band, all locked to the villain's groove, high energy",
+            "ends with a thavil roll building up, then one full beat of silence"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "Freeze hits",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "dance-move hook: stop-time, four huge punching unison band stabs with sub booms on the hook rhythm, short silences between them, each stab a sharp dance pose, then the groove slams back in harder"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "Slow-motion glide",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "dance-move hook: a heavy, punchy half-time strut, huge drums on two and four, the hook on twangy veena like a surf guitar, finger snaps and fat synth bass, swagger"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "Double-time duel",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "surprise: a punch hit and the groove switches to fast double time, the energy jumps",
+            "the veena and the nadaswaram trade the hook, faster and faster, the handpan answers every phrase",
+            "violins enter with a brand-new counter-hook on top, a drum build rises into the next section"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "Ketti melam",
+          "duration_ms": 11000,
+          "positive_local_styles": [
+            "the ketti melam: a frenzied, very loud wedding drum roll on thavil with huge hits",
+            "call and response: the full brass section shouts the hook, the thavil answers with punches",
+            "the key lifts up a whole step for the biggest, most hyped hook of the track",
+            "ends with a sudden stop: one bar of only the handpan and the whistle playing the hook"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "Grand finale",
+          "duration_ms": 8000,
+          "positive_local_styles": [
+            "a massive punch hit and the full band slams the hook at full power, every instrument together, real and electronic, maximum hype",
+            "one final massive chord with a deep sub drop, a lighter snap, then silence"
+          ],
+          "negative_local_styles": [
+            "fade out",
+            "quiet ending"
+          ],
+          "lines": []
+        }
+      ]
+    },
+    "model_id": "music_v1"
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct 11:30: 'no hype, no punch, no attention making in music score.' v7 = v6 with mass-entry hype: a huge attention hit in the first second, hard-hitting drums, a punch hit on every section change, drum-built tension before each drop, and a harder groove (half-time only in the glide). Handpan kept as the signature voice. Section times unchanged so the film cuts still land."
+  },
+  "story": "A stylish, suave villain makes his slow-motion entry at his own grand wedding.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
