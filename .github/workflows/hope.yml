@@ -14,7 +14,7 @@ on:
         description: "next = make and post the next video of the day (one channel at a time, then it starts the next; stops when every channel has its count), report = the 5 PM report and channel idea, one = make and post the next planned Short now for the channel below, story = make and post a true animal rescue story Short now (AI re-enactment) for the channel below, stats = dashboard numbers only, plan = plan the next 6 topics per channel (slot is the same as next; to sign a channel in, use the Connect a channel workflow)"
         default: next
         type: choice
-        options: [next, report, one, story, publish, refresh, stats, plan, slot]
+        options: [next, report, one, story, publish, refresh, stats, plan, slot, audience]
       channel:
         description: "For job one or story: which channel's Short to post now. For job refresh: the channel whose uploads get its current footer and tags"
         default: yt-hopeverse
@@ -163,6 +163,11 @@ jobs:
         env:
           VIDEO: ${{ inputs.topic }}
         run: python video.py --publish "$VIDEO"
+      - name: Who watches the channel (age, gender, countries, traffic; last 28 days)
+        if: inputs.job == 'audience'
+        env:
+          CHANNEL: ${{ inputs.channel }}
+        run: python breakout.py --audience "$CHANNEL"
       - name: Put the channel's current footer and tags on all its uploads
         if: inputs.job == 'refresh'
         env:

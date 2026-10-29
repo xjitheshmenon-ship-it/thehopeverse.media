@@ -87,6 +87,27 @@ def analytics(channel: dict, video_id: str, since: str) -> dict:
     return out
 
 
+def audience(channel: dict, days: int = 28) -> dict:
+    """Who watches the whole channel (YouTube Analytics, about 2 days behind): age, gender, countries, traffic,
+    subscribed or not. python breakout.py --audience yt-instinct (hope.yml job=audience)."""
+    from video import youtube
+    api = youtube(False, HERE / channel.get("token", "token.json"), ("youtubeAnalytics", "v2"))
+    since = f"{datetime.now() - timedelta(days=days):%Y-%m-%d}"
+    q = lambda **kw: api.reports().query(ids="channel==MINE", startDate=since, endDate=f"{datetime.now():%Y-%m-%d}",
+                                         **kw).execute().get("rows")
+    out = {}
+    for key, kw in {"age_gender": {"metrics": "viewerPercentage", "dimensions": "ageGroup,gender"},
+                    "countries": {"metrics": "views,averageViewPercentage", "dimensions": "country", "sort": "-views", "maxResults": 12},
+                    "traffic": {"metrics": "views", "dimensions": "insightTrafficSourceType", "sort": "-views"},
+                    "subscribed": {"metrics": "views,averageViewPercentage", "dimensions": "subscribedStatus"},
+                    "devices": {"metrics": "views", "dimensions": "deviceType", "sort": "-views"}}.items():
+        try:
+            out[key] = q(**kw)
+        except Exception as e:
+            out[key] = f"unavailable: {str(e)[:200]}"
+    return out
+
+
 def uploads(channel: dict, known: set) -> list:
     """The channel's last 50 uploads read from YouTube itself, as dashboard-style rows, minus the ones Hope already
     knows; so Shorts posted outside the outbox (brand samples, 27 Oct 2026) can break out too."""
@@ -175,3 +196,6 @@ def demo():
 
 if __name__ == "__main__" and sys.argv[1:] == ["--demo"]:
     demo()
+elif __name__ == "__main__" and sys.argv[1:2] == ["--audience"]:
+    from agents import _channels
+    print(json.dumps(audience(next(c for c in _channels() if c["id"] == sys.argv[2])), indent=1))
