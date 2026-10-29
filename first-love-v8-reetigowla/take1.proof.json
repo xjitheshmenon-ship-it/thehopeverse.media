@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: First Love v8 (Reetigowla, voices, slow groove)",
+  "take": 1,
+  "made_at_utc": "2026-10-29T18:57:54.674560+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "XOPWw44xVcg6jSqxHX1G",
+  "request": {
+    "prompt": "A brand-new, deeply romantic love-duet BGM written the way the great Tamil and Telugu film composers score the moment a boy sees a girl for the first time and falls in love. It must feel like falling in love: tender, warm, intimate, close, longing, loving, like a slow-motion first look in the rain. Not playful, not bouncy, not a dance, not a celebration song, not sad. Instrumental voices only, no lyrics. Raga Reetigowla, the classic Tamil love-duet raga with its lilting zig-zag phrases, warm and loving, not sad, sung-style phrasing with gamakam slides, long held notes that bend and melt, sighing falls, one note that waits and then resolves. Lush romantic harmony: warm sustained strings with suspended chords that resolve, major-seventh warmth, a pedal bass. The romance is in the VOICES: a soft, breathy wordless female vocal (aah and mmm humming) is the main lead, close to the ear; a warm wordless male hum answers her; a bamboo flute and a solo violin sing counter-melodies around them. A gently fingerpicked acoustic guitar and a soft felt piano play flowing arpeggios that carry the pulse, with santoor sparkles. Rhythm: a slow, soft, steady romantic groove at about 72 BPM in 4/4 from 10 s to the last 4 seconds, never stopping: soft tabla in a slow keherwa, a soft brushed kick, a gentle shaker, a round warm bass; tender and steady, like a heartbeat, never bouncy. Six parts: 0-10 s THE GLANCE: free time, the felt piano and santoor shimmer, then the female voice alone sings one long rising phrase and holds it; time stops. 10-22 s SHYNESS: the soft groove begins; the flute asks a short shy phrase, the female voice answers softly, small breaths between them. 22-36 s ATTRACTION: the main love melody on the female voice, long aching notes, strings swelling underneath, guitar arpeggios flowing. 36-50 s TOGETHERNESS: the male hum answers her, then they sing the melody together in harmony, the violin weaving around them. 50-62 s THE DREAM: an interlude: the violin and flute play a tender duet over lush strings and santoor, the harmony lifts gently. 62-78 s THE CELEBRATION OF LOVE: the fullest, warmest moment, not faster: both voices and the whole string section sing the love melody in harmony, the groove a little fuller, goosebump warmth. 78-84 s: everything falls away to the female voice holding the first phrase, answered once by the flute, ending on one soft bell. Not a dance, not a party, not bouncy, not 6/8, not heroic, not epic, not a trailer, not sad or dark, no big drums, no EDM, no white-noise risers, no side-chain pumping.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 84000
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct 18:54: v7 take 2 'pattern really good' but not romantic (saved unlocked as a refreshing track). Diagnosis: the bouncy 6/8 sway and playful tumbi read as refreshing/playful. v8 moves the romance into the voices (breathy female hum as lead, male hum answer, then harmony), lush suspended string harmony, guitar/piano arpeggios for the pulse, a slow steady 72 BPM 4/4 tabla groove, celebration = warmest, not faster. Two raga versions: Kalyani and Reetigowla. Prompt mode (music_v2)."
+  },
+  "story": "A boy sees a girl for the first time: the glance, shyness, attraction, togetherness, the dream, the celebration of love.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
