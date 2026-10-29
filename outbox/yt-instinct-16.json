@@ -1,0 +1,176 @@
+{
+  "channel_id": "yt-instinct",
+  "title": "Une girafe orpheline dispara\u00eet 8 mois\u2026 puis revient (histoire vraie)",
+  "description": "Twiggy, un b\u00e9b\u00e9 girafe sauv\u00e9 au Kenya, a grandi parmi ses soigneurs, puis est partie vivre \u00e0 l'\u00e9tat sauvage. Huit mois plus tard, elle est revenue.\nHistoire vraie reconstitu\u00e9e avec des images g\u00e9n\u00e9r\u00e9es par IA et des images d'archives. Source : Sheldrick Wildlife Trust (mise \u00e0 jour du 6 juillet 2026).\n#Girafe #Kenya #SauvetageAnimal #Instinct #Shorts",
+  "lang": "fr",
+  "category": "15",
+  "footer": "Instinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "music": "Emotional cinematic orchestral score, no vocals. Opens with tense, sparse low strings and a soft ticking pulse, like dusk falling on the African savanna. It swells into warm hopeful strings and gentle kalimba at the rescue, dips into a quiet melancholic solo piano when the giraffe leaves, then builds to an uplifting tender crescendo with soft percussion for the reunion. About 60 seconds.",
+  "source": "Twiggy, a female Maasai giraffe orphaned for unknown reasons. Sheldrick Wildlife Trust (SWT) staff rescued her at about one week old on 29 November 2021 in the Ngutuni area of Tsavo East National Park, Kenya. She had been seen alone, trailing a herd of zebras, with no mother in sight, lions nearby and dusk coming on. SWT's Field Works Manager jumped out of the vehicle and held her. She first went to Voi, then took a 20-minute flight to the Kaluku Neonate Nursery, where she was raised. SWT says that at Kaluku her keeper slept in a raised bunk inside her stockade and she poked her head through his mosquito net at night, and that she became the 'nanny' of the smaller orphans. In November 2025 a wild bull giraffe that had been hanging around Kaluku for weeks led her away, and she chose to stay in the wild. SWT drivers saw her a few times, healthy. On 5 July 2026, after more than eight months away, she walked back into Kaluku 'as if she had never been away'. SWT says she seems to be in perfect condition, does not appear to be pregnant, and nobody knows how long she will stay. Sources: Sheldrick Wildlife Trust, Twiggy orphan profile, https://www.sheldrickwildlifetrust.org/orphans/twiggy and the update 'Twiggy Returns After Eight Months in the Wild', published 6 July 2026, https://www.sheldrickwildlifetrust.org/news/updates/twiggy-returns. Coverage of the return: Yahoo Lifestyle, 12 July 2026, and Good Good Good. Note: SWT does not name the rescuer or the keeper, so the cast name 'Joseph' is only for illustration. The narration never uses it and calls him 'un homme' or 'son soigneur'.",
+  "script": "Un b\u00e9b\u00e9 girafe seule tente de se faire passer pour un z\u00e8bre.\nPas de m\u00e8re en vue, des lions tout pr\u00e8s, la nuit tombe.\nTsavo Est, Kenya, 29 novembre 2021 : un homme saute du v\u00e9hicule.\nD'un geste d\u00e9cisif, il retient la petite girafe d'une semaine.\nSauv\u00e9e, le ventre plein de lait, on l'appelle Twiggy.\nPeu apr\u00e8s, vingt minutes de vol jusqu'\u00e0 Kaluku.\nLa nuit, elle glisse la t\u00eate dans sa moustiquaire.\nElle grandit et devient la nounou des petits orphelins.\nQuatre ans plus tard, un grand m\u00e2le sauvage r\u00f4de autour de Kaluku.\nNovembre 2025 : elle part avec lui et ne revient pas.\nDes mois passent. Reviendra-t-elle un jour ? Personne ne le sait.\nHuit mois apr\u00e8s, le 5 juillet 2026, une silhouette approche.\nTwiggy rentre \u00e0 Kaluku, comme si elle n'\u00e9tait jamais partie.\nElle retrouve ses soigneurs. Combien de temps restera-t-elle ? Myst\u00e8re.",
+  "cast": [
+    {
+      "name": "Joseph",
+      "role": "Silent hero: a Sheldrick Wildlife Trust man who rescues the baby giraffe and later sleeps beside her as her keeper at Kaluku (name for illustration only, not given in reports)",
+      "look": "man, Kenyan, about 40, kind weathered dark-skinned face with a short trimmed beard, close-cropped black hair, olive-green work shirt and trousers with dusty boots, always wears a faded olive-green wide-brimmed bush hat",
+      "voice": "none, he never speaks on screen",
+      "pitch": "none"
+    },
+    {
+      "name": "Twiggy",
+      "role": "The orphaned Maasai giraffe, rescued at one week old",
+      "look": "female Maasai giraffe. As a newborn of about one week: around 1.8 m tall, wobbly long legs, soft fuzzy coat, big brown eyes with long lashes, tiny tufted ossicones. As a young adult of four to five years: about 4.5 m tall and slender. Always shown with the jagged, star- and vine-leaf-shaped dark chestnut patches on cream that mark Maasai giraffes, and dark tufted ossicones",
+      "voice": "none, she does not speak",
+      "pitch": "none"
+    }
+  ],
+  "scenes": [
+    {
+      "narration": "Un b\u00e9b\u00e9 girafe seule tente de se faire passer pour un z\u00e8bre.",
+      "on_screen_text": "Seule, elle suit des z\u00e8bres.",
+      "picture_search": "Tsavo savanna dusk",
+      "image_prompt": "Handheld phone footage at eye level: a tiny newborn Maasai giraffe on wobbly legs trots anxiously behind a herd of zebras, big brown eyes wide and lost. Tsavo East savanna at dusk: flat red earth, dry golden grass, scattered acacia and commiphora bushes, low orange sun on the horizon.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Twiggy",
+      "photo": ""
+    },
+    {
+      "narration": "Pas de m\u00e8re en vue, des lions tout pr\u00e8s, la nuit tombe.",
+      "on_screen_text": "Pas de m\u00e8re. Des lions. La nuit tombe.",
+      "picture_search": "Tsavo savanna dusk",
+      "image_prompt": "Handheld phone footage at eye level: the tiny newborn Maasai giraffe stands alone and frozen, ears turning, looking around fearfully for her mother. Lionesses are blurred far off in the grass. Tsavo East savanna at dusk: flat red earth, dry golden grass, scattered acacia and commiphora bushes, low orange sun on the horizon, light fading fast.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Twiggy",
+      "photo": ""
+    },
+    {
+      "narration": "Tsavo Est, Kenya, 29 novembre 2021 : un homme saute du v\u00e9hicule.",
+      "on_screen_text": "Tsavo Est, 29 novembre 2021",
+      "picture_search": "Tsavo savanna dusk",
+      "image_prompt": "Handheld phone footage at eye level from inside a slowly moving safari truck: a Kenyan man in an olive-green work shirt and a faded olive-green bush hat leaps out of the open door, focused and determined. Tsavo East savanna at dusk: flat red earth, dry golden grass, scattered acacia and commiphora bushes, low orange sun on the horizon.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Joseph",
+      "photo": ""
+    },
+    {
+      "narration": "D'un geste d\u00e9cisif, il retient la petite girafe d'une semaine.",
+      "on_screen_text": "Il la retient d'un geste d\u00e9cisif.",
+      "picture_search": "Tsavo savanna dusk",
+      "image_prompt": "Handheld phone footage at eye level: the Kenyan man in the faded olive-green bush hat wraps his arms gently but firmly around the kicking newborn Maasai giraffe, his face calm and concentrated. Tsavo East savanna at dusk: flat red earth, dry golden grass, scattered acacia and commiphora bushes, low orange sun on the horizon.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Joseph",
+      "photo": ""
+    },
+    {
+      "narration": "Sauv\u00e9e, le ventre plein de lait, on l'appelle Twiggy.",
+      "on_screen_text": "On l'appelle Twiggy.",
+      "picture_search": "wildlife nursery stable",
+      "image_prompt": "Handheld phone footage at eye level: the newborn Maasai giraffe, calm now, drinks from a large milk bottle held by a hand, eyes half closed and content. Inside a rescue stable: rough wooden walls, fresh straw on the floor, soft warm lamplight.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Twiggy",
+      "photo": ""
+    },
+    {
+      "narration": "Peu apr\u00e8s, vingt minutes de vol jusqu'\u00e0 Kaluku.",
+      "on_screen_text": "Peu apr\u00e8s, vingt minutes de vol jusqu'\u00e0 Kaluku.",
+      "picture_search": "small plane cabin",
+      "image_prompt": "Handheld phone footage at eye level: the newborn Maasai giraffe lies quietly on a padded mat in a small plane cabin, calmly looking around with wide brown eyes. Small plane cabin: narrow seats removed, bright daylight through round windows, Kenyan bush far below.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Twiggy",
+      "photo": ""
+    },
+    {
+      "narration": "La nuit, elle glisse la t\u00eate dans sa moustiquaire.",
+      "on_screen_text": "La nuit, elle glisse la t\u00eate dans sa moustiquaire.",
+      "picture_search": "wooden stockade night",
+      "image_prompt": "Handheld phone footage at eye level: the Kenyan man in the faded olive-green bush hat lies smiling on a raised wooden bunk as the young Maasai giraffe pokes her delicate head through his mosquito net. Kaluku stockade at night: wooden pole walls, thatched roof, straw floor, dim warm glow of a lantern.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Joseph",
+      "photo": ""
+    },
+    {
+      "narration": "Elle grandit et devient la nounou des petits orphelins.",
+      "on_screen_text": "La nounou des orphelins.",
+      "picture_search": "Kaluku Tsavo bush",
+      "image_prompt": "Handheld phone footage at eye level: a tall young Maasai giraffe bends her long neck gently over a small warthog and a baby antelope, watchful and protective. Kaluku nursery grounds: red sand clearing, thorny green bush, wooden stockade with thatched roof, big baobab, bright morning light.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Twiggy",
+      "photo": ""
+    },
+    {
+      "narration": "Quatre ans plus tard, un grand m\u00e2le sauvage r\u00f4de autour de Kaluku.",
+      "on_screen_text": "Quatre ans plus tard...",
+      "picture_search": "Kaluku Tsavo bush",
+      "image_prompt": "Handheld phone footage at eye level: the young adult Maasai giraffe lifts her head, curious, gazing at a big wild bull giraffe browsing at the edge of the bush. Kaluku nursery grounds: red sand clearing, thorny green bush, wooden stockade with thatched roof, big baobab, bright morning light.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Twiggy",
+      "photo": ""
+    },
+    {
+      "narration": "Novembre 2025 : elle part avec lui et ne revient pas.",
+      "on_screen_text": "Elle part\u2026 et ne revient pas.",
+      "picture_search": "Kaluku Tsavo bush",
+      "image_prompt": "Handheld phone footage at eye level: the Kenyan man in the faded olive-green bush hat stands still, a bittersweet look on his face, watching two giraffes walk away together into the thorny bush. Kaluku nursery grounds: red sand clearing, thorny green bush, wooden stockade with thatched roof, big baobab, bright morning light.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Joseph",
+      "photo": ""
+    },
+    {
+      "narration": "Des mois passent. Reviendra-t-elle un jour ? Personne ne le sait.",
+      "on_screen_text": "Reviendra-t-elle un jour ?",
+      "picture_search": "wooden stockade night",
+      "image_prompt": "Handheld phone footage at eye level: the Kenyan man in the faded olive-green bush hat sits alone on his raised bunk beside the empty stockade, gazing out, quiet and wistful. Kaluku stockade at night: wooden pole walls, thatched roof, straw floor, dim warm glow of a lantern.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Joseph",
+      "photo": ""
+    },
+    {
+      "narration": "Huit mois apr\u00e8s, le 5 juillet 2026, une silhouette approche.",
+      "on_screen_text": "5 juillet 2026...",
+      "picture_search": "Kaluku Tsavo bush",
+      "image_prompt": "Handheld phone footage at eye level: the Kenyan man in the faded olive-green bush hat shades his eyes with his hand and slowly breaks into a smile as a tall giraffe silhouette appears above the bush. Kaluku nursery grounds: red sand clearing, thorny green bush, wooden stockade with thatched roof, big baobab, bright morning light.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Joseph",
+      "photo": ""
+    },
+    {
+      "narration": "Twiggy rentre \u00e0 Kaluku, comme si elle n'\u00e9tait jamais partie.",
+      "on_screen_text": "Comme si elle n'\u00e9tait jamais partie.",
+      "picture_search": "Kaluku Tsavo bush",
+      "image_prompt": "Handheld phone footage at eye level: the adult Maasai giraffe strolls calmly into the clearing, sleek and healthy, looking relaxed and at home. Kaluku nursery grounds: red sand clearing, thorny green bush, wooden stockade with thatched roof, big baobab, bright morning light.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Twiggy",
+      "photo": ""
+    },
+    {
+      "narration": "Elle retrouve ses soigneurs. Combien de temps restera-t-elle ? Myst\u00e8re.",
+      "on_screen_text": "Combien de temps restera-t-elle ?",
+      "picture_search": "Kaluku Tsavo bush",
+      "image_prompt": "Handheld phone footage at eye level: the adult Maasai giraffe lowers her long neck toward smiling keepers, small orphaned antelopes and zebras gathering around her legs, her eyes soft and calm. Kaluku nursery grounds: red sand clearing, thorny green bush, wooden stockade with thatched roof, big baobab, bright morning light.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Twiggy",
+      "photo": ""
+    }
+  ],
+  "publish_at": "2026-10-30T18:00:00Z",
+  "relevance": {
+    "score": 55,
+    "why": "Heartwarming, well-sourced Kaluku/Twiggy story fits the niche and French audience, but the news is ~4 months old and not strongly time-sensitive; the script is slightly inconsistent (opening zebra line, 'Personne ne le sait') and only loosely matches the 'dispara\u00eet 8 mois' hook.",
+    "views48": 650
+  },
+  "held": "relevance 55/100 under 60: Heartwarming, well-sourced Kaluku/Twiggy story fits the niche and French audience, but the news is ~4 months old and not strongly time-sensitive; the script is slightly inconsistent (opening zebra line, 'Personne ne le sait') and only loosely matches the 'dispara\u00eet 8 mois' hook."
+}
