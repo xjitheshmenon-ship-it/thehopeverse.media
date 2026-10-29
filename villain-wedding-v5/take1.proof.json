@@ -1,0 +1,137 @@
+{
+  "title": "Hopeverse: Villain Wedding Theme v5 (a more exciting last 25 s)",
+  "take": 1,
+  "made_at_utc": "2026-10-29T10:49:27.935246+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v1",
+  "elevenlabs_song_id": "PgCXq1FvBZ1rvIS4mAA8",
+  "request": {
+    "composition_plan": {
+      "positive_global_styles": [
+        "a stylish, suave, swaggering villain's theme at his own grand South Indian wedding: cool, confident, groovy and celebratory, composed like a senior blockbuster film composer",
+        "slow-motion strut groove, about 90 BPM half-time, heavy and groovy",
+        "a catchy whistled 5-note signature hook that becomes the main melody, in a minor scale with Carnatic gamakam slides",
+        "balanced fusion: a real festive wedding band (nadaswaram, thavil, brass band) and real veena, mridangam and strings share the spotlight equally with fresh slick electronics (fat synth bass, crisp electronic drums, finger snaps)",
+        "a twangy veena riff played like a cool surf guitar, and a slick melodic bass line moving like a second melody",
+        "clean, wide, glossy, punchy mix",
+        "instrumental"
+      ],
+      "negative_global_styles": [
+        "horror",
+        "scary",
+        "eerie",
+        "dark ambient",
+        "sad",
+        "lullaby",
+        "music box",
+        "wall of synths",
+        "noisy",
+        "EDM drop",
+        "side-chain pumping",
+        "white-noise riser",
+        "vocals",
+        "singing",
+        "old-fashioned",
+        "lo-fi"
+      ],
+      "sections": [
+        {
+          "section_name": "Lighter and whistle",
+          "duration_ms": 8000,
+          "positive_local_styles": [
+            "the first sound: a metal lighter flick and a cool deep hit",
+            "then only two sounds: slow finger snaps and the villain's cool whistled 5-note hook"
+          ],
+          "negative_local_styles": [
+            "drums",
+            "bass",
+            "brass",
+            "strings"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "The walk in",
+          "duration_ms": 8000,
+          "positive_local_styles": [
+            "transition: a slick melodic bass walks in, a slow confident strut beat, answering the whistled hook"
+          ],
+          "negative_local_styles": [
+            "brass"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Wedding band",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "transition: thavil enters, then the wedding nadaswaram plays the hook, brass swells, all locked to the villain's groove",
+            "ends with one full beat of silence"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "Freeze hits",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "dance-move hook: stop-time, four huge unison band stabs on the hook rhythm with short silences between them, each stab a sharp dance pose, then the groove snaps back in"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "Slow-motion glide",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "dance-move hook: a heavy, slow-motion half-time strut groove, the hook on twangy veena like a surf guitar, finger snaps and fat synth bass, smooth and stylish"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "Double-time duel",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "surprise: the groove switches to double time",
+            "the veena and the nadaswaram trade the hook, faster and faster",
+            "violins enter with a brand-new counter-hook on top"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "Ketti melam",
+          "duration_ms": 11000,
+          "positive_local_styles": [
+            "the ketti melam: a frenzied wedding drum roll on thavil",
+            "call and response: the full brass section shouts the hook, the thavil answers",
+            "the key lifts up a whole step for the biggest, most stylish hook",
+            "ends with a sudden stop: one bar of only the whistled hook"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "Grand finale",
+          "duration_ms": 8000,
+          "positive_local_styles": [
+            "the full band plays the hook huge and slow, every instrument together, real and electronic",
+            "one final massive chord with a deep sub drop, a lighter snap, then silence"
+          ],
+          "negative_local_styles": [
+            "fade out",
+            "quiet ending"
+          ],
+          "lines": []
+        }
+      ]
+    },
+    "model_id": "music_v1"
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct 10:47: the music could be more interesting in the last 20-25 s. v5 = v4 with the last three sections rebuilt: double-time duel with a new violin counter-hook; ketti melam with brass-vs-thavil call-and-response and a whole-step key lift; a stop-time whistle bar, then the hook huge and slow by the full band. Section times unchanged so the film cuts still land."
+  },
+  "story": "A stylish, suave villain makes his slow-motion entry at his own grand wedding.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
