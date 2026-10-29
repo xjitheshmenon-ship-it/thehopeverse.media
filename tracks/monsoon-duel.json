@@ -1,0 +1,103 @@
+{
+  "title": "ÆTHER: Monsoon Duel (new track 5)",
+  "story": "Two warriors face each other in monsoon rain. One strike, then the storm breaks.",
+  "brief": {
+    "notes": "Jithesh 29 Oct 16:24: 'lets make 2-3 tracks more'. Fresh mood unlike the four locked tracks (hero intro, dog, villain wedding, car chase): a rain-soaked sword duel. Signature voice: chenda drums and an edakka. Hype rules kept: an attention hit at second 0, a punch hit on every section change, composed wow moments."
+  },
+  "seconds": 60,
+  "takes": 2,
+  "plan": {
+    "positive_global_styles": [
+      "an epic, hard-hitting sword-duel film score cue in pouring monsoon rain, goosebump-raising, every hit lands like a punch, composed like a senior blockbuster film composer",
+      "D minor, about 140 BPM",
+      "Kerala chenda drums are the signature voice: thunderous, fast, rolling chenda patterns with huge low taiko hits",
+      "an edakka (talking drum) bends its pitch to sing the 4-note warrior hook, answered by bold low brass",
+      "thunder used as timpani, rain on metal as hi-hats, sword clashes tuned as metallic percussion hits",
+      "big cinematic strings with fast ostinatos, a deep male choir chanting wordless syllables, fresh dark synth bass",
+      "loud, clean, wide, very punchy mix with big transients",
+      "instrumental"
+    ],
+    "negative_global_styles": [
+      "EDM drop",
+      "white-noise riser",
+      "side-chain pumping",
+      "DJ transition",
+      "dubstep",
+      "lyrics",
+      "singer",
+      "soft",
+      "lo-fi",
+      "ambient pads",
+      "weak drums"
+    ],
+    "sections": [
+      {
+        "section_name": "Rain and stare",
+        "duration_ms": 8000,
+        "positive_local_styles": [
+          "the very first sound, at second zero: one massive attention hit, a thunder crack with a deep sub boom and a chenda slam, then only rain",
+          "in the rain, a lone edakka slowly sings the 4-note warrior hook, a low drone underneath, a single sword is drawn with a ringing metallic scrape"
+        ],
+        "negative_local_styles": [
+          "full drums",
+          "brass"
+        ],
+        "lines": []
+      },
+      {
+        "section_name": "Circling",
+        "duration_ms": 8000,
+        "positive_local_styles": [
+          "transition: a punch hit, then a tense chenda pattern starts and speeds up, the deep choir breathes the hook, strings tremble"
+        ],
+        "negative_local_styles": [],
+        "lines": []
+      },
+      {
+        "section_name": "First strike",
+        "duration_ms": 12000,
+        "positive_local_styles": [
+          "transition: a huge sword clash hit, then the full duel groove slams in: thunderous chenda at full speed, low brass blasting the hook, racing string ostinato",
+          "tuned sword-clash hits answer each brass phrase"
+        ],
+        "negative_local_styles": [
+          "half-time",
+          "slow"
+        ],
+        "lines": []
+      },
+      {
+        "section_name": "Freeze in the rain",
+        "duration_ms": 6000,
+        "positive_local_styles": [
+          "surprise: everything stops dead, only rain and one held low choir note",
+          "then three huge slow punch hits, each with a thunder crack, like slow-motion blows"
+        ],
+        "negative_local_styles": [
+          "drums continuing"
+        ],
+        "lines": []
+      },
+      {
+        "section_name": "Storm breaks",
+        "duration_ms": 16000,
+        "positive_local_styles": [
+          "transition: a massive punch hit and the storm breaks: the chenda ensemble and big drums at maximum, the choir shouts the hook, the key lifts up a whole step for the biggest, most hyped hook of the track",
+          "the edakka and the brass trade the hook faster and faster"
+        ],
+        "negative_local_styles": [],
+        "lines": []
+      },
+      {
+        "section_name": "Last blow",
+        "duration_ms": 10000,
+        "positive_local_styles": [
+          "a drum build, then one final massive unison hit with a thunder crack and a deep sub drop",
+          "silence, then only rain and the edakka sings the hook one last time, slower, the winner walks away"
+        ],
+        "negative_local_styles": [],
+        "lines": []
+      }
+    ]
+  }
+}
