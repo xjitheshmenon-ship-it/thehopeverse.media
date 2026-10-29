@@ -1,0 +1,51 @@
+# Make sound effects on the owner's ElevenLabs plan for layering into a track (anklet bells, wind, water...).
+# The list is tracks/<name>.sfx.json: [{"file": "bells", "text": "...", "seconds": 4}]. Files land on the
+# music-tracks branch in <name>/sfx/. Start it by pushing a branch named run/sfx with "name=<name>" in the commit message.
+name: Make sound effects
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Sound list in tracks/, without .sfx.json"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  sfx:
+    runs-on: ubuntu-latest
+    env:
+      ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+      NAME: ${{ inputs.name }}
+    steps:
+      - uses: actions/checkout@v5
+      - run: git fetch origin music-tracks && git worktree add out origin/music-tracks
+      - run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          from pathlib import Path
+          name = os.environ["NAME"]
+          out = Path("out") / name / "sfx"
+          out.mkdir(parents=True, exist_ok=True)
+          for s in json.loads(Path(f"tracks/{name}.sfx.json").read_text(encoding="utf-8")):
+              req = urllib.request.Request(
+                  "https://api.elevenlabs.io/v1/sound-generation?output_format=mp3_44100_192", method="POST",
+                  data=json.dumps({"text": s["text"], "duration_seconds": s["seconds"], "prompt_influence": 0.6}).encode(),
+                  headers={"xi-api-key": os.environ["ELEVENLABS_API_KEY"].strip(), "Content-Type": "application/json"})
+              try:
+                  with urllib.request.urlopen(req, timeout=300) as r:
+                      (out / f"{s['file']}.mp3").write_bytes(r.read())
+                  print("made", s["file"])
+              except Exception as e:
+                  print(f"{s['file']} failed: {e} {getattr(e, 'read', lambda: b'')()[:300]!r}")
+          if not list(out.glob("*.mp3")):
+              raise SystemExit("no sound was made")
+          PY
+      - run: |
+          cd out
+          git checkout -q -B music-tracks
+          git config user.name hope && git config user.email hope@users.noreply.github.com
+          git add . && git commit -qm "Sound effects: $NAME"
+          for i in 1 2 3; do git pull -q --rebase origin music-tracks && git push "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" music-tracks && exit 0; sleep 5; done; exit 1
