@@ -1,0 +1,132 @@
+{
+  "title": "\u00c6THER: Neon Raja (new track 6)",
+  "take": 1,
+  "made_at_utc": "2026-10-29T16:42:54.574025+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v1",
+  "elevenlabs_song_id": "hFo0qH6nNnUqTOOBZEF4",
+  "request": {
+    "composition_plan": {
+      "positive_global_styles": [
+        "a regal cyberpunk king's theme for a film score: 1980s synthwave fused with nadaswaram, majestic, dark and stylish, goosebump-raising, composed like a senior blockbuster film composer",
+        "F sharp minor with a raised seventh, like raga Kiravani, about 104 BPM",
+        "about half real instruments (nadaswaram with gamakam slides, thavil, veena, live strings, low brass) and half fresh electronics (analog synth arpeggios, warm retro synth lead, melodic synth bass, gated 80s drums), each clearly heard",
+        "the nadaswaram is the signature voice, often played through a talkbox or vocoder so it sounds half human and half machine; glitch-chopped veena stutters answer the synth lead; a pitched-down mridangam is the deep bass hit",
+        "the neon city's own sounds as instruments: neon-tube buzz as the pad, servo whirs as fills, a hologram-crown chime as the bell, a metal throne clank as the snare, rain on neon signs as the hi-hat",
+        "a singable melody of question-and-answer phrases with a catchy 5-note riff, a moving bass line, a string counter-melody",
+        "clean, wide, glossy, punchy mix with a deep sub",
+        "instrumental"
+      ],
+      "negative_global_styles": [
+        "EDM drop",
+        "white-noise riser",
+        "filter sweep",
+        "side-chain pumping",
+        "DJ transition",
+        "dubstep",
+        "lyrics",
+        "singer",
+        "lo-fi",
+        "vaporwave",
+        "wall of synths",
+        "weak drums"
+      ],
+      "sections": [
+        {
+          "section_name": "Neon hum",
+          "duration_ms": 8000,
+          "positive_local_styles": [
+            "at second zero, one striking sound: a deep bent nadaswaram cry with a huge low mridangam boom, then only neon-tube buzz and rain",
+            "a lone talkbox nadaswaram plays a rising 3-note call (root, minor third, fifth, last note held and bent upward); around 4 seconds a slow analog synth arpeggio joins, nothing else"
+          ],
+          "negative_local_styles": [
+            "drums",
+            "bass",
+            "brass",
+            "many instruments"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "The city wakes",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "transition: a thavil fill played into the groove; a melodic retro synth bass and gated 80s drums at half-time join one at a time",
+            "the warm synth lead states the catchy 5-note riff, glitch-chopped veena stutters answer it, the throne clank lands on the backbeat"
+          ],
+          "negative_local_styles": [
+            "brass",
+            "choir"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Coronation",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "transition: one reversed veena swell into a massive hit, the main reveal: full groove, bold low brass and strings carry the riff, the nadaswaram answers with gamakam slides",
+            "a deep male choir chants wordless syllables, the hologram-crown chime rings on each phrase end, a borrowed chord lifts the last bar"
+          ],
+          "negative_local_styles": [
+            "half-time",
+            "quiet"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Blackout",
+          "duration_ms": 4000,
+          "positive_local_styles": [
+            "surprise: the city's power fails, the whole band stops dead; only rain on neon signs and a lone nadaswaram crackling through an old radio plays the riff slowly"
+          ],
+          "negative_local_styles": [
+            "drums",
+            "bass",
+            "synths"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Reboot and duel",
+          "duration_ms": 12000,
+          "positive_local_styles": [
+            "the synth arpeggio restarts slowly and speeds up to tempo as the neon flickers back, servo whirs, then thavil double-time rolls bring the full groove back",
+            "a call-and-response duel: the nadaswaram and the synth lead trade the riff, faster and faster, strings racing underneath"
+          ],
+          "negative_local_styles": [
+            "slow",
+            "ambient"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Neon throne",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "one beat of full band silence, then a massive slam: the riff lifted up a whole step and played biggest of the track by the whole band, choir, brass and nadaswaram together",
+            "the string counter-melody soars above, the bass line moves like a second melody"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "Long live the king",
+          "duration_ms": 6000,
+          "positive_local_styles": [
+            "one final unison hit with a deep sub boom, then only neon-tube buzz and rain, and the talkbox nadaswaram plays the rising 3-note call one last time, held and bent upward"
+          ],
+          "negative_local_styles": [
+            "drums continuing"
+          ],
+          "lines": []
+        }
+      ]
+    },
+    "model_id": "music_v1"
+  },
+  "brief": {
+    "notes": "Jithesh 29 Oct 16:36: new \u00c6THER tracks in parallel; this one is a cyberpunk king theme mixing synthwave with nadaswaram. Must be unique (a track was just rejected for 'nothing unique'). Uniqueness: the nadaswaram plays through a talkbox and duels a retro synth lead; the city's own sounds are the instruments (neon-tube buzz pad, servo whirs, hologram-crown chime, metal throne clank as the snare, rain on neon signs); a composed blackout-and-reboot surprise; Kiravani-flavoured harmonic-minor melody on 80s synthwave. Rules kept: music-scoring.md section 9 (Broken Heritage, 3-note Hopeverse motif, one reversed veena swell, 1-2 sound mysterious open then layer-by-layer build, about half real instruments and half fresh electronics, a section change with a proper hook every 8-12 s, two or more composed wow moments, senior composer craft)."
+  },
+  "story": "A king rules a rain-soaked neon city of the future. The city's power fails, he wakes it again, and it crowns him.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
