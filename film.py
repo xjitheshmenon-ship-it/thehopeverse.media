@@ -1,6 +1,7 @@
 """A cinematic Short cut to a music track: one Kling AI clip per shot, each trimmed to end on its beat.
 
     python film.py films/exiled-king.json   -> films/exiled-king.mp4 (not uploaded; the owner reviews it first)
+    POST=yt-aether python film.py ...       -> also uploads it there (film.yml input "post", after the owner's review)
 
 The shots' "end" times follow the track's sections (tease, hit, walk, drop, mass, punch), so the cuts land on the music.
 HeyGen Video first (HEYGEN_API_KEY, about $0.09 a 5 s shot, slowed down to fill longer shots), else Kling on fal.ai
@@ -8,6 +9,7 @@ HeyGen Video first (HEYGEN_API_KEY, about $0.09 a 5 s shot, slowed down to fill 
 A shot with "image" starts from that photo (HeyGen only), so the same man, face and clothes appear in every shot.
 """
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -70,3 +72,9 @@ subprocess.run([FF, "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-
                 "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", str(out)],
                check=True)
 print(f"Film: {out} ({len(parts)} shots)")
+if post := os.environ.get("POST"):
+    from video import upload
+    channel = next(c for c in json.loads(Path("channels.json").read_text(encoding="utf-8")) if c["id"] == post)
+    package = {"title": film["title"], "description": film.get("description", film["title"]),
+               "category": channel.get("category", "10"), "lang": channel.get("lang", "en")}
+    print(f"Posted on {channel['name']}: https://youtu.be/{upload(out, package, Path(channel['token']), channel)}")
