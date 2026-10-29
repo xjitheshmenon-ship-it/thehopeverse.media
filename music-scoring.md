@@ -186,6 +186,9 @@ Our fresh version ("Broken Heritage kuthu"), keeping the style but changing the 
 ### 8e-2. Jithesh's verdict on the dance number v1 (29 Oct)
 "Track is really good" but "it doesn't sound like a Tamil one", and the konnakol syllables sung as words ("gibberish") don't suit it. Rule: a Tamil dance track needs the raw folk instruments up front (parai, thappu, urumi, thavil, a live nadaswaram playing a Tamil folk tune with gamakam slides); processed Broken Heritage sounds are the second layer only. No sung syllables or made-up words; instrumental unless real lyrics are written.
 
+### 8e-3. Verdict on v3 (29 Oct): "not Tamil style, not a dance track, sounds 30-40 years back, pathetic"
+Putting live folk instruments up front made it sound old. Rule: a Tamil dance number means TODAY's sound: modern, glossy, loud production (big kick, 808 sub, synth brass, plucks) on the kuthu bounce; Tamil-ness comes from the kuthu beat and a catchy Tamil hook, with folk sounds only as processed accents. Never a folk-ensemble or vintage film-music sound.
+
 ### 8f. Two more references R23-R24: transitions and layer-by-layer starts (29 Oct 2026)
 
 Jithesh's notes on two clips: "a complete transition happening every 8-18 sec", and "it's really good to start with one single instrument and then two and then the mix." Measured (RMS, harmonic/percussive, sub <120 Hz share per 2 s):
