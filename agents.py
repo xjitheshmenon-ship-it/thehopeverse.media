@@ -470,6 +470,9 @@ def spend_report() -> str:
     owner = _sections(GROWTH).get("Owner")
     if owner:
         lines += ["", "## Mr. Grow's to-dos for you today", "", owner]
+    target = _sections(GROWTH).get("Target")
+    if target:
+        lines += ["", "## Monetization target (10M Shorts views in 90 days)", "", target]
     leads = _sections(GROWTH).get("Leads")
     if leads:
         lines += ["", "## Sponsorship and collab leads", "", leads]
