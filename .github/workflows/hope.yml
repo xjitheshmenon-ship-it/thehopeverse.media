@@ -24,6 +24,10 @@ on:
         description: "For job story: the true story to tell (empty = find one). For job publish: the YouTube id of a scheduled Short to make public now"
         default: ""
         type: string
+      when:
+        description: "For job story: when it goes public, in the channel's time zone (e.g. 2026-10-30 12:30; empty = its next free slot). It counts toward that day's videos"
+        default: ""
+        type: string
 
 permissions:
   contents: write
@@ -148,6 +152,7 @@ jobs:
         env:
           CHANNEL: ${{ inputs.channel || 'yt-instinct' }}
           TOPIC: ${{ inputs.topic }}
+          WHEN: ${{ inputs.when }}
           DAILY_BUDGET: "1000"  # asked for by the owner, like Post now
         run: |
           { sudo apt-get install -y -qq fonts-noto-core || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core; }; } > /dev/null
