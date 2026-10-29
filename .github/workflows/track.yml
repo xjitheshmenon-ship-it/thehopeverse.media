@@ -64,4 +64,4 @@ jobs:
           cd out
           git checkout -q -B music-tracks
           git add . && git -c user.name=hope -c user.email=hope@users.noreply.github.com commit -qm "Track: $NAME"
-          git push "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" music-tracks
+          for i in 1 2 3; do git pull -q --rebase origin music-tracks && git push "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" music-tracks && exit 0; sleep 5; done; exit 1  # a track and a film can finish together
