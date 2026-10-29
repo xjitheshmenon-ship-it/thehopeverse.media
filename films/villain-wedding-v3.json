@@ -2,11 +2,12 @@
   "title": "The villain came to his own wedding in style.",
   "music": "films/villain-wedding-v4.mp3",
   "look": "cinematic film still, shot on ARRI Alexa with anamorphic lenses, smooth stabilized gimbal and steadicam camera movement, shallow depth of field, rich gold and deep red wedding colour grade with teal shadows, film grain, photorealistic, vertical 9:16, no text. The villain is the groom, exactly the man in the starting photo: the same face, the same thick curled moustache, the same slicked-back hair, the same clothes in every shot, at his own wedding and the same man in every shot: an original fictional character, a lean, wiry South Indian man in his early 30s, sharp cheekbones, intense dark kohl-lined eyes, a thin moustache, slicked-back black hair, dressed as a traditional Tamil groom: a cream silk veshti with a wide gold zari border, a matching cream silk shirt, a gold-bordered silk angavastram over one shoulder, a thick jasmine and rose garland, gold rings and a gold chain. The place is a grand South Indian wedding hall: marigold garlands, brass lamps, a decorated mandap, guests in silk saris and veshtis",
-  "negative": "cartoon, anime, CGI, 3D render, text, watermark, blur, shaky handheld camera, celebrity, famous actor, real person, suit, blazer, sherwani, black clothes, different person, different face, different clothes, clean-shaven",
+  "negative": "cartoon, anime, CGI, 3D render, text, watermark, blur, shaky handheld camera, celebrity, famous actor, real person, suit, blazer, sherwani, black clothes, different person, different face, different clothes, clean-shaven, garland in his hand, garland coming off, taking off the garland, back to the camera",
   "shots": [
     {
       "end": 3,
-      "prompt": "Extreme close-up of a gold lighter flicking open in his ringed fingers and lighting a tall brass wedding lamp, the flame bursting to life"
+      "prompt": "Close on his ringed hand as he raises a gold lighter, flicks it open and lights the tall brass wedding lamp beside him, the flame bursting to life, his face lit by it",
+      "image": "films/villain-wedding-v3/ref-medium.jpg"
     },
     {
       "end": 8,
@@ -50,7 +51,7 @@
     },
     {
       "end": 46,
-      "prompt": "Slow 180-degree orbit around him as he does a slow-motion dance spin, his jasmine garland swinging",
+      "prompt": "Slow 90-degree orbit around him as he turns his shoulders in a slow-motion dance move, facing the camera, his jasmine garland stays around his neck the whole time",
       "image": "films/villain-wedding-v3/ref-wide.jpg"
     },
     {
@@ -70,7 +71,7 @@
     },
     {
       "end": 67,
-      "prompt": "He spins and stops dead in a final pose, one hand raised, marigold petals bursting around him, slow-motion push-in",
+      "prompt": "He strikes a final pose facing the camera, one hand raised high, his jasmine garland stays around his neck, marigold petals bursting around him, slow-motion push-in",
       "image": "films/villain-wedding-v3/ref-wide.jpg"
     },
     {
