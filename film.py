@@ -74,15 +74,18 @@ def make(i: int) -> Path:
     return part
 
 
-with ThreadPoolExecutor(6) as pool:
-    parts = list(pool.map(make, range(len(film["shots"]))))
-listing = work / "parts.txt"
-listing.write_text("".join(f"file '{p.resolve()}'\n" for p in parts))
-out = film_path.with_suffix(".mp4")
-subprocess.run([FF, "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(listing), "-i", film["music"],
-                "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", str(out)],
-               check=True)
-print(f"Film: {out} ({len(parts)} shots)")
+if film.get("video"):  # a finished video (e.g. a music visualizer), only posted
+    out = Path(film["video"])
+else:
+    with ThreadPoolExecutor(6) as pool:
+        parts = list(pool.map(make, range(len(film["shots"]))))
+    listing = work / "parts.txt"
+    listing.write_text("".join(f"file '{p.resolve()}'\n" for p in parts))
+    out = film_path.with_suffix(".mp4")
+    subprocess.run([FF, "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(listing), "-i", film["music"],
+                    "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", str(out)],
+                   check=True)
+    print(f"Film: {out} ({len(parts)} shots)")
 if post := os.environ.get("POST"):
     from video import upload
     channel = next(c for c in json.loads(Path("channels.json").read_text(encoding="utf-8")) if c["id"] == post)
