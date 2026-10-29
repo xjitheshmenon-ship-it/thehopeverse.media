@@ -918,7 +918,9 @@ def upload(video: Path, package: dict, token: Path = TOKEN, channel: dict = None
                         "defaultLanguage": package.get("lang", "en"), "defaultAudioLanguage": package.get("lang", "en")},
             "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False,
                        "containsSyntheticMedia": True}}
-    if package.get("publish_at") and not (channel or {}).get("publish_at"):  # a time picked for this one video (film.py)
+    from datetime import datetime, timezone
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    if package.get("publish_at", "") > now:  # a time picked for this one video (film.py, story.py WHEN)
         body["status"].update(privacyStatus="private", publishAt=package["publish_at"])
     elif (channel or {}).get("publish_at"):
         taken = {json.loads(p.read_text(encoding="utf-8")).get("publish_at") for p in OUTBOX.glob(f"{channel['id']}-*.json")}

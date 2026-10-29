@@ -7,12 +7,15 @@ shot (posed from one reference photo each), handheld phone look, short storybook
 ending. Unlike Kissa it must be a real, documented story, since Instinct promises verifiable stories.
 """
 import json
+import os
 import sys
+from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from pydantic import BaseModel
 
-from agents import DAILY_BUDGET, MODEL, OUTBOX, WEB_SEARCH, _channels, _cost, client, log_spend, next_outbox_path, spent_today
+from agents import DAILY_BUDGET, HERE, MODEL, OUTBOX, WEB_SEARCH, _channels, _cost, client, log_spend, next_outbox_path, spent_today
 from series import Character
 from video import Scene
 
@@ -26,8 +29,9 @@ class Story(BaseModel):
     scenes: list[Scene]
 
 
-def write_story(channel_id: str, topic: str = "") -> Path:
-    """topic: a story the owner picked (e.g. "the Presidio owl that keeps returning to John Murnane"), else one is found."""
+def write_story(channel_id: str, topic: str = "", when: str = "") -> Path:
+    """topic: a story the owner picked (e.g. "the Presidio owl that keeps returning to John Murnane"), else one is found.
+    when: its publish time in the channel's time zone ("2026-10-30 12:30"), else the channel's next free slot."""
     channel = next(c for c in _channels() if c["id"] == channel_id)
     packages = {p: json.loads(p.read_text(encoding="utf-8")) for p in OUTBOX.glob(f"{channel_id}-*.json")}
     for p, package in packages.items():  # one story at a time: a story not posted yet is made again, not a new one
@@ -79,15 +83,25 @@ def write_story(channel_id: str, topic: str = "") -> Path:
                                 "footer": channel.get("footer", ""), "music": story.music, "source": story.source,
                                 "script": "\n".join(s.narration for s in story.scenes),  # what the relevance check reads
                                 "cast": [c.model_dump() for c in story.cast],
-                                "scenes": [s.model_dump() for s in story.scenes]}, indent=2, ensure_ascii=False),
+                                "scenes": [s.model_dump() for s in story.scenes],
+                                **({"publish_at": publish_at(channel, when)} if when else {})}, indent=2, ensure_ascii=False),
                     encoding="utf-8")
+    if when:  # counts toward that day's videos, so the daily chain doesn't add its own on top (owner's 6 for 30 Oct)
+        with (HERE / "runs" / "slots.jsonl").open("a", encoding="utf-8") as f:
+            f.write(json.dumps({"made": f"{when[:10]} {channel_id} story"}) + "\n")
     cost = _cost(MODEL, response.usage)
     log_spend(cost, channel_id)
     print(f"Story: {story.title} (${cost:.2f}) -> {path.name}\n    source: {story.source}")
     return path
 
 
+def publish_at(channel: dict, when: str) -> str:
+    """ "2026-10-30 12:30" in the channel's time zone -> YouTube's UTC publishAt."""
+    local = datetime.fromisoformat(when).replace(tzinfo=ZoneInfo(channel.get("tz", "UTC")))
+    return local.astimezone(ZoneInfo("UTC")).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
 if __name__ == "__main__":
     if spent_today() >= DAILY_BUDGET:
         raise SystemExit(f"Daily budget of ${DAILY_BUDGET:.2f} reached; no story today.")
-    write_story(sys.argv[1] if len(sys.argv) > 1 else "yt-instinct", " ".join(sys.argv[2:]))
+    write_story(sys.argv[1] if len(sys.argv) > 1 else "yt-instinct", " ".join(sys.argv[2:]), os.environ.get("WHEN", ""))
