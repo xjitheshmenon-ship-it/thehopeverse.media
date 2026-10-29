@@ -42,7 +42,7 @@ def make(i: int) -> Path:
         result = fal_client.subscribe(MODEL, arguments={
             "prompt": f"{shot['prompt']}. {film['look']}", "aspect_ratio": "9:16",
             "duration": "5" if shot["end"] - start <= 5 else "10",
-            "negative_prompt": "cartoon, anime, CGI, 3D render, text, watermark, people, rider, saddle, blur"})
+            "negative_prompt": film.get("negative", "cartoon, anime, CGI, 3D render, text, watermark, people, rider, saddle, blur")})
         urllib.request.urlretrieve(result["video"]["url"], raw)
     text = shot.get("text", "").replace("'", "’").replace(":", "\\:")
     caption = (f",drawtext=fontfile={FONT}:text='{text}':fontcolor=white:fontsize=64:borderw=4:bordercolor=black@0.6"
