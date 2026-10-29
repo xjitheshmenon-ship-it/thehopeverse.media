@@ -821,8 +821,8 @@ def continuity(video: Path, about: str, channel_id: str = "") -> Check:
     or props change between shots, a place that changes, things appearing or vanishing, and broken frames."""
     from agents import MODEL
     sheet = video.with_suffix(".sheet.jpg")
-    length = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(video)],
-                                  capture_output=True, text=True).stdout or 60)
+    with VideoFileClip(str(video)) as clip:  # the runners have no ffprobe, only moviepy's ffmpeg (every check failed)
+        length = clip.duration or 60
     subprocess.run([FFMPEG_BINARY, "-y", "-loglevel", "error", "-i", str(video), "-vf",
                     f"fps=16/{length:.2f},scale=270:480,tile=4x4", "-frames:v", "1", "-q:v", "4", str(sheet)], check=True)
     response = client.messages.parse(
