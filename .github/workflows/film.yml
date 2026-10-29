@@ -1,4 +1,5 @@
-# Make a cinematic Short cut to a music track (film.py), for the owner to review; nothing is uploaded.
+# Make a cinematic Short cut to a music track (film.py), for the owner to review; nothing is uploaded unless post= is set.
+# After the owner approves a film, rerun with post=yt-aether: it reuses the saved clips (no new cost) and uploads it.
 # Start it by pushing a branch named run/film with "name=<name>" in the commit message (films/<name>.json).
 # The finished video lands on the music-tracks branch under films/. The paid AI clips are saved there too, even if
 # the run fails, so a rerun reuses them instead of paying again.
@@ -10,6 +11,9 @@ on:
       name:
         description: "Film file in films/, without .json"
         required: true
+      post:
+        description: "Channel to upload the finished film to (empty = review only)"
+        default: ""
 
 permissions:
   contents: write
@@ -21,12 +25,23 @@ jobs:
       FAL_KEY: ${{ secrets.FAL_KEY }}
       HEYGEN_API_KEY: ${{ secrets.HEYGEN_API_KEY }}
       NAME: ${{ inputs.name }}
+      POST: ${{ inputs.post }}
     steps:
       - uses: actions/checkout@v5
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core && pip install -q -r requirements.txt fal-client imageio-ffmpeg
       - run: |
           git fetch origin music-tracks && git worktree add out origin/music-tracks
           mkdir -p "films/$NAME" && cp out/films/"$NAME"/raw-*.mp4 "films/$NAME/" 2>/dev/null || true
+      - name: Unlock the channel's sign-in (only when posting)
+        if: inputs.post != ''
+        env:
+          TOKEN_KEY: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+        run: |
+          python state.py load
+          for f in tokens/*.enc; do
+            [ -f "$f" ] && openssl enc -d -aes-256-cbc -pbkdf2 -pass env:TOKEN_KEY -in "$f" -out "$(basename "$f" .enc)"
+          done
+          true
       - run: python film.py "films/$NAME.json"
       - if: always()
         run: |
