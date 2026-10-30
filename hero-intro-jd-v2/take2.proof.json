@@ -1,0 +1,19 @@
+{
+  "title": "Hero Intro v2 (JD-style, 5 s solo build)",
+  "take": 2,
+  "made_at_utc": "2026-10-30T15:04:38.098853+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "J4XJZkFtrIE7gi5dld3A",
+  "request": {
+    "prompt": "A dark, heavy, swaggering modern South Indian mass hero introduction score, exactly 40 seconds. It MUST open with a 5-second build that starts with ONE single instrument alone: 0-2.5 s: a solo veena, close, dry and natural, slowly plays the hook alone in total silence otherwise, with bends and slides. 2.5-5 s: layers join one by one under it: a low dark drone, then a deep sub swell, then mridangam strokes speeding up and a reversed swell, rising in tension. At 5 s: everything slams in together with one huge hit: the whole aura. After the build: electronic and bass-led, a deep sustained 808 sub-bass holding long notes, dark processed synth stabs hitting every two beats, gritty distorted textures and unique processed sound design; very bass-heavy and dark, little high end. One steady tempo, 99 BPM, in F minor with a raised seventh (F G Ab Bb C Db E). ONE original, menacing 4-bar hook runs through the whole track: F Ab Bb C, Bb Ab G E F, first on the solo veena, then on a dark synth lead with raga-style bends and slides, coming back bigger every time and climbing an octave at the peak. Written the way today's South Indian film composers score a mass hero entry: swagger, stop-and-slam full-band hits, a male wordless chant answering the hook, a korvai-style ending. 5-15 s: the 808 sub, the stabs every two beats and mridangam; the synth lead plays the hook. 15-25 s: the hook again, louder; a deep male wordless chant answers each phrase; the veena plucks a counter-line. 25-26 s: one rising sweep and a half-second stop. 26-36 s: the peak: the hook an octave higher, full male choir chant, doubled drums, brass-like synth stabs. 36-40 s: three slamming full-band hits and a final deep boom that rings out. No long soft intro beyond the 5-second build, no fade-out, no EDM drop, no side-chain pumping, no white-noise risers, no lyrics.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 40000
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 15:00 on v1 take 2 (mastered): needs a 4-5 s build at the start, it goes straight into the track; start with a single instrument, then the whole aura. v2: solo veena plays the hook alone 0-2.5 s, layers join 2.5-5 s, slam at 5 s into v1 take 2's groove (F minor, 99 BPM, sub-heavy, hit every 2 beats). 40 s total. 2 takes; we pick."
+  },
+  "story": "A 35-second mass hero intro: darkness, a slow tease, then the hero walks in on a heavy dark groove that keeps getting bigger until a three-hit ending.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
