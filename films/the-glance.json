@@ -2,7 +2,7 @@
   "title": "The Glance: the first time I saw her 🌸",
   "music": "films/the-glance.mp3",
   "look": "cinematic film still, shot on ARRI Alexa with anamorphic lenses, smooth stabilized gimbal and steadicam camera movement, gentle slow motion, shallow depth of field, soft golden morning light, dreamy pink and warm gold colour grade, film grain, photorealistic, vertical 9:16, no text. The place is a quiet tree-lined street in Bangalore in spring, both sides lined with pink trumpet trees (Tabebuia rosea, Bangalore's cherry blossoms) in full bloom, a canopy of pink flowers overhead, pink petals falling slowly and carpeting the road. The same two people in every shot. He is the young man: an original fictional character, a 25-year-old South Indian man, slim, youthful boyish face, short wavy black hair, clean-shaven with only very light stubble (no beard), warm brown eyes, a crisp white linen shirt with sleeves rolled up, beige chinos, a brown leather camera strap with a black mirrorless camera. She is the young woman: an original fictional character, a 24-year-old South Indian woman, long wavy black hair, a small black bindi, bright eyes, a soft mustard-yellow cotton kurta, white palazzo pants, a long pale white chiffon scarf (dupatta) draped around her neck and over her shoulders, her hair uncovered and open, a tan canvas tote bag on one shoulder",
-  "negative": "cartoon, anime, CGI, 3D render, text, watermark, blur, shaky handheld camera, celebrity, famous actor, real person, different person, different face, different clothes, saree, western dress, sunglasses, crowd, cars, rain, night, kissing, extra fingers, beard, full beard, older man, headscarf, hijab, veil, head covered, white kurta",
+  "negative": "cartoon, anime, CGI, 3D render, text, watermark, blur, shaky handheld camera, celebrity, famous actor, real person, different person, different face, different clothes, saree, western dress, sunglasses, crowd, cars, rain, night, kissing, extra fingers, beard, full beard, older man, headscarf, hijab, veil, head covered, white kurta, holding hands, suspenders, two straps, crossed straps",
   "refs": {
     "ref-couple.jpg": "A wide two-shot on the blossom street, both about 25 years old and youthful: on the left the young man, clean-shaven with very light stubble, white linen shirt, beige chinos, a black mirrorless camera hanging on a brown strap at his chest; on the right the young woman, open long wavy black hair (not covered), a mustard-yellow cotton kurta, white palazzo pants, a white chiffon scarf around her neck and shoulders, a tan tote bag; full body, pink petals falling between them",
     "ref-him.jpg": "Medium close portrait of only the young man from this photo: same youthful face, clean-shaven with very light stubble, same hair, white linen shirt, the black camera on its brown strap at his chest, under the pink blossoms",
@@ -11,8 +11,7 @@
   "shots": [
     {
       "end": 5,
-      "prompt": "Slow crane shot drifting down through a canopy of pink trumpet blossoms over the empty Bangalore street, petals falling in slow motion, morning sun through the flowers",
-      "image": "films/the-glance/ref-couple.jpg"
+      "prompt": "Establishing shot with NO people at all: a slow crane shot drifting down through a canopy of pink trumpet blossoms over the empty Bangalore street, petals falling in slow motion, morning sun through the flowers, the road completely empty"
     },
     {
       "end": 10,
@@ -21,7 +20,7 @@
     },
     {
       "end": 15,
-      "prompt": "Over his shoulder, the camera pans slowly with him across the street and finds her: she is laughing softly, catching a falling pink petal in her open palm",
+      "prompt": "She stands alone on the far side of the street, laughing softly as she catches a falling pink petal in her open palm; the camera slowly pushes in towards her from across the street",
       "image": "films/the-glance/ref-her.jpg"
     },
     {
@@ -36,8 +35,8 @@
     },
     {
       "end": 31,
-      "prompt": "Wide two-shot across the petal-covered street: their eyes meet for the first time, both freeze, pink petals falling between them",
-      "image": "films/the-glance/ref-couple.jpg"
+      "prompt": "Seen from across the street, she stands alone and slowly looks straight into the camera, as if meeting his eyes for the first time, frozen in surprise, a shy smile starting, pink petals falling between",
+      "image": "films/the-glance/ref-her.jpg"
     },
     {
       "end": 38,
