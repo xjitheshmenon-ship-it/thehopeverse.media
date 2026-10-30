@@ -193,7 +193,8 @@ def storyboard(package: dict) -> Storyboard:
 
 def _font(size: int, lang: str = ""):
     # Arial has no Hindi letters; Nirmala UI ships with Windows and covers Devanagari.
-    names = ("NirmalaB.ttf", "Nirmala.ttc", "Nirmala.ttf", "NotoSansDevanagari-Bold.ttf") if lang == "hi" else ()
+    names = {"hi": ("NirmalaB.ttf", "Nirmala.ttc", "Nirmala.ttf", "NotoSansDevanagari-Bold.ttf"),
+             "ja": ("NotoSansCJK-Bold.ttc", "YuGothB.ttc", "msgothic.ttc")}.get(lang, ())
     for name in names + ("arialbd.ttf", "arial.ttf", "DejaVuSans-Bold.ttf"):
         try:
             return ImageFont.truetype(name, size)
@@ -545,7 +546,11 @@ def caption(text: str, size: tuple, lang: str = "", scale: float = 1) -> np.ndar
     img = Image.new("RGBA", size, (0, 0, 0, 0))
     draw = ImageDraw.Draw(img)
     font = _font(int(size[0] // 14 * scale), lang)
-    lines = textwrap.wrap(text, width=int(18 / scale))
+    if lang == "ja":  # no spaces between Japanese words, and each character is about twice as wide
+        n = int(9 / scale)
+        lines = [text[i:i + n] for i in range(0, len(text), n)]
+    else:
+        lines = textwrap.wrap(text, width=int(18 / scale))
     line_h = font.size + 16
     top = int(size[1] * 0.72) - line_h * len(lines) // 2
     draw.rectangle((0, top - 30, size[0], top + line_h * len(lines) + 30), fill=(0, 0, 0, 150))
