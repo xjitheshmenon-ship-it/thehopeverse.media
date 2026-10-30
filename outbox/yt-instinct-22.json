@@ -10,5 +10,10 @@
     "score": 72,
     "why": "Evergreen, well-hedged chimp teaching story (Boesch, Ta\u00ef, 2019 study) that fits the French-speaking senior audience and matches the title, though demand is moderate and the Ayumu chimp Short flopped.",
     "views48": 420
-  }
+  },
+  "qa": {
+    "passed": false,
+    "problems": "Frame 10 (\"\u00c9tude 2019 : Salom\u00e9\") shows macaques (Barbary/rhesus-type monkeys), not chimpanzees, in a story about a chimpanzee mother correcting her young; the subject species switches mid-story."
+  },
+  "held": "continuity: Frame 10 (\"\u00c9tude 2019 : Salom\u00e9\") shows macaques (Barbary/rhesus-type monkeys), not chimpanzees, in a story about a chimpanzee mother correcting her young; the subject species switches mid-story."
 }

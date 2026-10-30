@@ -1,0 +1,31 @@
+{
+  "channel_id": "yt-sawaal",
+  "title": "2 राज्य: क्या केरल SIR में नाम सुधार जारी रहेंगे? #Shorts",
+  "description": "PUBLISH AT: 20:00 IST (Sawaal evening slot, within 17:00–20:00 IST window). Hindi only, no English twin.\n\nSources: Bar & Bench, Deccan Herald, Law Trend\nसुप्रीम कोर्ट ने केरल SIR की समय-सीमा नहीं बढ़ाई, पर कहा कि सुधार और नाम जोड़ने की प्रक्रिया जारी रह सकती है। मुख्य न्यायाधीश सूर्यकांत ने याचिकाकर्ताओं से कहा कि अपनी बात प्रतिवेदन के ज़रिए चुनाव आयोग तक पहुँचाएँ, और रिपोर्ट्स के मुताबिक आयोग इन्हें देखकर कोर्ट को रिपोर्ट देने पर सहमत हुआ। उसी सुनवाई में उत्तर प्रदेश के फॉर्म 7 के थोक आवेदनों पर कोर्ट ने आयोग से अनुपालन रिपोर्ट मांगी, जबकि आयोग के वकील ने कहा कि ऐसे आवेदनों की जांच हुई, वे गलत पाए गए और उन पर कार्रवाई नहीं हुई। मामला अभी कोर्ट में लंबित है; अपना नाम electoralsearch.eci.gov.in पर जांच सकते हैं।\nएंकर और कुछ विज़ुअल AI से बनाए गए हैं।\n\n#HindiNews #BharatNews #SupremeCourt #Desh #Shorts\n\nThumbnail: Supreme Court building on deep blue, huge saffron \"2\", text \"2 राज्य, 1 सुनवाई\" (no faces).\nPinned comment: \"क्या आपने electoralsearch.eci.gov.in पर अपना नाम जांचा है? आपके अनुभव में यह प्रक्रिया कितनी आसान या मुश्किल रही?\"\nAlternate title: \"30 अक्टूबर: क्या केरल SIR में सुधार का रास्ता खुला है? #Shorts\"",
+  "script": "FORMAT: One Short, 9:16, ~52s. Hindi only (English master, system dubs to Hindi). Cast: Aditya and Nisha only.\n\nSCRIPT (English master):\n0-3 Nisha: Missed the SIR deadline in Kerala? Here's what the Supreme Court said.\n3-10 Aditya: On Friday, 30 October, the Supreme Court declined to extend the SIR deadline in Kerala, but said corrections and inclusions of names can continue.\n10-20 Nisha: According to Bar & Bench, Chief Justice Surya Kant told the petitioners: \"Bring it to their notice by way of representation.\" Reports say the Election Commission agreed to examine such representations and report to the Court.\n20-28 Aditya: Also in the same hearing, for Uttar Pradesh, the Court asked the Commission to examine bulk Form 7 deletion applications and file a compliance report.\n28-36 Nisha: The Commission's counsel, Senior Advocate DS Naidu, said bulk applications had been submitted, officers cross-checked them, found them false, and did not act on them.\n36-44 Aditya: Open questions: How many people in Kerala will file representations? Will the Commission's report be made public? Will the UP checks be made public?\n44-52 Nisha: The case remains pending in the Supreme Court. Check your name at electoralsearch.eci.gov.in. Have you checked your name on the voter list?\nSources: Bar & Bench, Deccan Herald, Law Trend.\n\nEDIT PLAN (Mr. Cut, 23 shots, 52s, 9:16): Supreme Court / ECI / CJI Surya Kant photos from Wikimedia Commons with licence credits; Hindi text cards; studio desk shots at 0:01.5, 0:20, 0:44, 0:49.5; low news pulse music at -20 dB. If Hindi dub runs past 58s, drop shots 9, 12, 15, then 5. No politicians, no party flags, no AI faces of real people.",
+  "footer": "Sawaal: ख़बर के पीछे का सवाल। हर तथ्य दो स्रोतों से जाँचा गया।\nAnchor और कुछ दृश्य AI से बने हैं।",
+  "category": "25",
+  "hosts": {
+    "Aditya": {
+      "voice": "en-IN-PrabhatNeural",
+      "voice_hi": "hi-IN-MadhurNeural",
+      "pitch": "+6Hz",
+      "look": "Indian man, about 34, news anchor, medium-brown skin, short curly black hair, light stubble, rimless glasses, charcoal blazer over a black crew-neck, in a dark studio"
+    },
+    "Nisha": {
+      "voice": "en-IN-NeerjaNeural",
+      "voice_hi": "hi-IN-SwaraNeural",
+      "pitch": "+4Hz",
+      "look": "Indian woman, about 30, news anchor, dusky skin, straight shoulder-length black hair, silver hoop earrings, steel-blue blazer over a white shirt, in a dark studio"
+    }
+  },
+  "photos": true,
+  "relevance": {
+    "score": 80,
+    "why": "The story is current: the Supreme Court hearing was today, and Deccan Herald confirms the main facts. These are no extension of the Kerala SIR deadline, corrections still open, and the EC to examine representations and report. The title and script match, though the title's \"2 राज्य\" is vague and the script should say \"Keralam\".",
+    "views48": 45
+  },
+  "credits": [
+    "Supreme Court of India, inside buildings 01.jpg by Pinakpani (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Supreme_Court_of_India,_inside_buildings_01.jpg"
+  ]
+}
