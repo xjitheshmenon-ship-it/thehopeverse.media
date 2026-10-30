@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: First Love v15b (one song, one melody)",
+  "take": 1,
+  "made_at_utc": "2026-10-30T09:25:28.375447+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "Q7IzcyhZVdtSBNOdVV1n",
+  "request": {
+    "prompt": "ONE single love song: a South Indian style love song for the moment a boy sees a girl for the first time and falls in love. The whole track is built on ONE memorable love melody, the refrain, which is heard again and again; nothing new is introduced that is not from that melody. Each time it returns it is the SAME tune, only with more instruments and more energy, so it feels like one continuous story growing, never jumping to another song. Key: bright G major the whole way, with the magical raised fourth of raga Kalyani for wonder; never minor, never sad. Tempo: one steady 92 BPM pulse from start to end, no tempo change, no stops. The voice: a soft, sweet wordless female humming voice (mm and aa humming, close and natural) carries the melody, phrased with gamakam slides, grace-note turns and a long held note that bends at the end of each phrase. Instruments, all close, dry and natural, played by real musicians, no heavy echo: bansuri flute, violin section in Indian-style unison, plucked veena, felt piano, acoustic guitar, deep warm round bass, tabla and dholak keherwa groove with a soft kick and claps. Form: 0-10 s: the female voice hums the love melody softly over a light tabla pulse and veena, curious and wondering. 10-26 s: the same melody again, now with the groove, bass and acoustic guitar; the flute answers each phrase with a small echo of the melody. 26-38 s: a short interlude where flute and violins play a variation of the same melody together in unison. 38-54 s: the verse, built from the same melody's opening notes, hummed by the voice with violins underneath, rising and hopeful. 54-72 s: the refrain returns, the same melody at its happiest and fullest: voice, violins and flute together in unison, full drums and bass, a joyful celebration. 72-80 s: the voice hums the first phrase of the melody once more, softly, ending on a warm bright G major chord. No new unrelated tunes, no section that sounds like a different song, no sudden mood change, no silences, no pauses, no heavy echo, no EDM, not sad, not dark, not slow.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 80000
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 09:19 on v14 take 2: every 10-15 s part is really good and the transitions are smooth, but it is not interconnected, it feels like jumping from one song to another, 'mixing wrong energy, wrong things together'. He loves the female humming and wants more humming (also for refreshing tracks). Cause: v14 asked for 8 parts each with its own idea. v15 = ONE melody in South Indian film-song form (pallavi refrain returning, one charanam built from the same motif), growth only through orchestration and energy, the female humming carries the tune; same G major, 92 BPM, instruments of v14. v15 was blocked by ElevenLabs' copyright filter on music_v2 (both takes; take 2 fell back to v1); v15b drops 'pallavi', 'charanam', 'playback singer', 'film composers' and 'medley'."
+  },
+  "story": "A boy sees a girl for the first time and falls in love, told by ONE love melody that is first hummed softly and grows into a celebration.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
