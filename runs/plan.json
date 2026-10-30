@@ -46,28 +46,12 @@
    "when": "2026-10-31 04:25"
   },
   {
-   "topic": "1 raie, 1 nom : elle reconnaît son soigneur #Shorts",
-   "why": "Poissons sous-estimés : des raies en aquarium reconnaissent leurs soigneurs et répondent à eux. Moins précis qu'une étude nommée unique, donc score plus bas, mais curiosité forte et angle peu vu en français.",
-   "score": 55,
-   "views48": 520,
-   "planned": "2026-10-29 02:34",
-   "when": "2026-10-31 06:05"
-  },
-  {
    "topic": "1 corneille, 1 distributeur : Betty... non, la corneille de Sendai qui casse des noix sur la route #Shorts",
    "why": "Evergreen, well-sourced story of a named-population crow in Japan (Sendai) that places walnuts at crossings so cars crack them, then waits for the pedestrian light. A visible, human-like act that fits a before/after image (nut on road, then crow picking it up at the red light). Uses a corvid, an underestimated bird, matches the breakout pattern of tool use, and adds a human comparison (pedestrians crossing). Not a repeat of the wire-bending crow Betty or the other planned topics.",
    "score": 66,
    "views48": 780,
    "planned": "2026-10-29 04:06",
-   "when": "2026-10-31 07:45"
-  },
-  {
-   "topic": "1 mot, 1 objet : la chienne Rico qui comprend plus de 200 mots #Shorts",
-   "why": "Rico, border collie étudié en 2004 dans Science (Kaminski, Call, Fischer), associe plus de 200 mots à des objets et déduit le nom d'un objet inconnu par exclusion, comme un jeune enfant. Le fait se montre en une image avant/après (jouets alignés, un nouveau parmi eux). Histoire de lien humain-animal, publiée, avec comparaison enfant. Le chien surprend ici par l'inférence par exclusion. Attention: un sujet proche (1 jouet, 1 nom : la chienne qui retient) existe déjà, d'où un score modéré.",
-   "score": 38,
-   "views48": 420,
-   "planned": "2026-10-29 04:17",
-   "when": "2026-10-31 08:35"
+   "when": "2026-10-31 06:05"
   },
   {
    "topic": "1 tardigrade, 3 survivants : le bouclier qui les a protégés des UV en orbite #Shorts",
@@ -75,7 +59,7 @@
    "score": 62,
    "views48": 720,
    "planned": "2026-10-29 16:41",
-   "when": "2026-11-01 04:25"
+   "when": "2026-10-31 07:45"
   },
   {
    "topic": "1 corneille, 1 compte : le corbeau qui compte jusqu'à 4 à voix haute #Shorts",
@@ -83,6 +67,22 @@
    "score": 66,
    "views48": 1000,
    "planned": "2026-10-29 16:52",
+   "when": "2026-10-31 08:35"
+  },
+  {
+   "topic": "1 raie, 1 nom : elle reconnaît son soigneur #Shorts",
+   "why": "Poissons sous-estimés : des raies en aquarium reconnaissent leurs soigneurs et répondent à eux. Moins précis qu'une étude nommée unique, donc score plus bas, mais curiosité forte et angle peu vu en français.",
+   "score": 55,
+   "views48": 520,
+   "planned": "2026-10-29 02:34",
+   "when": "2026-11-01 04:25"
+  },
+  {
+   "topic": "1 mot, 1 objet : la chienne Rico qui comprend plus de 200 mots #Shorts",
+   "why": "Rico, border collie étudié en 2004 dans Science (Kaminski, Call, Fischer), associe plus de 200 mots à des objets et déduit le nom d'un objet inconnu par exclusion, comme un jeune enfant. Le fait se montre en une image avant/après (jouets alignés, un nouveau parmi eux). Histoire de lien humain-animal, publiée, avec comparaison enfant. Le chien surprend ici par l'inférence par exclusion. Attention: un sujet proche (1 jouet, 1 nom : la chienne qui retient) existe déjà, d'où un score modéré.",
+   "score": 38,
+   "views48": 420,
+   "planned": "2026-10-29 04:17",
    "when": "2026-11-01 06:05"
   }
  ],
@@ -188,36 +188,12 @@
  ],
  "yt-sawaal": [
   {
-   "topic": "एक देश एक चुनाव: संयुक्त संसदीय समिति में 39 सदस्य, अब तक क्या हुआ और आगे क्या",
-   "why": "संसद की प्रक्रिया पर तथ्य आधारित, तटस्थ explainer। दल-विवाद के बिना बताता है कि समिति कहाँ तक पहुँची और आगे के चरण क्या हैं। ताज़ा स्थिति की पुष्टि खोज बंद होने से नहीं हो सकी, इसलिए संसदीय रिकॉर्ड से दो स्रोत देखें।",
-   "score": 45,
-   "views48": 55,
-   "planned": "2026-10-29 02:34",
-   "when": "2026-10-31 05:15"
-  },
-  {
-   "topic": "NOTA का बटन: 2013 में सुप्रीम कोर्ट ने दिया अधिकार, पर NOTA को सबसे ज़्यादा वोट मिलें तो क्या होगा?",
-   "why": "'ऐसा क्यों होता है' वाला जिज्ञासु सवाल। कम लोग जानते हैं कि NOTA जीत जाए तब भी दूसरे नंबर का उम्मीदवार विजेता घोषित होता है। यह मतदाता के अधिकार से जुड़ा है। यह समय-आधारित ख़बर नहीं है, इसलिए स्कोर कम है।",
-   "score": 42,
-   "views48": 50,
-   "planned": "2026-10-29 02:34",
-   "when": "2026-10-31 06:55"
-  },
-  {
-   "topic": "लोकसभा 2024 में मतदान 65.79%: करोड़ों पंजीकृत वोटर वोट क्यों नहीं डालते? चुनाव आयोग के आँकड़े",
-   "why": "वोटर लिस्ट और भागीदारी पर आँकड़ों वाला explainer, जो चल रही SIR बहस से जुड़ता है। राष्ट्रीय गर्व के ढाँचे में लोकतंत्र की ताक़त दिखाता है। आँकड़े प्रसारण से पहले ECI के आधिकारिक डेटा और दूसरे स्वतंत्र स्रोत से जाँचें। ताज़ा ख़बर की पुष्टि नहीं हो सकी।",
-   "score": 40,
-   "views48": 48,
-   "planned": "2026-10-29 02:34",
-   "when": "2026-11-01 05:15"
-  },
-  {
    "topic": "दिल्ली SIR: 47 लाख नाम ASDD सूची में, पहले से वोटर रहे लोगों को Form 6 क्यों भरना पड़ा? सुप्रीम कोर्ट (28 अक्टूबर) ने चुनाव आयोग से पूछा",
    "why": "यह सीधे आम वोटर के अधिकार और दस्तावेज़ों से जुड़ा है। SIR की सुनवाई में सुप्रीम कोर्ट ने पूछा कि जिन लोगों तक अधिकारी नहीं पहुँच सके, वे Form 6 क्यों भरें। उसने ECI से ऐसे वोटरों की सूची प्रकाशित करने को भी कहा। ECI ने 30 अक्टूबर की समय-सीमा बढ़ाने पर विचार करने की बात कही। एक नागरिक-संगठन के ऑडिट में जाँचे गए 1,236 वोटरों में से 416 ग़लती से अनुपस्थित, शिफ़्ट, मृत या डुप्लिकेट दर्ज मिले। इसे The Wire और National Herald ने रिपोर्ट किया है। नीचे का सवाल खुला है: लोकतंत्र की नींव मतदाता का अधिकार कैसे सुरक्षित रहे। यह चैनल के पुराने 3 करोड़ वोटर और 33 लाख नोटिस वाले Shorts से अलग, नया क़दम है। स्कोर में कटौती इसलिए कि कहानी 3 दिन पुरानी है और दोनों स्रोत मैंने पूरा नहीं पढ़ा।",
    "score": 78,
    "views48": 70,
    "planned": "2026-10-29 07:37",
-   "when": "2026-11-01 06:55"
+   "when": "2026-10-31 05:15"
   },
   {
    "topic": "महाराष्ट्र SIR: मुंबई-पुणे में पुनर्विकास के कारण घर बदलने वाले मतदाता 'व्यक्ति नहीं मिला' क्यों दर्ज? सुप्रीम कोर्ट ने केंद्र और चुनाव आयोग को नोटिस दिया। याचिका में ड्राफ़्ट सूची से क़रीब 2.07 करोड़ नाम हटने की बात है, और 1.22 करोड़ नाम 'लॉजिकल डिस्क्रेपेंसी' में हैं। आपका नाम कैसे जाँचें, और आयोग का जवाब क्या आएगा?",
@@ -225,6 +201,30 @@
    "score": 72,
    "views48": 90,
    "planned": "2026-10-30 04:39",
+   "when": "2026-10-31 06:55"
+  },
+  {
+   "topic": "एक देश एक चुनाव: संयुक्त संसदीय समिति में 39 सदस्य, अब तक क्या हुआ और आगे क्या",
+   "why": "संसद की प्रक्रिया पर तथ्य आधारित, तटस्थ explainer। दल-विवाद के बिना बताता है कि समिति कहाँ तक पहुँची और आगे के चरण क्या हैं। ताज़ा स्थिति की पुष्टि खोज बंद होने से नहीं हो सकी, इसलिए संसदीय रिकॉर्ड से दो स्रोत देखें।",
+   "score": 45,
+   "views48": 55,
+   "planned": "2026-10-29 02:34",
+   "when": "2026-11-01 05:15"
+  },
+  {
+   "topic": "NOTA का बटन: 2013 में सुप्रीम कोर्ट ने दिया अधिकार, पर NOTA को सबसे ज़्यादा वोट मिलें तो क्या होगा?",
+   "why": "'ऐसा क्यों होता है' वाला जिज्ञासु सवाल। कम लोग जानते हैं कि NOTA जीत जाए तब भी दूसरे नंबर का उम्मीदवार विजेता घोषित होता है। यह मतदाता के अधिकार से जुड़ा है। यह समय-आधारित ख़बर नहीं है, इसलिए स्कोर कम है।",
+   "score": 42,
+   "views48": 50,
+   "planned": "2026-10-29 02:34",
+   "when": "2026-11-01 06:55"
+  },
+  {
+   "topic": "लोकसभा 2024 में मतदान 65.79%: करोड़ों पंजीकृत वोटर वोट क्यों नहीं डालते? चुनाव आयोग के आँकड़े",
+   "why": "वोटर लिस्ट और भागीदारी पर आँकड़ों वाला explainer, जो चल रही SIR बहस से जुड़ता है। राष्ट्रीय गर्व के ढाँचे में लोकतंत्र की ताक़त दिखाता है। आँकड़े प्रसारण से पहले ECI के आधिकारिक डेटा और दूसरे स्वतंत्र स्रोत से जाँचें। ताज़ा ख़बर की पुष्टि नहीं हो सकी।",
+   "score": 40,
+   "views48": 48,
+   "planned": "2026-10-29 02:34",
    "when": "2026-11-02 05:15"
   }
  ],
