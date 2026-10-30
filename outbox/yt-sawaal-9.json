@@ -1,0 +1,31 @@
+{
+  "channel_id": "yt-sawaal",
+  "title": "33% महिला आरक्षण: क्या लोकसभा में सीटें आरक्षित? #Shorts",
+  "description": "लोकसभा की एक-तिहाई सीटें महिलाओं के लिए आरक्षित होनी हैं, पर कानून 16 अप्रैल 2026 से लागू होने के बावजूद अभी कोई सीट आरक्षित नहीं है। कानून के अनुसार आरक्षण नई जनगणना और फिर परिसीमन के बाद ही लागू होगा। 17 अप्रैल 2026 को लोकसभा में संविधान (131वां संशोधन) विधेयक को 298 वोट पक्ष में और 230 विपक्ष में मिले, जो ज़रूरी दो-तिहाई बहुमत से कम रहे। जनगणना की संदर्भ तिथि 1 मार्च 2027 है, यही अगली तय तारीख है।\nSources: Telangana Today (17 अप्रैल 2026), Business Today (17 अप्रैल 2026), Outlook, Business Standard (7 जनवरी 2026), The Wire (9 जनवरी 2026), ISAS (20 अप्रैल 2026), LiveLaw (17 अप्रैल 2026)\n\nSawaal: ख़बर के पीछे का सवाल। हर तथ्य दो स्रोतों से जाँचा गया। Anchor और कुछ दृश्य AI से बने हैं।\n#HindiNews #BharatNews #WomensReservation #महिलाआरक्षण #Shorts",
+  "script": "PUBLISH: today, 20:00 IST (Asia/Kolkata). Language: Hindi only, no English twin. Type: status explainer (no \"आज\"/\"ब्रेकिंग\"). Target runtime ≤ 55 s (plan ~50 s, 9:16, 20 shots).\n\nCAST: fixed anchors Aditya (Indian man ~34, rimless glasses, charcoal blazer) and Nisha (Indian woman ~30, steel-blue blazer, silver hoops). No other characters; no AI faces of real people.\n\nSCRIPT (English, for Hindi dub; editor's trims applied to fit ≤ 55 s):\nADITYA: Is one-third of the Lok Sabha reserved for women yet? The law has been in force since 16 April 2026, but no seat is reserved yet.\nNISHA: Parliament passed the Act in September 2023. The Law Ministry notified it into force on 16 April 2026. [card: Lok Sabha + state assembly seats]\nADITYA: But being in force is not the same as being operative. Under the law, the reservation applies only after a new census, and then a delimitation of seats.\nNISHA: Census 2027 houselisting was scheduled from 1 April to 30 September 2026. The census reference date is 1 March 2027.\nADITYA: The government's Constitution 131st Amendment Bill aimed to bring reservation in 2029, with up to 850 Lok Sabha seats. On 17 April 2026 the Lok Sabha rejected it: 298 for, 230 against, short of the two-thirds majority it needed.\nNISHA: Opposition parties objected to linking women's reservation with expanding the Lok Sabha and delimitation. The Delimitation Bill 2026 was then withdrawn.\nADITYA: Based on available reports, no new delimitation has begun yet.\nNISHA: The open questions: when will census figures be published? When will a delimitation commission be set up? Can the 2029 election have reserved seats under the current law? Next date: 1 March 2027. [card: 2029 तक आरक्षण? हाँ / नहीं, कमेंट करें]\n\nEDIT PLAN (Mr. Cut, 20 shots, 9:16, ~50 s): Lok Sabha chamber hook \"1/3 सीटें आरक्षित? अभी 0\"; Parliament House (Wikimedia Commons, credited, text-card backup); chain card जनगणना → परिसीमन → आरक्षण; houselisting / संदर्भ तिथि 1 मार्च 2027 cards; 298 vs 230 bar graphic with two-thirds line (no threshold number); \"परिसीमन विधेयक 2026: वापस\"; end card \"अगली तारीख: 1 मार्च 2027\". Representative visuals labelled. Low news-pulse music.\n\nPINNED COMMENT: क्या आप जानते थे कि महिला आरक्षण कानून 16 अप्रैल 2026 से लागू है, पर सीटें जनगणना और परिसीमन के बाद ही आरक्षित होंगी? हाँ या ना, कमेंट में बताइए।\n\nTHUMBNAIL: Parliament House photo (Wikimedia Commons), dark-blue overlay, big white \"33%\" with \"0 सीट\" below, text \"33% पर 0 सीट?\", saffron accent line; no faces.",
+  "footer": "Sawaal: ख़बर के पीछे का सवाल। हर तथ्य दो स्रोतों से जाँचा गया।\nAnchor और कुछ दृश्य AI से बने हैं।",
+  "category": "25",
+  "hosts": {
+    "Aditya": {
+      "voice": "en-IN-PrabhatNeural",
+      "voice_hi": "hi-IN-MadhurNeural",
+      "pitch": "+6Hz",
+      "look": "Indian man, about 34, news anchor, medium-brown skin, short curly black hair, light stubble, rimless glasses, charcoal blazer over a black crew-neck, in a dark studio"
+    },
+    "Nisha": {
+      "voice": "en-IN-NeerjaNeural",
+      "voice_hi": "hi-IN-SwaraNeural",
+      "pitch": "+4Hz",
+      "look": "Indian woman, about 30, news anchor, dusky skin, straight shoulder-length black hair, silver hoop earrings, steel-blue blazer over a white shirt, in a dark studio"
+    }
+  },
+  "photos": true,
+  "relevance": {
+    "score": 66,
+    "why": "मुख्य तथ्य (16 अप्रैल 2026 से लागू, संसद में संशोधन विधेयक गिरा, परिसीमन शुरू नहीं) खोज में पुष्ट हैं और विषय भारत के लिए प्रासंगिक है। लेकिन आज कोई नई ख़बर नहीं है, और मुझे हाल की स्थिति पूरी तरह जाँचने के लिए पर्याप्त नई रिपोर्टें नहीं मिलीं। स्क्रिप्ट में 'अभी 0 सीट' जैसी बातें अटकलों पर टिकी हैं।",
+    "views48": 30
+  },
+  "credits": [
+    "Sansad Bhavan, Delhi, BNK.jpg by Nikhilb239 (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Sansad_Bhavan,_Delhi,_BNK.jpg"
+  ]
+}
