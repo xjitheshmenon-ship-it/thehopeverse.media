@@ -73,14 +73,14 @@ def make(i: int) -> Path:
     image = work / f"frame-{i:02}.jpg" if shot.get("frame") else Path(shot["image"]) if shot.get("image") else None
     if not raw.exists() and film.get("maker") != "kling":  # "maker": "kling" holds faces better from a start frame
         try:
-            heygen_clip(f"{shot['prompt']}. {film['look']}", raw, image)
+            heygen_clip(f"{shot['prompt']}. {shot.get('look', film['look'])}", raw, image)
             cost.append(0.09)
         except Exception as e:
             print(f"shot {i + 1}: HeyGen failed ({e}); using Kling")
     if not raw.exists():
         result = fal_client.subscribe(MODEL.replace("text-to-video", "image-to-video") if image else MODEL, arguments={
             **({"image_url": fal_client.encode_file(str(image))} if image else {"aspect_ratio": "9:16"}),
-            "prompt": f"{shot['prompt']}. {film['look']}",
+            "prompt": f"{shot['prompt']}. {shot.get('look', film['look'])}",
             "duration": "5" if shot["end"] - start <= 5 else "10",
             "negative_prompt": film.get("negative", "cartoon, anime, CGI, 3D render, text, watermark, people, rider, saddle, blur")})
         urllib.request.urlretrieve(result["video"]["url"], raw)
