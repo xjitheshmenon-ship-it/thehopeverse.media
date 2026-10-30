@@ -1,7 +1,7 @@
 # Mr. Hope on GitHub's servers: no PC needed. Keys live in Settings > Secrets and variables > Actions.
 # Hope's memory (outbox, lessons.md, characters.md, run logs) is kept on the `state` branch by state.py.
 name: Hope
-run-name: "Hope: ${{ github.event.schedule == '15 * * * *' && 'dashboard refresh (posts nothing)' || inputs.job == 'stats' && 'dashboard refresh (posts nothing)' || inputs.job == 'plan' && 'plan topics (posts nothing)' || inputs.job == 'story' && format('post a true rescue story Short now for {0}', inputs.channel) || inputs.job == 'publish' && format('make Short {0} public now', inputs.topic) || inputs.job == 'refresh' && format('refresh footers on {0}', inputs.channel) || inputs.job == 'one' && format('post one Short now for {0}', inputs.channel) || (github.event.schedule == '30 11 * * *' || inputs.job == 'report' || inputs.job == 'daily') && '5 PM report (posts nothing)' || 'next video' }}"
+run-name: "Hope: ${{ github.event.schedule == '15 * * * *' && 'dashboard refresh (posts nothing)' || inputs.job == 'stats' && 'dashboard refresh (posts nothing)' || inputs.job == 'plan' && 'plan topics (posts nothing)' || inputs.job == 'story' && format('post a true rescue story Short now for {0}', inputs.channel) || inputs.job == 'publish' && format('make Short {0} public now', inputs.topic) || inputs.job == 'remake' && format('remake held Short {0}', inputs.topic) || inputs.job == 'refresh' && format('refresh footers on {0}', inputs.channel) || inputs.job == 'one' && format('post one Short now for {0}', inputs.channel) || (github.event.schedule == '30 11 * * *' || inputs.job == 'report' || inputs.job == 'daily') && '5 PM report (posts nothing)' || 'next video' }}"
 
 on:
   schedule:
@@ -14,14 +14,14 @@ on:
         description: "next = make and post the next video of the day (one channel at a time, then it starts the next; stops when every channel has its count), report = the 5 PM report and channel idea, one = make and post the next planned Short now for the channel below, story = make and post a true animal rescue story Short now (AI re-enactment) for the channel below, stats = dashboard numbers only, plan = plan the next 6 topics per channel (slot is the same as next; to sign a channel in, use the Connect a channel workflow)"
         default: next
         type: choice
-        options: [next, report, one, story, publish, refresh, stats, plan, slot, audience]
+        options: [next, report, one, story, publish, refresh, stats, plan, slot, audience, remake]
       channel:
         description: "For job one or story: which channel's Short to post now. For job refresh: the channel whose uploads get its current footer and tags"
         default: yt-hopeverse
         type: choice
         options: [yt-hopeverse, yt-instinct, yt-instinct-de, yt-instinct-es, yt-instinct-ja, yt-sankalp, yt-sawaal]
       topic:
-        description: "For job one or story: the topic or true story (empty = the planned one / find one). For job publish: the YouTube id of a scheduled Short to make public now"
+        description: "For job one or story: the topic or true story (empty = the planned one / find one). For job publish: the YouTube id of a scheduled Short to make public now. For job remake: the held Short's outbox file (e.g. yt-sawaal-17.hi.json)"
         default: ""
         type: string
       when:
@@ -164,6 +164,16 @@ jobs:
         env:
           VIDEO: ${{ inputs.topic }}
         run: python video.py --publish "$VIDEO"
+      - name: Make a held Short again (same script, new footage) and post it
+        if: inputs.job == 'remake'
+        env:
+          VIDEO: ${{ inputs.topic }}
+          DAILY_BUDGET: "1000"  # the owner asked for it, like Post now
+        run: |
+          { sudo apt-get install -y -qq fonts-noto-core fonts-noto-cjk || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core fonts-noto-cjk; }; } > /dev/null
+          python -c "import json, os, pathlib; p = pathlib.Path('outbox', os.environ['VIDEO']); d = json.loads(p.read_text()); [d.pop(k, None) for k in ('held', 'qa', 'render_failed')]; p.write_text(json.dumps(d, indent=2, ensure_ascii=False)); print(d['channel_id'])" > "$RUNNER_TEMP/channel"
+          rm -f "outbox/${VIDEO%.json}.mp4"
+          python video.py --only "$(cat "$RUNNER_TEMP/channel")"
       - name: Who watches the channel (age, gender, countries, traffic; last 28 days)
         if: inputs.job == 'audience'
         env:
@@ -192,7 +202,7 @@ jobs:
         if: always() && (env.RAN == '1' || inputs.job == 'one' || inputs.job == 'plan')
         run: python plan.py || true
       - name: Save Hope's memory
-        if: always() && (env.RAN == '1' || inputs.job == 'one' || inputs.job == 'story' || inputs.job == 'publish' || inputs.job == 'plan')
+        if: always() && (env.RAN == '1' || inputs.job == 'one' || inputs.job == 'story' || inputs.job == 'publish' || inputs.job == 'remake' || inputs.job == 'plan')
         run: python state.py save
       - name: Start the next video
         if: always() && env.MORE == '1'
