@@ -48,7 +48,7 @@ for k, (name, prompt) in enumerate(refs.items()):
     if (work / name).exists():
         continue
     result = fal_client.subscribe("fal-ai/flux-pro/kontext", arguments={
-        "prompt": f"The same man, same face, beard and clothes: {prompt}", "aspect_ratio": "9:16",
+        "prompt": f"The same people, same faces, hair and clothes: {prompt}", "aspect_ratio": "9:16",
         "image_url": fal_client.upload_file(str(work / next(iter(refs))))}) if k else fal_client.subscribe(
         "fal-ai/flux-pro/v1.1-ultra", arguments={"prompt": f"{prompt}. {film['look']}", "aspect_ratio": "9:16"})
     urllib.request.urlretrieve(result["images"][0]["url"], work / name)
