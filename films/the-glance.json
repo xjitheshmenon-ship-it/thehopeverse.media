@@ -16,7 +16,7 @@
     },
     {
       "end": 10,
-      "prompt": "He stands alone under the pink trees and lifts his camera to photograph the falling blossoms, focused and smiling, petals drifting past. Nobody else is in the street: no woman, no dog in this shot",
+      "prompt": "He stands alone under the pink trees and lifts his camera to photograph the falling blossoms, focused and smiling, petals drifting past. Nobody else is in the street: no woman, no dog in this shot. Tight medium shot that stays on him; he stays completely alone for the whole shot, the street behind him stays empty",
       "image": "films/the-glance/ref-him.jpg",
       "frame": "Full-length shot: he, in his white linen shirt and BEIGE chinos, stands alone under the pink trees on the empty street, raising his black camera towards the blossoms"
     },
@@ -46,7 +46,7 @@
     },
     {
       "end": 34.5,
-      "prompt": "He is exactly the man in the starting photo: the same face, hair, white linen shirt and camera on its brown strap. THE GLANCE, slow motion close-up: he stops completely, out of breath, staring ahead, stunned, lips parting, pink petals falling slowly in front of his face, warm golden light. The only dog anywhere is the same pale cream short-coated dog with a red collar; no other dog appears",
+      "prompt": "He is exactly the man in the starting photo: the same face, hair, white linen shirt and camera on its brown strap. THE GLANCE, slow motion close-up: he stops completely, out of breath, staring ahead, stunned, lips parting, pink petals falling slowly in front of his face, warm golden light. The only dog anywhere is the same pale cream short-coated dog with a red collar; no other dog appears. His black camera stays hanging on its brown strap at his chest the whole time; nothing on the ground",
       "image": "films/the-glance/ref-him.jpg",
       "frame": "Close-up of him standing still on the blossom street, stunned, lips slightly parted, staring ahead, pink petals falling in front of him"
     },
