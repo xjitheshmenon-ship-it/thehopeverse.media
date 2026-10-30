@@ -1079,19 +1079,32 @@ if __name__ == "__main__":
                         with open(os.environ.get("GITHUB_ENV", os.devnull), "a") as f:
                             f.write("MORE=1\n")
                     continue
-        if not video.exists() and "youtube_id" not in package:  # cloud runs don't keep videos; never remake posted ones
+        # Hopeverse's dub channels get a copy. A channel with "dub" (Sankalp, Sawaal) posts only the dub: the agents
+        # write in English and viewers see Hindi only (owner's call, 27 Oct).
+        dub_only = bool(home.get("dub")) and "dub_of" not in package
+        if package.get("render_failed", 0) >= 2 and "youtube_id" not in package:
+            continue  # failed twice (e.g. credits ran out mid-video): stop paying to remake it every run
+        if dub_only and not dub_path.exists() and not (path.with_suffix("") / "board.json").exists():
+            # its English cut is never posted, so make only the storyboard the dub is cut from (half the fal.ai cost)
+            try:
+                path.with_suffix("").mkdir(exist_ok=True)
+                (path.with_suffix("") / "board.json").write_text(storyboard(package).model_dump_json(), encoding="utf-8")
+            except Exception as e:
+                print(f"    storyboard for {path.name} failed: {e}")
+                failed.append(path.name)
+                continue
+        elif not dub_only and not video.exists() and "youtube_id" not in package:  # cloud runs don't keep videos; never remake posted ones
             print(f"Making video for {path.name}")
             try:
                 render(path, voice)
             except Exception as e:  # with many Shorts a day, one broken package shouldn't stop the rest
                 print(f"    failed: {e}")
                 failed.append(path.name)
+                package["render_failed"] = package.get("render_failed", 0) + 1
+                path.write_text(json.dumps(package, indent=2, ensure_ascii=False), encoding="utf-8")
                 continue
             package = json.loads(path.read_text(encoding="utf-8"))  # render adds photo credits
         # Only Shorts made from now on have board.json, so older ones are never dubbed.
-        # Hopeverse's dub channels get a copy. A channel with "dub" (Sankalp, Sawaal) posts only the dub: the agents
-        # write in English and viewers see Hindi only (owner's call, 27 Oct).
-        dub_only = bool(home.get("dub")) and "dub_of" not in package
         targets = (dubs if package["channel_id"] == "yt-hopeverse" else []) + \
                   ([{**home, "lang": home["dub"], "language": home.get("dub_language", home["dub"])}] if dub_only else [])
         for c in targets if "dub_of" not in package and (path.with_suffix("") / "board.json").exists() else []:
