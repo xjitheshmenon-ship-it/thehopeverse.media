@@ -50,14 +50,14 @@ for k, (name, prompt) in enumerate(refs.items()):
         continue
     result = fal_client.subscribe("fal-ai/flux-pro/kontext", arguments={
         "prompt": f"The same people, same faces, hair and clothes: {prompt}", "aspect_ratio": "9:16",
-        "image_url": fal_client.upload_file(str(work / next(iter(refs))))}) if k else fal_client.subscribe(
+        "image_url": fal_client.encode_file(str(work / next(iter(refs))))}) if k else fal_client.subscribe(
         "fal-ai/flux-pro/v1.1-ultra", arguments={"prompt": f"{prompt}. {film['look']}", "aspect_ratio": "9:16"})
     urllib.request.urlretrieve(result["images"][0]["url"], work / name)
 for i, shot in enumerate(film["shots"]):  # "frame": this shot's first frame, posed from its photo (same faces)
     if shot.get("frame") and not (work / f"frame-{i:02}.jpg").exists():
         result = fal_client.subscribe("fal-ai/flux-pro/kontext", arguments={
             "prompt": f"The same people, same faces, hair, beard and clothes, same heights: {shot['frame']}",
-            "aspect_ratio": "9:16", "image_url": fal_client.upload_file(shot["image"])})
+            "aspect_ratio": "9:16", "image_url": fal_client.encode_file(shot["image"])})
         urllib.request.urlretrieve(result["images"][0]["url"], work / f"frame-{i:02}.jpg")
 if os.environ.get("REFS_ONLY"):  # make and review the photos (and first frames) before paying for the shots
     sys.exit(print(f"Reference photos: {', '.join(refs)}"))
@@ -74,7 +74,7 @@ def make(i: int) -> Path:
             print(f"shot {i + 1}: HeyGen failed ({e}); using Kling")
     if not raw.exists():
         result = fal_client.subscribe(MODEL.replace("text-to-video", "image-to-video") if image else MODEL, arguments={
-            **({"image_url": fal_client.upload_file(str(image))} if image else {"aspect_ratio": "9:16"}),
+            **({"image_url": fal_client.encode_file(str(image))} if image else {"aspect_ratio": "9:16"}),
             "prompt": f"{shot['prompt']}. {film['look']}",
             "duration": "5" if shot["end"] - start <= 5 else "10",
             "negative_prompt": film.get("negative", "cartoon, anime, CGI, 3D render, text, watermark, people, rider, saddle, blur")})
