@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Storm Entry v7 (one take, its own new hook)",
+  "take": 3,
+  "made_at_utc": "2026-10-30T15:45:50.109674+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "OJkH4ZtWhsSMSrpq6f8Q",
+  "request": {
+    "prompt": "A brand-new mass hero ENTRY film score, ONE continuous piece built on ONE hero hook from the first second to the last, written the way today's biggest Tamil and Telugu film composers score the hero's first appearance. Exactly 112 BPM, C minor with a sharp-four F-sharp for menace, its OWN brand-new hero hook, written out here: a fast four-note pickup G, G, F-sharp, G (short-short-short-long), then a jump down to C and a slow slide up to E-flat, held and bent; then the answer: A-flat, G, F-sharp, G, D, C. Every section uses THIS SAME hook, varied and growing, never a new tune. Instruments: a concert grand piano playing the hook in bold octaves is the signature voice; a real tabla, thavil, mridangam and kanjira played close, natural and dry; a natural nadaswaram; a gritty bent synth lead; a warm synth bass; a deep wordless male choir singing long notes (no shouted 'hey' or 'ho' chants). 0-12 s: one thunder crack, rain ticking on a tin roof, the synth bass creeps in, the piano quietly plays the hook's fast four-note pickup alone. 12-20 s: tension: the hook hinted low, a deep crowd hum rising. 20-30 s: the piano hook takes over in bold octaves, twice, carrying the transition; at 24 s one thunder boom and full band hit lands under the piano. After 26 s no more thunder or rain. 30-42 s: the tabla starts the groove under the same piano hook, then thavil, mridangam and kanjira join one by one; the nadaswaram answers the piano with the same hook. 42-55 s: a tabla and thavil call-and-response showcase, hand claps on the accents, the piano punctuating with short stabs of the hook. 55-62 s: the hook comes back hotter: thavil doubles time, a deep male choir sings the hook in long 'aaa' notes, piano and nadaswaram in unison, a fast tabla roll, then one beat of full band silence. 62-72 s: SLAM: the same hook lifted up a whole step, the biggest moment, piano octaves, nadaswaram and synth lead together over the full drums, the male choir singing the hook. 72-80 s: a korvai, one rhythmic phrase played three times by the whole band, landing on one massive final hit , then the piano alone plays the hook's last phrase and lets the final C ring. Loud, punchy, clean, wide mix where the piano and drums are clearly heard. Not Western trailer music, not EDM, no side-chain pumping, no white-noise risers, no filter sweeps, no fade-out. Do not use a rising three-note root-third-fifth call, shouted 'hey' chants or reversed swells anywhere.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 80000
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 15:40 on v6: 'kind of repetition hooks from our locked tracks.' Measured: no melody line matches a locked track for longer than 0.7 s, so the repetition is the shared signature devices in every brief (the rising 3-note call, shouted 'hey/ho' crowd chants, reversed swell). v7 = v6 with its own written-out hook and none of those shared devices."
+  },
+  "story": "The storm brings the hero in, a piano hook carries his reveal, the festival drummers play for him and the festival explodes.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
