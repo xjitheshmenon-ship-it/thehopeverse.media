@@ -1,0 +1,31 @@
+{
+  "channel_id": "yt-sawaal",
+  "title": "47 लाख नाम: क्या छूटे वोटर वापस जुड़ सकते हैं? #Shorts",
+  "description": "PUBLISH SLOT: 20:00 IST (Asia/Kolkata), Hindi only, no English twin. Set manually: the queue has no publish-time field.\n\nदिल्ली की ड्राफ़्ट वोटर सूची से करीब 47 लाख नाम छूटने के दावे पर सुप्रीम कोर्ट ने चुनाव आयोग से Form 6 को लेकर सवाल पूछा।\nSources: Business Standard, Deccan Herald, The Federal, DT Next, LiveLaw\nयाचिकाकर्ताओं के मुताबिक़ करीब 1.45 करोड़ मतदाताओं में से लगभग 47 लाख नाम ड्राफ़्ट में नहीं हैं, यानी हर तीन में से करीब एक। मुख्य न्यायाधीश सूर्य कांत की अगुवाई वाली पीठ ने पूछा कि ऐसे मतदाताओं को पहली बार नाम जुड़वाने वाला Form 6 क्यों भरना पड़े। रिपोर्टों के अनुसार पीठ ने आयोग से इन मतदाताओं तक पहुँचने और देर से आए फ़ॉर्म स्वीकार करने पर विचार करने को कहा। आयोग का कहना है कि उसने दोहरी और पुरानी प्रविष्टियाँ हटाने के लिए कार्रवाई की। मामले की अगली सुनवाई करीब दो हफ़्ते में होनी है।\n\nSawaal: ख़बर के पीछे का सवाल। हर तथ्य दो स्रोतों से जाँचा गया। Anchor और कुछ दृश्य AI से बने हैं।\n\n#HindiNews #BharatNews #SupremeCourt #Desh #Shorts\n\nPINNED COMMENT: क्या आपने दिल्ली की ड्राफ़्ट वोटर सूची में अपना नाम चुनाव आयोग की वेबसाइट पर जाँचा? नतीजा कमेंट में बताइए।",
+  "script": "PUBLISH: 20:00 IST. Hindi only (anchors Aditya and Nisha, channel-config looks/voices hi-IN-MadhurNeural / SwaraNeural). No English twin. No AI faces/voices of real people.\n\nALT TITLES (not used): \"47 लाख नाम छूटे? क्या SC से वोटरों को राहत मिल सकती है? #Shorts\" / \"47 लाख नाम: SIR में क्या देरी से फ़ॉर्म चल सकते हैं? #Shorts\"\n\nSCRIPT (English master; system dubs to Hindi):\nADITYA: \"About 47 lakh names were left out of Delhi's draft voter roll. Why did the Supreme Court question a form meant for new voters?\"\nNISHA: \"The Election Commission published Delhi's draft roll on 31 August. The petitioners told the court that about 47 lakh of roughly 1.45 crore electors were omitted from the draft.\"\nADITYA: \"On Wednesday, 28 October, a three-judge bench led by Chief Justice Surya Kant asked why such voters must file Form 6, which is meant for first-time enrolment.\"\nNISHA: \"According to reports of the hearing, the bench told the Commission to reach out to these voters instead of burdening them, and suggested it accept delayed forms.\"\nADITYA: \"Justice Joymalya Bagchi asked whether a person forever loses the right to come back on the roll. The bench said the legality of 'logical discrepancy' checks is still undecided.\"\nNISHA: \"The Election Commission has maintained that it acted to remove duplicate and outdated entries. Its reply to the court's suggestions has not been reported yet.\"\nADITYA: \"The court is set to hear the case again in about two weeks. The question before it: what happens to the 47 lakh names?\"\nNISHA: \"Is your name on the Delhi draft roll? Check with the Election Commission, and write in the comments.\"\n\nEDIT PLAN (Mr. Cut, 21 shots, ~48 s, 9:16): dark studio; real Wikimedia Commons photos (Supreme Court, ECI building/logo, CJI Surya Kant, Justice Joymalya Bagchi), each with text-card backup and credit line; Hindi burned-in captions; tense low pulse music ducked under voice (Mr. Raga's automatic pick).\n- Shot 1 on-screen text: \"47 लाख नाम छूटे?\" (NOT \"कटे\": omissions from a draft, not final deletions).\n- Keep \"(petitioners, in court)\" tag on the 47 lakh card.\n- Shot 13 text is a paraphrase.\n- Shot 21 card: \"अगली सुनवाई: लगभग 2 हफ्ते में (तारीख की पुष्टि बाकी)\".\n- Hindi dub must stay under 60 s; if needed trim shots 11, 3, 17 in that order.\n\nTHUMBNAIL: real Supreme Court building photo, no faces, dark overlay; huge \"47 लाख\", smaller \"नाम कहाँ?\"; deep-blue background, white numerals, saffron underline.",
+  "footer": "Sawaal: ख़बर के पीछे का सवाल। हर तथ्य दो स्रोतों से जाँचा गया।\nAnchor और कुछ दृश्य AI से बने हैं।",
+  "category": "25",
+  "hosts": {
+    "Aditya": {
+      "voice": "en-IN-PrabhatNeural",
+      "voice_hi": "hi-IN-MadhurNeural",
+      "pitch": "+6Hz",
+      "look": "Indian man, about 34, news anchor, medium-brown skin, short curly black hair, light stubble, rimless glasses, charcoal blazer over a black crew-neck, in a dark studio"
+    },
+    "Nisha": {
+      "voice": "en-IN-NeerjaNeural",
+      "voice_hi": "hi-IN-SwaraNeural",
+      "pitch": "+4Hz",
+      "look": "Indian woman, about 30, news anchor, dusky skin, straight shoulder-length black hair, silver hoop earrings, steel-blue blazer over a white shirt, in a dark studio"
+    }
+  },
+  "photos": true,
+  "relevance": {
+    "score": 80,
+    "why": "दो स्रोत (DTNext, ThePrint) 28 अक्टूबर की सुनवाई के तथ्य पुष्ट करते हैं और कुछ नया नहीं आया; दिल्ली के हिंदी दर्शकों के लिए सटीक है। एक कमी: बेंच में तीसरे जज V मोहना भी थे।",
+    "views48": 90
+  },
+  "credits": [
+    "Supreme Court of India, inside buildings 01 (cropped).jpg by Pinakpani (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Supreme_Court_of_India,_inside_buildings_01_(cropped).jpg"
+  ]
+}

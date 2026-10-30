@@ -38,12 +38,20 @@
  ],
  "yt-instinct": [
   {
+   "topic": "1 geai, 1 repas : l'oiseau qui prévoit demain #Shorts",
+   "why": "Raby et al. 2007 (Nature) : le geai buissonnier de Californie cache de la nourriture là où il aura faim le lendemain. Planification du futur, oiseau sous-estimé, comparaison avec les enfants.",
+   "score": 65,
+   "views48": 700,
+   "planned": "2026-10-29 02:34",
+   "when": "2026-10-31 04:25"
+  },
+  {
    "topic": "1 corneille, 1 distributeur : Betty... non, la corneille de Sendai qui casse des noix sur la route #Shorts",
    "why": "Evergreen, well-sourced story of a named-population crow in Japan (Sendai) that places walnuts at crossings so cars crack them, then waits for the pedestrian light. A visible, human-like act that fits a before/after image (nut on road, then crow picking it up at the red light). Uses a corvid, an underestimated bird, matches the breakout pattern of tool use, and adds a human comparison (pedestrians crossing). Not a repeat of the wire-bending crow Betty or the other planned topics.",
    "score": 66,
    "views48": 780,
    "planned": "2026-10-29 04:06",
-   "when": "2026-10-31 04:25"
+   "when": "2026-10-31 06:05"
   },
   {
    "topic": "1 tardigrade, 3 survivants : le bouclier qui les a protégés des UV en orbite #Shorts",
@@ -51,7 +59,7 @@
    "score": 62,
    "views48": 720,
    "planned": "2026-10-29 16:41",
-   "when": "2026-10-31 06:05"
+   "when": "2026-10-31 07:45"
   },
   {
    "topic": "1 corneille, 1 compte : le corbeau qui compte jusqu'à 4 à voix haute #Shorts",
@@ -59,7 +67,7 @@
    "score": 66,
    "views48": 1000,
    "planned": "2026-10-29 16:52",
-   "when": "2026-10-31 07:45"
+   "when": "2026-10-31 08:35"
   },
   {
    "topic": "1 raie, 1 nom : elle reconnaît son soigneur #Shorts",
@@ -67,7 +75,7 @@
    "score": 55,
    "views48": 520,
    "planned": "2026-10-29 02:34",
-   "when": "2026-10-31 08:35"
+   "when": "2026-11-01 04:25"
   },
   {
    "topic": "1 mot, 1 objet : la chienne Rico qui comprend plus de 200 mots #Shorts",
@@ -75,14 +83,6 @@
    "score": 38,
    "views48": 420,
    "planned": "2026-10-29 04:17",
-   "when": "2026-11-01 04:25"
-  },
-  {
-   "topic": "1 poisson nettoyeur, 1 miroir : le labre qui se reconnaît et se gratte #Shorts",
-   "why": "Poisson sous-estimé qui réussit le test du miroir, qu'on croit réservé aux humains et aux grands singes. Étude publiée (Kohda et al., PLOS Biology), citée par la presse scientifique française. Ton calme, image claire, comparaison avec l'enfant qui se reconnaît vers 2 ans. Pas encore traité sur la chaîne, proche du sujet des pies mais avec un poisson.",
-   "score": 66,
-   "views48": 650,
-   "planned": "2026-10-30 12:57",
    "when": "2026-11-01 06:05"
   }
  ],
@@ -188,20 +188,12 @@
  ],
  "yt-sawaal": [
   {
-   "topic": "दिल्ली SIR: 47 लाख नाम ASDD सूची में, पहले से वोटर रहे लोगों को Form 6 क्यों भरना पड़ा? सुप्रीम कोर्ट (28 अक्टूबर) ने चुनाव आयोग से पूछा",
-   "why": "यह सीधे आम वोटर के अधिकार और दस्तावेज़ों से जुड़ा है। SIR की सुनवाई में सुप्रीम कोर्ट ने पूछा कि जिन लोगों तक अधिकारी नहीं पहुँच सके, वे Form 6 क्यों भरें। उसने ECI से ऐसे वोटरों की सूची प्रकाशित करने को भी कहा। ECI ने 30 अक्टूबर की समय-सीमा बढ़ाने पर विचार करने की बात कही। एक नागरिक-संगठन के ऑडिट में जाँचे गए 1,236 वोटरों में से 416 ग़लती से अनुपस्थित, शिफ़्ट, मृत या डुप्लिकेट दर्ज मिले। इसे The Wire और National Herald ने रिपोर्ट किया है। नीचे का सवाल खुला है: लोकतंत्र की नींव मतदाता का अधिकार कैसे सुरक्षित रहे। यह चैनल के पुराने 3 करोड़ वोटर और 33 लाख नोटिस वाले Shorts से अलग, नया क़दम है। स्कोर में कटौती इसलिए कि कहानी 3 दिन पुरानी है और दोनों स्रोत मैंने पूरा नहीं पढ़ा।",
-   "score": 78,
-   "views48": 70,
-   "planned": "2026-10-29 07:37",
-   "when": "2026-10-31 05:15"
-  },
-  {
    "topic": "महाराष्ट्र SIR: मुंबई-पुणे में पुनर्विकास के कारण घर बदलने वाले मतदाता 'व्यक्ति नहीं मिला' क्यों दर्ज? सुप्रीम कोर्ट ने केंद्र और चुनाव आयोग को नोटिस दिया। याचिका में ड्राफ़्ट सूची से क़रीब 2.07 करोड़ नाम हटने की बात है, और 1.22 करोड़ नाम 'लॉजिकल डिस्क्रेपेंसी' में हैं। आपका नाम कैसे जाँचें, और आयोग का जवाब क्या आएगा?",
    "why": "यह चुनाव आयोग से जुड़ी सुप्रीम कोर्ट की सुनवाई है और SIR का नया चरण है। इसका असर आम मतदाता के अधिकार और काग़ज़ों पर पड़ता है, जो इस चैनल की सबसे अच्छी चलने वाली कड़ी है। कम चर्चित पहलू यह है कि पुनर्विकास की वजह से अस्थायी रूप से बाहर रहे लोग भी सूची से कट गए। इसे तटस्थ रूप से दिखाया जाएगा: याचिकाकर्ता का दावा, कोर्ट का नोटिस, आयोग का जवाब अभी बाकी। हर तथ्य दो स्रोतों से पुष्ट होगा (Deccan Herald, LiveLaw/The Wire)। राष्ट्रीय गर्व का पहलू: दुनिया के सबसे बड़े लोकतंत्र में हर पात्र वोटर की गिनती। मुख्य खबर लगभग 3 दिन पुरानी है, इसलिए समयबद्धता का स्कोर कम है।",
    "score": 72,
    "views48": 90,
    "planned": "2026-10-30 04:39",
-   "when": "2026-10-31 06:55"
+   "when": "2026-10-31 05:15"
   },
   {
    "topic": "एक देश एक चुनाव: संयुक्त संसदीय समिति में 39 सदस्य, अब तक क्या हुआ और आगे क्या",
@@ -209,7 +201,7 @@
    "score": 45,
    "views48": 55,
    "planned": "2026-10-29 02:34",
-   "when": "2026-11-01 05:15"
+   "when": "2026-10-31 06:55"
   },
   {
    "topic": "NOTA का बटन: 2013 में सुप्रीम कोर्ट ने दिया अधिकार, पर NOTA को सबसे ज़्यादा वोट मिलें तो क्या होगा?",
@@ -217,7 +209,7 @@
    "score": 42,
    "views48": 50,
    "planned": "2026-10-29 02:34",
-   "when": "2026-11-01 06:55"
+   "when": "2026-11-01 05:15"
   },
   {
    "topic": "लोकसभा 2024 में मतदान 65.79%: करोड़ों पंजीकृत वोटर वोट क्यों नहीं डालते? चुनाव आयोग के आँकड़े",
@@ -225,7 +217,7 @@
    "score": 40,
    "views48": 48,
    "planned": "2026-10-29 02:34",
-   "when": "2026-11-02 05:15"
+   "when": "2026-11-01 06:55"
   },
   {
    "topic": "SIR चरण-3: चुनाव आयोग ने आंध्र प्रदेश और हरियाणा में नोटिस व आपत्ति की अवधि 20 नवंबर तक बढ़ाई। नगालैंड में 25 नवंबर और तेलंगाना में 26 नवंबर तक। अंतिम मतदाता सूची 30 नवंबर को आएगी। 36.73 करोड़ मतदाताओं वाले इस चरण में आपकी आख़िरी तारीख़ क्या है, और नाम कैसे जाँचें?",
@@ -233,6 +225,14 @@
    "score": 72,
    "views48": 90,
    "planned": "2026-10-30 12:30",
+   "when": "2026-11-02 05:15"
+  },
+  {
+   "topic": "SIR पर चुनाव आयोग का हलफ़नामा: 3 आयुक्तों की सर्वसम्मति और सुप्रीम कोर्ट की अगली सुनवाई 17 नवंबर। Form 6 पर नया नोटिस भी जारी हुआ। आम वोटर के लिए इसका मतलब क्या है, और कौन-से सवाल अभी खुले हैं?",
+   "why": "यह सुप्रीम कोर्ट में चुनाव आयोग (SIR, Form 6) की ताज़ा कार्यवाही है। इसमें आयोग का जवाब, 17 नवंबर की तारीख़ और Form 6 नोटिस है, जो हर वोटर के अधिकारों और दस्तावेज़ों से जुड़ा है। यह चैनल के पहले सफल Shorts (SIR, आयुक्त, Form 6) जैसा है। इसमें किसी का पक्ष नहीं लिया गया, केवल खुले सवाल हैं। दो स्रोतों से जाँचकर राष्ट्र-गौरव के ढाँचे में कहा जाएगा कि भारतीय मतदाता सूची की पारदर्शिता मायने रखती है। खोज में मुझे एक ही रिपोर्ट मिली (nationpathindia), इसलिए प्रसारण से पहले दूसरा स्रोत ज़रूर मिलाना होगा। खोज में रिपोर्ट के साल को लेकर भी गड़बड़ी दिखी, इसलिए प्रसारण से पहले तारीख़ पक्की करनी होगी।",
+   "score": 74,
+   "views48": 110,
+   "planned": "2026-10-30 13:05",
    "when": "2026-11-02 06:55"
   }
  ],
