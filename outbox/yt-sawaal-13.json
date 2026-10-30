@@ -1,0 +1,32 @@
+{
+  "channel_id": "yt-sawaal",
+  "title": "29 अक्टूबर SC: क्या बैंक चूक पर भरपाई दे सकते हैं? #Shorts",
+  "description": "PUBLISH AT: 20:00 IST (Sawaal evening slot; the queue has no publish-time field, so please schedule manually). Hindi only, no English twin.\n\nसुप्रीम कोर्ट ने 29 अक्टूबर को कहा कि RBI के प्रस्तावित नियमों में, जहां बैंक की due diligence में चूक हो, वहां डिजिटल अरेस्ट जैसे स्कैम के पीड़ितों को बैंक से भरपाई मिलनी चाहिए। दोनों रिपोर्टों के अनुसार यह भरपाई खोई रक़म से कम नहीं होनी चाहिए, पर यह तभी लागू होगी जब बैंक की चूक पाई जाए। ये RBI के प्रस्तावित उपाय हैं, अभी कोई नियम अधिसूचित नहीं हुआ है, और आगे देखना यह है कि बाध्यकारी नियम कब आता है।\nSources: LiveLaw (29 Oct 2026), Business Standard (29 Oct 2026)\nएंकर और कुछ विज़ुअल AI से बने हैं।\n#HindiNews #BharatNews #SupremeCourt #Desh #Shorts\n\nSawaal: ख़बर के पीछे का सवाल। हर तथ्य दो स्रोतों से जाँचा गया।\nAnchor और कुछ दृश्य AI से बने हैं।",
+  "script": "CHANNEL: Sawaal (yt-sawaal), Hindi only, no English twin. Publish 20:00 IST.\nANCHORS: Aditya and Nisha (channel host settings). No real people's faces or voices. Commons photos of the Supreme Court building and RBI building only; no bank brand.\n\nSCRIPT (English master; system adapts to Hindi; fact-checked and corrected):\nADITYA: Lost money in a \"digital arrest\" scam because your bank slipped up? Can the bank be made to repay you?\nNISHA: On 29 October, the Supreme Court said RBI's proposed rules must make banks compensate victims where the bank failed in due diligence.\nADITYA: According to both reports, that compensation must be not less than the amount lost.\nNISHA: The condition matters. It applies only where the bank's failure is found. And these are RBI's proposed measures; no such RBI rule has been notified yet.\nADITYA: Crores of Indians now bank on their phones. The court's words are about who bears the loss when a scam gets through.\nNISHA: Two questions remain. When will RBI notify a binding rule? And who must prove the bank's failure: the victim or the bank?\nADITYA: Should bank compensation in such frauds be a binding rule? Write yes or no in the comments.\n\nEDIT PLAN (Mr. Cut): 9:16, 45.0s, 19 shots, avg cut ~2.4s.\n1 hook card over SC photo \"DIGITAL ARREST: क्या बैंक लौटाएगा पैसा?\"; 2 Aditya hook; 3-4 Nisha + date card \"सुप्रीम कोर्ट, 29 अक्टूबर 2026 | Sources: LiveLaw, Business Standard\"; 5 Nisha due diligence; 6-7 Aditya + card \"मुआवज़ा: खोई रकम से कम नहीं\"; 8-9 Nisha + card \"सिर्फ तब, जब बैंक की चूक साबित हो\"; 10-11 Nisha + RBI photo card \"RBI नियम: अभी अधिसूचित नहीं\" (music drop); 12-14 Aditya, stock phone-payment clip (no brand), RBI cutaway; 15-17 Nisha + question cards \"1. नियम कब आएगा?\" \"2. बैंक की चूक कौन साबित करेगा: पीड़ित या बैंक?\"; 18-19 Aditya CTA + end card \"YES या NO? कमेंट में लिखें\".\nMusic: low 90 BPM news pulse, neutral style. Commons credits on every photo shot (confirm licences before export).\n\nTHUMBNAIL: A = anchor on one side, real SC building photo behind, text \"बैंक चूका तो?\", dark blue bg, white text, yellow accent, no bank logo. B (A/B test) = SC photo with big \"29 अक्टूबर: SC\", saffron number, no face.\n\nTITLE ALTERNATES: \"डिजिटल अरेस्ट स्कैम: बैंक की चूक पर क्या पैसा मिल सकता है? #Shorts\" (over 60 chars); \"SC और RBI: बैंक की चूक पर भरपाई का प्रस्ताव, 1 शर्त #Shorts\".\n\nPINNED COMMENT: सुप्रीम कोर्ट के अनुसार भरपाई तभी, जब बैंक की चूक साबित हो, और ये RBI के प्रस्तावित उपाय हैं। क्या ऐसे फ्रॉड में बैंक की भरपाई बाध्यकारी नियम होनी चाहिए? \"हाँ\" या \"नहीं\" लिखें, और बताएं कि चूक साबित करने का ज़िम्मा किस पर हो: पीड़ित पर या बैंक पर?",
+  "footer": "Sawaal: ख़बर के पीछे का सवाल। हर तथ्य दो स्रोतों से जाँचा गया।\nAnchor और कुछ दृश्य AI से बने हैं।",
+  "category": "25",
+  "hosts": {
+    "Aditya": {
+      "voice": "en-IN-PrabhatNeural",
+      "voice_hi": "hi-IN-MadhurNeural",
+      "pitch": "+6Hz",
+      "look": "Indian man, about 34, news anchor, medium-brown skin, short curly black hair, light stubble, rimless glasses, charcoal blazer over a black crew-neck, in a dark studio"
+    },
+    "Nisha": {
+      "voice": "en-IN-NeerjaNeural",
+      "voice_hi": "hi-IN-SwaraNeural",
+      "pitch": "+4Hz",
+      "look": "Indian woman, about 30, news anchor, dusky skin, straight shoulder-length black hair, silver hoop earrings, steel-blue blazer over a white shirt, in a dark studio"
+    }
+  },
+  "photos": true,
+  "relevance": {
+    "score": 80,
+    "why": "29 अक्टूबर के SC निर्देश की पुष्टि Verdictum से होती है और स्क्रिप्ट में शर्त और \"अभी अधिसूचित नहीं\" वाली बात सही है, पर 29 अक्टूबर के बाद की कोई नई खबर मैंने नहीं खोजी। दिल्ली-NCR का डिजिटल अरेस्ट विषय हिंदी दर्शकों के लिए सीधा काम का है।",
+    "views48": 60
+  },
+  "credits": [
+    "Supreme Court of India, inside buildings 02.jpg by Pinakpani (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Supreme_Court_of_India,_inside_buildings_02.jpg",
+    "Tower and building of Reserve Bank of India, Mumbai 01.jpg by Pinakpani (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Tower_and_building_of_Reserve_Bank_of_India,_Mumbai_01.jpg"
+  ]
+}
