@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: First Love v10 (from Jithesh's romance refs)",
+  "take": 1,
+  "made_at_utc": "2026-10-30T07:00:52.133195+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "qTYsR4OLVowPIqIixQB1",
+  "request": {
+    "prompt": "A brand-new romantic love theme in the style of South Indian film music, for the moment a boy sees a girl for the first time and falls in love. Warm, tender, intimate and hopeful; romantic, not sad, not playful, not a dance. Instrumental. SOUND: warm and dark, soft and round, nothing bright or sparkly: no shimmer, no music box, no bangles, no bright plucks. A deep, round, warm bass carries the body. Every instrument is close, dry and natural, played by real musicians in a small room: no big reverb, no echo, no delay. MELODY: a clear, simple, singable love melody in a raga like Kharaharapriya (warm minor), clean held notes with only a few gentle slides, played first by a soft bansuri flute, then a warm solo cello-like violin, then a soft wordless female voice; a soft felt piano and warm strings underneath. RHYTHM: slow, about 76 BPM, loose and human: a few soft, deep, heavy hits, about one per second (a deep soft kick and a soft clap or tabla bass stroke on the back beats), with gentle tabla touches between; the beat is clearly felt from 6 s to the end and never stops, but it is never busy and never a strict dance grid. Six parts, a new color every 6-8 seconds: 0-6 s THE GLANCE: the piano and a soft low drone, then the flute's first rising phrase held. 6-16 s SHYNESS: the deep slow beat begins; flute and violin trade short shy phrases. 16-30 s ATTRACTION: the full love melody on the flute over the deep bass and slow beat. 30-44 s TOGETHERNESS: the violin answers, then flute and violin play the melody together in harmony, warm strings join. 44-56 s THE DREAM: the soft female voice sings the melody, strings swell, piano answers. 56-70 s THE CELEBRATION OF LOVE: the warmest, fullest moment, all voices together, the beat a little fuller, not faster. 70-76 s: the flute's first phrase once more, resolved, ending warm. Not bright, not sparkly, not bouncy, not 6/8, not a dance, not sad, no echo, no big reverb, no EDM, no white-noise risers, no side-chain pumping, no pauses.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 76000
+  },
+  "brief": {
+    "notes": "Built from music-scoring.md 8g (refs R25-R27, Jithesh 30 Oct): warm/dark (no highs), deep round bass, slow loose beat with about 1 soft heavy hit per second, dry close instruments (short tails), clean held notes, warm minor allowed. Keeps the six-part map (music.md 17e) and rule 16 natural instruments. Prompt mode (music_v2)."
+  },
+  "story": "A boy sees a girl for the first time: the glance, shyness, attraction, togetherness, the dream, the celebration of love.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
