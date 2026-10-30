@@ -694,6 +694,26 @@ def music(work: Path, seconds: float, package: dict) -> Path | None:
     return None
 
 
+def not_ready() -> str:
+    """Why the next video can't be made well right now, or "" (owner, 30 Oct: check the credits before every video).
+    Claude writes every step; with fal.ai locked and HeyGen empty the shots come out blank and the money is wasted."""
+    try:
+        client.messages.create(model=HELPER_MODEL, max_tokens=1, messages=[{"role": "user", "content": "ok"}])
+    except Exception as e:
+        return f"Anthropic: {str(e)[:200]}"
+    try:
+        urllib.request.urlopen(urllib.request.Request(
+            "https://rest.fal.ai/storage/auth/token?storage_type=fal-cdn-v3", data=b"{}", method="POST",
+            headers={"Authorization": f"Key {os.environ.get('FAL_KEY', '').strip()}", "Content-Type": "application/json"}),
+            timeout=30)
+        return ""
+    except Exception as e:
+        fal = str(e)[:120]
+    import credits as balances  # "credits" here is the photo credit list
+    heygen = next((r for r in balances.check() if r["service"] == "HeyGen"), {})
+    return "" if (heygen.get("left") or 0) >= 1 else f"fal.ai locked ({fal}) and HeyGen at ${heygen.get('left')}"
+
+
 def render(package_path: Path, voice: str = VOICE) -> Path:
     package = json.loads(package_path.read_text(encoding="utf-8"))
     size = (1440, 2560)  # vertical; YouTube streams 1440p+ uploads in its sharper codec (VP9), so Shorts look clearer
@@ -1042,7 +1062,7 @@ if __name__ == "__main__":
         sys.exit()
     dubs = [c for c in channels.values() if c.get("status") == "dub" and (HERE / c["token"]).exists()]
     platform = {i: c["platform"] for i, c in channels.items()}
-    quota_left, failed, posted = True, [], 0
+    quota_left, failed, posted, made = True, [], 0, 0
     paths = sorted(OUTBOX.glob("*.json"))
     for path in paths:  # dubs made below are appended, so they go up in the same run
         package = json.loads(path.read_text(encoding="utf-8"))
@@ -1084,6 +1104,14 @@ if __name__ == "__main__":
         dub_only = bool(home.get("dub")) and "dub_of" not in package
         if package.get("render_failed", 0) >= 2 and "youtube_id" not in package:
             continue  # failed twice (e.g. credits ran out mid-video): stop paying to remake it every run
+        if "youtube_id" not in package and not video.exists() and not (dub_only and dub_path.exists()):
+            if made:
+                continue  # one video per run (owner, 30 Oct): the next run checks the credits again first
+            if why := not_ready():
+                print(f"::error::Not making more videos: {why}")
+                failed.append(path.name)
+                break
+            made += 1
         if dub_only and not dub_path.exists() and not (path.with_suffix("") / "board.json").exists():
             # its English cut is never posted, so make only the storyboard the dub is cut from (half the fal.ai cost)
             try:
