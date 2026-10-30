@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Midnight City (modern founder drama main theme)",
+  "take": 2,
+  "made_at_utc": "2026-10-30T11:25:03.788056+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "b5Is60MBbYrqDc9wvIdo",
+  "request": {
+    "prompt": "ONE single modern cinematic main theme for a young founder's story in a big modern Indian city at night: lonely and restless at 2 AM, ending in confident triumph at sunrise. Today's sound, glossy, fresh and modern: deep 808 sub bass, punchy half-time drums with crisp trap hi-hats, analog synth arpeggios, a bright synth lead, clean electric piano, electric guitar, wide modern mix. Written the way today's South Indian film composers write: the whole track is built on ONE memorable melody that returns again and again; nothing unrelated is introduced, it grows only through sound and energy, one continuous story. Raga Charukesi (a Mixolydian flat-six scale) in D: D E F# G A Bb C. The melody starts bright on D E F# G, then leans on the flat sixth Bb and falls Bb A G F# with an ache; rising phrases climb A Bb C D. Sung-style phrasing with gamakam: slides into notes, a shake on F# and Bb, grace notes, the synth lead bends like a voice. Modal on a D pedal, few chord changes, no Western pop chord loop. The voice: a soft, close, natural wordless female humming voice (mm and aa) carries the melody. Real bansuri flute and a light tabla, played by real musicians, close, dry and natural, no heavy echo, not chopped. A separate electronic layer: a chopped glitching veena answering phrases, a pitched-down mridangam as an extra low hit, a reversed veena swell before the drop. One steady tempo, 88 BPM half-time feel, never stopping. 0-8 s: only a soft synth pulse and a clean electric piano playing a rising 3-note call D F A with the last note bent up, 2 AM in an empty glass office. 8-20 s: the female humming sings the melody softly over a deep 808 hum. 20-34 s: the half-time beat starts with trap hi-hats and a light tabla, rain and the night metro; the bansuri answers each humming phrase. 34-46 s: a synth arpeggio speeds up, the melody climbs, a reversed veena swell, the spark of an idea. 46-70 s: the full drop: the same melody on a bright synth lead with the humming and electric guitar, punchy drums and 808 bass, driving and confident. 70-82 s: the melody returns a whole step higher in E, the biggest moment, sunrise. 82-90 s: the beat drops away, the humming sings the first phrase once more, the electric piano ends on the 3-note call. Modern and urban, not old-fashioned, not a period film, no village or temple sounds, not a royal or hero march, no orchestral trailer drums, no silences, no gaps, no heavy echo on the flute or voice, no lyrics.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 90000
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 11:21 on The Long Way Home outline: 'Why are you stuck on this kingdom? Come out of that one. We are in the modern world, so music should be for modern people and concept.' Replaces long-way-home (village story). Outline only (11:18). Modern palette (808, trap hats, synths, e-guitar) with Indian writing, Charukesi in D, humming voice, natural bansuri/tabla, Broken Heritage layer, one continuous generation. Prompt mode, music_v2."
+  },
+  "story": "A young founder in a modern Indian city has one night to save her startup; lonely 2 AM restlessness turns into confident triumph at sunrise.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
