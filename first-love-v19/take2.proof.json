@@ -1,0 +1,235 @@
+{
+  "title": "\u00c6THER: First Love v19 (fun Tamil pop: 'Yaaru nee?', lyrics by Mr. Kavi)",
+  "take": 2,
+  "made_at_utc": "2026-10-30T12:22:01.794571+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2_5",
+  "elevenlabs_song_id": "WQc4YH2HhF0nApTJcoMw",
+  "request": {
+    "composition_plan": {
+      "chunks": [
+        {
+          "text": "[Hook intro]\n(whistle hook)\n(hey! hey!)\nYaaru nee?",
+          "duration_ms": 8000,
+          "positive_styles": [
+            "catchy, high-energy modern Tamil pop song with English words mixed into the Tamil lines, fun and cheeky, a big singalong",
+            "bright G major, raga-shaped hook melody with gamakam slides, never minor, never sad",
+            "one steady 100 BPM groove from start to end",
+            "big punchy modern pop drums with a bouncing South Indian mass rhythm, claps and finger snaps, deep synth bass, funky clean electric guitar, bright synth pluck, a whistle hook",
+            "nadaswaram-like reed and flute riffs answering the voice",
+            "one bright, cheeky, confident female pop voice singing in Tamil, clear natural diction",
+            "a big crowd chorus shouting the answers",
+            "loud, bright, wide modern pop mix, real instruments dry and natural",
+            "starts loud straight away: the whistle hook over the full beat",
+            "crowd shouts hey on the beat",
+            "she asks the hook question, cheeky"
+          ],
+          "negative_styles": [
+            "sad",
+            "dark",
+            "minor key",
+            "slow",
+            "ballad",
+            "soft",
+            "silence",
+            "long pauses",
+            "heavy echo",
+            "EDM drop",
+            "dubstep",
+            "old-fashioned",
+            "boring",
+            "repetitive loop",
+            "humming",
+            "quiet start",
+            "male voice"
+          ],
+          "context_adherence": "high"
+        },
+        {
+          "text": "[Chorus]\nYaaru nee? Yaaru nee?\n(Yaaru nee!)\nOru second-la en signal-a cut panna\nYaaru nee? Yaaru nee?\n(Yaaru nee!)\nEn heart-u full-a network busy aachu",
+          "duration_ms": 16000,
+          "positive_styles": [
+            "catchy, high-energy modern Tamil pop song with English words mixed into the Tamil lines, fun and cheeky, a big singalong",
+            "bright G major, raga-shaped hook melody with gamakam slides, never minor, never sad",
+            "one steady 100 BPM groove from start to end",
+            "big punchy modern pop drums with a bouncing South Indian mass rhythm, claps and finger snaps, deep synth bass, funky clean electric guitar, bright synth pluck, a whistle hook",
+            "nadaswaram-like reed and flute riffs answering the voice",
+            "one bright, cheeky, confident female pop voice singing in Tamil, clear natural diction",
+            "a big crowd chorus shouting the answers",
+            "loud, bright, wide modern pop mix, real instruments dry and natural",
+            "full energy singalong chorus",
+            "she sings, the crowd shouts back the answers",
+            "stop-and-slam full-band hits after each question"
+          ],
+          "negative_styles": [
+            "sad",
+            "dark",
+            "minor key",
+            "slow",
+            "ballad",
+            "soft",
+            "silence",
+            "long pauses",
+            "heavy echo",
+            "EDM drop",
+            "dubstep",
+            "old-fashioned",
+            "boring",
+            "repetitive loop",
+            "rap",
+            "male voice"
+          ],
+          "context_adherence": "high"
+        },
+        {
+          "text": "[Rap verse]\nMetro door close aagudhu, nee ulla jump-u\nEn coffee un dress-la, semma bad timing-u, oops!\nNee morachu paakura, naan sorry sorry solren\nNee sirichitta di, ippo naan fly panren",
+          "duration_ms": 16000,
+          "positive_styles": [
+            "catchy, high-energy modern Tamil pop song with English words mixed into the Tamil lines, fun and cheeky, a big singalong",
+            "bright G major, raga-shaped hook melody with gamakam slides, never minor, never sad",
+            "one steady 100 BPM groove from start to end",
+            "big punchy modern pop drums with a bouncing South Indian mass rhythm, claps and finger snaps, deep synth bass, funky clean electric guitar, bright synth pluck, a whistle hook",
+            "nadaswaram-like reed and flute riffs answering the voice",
+            "one bright, cheeky, confident female pop voice singing in Tamil, clear natural diction",
+            "a big crowd chorus shouting the answers",
+            "loud, bright, wide modern pop mix, real instruments dry and natural",
+            "a young male rapper raps the lines in Tamil and English, fast, funny and confident, tight rhythmic flow",
+            "the beat gets tighter and bass forward",
+            "a sudden stop for one beat right after 'oops!', then the beat slams back"
+          ],
+          "negative_styles": [
+            "sad",
+            "dark",
+            "minor key",
+            "slow",
+            "ballad",
+            "soft",
+            "silence",
+            "long pauses",
+            "heavy echo",
+            "EDM drop",
+            "dubstep",
+            "old-fashioned",
+            "boring",
+            "repetitive loop",
+            "singing",
+            "aggressive",
+            "angry"
+          ],
+          "context_adherence": "high"
+        },
+        {
+          "text": "[Break]\n{full-band stop}\n(hey!)\n{reed riff and whistle hook}",
+          "duration_ms": 8000,
+          "positive_styles": [
+            "catchy, high-energy modern Tamil pop song with English words mixed into the Tamil lines, fun and cheeky, a big singalong",
+            "bright G major, raga-shaped hook melody with gamakam slides, never minor, never sad",
+            "one steady 100 BPM groove from start to end",
+            "big punchy modern pop drums with a bouncing South Indian mass rhythm, claps and finger snaps, deep synth bass, funky clean electric guitar, bright synth pluck, a whistle hook",
+            "nadaswaram-like reed and flute riffs answering the voice",
+            "one bright, cheeky, confident female pop voice singing in Tamil, clear natural diction",
+            "a big crowd chorus shouting the answers",
+            "loud, bright, wide modern pop mix, real instruments dry and natural",
+            "one beat of silence, then a huge hit",
+            "the reed plays the hook fast over the bouncing beat",
+            "crowd shouts"
+          ],
+          "negative_styles": [
+            "sad",
+            "dark",
+            "minor key",
+            "slow",
+            "ballad",
+            "soft",
+            "silence",
+            "long pauses",
+            "heavy echo",
+            "EDM drop",
+            "dubstep",
+            "old-fashioned",
+            "boring",
+            "repetitive loop",
+            "rap"
+          ],
+          "context_adherence": "high"
+        },
+        {
+          "text": "[Final chorus]\nYaaru nee? Yaaru nee?\n(Yaaru nee!)\nOru second-la en signal-a cut panna\nYaaru nee? Yaaru nee?\n(Yaaru nee!)\nEn heart-u full-a network busy aachu\nYaaru nee? Yaaru nee?\n(Yaaru nee!)",
+          "duration_ms": 20000,
+          "positive_styles": [
+            "catchy, high-energy modern Tamil pop song with English words mixed into the Tamil lines, fun and cheeky, a big singalong",
+            "bright G major, raga-shaped hook melody with gamakam slides, never minor, never sad",
+            "one steady 100 BPM groove from start to end",
+            "big punchy modern pop drums with a bouncing South Indian mass rhythm, claps and finger snaps, deep synth bass, funky clean electric guitar, bright synth pluck, a whistle hook",
+            "nadaswaram-like reed and flute riffs answering the voice",
+            "one bright, cheeky, confident female pop voice singing in Tamil, clear natural diction",
+            "a big crowd chorus shouting the answers",
+            "loud, bright, wide modern pop mix, real instruments dry and natural",
+            "the chorus bigger than before, one key lift up",
+            "she sings, the rapper ad-libs, the crowd shouts back",
+            "everything playing, the happiest moment"
+          ],
+          "negative_styles": [
+            "sad",
+            "dark",
+            "minor key",
+            "slow",
+            "ballad",
+            "soft",
+            "silence",
+            "long pauses",
+            "heavy echo",
+            "EDM drop",
+            "dubstep",
+            "old-fashioned",
+            "boring",
+            "repetitive loop"
+          ],
+          "context_adherence": "high"
+        },
+        {
+          "text": "[Punchline]\nYaaru nee?\nIppo en aalu nee!\n(hey!)",
+          "duration_ms": 8000,
+          "positive_styles": [
+            "catchy, high-energy modern Tamil pop song with English words mixed into the Tamil lines, fun and cheeky, a big singalong",
+            "bright G major, raga-shaped hook melody with gamakam slides, never minor, never sad",
+            "one steady 100 BPM groove from start to end",
+            "big punchy modern pop drums with a bouncing South Indian mass rhythm, claps and finger snaps, deep synth bass, funky clean electric guitar, bright synth pluck, a whistle hook",
+            "nadaswaram-like reed and flute riffs answering the voice",
+            "one bright, cheeky, confident female pop voice singing in Tamil, clear natural diction",
+            "a big crowd chorus shouting the answers",
+            "loud, bright, wide modern pop mix, real instruments dry and natural",
+            "the beat stops, she asks the question once more",
+            "the answer is a cheeky punchline",
+            "one last big full-band hit to end"
+          ],
+          "negative_styles": [
+            "sad",
+            "dark",
+            "minor key",
+            "slow",
+            "ballad",
+            "soft",
+            "silence",
+            "long pauses",
+            "heavy echo",
+            "EDM drop",
+            "dubstep",
+            "old-fashioned",
+            "boring",
+            "repetitive loop",
+            "fade out",
+            "long ending"
+          ],
+          "context_adherence": "high"
+        }
+      ]
+    },
+    "model_id": "music_v2_5"
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 12:17 on v18 (not yet made, lyric sheet only): 'boring'. v19 = a funny meet-cute story instead of soft images, a call-and-answer hook the crowd shouts back, phone/network wordplay, a rap verse with a twist (coffee spill, 'oops!' stop), stop-and-slam hits, loud from 0 s, 100 BPM, ending on a punchline. Lyric sheet /mnt/project-files/music/first-love-v19/first-love-v19-lyrics.md."
+  },
+  "story": "A boy meets a girl on a crowded metro: he spills his coffee on her dress, she glares, he keeps saying sorry, she laughs, and by the end she is his. A fun, cheeky Tamil pop singalong built on one question, 'Yaaru nee?' (who are you?).",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
