@@ -1,0 +1,85 @@
+{
+  "title": "The Glance: the first time I saw her 🌸",
+  "music": "films/the-glance.mp3",
+  "look": "cinematic film still, shot on ARRI Alexa with anamorphic lenses, smooth stabilized gimbal and steadicam camera movement, gentle slow motion, shallow depth of field, soft golden morning light, dreamy pink and warm gold colour grade, film grain, photorealistic, vertical 9:16, no text. The place is a quiet tree-lined street in Bangalore in spring, both sides lined with pink trumpet trees (Tabebuia rosea, Bangalore's cherry blossoms) in full bloom, a canopy of pink flowers overhead, pink petals falling slowly and carpeting the road. The same two people in every shot. He is the young man: an original fictional character, a 25-year-old South Indian man, slim, short wavy black hair, light stubble, warm brown eyes, a crisp white linen shirt with sleeves rolled up, beige chinos, a brown leather camera strap with a black mirrorless camera. She is the young woman: an original fictional character, a 24-year-old South Indian woman, long wavy black hair, a small black bindi, bright eyes, a soft mustard-yellow cotton kurta, white palazzo pants, a long pale white chiffon scarf (dupatta) loosely around her neck, a tan canvas tote bag on one shoulder",
+  "negative": "cartoon, anime, CGI, 3D render, text, watermark, blur, shaky handheld camera, celebrity, famous actor, real person, different person, different face, different clothes, saree, western dress, sunglasses, crowd, cars, rain, night, kissing, extra fingers",
+  "refs": {
+    "ref-couple.jpg": "A wide two-shot on the blossom street: he stands on the left holding his camera, she stands on the right with her tote bag and white scarf, both full body, pink petals falling between them",
+    "ref-him.jpg": "Medium close portrait of only the young man from this photo, same face, hair, stubble, white linen shirt and camera, under the pink blossoms",
+    "ref-her.jpg": "Medium close portrait of only the young woman from this photo, same face, hair, bindi, mustard-yellow kurta, white scarf and tote bag, under the pink blossoms"
+  },
+  "shots": [
+    {
+      "end": 5,
+      "prompt": "Slow crane shot drifting down through a canopy of pink trumpet blossoms over the empty Bangalore street, petals falling in slow motion, morning sun through the flowers",
+      "image": "films/the-glance/ref-couple.jpg"
+    },
+    {
+      "end": 10,
+      "prompt": "He stands under the pink trees and lifts his camera to photograph the falling blossoms, smiling, petals drifting past",
+      "image": "films/the-glance/ref-him.jpg"
+    },
+    {
+      "end": 15,
+      "prompt": "Over his shoulder, the camera pans slowly with him across the street and finds her: she is laughing softly, catching a falling pink petal in her open palm",
+      "image": "films/the-glance/ref-her.jpg"
+    },
+    {
+      "end": 20,
+      "prompt": "Close-up of his face as he slowly lowers the camera from his eye, stunned, lips parting, the world going quiet, petals falling in front of him",
+      "image": "films/the-glance/ref-him.jpg"
+    },
+    {
+      "end": 26,
+      "prompt": "Slow motion close-up: she tucks a strand of hair behind her ear, the white scarf moving in the breeze, then she senses someone looking and slowly turns her head",
+      "image": "films/the-glance/ref-her.jpg"
+    },
+    {
+      "end": 31,
+      "prompt": "Wide two-shot across the petal-covered street: their eyes meet for the first time, both freeze, pink petals falling between them",
+      "image": "films/the-glance/ref-couple.jpg"
+    },
+    {
+      "end": 38,
+      "prompt": "Close-up: she looks down shyly with a small smile and plays with the end of her white scarf",
+      "image": "films/the-glance/ref-her.jpg"
+    },
+    {
+      "end": 43,
+      "prompt": "A soft gust of wind lifts her white chiffon scarf from her shoulders and it floats away across the street through the falling petals in slow motion",
+      "image": "films/the-glance/ref-her.jpg"
+    },
+    {
+      "end": 48,
+      "prompt": "He reaches up and catches the floating white scarf in mid-air, then looks at it in his hand and smiles",
+      "image": "films/the-glance/ref-him.jpg"
+    },
+    {
+      "end": 54,
+      "prompt": "He walks across the street to her and gently holds out the white scarf; she reaches for it, their fingers almost touch, petals falling around them",
+      "image": "films/the-glance/ref-couple.jpg"
+    },
+    {
+      "end": 60,
+      "prompt": "Close two-shot: she takes her scarf back, they both laugh shyly, eyes meeting again, warm golden light",
+      "image": "films/the-glance/ref-couple.jpg"
+    },
+    {
+      "end": 66,
+      "prompt": "He turns his camera screen towards her to show the photo he took of her catching the petal; she covers her smile with her hand, delighted",
+      "image": "films/the-glance/ref-couple.jpg"
+    },
+    {
+      "end": 72,
+      "prompt": "They walk side by side slowly down the street under the pink blossom canopy, talking and smiling, the camera cranes up as petals fall",
+      "image": "films/the-glance/ref-couple.jpg"
+    },
+    {
+      "end": 79.7,
+      "prompt": "Wide shot from behind: the two of them walking away together down the long pink blossom street, petals swirling in the sunlight, the frame slowly fills with falling petals",
+      "image": "films/the-glance/ref-couple.jpg"
+    }
+  ],
+  "skip": 1.0,
+  "description": "He came to photograph the blossoms. He ended up photographing her. 🌸\n\nThe first glance under Bangalore's pink trumpet trees.\n\nMusic: The Glance by ÆTHER (original score: humming, bansuri, violins, tabla). Original AI-made characters. Turn the volume up.\n\n#cinematic #lovebgm #firstlove #bangalore #cherryblossom #shorts"
+}
