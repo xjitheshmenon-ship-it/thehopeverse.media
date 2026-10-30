@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: pro humming layer for Sway v5 take 2",
+  "take": 2,
+  "made_at_utc": "2026-10-30T10:05:40.054857+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "CFvDhK0ZkTxz7kbHgE2I",
+  "request": {
+    "prompt": "A cappella only: NO instruments, no drums, no music bed at all, only one voice. A world-class professional South Indian film playback singer, Carnatic-trained, like the finest female voices of Tamil and Telugu cinema, hums a wordless melody (soft mmm, opening into a sweet aah): effortless, perfectly in tune, expressive and confident, a warm, rich, velvety tone with natural breath, graceful gamakam slides, quick grace-note turns, delicate vibrato only on long notes, and a sense of smiling tenderness. A polished, intimate, professional studio recording, close microphone, natural and dry, no echo, no reverb tail, no effects, no words, no lyrics, no backing vocals, no choir, no percussion. A major, exactly 120 BPM, steady time from the first second; each phrase is four bars long (8 seconds) with a soft breath before the next, like a singer floating a beautiful melody over a love song: phrases built on A, C sharp, E and F sharp, rising gently and settling home on A.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 64000
+  },
+  "brief": {
+    "notes": "A cappella wordless humming layer to mix under v5 take 2 (A major, 120 BPM). Long held, simple notes on the A major home chord so it sits on any chord in the track. Jithesh 09:35. v2, Jithesh 10:00: the v6 humming 'sounds very basic, like amateur musicians or a singer'. Ask for a top professional playback singer with Carnatic training, expressive and polished, female lead only."
+  },
+  "story": "A fresh, breezy morning: the same six-part journey and steady 6/8 sway Jithesh liked in First Love v7, now as a refreshing track, not a romance.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
