@@ -210,6 +210,8 @@ The owner loves these composers. Mr. Raga cannot listen to audio, so these profi
 
 ## 14. The full raga catalogue
 
+This is the short index. Every raga's scale, signature phrases, mood, time, gamaka and film use, the Carnatic-Hindustani matches, the full mood guide and how to write a raga into an ElevenLabs prompt are in **ragas.md** (Mr. Raga's raga book).
+
 ### The 72 Carnatic melakartas
 Every melakarta has all seven notes (Sa, Ri, Ga, Ma, Pa, Dha, Ni) in a fixed order up and down. They come in 12 groups (chakras) of 6. 1-36 use the natural Ma (shuddha madhyamam); 37-72 use the raised Ma (prati madhyamam). In each chakra, Ri and Ga stay the same and Dha and Ni change.
 
