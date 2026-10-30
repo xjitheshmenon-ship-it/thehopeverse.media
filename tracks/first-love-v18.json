@@ -1,0 +1,202 @@
+{
+ "title": "ÆTHER: First Love v18 (Tamil pop with a rap verse, lyrics by Mr. Kavi)",
+ "story": "A boy sees a girl for the first time and falls in love, as a bright modern Tamil pop song: hummed hook, a catchy Tanglish chorus, a playful rap verse from the boy, and the chorus at its fullest.",
+ "brief": {
+  "notes": "Jithesh 30 Oct 10:57 on v17 (Tamil): the lyrics sound too old-fashioned; give it a pop touch, pop or rap. v18 = modern Tamil pop with English words mixed in (Tanglish), a short male rap verse, his loved humming in the intro and outro, the same G major and 92 BPM; romanised lines (Tanglish is written in English letters). Lyric sheet /mnt/project-files/music/first-love-v18/first-love-v18-lyrics.md."
+ },
+ "seconds": 80,
+ "takes": 2,
+ "instrumental": false,
+ "plan": {
+  "chunks": [
+   {
+    "text": "[Intro]\n(mm-mm-mm, mm-mmm)\n(oh-oh, oh-oh-oh)",
+    "duration_ms": 10000,
+    "positive_styles": [
+     "catchy modern Tamil pop love song with English words mixed into the Tamil lines",
+     "bright G major the whole way, raga-shaped hook melody with gamakam slides, never minor, never sad",
+     "one steady 92 BPM groove from start to end",
+     "punchy modern pop drums with finger snaps and claps, deep warm synth bass, clean electric and acoustic guitar, bright synth pluck",
+     "bansuri flute and plucked veena hooks answering the voice",
+     "one soft sweet close female pop voice singing in Tamil, clear natural diction",
+     "clean, bright, wide modern pop mix, real instruments dry and natural",
+     "the female voice hums the hook softly over snaps and a light pluck",
+     "curious, playful"
+    ],
+    "negative_styles": [
+     "sad",
+     "dark",
+     "minor key",
+     "slow ballad",
+     "silence",
+     "pauses",
+     "heavy echo",
+     "EDM drop",
+     "dubstep",
+     "old-fashioned",
+     "classical poetry recitation",
+     "full drums",
+     "male voice"
+    ],
+    "context_adherence": "high"
+   },
+   {
+    "text": "[Chorus]\nOru look-u pothum, I'm falling for you\nUn siripula en ulagam new\nMudhal paarvai, mudhal kaadhal\nMudhal paarvai, oh-oh-oh",
+    "duration_ms": 16000,
+    "positive_styles": [
+     "catchy modern Tamil pop love song with English words mixed into the Tamil lines",
+     "bright G major the whole way, raga-shaped hook melody with gamakam slides, never minor, never sad",
+     "one steady 92 BPM groove from start to end",
+     "punchy modern pop drums with finger snaps and claps, deep warm synth bass, clean electric and acoustic guitar, bright synth pluck",
+     "bansuri flute and plucked veena hooks answering the voice",
+     "one soft sweet close female pop voice singing in Tamil, clear natural diction",
+     "clean, bright, wide modern pop mix, real instruments dry and natural",
+     "the full pop groove kicks in",
+     "the hook is sung catchy and bright",
+     "flute answers each line"
+    ],
+    "negative_styles": [
+     "sad",
+     "dark",
+     "minor key",
+     "slow ballad",
+     "silence",
+     "pauses",
+     "heavy echo",
+     "EDM drop",
+     "dubstep",
+     "old-fashioned",
+     "classical poetry recitation",
+     "male voice",
+     "rap"
+    ],
+    "context_adherence": "high"
+   },
+   {
+    "text": "[Break]\n{flute and veena play the hook}\n(hey!)\n(oh-oh, hey!)",
+    "duration_ms": 12000,
+    "positive_styles": [
+     "catchy modern Tamil pop love song with English words mixed into the Tamil lines",
+     "bright G major the whole way, raga-shaped hook melody with gamakam slides, never minor, never sad",
+     "one steady 92 BPM groove from start to end",
+     "punchy modern pop drums with finger snaps and claps, deep warm synth bass, clean electric and acoustic guitar, bright synth pluck",
+     "bansuri flute and plucked veena hooks answering the voice",
+     "one soft sweet close female pop voice singing in Tamil, clear natural diction",
+     "clean, bright, wide modern pop mix, real instruments dry and natural",
+     "flute and veena play the hook over the groove",
+     "playful crowd shouts"
+    ],
+    "negative_styles": [
+     "sad",
+     "dark",
+     "minor key",
+     "slow ballad",
+     "silence",
+     "pauses",
+     "heavy echo",
+     "EDM drop",
+     "dubstep",
+     "old-fashioned",
+     "classical poetry recitation",
+     "male voice",
+     "rap"
+    ],
+    "context_adherence": "high"
+   },
+   {
+    "text": "[Rap verse]\nBus stop-la nee nikkura, time-e freeze aagudhu\nHeadphone-la paattu, en heartbeat-u maarudhu\nCoffee kadai corner-la un per ezhudhuren\nPhone-la un photo paathu naan sirikkuren",
+    "duration_ms": 16000,
+    "positive_styles": [
+     "catchy modern Tamil pop love song with English words mixed into the Tamil lines",
+     "bright G major the whole way, raga-shaped hook melody with gamakam slides, never minor, never sad",
+     "one steady 92 BPM groove from start to end",
+     "punchy modern pop drums with finger snaps and claps, deep warm synth bass, clean electric and acoustic guitar, bright synth pluck",
+     "bansuri flute and plucked veena hooks answering the voice",
+     "one soft sweet close female pop voice singing in Tamil, clear natural diction",
+     "clean, bright, wide modern pop mix, real instruments dry and natural",
+     "a young male rapper raps the lines in Tamil and English, confident, playful and smiling, rhythmic Tamil flow on the beat",
+     "the groove gets tighter, bass forward, the female voice hums the hook softly underneath"
+    ],
+    "negative_styles": [
+     "sad",
+     "dark",
+     "minor key",
+     "slow ballad",
+     "silence",
+     "pauses",
+     "heavy echo",
+     "EDM drop",
+     "dubstep",
+     "old-fashioned",
+     "classical poetry recitation",
+     "singing",
+     "aggressive",
+     "shouting"
+    ],
+    "context_adherence": "high"
+   },
+   {
+    "text": "[Final chorus]\nOru look-u pothum, I'm falling for you\nUn siripula en ulagam new\nMudhal paarvai, mudhal kaadhal\nMudhal paarvai, oh-oh-oh",
+    "duration_ms": 18000,
+    "positive_styles": [
+     "catchy modern Tamil pop love song with English words mixed into the Tamil lines",
+     "bright G major the whole way, raga-shaped hook melody with gamakam slides, never minor, never sad",
+     "one steady 92 BPM groove from start to end",
+     "punchy modern pop drums with finger snaps and claps, deep warm synth bass, clean electric and acoustic guitar, bright synth pluck",
+     "bansuri flute and plucked veena hooks answering the voice",
+     "one soft sweet close female pop voice singing in Tamil, clear natural diction",
+     "clean, bright, wide modern pop mix, real instruments dry and natural",
+     "the chorus at its happiest and fullest",
+     "the female voice sings, the rapper adds short ad-libs between lines",
+     "flute, veena and guitar together"
+    ],
+    "negative_styles": [
+     "sad",
+     "dark",
+     "minor key",
+     "slow ballad",
+     "silence",
+     "pauses",
+     "heavy echo",
+     "EDM drop",
+     "dubstep",
+     "old-fashioned",
+     "classical poetry recitation"
+    ],
+    "context_adherence": "high"
+   },
+   {
+    "text": "[Outro]\nMudhal paarvai, mudhal kaadhal\n(mm-mm-mm, mm-mmm)",
+    "duration_ms": 8000,
+    "positive_styles": [
+     "catchy modern Tamil pop love song with English words mixed into the Tamil lines",
+     "bright G major the whole way, raga-shaped hook melody with gamakam slides, never minor, never sad",
+     "one steady 92 BPM groove from start to end",
+     "punchy modern pop drums with finger snaps and claps, deep warm synth bass, clean electric and acoustic guitar, bright synth pluck",
+     "bansuri flute and plucked veena hooks answering the voice",
+     "one soft sweet close female pop voice singing in Tamil, clear natural diction",
+     "clean, bright, wide modern pop mix, real instruments dry and natural",
+     "the groove drops to snaps and pluck",
+     "she sings the hook once softly, then hums",
+     "ends on a warm bright G major chord"
+    ],
+    "negative_styles": [
+     "sad",
+     "dark",
+     "minor key",
+     "slow ballad",
+     "silence",
+     "pauses",
+     "heavy echo",
+     "EDM drop",
+     "dubstep",
+     "old-fashioned",
+     "classical poetry recitation",
+     "full drums",
+     "rap"
+    ],
+    "context_adherence": "high"
+   }
+  ]
+ }
+}
