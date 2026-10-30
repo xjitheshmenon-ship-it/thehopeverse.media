@@ -418,6 +418,18 @@ def raga(request: str) -> str:
         request, [], effort="low")
 
 
+@beta_tool
+def kavi(request: str) -> str:
+    """Ask Mr. Kavi, the lyricist (Malayalam, Tamil, Telugu, Hindi, Urdu, Arabic, English and wordless vocables),
+    for original song lyrics fitted to a track's scene script and Mr. Raga's section plan.
+
+    Args:
+        request: The language, mood, scene script and section plan (names, seconds, BPM, where the voice sings).
+    """
+    return run_agent("Mr. Kavi", TEAM["Mr. Kavi"] + "\n\n" + (HERE / "lyrics.md").read_text(encoding="utf-8"),
+                     request, [], effort="medium")
+
+
 HOPE = TEAM["Mr. Hope"]
 SPEND = HERE / "runs" / "spend-report.md"
 
@@ -499,7 +511,7 @@ if __name__ == "__main__":
         "Scheduled run: get today's 5 topics from Mr. Focus, check the outbox, then draft and queue "
         "the single best new YouTube Short for the live YouTube channel.")
     summary = run_agent("Mr. Hope", HOPE, goal, [list_channels, list_outbox, propose_channel, focus,
-                                                 cast, pen, cut, spark, post, raga],
+                                                 cast, pen, cut, spark, post, raga, kavi],
                         effort="medium", model=MODEL)
     print(summary)
     with (HERE / "runs" / "hope-said.jsonl").open("a", encoding="utf-8") as f:  # shown on the dashboard next to the owner's messages
