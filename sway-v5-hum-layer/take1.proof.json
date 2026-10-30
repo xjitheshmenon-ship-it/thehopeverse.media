@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: humming layer for Sway v5 take 2",
+  "take": 1,
+  "made_at_utc": "2026-10-30T09:38:34.575396+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "j6VOTlUzJV7TAvJJOvIJ",
+  "request": {
+    "prompt": "A cappella only: NO instruments, no drums, no music bed at all, only voices. A soft, breathy, close wordless female hum (mmm, then open aah), warm and tender, with a soft male hum underneath in harmony. A major, exactly 120 BPM, steady time from the first second. Simple, long, held notes that float slowly: mostly A, C sharp and E, gentle slides between them with light Carnatic gamakam, each phrase four bars long with a soft breath between phrases. Natural, dry, intimate studio recording, no echo, no reverb tail, no effects, no words, no lyrics, no percussion, no beatbox.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 64000
+  },
+  "brief": {
+    "notes": "A cappella wordless humming layer to mix under v5 take 2 (A major, 120 BPM). Long held, simple notes on the A major home chord so it sits on any chord in the track. Jithesh 09:35."
+  },
+  "story": "A fresh, breezy morning: the same six-part journey and steady 6/8 sway Jithesh liked in First Love v7, now as a refreshing track, not a romance.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
