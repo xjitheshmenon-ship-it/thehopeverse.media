@@ -21,7 +21,7 @@ on:
         type: choice
         options: [yt-hopeverse, yt-instinct, yt-instinct-de, yt-instinct-es, yt-instinct-ja, yt-sankalp, yt-sawaal]
       topic:
-        description: "For job story: the true story to tell (empty = find one). For job publish: the YouTube id of a scheduled Short to make public now"
+        description: "For job one or story: the topic or true story (empty = the planned one / find one). For job publish: the YouTube id of a scheduled Short to make public now"
         default: ""
         type: string
       when:
@@ -134,6 +134,7 @@ jobs:
         env:
           CHANNEL: ${{ inputs.channel || 'yt-hopeverse' }}
           DAILY_BUDGET: "1000"  # Post now overrules the daily budget
+          TOPIC: ${{ inputs.topic }}  # optional: the owner's topic, instead of the planned one
         run: |
           { sudo apt-get install -y -qq fonts-noto-core fonts-noto-cjk || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core fonts-noto-cjk; }; } > /dev/null
           if [ "$CHANNEL" = yt-hopeverse ]; then
@@ -141,7 +142,7 @@ jobs:
           else
             goal="check list_channels and list_outbox, then draft and queue one new YouTube Short for $CHANNEL that fits its niche, audience and language, on a topic it hasn't had yet."
           fi
-          topic=$(python plan.py --next "$CHANNEL" --any || true)  # Post now: an approved topic first, else the next planned one
+          topic=${TOPIC:-$(python plan.py --next "$CHANNEL" --any || true)}  # Post now: an approved topic first, else the next planned one
           [ -n "$topic" ] && goal="make the Short on the planned topic \"$topic\" (check list_outbox and that it is still accurate and new; if not, pick the best alternative), then $goal"
           before=$(ls outbox/*.json 2>/dev/null | wc -l)
           HOPE_CHANNEL=$CHANNEL HOPE_REVIEW=0 python agents.py "One-off run requested by the owner: $goal"
