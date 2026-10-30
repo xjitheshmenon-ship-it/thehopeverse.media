@@ -1,0 +1,19 @@
+{
+  "title": "First Love v13 link",
+  "take": 2,
+  "made_at_utc": "2026-10-30T08:14:58.276811+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "PEnTL0IAM7RifvslBNoX",
+  "request": {
+    "prompt": "A 10-second build-up from a Tamil or Telugu film love song, at exactly 92 BPM in 4/4, in bright G major, that leads straight into the full band. Bars 1-2: a soft tabla and dholak keherwa groove with finger snaps, a warm bansuri flute plays a short, rising, smiling question phrase with gamakam slides, and a deep warm bass holds G. Bars 3-4: the violin section joins in Indian-style unison, climbing upward with slides, the tabla builds into an excited rolling fill, a soft kick adds weight, and everything rises in energy and volume to a happy, expectant peak. The last beat is a sharp, joyful tabla and string hit on the G major chord, cut short, as if the full song is about to burst in. Natural, dry, close instruments played by real musicians, no heavy echo. Bright, positive, curious, rising; never sad, never minor, no pause, no silence, no fade-out, no EDM riser, no white noise.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 10000
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 08:12: v13 edit 2 is the one; both halves are really good but the first 30 s don't connect to the rest. The intro fades out to silence and drifts faster than 92 BPM, then the full band hits from nothing. This link is a building tabla/string run-up in G major at exactly 92 BPM that lands on the band entry."
+  },
+  "story": "A 10 s bridge between the v13 intro take 2 and v12 take 2's band entry at 31 s.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
