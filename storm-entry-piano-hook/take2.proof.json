@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Storm Entry piano hook (solo piano layer)",
+  "take": 2,
+  "made_at_utc": "2026-10-30T12:03:18.539063+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "CnQrA9ri7xYpto8KDgnk",
+  "request": {
+    "prompt": "SOLO GRAND PIANO ONLY, a recording for layering on top of a film score: no drums, no bass, no strings, no synths, no voices, no other instruments at all. Exactly 112 BPM, strict tempo, C minor (C, D, E-flat, F, G, A-flat, B-flat, with a sharp-four F-sharp passing note for menace). A bold, catchy hero hook of 5 notes, played as powerful octaves in the middle and upper register of a concert grand piano, close and dry, no reverb tail, like the piano hook of a modern South Indian mass film score. 0-8 s: the hook played clearly twice, strong and rhythmic, with a short grace-note slide into the last note. 8-16 s: the hook answered by a rising variation that climbs higher, building tension. 16-24 s: the hook again with fast repeated-note runs between the phrases, more urgent. 24-30 s: the hook one last time in big octaves, ending on a strong held C. Every phrase starts exactly on the beat. Clean, close, punchy piano sound.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 30000
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 12:00: 'piano needed for the transition between 20-30 s, maybe use it after also, a piano hook.' A solo piano layer (C minor, 112 BPM) placed on top of the locked final version, which stays unchanged underneath."
+  },
+  "story": "A piano hook rides over the hero's walk-in.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
