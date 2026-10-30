@@ -18,7 +18,7 @@
   "shots": [
     {
       "end": 3,
-      "prompt": "Extreme close-up at ground level: a black leather boot steps down off a helicopter skid and sinks into deep fresh snow, the rotor wash blasting snow across the frame, dusk"
+      "prompt": "Extreme close-up locked at ground level the whole time: a black leather boot steps down off a helicopter skid and sinks into deep fresh snow, rotor wash blasting snow across the frame, dusk. Only the boot and the lower leg of the black trousers are ever in frame; the camera never tilts up and no face or body is shown"
     },
     {
       "end": 7,
@@ -46,7 +46,7 @@
     },
     {
       "end": 34,
-      "prompt": "Aerial drone shot at night: a convoy of black SUVs with headlights drives slowly along a snowy road through a dark pine forest towards an old stone fortress lit by burning fire braziers, snow falling"
+      "prompt": "Aerial drone shot at night looking down: a convoy of black SUVs with headlights drives slowly along a snowy road through a dark pine forest towards an old stone fortress lit by burning fire braziers, snow falling. The camera stays high in the air the whole time; no people are visible anywhere, nobody gets out of the cars"
     },
     {
       "end": 40,
@@ -65,7 +65,7 @@
     },
     {
       "end": 58,
-      "prompt": "Wide shot at the far end of a snowy torch-lit stone fortress courtyard at night: a group of tough men in fur hats and grey coats holding rifles drop their rifles into the snow one by one and step back, fear on their faces"
+      "prompt": "Wide shot at the far end of a snowy torch-lit stone fortress courtyard at night: a group of tough men in fur hats and grey coats holding rifles drop their rifles into the snow one by one and step back, fear on their faces. Only these men in fur hats and grey coats are in the shot; nobody in a black coat or sunglasses, no one walks in"
     },
     {
       "end": 64,
