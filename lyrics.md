@@ -18,7 +18,7 @@ The order for every sung track (music-scoring.md section 9 rules 17 and 18):
 1. **Scene script.** Mr. Raga (or Mr. Hope) writes the timed beat table: what happens every 4-12 s.
 2. **Music plan.** Mr. Raga turns it into sections: name, length in seconds, BPM, key, where the voice sings and where it rests, and the hook's rhythm.
 3. **Words.** Mr. Kavi writes lines for each sung section, fitted to its length and BPM (section 3), in the language the brief asks for. Each line serves the beat it sits on: the glance gets a line about seeing, the turn gets the turn.
-4. **Back to Mr. Raga.** The lines go into the plan section's `lines` (section 4). If a line doesn't fit the bar, Mr. Kavi rewrites the line; the music doesn't stretch to the words.
+4. **Back to Mr. Raga.** The lines go into the plan chunk's `text` (section 4). If a line doesn't fit the bar, Mr. Kavi rewrites the line; the music doesn't stretch to the words.
 
 ## 3. Fitting words to music
 
@@ -36,10 +36,13 @@ The order for every sung track (music-scoring.md section 9 rules 17 and 18):
 
 ## 4. How the words go into ElevenLabs Music
 
-- Use a composition plan (`"plan"` in the track brief) so each section keeps its length. Sung words go into each section's `"lines"` list, one sung line per entry. Instrumental sections keep `"lines": []`.
-- Set `"instrumental": false` in the brief, and do not put "lyrics", "vocals" or "singer" in `negative_global_styles`.
-- Name the voice and language in `positive_global_styles` or the section's `positive_local_styles`: "warm male tenor singing in Malayalam with clear film-song diction", "soft close female voice singing in Urdu, ghazal phrasing", "group chorus answering in Telugu".
-- **Script in `lines`:** write the native script (Malayalam, Tamil, Telugu, Devanagari, Urdu Nastaliq, Arabic with vowel marks). Keep the romanised line in the lyric sheet. If a take mispronounces the words or sings the wrong language, make the next take with the romanised lines and say the language in the styles ("sung in Tamil").
+- Use a composition plan (`"plan"` in the track brief) so each section keeps its length. Our sound is on music_v2 / music_v2_5, whose plan is a list of `"chunks"` (the v1 `"sections"` plan is rejected by v2 and falls back to the weaker v1). One chunk per section:
+  `{"text": "[Love melody]\nline 1\nline 2", "duration_ms": 16000, "positive_styles": [...], "negative_styles": [...], "context_adherence": "high"}`.
+  `text` = the section name in square brackets, then one sung line per line; humming and vocables in round brackets `(mm-mm-mm)`; an instrumental chunk is `"[Interlude]\n{instrumental}"`. Curly braces are short cues (`{flute solo}`).
+- The first chunk's styles set the whole song's mood, and there are no global styles in v2, so repeat the key, BPM, voice and instruments in every chunk's `positive_styles`.
+- Set `"instrumental": false` in the brief, and do not put "lyrics", "vocals" or "singer" in `negative_styles`.
+- Name the voice and language in `positive_styles`: "warm male tenor singing in Malayalam with clear film-song diction", "soft close female voice singing in Urdu, ghazal phrasing", "group chorus answering in Telugu".
+- **Script in the lines:** write the native script (Malayalam, Tamil, Telugu, Devanagari, Urdu Nastaliq, Arabic with vowel marks). Keep the romanised line in the lyric sheet. If a take mispronounces the words or sings the wrong language, make the next take with the romanised lines and say the language in the styles ("sung in Tamil").
 - Keep each line short (under about 60 characters). Repeat a hook by writing it again as its own line, not with "x2".
 - Save the full lyric sheet next to the takes as `music/<track>/<track>-lyrics.md`: language and dialect, section names with times, each line in native script, romanised, and an English meaning. Copy the lines into the brief's plan.
 
