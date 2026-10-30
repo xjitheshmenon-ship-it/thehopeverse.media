@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Sway v6 (v5 take 2 with humming)",
+  "take": 2,
+  "made_at_utc": "2026-10-30T09:38:21.561057+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "gxiPHKof9tqJHQ2ITXRo",
+  "request": {
+    "prompt": "ONE SONG, ONE THEME, ONE SOUND: this whole track is a single piece built on ONE catchy main hook that is heard in the first 8 seconds and keeps coming back all the way to the end, so every part clearly belongs to the same song. Never start a new song, never introduce a new unrelated melody, never change the band or the sound world. The same band plays from start to end, and the music develops only by adding or removing layers and by playing the same hook in slightly varied ways: answered, harmonised, ornamented, a little higher, fuller. A warm, tender, softly romantic and gently uplifting song with wordless humming only, no lyrics, in the style of modern South Indian film music, like a fresh morning drive along the coast. KEY AND TEMPO ARE FIXED: A major the whole time, 120 BPM with a light lilting swing, the beat steady from the first bar to the last, never stopping, no breaks, no pauses, no drops. THE VOICES: a soft, breathy, close wordless female hum (mmm and aah, no words) sings the main hook together with the bamboo flute, and a warm wordless male hum answers her phrases; the humming is natural, dry and intimate, never processed, no choir. THE BAND (the same throughout): a bamboo flute doubles the main hook; a bright tumbi and a bouncy synth pluck play the same little answering riff after every hook phrase; a mandolin and a clean electric guitar strum lightly; a warm Rhodes holds the chords; a soft sparkling arpeggiator; tabla and dholak with a crisp modern drum layer (tight kick, finger snaps, light hi-hats) and a deep round bass. The acoustic instruments (flute, tumbi, mandolin, violin, santoor, tabla, dholak) sound natural, dry and close, played by hand, no echo or delay on them, never chopped or reversed. How it grows, always the same hook: first the female hum and flute play the hook over light tabla and Rhodes, with the tumbi and synth pluck answering; then the full groove joins and the hook repeats with the mandolin and guitar strumming; then a short middle part where the violin and santoor play a variation of the same hook while the groove keeps going; then the hook returns, now sung by the female and male hums together in harmony with the flute and synth lead, fullest and brightest; it ends with the female hum singing the hook one last time and a clean final hit on D. Keep it light and flowing: not a movie background, not a cinematic score, no big string swells, no big choir, no slow emotional section, no medley, no new themes, no echo, no EDM drop, no side-chain pumping, no silence anywhere.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 80000
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 09:35: v5 take 2 'is the right one', really likes it; it is not refreshing, it is romantic now; 'some humming can make it beautiful', plus light enhancement. v6 = v5 brief (one hook, one band, A major like take 2) with a soft wordless female hum carrying the hook and a warm male hum answering. Prompt mode (music_v2)."
+  },
+  "story": "A fresh, breezy morning: the same six-part journey and steady 6/8 sway Jithesh liked in First Love v7, now as a refreshing track, not a romance.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
