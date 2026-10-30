@@ -1,132 +1,208 @@
 {
   "title": "\u00c6THER: First Love v16 (Malayalam lyrics by Mr. Kavi, romanised lines)",
   "take": 1,
-  "made_at_utc": "2026-10-30T09:41:08.382139+00:00",
+  "made_at_utc": "2026-10-30T09:45:09.938546+00:00",
   "maker": "ElevenLabs Music API on the owner's paid plan",
-  "model": "music_v1",
-  "elevenlabs_song_id": "OJDretMSPg4mN33HRPqI",
+  "model": "music_v2_5",
+  "elevenlabs_song_id": "1RbIKS8UEV59NpJOcVuq",
   "request": {
     "composition_plan": {
-      "positive_global_styles": [
-        "one single South Indian style love song built on ONE memorable love melody that returns again and again",
-        "bright G major the whole way with the magical raised fourth of raga Kalyani",
-        "one steady 92 BPM pulse from start to end",
-        "one soft sweet close female voice singing the words in Malayalam (the lines are Malayalam written in English letters), clear natural diction, gamakam slides and a long held note that bends at the end of each line",
-        "soft wordless female humming between the sung lines",
-        "bansuri flute, violin section in Indian-style unison, plucked veena, felt piano, acoustic guitar, deep warm round bass, tabla and dholak keherwa groove with a soft kick and claps",
-        "all instruments close, dry and natural, played by real musicians"
-      ],
-      "negative_global_styles": [
-        "minor key",
-        "sad",
-        "dark",
-        "slow",
-        "silence",
-        "pauses",
-        "heavy echo",
-        "EDM",
-        "rap",
-        "male voice",
-        "a different unrelated tune",
-        "sudden mood change"
-      ],
-      "sections": [
+      "chunks": [
         {
-          "section_name": "The glance",
+          "text": "[The glance]\n(mm-mm-mm, mm-mmm)\n(aa-aa-aa, aa-aaa)",
           "duration_ms": 10000,
-          "positive_local_styles": [
+          "positive_styles": [
+            "one single South Indian style love song built on ONE memorable love melody that returns again and again",
+            "bright G major the whole way with the magical raised fourth of raga Kalyani",
+            "one steady 92 BPM pulse from start to end",
+            "one soft sweet close female voice singing the words in Malayalam (the lines are Malayalam written in English letters), clear natural diction, gamakam slides and a long held note that bends at the end of each line",
+            "soft wordless female humming between the sung lines",
+            "bansuri flute, violin section in Indian-style unison, plucked veena, felt piano, acoustic guitar, deep warm round bass, tabla and dholak keherwa groove with a soft kick and claps",
+            "all instruments close, dry and natural, played by real musicians",
             "the female voice hums the love melody softly",
             "light tabla pulse and veena",
             "curious and wondering"
           ],
-          "negative_local_styles": [
+          "negative_styles": [
+            "minor key",
+            "sad",
+            "dark",
+            "slow",
+            "silence",
+            "pauses",
+            "heavy echo",
+            "EDM",
+            "rap",
+            "male voice",
+            "a different unrelated tune",
+            "sudden mood change",
             "full drums"
           ],
-          "lines": [
-            "mm-mm-mm, mm-mmm",
-            "aa-aa-aa, aa-aaa"
-          ]
+          "context_adherence": "high"
         },
         {
-          "section_name": "Love melody",
+          "text": "[Love melody]\nminnal pol nee vanna neram\nennil oru poo virinju\naadyamaay ninne kanda neram",
           "duration_ms": 16000,
-          "positive_local_styles": [
+          "positive_styles": [
+            "one single South Indian style love song built on ONE memorable love melody that returns again and again",
+            "bright G major the whole way with the magical raised fourth of raga Kalyani",
+            "one steady 92 BPM pulse from start to end",
+            "one soft sweet close female voice singing the words in Malayalam (the lines are Malayalam written in English letters), clear natural diction, gamakam slides and a long held note that bends at the end of each line",
+            "soft wordless female humming between the sung lines",
+            "bansuri flute, violin section in Indian-style unison, plucked veena, felt piano, acoustic guitar, deep warm round bass, tabla and dholak keherwa groove with a soft kick and claps",
+            "all instruments close, dry and natural, played by real musicians",
             "the voice sings the love melody with words",
             "groove, bass and acoustic guitar enter",
             "the flute answers each line with a small echo of the melody"
           ],
-          "negative_local_styles": [],
-          "lines": [
-            "minnal pol nee vanna neram",
-            "ennil oru poo virinju",
-            "aadyamaay ninne kanda neram"
-          ]
+          "negative_styles": [
+            "minor key",
+            "sad",
+            "dark",
+            "slow",
+            "silence",
+            "pauses",
+            "heavy echo",
+            "EDM",
+            "rap",
+            "male voice",
+            "a different unrelated tune",
+            "sudden mood change"
+          ],
+          "context_adherence": "high"
         },
         {
-          "section_name": "Interlude",
+          "text": "[Interlude]\n{instrumental}",
           "duration_ms": 12000,
-          "positive_local_styles": [
+          "positive_styles": [
+            "one single South Indian style love song built on ONE memorable love melody that returns again and again",
+            "bright G major the whole way with the magical raised fourth of raga Kalyani",
+            "one steady 92 BPM pulse from start to end",
+            "one soft sweet close female voice singing the words in Malayalam (the lines are Malayalam written in English letters), clear natural diction, gamakam slides and a long held note that bends at the end of each line",
+            "soft wordless female humming between the sung lines",
+            "bansuri flute, violin section in Indian-style unison, plucked veena, felt piano, acoustic guitar, deep warm round bass, tabla and dholak keherwa groove with a soft kick and claps",
+            "all instruments close, dry and natural, played by real musicians",
             "flute and violins play a variation of the same melody together in unison",
             "the groove keeps going",
             "soft humming underneath"
           ],
-          "negative_local_styles": [
+          "negative_styles": [
+            "minor key",
+            "sad",
+            "dark",
+            "slow",
+            "silence",
+            "pauses",
+            "heavy echo",
+            "EDM",
+            "rap",
+            "male voice",
+            "a different unrelated tune",
+            "sudden mood change",
             "new tune"
           ],
-          "lines": []
+          "context_adherence": "high"
         },
         {
-          "section_name": "Verse",
+          "text": "[Verse]\nchandanakkaattil nee vannu\nchandrikappoovaay nee ninnu\nennumen koode nee venam",
           "duration_ms": 16000,
-          "positive_local_styles": [
+          "positive_styles": [
+            "one single South Indian style love song built on ONE memorable love melody that returns again and again",
+            "bright G major the whole way with the magical raised fourth of raga Kalyani",
+            "one steady 92 BPM pulse from start to end",
+            "one soft sweet close female voice singing the words in Malayalam (the lines are Malayalam written in English letters), clear natural diction, gamakam slides and a long held note that bends at the end of each line",
+            "soft wordless female humming between the sung lines",
+            "bansuri flute, violin section in Indian-style unison, plucked veena, felt piano, acoustic guitar, deep warm round bass, tabla and dholak keherwa groove with a soft kick and claps",
+            "all instruments close, dry and natural, played by real musicians",
             "the voice sings a verse built from the same melody's opening notes",
             "violins underneath",
             "rising and hopeful"
           ],
-          "negative_local_styles": [],
-          "lines": [
-            "chandanakkaattil nee vannu",
-            "chandrikappoovaay nee ninnu",
-            "ennumen koode nee venam"
-          ]
+          "negative_styles": [
+            "minor key",
+            "sad",
+            "dark",
+            "slow",
+            "silence",
+            "pauses",
+            "heavy echo",
+            "EDM",
+            "rap",
+            "male voice",
+            "a different unrelated tune",
+            "sudden mood change"
+          ],
+          "context_adherence": "high"
         },
         {
-          "section_name": "Love melody returns",
+          "text": "[Love melody returns]\nminnal pol nee vanna neram\nennil oru poo virinju\naadyamaay ninne kanda neram",
           "duration_ms": 18000,
-          "positive_local_styles": [
+          "positive_styles": [
+            "one single South Indian style love song built on ONE memorable love melody that returns again and again",
+            "bright G major the whole way with the magical raised fourth of raga Kalyani",
+            "one steady 92 BPM pulse from start to end",
+            "one soft sweet close female voice singing the words in Malayalam (the lines are Malayalam written in English letters), clear natural diction, gamakam slides and a long held note that bends at the end of each line",
+            "soft wordless female humming between the sung lines",
+            "bansuri flute, violin section in Indian-style unison, plucked veena, felt piano, acoustic guitar, deep warm round bass, tabla and dholak keherwa groove with a soft kick and claps",
+            "all instruments close, dry and natural, played by real musicians",
             "the same love melody at its happiest and fullest",
             "voice, violins and flute together in unison",
             "full drums and bass",
             "joyful celebration"
           ],
-          "negative_local_styles": [],
-          "lines": [
-            "minnal pol nee vanna neram",
-            "ennil oru poo virinju",
-            "aadyamaay ninne kanda neram"
-          ]
+          "negative_styles": [
+            "minor key",
+            "sad",
+            "dark",
+            "slow",
+            "silence",
+            "pauses",
+            "heavy echo",
+            "EDM",
+            "rap",
+            "male voice",
+            "a different unrelated tune",
+            "sudden mood change"
+          ],
+          "context_adherence": "high"
         },
         {
-          "section_name": "Last look",
+          "text": "[Last look]\naadyamaay ninne kanda neram\n(mm-mm-mm, mm-mmm)",
           "duration_ms": 8000,
-          "positive_local_styles": [
+          "positive_styles": [
+            "one single South Indian style love song built on ONE memorable love melody that returns again and again",
+            "bright G major the whole way with the magical raised fourth of raga Kalyani",
+            "one steady 92 BPM pulse from start to end",
+            "one soft sweet close female voice singing the words in Malayalam (the lines are Malayalam written in English letters), clear natural diction, gamakam slides and a long held note that bends at the end of each line",
+            "soft wordless female humming between the sung lines",
+            "bansuri flute, violin section in Indian-style unison, plucked veena, felt piano, acoustic guitar, deep warm round bass, tabla and dholak keherwa groove with a soft kick and claps",
+            "all instruments close, dry and natural, played by real musicians",
             "the voice sings the last line softly once more, then hums",
             "ending on a warm bright G major chord"
           ],
-          "negative_local_styles": [
+          "negative_styles": [
+            "minor key",
+            "sad",
+            "dark",
+            "slow",
+            "silence",
+            "pauses",
+            "heavy echo",
+            "EDM",
+            "rap",
+            "male voice",
+            "a different unrelated tune",
+            "sudden mood change",
             "full drums"
           ],
-          "lines": [
-            "aadyamaay ninne kanda neram",
-            "mm-mm-mm, mm-mmm"
-          ]
+          "context_adherence": "high"
         }
       ]
     },
-    "model_id": "music_v1"
+    "model_id": "music_v2_5"
   },
   "brief": {
-    "notes": "Jithesh 30 Oct 09:37 asked Mr. Kavi to write lyrics for First Love. v16 keeps v15b's one-melody form, G major, 92 BPM and instruments, as a composition plan so the words land in their sections; lyric sheet in /mnt/project-files/music/first-love-v16/first-love-v16-lyrics.md. v16 has the lines in Malayalam script, v16r the same lines romanised, to learn which ElevenLabs sings better."
+    "notes": "Jithesh 30 Oct 09:37 asked Mr. Kavi to write lyrics for First Love. v16 keeps v15b's one-melody form, G major, 92 BPM and instruments, as a composition plan so the words land in their sections; lyric sheet in /mnt/project-files/music/first-love-v16/first-love-v16-lyrics.md. v16 has the lines in Malayalam script, v16r the same lines romanised, to learn which ElevenLabs sings better. The first run sent a music_v1 plan (sections), which music_v2 rejects, so it fell back to v1; this is the v2 chunk plan."
   },
   "story": "A boy sees a girl for the first time and falls in love, told by ONE love melody that is first hummed, then sung in Malayalam, and grows into a celebration.",
   "human_work": "to be added by the owner: melody, take choice, edits, mix"
