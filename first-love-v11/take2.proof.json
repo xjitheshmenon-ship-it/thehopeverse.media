@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: First Love v11 (love + energy)",
+  "take": 2,
+  "made_at_utc": "2026-10-30T07:31:28.690870+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "GF5HCR3islwzdXjBZeMw",
+  "request": {
+    "prompt": "A brand-new romantic and uplifting love anthem written the way today's great Tamil and Telugu film composers write a hit love theme for the hero meeting the girl for the first time: LOVE plus ENERGY. It is romantic, happy, hopeful and inspiring, with a rising, heart-lifting energy, like falling in love and feeling you can fly. Not sad, not sleepy, not calm background music, not a dance number. Instrumental. Key: a bright, warm major key all the way through. Melody: a big, singable, inspiring love melody in a raga like Kalyani or Mohanam, clean held notes with gentle slides, that climbs and opens up each time it comes back. Sound: warm and full, with a deep round bass and lush strings, not thin or sparkly. Every real instrument is close and natural, played by real musicians: a soft bansuri flute, a warm solo violin, a felt piano and a clean acoustic guitar, with no heavy echo on them. A soft wordless female voice joins the biggest moments. Rhythm: a confident, driving, mid-tempo groove at about 92 BPM in 4/4 from 6 s to the end, never stopping: deep warm kick and soft snare or clap on 2 and 4, tabla and shaker keeping a light forward eighth-note motion, piano and guitar pushing steady eighth-note chords. Energetic and forward-moving, but not bouncy and not a dance. Six parts, each bigger than the last, a new color every 6-8 seconds: 0-6 s THE GLANCE: piano and flute play the rising love call; a soft swell. 6-16 s SHYNESS: the groove starts with kick and tabla; flute and violin trade short smiling phrases. 16-30 s ATTRACTION: the full love melody on the flute, strings and bass driving underneath. 30-44 s TOGETHERNESS: violin and flute play the melody together in harmony, the drums fuller, guitar strumming. 44-54 s THE DREAM: an inspiring build, strings climb, drums build with a fill, the energy rises. 54-70 s THE CELEBRATION OF LOVE: the biggest, happiest, most inspiring moment: the full melody soaring on strings, flute and the female voice together, full drums and bass, goosebumps. 70-76 s: the love call once more, landing on a warm, bright final chord. Not sad, not dark, not slow, not ambient, not a lullaby, no heavy echo, no EDM, no white-noise risers, no side-chain pumping, no pauses.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 76000
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 07:29 on v10: missing 'that happiness part, that inspirational part, that energy part, like love and energy'. v10 (from refs R25-R27) went warm/calm. v11 keeps v10's warm full body (deep round bass, lush strings, natural close instruments, no heavy echo) and adds a bright major key, an inspiring climbing melody and a driving 92 BPM 4/4 groove that grows part by part to a soaring celebration. Prompt mode (music_v2)."
+  },
+  "story": "A boy sees a girl for the first time and feels he can fly: the glance, shyness, attraction, togetherness, the dream, the celebration of love.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
