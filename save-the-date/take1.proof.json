@@ -1,0 +1,19 @@
+{
+  "title": "Save the Date (grand cinematic wedding announcement)",
+  "take": 1,
+  "made_at_utc": "2026-10-30T12:54:54.338065+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "rwgCYXoYz7k0lKVYKilv",
+  "request": {
+    "prompt": "A grand modern cinematic wedding score for a one-minute save-the-date announcement film of a young couple in today's city. Joyful, warm, proud and huge, like the opening titles of a big romantic film. Never minor, never sad, never dark. ONE memorable love melody runs through the whole track; every section is that same tune growing bigger, never a different song. Written the way today's South Indian film composers score a wedding moment: a raga melody with gamakam slides and grace-note turns, the tune coming back bigger each time, stop-and-slam full-band hits, a korvai-style ending. Raga Hamsadhwani in bright D major: D E F# A C#, no G and no B. The tune rises A, C#, D, E, F#, holds F# with a bend, then falls E, D, C#, A. A soft, sweet wordless female humming voice (mm and aa, close and natural) carries the tune. Instruments: full symphony orchestra with lush strings and grand brass, a big wordless choir, timpani, celesta, felt piano, bansuri flute, tabla and dhol, warm deep bass, big cinematic drums. Real instruments are played by real musicians, close, dry and natural, no heavy echo, not chopped. One steady tempo, 96 BPM, never stopping. 0-4 s: shimmering strings and celesta, the female voice hums the tune softly, full of wonder. 4-9 s: a timpani roll and the whole orchestra swells into one grand brass and choir fanfare hit. 9-22 s: the same tune on felt piano with the humming voice over a light modern groove and warm bass. 22-36 s: strings carry the tune, tabla and dhol groove grows, the flute answers each phrase. 36-52 s: the climax: the tune returns a whole step higher in E, full orchestra, choir, big drums, the humming voice soaring on top, the biggest and happiest moment. 52-60 s: three rising full-band hits, a final grand major chord that rings out, and the voice hums the first phrase of the tune once more. No silences, no pauses, no lull, no fade-in, no EDM, no club beat, no side-chain pumping, no white-noise risers, no lyrics.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 60000
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 12:47: 'audio for save the date, grand and unique cinematic style intro and climax, 1 minute.' Modern couple, one continuous generation (splicing failed before), soft female humming carries the tune, real instruments natural and dry. Hamsadhwani in D: pentatonic with no 4th or 6th, so the model can't drift to minor (romance drifted sad before). 3 takes; we pick."
+  },
+  "story": "A modern couple's one-minute save-the-date film: how they met, the proposal, and the grand reveal of the wedding date.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
