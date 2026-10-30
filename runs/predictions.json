@@ -313,5 +313,19 @@
   "predicted": null,
   "actual": 78,
   "at": "2026-10-30 09:12"
+ },
+ "yt-instinct-7": {
+  "channel": "yt-instinct",
+  "title": "1 jouet, 1 nom : la chienne qui retient #Shorts",
+  "predicted": null,
+  "actual": 20,
+  "at": "2026-10-30 10:12"
+ },
+ "yt-instinct-8": {
+  "channel": "yt-instinct",
+  "title": "1 plateau vide, 1 mot : le perroquet qui dit aucun #Shorts",
+  "predicted": null,
+  "actual": 811,
+  "at": "2026-10-30 10:12"
  }
 }
