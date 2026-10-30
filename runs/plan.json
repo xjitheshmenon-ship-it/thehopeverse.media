@@ -38,12 +38,20 @@
  ],
  "yt-instinct": [
   {
+   "topic": "1 geai, 1 repas : l'oiseau qui prévoit demain #Shorts",
+   "why": "Raby et al. 2007 (Nature) : le geai buissonnier de Californie cache de la nourriture là où il aura faim le lendemain. Planification du futur, oiseau sous-estimé, comparaison avec les enfants.",
+   "score": 65,
+   "views48": 700,
+   "planned": "2026-10-29 02:34",
+   "when": "2026-10-31 04:25"
+  },
+  {
    "topic": "1 corneille, 1 distributeur : Betty... non, la corneille de Sendai qui casse des noix sur la route #Shorts",
    "why": "Evergreen, well-sourced story of a named-population crow in Japan (Sendai) that places walnuts at crossings so cars crack them, then waits for the pedestrian light. A visible, human-like act that fits a before/after image (nut on road, then crow picking it up at the red light). Uses a corvid, an underestimated bird, matches the breakout pattern of tool use, and adds a human comparison (pedestrians crossing). Not a repeat of the wire-bending crow Betty or the other planned topics.",
    "score": 66,
    "views48": 780,
    "planned": "2026-10-29 04:06",
-   "when": "2026-10-31 04:25"
+   "when": "2026-10-31 06:05"
   },
   {
    "topic": "1 tardigrade, 3 survivants : le bouclier qui les a protégés des UV en orbite #Shorts",
@@ -51,7 +59,7 @@
    "score": 62,
    "views48": 720,
    "planned": "2026-10-29 16:41",
-   "when": "2026-10-31 06:05"
+   "when": "2026-10-31 07:45"
   },
   {
    "topic": "1 corneille, 1 compte : le corbeau qui compte jusqu'à 4 à voix haute #Shorts",
@@ -59,7 +67,7 @@
    "score": 66,
    "views48": 1000,
    "planned": "2026-10-29 16:52",
-   "when": "2026-10-31 07:45"
+   "when": "2026-10-31 08:35"
   },
   {
    "topic": "1 raie, 1 nom : elle reconnaît son soigneur #Shorts",
@@ -67,7 +75,7 @@
    "score": 55,
    "views48": 520,
    "planned": "2026-10-29 02:34",
-   "when": "2026-10-31 08:35"
+   "when": "2026-11-01 04:25"
   },
   {
    "topic": "1 mot, 1 objet : la chienne Rico qui comprend plus de 200 mots #Shorts",
@@ -75,14 +83,6 @@
    "score": 38,
    "views48": 420,
    "planned": "2026-10-29 04:17",
-   "when": "2026-11-01 04:25"
-  },
-  {
-   "topic": "1 poisson, 1 outil : le labre qui casse un coquillage sur une pierre #Shorts",
-   "why": "Un poisson, animal sous-estimé, utilise un outil visible : il porte un coquillage jusqu'à une pierre et le frappe pour l'ouvrir. L'étude est publiée et le labre est filmé. La comparaison avec l'humain est simple : l'outil n'est plus réservé aux singes ni aux enfants. Le ton est calme, adapté aux seniors, avec un seul fait précis par phrase. Ce sujet n'est pas encore traité sur la chaîne et reprend la formule du corbeau et du perroquet.",
-   "score": 58,
-   "views48": 650,
-   "planned": "2026-10-30 15:14",
    "when": "2026-11-01 06:05"
   }
  ],
@@ -96,43 +96,43 @@
    "when": "2026-10-30 04:00"
   },
   {
-   "topic": "Iran says 7 oil tankers were attacked in the Strait of Hormuz: why one narrow strait moves oil prices within minutes, and how much of world oil passes through it",
-   "why": "Fresh Iran-war story in the Oct 28-29 headlines, with markets already falling on it. The angle is the chokepoint arithmetic that most reports skip. I could only run one search, so I haven't checked the figures and they need checking before filming.",
+   "topic": "Iran says 7 oil tankers were attacked in the Strait of Hormuz (reported 29 Oct 2026): why about a fifth of the world's oil passes through a channel only about 33 km wide at its narrowest, and why one attack can move prices",
+   "why": "The story is fresh. It was on the NBC World page with fears of a return to war, and global audiences search for oil and war news. The angle explains the chokepoint's width instead of repeating the headline. I could not open the full article, so the details need checking before upload.",
    "score": 74,
    "views48": 8,
-   "planned": "2026-10-30 15:14",
+   "planned": "2026-10-30 15:20",
    "when": "2026-10-30 05:40"
   },
   {
-   "topic": "Canada to become the EU's first 'associate member': what the status actually gives Canada, and why some EU states are rejecting it",
-   "why": "Trending on Oct 29 with a clear 'what does this mean' question that suits an under-a-minute explainer for UK, EU and US viewers. The unique part is what the status does and doesn't include. I haven't verified the details.",
+   "topic": "European Central Bank chief resigns (29 Oct 2026): who picks the successor, and why the euro's central bank can't simply name a replacement overnight",
+   "why": "Global News listed it on 29 Oct as a fresh world story, and it matters to European and market audiences. The angle is the little-explained succession process. I could not confirm the details, so check the resignation facts before upload.",
    "score": 70,
    "views48": 6,
-   "planned": "2026-10-30 15:14",
+   "planned": "2026-10-30 15:20",
    "when": "2026-10-30 07:20"
   },
   {
-   "topic": "Israel's election ends in deadlock between Netanyahu and Eisenkot: how a 61-seat majority gets built, and who the kingmaker parties are",
-   "why": "The channel's best Short (53 views) was an Israel election story, so this follows a proven winner. The angle is the coalition maths after a stalemate.",
-   "score": 72,
-   "views48": 22,
-   "planned": "2026-10-30 15:14",
+   "topic": "Canada to become the EU's first 'associate member' (reported 29 Oct 2026): what that status actually gives Canada, and why some EU nations are rejecting it",
+   "why": "Global News ran it as a current video story. It fits the UK, Europe and US audience and the question 'what does associate member mean' is easy to answer in a Short. Few outlets explain what the status means in practice.",
+   "score": 68,
+   "views48": 5,
+   "planned": "2026-10-30 15:20",
    "when": "2026-10-30 08:10"
   },
   {
-   "topic": "King Charles's Caribbean tour meets calls for an apology and slavery reparations: what the Caribbean states are asking for, and what the Crown can legally do",
-   "why": "A trending Oct 28 story with strong UK, Commonwealth and Indian-diaspora interest. The angle is the gap between what is demanded and what the monarch has the power to do.",
+   "topic": "Spain's 2nd fatal high-speed train crash this year (Madrid protests, late Oct 2026): why a country with Europe's longest high-speed network keeps having these crashes, and what the protesters are demanding",
+   "why": "Madrid protests were reported by Global News this week. The channel already covered the first crash with 'Spain Train Crash: 17 Minutes After the Order', so this follows up with a new cause-focused angle. Protest footage is a good fit for a Short.",
    "score": 66,
    "views48": 6,
-   "planned": "2026-10-30 15:14",
+   "planned": "2026-10-30 15:20",
    "when": "2026-10-31 04:00"
   },
   {
-   "topic": "A wolf attack on an 8-year-old inside a German zoo enclosure near Berlin: why this happens when wolves are fed and handled, and how rare it is in Europe",
-   "why": "A fresh story from the last 11 hours, and the 'why does this happen' question gives it a curiosity hook. It's a lower-fit story for a current-affairs channel, and I haven't verified the details.",
-   "score": 52,
-   "views48": 5,
-   "planned": "2026-10-30 15:14",
+   "topic": "Israel's election ended in deadlock between Netanyahu and Eisenkot (Oct 2026): how a 61-seat majority can fail and what happens in the weeks of coalition talks that follow",
+   "why": "The earlier Israel election Short got 53 views, the channel's best result, so there is demand to build on. This is a follow-up about the deadlock and the coalition rules, which most outlets skip. Check the seat numbers before upload.",
+   "score": 72,
+   "views48": 25,
+   "planned": "2026-10-30 15:20",
    "when": "2026-10-31 05:40"
   }
  ],
@@ -146,62 +146,54 @@
    "when": "2026-10-30 04:50"
   },
   {
-   "topic": "वाडिनार में ₹1,570 करोड़ की जहाज़ मरम्मत सुविधा को कैबिनेट की मंज़ूरी: भारत का अपना शिपयार्ड हब, और विदेशी यार्ड में होने वाली मरम्मत का कितना खर्च बचेगा। PIB और Business Standard से मिलान करें, असली फ़ोटो सिर्फ़ Wikimedia Commons से लें।",
-   "why": "ताज़ा कैबिनेट फ़ैसला है, जिसमें एक तय आँकड़ा है और आत्मनिर्भर भारत का कोण है। खोज में मिले नतीजों में तारीख़ साफ़ नहीं थी, इसलिए अपलोड से पहले PIB पर तारीख़ जाँचें।",
-   "score": 66,
-   "views48": 14,
-   "planned": "2026-10-30 15:14",
+   "topic": "केंद्रीय कैबिनेट, 28 अक्टूबर 2026: केंद्रीय कर्मचारियों के लिए DA की नई किस्त मंज़ूर। यह 1 जुलाई 2026 से लागू है। कम चर्चित सवाल यह है कि पिछली तारीख़ से लागू होने पर एरियर कितना बनता है, और DA की दर कैसे तय होती है। PIB और एक दूसरे स्वतंत्र आर्थिक स्रोत से दर का मिलान करें। असली फ़ोटो सिर्फ़ Wikimedia Commons से लें।",
+   "why": "28 अक्टूबर की ताज़ा कैबिनेट मंज़ूरी है और सरकारी कर्मचारियों व पेंशनभोगियों के लिए सीधे काम की है। इसमें एरियर का हिसाब जैसा कम बताया गया कोण है। सटीक प्रतिशत की पुष्टि दो स्रोतों से होनी बाकी है, और यह खोज की सीमा थी।",
+   "score": 72,
+   "views48": 18,
+   "planned": "2026-10-30 15:20",
    "when": "2026-10-30 06:30"
   },
   {
-   "topic": "मनमाड़-इंदौर रेल लाइन के लिए ₹18,036 करोड़ की मंज़ूरी: यह लाइन किन ज़िलों और आदिवासी इलाकों को पहली बार रेल से जोड़ेगी, और माल ढुलाई में कितना समय बचेगा। PIB और रेल मंत्रालय के आँकड़े दूसरे स्रोत से मिलाएँ।",
-   "why": "बड़ी राशि वाला इन्फ्रास्ट्रक्चर फ़ैसला है, जिसमें कम चर्चित पहलू यह है कि कौन से इलाके पहली बार जुड़ेंगे। हिंदी भाषी राज्यों के दर्शकों के लिए प्रासंगिक है। प्रकाशन की तारीख़ की पुष्टि बाकी है।",
-   "score": 64,
-   "views48": 12,
-   "planned": "2026-10-30 15:14",
+   "topic": "कंटेनर मैन्युफैक्चरिंग प्रमोशन स्कीम: कैबिनेट ने 28 अक्टूबर 2026 को FY 2039-40 तक ₹10,000 करोड़ मंज़ूर किए। भारत कंटेनर आयात पर निर्भरता कम करना चाहता है। कम चर्चित सवाल यह है कि दुनिया के ज़्यादातर शिपिंग कंटेनर कहाँ बनते हैं और भारत इस निर्भरता को कैसे बदलेगा। PIB और एक व्यापार या शिपिंग रिपोर्ट से मिलान करें।",
+   "why": "यह ताज़ा कैबिनेट फ़ैसला है। इसमें आत्मनिर्भरता और मेक इन इंडिया की राष्ट्रीय गर्व वाली कहानी है, और सवाल जिज्ञासा जगाता है। सीधी खोज माँग अभी कम है।",
+   "score": 70,
+   "views48": 15,
+   "planned": "2026-10-30 15:20",
    "when": "2026-10-31 04:50"
   },
   {
-   "topic": "पुणे मेट्रो फ़ेज़-2 के लिए ₹3,626 करोड़: यह लाइन IT हब तक कितने लाख यात्रियों का सफ़र आसान करेगी, और रोज़ कितना ट्रैफ़िक घटने का अनुमान है। सरकारी विज्ञप्ति और एक स्वतंत्र रिपोर्ट से आँकड़े मिलाएँ।",
-   "why": "शहरी परिवहन में भारत की प्रगति दिखाता ताज़ा कैबिनेट फ़ैसला है। हिंदी भाषी दर्शकों से थोड़ा दूर है, इसलिए माँग मध्यम रहेगी।",
-   "score": 58,
-   "views48": 10,
-   "planned": "2026-10-30 15:14",
+   "topic": "खेलो इंडिया स्पोर्ट्स गुड्स मैन्युफैक्चरिंग स्कीम: कैबिनेट ने 28 अक्टूबर 2026 को ₹1,856.67 करोड़ मंज़ूर किए। लक्ष्य देश में खेल सामान बनाना, निवेश लाना और निर्यात बढ़ाना है। कम चर्चित सवाल यह है कि भारतीय खिलाड़ी आज कितना खेल सामान आयात करते हैं और यह स्कीम उसे कैसे बदल सकती है। PIB और एक उद्योग रिपोर्ट से मिलान करें।",
+   "why": "ताज़ा कैबिनेट फ़ैसला है, जो खेल और मैन्युफैक्चरिंग को जोड़ता है। यह पैरा गेम्स वाले विषय से अलग है और युवा दर्शकों के लिए उपयोगी है। आयात के आँकड़े की पुष्टि दो स्रोतों से करनी होगी।",
+   "score": 71,
+   "views48": 16,
+   "planned": "2026-10-30 15:20",
    "when": "2026-10-31 06:30"
   },
   {
-   "topic": "भारत-UAE द्विपक्षीय निवेश संधि (BIT) पर हस्ताक्षर को कैबिनेट की मंज़ूरी: इससे निवेशकों को क्या सुरक्षा मिलती है, और UAE भारत के सबसे बड़े निवेशकों में क्यों है। विदेश मंत्रालय और एक आर्थिक रिपोर्ट से आँकड़े मिलाएँ। नेताओं की सिर्फ़ Wikimedia Commons की तस्वीरें लें।",
-   "why": "कूटनीति और अर्थव्यवस्था का ताज़ा मुद्दा है, जिसमें 'यह संधि क्यों अहम है' वाला जिज्ञासा कोण है। खोज के नतीजों से तारीख़ पक्की नहीं हुई, इसलिए अपलोड से पहले जाँचें।",
-   "score": 62,
-   "views48": 12,
-   "planned": "2026-10-30 15:14",
+   "topic": "प्रधानमंत्री विकसित ग्राम स्वराज योजना (PM VGSY): कैबिनेट ने 28 अक्टूबर 2026 को इसे 2026-27 से 2030-31 तक 5 साल के लिए केंद्र प्रायोजित योजना के रूप में मंज़ूरी दी। कम चर्चित सवाल यह है कि गाँव को इससे क्या मिलेगा और राज्यों और केंद्र के बीच ख़र्च कैसे बँटेगा। PIB और एक स्वतंत्र नीति रिपोर्ट से मिलान करें।",
+   "why": "यह पाँच साल की ग्रामीण विकास योजना है, इसलिए हिंदी भाषी गाँव और छोटे शहर के दर्शकों के लिए सीधे प्रासंगिक है। इसमें विकसित भारत का राष्ट्रीय गर्व वाला फ़्रेम है। पूरा बजट अभी सत्यापित करना होगा।",
+   "score": 69,
+   "views48": 14,
+   "planned": "2026-10-30 15:20",
    "when": "2026-11-01 04:50"
   },
   {
-   "topic": "कैबिनेट से India AI Mission को मंज़ूरी: कितने GPU और कितनी राशि का प्रावधान है, और आम भारतीय भाषाओं, यानी हिंदी के AI मॉडल के लिए इसका क्या मतलब है। PIB और एक स्वतंत्र तकनीकी रिपोर्ट से मिलान करें।",
-   "why": "हिंदी भाषी दर्शकों से सीधा जुड़ाव है और तकनीक में राष्ट्रीय गर्व का कोण है। हालाँकि यह फ़ैसला शायद पुराना हो चुका है, इसलिए ताज़ा खबर मानकर न चलाएँ। नया अपडेट मिले तो ही आगे बढ़ें।",
-   "score": 55,
-   "views48": 10,
-   "planned": "2026-10-30 15:14",
+   "topic": "पेंशनभोगियों के लिए महंगाई राहत (DR): कैबिनेट ने 28 अक्टूबर 2026 को नई किस्त मंज़ूर की, जो 1 जुलाई 2026 से लागू है। कम चर्चित सवाल यह है कि एक सामान्य पेंशनर को हर महीने कितना अतिरिक्त मिलेगा और DR और DA में क्या फ़र्क़ है। PIB और विभाग की अधिसूचना से मिलान करें। असली फ़ोटो सिर्फ़ Wikimedia Commons से लें।",
+   "why": "यह ताज़ा कैबिनेट फ़ैसले का पेंशनर वाला पहलू है, जिसमें आम नागरिक के लिए गणित समझाया जाता है। यह शुक्रवार वाले DA विषय के पास है, इसलिए नयापन कम है और स्कोर कम रखा है।",
+   "score": 62,
+   "views48": 12,
+   "planned": "2026-10-30 15:20",
    "when": "2026-11-01 06:30"
   }
  ],
  "yt-sawaal": [
-  {
-   "topic": "महाराष्ट्र SIR: मुंबई-पुणे में पुनर्विकास के कारण घर बदलने वाले मतदाता 'व्यक्ति नहीं मिला' क्यों दर्ज? सुप्रीम कोर्ट ने केंद्र और चुनाव आयोग को नोटिस दिया। याचिका में ड्राफ़्ट सूची से क़रीब 2.07 करोड़ नाम हटने की बात है, और 1.22 करोड़ नाम 'लॉजिकल डिस्क्रेपेंसी' में हैं। आपका नाम कैसे जाँचें, और आयोग का जवाब क्या आएगा?",
-   "why": "यह चुनाव आयोग से जुड़ी सुप्रीम कोर्ट की सुनवाई है और SIR का नया चरण है। इसका असर आम मतदाता के अधिकार और काग़ज़ों पर पड़ता है, जो इस चैनल की सबसे अच्छी चलने वाली कड़ी है। कम चर्चित पहलू यह है कि पुनर्विकास की वजह से अस्थायी रूप से बाहर रहे लोग भी सूची से कट गए। इसे तटस्थ रूप से दिखाया जाएगा: याचिकाकर्ता का दावा, कोर्ट का नोटिस, आयोग का जवाब अभी बाकी। हर तथ्य दो स्रोतों से पुष्ट होगा (Deccan Herald, LiveLaw/The Wire)। राष्ट्रीय गर्व का पहलू: दुनिया के सबसे बड़े लोकतंत्र में हर पात्र वोटर की गिनती। मुख्य खबर लगभग 3 दिन पुरानी है, इसलिए समयबद्धता का स्कोर कम है।",
-   "score": 72,
-   "views48": 90,
-   "planned": "2026-10-30 04:39",
-   "when": "2026-10-31 05:15"
-  },
   {
    "topic": "SIR चरण-3: चुनाव आयोग ने आंध्र प्रदेश और हरियाणा में नोटिस व आपत्ति की अवधि 20 नवंबर तक बढ़ाई। नगालैंड में 25 नवंबर और तेलंगाना में 26 नवंबर तक। अंतिम मतदाता सूची 30 नवंबर को आएगी। 36.73 करोड़ मतदाताओं वाले इस चरण में आपकी आख़िरी तारीख़ क्या है, और नाम कैसे जाँचें?",
    "why": "यह चुनाव आयोग का हाल का फ़ैसला है, जो आम मतदाता के दस्तावेज़ों और समय-सीमा से सीधे जुड़ा है। चैनल की पिछली सबसे अच्छी Shorts इसी विषय पर थीं। इसमें SIR की एक नई कड़ी है और एक सवाल खुला है: बढ़ी हुई तारीख़ों का फ़ायदा किन मतदाताओं को मिलेगा। यह महाराष्ट्र और दिल्ली की योजनाबद्ध Shorts से अलग है, क्योंकि यह कई राज्यों की समय-सीमा पर है। राष्ट्रीय गौरव का पहलू: दुनिया की सबसे बड़ी मतदाता सूची को सही रखने की कोशिश। दो स्रोत: newsonair.gov.in और DTNext। प्रकाशन से पहले तारीख़ें चुनाव आयोग की प्रेस नोट से मिला लें, क्योंकि खोज में साल साफ़ नहीं दिखा।",
    "score": 72,
    "views48": 90,
    "planned": "2026-10-30 12:30",
-   "when": "2026-10-31 06:55"
+   "when": "2026-10-31 05:15"
   },
   {
    "topic": "SIR पर चुनाव आयोग का हलफ़नामा: 3 आयुक्तों की सर्वसम्मति और सुप्रीम कोर्ट की अगली सुनवाई 17 नवंबर। Form 6 पर नया नोटिस भी जारी हुआ। आम वोटर के लिए इसका मतलब क्या है, और कौन-से सवाल अभी खुले हैं?",
@@ -209,30 +201,38 @@
    "score": 74,
    "views48": 110,
    "planned": "2026-10-30 13:05",
+   "when": "2026-10-31 06:55"
+  },
+  {
+   "topic": "SIR में आधार: सुप्रीम कोर्ट ने 8 सितंबर 2025 को आधार को 12वां मान्य दस्तावेज़ माना। क्या आधार नागरिकता का सबूत है?",
+   "why": "मतदाता के अपने दस्तावेज़ों से जुड़ा सवाल है, और SIR की अगली सुनवाई से पहले इसकी मांग रहेगी। दो स्रोतों से पुष्टि होगी: सुप्रीम कोर्ट का आदेश और चुनाव आयोग का निर्देश। ख़ुला सवाल यह है कि आधार किस काम के लिए मान्य है। इस सत्र में सीधी ताज़ा ख़बर नहीं मिल पाई, इसलिए यह एक स्रोत-पुष्ट explainer है।",
+   "score": 66,
+   "views48": 70,
+   "planned": "2026-10-30 15:20",
    "when": "2026-11-01 05:15"
   },
   {
-   "topic": "महाराष्ट्र SIR: 93% से ज़्यादा गणना फ़ॉर्म बँटे, पर सिर्फ़ 72.89% डिजिटाइज़ हुए। बाक़ी क़रीब 27% फ़ॉर्म का क्या होगा, और आपका फ़ॉर्म दर्ज हुआ या नहीं, यह कैसे देखें? (स्रोत: The Tribune रिपोर्ट, चुनाव आयोग के आँकड़े)",
-   "why": "यह SIR का नया चरण है और सीधे आम मतदाता के नाम और समय-सीमा से जुड़ा है। आँकड़े वाला कम चर्चित कोण है: बँटे हुए फ़ॉर्म और दर्ज फ़ॉर्म के बीच का अंतर। चैनल इसे बिना राय दिए तथ्यों और खुले सवाल के रूप में रखेगा। हर तथ्य के लिए दो स्रोत चाहिए, इसलिए प्रकाशन से पहले चुनाव आयोग की आधिकारिक विज्ञप्ति से मिलान करें।",
-   "score": 78,
-   "views48": 70,
-   "planned": "2026-10-30 15:14",
+   "topic": "बिहार की अंतिम मतदाता सूची: 30 सितंबर 2025 को 7.42 करोड़ नाम। मसौदे से 65 लाख नाम हटे थे, तो दावों से कितने जुड़े?",
+   "why": "SIR की पूरी कहानी का एक आंकड़ों वाला पहलू है, जो ज़्यादातर रिपोर्टों में छूट गया। इसमें दावों और आपत्तियों का आधिकारिक हिसाब ढूंढा जाएगा। भारतीय लोकतंत्र की साख और मतदाता के अधिकार से जुड़ा है। यह कहानी ताज़ा नहीं है, पर चल रहे SIR चरणों से सीधे जुड़ी है।",
+   "score": 62,
+   "views48": 60,
+   "planned": "2026-10-30 15:20",
    "when": "2026-11-01 06:55"
   },
   {
-   "topic": "राकेश कुमार सिंह की याचिका में SIR में 13 करोड़ नाम हटने का आरोप, जबकि चुनाव आयोग ने हलफ़नामे में सभी फ़ैसले सर्वसम्मति से लेने की बात कही। कौन-सा आँकड़ा किस दस्तावेज़ पर आधारित है, और अदालत में क्या साबित करना होगा? (स्रोत: LiveLaw, The Tribune)",
-   "why": "यह सुप्रीम कोर्ट में चुनाव आयोग से जुड़ी हालिया फ़ाइलिंग है, जिसे पिछले दिनों रिपोर्ट किया गया। ऐसे विषय पहले इस चैनल पर सबसे ज़्यादा चले हैं। कोण यह है कि आरोप के आँकड़े और आधिकारिक दस्तावेज़ों के आँकड़े अलग-अलग क्या कहते हैं। इसमें किसी पक्ष की राय नहीं रखी जाएगी। यह पहले से योजना में शामिल हलफ़नामे वाले विषय से अलग रहे, इसलिए इसका केंद्र आँकड़ों का स्रोत और सबूत का बोझ होगा।",
-   "score": 74,
-   "views48": 90,
-   "planned": "2026-10-30 15:14",
+   "topic": "जनगणना 2027: संदर्भ तिथि 1 मार्च 2027, और पहली बार जाति गणना साथ में। इसका आम परिवार के लिए क्या मतलब है?",
+   "why": "भारत की पहली डिजिटल जनगणना राष्ट्रीय गर्व का विषय है। यह परिसीमन और महिला आरक्षण के सवाल से भी जुड़ती है, जिन पर दर्शक पहले से रुचि दिखा चुके हैं। खुला सवाल यह है कि जाति के आंकड़े कब सार्वजनिक होंगे। पुष्टि गृह मंत्रालय की अधिसूचना और PIB से होगी।",
+   "score": 60,
+   "views48": 45,
+   "planned": "2026-10-30 15:20",
    "when": "2026-11-02 05:15"
   },
   {
-   "topic": "SIR में आधार 12वां मान्य पहचान दस्तावेज़ कैसे बना? सुप्रीम कोर्ट का निर्देश क्या था, और आधार से पहचान तो होती है लेकिन नागरिकता का सबूत क्यों नहीं माना जाता? (स्रोत: SCC Online, सुप्रीम कोर्ट का आदेश)",
-   "why": "यह एक जाँचा-परखा, स्रोतों वाला एक्सप्लेनर है। दस्तावेज़ों को लेकर वोटर की उलझन आम है और इसकी खोज लगातार होती है। खबर के हिसाब से यह कम ताज़ा है, इसलिए स्कोर कम है। 'आधार पहचान है, नागरिकता नहीं' वाला कोण कई बड़े आउटलेट के विवरण में दब जाता है। यह राष्ट्रीय गर्व वाले सवाल से भी जुड़ता है कि हर पात्र भारतीय का नाम सूची में कैसे बना रहे।",
-   "score": 62,
-   "views48": 45,
-   "planned": "2026-10-30 15:14",
+   "topic": "परिसीमन पर रोक: संविधान के किस अनुच्छेद के तहत लोकसभा की 543 सीटें जनगणना के बाद तक जमी हैं?",
+   "why": "'कौन-सी शक्ति किसके पास है' वाला संवैधानिक सवाल है, जो PM और CEC वाले सबसे ज़्यादा देखे गए Short जैसी बनावट का है। इसमें अनुच्छेद 82 और 81 का आधार लिया जाएगा। भारत के प्रतिनिधित्व और भविष्य से जुड़ा है। यह कोई ताज़ा घटना नहीं है।",
+   "score": 58,
+   "views48": 55,
+   "planned": "2026-10-30 15:20",
    "when": "2026-11-02 06:55"
   }
  ],
