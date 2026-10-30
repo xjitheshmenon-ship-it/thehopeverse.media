@@ -1,0 +1,12 @@
+{
+  "title": "ÆTHER: Storm Entry piano hook (solo piano layer)",
+  "story": "A piano hook rides over the hero's walk-in.",
+  "script": "20-30 s: as the silhouette appears at the gate, a piano hook carries the transition into the reveal. It comes back over the drums later as the hero's signature.",
+  "brief": {
+    "notes": "Jithesh 30 Oct 12:00: 'piano needed for the transition between 20-30 s, maybe use it after also, a piano hook.' A solo piano layer (C minor, 112 BPM) placed on top of the locked final version, which stays unchanged underneath."
+  },
+  "seconds": 30,
+  "takes": 2,
+  "instrumental": true,
+  "prompt": "SOLO GRAND PIANO ONLY, a recording for layering on top of a film score: no drums, no bass, no strings, no synths, no voices, no other instruments at all. Exactly 112 BPM, strict tempo, C minor (C, D, E-flat, F, G, A-flat, B-flat, with a sharp-four F-sharp passing note for menace). A bold, catchy hero hook of 5 notes, played as powerful octaves in the middle and upper register of a concert grand piano, close and dry, no reverb tail, like the piano hook of a modern South Indian mass film score. 0-8 s: the hook played clearly twice, strong and rhythmic, with a short grace-note slide into the last note. 8-16 s: the hook answered by a rising variation that climbs higher, building tension. 16-24 s: the hook again with fast repeated-note runs between the phrases, more urgent. 24-30 s: the hook one last time in big octaves, ending on a strong held C. Every phrase starts exactly on the beat. Clean, close, punchy piano sound."
+}
