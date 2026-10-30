@@ -1,0 +1,203 @@
+{
+ "title": "ÆTHER: First Love v17 (Tamil lyrics by Mr. Kavi, romanised lines)",
+ "story": "A boy sees a girl for the first time and falls in love, told by ONE love melody that is first hummed, then sung in Tamil, and grows into a celebration.",
+ "brief": {
+  "notes": "Jithesh 30 Oct 10:11 on v16 (Malayalam): 'I don't know about Malayalam, let's try Tamil'. v17 = the same v2.5 chunk plan, form, key and tempo as v16 with Mr. Kavi's Tamil lyrics; lyric sheet /mnt/project-files/music/first-love-v17/first-love-v17-lyrics.md. v17 has Tamil script, v17r the same lines romanised."
+ },
+ "seconds": 80,
+ "takes": 1,
+ "instrumental": false,
+ "plan": {
+  "chunks": [
+   {
+    "text": "[The glance]\n(mm-mm-mm, mm-mmm)\n(aa-aa-aa, aa-aaa)",
+    "duration_ms": 10000,
+    "positive_styles": [
+     "one single South Indian style love song built on ONE memorable love melody that returns again and again",
+     "bright G major the whole way with the magical raised fourth of raga Kalyani",
+     "one steady 92 BPM pulse from start to end",
+     "one soft sweet close female voice singing the words in Tamil (the lines are Tamil written in English letters), clear natural diction, gamakam slides and a long held note that bends at the end of each line",
+     "soft wordless female humming between the sung lines",
+     "bansuri flute, violin section in Indian-style unison, plucked veena, felt piano, acoustic guitar, deep warm round bass, tabla and dholak keherwa groove with a soft kick and claps",
+     "all instruments close, dry and natural, played by real musicians",
+     "the female voice hums the love melody softly",
+     "light tabla pulse and veena",
+     "curious and wondering"
+    ],
+    "negative_styles": [
+     "minor key",
+     "sad",
+     "dark",
+     "slow",
+     "silence",
+     "pauses",
+     "heavy echo",
+     "EDM",
+     "rap",
+     "male voice",
+     "a different unrelated tune",
+     "sudden mood change",
+     "full drums"
+    ],
+    "context_adherence": "high"
+   },
+   {
+    "text": "[Love melody]\nkannil oru minnal vandhadhu\nvinnil oru vaanavil nindradhu\nmudhal murai unnai paartha neram",
+    "duration_ms": 16000,
+    "positive_styles": [
+     "one single South Indian style love song built on ONE memorable love melody that returns again and again",
+     "bright G major the whole way with the magical raised fourth of raga Kalyani",
+     "one steady 92 BPM pulse from start to end",
+     "one soft sweet close female voice singing the words in Tamil (the lines are Tamil written in English letters), clear natural diction, gamakam slides and a long held note that bends at the end of each line",
+     "soft wordless female humming between the sung lines",
+     "bansuri flute, violin section in Indian-style unison, plucked veena, felt piano, acoustic guitar, deep warm round bass, tabla and dholak keherwa groove with a soft kick and claps",
+     "all instruments close, dry and natural, played by real musicians",
+     "the voice sings the love melody with words",
+     "groove, bass and acoustic guitar enter",
+     "the flute answers each line with a small echo of the melody"
+    ],
+    "negative_styles": [
+     "minor key",
+     "sad",
+     "dark",
+     "slow",
+     "silence",
+     "pauses",
+     "heavy echo",
+     "EDM",
+     "rap",
+     "male voice",
+     "a different unrelated tune",
+     "sudden mood change"
+    ],
+    "context_adherence": "high"
+   },
+   {
+    "text": "[Interlude]\n{instrumental}",
+    "duration_ms": 12000,
+    "positive_styles": [
+     "one single South Indian style love song built on ONE memorable love melody that returns again and again",
+     "bright G major the whole way with the magical raised fourth of raga Kalyani",
+     "one steady 92 BPM pulse from start to end",
+     "one soft sweet close female voice singing the words in Tamil (the lines are Tamil written in English letters), clear natural diction, gamakam slides and a long held note that bends at the end of each line",
+     "soft wordless female humming between the sung lines",
+     "bansuri flute, violin section in Indian-style unison, plucked veena, felt piano, acoustic guitar, deep warm round bass, tabla and dholak keherwa groove with a soft kick and claps",
+     "all instruments close, dry and natural, played by real musicians",
+     "flute and violins play a variation of the same melody together in unison",
+     "the groove keeps going",
+     "soft humming underneath"
+    ],
+    "negative_styles": [
+     "minor key",
+     "sad",
+     "dark",
+     "slow",
+     "silence",
+     "pauses",
+     "heavy echo",
+     "EDM",
+     "rap",
+     "male voice",
+     "a different unrelated tune",
+     "sudden mood change",
+     "new tune"
+    ],
+    "context_adherence": "high"
+   },
+   {
+    "text": "[Verse]\nthendral vandhu un per sonnadhu\nnenjil oru poo malarndhadhu\nendrum nee en kooda vendum",
+    "duration_ms": 16000,
+    "positive_styles": [
+     "one single South Indian style love song built on ONE memorable love melody that returns again and again",
+     "bright G major the whole way with the magical raised fourth of raga Kalyani",
+     "one steady 92 BPM pulse from start to end",
+     "one soft sweet close female voice singing the words in Tamil (the lines are Tamil written in English letters), clear natural diction, gamakam slides and a long held note that bends at the end of each line",
+     "soft wordless female humming between the sung lines",
+     "bansuri flute, violin section in Indian-style unison, plucked veena, felt piano, acoustic guitar, deep warm round bass, tabla and dholak keherwa groove with a soft kick and claps",
+     "all instruments close, dry and natural, played by real musicians",
+     "the voice sings a verse built from the same melody's opening notes",
+     "violins underneath",
+     "rising and hopeful"
+    ],
+    "negative_styles": [
+     "minor key",
+     "sad",
+     "dark",
+     "slow",
+     "silence",
+     "pauses",
+     "heavy echo",
+     "EDM",
+     "rap",
+     "male voice",
+     "a different unrelated tune",
+     "sudden mood change"
+    ],
+    "context_adherence": "high"
+   },
+   {
+    "text": "[Love melody returns]\nkannil oru minnal vandhadhu\nvinnil oru vaanavil nindradhu\nmudhal murai unnai paartha neram",
+    "duration_ms": 18000,
+    "positive_styles": [
+     "one single South Indian style love song built on ONE memorable love melody that returns again and again",
+     "bright G major the whole way with the magical raised fourth of raga Kalyani",
+     "one steady 92 BPM pulse from start to end",
+     "one soft sweet close female voice singing the words in Tamil (the lines are Tamil written in English letters), clear natural diction, gamakam slides and a long held note that bends at the end of each line",
+     "soft wordless female humming between the sung lines",
+     "bansuri flute, violin section in Indian-style unison, plucked veena, felt piano, acoustic guitar, deep warm round bass, tabla and dholak keherwa groove with a soft kick and claps",
+     "all instruments close, dry and natural, played by real musicians",
+     "the same love melody at its happiest and fullest",
+     "voice, violins and flute together in unison",
+     "full drums and bass",
+     "joyful celebration"
+    ],
+    "negative_styles": [
+     "minor key",
+     "sad",
+     "dark",
+     "slow",
+     "silence",
+     "pauses",
+     "heavy echo",
+     "EDM",
+     "rap",
+     "male voice",
+     "a different unrelated tune",
+     "sudden mood change"
+    ],
+    "context_adherence": "high"
+   },
+   {
+    "text": "[Last look]\nmudhal murai unnai paartha neram\n(mm-mm-mm, mm-mmm)",
+    "duration_ms": 8000,
+    "positive_styles": [
+     "one single South Indian style love song built on ONE memorable love melody that returns again and again",
+     "bright G major the whole way with the magical raised fourth of raga Kalyani",
+     "one steady 92 BPM pulse from start to end",
+     "one soft sweet close female voice singing the words in Tamil (the lines are Tamil written in English letters), clear natural diction, gamakam slides and a long held note that bends at the end of each line",
+     "soft wordless female humming between the sung lines",
+     "bansuri flute, violin section in Indian-style unison, plucked veena, felt piano, acoustic guitar, deep warm round bass, tabla and dholak keherwa groove with a soft kick and claps",
+     "all instruments close, dry and natural, played by real musicians",
+     "the voice sings the last line softly once more, then hums",
+     "ending on a warm bright G major chord"
+    ],
+    "negative_styles": [
+     "minor key",
+     "sad",
+     "dark",
+     "slow",
+     "silence",
+     "pauses",
+     "heavy echo",
+     "EDM",
+     "rap",
+     "male voice",
+     "a different unrelated tune",
+     "sudden mood change",
+     "full drums"
+    ],
+    "context_adherence": "high"
+   }
+  ]
+ }
+}
