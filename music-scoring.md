@@ -199,6 +199,32 @@ Jithesh's notes on two clips: "a complete transition happening every 8-18 sec", 
 - **R24** (24.4 s, ~96 BPM): 0-4 s one high instrument alone (no bass, 57-63% above 2 kHz); about 4 s a second layer joins (+3 dB); at 6 s the full mix lands with the bass (+8 dB, sub 0.03 to 0.27). Dip again at 14 s for 2 s.
 Pattern: a full section change every 8-18 s; the start builds one layer at a time; the bass leaving for 2-4 s (played, not muted) is what makes each change feel big.
 
+### 8g. Romance references R25-R27 (Jithesh, 30 Oct 2026: "romantic tracks to train Raga")
+Three phone screen-recordings of Instagram romantic BGM reels (28 s, 19 s, 17 s; a 4th upload was a duplicate). Measured with tools/analyze.py, changes.py and a pyin lead-pitch pass, then compared with our First Love v7 take 2 and v8 Reetigowla take 1:
+
+| | R25 | R26 | R27 | our v7 t2 / v8 t1 |
+|---|---|---|---|---|
+| Tempo | ~81 BPM | ~59 (117 double) | ~96 (48 half) | 92-99 / 72 |
+| Key | D minor | A# minor | D major | D-A major / D# major |
+| Brightness (centroid; share above 2 kHz) | 897 Hz; 0% | 1042 Hz; 0% | 1232 Hz; 2% | 1600-1950 Hz; 1-8% |
+| Sub+bass share | 30% | 69% | 70% | 40-60% |
+| Percussive share | 9% | 22% | 19% | 12% / 3% |
+| Drum hits per second | 1.3 | 1.0 | 1.3 | 3-4 |
+| Pulse clarity (0-1) | 0.31 | 0.21 | 0.23 | 0.59 / 0.64 |
+| Tail after each note (reverb/echo proxy) | 0.70 | 0.59 | 0.74 | 0.85 / 0.89 |
+| Lead range; glide share | 15 st; 0.36 | 24 st; 0.41 | 7 st; 0.23 | 24 st; 0.56 / 14 st; 0.50 |
+| Change every | 5-7 s | 3-11 s | 4-7 s | 4-10 s |
+| Level, crest | flat -17 dB, 17 dB | flat -17 dB, 17 dB | flat -18 dB, 17 dB | similar |
+
+What romance means in his references, against ours:
+1. **Warm and dark, not bright**: almost nothing above 2 kHz. Ours were two times brighter (sparkle, shimmer, bangles, music box). Romance is soft and warm.
+2. **Deep, round bass** carries the body (R26 and R27 are about 70% low end).
+3. **Rhythm = few soft, heavy hits at a slow tempo** (about 1 hit per second, 59-96 BPM), loose and human, not a busy, strict grid. Ours had 3-4 hits per second and a strict pulse: that read as "refreshing"/dance, not romance. The percussion is still clearly there (9-22%, versus 3% in v8), so the beat is felt.
+4. **Drier, closer sound**: much shorter tails after each note than ours (0.59-0.74 vs 0.85-0.89). This matches his "too much echo" note (rule 16).
+5. **Clean held notes**: fewer bends and wobbles than ours (glide 0.23-0.41 vs 0.50-0.56). A clear, simple, singable line.
+6. **Minor is fine for romance** when it is warm (two of three are minor). v1 was "too sad" because it was thin, quiet and slow to start, not because of the minor key.
+7. Steady, flat level and a change every 4-7 s, as in our other rules.
+
 ## 9. Our sound identity: "Broken Heritage + sonic logo" (Jithesh chose it, 28 Oct 2026)
 
 Jithesh: "everything is good, but there is no uniqueness; we need our own identity." Identity = fixed signatures in every track, so a listener knows it is ours in 3 seconds. Every brief must carry all five:
