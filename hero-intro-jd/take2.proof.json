@@ -1,0 +1,19 @@
+{
+  "title": "Hero Intro (JD-style reference)",
+  "take": 2,
+  "made_at_utc": "2026-10-30T14:47:19.529569+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "fVxhlsXBbQrs5vusexl4",
+  "request": {
+    "prompt": "A dark, heavy, swaggering modern South Indian mass hero introduction score, 35 seconds, built for a slow-motion hero entry. Electronic and bass-led: a deep, sustained 808 sub-bass that holds long notes, dark processed synth stabs hitting every two beats, gritty distorted textures and unique processed sound design. Very bass-heavy and dark in tone, little high end. One steady tempo, 99 BPM, in E minor with a raised seventh (E F# G A B C D#). ONE original, menacing 4-bar hook (about 10 seconds long) runs through the whole track: E G A B, A G F# D# E, played on a dark synth lead with raga-style bends and slides, coming back bigger every time and climbing an octave at the peak. Written the way today's South Indian film composers score a mass hero entry: swagger, stop-and-slam full-band hits, a male wordless chant answering the hook, a korvai-style ending. Electronic leads; a real mridangam and a plucked veena are the second layer, played close, dry and natural, no heavy echo, not chopped. 0-2 s: quiet, a low drone and a reversed swell. 2-12 s: slam in with the 808 sub, the stabs every two beats and mridangam; the synth lead plays the hook. 12-21 s: the hook again, louder; a deep male wordless chant answers each phrase; the veena plucks a counter-line. 21-22 s: one rising sweep and a half-second stop. 22-32 s: the peak: the hook an octave higher, full male choir chant, doubled drums, brass-like synth stabs. 32-35 s: three slamming full-band hits and a final deep boom that rings out. No soft long intro, no fade-out, no EDM drop, no side-chain pumping, no white-noise risers, no lyrics.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 35000
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 14:27 uploaded 'Master - JD Intro Bgm.mp3' and asked for a track like it. Measured with music/tools/analyze.py + deep.py (numbers in script). Built on the hero rules: electronic leads, one Carnatic instrument as 2nd/3rd layer, steady sub (no pumping), 4-bar theme repeated bigger, korvai ending. 2 takes; we pick."
+  },
+  "story": "A 35-second mass hero intro: darkness, a slow tease, then the hero walks in on a heavy dark groove that keeps getting bigger until a three-hit ending.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
