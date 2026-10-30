@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Sway v7 (refined: hook, transitions, flow)",
+  "take": 1,
+  "made_at_utc": "2026-10-30T12:17:22.299097+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "aU5tyQxYQ71iqOKZLH3N",
+  "request": {
+    "prompt": "ONE SONG, ONE HOOK, SMOOTH FLOW: a warm, tender, gently uplifting romantic song with wordless humming only, no lyrics, in the style of modern South Indian film music, for two young people on their first evening walk by the sea. A major the whole time, raga Shankarabharanam (the A major scale A B C# D E F# G# with Carnatic gamakam shakes on C#, F# and G#), exactly 120 BPM with a light lilting swing; the beat and the groove never stop from the first second to the last. THE HOOK: a short, simple, singable two-bar melody, instantly memorable, heard in the very first bar, and it keeps coming back in every section so the whole track is built on it. THE HARMONY FLOWS: the same warm four-chord loop (A major, F sharp minor, D major, E major) repeats under the whole song. TRANSITIONS: every change of section is led in by a one-bar tabla roll or dholak pickup with a rising santoor run or soft cymbal swell, so each part grows out of the last one, never a stop, never a gap, never a sudden new sound. THE VOICES: a world-class professional female playback singer, Carnatic-trained, hums the hook (soft mmm opening into a sweet aah), effortless, perfectly in tune, expressive, with graceful slides, quick grace-note turns and delicate vibrato on long notes, close and polished; a warm, skilled male voice hums the answers. THE BAND (the same all the way through): bamboo flute doubling the hook, a bright tumbi and a bouncy synth pluck answering it, solo violin, santoor, mandolin and clean electric guitar strumming lightly, warm Rhodes, a soft arpeggiator, tabla and dholak with a soft modern kick, light snaps and a deep round bass. Acoustic instruments and voices sound natural, dry and close, no echo or delay on them, never chopped or reversed. Timeline: 0-8 s the female voice sings the hook at once with flute, light tabla and Rhodes already in the groove. 8-16 s the groove fills out with bass, soft kick and guitar; tumbi and synth pluck answer the hook. 15-16 s a one-bar tabla roll and rising santoor run lead in. 16-32 s the hook on flute, the male voice answers each phrase. 31-32 s a dholak pickup and soft cymbal swell. 32-48 s violin and santoor play a higher variation of the hook, the voices in harmony, the groove a little busier. 47-48 s a short tabla fill and a voice glide lead back. 48-72 s the hook at its fullest: both voices with flute and warm strings, everything playing. 72-80 s the female voice sings the hook one last time over light tabla, ending on a clean A. Not a movie background, no big orchestral swells, no choir, no new unrelated melodies, no breaks, no EDM drop, no side-chain pumping, no silence anywhere.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 80000
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 09:35-12:12: v5 take 2 is the right track (romantic, not refreshing), wants professional humming, and 'more refinement: transition, and flows in music, hooks'. v7 keeps v5 take 2's identity (A major, 120 BPM, one band, one hook) and adds what he asked: a short singable 2-bar hook from second 0 returning every section, a fixed four-chord loop so the harmony flows, and a one-bar fill into every section change (never a stop). Pro playback-singer humming built in (v6's plain hum sounded amateur). Raga Shankarabharanam on A (v5 take 2 measured only 64% in raga, chromatic). Script-first per music-scoring rule 17. Prompt mode (music_v2)."
+  },
+  "story": "Two young people on their first evening walk by the sea: one hook that keeps coming back, each time closer.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
