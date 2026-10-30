@@ -323,6 +323,7 @@ def _can_pay() -> bool:
 
 def _image(url: str) -> dict:
     """A thumbnail sent as data: Claude can't fetch Pixabay's thumbnail links itself ("Unable to download")."""
+    url = urllib.parse.quote(url, safe=":/~?&=%")  # NASA thumbnail links have spaces in them
     with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"}), timeout=30) as r:
         return {"type": "base64", "media_type": r.headers.get_content_type(), "data": base64.b64encode(r.read()).decode()}
 
@@ -343,9 +344,9 @@ def _pick(scene: "Scene", thumbnails: list) -> int:
         paid["usd"] += _cost(HELPER_MODEL, response.usage)
         k = int(re.search(r"-?\d+", next(b.text for b in response.content if b.type == "text")).group())
         return k if k < len(thumbnails) else -1
-    except Exception as e:  # can't check: take the search's best match, as before
+    except Exception as e:  # can't check: an unchecked clip is how a space station ended up in a court story
         print(f"    could not check the footage: {e}")
-        return 0
+        return -1
 
 
 def _stock(scene: "Scene", query: str, size: tuple, duration: float, work: Path, used: set):
@@ -502,7 +503,7 @@ def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float
         except Exception as e:  # missing footage is not worth losing the video over
             print(f"    no footage for '{query}': {e}")
     try:
-        path = None if cast_only else _nasa(scene, query, used, work)
+        path = None if cast_only or not query else _nasa(scene, query, used, work)
         if path:
             shots.append(path)
             return _clip(path, size, duration, skip=0.2)  # skip NASA title cards at the start
