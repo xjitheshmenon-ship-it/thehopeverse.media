@@ -39,7 +39,7 @@ jobs:
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core && pip install -q -r requirements.txt fal-client imageio-ffmpeg
       - run: |
           git fetch origin music-tracks && git worktree add out origin/music-tracks
-          mkdir -p "films/$NAME" && cp -n out/films/"$NAME"/raw-*.mp4 out/films/"$NAME"/ref-* "films/$NAME/" 2>/dev/null || true
+          mkdir -p "films/$NAME" && cp -n out/films/"$NAME"/raw-*.mp4 out/films/"$NAME"/ref-* out/films/"$NAME"/frame-* "films/$NAME/" 2>/dev/null || true
       - name: Unlock the channel's sign-in (only when posting)
         if: inputs.post != ''
         env:
@@ -53,7 +53,7 @@ jobs:
       - run: python film.py "films/$NAME.json"
       - if: always()
         run: |
-          mkdir -p "out/films/$NAME" && cp films/"$NAME"/raw-*.mp4 films/"$NAME"/ref-* "out/films/$NAME/" 2>/dev/null || true
+          mkdir -p "out/films/$NAME" && cp films/"$NAME"/raw-*.mp4 films/"$NAME"/ref-* films/"$NAME"/frame-* "out/films/$NAME/" 2>/dev/null || true
           cp "films/$NAME.mp4" out/films/ 2>/dev/null || true
           git config --global user.name hope && git config --global user.email hope@users.noreply.github.com  # rebase on pull needs it too
           cd out && git checkout -q -B music-tracks
