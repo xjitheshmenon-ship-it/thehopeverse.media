@@ -1,0 +1,241 @@
+{
+  "title": "\u00c6THER: Steppu Veyyi Raa v2 (modern mass-pop hooks and production)",
+  "take": 1,
+  "made_at_utc": "2026-10-30T18:40:42.905125+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2_5",
+  "elevenlabs_song_id": "ksEukaMlYrugYj0MezMT",
+  "request": {
+    "composition_plan": {
+      "chunks": [
+        {
+          "text": "[Intro]\n{dappu drums alone, then the brass riff}\nBaraat vachindi raa!",
+          "duration_ms": 6000,
+          "positive_styles": [
+            "high-energy modern Telugu film mass dance song, wedding baraat night in Hyderabad, fun, cheeky and swaggering, a big singalong",
+            "D minor with a heroic lift, raga-shaped melody with fast gamakam slides and bends",
+            "one steady 132 BPM groove from start to end, the swinging mass bounce that flips into a triplet feel at section ends",
+            "modern mass-hero production: punchy kick, heavy 808 bass, crisp trap hi-hats with rolls, loud dry dappu frame drums underneath",
+            "a catchy 4-note synth lead hook that repeats and comes back bigger each time, brass stabs and a distorted electric guitar riff doubling it",
+            "playful gang-vocal chants and quirky vocal chops as hooks between the lines",
+            "a quirky, nasal, high-energy young male voice singing in Telugu with clear diction, playful English ad-libs",
+            "a big crowd chorus shouting the one-word answers",
+            "loud, bright, wide modern mix with huge low end",
+            "starts with a low pulsing synth ostinato and the dappu alone, a short riser, one beat of silence, then a massive drop with the 4-note synth hook and full beat by 4 s",
+            "he shouts the line like an announcement"
+          ],
+          "negative_styles": [
+            "sad",
+            "slow",
+            "ballad",
+            "soft",
+            "long pauses",
+            "heavy echo",
+            "dubstep",
+            "old-fashioned",
+            "boring",
+            "repetitive loop",
+            "whistle",
+            "nadaswaram",
+            "humming",
+            "Tamil",
+            "Hindi",
+            "acoustic folk band",
+            "quiet start",
+            "fade in"
+          ],
+          "context_adherence": "high"
+        },
+        {
+          "text": "[Verse]\nLaptop vadilesi, tie vippesaanu\nPelli baraat lo nenu silent guy-u\nMaavayya laagaadu floor meedaki\nKaallu vanukutunnaayi, em cheyyaali?",
+          "duration_ms": 12000,
+          "positive_styles": [
+            "high-energy modern Telugu film mass dance song, wedding baraat night in Hyderabad, fun, cheeky and swaggering, a big singalong",
+            "D minor with a heroic lift, raga-shaped melody with fast gamakam slides and bends",
+            "one steady 132 BPM groove from start to end, the swinging mass bounce that flips into a triplet feel at section ends",
+            "modern mass-hero production: punchy kick, heavy 808 bass, crisp trap hi-hats with rolls, loud dry dappu frame drums underneath",
+            "a catchy 4-note synth lead hook that repeats and comes back bigger each time, brass stabs and a distorted electric guitar riff doubling it",
+            "playful gang-vocal chants and quirky vocal chops as hooks between the lines",
+            "a quirky, nasal, high-energy young male voice singing in Telugu with clear diction, playful English ad-libs",
+            "a big crowd chorus shouting the one-word answers",
+            "loud, bright, wide modern mix with huge low end",
+            "funny storytelling verse, he sings shy and nervous but on the beat, half-sung half-spoken",
+            "808 and hi-hats tighter, vocal chops answer each line"
+          ],
+          "negative_styles": [
+            "sad",
+            "slow",
+            "ballad",
+            "soft",
+            "long pauses",
+            "heavy echo",
+            "dubstep",
+            "old-fashioned",
+            "boring",
+            "repetitive loop",
+            "whistle",
+            "nadaswaram",
+            "humming",
+            "Tamil",
+            "Hindi",
+            "acoustic folk band"
+          ],
+          "context_adherence": "high"
+        },
+        {
+          "text": "[Turn]\nDappu mogindi...\n{full-band stop, one beat of silence}\n(Steppu!)",
+          "duration_ms": 6000,
+          "positive_styles": [
+            "high-energy modern Telugu film mass dance song, wedding baraat night in Hyderabad, fun, cheeky and swaggering, a big singalong",
+            "D minor with a heroic lift, raga-shaped melody with fast gamakam slides and bends",
+            "one steady 132 BPM groove from start to end, the swinging mass bounce that flips into a triplet feel at section ends",
+            "modern mass-hero production: punchy kick, heavy 808 bass, crisp trap hi-hats with rolls, loud dry dappu frame drums underneath",
+            "a catchy 4-note synth lead hook that repeats and comes back bigger each time, brass stabs and a distorted electric guitar riff doubling it",
+            "playful gang-vocal chants and quirky vocal chops as hooks between the lines",
+            "a quirky, nasal, high-energy young male voice singing in Telugu with clear diction, playful English ad-libs",
+            "a big crowd chorus shouting the one-word answers",
+            "loud, bright, wide modern mix with huge low end",
+            "the band drops to the low ostinato for two beats, a rising riser and a 1/16-note snare stutter, one beat of silence, then a huge drop",
+            "the crowd shouts the answer on the drop"
+          ],
+          "negative_styles": [
+            "sad",
+            "slow",
+            "ballad",
+            "soft",
+            "long pauses",
+            "heavy echo",
+            "dubstep",
+            "old-fashioned",
+            "boring",
+            "repetitive loop",
+            "whistle",
+            "nadaswaram",
+            "humming",
+            "Tamil",
+            "Hindi",
+            "acoustic folk band"
+          ],
+          "context_adherence": "high"
+        },
+        {
+          "text": "[Hook]\nSteppu veyyi raa!\n(Steppu!)\nSpeedu penchu raa!\n(Speedu!)\nDhinaku dhin dhin, dappu kottu raa!\nEe raatri manadi raa!\n(Manadi!)",
+          "duration_ms": 14000,
+          "positive_styles": [
+            "high-energy modern Telugu film mass dance song, wedding baraat night in Hyderabad, fun, cheeky and swaggering, a big singalong",
+            "D minor with a heroic lift, raga-shaped melody with fast gamakam slides and bends",
+            "one steady 132 BPM groove from start to end, the swinging mass bounce that flips into a triplet feel at section ends",
+            "modern mass-hero production: punchy kick, heavy 808 bass, crisp trap hi-hats with rolls, loud dry dappu frame drums underneath",
+            "a catchy 4-note synth lead hook that repeats and comes back bigger each time, brass stabs and a distorted electric guitar riff doubling it",
+            "playful gang-vocal chants and quirky vocal chops as hooks between the lines",
+            "a quirky, nasal, high-energy young male voice singing in Telugu with clear diction, playful English ad-libs",
+            "a big crowd chorus shouting the one-word answers",
+            "loud, bright, wide modern mix with huge low end",
+            "full energy singalong hook, he sings confident like a mass hero now",
+            "the crowd shouts the one-word answers back, stop-and-slam brass and guitar hits after each answer",
+            "the synth hook doubles the vocal hook"
+          ],
+          "negative_styles": [
+            "sad",
+            "slow",
+            "ballad",
+            "soft",
+            "long pauses",
+            "heavy echo",
+            "dubstep",
+            "old-fashioned",
+            "boring",
+            "repetitive loop",
+            "whistle",
+            "nadaswaram",
+            "humming",
+            "Tamil",
+            "Hindi",
+            "acoustic folk band"
+          ],
+          "context_adherence": "high"
+        },
+        {
+          "text": "[Twist]\nPakkana ammamma saree biginchindi\nNaa kanna fast-u ga steppulesindi!\n(Ammamma!)",
+          "duration_ms": 10000,
+          "positive_styles": [
+            "high-energy modern Telugu film mass dance song, wedding baraat night in Hyderabad, fun, cheeky and swaggering, a big singalong",
+            "D minor with a heroic lift, raga-shaped melody with fast gamakam slides and bends",
+            "one steady 132 BPM groove from start to end, the swinging mass bounce that flips into a triplet feel at section ends",
+            "modern mass-hero production: punchy kick, heavy 808 bass, crisp trap hi-hats with rolls, loud dry dappu frame drums underneath",
+            "a catchy 4-note synth lead hook that repeats and comes back bigger each time, brass stabs and a distorted electric guitar riff doubling it",
+            "playful gang-vocal chants and quirky vocal chops as hooks between the lines",
+            "a quirky, nasal, high-energy young male voice singing in Telugu with clear diction, playful English ad-libs",
+            "a big crowd chorus shouting the one-word answers",
+            "loud, bright, wide modern mix with huge low end",
+            "comic surprise: the beat switches to a fast triplet feel, a cheeky synth slide goes up",
+            "he sings amazed and laughing, the crowd cheers the grandmother's name"
+          ],
+          "negative_styles": [
+            "sad",
+            "slow",
+            "ballad",
+            "soft",
+            "long pauses",
+            "heavy echo",
+            "dubstep",
+            "old-fashioned",
+            "boring",
+            "repetitive loop",
+            "whistle",
+            "nadaswaram",
+            "humming",
+            "Tamil",
+            "Hindi",
+            "acoustic folk band"
+          ],
+          "context_adherence": "high"
+        },
+        {
+          "text": "[Final hook]\nSteppu veyyi raa!\n(Steppu!)\nSpeedu penchu raa!\n(Speedu!)\nAmmamma steppu, record-u break-u!\n(Manadi!)",
+          "duration_ms": 12000,
+          "positive_styles": [
+            "high-energy modern Telugu film mass dance song, wedding baraat night in Hyderabad, fun, cheeky and swaggering, a big singalong",
+            "D minor with a heroic lift, raga-shaped melody with fast gamakam slides and bends",
+            "one steady 132 BPM groove from start to end, the swinging mass bounce that flips into a triplet feel at section ends",
+            "modern mass-hero production: punchy kick, heavy 808 bass, crisp trap hi-hats with rolls, loud dry dappu frame drums underneath",
+            "a catchy 4-note synth lead hook that repeats and comes back bigger each time, brass stabs and a distorted electric guitar riff doubling it",
+            "playful gang-vocal chants and quirky vocal chops as hooks between the lines",
+            "a quirky, nasal, high-energy young male voice singing in Telugu with clear diction, playful English ad-libs",
+            "a big crowd chorus shouting the one-word answers",
+            "loud, bright, wide modern mix with huge low end",
+            "the hook one key higher and bigger than before, everything playing, the happiest moment",
+            "ends on one last big full-band hit on the final word, no fade"
+          ],
+          "negative_styles": [
+            "sad",
+            "slow",
+            "ballad",
+            "soft",
+            "long pauses",
+            "heavy echo",
+            "dubstep",
+            "old-fashioned",
+            "boring",
+            "repetitive loop",
+            "whistle",
+            "nadaswaram",
+            "humming",
+            "Tamil",
+            "Hindi",
+            "acoustic folk band",
+            "fade out",
+            "long ending"
+          ],
+          "context_adherence": "high"
+        }
+      ]
+    },
+    "model_id": "music_v2_5"
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 18:34 on v1: 'Cool. Give some anirudh hooks and style'. v2 = same story and lyrics, modern mass-pop production traits only (music.md s13, no names in prompts): low ostinato, riser, one silent beat, huge drop, 808 + trap hats, repeating 4-note synth hook doubled by brass and distorted guitar, gang chants and vocal chops, quirky nasal male voice, minor key with heroic lift. Original melody, nothing copied."
+  },
+  "story": "A shy software guy at a Hyderabad wedding baraat gets dragged onto the floor by his uncle. His legs shake, then the dappu drums hit and he turns into a mass hero. Twist: the grandmother tightens her saree and out-dances everyone.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
