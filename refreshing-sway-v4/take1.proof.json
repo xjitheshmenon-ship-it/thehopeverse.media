@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Refreshing Sway v4 (continuation after 40 s)",
+  "take": 1,
+  "made_at_utc": "2026-10-30T08:10:19.166177+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "fk92zd2SQCDqvjv6Q3Sz",
+  "request": {
+    "prompt": "THE ACOUSTIC INSTRUMENTS MUST SOUND NATURAL: bamboo flute, solo violin, tumbi, veena, santoor, mandolin, tabla and dholak are recorded dry and close, played by hand, exactly like themselves, no echo or delay on them, never chopped, glitched or reversed. Mixed equally with fresh modern sounds playing WITH them: a bright bouncy synth pluck, a sparkling arpeggiator, a warm Rhodes electric piano, a clean chorused electric guitar with light offbeat chops, an airy soft synth lead, a deep sub bass and a crisp modern drum layer (tight kick, finger snaps, light hi-hats) locked with the tabla. A bright, refreshing, breezy, carefree instrumental in the style of modern South Indian film music, like a morning drive along the coast with the windows down. KEY AND TEMPO ARE FIXED: D major the whole time, exactly 120 BPM in 4/4 with a lilting swing, the beat steady from the very first second to the last, never stopping, never pausing. This piece starts in the middle of a song that is already grooving: no intro, no fade-in, the full groove plays from the first beat. Timeline: 0-4 s: a TRANSITION: a quick tabla and dholak fill with a rising santoor run and a short synth-pluck pickup that lifts into something new. 4-20 s: a NEW SECTION with a new, catchy, playful melody: the tumbi and the synth pluck trade bouncy call-and-answer riffs, the mandolin and electric guitar strum brightly, the groove gets busier and lighter, like the song moving to a new place. 20-36 s: another new idea: the flute and the airy synth lead play a soaring, sunny new tune together with quick Carnatic ornaments, the Rhodes and arpeggiator sparkle, the tabla swings harder, still light and breezy. 36-44 s: everyone plays the catchiest phrase together, bright and happy. 44-48 s: a crisp, tight ending phrase from the flute and tabla, resolving on D with one clean final hit. Keep it refreshing all the way: not a movie background, not a cinematic score, no big string section swells, no choir, no slow emotional part, no drama, no epic build, no echo, no EDM drop, no side-chain pumping, no silence anywhere.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 48000
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 07:48-08:08 on v3 take 2: first 40 s really good (opening only lightly odd); after 40 s it turns into a movie song/BGM, and repeating 18-34 s is 'just repetition. You need a transition and you have to go somewhere else.' v4 makes ONLY the continuation, in v3 take 2's exact key (D major) and tempo (120 BPM, beat every 0.5 s), to splice onto v3 take 2 at 40.27 s: a transition, then new refreshing sections. Same palette as v3 (traditional kept natural + modern sounds). Prompt mode (music_v2)."
+  },
+  "story": "A fresh, breezy morning: the same six-part journey and steady 6/8 sway Jithesh liked in First Love v7, now as a refreshing track, not a romance.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
