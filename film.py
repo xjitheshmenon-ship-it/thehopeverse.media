@@ -7,7 +7,8 @@
 The shots' "end" times follow the track's sections (tease, hit, walk, drop, mass, punch), so the cuts land on the music.
 HeyGen Video first (HEYGEN_API_KEY, about $0.09 a 5 s shot, slowed down to fill longer shots), else Kling on fal.ai
 (FAL_KEY, $0.35 per 5 s shot, $0.70 up to 10 s).
-A shot with "image" starts from that photo (HeyGen only), so the same man, face and clothes appear in every shot.
+A shot with "image" starts from that photo, so the same man, face and clothes appear in every shot; with "frame" it starts
+from a still posed from that photo for this shot (Kontext), which keeps faces far steadier than a portrait start.
 "refs" makes those photos first (fal Flux, then Kontext for the same face); REFS_ONLY=1 stops after them for a review.
 """
 import json
@@ -52,21 +53,29 @@ for k, (name, prompt) in enumerate(refs.items()):
         "image_url": fal_client.upload_file(str(work / next(iter(refs))))}) if k else fal_client.subscribe(
         "fal-ai/flux-pro/v1.1-ultra", arguments={"prompt": f"{prompt}. {film['look']}", "aspect_ratio": "9:16"})
     urllib.request.urlretrieve(result["images"][0]["url"], work / name)
-if os.environ.get("REFS_ONLY"):  # make and review the photos before paying for the shots
+for i, shot in enumerate(film["shots"]):  # "frame": this shot's first frame, posed from its photo (same faces)
+    if shot.get("frame") and not (work / f"frame-{i:02}.jpg").exists():
+        result = fal_client.subscribe("fal-ai/flux-pro/kontext", arguments={
+            "prompt": f"The same people, same faces, hair, beard and clothes, same heights: {shot['frame']}",
+            "aspect_ratio": "9:16", "image_url": fal_client.upload_file(shot["image"])})
+        urllib.request.urlretrieve(result["images"][0]["url"], work / f"frame-{i:02}.jpg")
+if os.environ.get("REFS_ONLY"):  # make and review the photos (and first frames) before paying for the shots
     sys.exit(print(f"Reference photos: {', '.join(refs)}"))
 
 
 def make(i: int) -> Path:
     shot, start = film["shots"][i], starts[i]
     raw, part = work / f"raw-{i:02}.mp4", work / f"part-{i:02}.mp4"
-    if not raw.exists():
+    image = work / f"frame-{i:02}.jpg" if shot.get("frame") else Path(shot["image"]) if shot.get("image") else None
+    if not raw.exists() and film.get("maker") != "kling":  # "maker": "kling" holds faces better from a start frame
         try:
-            heygen_clip(f"{shot['prompt']}. {film['look']}", raw, Path(shot["image"]) if shot.get("image") else None)
+            heygen_clip(f"{shot['prompt']}. {film['look']}", raw, image)
         except Exception as e:
             print(f"shot {i + 1}: HeyGen failed ({e}); using Kling")
     if not raw.exists():
-        result = fal_client.subscribe(MODEL, arguments={
-            "prompt": f"{shot['prompt']}. {film['look']}", "aspect_ratio": "9:16",
+        result = fal_client.subscribe(MODEL.replace("text-to-video", "image-to-video") if image else MODEL, arguments={
+            **({"image_url": fal_client.upload_file(str(image))} if image else {"aspect_ratio": "9:16"}),
+            "prompt": f"{shot['prompt']}. {film['look']}",
             "duration": "5" if shot["end"] - start <= 5 else "10",
             "negative_prompt": film.get("negative", "cartoon, anime, CGI, 3D render, text, watermark, people, rider, saddle, blur")})
         urllib.request.urlretrieve(result["video"]["url"], raw)
