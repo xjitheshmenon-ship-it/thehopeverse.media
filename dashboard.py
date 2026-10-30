@@ -118,6 +118,7 @@ AGENTS = [
     {"agent": "Mr. Cut", "role": "Edit plan", "model": "Sonnet", "does": "Shot list with a cut every 2-3 s and a footage search per shot", "output": "Edit plan", "then": ""},
     {"agent": "Mr. Spark", "role": "Title and thumbnail", "model": "Sonnet", "does": "3 honest titles, a striking description with the story behind it, hashtags, Instagram caption", "output": "Title, description, thumbnail ideas", "then": ""},
     {"agent": "Mr. Raga", "role": "Music director", "model": "Sonnet, ElevenLabs Music", "does": "Original cinematic scores for ÆTHER: briefs from ragas, talas and film-scoring craft (music.md), 2 takes per track; Shorts music only when MUSIC_RAGA=1", "output": "Track brief and takes (music-tracks branch)", "then": ""},
+    {"agent": "Mr. Kavi", "role": "Lyricist", "model": "Sonnet", "does": "Original sung lyrics in Malayalam, Tamil, Telugu, Hindi, Urdu, Arabic, English and vocables (lyrics.md), written onto Mr. Raga's music plan, with a lyric sheet per song", "output": "Lyric sheet + words in each track chunk", "then": ""},
     {"agent": "Mr. Post", "role": "Outbox", "model": "Sonnet", "does": "Queues the finished package for a live channel", "output": "outbox/<channel>-N.json", "then": ""},
 ]
 
