@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Friday Night v2 (pop nu-disco with dance hooks)",
+  "take": 1,
+  "made_at_utc": "2026-10-30T18:04:39.283617+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "Ny9ViyosogGHhzSlwmCi",
+  "request": {
+    "prompt": "A brand-new POP nu-disco / electro disco dance hit built around a FUNKY BASSLINE, ONE continuous piece, shaped like a modern chart pop song with big dance hooks. Exactly 120 BPM, A Dorian (A B C D E F-sharp G), four-on-the-floor disco groove with a bouncy, swinging sixteenth feel. The bassline, written out: a fat electric bass playing A with an octave slap pop on the off-beat, ghost-note sixteenths, a walk-up C, D, E into G, then a slide down from E to A; it never stops moving. The main pop hook (the chorus melody), written out: A, A, C, D, slide up to E, lean on F-sharp, E, D, C, D; the answer: G, F-sharp, E, D, C, B, A. Simple, singable, catchy, sung-style with small slides. Three short DANCE HOOKS, each repeated so the listener remembers it: (1) a bright, bouncy synth stab riff of four short notes E, E, G, A on the off-beats; (2) a catchy pitched vocal-chop riff in the post-chorus, a female voice sliced into short melodic 'oh' and 'ah' syllables bouncing A, C, A, E; (3) a funky clavinet and guitar unison lick D, E, G, A answered by a hand clap. Instruments: electric bass, punchy disco drum kit with open hi-hats, snappy hand claps and a tambourine, chicken-scratch funk guitar, clavinet, Rhodes, glossy pop synths, a disco string section, a disco horn section, and a bright female pop voice singing wordless 'ooh', 'oh' and 'la la' melodies (no real words, no shouted chants). 0-4 s: the bassline with the synth stab riff, kick from beat one. 4-16 s (verse): groove with chicken-scratch guitar and claps, the female voice softly sings the verse melody. 16-24 s (pre-chorus): the bass climbs, strings rise, snare builds on every beat, the voice lifts. 24-40 s (CHORUS): the full band, the female voice sings the main pop hook loud and bright, strings and horns answer, the synth stab riff on the off-beats. 40-48 s (post-chorus): the vocal-chop dance hook over the groove, very catchy, bounce and claps. 48-56 s (verse 2): the clavinet and guitar lick trades with the voice, Rhodes chords. 56-62 s (breakdown): drums drop out, only the bass and claps, then one bar of just the voice holding a high note. 62-80 s (final chorus, biggest): everything back, the main hook sung with harmonies, horns and strings in unison, the vocal-chop hook and the synth stab riff stacked together. 80-90 s (outro): the post-chorus dance hook one last time, then the bass alone plays the opening line and ends on a slap octave A with one string run up. Bright, glossy, radio-ready modern pop mix with deep sub bass, the bass and vocals clearly upfront. No side-chain pumping, no white-noise risers, no filter sweeps, no fade-out. Do not use a rising three-note root-third-fifth call, shouted 'hey' chants, reversed swells, thavil or nadaswaram anywhere.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 90000
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 17:59 on v1: 'give pop touch and some dance hooks'. v2 = the same story, bassline and hook, shaped like a pop song (intro, verse, pre-chorus, big chorus, post-chorus dance hook) with three short catchy dance hooks."
+  },
+  "story": "Friday midnight in Bengaluru: a developer shuts her laptop after a brutal release week, rides the empty metro and dances with her friends on a rooftop until sunrise.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
