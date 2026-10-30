@@ -554,10 +554,25 @@ def caption(text: str, size: tuple, lang: str = "", scale: float = 1) -> np.ndar
     line_h = font.size + 16
     top = int(size[1] * 0.72) - line_h * len(lines) // 2
     draw.rectangle((0, top - 30, size[0], top + line_h * len(lines) + 30), fill=(0, 0, 0, 150))
+    latin = _font(font.size) if lang == "hi" else font
     for i, line in enumerate(lines):
-        w = draw.textlength(line, font=font)
-        draw.text(((size[0] - w) / 2, top + i * line_h), line, font=font, fill="white")
+        parts = _runs(line, font, latin)
+        x = (size[0] - sum(draw.textlength(t, font=f) for t, f in parts)) / 2
+        y = top + i * line_h + font.getmetrics()[0]
+        for t, f in parts:  # on one baseline, as the two fonts' ascenders differ
+            draw.text((x, y), t, font=f, fill="white", anchor="ls")
+            x += draw.textlength(t, font=f)
     return np.array(img)
+
+
+DEVANAGARI = re.compile(r"([\u0900-\u097F\u1CD0-\u1CFF\uA8E0-\uA8FF\u200C\u200D]+)")
+
+
+def _runs(line: str, font, latin) -> list:
+    """(text, font) pieces: Hindi fonts have no Latin letters, so "SIR" or a URL drew as boxes."""
+    if latin is font:
+        return [(line, font)]
+    return [(t, font if DEVANAGARI.fullmatch(t) else latin) for t in DEVANAGARI.split(line) if t]
 
 
 @cache
