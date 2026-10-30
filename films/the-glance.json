@@ -36,12 +36,17 @@
     },
     {
       "end": 31,
-      "prompt": "He arrives out of breath; she looks up at him and their eyes meet for the first time, both freeze, the dog sitting between them, pink petals falling",
-      "image": "films/the-glance/ref-couple.jpg"
+      "prompt": "THE GLANCE, slow motion: still crouching beside the dog, she slowly looks up and sees him standing a little way off; her eyes meet the camera (his point of view) and she freezes, the lens cap in her hand, pink petals drifting slowly between them, the world going quiet",
+      "image": "films/the-glance/ref-her.jpg"
+    },
+    {
+      "end": 34.5,
+      "prompt": "THE GLANCE, slow motion close-up: he stands alone a few metres away, out of breath, and stops completely, staring at her, stunned, his lips parting, his camera hanging at his chest, petals falling slowly in front of his face",
+      "image": "films/the-glance/ref-him.jpg"
     },
     {
       "end": 38,
-      "prompt": "Close-up: she looks down shyly with a small smile, holding the lens cap, and strokes the dog's ears",
+      "prompt": "THE GLANCE, slow motion close-up: she slowly stands up, looks down shyly with a small smile, then lifts her eyes back to him, a pink petal landing on her hair",
       "image": "films/the-glance/ref-her.jpg"
     },
     {
