@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Storm Entry v3 (storm only in the opening, percussion leads)",
+  "take": 2,
+  "made_at_utc": "2026-10-30T08:47:44.191899+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "mp8qIm3UuYpWBnGQ73qk",
+  "request": {
+    "prompt": "A brand-new mass hero ENTRY film score written the way today's biggest Tamil and Telugu film composers score the hero's first appearance, scored to a scene: the storm brings the hero in, then the storm passes and the temple festival drummers take over. About 112 BPM, a dark minor raga with a sharp fourth and gamakam slides on every lead, a whistle-able 5-note hero hook, deep wordless male crowd chants, no lyrics. The first 26 seconds are dark and stormy; after that there is NO thunder and NO rain at all, and the track becomes a lighter, dancing, percussion-led groove. Percussion is the star: a real tabla, thavil, mridangam and kanjira, played close, natural and dry by real musicians, with crisp fast fills; no echo on them. 0-10 s: one thunder crack, rain ticking on a tin roof, a gritty bent synth plays a rising 3-note call (root, minor third, fifth, last note bent upward), a dark synth bass creeps in. 10-24 s: tension builds, the hero hook is hinted low on the synth, a deep crowd hum rises. 24-26 s: the only big storm moment: one thunder boom with a full band hit and a crowd shout 'HEY!'. 26-40 s: the rain stops; a tabla starts the groove alone, then the thavil joins, then mridangam and kanjira, one by one; the hero hook moves to a natural nadaswaram over the drums; the synth bass stays warm and low. 40-55 s: a percussion showcase at medium energy: the tabla and the thavil trade fast phrases in call and response, crowd claps and short chants on the accents, crisp and dancing, not loud or booming. 55-70 s: the hook on nadaswaram and violins together over the tabla groove, proud, warm and lighter, a soft synth lead answering. 70-80 s: a korvai on tabla and thavil, one rhythmic phrase played three times, landing on a clean final hit, then the 3-note call and one temple bell ringing. Clean, punchy, wide mix where the drums are clearly heard. After 26 s: no thunder, no rain, no booms, no wall of sound, no heavy sub hits. Not Western trailer music, not EDM, no side-chain pumping, no white-noise risers, no filter sweeps.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 80000
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 08:45 on v1 (the posted pick): 'too much storm in the end. Focus on the tabla and all. Initially it is fine, later reduce the intensity.' v3 keeps v1's opening, makes the 24 s reveal the only storm hit, then a tabla-led festival percussion groove at medium energy. Script first (rule 17). Prompt mode (music_v2)."
+  },
+  "story": "The storm brings the hero in; once he arrives the storm passes and the festival drummers play for him.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
