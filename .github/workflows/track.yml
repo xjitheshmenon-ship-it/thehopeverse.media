@@ -33,7 +33,8 @@ jobs:
           out = Path("out") / name
           out.mkdir(parents=True, exist_ok=True)
           for take in range(1, track.get("takes", 1) + 1):
-              for model in ("music_v2", "music_v1"):  # v2 sounds better; v1 if the plan doesn't offer it
+              # A v2 plan has "chunks" (v1 can't read it); a v1 plan has "sections" (only v1 reads it).
+              for model in (("music_v2_5", "music_v2") if "chunks" in track.get("plan", {}) else ("music_v2", "music_v1")):  # v2 sounds better; v1 if the plan doesn't offer it
                   # A composition plan holds each section to its length (no drifting gaps); else the plain prompt.
                   body = ({"composition_plan": track["plan"], "model_id": model} if "plan" in track else
                           {"prompt": track["prompt"], "model_id": model, "force_instrumental": track.get("instrumental", True),
