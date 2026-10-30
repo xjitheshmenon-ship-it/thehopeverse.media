@@ -1,12 +1,13 @@
 {
   "title": "The Glance: the first time I saw her 🌸",
   "music": "films/the-glance.mp3",
-  "look": "cinematic film still, shot on ARRI Alexa with anamorphic lenses, smooth stabilized gimbal and steadicam camera movement, gentle slow motion, shallow depth of field, soft golden morning light, dreamy pink and warm gold colour grade, film grain, photorealistic, vertical 9:16, no text. The place is a quiet tree-lined street in Bangalore in spring, both sides lined with pink trumpet trees (Tabebuia rosea, Bangalore's cherry blossoms) in full bloom, a canopy of pink flowers overhead, pink petals falling slowly and carpeting the road. The same two people in every shot. He is the young man: an original fictional character, a 25-year-old South Indian man, slim, youthful boyish face, short wavy black hair, clean-shaven with only very light stubble (no beard), warm brown eyes, a crisp white linen shirt with sleeves rolled up, beige chinos, a brown leather camera strap with a black mirrorless camera. She is the young woman: an original fictional character, a 24-year-old South Indian woman, long wavy black hair, a small black bindi, bright eyes, a soft mustard-yellow cotton kurta, white palazzo pants, a long pale white chiffon scarf (dupatta) draped around her neck and over her shoulders, her hair uncovered and open, a tan canvas tote bag on one shoulder",
-  "negative": "cartoon, anime, CGI, 3D render, text, watermark, blur, shaky handheld camera, celebrity, famous actor, real person, different person, different face, different clothes, saree, western dress, sunglasses, crowd, cars, rain, night, kissing, extra fingers, beard, full beard, older man, headscarf, hijab, veil, head covered, white kurta, holding hands, suspenders, two straps, crossed straps",
+  "look": "cinematic film still, shot on ARRI Alexa with anamorphic lenses, smooth stabilized gimbal and steadicam camera movement, gentle slow motion, shallow depth of field, soft golden morning light, dreamy pink and warm gold colour grade, film grain, photorealistic, vertical 9:16, no text. The place is a quiet tree-lined street in Bangalore in spring, both sides lined with pink trumpet trees (Tabebuia rosea, Bangalore's cherry blossoms) in full bloom, a canopy of pink flowers overhead, pink petals falling slowly and carpeting the road. The same two people and the same dog in every shot. He is the young man: an original fictional character, a 25-year-old South Indian man, slim, youthful boyish face, short wavy black hair, clean-shaven with only very light stubble (no beard), warm brown eyes, a crisp white linen shirt with sleeves rolled up, beige chinos, a brown leather camera strap with a black mirrorless camera. She is the young woman: an original fictional character, a 24-year-old South Indian woman, long wavy black hair, a small black bindi, bright eyes, a soft mustard-yellow cotton kurta, white palazzo pants, a long pale white chiffon scarf (dupatta) draped around her neck and over her shoulders, her hair uncovered and open, a tan canvas tote bag on one shoulder. The dog is the dog: a playful, fluffy cream-and-tan Indian street dog (indie) with perky ears, a curly tail and a red collar",
+  "negative": "cartoon, anime, CGI, 3D render, text, watermark, blur, shaky handheld camera, celebrity, famous actor, real person, different person, different face, different clothes, saree, western dress, sunglasses, crowd, cars, rain, night, kissing, extra fingers, beard, full beard, older man, headscarf, hijab, veil, head covered, white kurta, suspenders, two straps, crossed straps, holding hands, two dogs, different dog, black dog, puppy",
   "refs": {
     "ref-couple.jpg": "A wide two-shot on the blossom street, both about 25 years old and youthful: on the left the young man, clean-shaven with very light stubble, white linen shirt, beige chinos, a black mirrorless camera hanging on a brown strap at his chest; on the right the young woman, open long wavy black hair (not covered), a mustard-yellow cotton kurta, white palazzo pants, a white chiffon scarf around her neck and shoulders, a tan tote bag; full body, pink petals falling between them",
     "ref-him.jpg": "Medium close portrait of only the young man from this photo: same youthful face, clean-shaven with very light stubble, same hair, white linen shirt, the black camera on its brown strap at his chest, under the pink blossoms",
-    "ref-her.jpg": "Medium close portrait of only the young woman from this photo: same face, open long wavy hair (not covered), small bindi, mustard-yellow kurta, white scarf around her neck and shoulders, tan tote bag, under the pink blossoms"
+    "ref-her.jpg": "Medium close portrait of only the young woman from this photo: same face, open long wavy hair (not covered), small bindi, mustard-yellow kurta, white scarf around her neck and shoulders, tan tote bag, under the pink blossoms",
+    "ref-dog.jpg": "The same blossom street, now with only the dog: a playful, fluffy cream-and-tan Indian street dog (indie) with perky ears, a curly tail and a red collar, sitting in the middle of the petal-covered road, looking at the camera with a cheeky expression, tongue out"
   },
   "shots": [
     {
@@ -15,70 +16,70 @@
     },
     {
       "end": 10,
-      "prompt": "He stands under the pink trees and lifts his camera to photograph the falling blossoms, smiling, petals drifting past",
+      "prompt": "He stands alone under the pink trees and lifts his camera to photograph the falling blossoms, focused and smiling, petals drifting past",
       "image": "films/the-glance/ref-him.jpg"
     },
     {
       "end": 15,
-      "prompt": "She stands alone on the far side of the street, laughing softly as she catches a falling pink petal in her open palm; the camera slowly pushes in towards her from across the street",
-      "image": "films/the-glance/ref-her.jpg"
+      "prompt": "Surprise: the fluffy indie dog leaps up out of nowhere, grabs the black lens cap dangling from his camera in its mouth and dashes away down the petal-covered street, tail wagging",
+      "image": "films/the-glance/ref-dog.jpg"
     },
     {
       "end": 20,
-      "prompt": "Close-up of his face as he slowly lowers the camera from his eye, stunned, lips parting, the world going quiet, petals falling in front of him",
+      "prompt": "He runs after the dog down the blossom street, laughing in disbelief, one hand holding his camera, petals swirling around him",
       "image": "films/the-glance/ref-him.jpg"
     },
     {
       "end": 26,
-      "prompt": "Slow motion close-up: she tucks a strand of hair behind her ear, the white scarf moving in the breeze, then she senses someone looking and slowly turns her head",
+      "prompt": "The dog stops at her feet and drops the lens cap; she crouches down, laughing, and picks it up, petting the dog's head",
       "image": "films/the-glance/ref-her.jpg"
     },
     {
       "end": 31,
-      "prompt": "Seen from across the street, she stands alone and slowly looks straight into the camera, as if meeting his eyes for the first time, frozen in surprise, a shy smile starting, pink petals falling between",
-      "image": "films/the-glance/ref-her.jpg"
+      "prompt": "He arrives out of breath; she looks up at him and their eyes meet for the first time, both freeze, the dog sitting between them, pink petals falling",
+      "image": "films/the-glance/ref-couple.jpg"
     },
     {
       "end": 38,
-      "prompt": "Close-up: she looks down shyly with a small smile and plays with the end of her white scarf",
+      "prompt": "Close-up: she looks down shyly with a small smile, holding the lens cap, and strokes the dog's ears",
       "image": "films/the-glance/ref-her.jpg"
     },
     {
       "end": 43,
-      "prompt": "A soft gust of wind lifts her white chiffon scarf from her shoulders and it floats away across the street through the falling petals in slow motion",
-      "image": "films/the-glance/ref-her.jpg"
+      "prompt": "The cheeky dog grabs the end of her long white scarf in its mouth and starts running in a circle around the two of them, tail wagging",
+      "image": "films/the-glance/ref-dog.jpg"
     },
     {
       "end": 48,
-      "prompt": "He reaches up and catches the floating white scarf in mid-air, then looks at it in his hand and smiles",
-      "image": "films/the-glance/ref-him.jpg"
+      "prompt": "The white scarf wraps around both of them as the dog circles, pulling them close together, face to face, both surprised and laughing",
+      "image": "films/the-glance/ref-couple.jpg"
     },
     {
       "end": 54,
-      "prompt": "He walks across the street to her and gently holds out the white scarf; she reaches for it, their fingers almost touch, petals falling around them",
+      "prompt": "Close two-shot: they burst into laughter, untangling the white scarf, the dog jumping happily at their feet",
       "image": "films/the-glance/ref-couple.jpg"
     },
     {
       "end": 60,
-      "prompt": "Close two-shot: she takes her scarf back, they both laugh shyly, eyes meeting again, warm golden light",
+      "prompt": "She hands him back the lens cap with a smile; he glances down at his camera screen, then hesitates, a little embarrassed",
       "image": "films/the-glance/ref-couple.jpg"
     },
     {
       "end": 66,
-      "prompt": "He turns his camera screen towards her to show the photo he took of her catching the petal; she covers her smile with her hand, delighted",
+      "prompt": "Twist: he turns the camera screen to her: the photo is not of the blossoms, it is a photo of her he took earlier; she covers her smile with her hand, delighted",
       "image": "films/the-glance/ref-couple.jpg"
     },
     {
       "end": 72,
-      "prompt": "They walk side by side slowly down the street under the pink blossom canopy, talking and smiling, the camera cranes up as petals fall",
+      "prompt": "They walk side by side slowly down the blossom street, talking and smiling, the dog trotting proudly ahead with the white scarf in its mouth",
       "image": "films/the-glance/ref-couple.jpg"
     },
     {
       "end": 79.7,
-      "prompt": "Wide shot from behind: the two of them walking away together down the long pink blossom street, petals swirling in the sunlight, the frame slowly fills with falling petals",
-      "image": "films/the-glance/ref-couple.jpg"
+      "prompt": "Final shot: the dog stops in the foreground, turns and looks straight into the camera with the white scarf in its mouth, tail wagging, as the couple walks away behind it under the pink blossoms",
+      "image": "films/the-glance/ref-dog.jpg"
     }
   ],
   "skip": 1.0,
-  "description": "He came to photograph the blossoms. He ended up photographing her. 🌸\n\nThe first glance under Bangalore's pink trumpet trees.\n\nMusic: The Glance by ÆTHER (original score: humming, bansuri, violins, tabla). Original AI-made characters. Turn the volume up.\n\n#cinematic #lovebgm #firstlove #bangalore #cherryblossom #shorts"
+  "description": "He came to photograph the blossoms. A dog had other plans. 🌸🐕\n\nThe first glance under Bangalore's pink trumpet trees.\n\nMusic: The Glance by ÆTHER (original score: humming, bansuri, violins, tabla). Original AI-made characters. Turn the volume up.\n\n#cinematic #lovebgm #firstlove #bangalore #cherryblossom #dog #shorts"
 }
