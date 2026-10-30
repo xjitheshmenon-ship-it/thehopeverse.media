@@ -1,0 +1,11 @@
+{
+  "title": "ÆTHER: pro humming layer for Sway v5 take 2",
+  "story": "A fresh, breezy morning: the same six-part journey and steady 6/8 sway Jithesh liked in First Love v7, now as a refreshing track, not a romance.",
+  "brief": {
+    "notes": "A cappella wordless humming layer to mix under v5 take 2 (A major, 120 BPM). Long held, simple notes on the A major home chord so it sits on any chord in the track. Jithesh 09:35. v2, Jithesh 10:00: the v6 humming 'sounds very basic, like amateur musicians or a singer'. Ask for a top professional playback singer with Carnatic training, expressive and polished, female lead only."
+  },
+  "seconds": 64,
+  "takes": 2,
+  "instrumental": false,
+  "prompt": "A cappella only: NO instruments, no drums, no music bed at all, only one voice. A world-class professional South Indian film playback singer, Carnatic-trained, like the finest female voices of Tamil and Telugu cinema, hums a wordless melody (soft mmm, opening into a sweet aah): effortless, perfectly in tune, expressive and confident, a warm, rich, velvety tone with natural breath, graceful gamakam slides, quick grace-note turns, delicate vibrato only on long notes, and a sense of smiling tenderness. A polished, intimate, professional studio recording, close microphone, natural and dry, no echo, no reverb tail, no effects, no words, no lyrics, no backing vocals, no choir, no percussion. A major, exactly 120 BPM, steady time from the first second; each phrase is four bars long (8 seconds) with a soft breath before the next, like a singer floating a beautiful melody over a love song: phrases built on A, C sharp, E and F sharp, rising gently and settling home on A."
+}
