@@ -1,0 +1,152 @@
+{
+  "title": "\u00c6THER: Storm Entry v2 (scored to the script, plan mode)",
+  "take": 1,
+  "made_at_utc": "2026-10-30T08:06:14.893858+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v1",
+  "elevenlabs_song_id": "MrqDVt1tQaPiIWHbB0Lz",
+  "request": {
+    "composition_plan": {
+      "positive_global_styles": [
+        "a mass hero ENTRY film score scored to picture, written like today's biggest Tamil and Telugu film composers: goosebumps, swagger, a theatre-roaring moment",
+        "about 112 BPM felt as a heavy half-time swagger, a dark minor raga with a sharp fourth and chromatic bends, a whistle-able 5-note hero hook with Carnatic gamakam slides on every lead",
+        "half real instruments played close, natural and dry (nadaswaram, thavil, violins, low brass, temple bell), half fresh electronics (thick dark synth bass, gritty bent synth lead, thunder booms, rain on a tin roof as the hi-hat, a dragged iron chain as percussion)",
+        "deep wordless male crowd chants and shouts answering the hook, no lyrics",
+        "very loud, punchy, clean, dark, low-mid heavy cinematic mix"
+      ],
+      "negative_global_styles": [
+        "Western trailer music",
+        "Hollywood epic",
+        "EDM drop",
+        "side-chain pumping",
+        "white-noise riser",
+        "filter sweep",
+        "wall of synths",
+        "lyrics",
+        "singing words",
+        "echo on the nadaswaram",
+        "lo-fi",
+        "polite",
+        "soft"
+      ],
+      "sections": [
+        {
+          "section_name": "Thunder and rain",
+          "duration_ms": 4000,
+          "positive_local_styles": [
+            "the very first sound: a huge thunder crack with a deep cinematic boom, then only heavy rain ticking on a tin roof, no music yet"
+          ],
+          "negative_local_styles": [
+            "drums",
+            "melody",
+            "bass"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Festival stopped",
+          "duration_ms": 8000,
+          "positive_local_styles": [
+            "one temple bell rings alone in the rain, then a low menacing synth bass creeps in underneath, the villain's world, dark and still"
+          ],
+          "negative_local_styles": [
+            "drums",
+            "brass",
+            "chants"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "The chain",
+          "duration_ms": 8000,
+          "positive_local_styles": [
+            "a dragged iron chain scraping on stone becomes a slow walking pulse; a gritty bent synth plays a rising 3-note call (root, minor third, fifth, last note bent up) and hints the hero hook low; tension rising"
+          ],
+          "negative_local_styles": [
+            "full drums",
+            "brass"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Silhouette reveal",
+          "duration_ms": 6000,
+          "positive_local_styles": [
+            "tension builds under the chain pulse, then a reversed veena swell rises into one massive full-band hit with a deep boom and a huge crowd shout 'HEY!' on the last beats"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "The walk",
+          "duration_ms": 12000,
+          "positive_local_styles": [
+            "the swagger groove slams in: heavy half-time drums, thick synth bass, the 5-note hero hook on the gritty synth lead, wordless crowd chants answering every phrase",
+            "halfway through a real thavil joins, played natural and dry, like an old festival drummer starting to play again"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "The fight",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "a duel: a real nadaswaram and the synth lead trade the hero hook, every phrase answered by a punching band stab, the phrases get shorter and faster, the thavil doubles time"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "Freeze",
+          "duration_ms": 3000,
+          "positive_local_styles": [
+            "the whole band stops dead: one beat of total silence with only the rain, then a single raindrop"
+          ],
+          "negative_local_styles": [
+            "drums",
+            "bass",
+            "melody"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Festival returns",
+          "duration_ms": 11000,
+          "positive_local_styles": [
+            "BANG: the biggest slam, the hero hook a whole step higher with the full band, a frenzied wedding-drum ketti melam roll on thavil, crowd chant on every accent, violins in Indian-style unison"
+          ],
+          "negative_local_styles": [
+            "quiet"
+          ],
+          "lines": []
+        },
+        {
+          "section_name": "Face to face",
+          "duration_ms": 10000,
+          "positive_local_styles": [
+            "the hook in its grandest form on brass and nadaswaram, then pulled down into a heavy half-time stomp, menace and power held back"
+          ],
+          "negative_local_styles": [],
+          "lines": []
+        },
+        {
+          "section_name": "The bell",
+          "duration_ms": 8000,
+          "positive_local_styles": [
+            "a korvai: one rhythmic phrase played three times by the whole band, landing on a massive final hit with a thunder boom and sub drop, then the 3-note call alone on the synth and one temple bell ringing over the rain"
+          ],
+          "negative_local_styles": [
+            "fade out"
+          ],
+          "lines": []
+        }
+      ]
+    },
+    "model_id": "music_v1"
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 08:03 on Storm Entry v1: 'really good, but we missed a proper script'. New rule 17: script first, then score. v2 is scored beat by beat to the scene script (music/storm-entry-v2/storm-entry-script.md, copied in 'script'), so every instrument enters for a story reason. storm-entry-v2 = composition plan, one section per script beat; storm-entry-v2p = the same script in prompt mode (music_v2). We measure which one lands the beats."
+  },
+  "story": "The hero's first appearance: he walks into a village temple festival the villain has silenced, in a storm, and gives the village its festival back.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
