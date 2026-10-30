@@ -88,101 +88,101 @@
  ],
  "yt-hopeverse": [
   {
-   "topic": "Why Europe's clocks went back on 25 Oct 2026 and the US waits until 1 Nov: the one-week gap that confuses calendars",
-   "why": "I couldn't run a live news search, so this is an unverified evergreen pick, not a story I found in the last 48 hours. The date gap is a known fact. It is relevant to the UK, EU and US audience this week, and few outlets explain why the dates differ.",
-   "score": 58,
-   "views48": 5,
-   "planned": "2026-10-29 02:34",
-   "when": "2026-10-30 04:00"
-  },
-  {
-   "topic": "US midterms 3 Nov 2026: all 435 House seats are up, so why does the world watch a vote this closely?",
-   "why": "I couldn't verify a news story with a live search. The election date and seat count are fixed, and the vote is days away. The angle is how the result could affect tariffs, Ukraine aid and the dollar.",
-   "score": 62,
-   "views48": 6,
-   "planned": "2026-10-29 02:34",
-   "when": "2026-10-30 05:40"
-  },
-  {
-   "topic": "The Fed's 28 Oct 2026 rate meeting: how one US decision changes your loan rate in India and Europe",
-   "why": "I couldn't confirm the outcome with a search, so the script must be checked against the actual decision before upload. The meeting is scheduled for 27–28 Oct. The angle is the knock-on effect on EMIs and the rupee, which suits a global audience.",
-   "score": 60,
-   "views48": 5,
-   "planned": "2026-10-29 02:34",
-   "when": "2026-10-30 07:20"
-  },
-  {
-   "topic": "The ECB's 29 Oct 2026 rate meeting: why Europe's rate call can move your savings and the euro",
-   "why": "I couldn't verify this with a live search. The ECB meeting is scheduled for 29 Oct. It is a timely, search-driven finance topic for the UK, European and Indian audience. Check the decision before uploading.",
-   "score": 55,
-   "views48": 4,
-   "planned": "2026-10-29 02:34",
-   "when": "2026-10-30 08:10"
-  },
-  {
-   "topic": "COP31 in Antalya opens 9 Nov 2026: who pays for climate damage and why talks keep stalling",
-   "why": "I couldn't confirm the latest news with a search, so this is an unverified preview explainer. The summit is two weeks away and climate topics get steady global demand. The angle is the money question, which is rarely explained.",
-   "score": 52,
-   "views48": 4,
-   "planned": "2026-10-29 02:34",
-   "when": "2026-10-31 04:00"
-  },
-  {
    "topic": "Machado returns to Venezuela (27 Oct 2026): why a welcome home by cheering crowds can't trigger a vote, and the court and election council Rubio wants replaced first",
    "why": "This is a fresh story from the last 24 hours, reported by WORLD Radio on 28 Oct. Big outlets lead with the crowds. The less-covered angle is why Washington wants a new Supreme Court and election council before any vote, and that interim authorities agreed weeks ago to let her return. It suits a global English audience. It is also not a repeat of the Israel, Lula or Jio Shorts already made. The channel's one hit was a fast-moving election story (53 views), so a similar story has a better chance than its median of 4. I did not verify exact figures such as how many months she was abroad.",
    "score": 74,
    "views48": 12,
    "planned": "2026-10-29 16:23",
+   "when": "2026-10-30 04:00"
+  },
+  {
+   "topic": "Iran says 7 oil tankers were attacked in the Strait of Hormuz: why one narrow strait can move your petrol price within hours",
+   "why": "This was a top NBC World headline in my one successful search. I couldn't open the article, so the date and details are unconfirmed. The explainer angle is that about a fifth of world oil passes through the strait. It also ties into the channel's earlier Ras Tanura Short, which got 11 views.",
+   "score": 66,
+   "views48": 8,
+   "planned": "2026-10-30 15:11",
+   "when": "2026-10-30 05:40"
+  },
+  {
+   "topic": "Two men charged with helping Iran over the incident at the US-run RAF Fairford base in Britain: why a British base matters in the Iran war",
+   "why": "This was an NBC headline in the Iran war section. It suits UK and US viewers. The angle is why Fairford is used by US bombers and what the charges mean. I couldn't verify the date or the charges beyond the headline.",
+   "score": 60,
+   "views48": 6,
+   "planned": "2026-10-30 15:11",
+   "when": "2026-10-30 07:20"
+  },
+  {
+   "topic": "Nvidia CEO named as possible target of a Chinese spy plot, according to a new report: what chips have to do with espionage",
+   "why": "This was an NBC video headline from the same search. It has global tech and geopolitics appeal. The angle is why a chip company's chief executive would be an intelligence target. I couldn't confirm the report's details.",
+   "score": 58,
+   "views48": 6,
+   "planned": "2026-10-30 15:11",
+   "when": "2026-10-30 08:10"
+  },
+  {
+   "topic": "Markets tumble as Iran war fears collide with heavy AI spending: why two unrelated worries hit stocks on the same day",
+   "why": "This was an NBC headline. Markets are a steady subject for US, UK and India audiences. The curious angle is how a war risk premium and AI capital spending combine to pull markets down. I couldn't verify the figures. The Short should lead with one confirmed number once found.",
+   "score": 57,
+   "views48": 5,
+   "planned": "2026-10-30 15:11",
+   "when": "2026-10-31 04:00"
+  },
+  {
+   "topic": "Flávio Bolsonaro arrives in the news days after Lula's 4th-term win: what the Bolsonaro family does next",
+   "why": "This was an NBC video headline. It follows on from the channel's earlier Lula Short, which got 3 views. The angle is what the Bolsonaro family does after the loss. I couldn't confirm the details of his arrival, so the script needs a check first.",
+   "score": 50,
+   "views48": 4,
+   "planned": "2026-10-30 15:11",
    "when": "2026-10-31 05:40"
   }
  ],
  "yt-sankalp": [
-  {
-   "topic": "6 अक्टूबर 2026 को कैबिनेट ने छोटे और मध्यम उद्यमों (SME) में सीधा इक्विटी निवेश करने के लिए ₹10,000 करोड़ का SME ग्रोथ फंड मंज़ूर किया। भविष्य के 'चैंपियन' बनाने का यह तरीक़ा क्या है, और छोटे कारोबारियों को इससे क्या मिलेगा? PIB और एक आर्थिक अख़बार से मिलान करें।",
-   "why": "यह PIB पर दर्ज असली फ़ैसला है, जिसमें ₹10,000 करोड़ का आँकड़ा है। यह 6 अक्टूबर का है, इसलिए पुराना है और ताज़गी का स्कोर कम है। भारत की अर्थव्यवस्था और प्रगति के लिए उपयुक्त है। मालिक की मंज़ूरी चाहिए।",
-   "score": 45,
-   "views48": 18,
-   "planned": "2026-10-29 02:34",
-   "when": "2026-10-30 04:50"
-  },
-  {
-   "topic": "6 अक्टूबर 2026 को कैबिनेट ने इंटीग्रेटेड ट्रांसपोर्ट एंड लॉजिस्टिक्स अथॉरिटी बनाने को मंज़ूरी दी। सड़क, रेल और बंदरगाह एक छत के नीचे आने से माल ढुलाई की लागत और समय पर क्या असर पड़ सकता है? PIB और लॉजिस्टिक्स लागत की किसी स्वतंत्र रिपोर्ट से जाँचें।",
-   "why": "यह PIB पर दर्ज असली बुनियादी ढाँचे का फ़ैसला है, जिसमें 'लॉजिस्टिक्स लागत' का रोचक सवाल है। पर यह 6 अक्टूबर का है, इसलिए पुराना है। मालिक की मंज़ूरी चाहिए।",
-   "score": 44,
-   "views48": 18,
-   "planned": "2026-10-29 02:34",
-   "when": "2026-10-30 06:30"
-  },
-  {
-   "topic": "14 अक्टूबर 2026 को सरकार ने IDBI बैंक के रणनीतिक पुनर्गठन को मंज़ूरी दी। इसका मतलब क्या है, और इसमें सरकार की हिस्सेदारी का क्या होगा? PIB और बैंक की स्टॉक एक्सचेंज फ़ाइलिंग से मिलान करें।",
-   "why": "यह PIB पर दर्ज असली आर्थिक फ़ैसला है, जिसमें लोग बैंकिंग से जुड़े सवाल खोजते हैं। पर यह 14 अक्टूबर का है, इसलिए पुराना है। प्रकाशन से पहले दो स्रोतों से तथ्य जाँचें। मालिक की मंज़ूरी चाहिए।",
-   "score": 46,
-   "views48": 20,
-   "planned": "2026-10-29 02:34",
-   "when": "2026-10-31 04:50"
-  },
-  {
-   "topic": "14 अक्टूबर 2026 को कैबिनेट ने रेलवे कर्मचारियों के लिए 78 दिन के उत्पादकता-आधारित बोनस (PLB) को मंज़ूरी दी। यह बोनस कैसे तय होता है, कितने कर्मचारियों को मिलेगा और इसमें कितना पैसा लगेगा? PIB और रेल मंत्रालय से मिलान करें।",
-   "why": "यह PIB पर दर्ज असली फ़ैसला है, और इसमें '78 दिन' का आँकड़ा है। त्योहारों के मौसम में लोग बोनस के बारे में खोजते हैं। पर यह 14 अक्टूबर का है, इसलिए पुराना है। मालिक की मंज़ूरी चाहिए।",
-   "score": 50,
-   "views48": 22,
-   "planned": "2026-10-29 02:34",
-   "when": "2026-10-31 06:30"
-  },
-  {
-   "topic": "एशियन गेम्स 2026 में 1 अक्टूबर को प्रिंस नोबल और मनु फ्रांसिस ने पुरुष स्किफ़ नौकायन में रजत जीता, और भारतीय महिला स्क्वैश टीम ने कांस्य जीता। इन कम चर्चित खेलों में भारत की प्रगति कैसे हुई? PIB और खेल मंत्रालय या आयोजकों के रिकॉर्ड से मिलान करें।",
-   "why": "यह PIB पर दर्ज असली खेल उपलब्धि है और राष्ट्रीय गौरव से जुड़ी है। पर यह 1 अक्टूबर की है, इसलिए पुरानी है। प्रकाशन से पहले ताज़ा पदक तालिका जोड़ें। मालिक की मंज़ूरी चाहिए।",
-   "score": 42,
-   "views48": 16,
-   "planned": "2026-10-29 02:34",
-   "when": "2026-11-01 04:50"
-  },
   {
    "topic": "एशियन पैरा गेम्स 2026 में भारत के रिकॉर्ड 114 पदक (30 स्वर्ण, 35 रजत, 49 कांस्य) हैं। यह 2022 के 108 पदकों से 6 ज़्यादा है। कम चर्चित कहानी यह है कि इनमें से 49 कांस्य के साथ कितने पदक कम सुने खेलों से आए, और सुमित अंतिल की जैवलिन में पोडियम स्वीप का क्या मतलब है। Olympics.com और Drishti IAS की रिपोर्ट के साथ पैरालंपिक समिति के रिकॉर्ड से मिलान करें। असली फ़ोटो सिर्फ़ Wikimedia Commons से लें।",
    "why": "यह भारत की खेल प्रगति और राष्ट्रीय गर्व की कहानी है, और इसमें आँकड़े भी साफ़ हैं। लेकिन खोज में मिली सबसे ताज़ा रिपोर्टें 1 से 5 दिन पुरानी हैं, यानी पिछले 48 घंटे की सख़्त शर्त पर यह पूरी तरह खरी नहीं उतरती। पिछले 48 घंटे की कोई ताज़ा सरकारी घोषणा खोज में नहीं मिली, इसलिए मालिक की मंज़ूरी चाहिए। रिकॉर्ड तालिका की जगह पदक जीतने के कम-जाने कारणों वाला कोण अपनाएँ।",
    "score": 48,
    "views48": 12,
    "planned": "2026-10-29 16:06",
+   "when": "2026-10-30 04:50"
+  },
+  {
+   "topic": "28 अक्टूबर 2026: कैबिनेट ने ₹7,395 करोड़ की योजना मंज़ूर की। इससे 2.5 लाख से ज़्यादा ग्राम पंचायतें आत्मनिर्भर बनेंगी। कम चर्चित सवाल यह है कि पंचायतें अपनी आमदनी खुद कैसे बढ़ाएँगी और वित्त आयोग के पैसे का बेहतर इस्तेमाल कैसे होगा। Business Standard और PIB से मिलान करें।",
+   "why": "यह ताज़ा सरकारी फ़ैसला है और गाँवों की तरक़्क़ी से जुड़ा है। हिंदी भाषी दर्शकों के लिए इसमें अपने गाँव का सीधा नाता है। आँकड़ा दो स्रोतों में जाँचा जा सकता है।",
+   "score": 76,
+   "views48": 14,
+   "planned": "2026-10-30 15:11",
+   "when": "2026-10-30 06:30"
+  },
+  {
+   "topic": "कैबिनेट ने घरेलू कंटेनर निर्माण बढ़ाने के लिए ₹10,000 करोड़ की योजना मंज़ूर की। कम चर्चित सवाल यह है कि भारत अपने बंदरगाहों के कंटेनर अब तक बाहर से क्यों मँगाता रहा और इस योजना से क्या बदलेगा। PIB और Business Standard से मिलान करें।",
+   "why": "यह ताज़ा फ़ैसला मेक इन इंडिया और व्यापार की आत्मनिर्भरता से जुड़ा है। कंटेनर की कमी का कारण ज़्यादातर बड़े आउटलेट्स ने नहीं बताया।",
+   "score": 72,
+   "views48": 12,
+   "planned": "2026-10-30 15:11",
+   "when": "2026-10-31 04:50"
+  },
+  {
+   "topic": "भारत और मेक्सिको ने तरजीही व्यापार समझौते (PTA) की बातचीत औपचारिक रूप से शुरू की। कम चर्चित सवाल यह है कि मेक्सिको भारत के लिए अहम बाज़ार क्यों है और कौन से भारतीय उत्पादों को फ़ायदा हो सकता है। विदेश मंत्रालय और Business Standard से मिलान करें।",
+   "why": "यह भारत की कूटनीति और व्यापार की ताज़ा ख़बर है। राष्ट्रीय गौरव का कोण है कि भारत लैटिन अमेरिका में बाज़ार बढ़ा रहा है। इसमें एक नया सवाल भी है।",
+   "score": 70,
+   "views48": 10,
+   "planned": "2026-10-30 15:11",
+   "when": "2026-10-31 06:30"
+  },
+  {
+   "topic": "सरकार ने ₹565 करोड़ के बजट से DILRMP 3.0 शुरू किया। इसमें ज़मीन के रिकॉर्ड एक जगह जुड़ेंगे। कम चर्चित सवाल यह है कि ज़मीन के विवाद अदालतों में इतने क्यों हैं और डिजिटल रिकॉर्ड से आम आदमी को क्या मिलेगा। भूमि संसाधन विभाग और Business Standard से मिलान करें।",
+   "why": "ज़मीन के रिकॉर्ड हर परिवार से जुड़े हैं और डिजिटल इंडिया की प्रगति दिखाते हैं। इसकी घोषणा इसी हफ़्ते हुई है। यह मुद्दा लोग अक्सर खोजते हैं।",
+   "score": 71,
+   "views48": 13,
+   "planned": "2026-10-30 15:11",
+   "when": "2026-11-01 04:50"
+  },
+  {
+   "topic": "चालू वित्त वर्ष की शुरुआत मज़बूत रही, लेकिन एक ताज़ा पोल के मुताबिक़ आगे की रफ़्तार थोड़ी धीमी रह सकती है। कम चर्चित सवाल यह है कि इसके बावजूद भारत सबसे तेज़ बढ़ती बड़ी अर्थव्यवस्थाओं में क्यों बना हुआ है। RBI के आँकड़ों और पोल की रिपोर्ट से मिलान करें।",
+   "why": "यह अर्थव्यवस्था की ताज़ा ख़बर है और भारत की प्रगति से जुड़ी है। इसे तथ्यों के साथ संतुलित तरीक़े से बताया जाएगा। पोल के सही आँकड़े दो स्रोतों से जाँचने होंगे।",
+   "score": 58,
+   "views48": 8,
+   "planned": "2026-10-30 15:11",
    "when": "2026-11-01 06:30"
   }
  ],
@@ -196,36 +196,12 @@
    "when": "2026-10-31 05:15"
   },
   {
-   "topic": "एक देश एक चुनाव: संयुक्त संसदीय समिति में 39 सदस्य, अब तक क्या हुआ और आगे क्या",
-   "why": "संसद की प्रक्रिया पर तथ्य आधारित, तटस्थ explainer। दल-विवाद के बिना बताता है कि समिति कहाँ तक पहुँची और आगे के चरण क्या हैं। ताज़ा स्थिति की पुष्टि खोज बंद होने से नहीं हो सकी, इसलिए संसदीय रिकॉर्ड से दो स्रोत देखें।",
-   "score": 45,
-   "views48": 55,
-   "planned": "2026-10-29 02:34",
-   "when": "2026-10-31 06:55"
-  },
-  {
-   "topic": "NOTA का बटन: 2013 में सुप्रीम कोर्ट ने दिया अधिकार, पर NOTA को सबसे ज़्यादा वोट मिलें तो क्या होगा?",
-   "why": "'ऐसा क्यों होता है' वाला जिज्ञासु सवाल। कम लोग जानते हैं कि NOTA जीत जाए तब भी दूसरे नंबर का उम्मीदवार विजेता घोषित होता है। यह मतदाता के अधिकार से जुड़ा है। यह समय-आधारित ख़बर नहीं है, इसलिए स्कोर कम है।",
-   "score": 42,
-   "views48": 50,
-   "planned": "2026-10-29 02:34",
-   "when": "2026-11-01 05:15"
-  },
-  {
-   "topic": "लोकसभा 2024 में मतदान 65.79%: करोड़ों पंजीकृत वोटर वोट क्यों नहीं डालते? चुनाव आयोग के आँकड़े",
-   "why": "वोटर लिस्ट और भागीदारी पर आँकड़ों वाला explainer, जो चल रही SIR बहस से जुड़ता है। राष्ट्रीय गर्व के ढाँचे में लोकतंत्र की ताक़त दिखाता है। आँकड़े प्रसारण से पहले ECI के आधिकारिक डेटा और दूसरे स्वतंत्र स्रोत से जाँचें। ताज़ा ख़बर की पुष्टि नहीं हो सकी।",
-   "score": 40,
-   "views48": 48,
-   "planned": "2026-10-29 02:34",
-   "when": "2026-11-01 06:55"
-  },
-  {
    "topic": "SIR चरण-3: चुनाव आयोग ने आंध्र प्रदेश और हरियाणा में नोटिस व आपत्ति की अवधि 20 नवंबर तक बढ़ाई। नगालैंड में 25 नवंबर और तेलंगाना में 26 नवंबर तक। अंतिम मतदाता सूची 30 नवंबर को आएगी। 36.73 करोड़ मतदाताओं वाले इस चरण में आपकी आख़िरी तारीख़ क्या है, और नाम कैसे जाँचें?",
    "why": "यह चुनाव आयोग का हाल का फ़ैसला है, जो आम मतदाता के दस्तावेज़ों और समय-सीमा से सीधे जुड़ा है। चैनल की पिछली सबसे अच्छी Shorts इसी विषय पर थीं। इसमें SIR की एक नई कड़ी है और एक सवाल खुला है: बढ़ी हुई तारीख़ों का फ़ायदा किन मतदाताओं को मिलेगा। यह महाराष्ट्र और दिल्ली की योजनाबद्ध Shorts से अलग है, क्योंकि यह कई राज्यों की समय-सीमा पर है। राष्ट्रीय गौरव का पहलू: दुनिया की सबसे बड़ी मतदाता सूची को सही रखने की कोशिश। दो स्रोत: newsonair.gov.in और DTNext। प्रकाशन से पहले तारीख़ें चुनाव आयोग की प्रेस नोट से मिला लें, क्योंकि खोज में साल साफ़ नहीं दिखा।",
    "score": 72,
    "views48": 90,
    "planned": "2026-10-30 12:30",
-   "when": "2026-11-02 05:15"
+   "when": "2026-10-31 06:55"
   },
   {
    "topic": "SIR पर चुनाव आयोग का हलफ़नामा: 3 आयुक्तों की सर्वसम्मति और सुप्रीम कोर्ट की अगली सुनवाई 17 नवंबर। Form 6 पर नया नोटिस भी जारी हुआ। आम वोटर के लिए इसका मतलब क्या है, और कौन-से सवाल अभी खुले हैं?",
@@ -233,6 +209,30 @@
    "score": 74,
    "views48": 110,
    "planned": "2026-10-30 13:05",
+   "when": "2026-11-01 05:15"
+  },
+  {
+   "topic": "SIR पर चुनाव आयोग का SC में हलफ़नामा: Form 6 नहीं बदला, तो फ़ॉर्म बदलने का अधिकार किसके पास? (LiveLaw, 3 आदेश: 24 जून 2025, 27 अक्टूबर 2025, 14 मई 2026)",
+   "why": "आयोग ने सुप्रीम कोर्ट में कहा कि SIR के तीनों आदेश सर्वसम्मत थे और Form 6 उसने नहीं बदला। उसके अनुसार फ़ॉर्म केवल केंद्र सरकार बदल सकती है (निर्वाचक पंजीकरण नियम 1960)। इस पर एक कानूनी सवाल उठता है: कौन-सी संस्था क्या बदल सकती है। यह हर वोटर के फ़ॉर्म और अधिकार से जुड़ा है। इसे दो स्रोतों से जाँचकर तटस्थ ढंग से बताना है, अपनी राय नहीं देनी।",
+   "score": 78,
+   "views48": 120,
+   "planned": "2026-10-30 15:11",
+   "when": "2026-11-01 06:55"
+  },
+  {
+   "topic": "मुख्य चुनाव आयुक्त को कैसे हटाया जाता है: अनुच्छेद 324(5) के अनुसार सुप्रीम कोर्ट के जज जैसी प्रक्रिया। आयोग के हलफ़नामे में यही आधार बताया गया। संसद में कितने वोट चाहिए?",
+   "why": "आयोग के हलफ़नामे में अनुच्छेद 324(5) का हवाला है। इससे यह संवैधानिक सवाल उठता है कि CEC को हटाने की शक्ति किसके पास है। चैनल की सबसे ज़्यादा देखी गई Short (474 व्यूज़) इसी विषय पर थी, इसलिए माँग साफ़ है। इसमें नया कोण विशेष बहुमत की संख्या और अब तक की स्थिति है। भारत की संवैधानिक व्यवस्था पर गर्व के साथ, तटस्थ ढंग से बताना है।",
+   "score": 66,
+   "views48": 150,
+   "planned": "2026-10-30 15:11",
+   "when": "2026-11-02 05:15"
+  },
+  {
+   "topic": "महाराष्ट्र SIR: CJI सूर्यकांत ने कहा कि हटाए गए वोटर पर मुक़दमा नहीं चलेगा। हटाए गए नाम वाले मतदाता को Form 6 भरने से पहले क्या जानना चाहिए?",
+   "why": "सुप्रीम कोर्ट ने महाराष्ट्र SIR की याचिका पर नोटिस जारी किया, पर दावे और आपत्ति की तारीख़ बढ़ाने और अंतिम सूची रोकने के आदेश नहीं दिए। CJI की टिप्पणी Form 6 को लेकर आम वोटर के डर से जुड़ी है। यह सीधे वोटर के अधिकार और दस्तावेज़ों का मामला है। बाक़ी Shorts 2.07 करोड़ नामों और तारीख़ों पर हैं। यह Short सिर्फ़ इस कोर्ट-टिप्पणी और Form 6 की प्रक्रिया पर है।",
+   "score": 70,
+   "views48": 90,
+   "planned": "2026-10-30 15:11",
    "when": "2026-11-02 06:55"
   }
  ],
