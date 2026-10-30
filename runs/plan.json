@@ -38,20 +38,12 @@
  ],
  "yt-instinct": [
   {
-   "topic": "1 geai, 1 repas : l'oiseau qui prévoit demain #Shorts",
-   "why": "Raby et al. 2007 (Nature) : le geai buissonnier de Californie cache de la nourriture là où il aura faim le lendemain. Planification du futur, oiseau sous-estimé, comparaison avec les enfants.",
-   "score": 65,
-   "views48": 700,
-   "planned": "2026-10-29 02:34",
-   "when": "2026-10-31 04:25"
-  },
-  {
    "topic": "1 corneille, 1 distributeur : Betty... non, la corneille de Sendai qui casse des noix sur la route #Shorts",
    "why": "Evergreen, well-sourced story of a named-population crow in Japan (Sendai) that places walnuts at crossings so cars crack them, then waits for the pedestrian light. A visible, human-like act that fits a before/after image (nut on road, then crow picking it up at the red light). Uses a corvid, an underestimated bird, matches the breakout pattern of tool use, and adds a human comparison (pedestrians crossing). Not a repeat of the wire-bending crow Betty or the other planned topics.",
    "score": 66,
    "views48": 780,
    "planned": "2026-10-29 04:06",
-   "when": "2026-10-31 06:05"
+   "when": "2026-10-31 04:25"
   },
   {
    "topic": "1 tardigrade, 3 survivants : le bouclier qui les a protégés des UV en orbite #Shorts",
@@ -59,7 +51,7 @@
    "score": 62,
    "views48": 720,
    "planned": "2026-10-29 16:41",
-   "when": "2026-10-31 07:45"
+   "when": "2026-10-31 06:05"
   },
   {
    "topic": "1 corneille, 1 compte : le corbeau qui compte jusqu'à 4 à voix haute #Shorts",
@@ -67,7 +59,7 @@
    "score": 66,
    "views48": 1000,
    "planned": "2026-10-29 16:52",
-   "when": "2026-10-31 08:35"
+   "when": "2026-10-31 07:45"
   },
   {
    "topic": "1 raie, 1 nom : elle reconnaît son soigneur #Shorts",
@@ -75,7 +67,7 @@
    "score": 55,
    "views48": 520,
    "planned": "2026-10-29 02:34",
-   "when": "2026-11-01 04:25"
+   "when": "2026-10-31 08:35"
   },
   {
    "topic": "1 mot, 1 objet : la chienne Rico qui comprend plus de 200 mots #Shorts",
@@ -83,6 +75,14 @@
    "score": 38,
    "views48": 420,
    "planned": "2026-10-29 04:17",
+   "when": "2026-11-01 04:25"
+  },
+  {
+   "topic": "1 poisson nettoyeur, 1 miroir : le labre qui se reconnaît et se gratte #Shorts",
+   "why": "Poisson sous-estimé qui réussit le test du miroir, qu'on croit réservé aux humains et aux grands singes. Étude publiée (Kohda et al., PLOS Biology), citée par la presse scientifique française. Ton calme, image claire, comparaison avec l'enfant qui se reconnaît vers 2 ans. Pas encore traité sur la chaîne, proche du sujet des pies mais avec un poisson.",
+   "score": 66,
+   "views48": 650,
+   "planned": "2026-10-30 12:57",
    "when": "2026-11-01 06:05"
   }
  ],
