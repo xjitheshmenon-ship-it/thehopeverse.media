@@ -414,7 +414,7 @@ def raga(request: str) -> str:
     """
     return run_agent(
         "Mr. Raga",
-        "\n\n".join([TEAM["Mr. Raga"]] + [(HERE / f).read_text(encoding="utf-8") for f in ("music.md", "music-scoring.md", "music-theory.md")]),
+        "\n\n".join([TEAM["Mr. Raga"]] + [(HERE / f).read_text(encoding="utf-8") for f in ("music.md", "music-scoring.md", "music-theory.md", "ragas.md")]),
         request, [], effort="low")
 
 
