@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Storm Entry hype finale",
+  "take": 1,
+  "made_at_utc": "2026-10-30T11:03:04.274418+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "ON6KuxABJHcp5lqgt1gR",
+  "request": {
+    "prompt": "A 30-second HYPE FINALE of a mass hero entry film score, made to be joined onto a running track, so it starts INSTANTLY in the middle of the groove: no intro, no silence, no fade-in. Exactly 112 BPM, C minor, the same festival percussion groove led by a real tabla with thavil, mridangam and kanjira, played close, natural and dry, a warm synth bass, the 5-note hero hook on a gritty bent synth lead and a natural nadaswaram, deep wordless male crowd chants. No sitar, no new exotic instruments, no thunder, no rain. Written like the biggest Tamil and Telugu mass composers: the energy climbs to maximum hype. 0-8 s: the groove gets hotter, the thavil doubles time, crowd shouts 'HEY!' on every bar, the hook answered call-and-response by the crowd. 8-10 s: a fast tabla and thavil roll building, then one beat of full band silence. 10-20 s: SLAM: the hook lifted up a whole step, the biggest and loudest moment of the track, the full band in unison stabs with the drums, brass hits, crowd chant on every accent, a frenzied drum frenzy underneath. 20-26 s: a drummers' showdown: tabla and thavil trading faster and faster phrases with the crowd clapping, the hook on top one more time. 26-30 s: a korvai, one rhythmic phrase played three times by the whole band, landing on one massive final hit with a crowd roar, then a short ring-out. Loud, punchy, clean, glossy mix where the drums are clearly heard. No EDM drop, no risers, no side-chain pumping, no fade-out, no quiet sections.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 30000
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 11:00 on the locked drums version: 'the last 25-30 seconds need to be more interesting, more hype.' A separate 30 s finale joined at ~52 s; the locked file stays untouched. No sitar/new instruments (the sitar+rubab ending was rejected). Prompt mode."
+  },
+  "story": "The festival explodes around the hero; the drummers and the crowd go wild as he rings the bell.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
