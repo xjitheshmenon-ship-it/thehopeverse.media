@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Storm Entry ending (Sitar)",
+  "take": 2,
+  "made_at_utc": "2026-10-30T10:12:37.036524+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "J9aF9mrcrUdoXWwmJO7w",
+  "request": {
+    "prompt": "A 22-second ENDING section of a mass hero entry film score, made to be joined onto a running track, so it starts INSTANTLY in the middle of the groove at full energy: no intro, no silence, no fade-in, no build from nothing. Exactly 112 BPM, C minor, a festival percussion groove led by a real tabla with thavil and mridangam, played close, natural and dry; a warm low synth bass under it. Written like a South Indian film composer: a whistle-able 5-note hero hook with gamakam slides, call and response, a korvai ending. From the first second, a real sitar plays the hero hook over the tabla groove, natural and close with its sympathetic strings ringing and meend slides, no echo or effects on it, like a master sitarist; it develops the hook with fast taans and bends. 14-19 s: a korvai, one rhythmic phrase played three times by the sitar and tabla together, landing on a clean final hit. 19-22 s: the sitar alone plays a rising 3-note call (root, minor third, fifth, last note bent upward) and lets it ring with one temple bell. No thunder, no rain, no booms, no EDM, no risers, no fade-out, no silence at the start.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 22000
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 10:10: 'in the end introduce something else, a humming or acoustic guitar, piano or sitar; sitar will be better; or an instrument from Central Asia or Arabic.' New ending joined onto storm-entry-v3-drums-join at 66.1 s. Sitar version. Prompt mode."
+  },
+  "story": "After the drummers play for the hero, a new voice closes the scene as he rings the temple bell.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
