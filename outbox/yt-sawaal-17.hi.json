@@ -104,11 +104,12 @@
   },
   "photos": true,
   "credits": [
-    "Supreme Court of India 01.jpg by Subhashish Panigrahi (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Supreme_Court_of_India_01.jpg"
+    "Supreme Court of India 01.jpg by Subhashish Panigrahi (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Supreme_Court_of_India_01.jpg",
+    "Vidhana Soudha, front (01).jpg by Moheen Reeyad (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Vidhana_Soudha,_front_(01).jpg"
   ],
   "qa": {
-    "passed": false,
-    "problems": "Frame 16: an unrelated ISS astronaut stock clip (a man in front of space-station flags holding a tablet) appears under the caption '29 \u0905\u0915\u094d\u091f\u0942\u092c\u0930: \u092b\u093c\u0948\u0938\u0932\u0947 \u0915\u0940 \u0924\u093e\u0930\u0940\u0916', a jarring mismatch with the legal topic.\nFrame 1 vs Frame 14: the male host's look is inconsistent; his glasses and beard shape shift slightly between shots.\nFrames 8\u20139: the female presenter's appearance shifts between shots; her blazer and hair look slightly different in frame 9."
+    "passed": true,
+    "problems": ""
   },
-  "held": "continuity: Frame 16: an unrelated ISS astronaut stock clip (a man in front of space-station flags holding a tablet) appears under the caption '29 \u0905\u0915\u094d\u091f\u0942\u092c\u0930: \u092b\u093c\u0948\u0938\u0932\u0947 \u0915\u0940 \u0924\u093e\u0930\u0940\u0916', a jarring mismatch with the legal topic.\nFrame 1 vs Frame 14: the male host's look is inconsistent; his glasses and beard shape shift slightly between shots.\nFrames 8\u20139: the female presenter's appearance shifts between shots; her blazer and hair look slightly different in frame 9."
+  "youtube_id": "C41HyT2tduw"
 }
