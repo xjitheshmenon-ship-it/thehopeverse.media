@@ -19,7 +19,7 @@ on:
         description: "For job one or story: which channel's Short to post now. For job refresh: the channel whose uploads get its current footer and tags"
         default: yt-hopeverse
         type: choice
-        options: [yt-hopeverse, yt-instinct, yt-sankalp, yt-sawaal]
+        options: [yt-hopeverse, yt-instinct, yt-instinct-de, yt-instinct-es, yt-instinct-ja, yt-sankalp, yt-sawaal]
       topic:
         description: "For job story: the true story to tell (empty = find one). For job publish: the YouTube id of a scheduled Short to make public now"
         default: ""
@@ -111,7 +111,7 @@ jobs:
       - name: Research, script, make and post the next Short
         if: env.NEXT != '' && env.SERIES != '1'
         run: |
-          { sudo apt-get install -y -qq fonts-noto-core || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core; }; } > /dev/null  # Hindi captions
+          { sudo apt-get install -y -qq fonts-noto-core fonts-noto-cjk || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core fonts-noto-cjk; }; } > /dev/null  # Hindi captions
           [ "$GROW" = 1 ] && { python agents.py --grow || true; }  # Mr. Grow's notes for the day's Shorts
           id=$NEXT
           if [ "$id" = yt-hopeverse ]; then
@@ -135,7 +135,7 @@ jobs:
           CHANNEL: ${{ inputs.channel || 'yt-hopeverse' }}
           DAILY_BUDGET: "1000"  # Post now overrules the daily budget
         run: |
-          { sudo apt-get install -y -qq fonts-noto-core || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core; }; } > /dev/null
+          { sudo apt-get install -y -qq fonts-noto-core fonts-noto-cjk || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core fonts-noto-cjk; }; } > /dev/null
           if [ "$CHANNEL" = yt-hopeverse ]; then
             goal="get today's topics from Mr. Focus, check list_outbox, then draft and queue one new current-affairs YouTube Short for yt-hopeverse, aimed at a global audience, on the top-viewed story of the last 48 hours that is not already drafted."
           else
@@ -155,7 +155,7 @@ jobs:
           WHEN: ${{ inputs.when }}
           DAILY_BUDGET: "1000"  # asked for by the owner, like Post now
         run: |
-          { sudo apt-get install -y -qq fonts-noto-core || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core; }; } > /dev/null
+          { sudo apt-get install -y -qq fonts-noto-core fonts-noto-cjk || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core fonts-noto-cjk; }; } > /dev/null
           python story.py "$CHANNEL" "$TOPIC"
           python video.py --only "$CHANNEL"
       - name: Make a scheduled Short public now
