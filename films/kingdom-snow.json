@@ -1,0 +1,113 @@
+{
+  "title": "He came back through the snow. The kingdom remembered.",
+  "music": "films/kingdom-snow.mp3",
+  "look": "cinematic film still, shot on ARRI Alexa with anamorphic lenses, smooth stabilized gimbal, steadicam and crane camera movement, shallow depth of field, cold Russian winter grade, steel-blue snow and deep blacks with fire orange highlights, falling snow, breath fog, drifting smoke and embers, film grain, photorealistic, vertical 9:16, no text. The hero is exactly the man in the starting photo, the same face, beard, sunglasses and long black overcoat in every shot: an original fictional man, not any real actor: in his late 40s, tall and broad-shouldered, South Indian, short grey-streaked black hair swept back, a full neatly trimmed salt-and-pepper beard, a thin scar through his left eyebrow, black aviator sunglasses, a long black wool overcoat over a black shirt, black trousers, black leather gloves, black boots, calm, heavy, powerful presence",
+  "negative": "cartoon, anime, CGI, 3D render, text, watermark, blur, shaky handheld camera, celebrity, famous actor, real person, different person, different face, different clothes, coloured clothes, suit jacket, clean-shaven, upside down, extra limbs, summer, green grass",
+  "refs": {
+    "ref-base.jpg": "Medium-wide shot of an original fictional man, not any real actor: in his late 40s, tall and broad-shouldered, South Indian, short grey-streaked black hair swept back, a full neatly trimmed salt-and-pepper beard, a thin scar through his left eyebrow, black aviator sunglasses, a long black wool overcoat over a black shirt, black trousers, black leather gloves, black boots, calm, heavy, powerful presence, standing in deep snow in a remote frozen valley in Russia in deep winter, deep snow, dark pine forest, grey mountains, falling snow at dusk, a black helicopter behind him with its blades still, looking straight at the camera",
+    "ref-snow-close.jpg": "close-up of his face and shoulders in the same snowy valley at dusk, sunglasses on, snowflakes falling, his breath fogging, a warm fire glow on one side of his face",
+    "ref-snow-glasses.jpg": "remove the sunglasses from his face, he holds them folded in his right gloved hand at chest height, his bare dark eyes look at the camera; close-up of his face and shoulders in the same snowy valley at dusk, snow falling",
+    "ref-snow-wide.jpg": "full-body low-angle shot of him walking towards the camera through deep snow in the same frozen valley at dusk, the black helicopter and three black SUVs behind him, snow blowing",
+    "ref-fort-wide.jpg": "full-body shot of him standing in the snowy courtyard of an old stone fortress in the same frozen valley at night, deep snow on the ground, iron fire braziers burning, men in black coats holding burning fire torches",
+    "ref-fort-medium.jpg": "waist-up shot of him in the snowy courtyard of an old stone fortress in the same frozen valley at night, deep snow on the ground, iron fire braziers burning, men in black coats holding burning fire torches, the men blurred behind him",
+    "ref-fort-close.jpg": "close-up of his face in the snowy courtyard of an old stone fortress in the same frozen valley at night, deep snow on the ground, iron fire braziers burning, men in black coats holding burning fire torches, sunglasses on, torch fire reflected in the lenses, snowflakes on his coat collar",
+    "ref-fort-eyes.jpg": "remove the sunglasses from his face, he holds them folded in his right gloved hand, his bare intense dark eyes look into the camera; close-up of his face in the snowy torch-lit fortress courtyard at night",
+    "ref-fort-seat.jpg": "him seated on an old carved stone seat covered with a black fur at the top of snowy stone steps in the snowy courtyard of an old stone fortress in the same frozen valley at night, deep snow on the ground, iron fire braziers burning, men in black coats holding burning fire torches, legs crossed, sunglasses on",
+    "ref-rampart.jpg": "wide shot of him standing on the snowy stone rampart of the same fortress at night, seen from behind and slightly to the side, a wall of fire below, snowy mountains and a huge full moon"
+  },
+  "shots": [
+    {
+      "end": 3,
+      "prompt": "Extreme close-up at ground level: a black leather boot steps down off a helicopter skid and sinks into deep fresh snow, the rotor wash blasting snow across the frame, dusk"
+    },
+    {
+      "end": 7,
+      "prompt": "Wide slow push-in: a black helicopter lands in a vast frozen Russian valley at dusk, dark pine forest and grey mountains, rotor wash blasting snow into the air, a single dark silhouette of a broad man in a long coat in the open door, no face visible"
+    },
+    {
+      "end": 11.5,
+      "prompt": "Close-up, slow push-in: he slowly raises his sunglasses and slides them on, snowflakes falling past, his breath fogging, he looks into the lens",
+      "image": "films/kingdom-snow/ref-snow-glasses.jpg"
+    },
+    {
+      "end": 17,
+      "prompt": "Low-angle slow-motion steadicam shot pulling back as he walks straight towards the camera through deep snow, his long black overcoat moving, the helicopter and SUVs behind him, snow blowing around him",
+      "image": "films/kingdom-snow/ref-snow-wide.jpg"
+    },
+    {
+      "end": 22.5,
+      "prompt": "Smooth tracking shot as he walks past through the snow, men in long black coats holding rifles standing in a line on both sides of him lower their heads as he passes",
+      "image": "films/kingdom-snow/ref-snow-wide.jpg"
+    },
+    {
+      "end": 28,
+      "prompt": "Close-up, very slow push-in on his face, a flame reflected in his sunglasses, snowflakes landing on his beard, he does not blink",
+      "image": "films/kingdom-snow/ref-snow-close.jpg"
+    },
+    {
+      "end": 34,
+      "prompt": "Aerial drone shot at night: a convoy of black SUVs with headlights drives slowly along a snowy road through a dark pine forest towards an old stone fortress lit by burning fire braziers, snow falling"
+    },
+    {
+      "end": 40,
+      "prompt": "Smooth steadicam shot pulling back as he walks slowly towards the camera through the snowy courtyard, men holding fire torches step back to both sides to make way",
+      "image": "films/kingdom-snow/ref-fort-wide.jpg"
+    },
+    {
+      "end": 46,
+      "prompt": "Medium shot: an old grey-bearded man in a heavy fur coat steps forward and grips his gloved hand with both hands, he places his other hand on his heart and nods slowly",
+      "image": "films/kingdom-snow/ref-fort-medium.jpg"
+    },
+    {
+      "end": 52,
+      "prompt": "Side tracking shot in slow motion as he walks across the snowy courtyard, snowflakes and fire embers drifting together, torchlight on his face",
+      "image": "films/kingdom-snow/ref-fort-medium.jpg"
+    },
+    {
+      "end": 58,
+      "prompt": "Wide shot at the far end of a snowy torch-lit stone fortress courtyard at night: a group of tough men in fur hats and grey coats holding rifles drop their rifles into the snow one by one and step back, fear on their faces"
+    },
+    {
+      "end": 64,
+      "prompt": "Close-up: he slowly tilts his head, the faintest smile at one corner of his mouth, torchlight flickering, snow falling",
+      "image": "films/kingdom-snow/ref-fort-close.jpg"
+    },
+    {
+      "end": 68,
+      "prompt": "Medium shot: he slowly raises one gloved open hand, palm out, and everyone around him freezes in silence, the torches flicker in the falling snow",
+      "image": "films/kingdom-snow/ref-fort-medium.jpg"
+    },
+    {
+      "end": 71,
+      "prompt": "Extreme close-up: he slowly takes off his sunglasses with his right gloved hand, his intense dark eyes look straight into the lens, upright normal framing",
+      "image": "films/kingdom-snow/ref-fort-close.jpg"
+    },
+    {
+      "end": 77,
+      "prompt": "Low-angle hero shot: a huge wall of fire erupts along the snowy stone fortress wall behind him, every man raises his burning torch high and roars, he stands still in the snow",
+      "image": "films/kingdom-snow/ref-fort-wide.jpg"
+    },
+    {
+      "end": 84,
+      "prompt": "Smooth crane shot rising up and back: he stands at the centre of the snowy courtyard as hundreds of men with fire torches fill the fortress around him",
+      "image": "films/kingdom-snow/ref-fort-wide.jpg"
+    },
+    {
+      "end": 90,
+      "prompt": "Slow push-in from a low angle as he sits still on the fur-covered stone seat, torches below him, snow and smoke drifting across",
+      "image": "films/kingdom-snow/ref-fort-seat.jpg"
+    },
+    {
+      "end": 96,
+      "prompt": "Close-up: he slowly slides the sunglasses back on, smoke and snow drift across his face, he looks into the lens",
+      "image": "films/kingdom-snow/ref-fort-eyes.jpg"
+    },
+    {
+      "end": 102.8,
+      "prompt": "Very slow push-in on him standing still on the snowy rampart, the wall of fire below, snowy mountains and a huge full moon, embers and snowflakes rising, his silhouette dark against the light",
+      "image": "films/kingdom-snow/ref-rampart.jpg"
+    }
+  ],
+  "skip": 1.0,
+  "description": "Years ago his own land sent him away. Tonight a black helicopter came down in the snow, and every man in the valley lit a fire for him.\n\nMusic: Kingdom (main title theme) by ÆTHER, an original score. An original AI-made character, made as a tribute to the black-coat mass hero style of Malayalam cinema. Turn the volume up.\n\n#cinematic #bgm #massbgm #malayalam #kingdom #shorts"
+}
