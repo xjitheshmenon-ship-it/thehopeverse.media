@@ -1,0 +1,95 @@
+{
+ "title": "Yaaru nee? | Tamil love song (picture story)",
+ "music": "music/locked/yaaru-nee-full.mp3",
+ "look": "cinematic music-video film still, shot on ARRI Alexa with anamorphic lenses, shallow depth of field, bright warm modern colour grade with soft teal shadows, photorealistic, natural skin texture, vertical 9:16, no text, no logos, no watermark. Setting: a modern Chennai metro station and metro train, today. Two original fictional characters, exactly the same faces, hair, bodies and clothes in every picture. SHE: a South Indian woman of 23, slim, medium height, warm brown skin, big expressive dark eyes, a small black bindi, wavy shoulder-length black hair with one small gold side clip, silver jhumka earrings, wearing a bright mustard-yellow cotton kurti with white thread embroidery at the neck, light-blue jeans, white sneakers, a beige canvas tote bag. HE: a South Indian man of 25, lean, a little taller than her, warm brown skin, short messy black hair, light stubble, thin round black-frame glasses, a friendly goofy smile, wearing a faded blue denim jacket over a plain white t-shirt, black jeans, white sneakers, black over-ear headphones around his neck, a grey backpack",
+ "refs": {
+  "ref-cast.jpg": "cinematic music-video film still, shot on ARRI Alexa with anamorphic lenses, shallow depth of field, bright warm modern colour grade with soft teal shadows, photorealistic, natural skin texture, vertical 9:16, no text, no logos, no watermark. Setting: a modern Chennai metro station and metro train, today. Two original fictional characters, exactly the same faces, hair, bodies and clothes in every picture. SHE: a South Indian woman of 23, slim, medium height, warm brown skin, big expressive dark eyes, a small black bindi, wavy shoulder-length black hair with one small gold side clip, silver jhumka earrings, wearing a bright mustard-yellow cotton kurti with white thread embroidery at the neck, light-blue jeans, white sneakers, a beige canvas tote bag. HE: a South Indian man of 25, lean, a little taller than her, warm brown skin, short messy black hair, light stubble, thin round black-frame glasses, a friendly goofy smile, wearing a faded blue denim jacket over a plain white t-shirt, black jeans, white sneakers, black over-ear headphones around his neck, a grey backpack. Character reference sheet photo: SHE and HE standing side by side, full body, facing the camera, plain light-grey studio background, even soft light, both faces clearly visible",
+  "ref-faces.jpg": "a close-up photo of the same two people's faces side by side, head and shoulders, looking at the camera, plain light-grey background, even soft light"
+ },
+ "shots": [
+  {
+   "end": 0,
+   "prompt": "She stands alone on a busy modern metro platform in the morning, checking her phone in a hurry with a worried late face, her tote bag on her shoulder, commuters blurred behind her",
+   "frame": "She stands alone on a busy modern metro platform in the morning, checking her phone in a hurry with a worried late face, her tote bag on her shoulder, commuters blurred behind her",
+   "image": "films/yaaru-nee-pictures/ref-cast.jpg"
+  },
+  {
+   "end": 0,
+   "prompt": "She runs fast toward the metro station's glass ticket gates in her yellow kurti, hair flying, tote bag swinging, motion and energy, commuters turning to look",
+   "frame": "She runs fast toward the metro station's glass ticket gates in her yellow kurti, hair flying, tote bag swinging, motion and energy, commuters turning to look",
+   "image": "films/yaaru-nee-pictures/ref-cast.jpg"
+  },
+  {
+   "end": 0,
+   "prompt": "She leaps through the closing sliding doors into a crowded metro train carriage at the last second, doors almost shut behind her",
+   "frame": "She leaps through the closing sliding doors into a crowded metro train carriage at the last second, doors almost shut behind her",
+   "image": "films/yaaru-nee-pictures/ref-cast.jpg"
+  },
+  {
+   "end": 0,
+   "prompt": "Inside the metro carriage he turns with a paper coffee cup in his hand and bumps into her; the coffee splashes in a frozen arc onto her yellow kurti, both of them shocked, mouths open",
+   "frame": "Inside the metro carriage he turns with a paper coffee cup in his hand and bumps into her; the coffee splashes in a frozen arc onto her yellow kurti, both of them shocked, mouths open",
+   "image": "films/yaaru-nee-pictures/ref-cast.jpg"
+  },
+  {
+   "end": 0,
+   "prompt": "Close-up of her glaring angrily at him, a brown coffee stain on the front of her yellow kurti, one eyebrow raised, inside the metro carriage",
+   "frame": "Close-up of her glaring angrily at him, a brown coffee stain on the front of her yellow kurti, one eyebrow raised, inside the metro carriage",
+   "image": "films/yaaru-nee-pictures/ref-faces.jpg"
+  },
+  {
+   "end": 0,
+   "prompt": "Close-up of him behind his round glasses, eyes wide and apologetic, both palms pressed together saying sorry, an embarrassed goofy smile, inside the metro carriage",
+   "frame": "Close-up of him behind his round glasses, eyes wide and apologetic, both palms pressed together saying sorry, an embarrassed goofy smile, inside the metro carriage",
+   "image": "films/yaaru-nee-pictures/ref-faces.jpg"
+  },
+  {
+   "end": 0,
+   "prompt": "She looks into his eyes and her angry face softens into a small surprised smile; he looks back stunned, the moment time stands still, soft glow, inside the metro carriage",
+   "frame": "She looks into his eyes and her angry face softens into a small surprised smile; he looks back stunned, the moment time stands still, soft glow, inside the metro carriage",
+   "image": "films/yaaru-nee-pictures/ref-faces.jpg"
+  },
+  {
+   "end": 0,
+   "prompt": "He stands by the metro train window alone, grinning like he is flying, arms slightly out, the city rushing past outside in a bright blur, headphones around his neck",
+   "frame": "He stands by the metro train window alone, grinning like he is flying, arms slightly out, the city rushing past outside in a bright blur, headphones around his neck",
+   "image": "films/yaaru-nee-pictures/ref-cast.jpg"
+  },
+  {
+   "end": 0,
+   "prompt": "Next morning in the metro carriage, the same seats: he holds out two paper coffee cups to her with a big sweet smile, she raises an eyebrow, amused",
+   "frame": "Next morning in the metro carriage, the same seats: he holds out two paper coffee cups to her with a big sweet smile, she raises an eyebrow, amused",
+   "image": "films/yaaru-nee-pictures/ref-cast.jpg"
+  },
+  {
+   "end": 0,
+   "prompt": "Close-up of her laughing out loud, head tilted back, taking one coffee cup from his hand, him smiling proudly, inside the metro carriage",
+   "frame": "Close-up of her laughing out loud, head tilted back, taking one coffee cup from his hand, him smiling proudly, inside the metro carriage",
+   "image": "films/yaaru-nee-pictures/ref-faces.jpg"
+  },
+  {
+   "end": 0,
+   "prompt": "Night, he lies on his bed in a small bedroom, face lit blue by his phone screen, biting his lip, nervously typing a message, the screen turned away from the camera",
+   "frame": "Night, he lies on his bed in a small bedroom, face lit blue by his phone screen, biting his lip, nervously typing a message, the screen turned away from the camera",
+   "image": "films/yaaru-nee-pictures/ref-cast.jpg"
+  },
+  {
+   "end": 0,
+   "prompt": "Golden sunset light through the metro windows, he and she sit side by side on the metro seat sharing one pair of wired earphones, her head close to his shoulder, both smiling softly",
+   "frame": "Golden sunset light through the metro windows, he and she sit side by side on the metro seat sharing one pair of wired earphones, her head close to his shoulder, both smiling softly",
+   "image": "films/yaaru-nee-pictures/ref-cast.jpg"
+  },
+  {
+   "end": 0,
+   "prompt": "On the metro platform they playfully point at each other and laugh, teasing each other, coffee cups in their other hands, a crowd smiling behind them",
+   "frame": "On the metro platform they playfully point at each other and laugh, teasing each other, coffee cups in their other hands, a crowd smiling behind them",
+   "image": "films/yaaru-nee-pictures/ref-cast.jpg"
+  },
+  {
+   "end": 0,
+   "prompt": "They walk out of the metro station together towards the camera, her arm linked through his, both holding coffee cups, she gives the camera a cheeky wink, bright morning city behind them",
+   "frame": "They walk out of the metro station together towards the camera, her arm linked through his, both holding coffee cups, she gives the camera a cheeky wink, bright morning city behind them",
+   "image": "films/yaaru-nee-pictures/ref-cast.jpg"
+  }
+ ]
+}
