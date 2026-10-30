@@ -1,0 +1,19 @@
+{
+  "title": "Save the Date: Hero Walk-in (stylish, smooth)",
+  "take": 2,
+  "made_at_utc": "2026-10-30T16:50:13.360070+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "lJTPsoh4gMrlKedGQWgT",
+  "request": {
+    "prompt": "A stylish, smooth, swaggering modern hero-entry film score for a one-minute save-the-date film: the couple walks in like the heroes of a big-screen action movie, in slow motion. Cool, confident and classy, sleek rather than loud, with heavy deep bass and a smooth laid-back groove. Not sad, not dark horror, not EDM. One steady tempo, 92 BPM half-time swagger, never stopping except one half-second freeze. One key the whole way: Kiravani in E, E minor with a raised seventh (E F# G A B C D#). No key change. ONE original, cool 4-bar hook runs through the whole track: E G A B, A G F# D# E, played with raga-style bends and slides, coming back bigger each time. Written the way today's South Indian film composers score a stylish mass hero entry: swagger, smooth stop-and-slam hits, a male wordless chant answering the hook, a korvai-style ending. Sound: a clean smoky electric guitar, deep sustained 808 sub-bass, crisp finger snaps and tight drums, a smooth synth lead, a cool whistle, gliding strings, a soft wordless female humming voice and a deep male wordless chant. Real instruments are close, dry and natural, no heavy echo. 0-4 s: a solo clean electric guitar plays the hook alone with slow bends, smoky and cool. 4-8 s: a deep 808 sub swells in, finger snaps and a low male hum join, tension rising. 8 s: one heavy, smooth slam and the full groove drops in. 8-24 s: laid-back swagger groove, deep sub, crisp snaps, the hook on a smooth synth lead with bends, a cool whistle answers each phrase. 24-36 s: a soft female voice hums the hook over the groove, strings glide in underneath. 36-37 s: a half-second freeze, then straight back in. 37-52 s: the peak: the hook an octave higher on lead and strings, the deep male chant answering, big smooth drums, same key. 52-60 s: three cool full-band hits, then the solo guitar plays the hook one last time over a deep boom that rings out. No soft long intro, no fade-in, no fade-out, no EDM drop, no side-chain pumping, no white-noise risers, no clashing chords, no lyrics.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 60000
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 16:45: 'a stylish smooth save the date, who look like a hero in a movie.' Built on Dark Horse (locked, liked: single instrument first, then the aura, swagger, deep bass) but smoother and warmer. One key, no key change (v2's lift broke the flow at 38-43 s). 3 takes; we pick."
+  },
+  "story": "A modern couple's save-the-date as a slow-motion hero entry from an action film: sunglasses, city lights, swagger, then the date.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
