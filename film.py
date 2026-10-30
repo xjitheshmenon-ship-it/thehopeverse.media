@@ -43,6 +43,7 @@ if video_id := os.environ.get("VIDEO"):
     sys.exit(print(f"Updated https://youtu.be/{video_id}"))
 work = film_path.with_suffix("")
 work.mkdir(exist_ok=True)
+cost = []  # usd per new fal.ai / HeyGen call; film.yml adds the total to history.jsonl so the dashboard counts it
 starts = [0] + [s["end"] for s in film["shots"][:-1]]
 refs = film.get("refs", {})  # {"ref-x.jpg": prompt}: the first photo is made from text, the rest from it (same face and clothes)
 for k, (name, prompt) in enumerate(refs.items()):
@@ -53,12 +54,15 @@ for k, (name, prompt) in enumerate(refs.items()):
         "image_url": fal_client.encode_file(str(work / next(iter(refs))))}) if k else fal_client.subscribe(
         "fal-ai/flux-pro/v1.1-ultra", arguments={"prompt": f"{prompt}. {film['look']}", "aspect_ratio": "9:16"})
     urllib.request.urlretrieve(result["images"][0]["url"], work / name)
+    cost.append(0.04 if k else 0.06)
 for i, shot in enumerate(film["shots"]):  # "frame": this shot's first frame, posed from its photo (same faces)
     if shot.get("frame") and not (work / f"frame-{i:02}.jpg").exists():
         result = fal_client.subscribe("fal-ai/flux-pro/kontext", arguments={
             "prompt": f"The same people, same faces, hair, beard and clothes, same heights: {shot['frame']}",
             "aspect_ratio": "9:16", "image_url": fal_client.encode_file(shot["image"])})
         urllib.request.urlretrieve(result["images"][0]["url"], work / f"frame-{i:02}.jpg")
+        cost.append(0.04)
+film_path.with_suffix(".cost").write_text(f"{sum(cost):.2f}")
 if os.environ.get("REFS_ONLY"):  # make and review the photos (and first frames) before paying for the shots
     sys.exit(print(f"Reference photos: {', '.join(refs)}"))
 
@@ -70,6 +74,7 @@ def make(i: int) -> Path:
     if not raw.exists() and film.get("maker") != "kling":  # "maker": "kling" holds faces better from a start frame
         try:
             heygen_clip(f"{shot['prompt']}. {film['look']}", raw, image)
+            cost.append(0.09)
         except Exception as e:
             print(f"shot {i + 1}: HeyGen failed ({e}); using Kling")
     if not raw.exists():
@@ -79,6 +84,7 @@ def make(i: int) -> Path:
             "duration": "5" if shot["end"] - start <= 5 else "10",
             "negative_prompt": film.get("negative", "cartoon, anime, CGI, 3D render, text, watermark, people, rider, saddle, blur")})
         urllib.request.urlretrieve(result["video"]["url"], raw)
+        cost.append(0.35 if shot["end"] - start <= 5 else 0.70)
     text = shot.get("text", "").replace("'", "’").replace(":", "\\:")
     caption = (f",drawtext=fontfile={FONT}:text='{text}':fontcolor=white:fontsize=64:borderw=4:bordercolor=black@0.6"
                ":x=(w-tw)/2:y=h*0.72") if text else ""
@@ -106,7 +112,8 @@ else:
     subprocess.run([FF, "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(listing), "-i", film["music"],
                     "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", str(out)],
                    check=True)
-    print(f"Film: {out} ({len(parts)} shots)")
+    film_path.with_suffix(".cost").write_text(f"{sum(cost):.2f}")
+    print(f"Film: {out} ({len(parts)} shots, ${sum(cost):.2f} new AI shots)")
 if post := os.environ.get("POST"):
     from video import upload
     channel = next(c for c in json.loads(Path("channels.json").read_text(encoding="utf-8")) if c["id"] == post)

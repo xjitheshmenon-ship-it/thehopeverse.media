@@ -51,6 +51,15 @@ jobs:
           done
           true
       - run: python film.py "films/$NAME.json"
+      - name: Count the new AI shots in the dashboard's spend (ÆTHER)
+        if: always()
+        env:
+          TZ: Asia/Kolkata  # history.jsonl dates are India time, like hope.yml's
+        run: |
+          [ -s "films/$NAME.cost" ] && [ "$(cat "films/$NAME.cost")" != "0.00" ] || exit 0
+          python state.py load  # just before the append, so other runs' spend saved meanwhile is kept
+          python -c "import json,os,time; open('runs/history.jsonl','a').write(json.dumps({'date': time.strftime('%Y-%m-%d %H:%M'), 'cost_usd': float(open('films/'+os.environ['NAME']+'.cost').read()), 'channel': os.environ['POST'] or 'yt-aether'})+'\n')"
+          python -c "import state; state.save(['runs/history.jsonl'])"
       - if: always()
         run: |
           mkdir -p "out/films/$NAME" && cp films/"$NAME"/raw-*.mp4 films/"$NAME"/ref-* films/"$NAME"/frame-* "out/films/$NAME/" 2>/dev/null || true
