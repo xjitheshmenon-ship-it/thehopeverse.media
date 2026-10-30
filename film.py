@@ -8,6 +8,7 @@ The shots' "end" times follow the track's sections (tease, hit, walk, drop, mass
 HeyGen Video first (HEYGEN_API_KEY, about $0.09 a 5 s shot, slowed down to fill longer shots), else Kling on fal.ai
 (FAL_KEY, $0.35 per 5 s shot, $0.70 up to 10 s).
 A shot with "image" starts from that photo (HeyGen only), so the same man, face and clothes appear in every shot.
+"refs" makes those photos first (fal Flux, then Kontext for the same face); REFS_ONLY=1 stops after them for a review.
 """
 import json
 import os
@@ -42,6 +43,17 @@ if video_id := os.environ.get("VIDEO"):
 work = film_path.with_suffix("")
 work.mkdir(exist_ok=True)
 starts = [0] + [s["end"] for s in film["shots"][:-1]]
+refs = film.get("refs", {})  # {"ref-x.jpg": prompt}: the first photo is made from text, the rest from it (same face and clothes)
+for k, (name, prompt) in enumerate(refs.items()):
+    if (work / name).exists():
+        continue
+    result = fal_client.subscribe("fal-ai/flux-pro/kontext", arguments={
+        "prompt": f"The same man, same face, beard and clothes: {prompt}", "aspect_ratio": "9:16",
+        "image_url": fal_client.upload_file(str(work / next(iter(refs))))}) if k else fal_client.subscribe(
+        "fal-ai/flux-pro/v1.1-ultra", arguments={"prompt": f"{prompt}. {film['look']}", "aspect_ratio": "9:16"})
+    urllib.request.urlretrieve(result["images"][0]["url"], work / name)
+if os.environ.get("REFS_ONLY"):  # make and review the photos before paying for the shots
+    sys.exit(print(f"Reference photos: {', '.join(refs)}"))
 
 
 def make(i: int) -> Path:
