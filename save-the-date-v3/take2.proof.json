@@ -1,0 +1,19 @@
+{
+  "title": "Save the Date v3 (countdown, smooth climax)",
+  "take": 2,
+  "made_at_utc": "2026-10-30T15:47:49.698574+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "b3kxGH1H7hEwnFAhnSmm",
+  "request": {
+    "prompt": "An exciting, catchy, attention-grabbing modern cinematic wedding countdown score for a one-minute save-the-date film. Hybrid score: punchy modern beats with 808 and finger snaps, full orchestra and choir, and the explosive South Indian wedding drum-and-horn burst. Cheeky, playful and hyped from the very first second, a surprise every 8 to 10 seconds in the first half, never sad, never minor, never slow. The rhythm is made of time: a ticking clock, a thumping heartbeat and camera shutter clicks play the groove. ONE bold, catchy 4-note hook runs through the whole track: D E A F# (raga Mohanam in bright D major: D E F# A B, no G and no C#), first whistled, then on strings, bansuri, horns and choir, bigger every time. Written the way today's South Indian film composers score a mass celebration song: gamakam bends on the hook, stop-and-slam full-band hits, call and answer, a korvai ending. A sweet wordless female voice answers the hook with playful 'aa-ha' calls and soars with humming at the build. Real instruments played by real musicians, close, dry and natural, no heavy echo, not chopped: whistle, bansuri flute, tabla, thavil drums, a nadaswaram-style double-reed horn, violins. One steady tempo, 112 BPM. 0-3 s: a clock ticks and a heartbeat thumps as the beat, a camera shutter clicks, and the whistled hook cuts in boldly at once. 3-8 s: finger snaps, punchy 808 and plucked synth join, the whistle plays the hook, the female voice answers 'aa-ha'. 8-10 s: a sudden full stop, total silence except one clock tick. 10-24 s: slam back in with a big groove of tabla and 808, string stabs play the hook, then the bansuri takes it with fast ornaments. 24-34 s: the build: the orchestra rises, the female voice hums the hook high above, a reversed swell sucks in. 34-36 s: one huge full-band hit, then silence with a single heartbeat. 36-52 s: the build flows straight into the climax on the beat, same tempo, same key: joyful thavil drumming and a bright double-reed horn playing the hook with massive cinematic drums, full orchestra and choir, the hook at its biggest and happiest, staying in bright D major the whole time. 52-60 s: the clock ticks back in, three slamming full-band hits, then the whistle plays the hook one last time over a final deep boom. Stay in D major from start to end, no key change, no chromatic or clashing chords, the transition into the climax is smooth and in rhythm. No soft intro, no fade-in, no lull, no fade-out, no EDM drop structure, no side-chain pumping, no white-noise risers, no lyrics.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 60000
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 13:03 on v1 (orchestra + humming, Hamsadhwani): 'Too basic. Make it interesting and attention making.' v2: catchy whistled hook from 0 s, time sounds as the groove, surprise stops at 8 s and 34 s, thavil + nadaswaram-style frenzy climax, key lift at 44 s. Mohanam in D keeps it bright. 3 takes; we pick. | Jithesh 30 Oct 15:43 on v2 take 2: 38-43 s transition 'not smooth, destroyed the whole vibe'. Measured: the asked key lift to E made the band wander through off-key Eb/Bb chords at 38-42 s before landing in E at 43 s. v3 drops the key change and asks for a smooth on-beat build into a D major climax."
+  },
+  "story": "A modern couple's save-the-date film told as a countdown: clock, heartbeats and camera clicks are the beat, the wedding drum-and-horn burst explodes at the date reveal.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
