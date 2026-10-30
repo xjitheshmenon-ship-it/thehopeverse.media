@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: The Long Way Home (emotional drama main theme)",
+  "take": 2,
+  "made_at_utc": "2026-10-30T11:22:27.352480+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "SjciU0CsFh6V6XnvYMPo",
+  "request": {
+    "prompt": "ONE single cinematic main title theme for an emotional South Indian family drama: a daughter comes home to her old father in a seaside village after ten years apart. The whole track is built on ONE memorable, aching melody that returns again and again; nothing unrelated is introduced, it grows only through instruments and energy, one continuous story. Raga Charukesi (a Mixolydian flat-six scale) in D: D E F# G A Bb C. The melody starts bright in the low notes D E F# G, then leans on the flat sixth Bb and falls Bb A G F# like a sob; that turn is the emotion. Rising phrases climb A Bb C D, falling phrases come down D C Bb A G F# E D. Sung-style phrasing with gamakam: slides into notes, a wide shake on F# and Bb, grace notes before long notes. Modal harmony on a D pedal with a soft drone on D and A, few chord changes, no Western chord loops. One steady pulse: a gentle 6/8 sway at 76 BPM from 22 s to the end, never stopping. The voice: a soft, close, natural wordless female humming voice (mm and aa) carries the melody. Real instruments, played by real musicians, close, dry and natural, no heavy echo or delay, not chopped: bamboo flute, violin section in Indian-style unison, solo violin, tabla, soft felt piano, warm round bass. A separate quiet electronic layer: a chopped glitching veena answering phrases, a pitched-down mridangam low hit, a reversed veena swell before the big return. 0-8 s: only a lone bamboo flute plays a rising 3-note call D F A with the last note bent up, over the soft drone, dawn by the sea. 8-22 s: the female humming sings the melody softly and alone, the chopped veena answers each phrase quietly. 22-40 s: a gentle tabla sway and warm bass start, violins softly under the humming, tender memories of childhood. 40-50 s: the drums thin to a light pulse, a solo violin plays the bitter turn on Bb, the humming holds one long aching note; still moving, no silence. 50-72 s: a reversed veena swell and one deep low hit, then the melody returns at its fullest, a whole step higher in E: humming, violins and flute in unison, full tabla groove and bass, a warm tearful reunion, hopeful. 72-90 s: the music softens, the humming sings the first phrase once more, the flute ends alone on the 3-note call, a last warm note held over the drone. No section that sounds like a different song, no silences, no gaps, no EDM, no trailer drums, not a hero or royal march, no heavy echo on the flute or voice, no lyrics.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 90000
+  },
+  "brief": {
+    "notes": "Jithesh 30 Oct 11:17: 'script for movie theme, and then make the proper BGM or the theme music'; 11:18: 'not full script, just the outline'. Genre chosen by us: emotional family drama (distinct from Storm Entry hero and Kingdom royal). Script first (rule 17), raga Charukesi in D (rule 19), humming voice, natural instruments, Broken Heritage layer, one continuous generation (joins failed before). Prompt mode, music_v2."
+  },
+  "story": "A daughter comes home to her old fisherman father after ten years apart; bittersweet longing turns into a warm, hopeful reunion.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
