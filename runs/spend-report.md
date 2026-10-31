@@ -1,16 +1,16 @@
-# Hopeverse spending report, 31 Oct 2026 04:20
+# Hopeverse spending report, 31 Oct 2026 15:36
 
-- Today: $3.11 (8 runs)
-- Last 7 days: $167.31
-- This month: $167.31
-- All time: $167.31
+- Today: $5.55 (18 runs)
+- Last 7 days: $169.75
+- This month: $169.75
+- All time: $169.75
 
 Claude (Anthropic) costs as estimated by agents.py, review included. Video images from fal.ai add
 about $0.006 each (about $0.06 a Short). Exact bills: console.anthropic.com and fal.ai/dashboard.
 
 | Day | Runs | Cost |
 | --- | --- | --- |
-| 2026-10-31 | 8 | $3.11 |
+| 2026-10-31 | 18 | $5.55 |
 | 2026-10-30 | 78 | $51.31 |
 | 2026-10-29 | 49 | $19.29 |
 | 2026-10-28 | 52 | $22.18 |
@@ -50,11 +50,10 @@ spazio, astronomia, universo, pianeti, stelle, sistema solare, missioni spaziali
 
 ## Credits left
 
-- **HeyGen is low: 2.9 usd left** - top it up today
-- **ElevenLabs is empty: 0 characters left** - top it up today
+- **HeyGen is low: 2.3 usd left** - top it up today
 - fal.ai: ? usd (Couldn't read the balance (HTTP Error 403: Forbidden); add a fal.ai READONLY key as the FAL_BILLING_KEY secret)
-- HeyGen: 2.9 usd (Talking hosts; Kling on fal.ai takes over when it runs out)
-- ElevenLabs: 0 characters (Voices; free Edge voices take over when it runs out. Plan: creator)
+- HeyGen: 2.3 usd (Talking hosts; Kling on fal.ai takes over when it runs out)
+- ElevenLabs: 60850 characters (Voices; free Edge voices take over when it runs out. Plan: creator)
 - Anthropic: ? usd (No balance API: see console.anthropic.com > Billing. Spend is logged per run)
 - Perplexity: ? usd (No balance API: see perplexity.ai/account/api. About $0.006 a search)
 
