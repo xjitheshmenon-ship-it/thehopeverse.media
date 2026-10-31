@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Overtake v2 (global car chase BGM, siren hook)",
+  "take": 2,
+  "made_at_utc": "2026-10-31T11:05:16.702421+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "DGGHhlqpMo6weTgUsOsI",
+  "request": {
+    "prompt": "A thrilling, unforgettable car chase cue from a modern big-screen action film, for a worldwide audience, at a fast 150 BPM, loud and exciting from the very first second. The signature idea: the hook IS a police siren turned into music. A two-tone siren wail, sliding up and down between A and D, is played as the main melody: sung by a fierce, powerful wordless female voice with big slides, doubled by a screaming distorted electric guitar, so the siren itself becomes the tune everyone remembers. Car-horn blasts become short punchy brass stabs on the off-beats. Underneath: huge tight hybrid drums and taiko, a driving melodic synth bass, fast sixteenth-note orchestral strings. Written the way today's biggest South Indian film composers write a chase: raga melody with fast ornaments and bends, stop-and-slam full-band unison hits, a crowd shouting HEY, the hook coming back bigger every time. Raga Kiravani in D: D E F G A Bb C#. Real instruments are played by real musicians, close and natural, no heavy echo. Timeline: 0-2 s: one massive full-band slam and the siren wail on the female voice, instantly. 2-10 s: the chase groove at full speed, the siren hook on distorted guitar, car-horn brass stabs answering. 10-20 s: a duel: the siren hook on the female voice, answered bar by bar by thunderous taiko and tom fills, call and response, faster and faster. 20-28 s: the hook moves to fierce sliding solo violin over pounding drums, crowd shouts HEY on every accent. 28-32 s: the brake: everything cuts to total silence for one full beat, then only a single siren wail slowly rising alone, getting louder. 32-44 s: the full band slams back in, the drums switch to double-time, the siren hook a whole step higher on voice, guitar and brass together, the most exciting moment. 44-54 s: a new turn: a rapid triplet drum pattern under the hook, strings racing up the scale, unison stabs with the drums. 54-60 s: a rhythmic phrase played three times by the whole band, landing on one huge final hit, then the siren wail fades into the night. Not a polite or gentle build, no soft intro, no slow middle, no engine sounds, no white-noise risers, no EDM drop, no side-chain pumping, no lyrics, no words.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 60000
+  },
+  "brief": {
+    "notes": "Jithesh 31 Oct 10:59 on v1 take 1: 'nothing interesting'. v1 was a polite build (-20 dB start, no single idea you remember). v2: ONE bold signature that belongs to the chase (rule 9.9, subject's own sounds): the police siren's two-tone wail tuned into the hook itself, sung by a fierce wordless female voice and doubled by distorted guitar; car-horn brass stabs. Wow moments (9.13): slam at 0 s, a siren-vs-drums duel, the brake as total silence then a single siren rising then slam, double-time drums, key lift, korvai ending. Loud from 0 s like the approved Zero Hour. Prompt-mode timeline naming a new lead per section (Neon Raja v4 lesson). Still no engine sounds. Kiravani in D, 150 BPM, 60 s, 2 takes."
+  },
+  "story": "A young getaway driver with a stolen hard drive races police cars and a drone across a rain-soaked megacity at night.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
