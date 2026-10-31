@@ -127,7 +127,8 @@ ENGLISH_NUMBERS = (" In narration, say every number, year, date, percentage and 
 def dub(path: Path, channel: dict) -> Path:
     """Write a translated copy of an outbox package for a dub channel; the scenes keep the original footage."""
     package = json.loads(path.read_text(encoding="utf-8"))
-    board = Storyboard.model_validate_json((path.with_suffix("") / "board.json").read_text(encoding="utf-8"))
+    board = Storyboard(scenes=package["scenes"]) if "scenes" in package else \
+        Storyboard.model_validate_json((path.with_suffix("") / "board.json").read_text(encoding="utf-8"))  # stories keep scenes inline
     out = client.messages.parse(
         model=HELPER_MODEL,
         max_tokens=16000,
@@ -148,7 +149,7 @@ def dub(path: Path, channel: dict) -> Path:
     target = path.with_suffix(f".{channel['lang']}.json")
     target.write_text(json.dumps({"channel_id": channel["id"], "title": out.title, "description": out.description,
                                   "dub_of": path.stem, "lang": channel["lang"], "scenes": [s.model_dump() for s in scenes],
-                                  **{k: package[k] for k in ("footer", "category", "hosts", "photos") if k in package}},
+                                  **{k: package[k] for k in ("footer", "category", "hosts", "photos", "cast", "music") if k in package}},
                                  indent=2, ensure_ascii=False), encoding="utf-8")
     return target
 
@@ -1059,6 +1060,13 @@ if __name__ == "__main__":
                 "description": desc, "tags": tags}}).execute()
             print(f"Updated https://youtu.be/{v['id']}  {s['title']}")
         sys.exit()
+    if "--dub-to" in sys.argv:  # re-voice posted Shorts for another channel: python video.py --dub-to yt-instinct-ja yt-instinct-4 ...
+        i = sys.argv.index("--dub-to")
+        c = channels[sys.argv[i + 1]]
+        for name in sys.argv[i + 2:]:
+            if not (OUTBOX / f"{name}.{c['lang']}.json").exists():
+                print(f"Wrote {dub(OUTBOX / f'{name}.json', c).name}")
+        sys.exit()  # the normal run then makes and posts them in that channel's slots
     if "--connect" in sys.argv:  # sign a channel in once: python video.py --connect hi (or a channel id)
         lang = sys.argv[sys.argv.index("--connect") + 1]
         c = next(c for c in channels.values() if lang in (c.get("lang"), c["id"]))
