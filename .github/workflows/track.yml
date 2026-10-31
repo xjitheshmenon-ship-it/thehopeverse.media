@@ -34,8 +34,9 @@ jobs:
           out.mkdir(parents=True, exist_ok=True)
           # Inpainting: "upload" names a take on music-tracks (e.g. "semma-paiyan-v4/take2.mp3"). It is stored at ElevenLabs
           # once (upload.json keeps the song id, word timings and its plan); "SOURCE" in the plan becomes that song id.
-          if "upload" in track:
-              up = out / "upload.json"
+          # "source" reuses an earlier brief's upload.json instead of paying for the upload again.
+          if "upload" in track or "source" in track:
+              up = Path("out") / track.get("source", name) / "upload.json"
               if not up.exists():
                   import subprocess
                   res = subprocess.run(["curl", "-sS", "--fail-with-body", "-m", "600", "https://api.elevenlabs.io/v1/music/upload",
