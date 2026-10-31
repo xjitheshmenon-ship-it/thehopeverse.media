@@ -32,6 +32,24 @@ jobs:
           track = json.loads(Path(f"tracks/{name}.json").read_text(encoding="utf-8"))
           out = Path("out") / name
           out.mkdir(parents=True, exist_ok=True)
+          # Inpainting: "upload" names a take on music-tracks (e.g. "semma-paiyan-v4/take2.mp3"). It is stored at ElevenLabs
+          # once (upload.json keeps the song id, word timings and its plan); "SOURCE" in the plan becomes that song id.
+          if "upload" in track:
+              up = out / "upload.json"
+              if not up.exists():
+                  import subprocess
+                  res = subprocess.run(["curl", "-sS", "--fail-with-body", "-m", "600", "https://api.elevenlabs.io/v1/music/upload",
+                                        "-H", "xi-api-key: " + os.environ["ELEVENLABS_API_KEY"].strip(),
+                                        "-F", f"file=@out/{track['upload']}", "-F", "extract_composition_plan=music_v2_5",
+                                        "-F", "with_timestamps=true"], capture_output=True, text=True)
+                  if res.returncode:
+                      raise SystemExit(f"upload failed: {res.stdout[:500]} {res.stderr[:300]}")
+                  up.write_text(res.stdout, encoding="utf-8")
+              song_id = json.loads(up.read_text(encoding="utf-8"))["song_id"]
+              print(f"source song id {song_id}")
+              if "plan" not in track:
+                  raise SystemExit(0)  # upload only: read upload.json, then write the plan
+              track["plan"] = json.loads(json.dumps(track["plan"]).replace('"SOURCE"', json.dumps(song_id)))
           for take in range(1, track.get("takes", 1) + 1):
               # A v2 plan has "chunks" (v1 can't read it); a v1 plan has "sections" (only v1 reads it).
               for model in (("music_v2_5", "music_v2") if "chunks" in track.get("plan", {}) else ("music_v2", "music_v1")):  # v2 sounds better; v1 if the plan doesn't offer it
