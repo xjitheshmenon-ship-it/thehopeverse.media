@@ -1067,6 +1067,14 @@ if __name__ == "__main__":
             if not (OUTBOX / f"{name}.{c['lang']}.json").exists():
                 print(f"Wrote {dub(OUTBOX / f'{name}.json', c).name}")
         sys.exit()  # the normal run then makes and posts them in that channel's slots
+    if "--next-dub" in sys.argv:  # the oldest posted Short of the channel's "dub_from" not yet re-voiced for it (owner, 31 Oct)
+        c = channels[sys.argv[sys.argv.index("--next-dub") + 1]]
+        src = sorted((p for p in OUTBOX.glob(f"{c.get('dub_from')}-*.json") if re.fullmatch(rf"{c.get('dub_from')}-\d+", p.stem)
+                      and not p.with_suffix(f".{c['lang']}.json").exists()
+                      and "youtube_id" in (pk := json.loads(p.read_text(encoding="utf-8")))
+                      and ("scenes" in pk or (p.with_suffix("") / "board.json").exists())),  # what dub() is cut from
+                     key=lambda p: int(p.stem.rsplit("-", 1)[1]))
+        sys.exit(print(src[0].stem if src and c.get("dub_from") else ""))
     if "--connect" in sys.argv:  # sign a channel in once: python video.py --connect hi (or a channel id)
         lang = sys.argv[sys.argv.index("--connect") + 1]
         c = next(c for c in channels.values() if lang in (c.get("lang"), c["id"]))

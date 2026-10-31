@@ -123,7 +123,9 @@ jobs:
           topic=$(python plan.py --next "$id" || true)  # the topic the dashboard showed for this video
           [ -n "$topic" ] && goal="make the Short on the planned topic \"$topic\" (check list_outbox and that it is still accurate and new; if not, pick the best alternative), then $goal"
           before=$(ls outbox/*.json 2>/dev/null | wc -l)
-          HOPE_CHANNEL=$id HOPE_REVIEW=$REVIEW python agents.py "Scheduled run, Short $N of $QUOTA today for channel $id: $goal" || true
+          src=$(python video.py --next-dub "$id" || true)  # a channel with "dub_from" re-voices its source's posted Shorts first
+          if [ -n "$src" ]; then python video.py --dub-to "$id" "$src" || true
+          else HOPE_CHANNEL=$id HOPE_REVIEW=$REVIEW python agents.py "Scheduled run, Short $N of $QUOTA today for channel $id: $goal" || true; fi
           ok=0; [ "$(ls outbox/*.json 2>/dev/null | wc -l)" -gt "$before" ] || { echo "::error::No Short was drafted (see Mr. Hope's log above)"; ok=1
             cp "$RUNNER_TEMP/plan.json" runs/plan.json 2>/dev/null; sed -i '$d' runs/slots.jsonl
             echo MORE=0 >> "$GITHUB_ENV"; }  # keep the approved topic and slot for a rerun, and stop the chain (e.g. no API credit)
