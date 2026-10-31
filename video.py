@@ -1039,17 +1039,18 @@ if __name__ == "__main__":
         from google.oauth2.credentials import Credentials
         from googleapiclient.discovery import build
         c = channels[sys.argv[sys.argv.index("--refresh") + 1]]
-        old, new = "Made by AI. Made with hope.", c["footer"].split("\n")[0].split(". ", 1)[1]  # the English sign-off
+        foot = c.get("footer", "")  # Hopeverse has none of its own: only owner notes are cleaned there
+        old, new = ("Made by AI. Made with hope.", foot.split("\n")[0].split(". ", 1)[1]) if foot else ("", "")  # the English sign-off
         # the saved sign-in carries the full "youtube" scope from connect.py, which editing a video needs
-        yt = build("youtube", "v3", credentials=Credentials.from_authorized_user_file(str(HERE / c["token"])))
+        yt = build("youtube", "v3", credentials=Credentials.from_authorized_user_file(str(HERE / c.get("token", "token.json"))))
         uploads = yt.channels().list(part="contentDetails", mine=True).execute()["items"][0]["contentDetails"]["relatedPlaylists"]["uploads"]
         ids = [i["contentDetails"]["videoId"] for i in yt.playlistItems().list(
             part="contentDetails", playlistId=uploads, maxResults=50).execute()["items"]]
         for v in yt.videos().list(part="snippet", id=",".join(ids)).execute()["items"]:
             s = v["snippet"]
             # split_owner_notes also takes out owner notes that leaked into old uploads (31 Oct)
-            first, *rest = split_owner_notes(s["description"].replace(old, new))[0].split(c["footer"])  # keep the footer once
-            desc = re.sub(r"\n{3,}", "\n\n", (first + c["footer"] + "".join(rest)) if rest else first).strip()
+            first, *rest = split_owner_notes(s["description"].replace(old, new))[0].split(foot or "\0")  # keep the footer once
+            desc = re.sub(r"\n{3,}", "\n\n", (first + foot + "".join(rest)) if rest else first).strip()
             tags = [c["name"] if t == "Hopeverse Media" else t for t in s.get("tags", [])]
             if (desc, tags) == (s["description"], s.get("tags", [])):
                 continue
