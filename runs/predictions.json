@@ -362,5 +362,19 @@
   "predicted": null,
   "actual": 26,
   "at": "2026-10-31 09:12"
+ },
+ "yt-instinct-11": {
+  "channel": "yt-instinct",
+  "title": "47 corneilles sur 53 : le masque qui les fait crier #Shorts",
+  "predicted": 520,
+  "actual": 1052,
+  "at": "2026-10-31 10:12"
+ },
+ "yt-instinct-12": {
+  "channel": "yt-instinct",
+  "title": "1 abeille, 1 zéro : l'insecte qui compte le vide #Shorts",
+  "predicted": 650,
+  "actual": 572,
+  "at": "2026-10-31 10:12"
  }
 }
