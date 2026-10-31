@@ -1,0 +1,141 @@
+{
+  "channel_id": "yt-instinct-ja",
+  "title": "針金1本でフック作り!曲げるカラスの正体 #Shorts",
+  "description": "理解なのか、習慣なのか?\n\n2002年、イギリスのオックスフォード大学。ニューカレドニアカラスのベティは、まっすぐな針金1本だけを渡され、それを曲げてフックにし、筒の中から小さなバケツに入ったエサを引き上げました。野生のニューカレドニアカラスも道具を作ります。水を使った特定のテストでは、原因を理解する力が5〜7歳の子どもに匹敵するとされ、研究者は「高度だが不完全」と表現しています。2014年には同じ研究チームがテストを変更し、結果が変わりました。だから好奇心は大事なんです。\n\n参考文献:Weir, Chappell & Kacelnik 2002, Science / Hunt 1996, Nature / Hunt & Gray 2003, Proc. R. Soc. B / Jelbert et al. 2014, PLOS ONE / Logan et al. 2014, PLOS ONE\n\n映像:アーカイブ映像(Pixabay、NASA)とAI生成イラストを使用しています。実験当時の映像ではありません。\n\nInstinct|Hopeverse Media チャンネル。Made by AI. Made with hope.\nチャンネル登録で、毎日いきものの物語をお届けします。\n\n#Shorts #動物 #自然 #雑学 #カラス",
+  "dub_of": "yt-instinct-4",
+  "lang": "ja",
+  "scenes": [
+    {
+      "narration": "まっすぐな針金が1本。このカラス、それをグイッと曲げて、フックにしちゃうんです。",
+      "on_screen_text": "針金1本→フック1つ",
+      "picture_search": "New Caledonian crow close-up",
+      "image_prompt": "Photo-real close-up of a New Caledonian crow holding a thin straight metal wire in its beak, forest background, vertical 9:16, shallow depth of field",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "名前はベティ。2002年、イギリスのオックスフォードで、渡されたのはまっすぐな針金だけでした。",
+      "on_screen_text": "ベティ、オックスフォード、2002年",
+      "picture_search": "crow bending wire",
+      "image_prompt": "Photo-real illustration-style shot of a dark crow in a lab aviary, a straight wire on a table, eye-level camera, labelled as AI illustration, not the real Betty",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "筒の中の小さなバケツに入ったエサを取るために、針金を曲げてフックにしたんです。",
+      "on_screen_text": "筒の中の小さなバケツ",
+      "picture_search": "crow tool use food tube",
+      "image_prompt": "Photo-real close-up of a crow's beak using a hooked wire to lift a tiny bucket of food from a clear vertical tube, lab setting, side angle",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "これ、実験室だけの偶然じゃありません。ニューカレドニアの野生のカラスも、フックを作ります。",
+      "on_screen_text": "野生でもフックを作る",
+      "picture_search": "New Caledonia forest",
+      "image_prompt": "Photo-real wide shot of lush tropical forest in New Caledonia in the Pacific, morning light, a crow perched on a branch",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "しかもタコノキの葉を切って、階段みたいな形の道具まで作るんです。",
+      "on_screen_text": "階段状の道具",
+      "picture_search": "pandanus leaves close-up",
+      "image_prompt": "Photo-real close-up of pandanus leaves with stepped cut edges, tropical forest, macro lens, natural light",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "次はイソップ寓話のテスト。水の入った筒の中で、エサが浮いていて届きません。",
+      "on_screen_text": "イソップ寓話のテスト",
+      "picture_search": "water tube floating food",
+      "image_prompt": "Photo-real close-up of a clear tube of water with a small piece of food floating near the top, out of reach, lab bench, soft lighting",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "カラスは物を落として、水位を上げていきます。",
+      "on_screen_text": "水位が上がる",
+      "picture_search": "crow dropping stone into water",
+      "image_prompt": "Photo-real shot of a crow dropping a small stone into a tube of water, water level rising, side angle, shallow depth of field",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "しかも選び方が的確。浮くものより沈むもの、砂の筒より水の筒を選んだんです。",
+      "on_screen_text": "沈む◯ 浮く✕・水◯ 砂✕",
+      "picture_search": "stones sinking in water",
+      "image_prompt": "Photo-real split view of stones sinking in a glass of water beside a tube filled with sand, neutral lab background, top-down angle",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "研究者によると、原因を理解する力は5〜7歳の子どもに匹敵するそうです。ただし、あくまで特定のテストでの話。",
+      "on_screen_text": "5〜7歳並み…特定のテストで",
+      "picture_search": "child hands water experiment",
+      "image_prompt": "Photo-real close-up of a child's hands only dropping a marble into a tube of water, classroom table, no face visible",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "その力は「高度だけど不完全」と言われています。",
+      "on_screen_text": "「高度だが不完全」",
+      "picture_search": "scientific paper research",
+      "image_prompt": "Photo-real close-up of a printed scientific paper on a desk with highlighted text, pen beside it, overhead angle",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "ところが2014年、同じチームがテストを変えたら、結果も変わったんです。",
+      "on_screen_text": "2014年:テスト変更、結果も変化",
+      "picture_search": "researcher laboratory notes",
+      "image_prompt": "Photo-real shot of lab notebooks and a modified experiment apparatus with tubes on a bench, researcher's hands adjusting the setup, no face visible",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "じゃあ、本当に水の性質を理解しているのか、それとも覚えたルールに従っているだけなのか。",
+      "on_screen_text": "理解?それとも習慣?",
+      "picture_search": "crow looking at camera",
+      "image_prompt": "Photo-real portrait of a crow looking directly at the camera, dark forest background, vertical framing",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "一言でコメントして!理解か、習慣か。チャンネル登録で、毎日いきものの話をお届けします。",
+      "on_screen_text": "登録お願いします・Instinct",
+      "picture_search": "crow flying forest",
+      "image_prompt": "Photo-real crow taking flight over a dark green forest at dusk, wide shot with space at top for text",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    }
+  ],
+  "footer": "Instinct, une chaîne Hopeverse Media. Made by AI. Made with hope.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "category": "15"
+}
