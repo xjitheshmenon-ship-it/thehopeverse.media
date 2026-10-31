@@ -189,7 +189,8 @@ def queue_post(channel_id: str, title: str, description: str, script: str) -> st
     Args:
         channel_id: The id of a channel from list_channels.
         title: Video or reel title.
-        description: Description / caption with hashtags.
+        description: Description / caption with hashtags: public text only. Notes for the owner (publish slot,
+            pinned comment) go in your summary, never here.
         script: Full script and edit plan.
     """
     channel = next((c for c in _channels() if c["id"] == channel_id), None)
@@ -197,6 +198,13 @@ def queue_post(channel_id: str, title: str, description: str, script: str) -> st
         return f"error: unknown channel '{channel_id}'. Call list_channels."
     if channel.get("status") != "live":
         return f"error: '{channel_id}' is not live yet; the owner must create it by hand and set status to live."
+    from state import split_owner_notes
+    description, notes = split_owner_notes(description)  # owner notes never go public: they go to HQ instead
+    if notes:
+        (HERE / "runs").mkdir(exist_ok=True)
+        with (HERE / "runs" / "hope-said.jsonl").open("a", encoding="utf-8") as f:
+            f.write(json.dumps({"at": f"{datetime.now():%Y-%m-%d %H:%M}", "channel": channel_id,
+                                "text": f"For you, about \"{title}\":\n" + "\n".join(notes)}, ensure_ascii=False) + "\n")
     OUTBOX.mkdir(exist_ok=True)
     path = next_outbox_path(channel_id)
     path.write_text(json.dumps(
