@@ -91,6 +91,23 @@ def notes(k: int = 30) -> list:
     return [json.loads(x) for x in NOTES.read_text(encoding="utf-8").splitlines()[-k:]] if NOTES.exists() else []
 
 
+# Notes meant only for the owner (a publish slot to set, a pinned comment to post) once leaked into a public
+# description (Instinct, 31 Oct 2026). Any line opening with one of these labels, to the end of its paragraph, is cut.
+OWNER_NOTE = re.compile(r"^\W*(publish(ing)? (slot|time)|pinned comment|community post|posting time|owner notes?)\b[^:\n]{0,40}:"
+                        r"|notes? for (the )?owner", re.I)
+
+
+def split_owner_notes(text: str) -> tuple:
+    """(public description, [owner notes]) with every owner note taken out."""
+    keep, cut = [], []
+    for para in re.split(r"\n\s*\n", text or ""):
+        lines = para.split("\n")
+        i = next((n for n, x in enumerate(lines) if OWNER_NOTE.search(x)), len(lines))
+        keep += ["\n".join(lines[:i]).strip()] if i else []
+        cut += ["\n".join(lines[i:]).strip()] if i < len(lines) else []
+    return "\n\n".join(k for k in keep if k), cut
+
+
 if __name__ == "__main__":
     if sys.argv[1] == "note":
         note(os.environ.get("BODY", ""))
