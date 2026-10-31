@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Overtake (global car chase BGM)",
+  "take": 2,
+  "made_at_utc": "2026-10-31T10:10:46.264614+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "bsg0UOrRquSB01qCzzFy",
+  "request": {
+    "prompt": "A modern, international big-screen action film score: a high-speed car chase through a rain-soaked megacity at night, for a worldwide audience. Instrumental, no lyrics. A polished, glossy hybrid sound: fast driving orchestral strings, punchy brass, a distorted electric guitar, a gritty synth lead, deep synth bass, huge tight hybrid drums and taiko. Written the way today's biggest South Indian film composers write a chase: a raga melody with fast ornaments, bends and slides on every lead, tight unison stop-and-slam hits, the hook coming back bigger each time. Raga Kiravani in D: D E F G A Bb C#. ONE catchy 5-note hook, A Bb C# D A, runs through the whole track, passed between instruments, with bends on F and Bb. One steady fast tempo, a true 150 BPM drive, never half-time. The idea: the music shifts gears; every 10 seconds the hook moves to a NEW lead sound and the drive gets harder. Real instruments named as themselves are played by real musicians, close, natural and dry, no heavy echo: solo violin, electric guitar, taiko. Timeline: 0-3 s: one huge low hit, then a gritty synth plays a 3-note call D F A, the last note bent up. 3-12 s: gear one: fast sixteenth-note string ostinato and a tight hybrid drum groove at full speed at once, the hook on the synth lead. 12-22 s: gear two: the hook moves to a distorted electric guitar riff with bends, brass stabs hit with it, police-siren-like string glissandos. 22-32 s: gear three: the hook moves to a fiery solo violin with fast slides, the taiko drums double up. 32-36 s: the hard brake: the whole band brakes together on one long falling brass-and-strings slide down, then one beat of total silence, then only a ticking clock pulse. 36-48 s: gear four: the full band slams back in, the hook a whole step higher on brass and synth lead together, a crowd shouts HEY on the accents. 48-60 s: gear five: the biggest section, guitar, violin, brass and synth trading the hook phrase by phrase; the ending is a rhythmic phrase played three times that lands hard on the final downbeat with a big boom, then the 3-note call alone. Loud and driving from the very first second, no soft intro, no lull longer than one beat except the brake, no engine sounds, no engine growl, no fade-out, no white-noise risers, no EDM drop, no side-chain pumping, no lyrics.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 60000
+  },
+  "brief": {
+    "notes": "Jithesh 31 Oct 10:01: 'need a global track ... a car chase'. Global = worldwide audience: international hybrid action palette (orchestra, guitar, synths, huge drums), still written in the South Indian film style (rule 15). Modern concept (30 Oct rule). Learned from Red Line v1-v3: keep the hard brake + surprise, NO engine growl (29 Oct 15:32), new lead every ~10 s via a prompt-mode timeline (Neon Raja v4 lesson), hype from 0 s (Zero Hour). Kiravani in D so the D F A logo call sits in the raga. Prompt mode, music_v2, 60 s, 2 takes. Outline: music/overtake/overtake-outline.md."
+  },
+  "story": "A young getaway driver with a stolen hard drive races police cars and a drone across a rain-soaked megacity at night, shifting up a gear every time they get close.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
