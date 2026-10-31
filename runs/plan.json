@@ -46,20 +46,12 @@
    "when": "2026-10-31 07:45"
   },
   {
-   "topic": "1 mot, 1 objet : la chienne Rico qui comprend plus de 200 mots #Shorts",
-   "why": "Rico, border collie étudié en 2004 dans Science (Kaminski, Call, Fischer), associe plus de 200 mots à des objets et déduit le nom d'un objet inconnu par exclusion, comme un jeune enfant. Le fait se montre en une image avant/après (jouets alignés, un nouveau parmi eux). Histoire de lien humain-animal, publiée, avec comparaison enfant. Le chien surprend ici par l'inférence par exclusion. Attention: un sujet proche (1 jouet, 1 nom : la chienne qui retient) existe déjà, d'où un score modéré.",
-   "score": 38,
-   "views48": 420,
-   "planned": "2026-10-29 04:17",
-   "when": "2026-10-31 08:35"
-  },
-  {
    "topic": "1 mésange, 1 bouteille de lait : l'oiseau qui a appris à ouvrir le capuchon (histoire vraie)",
    "why": "Oiseau sous-estimé montrant une compétence d'apprentissage social que l'on croit réservée aux humains. Histoire connue en Angleterre, publiée dans des études sur la transmission culturelle chez les mésanges. Ton chaleureux, évoque la vie quotidienne et parle aux seniors. Pas encore traité sur la chaîne.",
    "score": 62,
    "views48": 900,
    "planned": "2026-10-31 00:05",
-   "when": "2026-11-01 04:25"
+   "when": "2026-10-31 08:35"
   },
   {
    "topic": "1 corbeau, 8 outils : Kitty, la corneille qui fabrique ses outils dans l'ordre #Shorts",
@@ -67,7 +59,7 @@
    "score": 58,
    "views48": 1000,
    "planned": "2026-10-31 00:05",
-   "when": "2026-11-01 06:05"
+   "when": "2026-11-01 04:25"
   },
   {
    "topic": "3 tardigrades, 1 protection : ce qui les a sauvés des UV en orbite #Shorts",
@@ -75,6 +67,14 @@
    "score": 66,
    "views48": 900,
    "planned": "2026-10-31 04:27",
+   "when": "2026-11-01 06:05"
+  },
+  {
+   "topic": "1 mot, 1 objet : la chienne Rico qui comprend plus de 200 mots #Shorts",
+   "why": "Rico, border collie étudié en 2004 dans Science (Kaminski, Call, Fischer), associe plus de 200 mots à des objets et déduit le nom d'un objet inconnu par exclusion, comme un jeune enfant. Le fait se montre en une image avant/après (jouets alignés, un nouveau parmi eux). Histoire de lien humain-animal, publiée, avec comparaison enfant. Le chien surprend ici par l'inférence par exclusion. Attention: un sujet proche (1 jouet, 1 nom : la chienne qui retient) existe déjà, d'où un score modéré.",
+   "score": 38,
+   "views48": 420,
+   "planned": "2026-10-29 04:17",
    "when": "2026-11-01 07:45"
   }
  ],
