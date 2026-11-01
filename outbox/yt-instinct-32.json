@@ -12,8 +12,8 @@
     "views48": 900
   },
   "qa": {
-    "passed": true,
-    "problems": ""
+    "passed": false,
+    "problems": "Shot 8 (crowd scene) depicts a large room full of people seated on the floor, which doesn't match the cat name-recognition topic (Japanese cat study) \u2014 appears to be an irrelevant/mismatched stock clip for 'M\u00eame avec une voix inconnue'."
   },
-  "youtube_id": "kCS6VALAsNM"
+  "held": "continuity: Shot 8 (crowd scene) depicts a large room full of people seated on the floor, which doesn't match the cat name-recognition topic (Japanese cat study) \u2014 appears to be an irrelevant/mismatched stock clip for 'M\u00eame avec une voix inconnue'."
 }
