@@ -60,6 +60,9 @@ ELEVEN_MODEL = os.environ.get("ELEVEN_MODEL") or "eleven_multilingual_v2"  # spe
 # Unset, a man's or woman's voice is picked from the account's voices: ElevenLabs' own studio voices first, in this order.
 ELEVEN_PREFER = ("Brian", "Daniel", "George", "Sarah", "Alice", "Matilda")
 # Steady, clean delivery: a lower similarity_boost stops a voice copying the noise of the recording it was made from.
+# Voice cap per video (owner, 1 Nov 2026: $0.30 inside the $3): ~1,400 ElevenLabs characters on the Creator plan.
+# A longer script is read by the free Edge voice instead, the whole video, so the voice never changes mid-Short.
+VOICE_CHARS = int(os.environ.get("VOICE_CHARS") or "1400")
 ELEVEN_SETTINGS = {"stability": 0.55, "similarity_boost": 0.6, "style": 0.0, "use_speaker_boost": True}
 GAP = 0.25  # seconds of quiet between two lines
 RATE = 44100
@@ -777,6 +780,9 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
         track.setnchannels(1)
         track.setsampwidth(2)
         track.setframerate(RATE)
+        free_voice = sum(len(s.narration) for _, s in spoken) > VOICE_CHARS
+        if free_voice:
+            print(f"    script is over {VOICE_CHARS} characters: free Edge voice, not ElevenLabs (voice cap)")
         for k, (i, scene) in enumerate(spoken):
             audio = work / f"{prefix}{i:03}.mp3"
             # Dubs keep their channel's voice; English lines are read by the host who says them.
@@ -785,7 +791,7 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
                 who = {**who, "voice": who.get(f"voice_{lang}", voice)}
             eleven = os.environ.get(f"ELEVEN_VOICE_{scene.speaker.upper()}") or eleven_voice(
                 "female" if "woman" in who.get("look", "").lower() else "male")
-            if lang not in ("", "hi"):  # ElevenLabs picks Indian-accented voices; French etc. keep the channel's Edge voice
+            if lang not in ("", "hi") or free_voice:  # ElevenLabs picks Indian-accented voices; French etc. keep the channel's Edge voice
                 eleven = ""
             if not speak(scene.narration, who.get("voice", voice), audio, who.get("pitch", "+0Hz"), eleven,
                          spoken[k - 1][1].narration if k else "",
