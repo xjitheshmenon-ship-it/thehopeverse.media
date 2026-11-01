@@ -1168,7 +1168,10 @@ if __name__ == "__main__":
             target = OUTBOX / f"{name}.{c['lang']}.json"
             if not target.exists():
                 print(f"Wrote {dub(OUTBOX / f'{name}.json', c).name}")
-            elif "youtube_id" not in (d := json.loads(target.read_text(encoding="utf-8"))) and d.get("held"):
+            elif "youtube_id" not in (d := json.loads(target.read_text(encoding="utf-8"))) and d.get("held") \
+                    and d.get("holds", 0) >= 2:  # held twice: dropped, never paid for again (spend audit, 1 Nov)
+                print(f"::warning::Dropped {target.name}: held twice ({d['held'][:200]})")
+            elif "youtube_id" not in d and d.get("held"):
                 [d.pop(k, None) for k in ("held", "qa", "render_failed")]  # asked again: make a held dub again
                 target.write_text(json.dumps(d, indent=2, ensure_ascii=False), encoding="utf-8")
                 target.with_suffix(".mp4").unlink(missing_ok=True)
@@ -1287,6 +1290,7 @@ if __name__ == "__main__":
                 package["qa"] = {"passed": c.passed, "problems": c.problems}
                 if not c.passed:
                     package["held"] = f"continuity: {c.problems}"
+                    package["holds"] = package.get("holds", 0) + 1
                 path.write_text(json.dumps(package, indent=2), encoding="utf-8")
             except Exception as e:  # a broken check shouldn't block the day's videos
                 print(f"    continuity check failed, posting anyway: {e}")
