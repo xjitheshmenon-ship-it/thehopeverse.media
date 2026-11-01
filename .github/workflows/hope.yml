@@ -102,7 +102,9 @@ jobs:
         if: github.event.schedule == '30 22 * * *' || inputs.job == 'next' || inputs.job == 'slot'
         # NEXT = the channel, N = its video number today, QUOTA its daily count, REVIEW on its last, SERIES for Kissa,
         # GROW before the day's first video, MORE when another video follows; nothing when the day's videos are done
-        run: python plan.py --due | tee -a "$GITHUB_ENV"
+        run: |  # PAUSED file (owner's hold, e.g. until ElevenLabs is back): no videos; delete it to resume
+          [ -f PAUSED ] && { echo "::warning::Videos paused: $(cat PAUSED)"; exit 0; }
+          python plan.py --due | tee -a "$GITHUB_ENV"
 
       - name: Stop if today's budget is used up
         if: env.NEXT != ''  # Post now (job one) overrules the daily budget: the owner asked for it
@@ -208,7 +210,7 @@ jobs:
           grep -qxF "$mark" runs/slots.jsonl 2>/dev/null && { echo "Today's report is already written"; exit 0; }
           mkdir -p runs && echo "$mark" >> runs/slots.jsonl
           echo "RAN=1" >> "$GITHUB_ENV"
-          python video.py || true  # anything left over from a failed upload today
+          [ -f PAUSED ] || python video.py || true  # anything left over from a failed upload today
           python scout.py || true  # also rewrites runs/spend-report.md
       - name: Plan the next 6 topics per channel (shown on the dashboard)
         if: always() && (env.RAN == '1' || inputs.job == 'one' || inputs.job == 'plan')
