@@ -176,7 +176,7 @@ jobs:
           DAILY_BUDGET: "1000"  # the owner asked for it, like Post now
         run: |
           { sudo apt-get install -y -qq fonts-noto-core fonts-noto-cjk || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core fonts-noto-cjk; }; } > /dev/null
-          python -c "import json, os, pathlib; p = pathlib.Path('outbox', os.environ['VIDEO']); d = json.loads(p.read_text()); [d.pop(k, None) for k in ('held', 'qa', 'render_failed')]; p.write_text(json.dumps(d, indent=2, ensure_ascii=False)); print(d['channel_id'])" > "$RUNNER_TEMP/channel"
+          python -c "import json, os, pathlib; p = pathlib.Path('outbox', os.environ['VIDEO']); d = json.loads(p.read_text()); assert d.get('holds', 0) < 2, 'held twice: dropped, not re-made (spend audit 1 Nov)'; [d.pop(k, None) for k in ('held', 'qa', 'render_failed')]; p.write_text(json.dumps(d, indent=2, ensure_ascii=False)); print(d['channel_id'])" > "$RUNNER_TEMP/channel"
           rm -f "outbox/${VIDEO%.json}.mp4"
           python video.py --only "$(cat "$RUNNER_TEMP/channel")"
       - name: Re-voice posted Shorts for another channel (same scenes, new language) and post them in its slots
