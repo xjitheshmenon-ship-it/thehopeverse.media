@@ -1,0 +1,365 @@
+{
+ "title": "ÆTHER: Semma Paiyan v4 lyric-fit (same v4 take 2, new words matched syllable for syllable)",
+ "story": "A Chennai guy gets dumped by text on a Monday and brags he is the best guy she will ever find, dancing the hurt away with his friends. Twist: he accidentally likes her new photo.",
+ "brief": {
+  "notes": "Jithesh 31 Oct 11:42 on extended v2: 'lyrics and the tune don't match'. Root cause: we wrote lyrics first and forced them on v4's melody. Now the reverse: v4 take 2's own transcript (semma-paiyan-source/upload.json) gives each sung phrase's time and syllables; new real Tamil words with the same syllable count and stress per phrase (konnakol fragments become real words: 'Sollu sollu, yaaru yaaru', 'Aadu aadu, paadu paadu, aattam podu'; swaras stay swaras), each phrase group regenerated on its exact v4 slice at condition_strength xhigh; intro 0-15 s and ending kept exactly. 60 s test before extending."
+ },
+ "seconds": 60,
+ "takes": 2,
+ "instrumental": false,
+ "source": "semma-paiyan-source",
+ "plan": {
+  "chunks": [
+   {
+    "song_id": "SOURCE",
+    "range": {
+     "start_ms": 0,
+     "end_ms": 15000
+    }
+   },
+   {
+    "text": "[Verse]\nSa ri ga pa ni\nSa ni pa ga ri\nEnna maadhiri yaaru kidaippaa?",
+    "duration_ms": 6600,
+    "positive_styles": [
+     "Carnatic classical music is the base: a modern Tamil dance song built on a real Carnatic kriti-style melody, with modern Western sounds layered on top, swaggering and cheeky breakup anthem, a big singalong",
+     "raga Hamsadhwani (a bright five-note scale) in D: D E F# A C# only, no G, no B; the melody climbs D E F# A C# D and falls D C# A F# E D, leans on F# and C#, sung-style phrasing with gamakam: slides into notes, a wide shake on E and A, grace notes before long notes",
+     "constant tanpura drone on D and A underneath everything, modal harmony on a D pedal, almost no chord changes, the melody carries the song",
+     "adi talam, one steady 104 BPM dance groove from start to end: a real mridangam, ghatam and kanjira play the core rhythm with fast Carnatic patterns and korvai endings, a modern punchy kick, snap and deep sub bass lock to the mridangam's bass strokes",
+     "a real Carnatic violin and veena, played by real musicians, close and dry, no heavy echo, answer the voice with the raga phrases",
+     "modern Western layer on top: a plucky synth doubling the raga riff, retro brass stabs, a wide bright modern mix",
+     "a Carnatic-trained young male voice singing in Tamil with clear diction and real gamakam, cheeky swagger, playful English words",
+     "a Carnatic-trained young female voice singing fast sargam swaras (sa ri ga pa ni) and soaring raga phrases between his lines",
+     "a gang of friends shouting short real Tamil word answers back (Semma! Maaradhae! Yaaru? Aiyyo!) like a dance crowd",
+     "loud, bright, punchy mix with big low end",
+     "sing exactly these Tamil words on the reference's own melody and rhythm, one syllable per reference note, same voices, same raga, same groove and sound, clear diction",
+     "the female voice sings the swaras, he sings the question"
+    ],
+    "negative_styles": [
+     "Western pop chord progression",
+     "plain major-scale melody",
+     "Western classical",
+     "orchestral strings",
+     "piano-led",
+     "jazzy chords",
+     "lo-fi",
+     "EDM drop",
+     "trap hi-hats",
+     "dubstep",
+     "heavy echo",
+     "sad",
+     "slow",
+     "ballad",
+     "whistle",
+     "nadaswaram",
+     "hey chants",
+     "Hindi",
+     "Arabic",
+     "Telugu",
+     "boring",
+     "repetitive loop",
+     "long pauses",
+     "konnakol",
+     "crowded lyrics",
+     "rushed words",
+     "mumbled words"
+    ],
+    "context_adherence": "high",
+    "conditioning_ref": {
+     "song_id": "SOURCE",
+     "range": {
+      "start_ms": 15000,
+      "end_ms": 21600
+     }
+    },
+    "condition_strength": "xhigh"
+   },
+   {
+    "text": "[Pre-hook]\nSollu sollu, yaaru yaaru?\nSollu di nee, sollu di nee\nAadu aadu, paadu paadu, aattam podu!",
+    "duration_ms": 6000,
+    "positive_styles": [
+     "Carnatic classical music is the base: a modern Tamil dance song built on a real Carnatic kriti-style melody, with modern Western sounds layered on top, swaggering and cheeky breakup anthem, a big singalong",
+     "raga Hamsadhwani (a bright five-note scale) in D: D E F# A C# only, no G, no B; the melody climbs D E F# A C# D and falls D C# A F# E D, leans on F# and C#, sung-style phrasing with gamakam: slides into notes, a wide shake on E and A, grace notes before long notes",
+     "constant tanpura drone on D and A underneath everything, modal harmony on a D pedal, almost no chord changes, the melody carries the song",
+     "adi talam, one steady 104 BPM dance groove from start to end: a real mridangam, ghatam and kanjira play the core rhythm with fast Carnatic patterns and korvai endings, a modern punchy kick, snap and deep sub bass lock to the mridangam's bass strokes",
+     "a real Carnatic violin and veena, played by real musicians, close and dry, no heavy echo, answer the voice with the raga phrases",
+     "modern Western layer on top: a plucky synth doubling the raga riff, retro brass stabs, a wide bright modern mix",
+     "a Carnatic-trained young male voice singing in Tamil with clear diction and real gamakam, cheeky swagger, playful English words",
+     "a Carnatic-trained young female voice singing fast sargam swaras (sa ri ga pa ni) and soaring raga phrases between his lines",
+     "a gang of friends shouting short real Tamil word answers back (Semma! Maaradhae! Yaaru? Aiyyo!) like a dance crowd",
+     "loud, bright, punchy mix with big low end",
+     "sing exactly these Tamil words on the reference's own melody and rhythm, one syllable per reference note, same voices, same raga, same groove and sound, clear diction",
+     "the gang chants the short words fast on the reference rhythm"
+    ],
+    "negative_styles": [
+     "Western pop chord progression",
+     "plain major-scale melody",
+     "Western classical",
+     "orchestral strings",
+     "piano-led",
+     "jazzy chords",
+     "lo-fi",
+     "EDM drop",
+     "trap hi-hats",
+     "dubstep",
+     "heavy echo",
+     "sad",
+     "slow",
+     "ballad",
+     "whistle",
+     "nadaswaram",
+     "hey chants",
+     "Hindi",
+     "Arabic",
+     "Telugu",
+     "boring",
+     "repetitive loop",
+     "long pauses",
+     "konnakol",
+     "crowded lyrics",
+     "rushed words",
+     "mumbled words"
+    ],
+    "context_adherence": "high",
+    "conditioning_ref": {
+     "song_id": "SOURCE",
+     "range": {
+      "start_ms": 21600,
+      "end_ms": 27600
+     }
+    },
+    "condition_strength": "xhigh"
+   },
+   {
+    "text": "[Hook]\nSemma paiyan naan, semma semma!\nSmile-u maaralae, kaadhali",
+    "duration_ms": 9900,
+    "positive_styles": [
+     "Carnatic classical music is the base: a modern Tamil dance song built on a real Carnatic kriti-style melody, with modern Western sounds layered on top, swaggering and cheeky breakup anthem, a big singalong",
+     "raga Hamsadhwani (a bright five-note scale) in D: D E F# A C# only, no G, no B; the melody climbs D E F# A C# D and falls D C# A F# E D, leans on F# and C#, sung-style phrasing with gamakam: slides into notes, a wide shake on E and A, grace notes before long notes",
+     "constant tanpura drone on D and A underneath everything, modal harmony on a D pedal, almost no chord changes, the melody carries the song",
+     "adi talam, one steady 104 BPM dance groove from start to end: a real mridangam, ghatam and kanjira play the core rhythm with fast Carnatic patterns and korvai endings, a modern punchy kick, snap and deep sub bass lock to the mridangam's bass strokes",
+     "a real Carnatic violin and veena, played by real musicians, close and dry, no heavy echo, answer the voice with the raga phrases",
+     "modern Western layer on top: a plucky synth doubling the raga riff, retro brass stabs, a wide bright modern mix",
+     "a Carnatic-trained young male voice singing in Tamil with clear diction and real gamakam, cheeky swagger, playful English words",
+     "a Carnatic-trained young female voice singing fast sargam swaras (sa ri ga pa ni) and soaring raga phrases between his lines",
+     "a gang of friends shouting short real Tamil word answers back (Semma! Maaradhae! Yaaru? Aiyyo!) like a dance crowd",
+     "loud, bright, punchy mix with big low end",
+     "sing exactly these Tamil words on the reference's own melody and rhythm, one syllable per reference note, same voices, same raga, same groove and sound, clear diction",
+     "full-power hook"
+    ],
+    "negative_styles": [
+     "Western pop chord progression",
+     "plain major-scale melody",
+     "Western classical",
+     "orchestral strings",
+     "piano-led",
+     "jazzy chords",
+     "lo-fi",
+     "EDM drop",
+     "trap hi-hats",
+     "dubstep",
+     "heavy echo",
+     "sad",
+     "slow",
+     "ballad",
+     "whistle",
+     "nadaswaram",
+     "hey chants",
+     "Hindi",
+     "Arabic",
+     "Telugu",
+     "boring",
+     "repetitive loop",
+     "long pauses",
+     "konnakol",
+     "crowded lyrics",
+     "rushed words",
+     "mumbled words"
+    ],
+    "context_adherence": "high",
+    "conditioning_ref": {
+     "song_id": "SOURCE",
+     "range": {
+      "start_ms": 27600,
+      "end_ms": 37500
+     }
+    },
+    "condition_strength": "xhigh"
+   },
+   {
+    "text": "[Swaras]\nNee pona road-ula\nSa ri ga pa ni sa\nNi pa ga ri sa",
+    "duration_ms": 6300,
+    "positive_styles": [
+     "Carnatic classical music is the base: a modern Tamil dance song built on a real Carnatic kriti-style melody, with modern Western sounds layered on top, swaggering and cheeky breakup anthem, a big singalong",
+     "raga Hamsadhwani (a bright five-note scale) in D: D E F# A C# only, no G, no B; the melody climbs D E F# A C# D and falls D C# A F# E D, leans on F# and C#, sung-style phrasing with gamakam: slides into notes, a wide shake on E and A, grace notes before long notes",
+     "constant tanpura drone on D and A underneath everything, modal harmony on a D pedal, almost no chord changes, the melody carries the song",
+     "adi talam, one steady 104 BPM dance groove from start to end: a real mridangam, ghatam and kanjira play the core rhythm with fast Carnatic patterns and korvai endings, a modern punchy kick, snap and deep sub bass lock to the mridangam's bass strokes",
+     "a real Carnatic violin and veena, played by real musicians, close and dry, no heavy echo, answer the voice with the raga phrases",
+     "modern Western layer on top: a plucky synth doubling the raga riff, retro brass stabs, a wide bright modern mix",
+     "a Carnatic-trained young male voice singing in Tamil with clear diction and real gamakam, cheeky swagger, playful English words",
+     "a Carnatic-trained young female voice singing fast sargam swaras (sa ri ga pa ni) and soaring raga phrases between his lines",
+     "a gang of friends shouting short real Tamil word answers back (Semma! Maaradhae! Yaaru? Aiyyo!) like a dance crowd",
+     "loud, bright, punchy mix with big low end",
+     "sing exactly these Tamil words on the reference's own melody and rhythm, one syllable per reference note, same voices, same raga, same groove and sound, clear diction",
+     "he sings one line, the female voice sings the swaras"
+    ],
+    "negative_styles": [
+     "Western pop chord progression",
+     "plain major-scale melody",
+     "Western classical",
+     "orchestral strings",
+     "piano-led",
+     "jazzy chords",
+     "lo-fi",
+     "EDM drop",
+     "trap hi-hats",
+     "dubstep",
+     "heavy echo",
+     "sad",
+     "slow",
+     "ballad",
+     "whistle",
+     "nadaswaram",
+     "hey chants",
+     "Hindi",
+     "Arabic",
+     "Telugu",
+     "boring",
+     "repetitive loop",
+     "long pauses",
+     "konnakol",
+     "crowded lyrics",
+     "rushed words",
+     "mumbled words"
+    ],
+    "context_adherence": "high",
+    "conditioning_ref": {
+     "song_id": "SOURCE",
+     "range": {
+      "start_ms": 37500,
+      "end_ms": 43800
+     }
+    },
+    "condition_strength": "xhigh"
+   },
+   {
+    "text": "[Twist]\nAval story-la pudhu photo\nNaanum like pottu poitten!",
+    "duration_ms": 5300,
+    "positive_styles": [
+     "Carnatic classical music is the base: a modern Tamil dance song built on a real Carnatic kriti-style melody, with modern Western sounds layered on top, swaggering and cheeky breakup anthem, a big singalong",
+     "raga Hamsadhwani (a bright five-note scale) in D: D E F# A C# only, no G, no B; the melody climbs D E F# A C# D and falls D C# A F# E D, leans on F# and C#, sung-style phrasing with gamakam: slides into notes, a wide shake on E and A, grace notes before long notes",
+     "constant tanpura drone on D and A underneath everything, modal harmony on a D pedal, almost no chord changes, the melody carries the song",
+     "adi talam, one steady 104 BPM dance groove from start to end: a real mridangam, ghatam and kanjira play the core rhythm with fast Carnatic patterns and korvai endings, a modern punchy kick, snap and deep sub bass lock to the mridangam's bass strokes",
+     "a real Carnatic violin and veena, played by real musicians, close and dry, no heavy echo, answer the voice with the raga phrases",
+     "modern Western layer on top: a plucky synth doubling the raga riff, retro brass stabs, a wide bright modern mix",
+     "a Carnatic-trained young male voice singing in Tamil with clear diction and real gamakam, cheeky swagger, playful English words",
+     "a Carnatic-trained young female voice singing fast sargam swaras (sa ri ga pa ni) and soaring raga phrases between his lines",
+     "a gang of friends shouting short real Tamil word answers back (Semma! Maaradhae! Yaaru? Aiyyo!) like a dance crowd",
+     "loud, bright, punchy mix with big low end",
+     "sing exactly these Tamil words on the reference's own melody and rhythm, one syllable per reference note, same voices, same raga, same groove and sound, clear diction",
+     "he admits it, embarrassed"
+    ],
+    "negative_styles": [
+     "Western pop chord progression",
+     "plain major-scale melody",
+     "Western classical",
+     "orchestral strings",
+     "piano-led",
+     "jazzy chords",
+     "lo-fi",
+     "EDM drop",
+     "trap hi-hats",
+     "dubstep",
+     "heavy echo",
+     "sad",
+     "slow",
+     "ballad",
+     "whistle",
+     "nadaswaram",
+     "hey chants",
+     "Hindi",
+     "Arabic",
+     "Telugu",
+     "boring",
+     "repetitive loop",
+     "long pauses",
+     "konnakol",
+     "crowded lyrics",
+     "rushed words",
+     "mumbled words"
+    ],
+    "context_adherence": "high",
+    "conditioning_ref": {
+     "song_id": "SOURCE",
+     "range": {
+      "start_ms": 43800,
+      "end_ms": 49100
+     }
+    },
+    "condition_strength": "xhigh"
+   },
+   {
+    "text": "[Final hook]\nSemma paiyan naanae, ponnae\nSmile-u maaradhu, yaaru kidaippaa?\nAadu aadu, aattam podu!",
+    "duration_ms": 8400,
+    "positive_styles": [
+     "Carnatic classical music is the base: a modern Tamil dance song built on a real Carnatic kriti-style melody, with modern Western sounds layered on top, swaggering and cheeky breakup anthem, a big singalong",
+     "raga Hamsadhwani (a bright five-note scale) in D: D E F# A C# only, no G, no B; the melody climbs D E F# A C# D and falls D C# A F# E D, leans on F# and C#, sung-style phrasing with gamakam: slides into notes, a wide shake on E and A, grace notes before long notes",
+     "constant tanpura drone on D and A underneath everything, modal harmony on a D pedal, almost no chord changes, the melody carries the song",
+     "adi talam, one steady 104 BPM dance groove from start to end: a real mridangam, ghatam and kanjira play the core rhythm with fast Carnatic patterns and korvai endings, a modern punchy kick, snap and deep sub bass lock to the mridangam's bass strokes",
+     "a real Carnatic violin and veena, played by real musicians, close and dry, no heavy echo, answer the voice with the raga phrases",
+     "modern Western layer on top: a plucky synth doubling the raga riff, retro brass stabs, a wide bright modern mix",
+     "a Carnatic-trained young male voice singing in Tamil with clear diction and real gamakam, cheeky swagger, playful English words",
+     "a Carnatic-trained young female voice singing fast sargam swaras (sa ri ga pa ni) and soaring raga phrases between his lines",
+     "a gang of friends shouting short real Tamil word answers back (Semma! Maaradhae! Yaaru? Aiyyo!) like a dance crowd",
+     "loud, bright, punchy mix with big low end",
+     "sing exactly these Tamil words on the reference's own melody and rhythm, one syllable per reference note, same voices, same raga, same groove and sound, clear diction",
+     "final hook, everything playing"
+    ],
+    "negative_styles": [
+     "Western pop chord progression",
+     "plain major-scale melody",
+     "Western classical",
+     "orchestral strings",
+     "piano-led",
+     "jazzy chords",
+     "lo-fi",
+     "EDM drop",
+     "trap hi-hats",
+     "dubstep",
+     "heavy echo",
+     "sad",
+     "slow",
+     "ballad",
+     "whistle",
+     "nadaswaram",
+     "hey chants",
+     "Hindi",
+     "Arabic",
+     "Telugu",
+     "boring",
+     "repetitive loop",
+     "long pauses",
+     "konnakol",
+     "crowded lyrics",
+     "rushed words",
+     "mumbled words"
+    ],
+    "context_adherence": "high",
+    "conditioning_ref": {
+     "song_id": "SOURCE",
+     "range": {
+      "start_ms": 49100,
+      "end_ms": 57500
+     }
+    },
+    "condition_strength": "xhigh"
+   },
+   {
+    "song_id": "SOURCE",
+    "range": {
+     "start_ms": 57500,
+     "end_ms": 60000
+    }
+   }
+  ]
+ }
+}
