@@ -1,13 +1,13 @@
 {
   "channel_id": "yt-instinct-ja",
-  "title": "\u30b3\u30a6\u30ce\u30c8\u30ea\u3092\u52a9\u3051\u305f\u7537\u3002\u30aa\u30b9\u306f1\u4e073000km\u98db\u3093\u3067\u4f1a\u3044\u306b\u6765\u305f\u3010\u5b9f\u8a71\u3011",
-  "description": "\u5b9f\u8a71\u3092AI\u751f\u6210\u6620\u50cf\u3067\u518d\u73fe\u3057\u307e\u3057\u305f\u3002\u30af\u30ed\u30a2\u30c1\u30a2\u3067Stjepan Voki\u0107\u3055\u3093\u306f\u3001\u731f\u5e2b\u306b\u6483\u305f\u308c\u3066\u50b7\u3064\u3044\u305f\u30b3\u30a6\u30ce\u30c8\u30ea\u306eMalena\u3092\u52a9\u3051\u307e\u3057\u305f\u3002\u6bce\u5e74\u6625\u306b\u306a\u308b\u3068\u3001\u30aa\u30b9\u306eKlepetan\u304c\u30a2\u30d5\u30ea\u30ab\u304b\u3089\u5f7c\u5973\u306b\u4f1a\u3044\u306b\u623b\u3063\u3066\u304d\u305f\u306e\u3067\u3059\u3002\u51fa\u5178:AFP(France 24\u30012018\u5e74)\u3001CGTN(2020\u5e74)\u3002 #\u30b3\u30a6\u30ce\u30c8\u30ea #\u52d5\u7269 #\u5b9f\u8a71 #\u611f\u52d5 #\u81ea\u7136 #Shorts",
+  "title": "コウノトリを助けた男。オスは1万3000km飛んで会いに来た【実話】",
+  "description": "実話をAI生成映像で再現しました。クロアチアでStjepan Vokićさんは、猟師に撃たれて傷ついたコウノトリのMalenaを助けました。毎年春になると、オスのKlepetanがアフリカから彼女に会いに戻ってきたのです。出典:AFP(France 24、2018年)、CGTN(2020年)。 #コウノトリ #動物 #実話 #感動 #自然 #Shorts",
   "dub_of": "yt-instinct-10",
   "lang": "ja",
   "scenes": [
     {
-      "narration": "\u30af\u30ed\u30a2\u30c1\u30a2\u306e\u6c60\u306e\u307b\u3068\u308a\u3067\u3001\u50b7\u3064\u3044\u305f\u30b3\u30a6\u30ce\u30c8\u30ea\u304c\u3001\u3082\u3046\u98db\u3079\u306a\u304f\u306a\u3063\u3066\u3044\u307e\u3057\u305f\u3002",
-      "on_screen_text": "\u50b7\u3064\u3044\u3066\u98db\u3079\u306a\u3044\u30b3\u30a6\u30ce\u30c8\u30ea",
+      "narration": "クロアチアの池のほとりで、傷ついたコウノトリが、もう飛べなくなっていました。",
+      "on_screen_text": "傷ついて飛べないコウノトリ",
       "picture_search": "reed pond Croatia",
       "image_prompt": "Handheld phone footage at eye level: Malena the white stork struggles in the reeds, one wing dragging on the mud, eyes wide and frightened, at a reed-fringed pond in flat Slavonian farmland, Croatia, under soft grey overcast daylight",
       "speaker": "",
@@ -16,8 +16,8 @@
       "photo": ""
     },
     {
-      "narration": "1993\u5e74\u3001\u5b66\u6821\u306e\u7528\u52d9\u54e1\u3060\u3063\u305f\u30b9\u30c6\u30d1\u30f3\u3055\u3093\u304c\u3001\u6c60\u306e\u8fd1\u304f\u3067\u3053\u306e\u30b3\u30a6\u30ce\u30c8\u30ea\u3092\u898b\u3064\u3051\u307e\u3059\u3002",
-      "on_screen_text": "1993\u5e74\u3001\u30b9\u30c6\u30d1\u30f3\u304c\u767a\u898b",
+      "narration": "1993年、学校の用務員だったステパンさんが、池の近くでこのコウノトリを見つけます。",
+      "on_screen_text": "1993年、ステパンが発見",
       "picture_search": "reed pond Croatia",
       "image_prompt": "Handheld phone footage at eye level: Stjepan in his faded navy flat cap stops short in the reeds, worried and tender expression, slowly kneeling toward the stork, at a reed-fringed pond in flat Slavonian farmland, Croatia, under soft grey overcast daylight",
       "speaker": "",
@@ -26,8 +26,8 @@
       "photo": ""
     },
     {
-      "narration": "\u731f\u5e2b\u306b\u6483\u305f\u308c\u3066\u3044\u305f\u3093\u3067\u3059\u3002\u3072\u3068\u308a\u307c\u3063\u3061\u3060\u3063\u305f\u3089\u3001\u30ad\u30c4\u30cd\u306b\u98df\u3079\u3089\u308c\u3066\u3057\u307e\u3046\u3068\u3053\u308d\u3067\u3057\u305f\u3002",
-      "on_screen_text": "\u653e\u3063\u3066\u304a\u3051\u3070\u30ad\u30c4\u30cd\u306e\u990c\u98df\u306b",
+      "narration": "猟師に撃たれていたんです。ひとりぼっちだったら、キツネに食べられてしまうところでした。",
+      "on_screen_text": "放っておけばキツネの餌食に",
       "picture_search": "reed pond Croatia",
       "image_prompt": "Handheld phone footage at eye level: Malena crouches low in the mud, injured wing hanging, trembling and exhausted, at a reed-fringed pond in flat Slavonian farmland, Croatia, under soft grey overcast daylight",
       "speaker": "",
@@ -36,8 +36,8 @@
       "photo": ""
     },
     {
-      "narration": "\u30b9\u30c6\u30d1\u30f3\u3055\u3093\u306f\u305d\u3063\u3068\u62b1\u304d\u4e0a\u3052\u3066\u3001\u81ea\u5206\u306e\u5bb6\u306b\u9023\u308c\u3066\u5e30\u308a\u307e\u3057\u305f\u3002",
-      "on_screen_text": "\u305d\u3063\u3068\u62b1\u3044\u3066\u5bb6\u3078",
+      "narration": "ステパンさんはそっと抱き上げて、自分の家に連れて帰りました。",
+      "on_screen_text": "そっと抱いて家へ",
       "picture_search": "reed pond Croatia",
       "image_prompt": "Handheld phone footage at eye level: Stjepan in his faded navy flat cap carefully cradles the stork against his chest, focused and gentle, walking out of the reeds, at a reed-fringed pond in flat Slavonian farmland, Croatia, under soft grey overcast daylight",
       "speaker": "",
@@ -46,28 +46,28 @@
       "photo": ""
     },
     {
-      "narration": "\u4e00\u751f\u61f8\u547d\u304a\u4e16\u8a71\u3092\u3057\u307e\u3057\u305f\u304c\u3001\u7ffc\u306f\u3082\u3046\u6cbb\u308a\u307e\u305b\u3093\u3067\u3057\u305f\u3002",
-      "on_screen_text": "\u7ffc\u306f\u6cbb\u3089\u306a\u304b\u3063\u305f",
+      "narration": "一生懸命お世話をしましたが、翼はもう治りませんでした。",
+      "on_screen_text": "翼は治らなかった",
       "picture_search": "Croatian village yard",
-      "image_prompt": "Handheld phone footage at eye level: Malena stands in the grass and stretches her wings, one wing hanging lower than the other, calm but unsteady, in the small yard of a village house in Brodski Varo\u0161, Croatia, with a red-tiled brick storage building, in soft morning light",
+      "image_prompt": "Handheld phone footage at eye level: Malena stands in the grass and stretches her wings, one wing hanging lower than the other, calm but unsteady, in the small yard of a village house in Brodski Varoš, Croatia, with a red-tiled brick storage building, in soft morning light",
       "speaker": "",
       "host_on_screen": false,
       "on_screen": "Malena",
       "photo": ""
     },
     {
-      "narration": "\u79cb\u306b\u306a\u308b\u3068\u3001\u4ef2\u9593\u306e\u30b3\u30a6\u30ce\u30c8\u30ea\u305f\u3061\u306f\u30a2\u30d5\u30ea\u30ab\u3078\u65c5\u7acb\u3061\u307e\u3059\u3002\u5f7c\u5973\u3060\u3051\u304c\u6b8b\u3055\u308c\u307e\u3057\u305f\u3002",
-      "on_screen_text": "\u4ef2\u9593\u306f\u65c5\u7acb\u3064\u3001\u5f7c\u5973\u306f\u6b8b\u308b",
+      "narration": "秋になると、仲間のコウノトリたちはアフリカへ旅立ちます。彼女だけが残されました。",
+      "on_screen_text": "仲間は旅立つ、彼女は残る",
       "picture_search": "storks migrating sky",
-      "image_prompt": "Handheld phone footage at eye level: Malena stands still and looks up at a flock of storks flying south, head tilted, lonely expression, in the small yard of a village house in Brodski Varo\u0161, Croatia, with a red-tiled brick storage building, under a pale autumn sky",
+      "image_prompt": "Handheld phone footage at eye level: Malena stands still and looks up at a flock of storks flying south, head tilted, lonely expression, in the small yard of a village house in Brodski Varoš, Croatia, with a red-tiled brick storage building, under a pale autumn sky",
       "speaker": "",
       "host_on_screen": false,
       "on_screen": "Malena",
       "photo": ""
     },
     {
-      "narration": "\u305d\u3053\u3067\u30b9\u30c6\u30d1\u30f3\u3055\u3093\u306f\u3001\u6696\u623f\u3064\u304d\u3067\u6c34\u69fd\u3082\u3042\u308b\u3001\u81ea\u5bb6\u88fd\u306e\u30a2\u30d5\u30ea\u30ab\u3092\u4f5c\u3063\u3066\u3042\u3052\u305f\u3093\u3067\u3059\u3002",
-      "on_screen_text": "\u6696\u304b\u3044\u624b\u4f5c\u308a\u30a2\u30d5\u30ea\u30ab",
+      "narration": "そこでステパンさんは、暖房つきで水槽もある、自家製のアフリカを作ってあげたんです。",
+      "on_screen_text": "暖かい手作りアフリカ",
       "picture_search": "warm barn interior",
       "image_prompt": "Handheld phone footage at eye level: Stjepan in his faded navy flat cap arranges straw in a nest next to a heater and an aquarium, proud little smile, inside a small brick storage building turned warm winter room, under warm amber lamp light",
       "speaker": "",
@@ -76,8 +76,8 @@
       "photo": ""
     },
     {
-      "narration": "\u663c\u306f\u4e00\u7dd2\u306b\u9b5a\u91e3\u308a\u3002\u591c\u306f\u4e00\u7dd2\u306b\u30c6\u30ec\u30d3\u3092\u898b\u3066\u904e\u3054\u3057\u307e\u3057\u305f\u3002",
-      "on_screen_text": "\u663c\u306f\u91e3\u308a\u3001\u591c\u306f\u30c6\u30ec\u30d3",
+      "narration": "昼は一緒に魚釣り。夜は一緒にテレビを見て過ごしました。",
+      "on_screen_text": "昼は釣り、夜はテレビ",
       "picture_search": "warm barn interior",
       "image_prompt": "Handheld phone footage at eye level: Stjepan in his faded navy flat cap sits on a stool laughing softly beside Malena, both turned toward a small glowing TV, inside a small brick storage building turned warm winter room with a straw nest, heater and aquarium, under warm amber lamp light",
       "speaker": "",
@@ -86,58 +86,58 @@
       "photo": ""
     },
     {
-      "narration": "\u6625\u306b\u306f\u3001\u5c4b\u6839\u306e\u4e0a\u306b\u5927\u304d\u306a\u5de3\u3082\u4f5c\u3063\u3066\u3042\u3052\u307e\u3057\u305f\u3002",
-      "on_screen_text": "\u5c4b\u6839\u306e\u4e0a\u306e\u5927\u304d\u306a\u5de3",
+      "narration": "春には、屋根の上に大きな巣も作ってあげました。",
+      "on_screen_text": "屋根の上の大きな巣",
       "picture_search": "stork nest rooftop",
-      "image_prompt": "Handheld phone footage at eye level from a ladder: Stjepan in his faded navy flat cap weaves big branches into a huge stick nest, concentrating and smiling, on the red-tiled roof of a small brick storage building in the village of Brodski Varo\u0161, Croatia, under a bright blue spring sky",
+      "image_prompt": "Handheld phone footage at eye level from a ladder: Stjepan in his faded navy flat cap weaves big branches into a huge stick nest, concentrating and smiling, on the red-tiled roof of a small brick storage building in the village of Brodski Varoš, Croatia, under a bright blue spring sky",
       "speaker": "",
       "host_on_screen": false,
       "on_screen": "Stjepan",
       "photo": ""
     },
     {
-      "narration": "\u305d\u308c\u304b\u3089\u4f55\u5e74\u3082\u305f\u3063\u305f\u3042\u308b\u65e5\u3001\u91ce\u751f\u306e\u30aa\u30b9\u304c\u5f7c\u5973\u306e\u305d\u3070\u306b\u821e\u3044\u964d\u308a\u307e\u3057\u305f\u3002",
-      "on_screen_text": "\u91ce\u751f\u306e\u30aa\u30b9\u304c\u821e\u3044\u964d\u308a\u305f",
+      "narration": "それから何年もたったある日、野生のオスが彼女のそばに舞い降りました。",
+      "on_screen_text": "野生のオスが舞い降りた",
       "picture_search": "stork nest rooftop",
-      "image_prompt": "Handheld phone footage at eye level from a ladder: Malena raises her head in surprise and clatters her bill as a wild male stork lands beside her, in the huge stick nest on the red-tiled roof of a small brick storage building in the village of Brodski Varo\u0161, Croatia, under a bright blue spring sky",
+      "image_prompt": "Handheld phone footage at eye level from a ladder: Malena raises her head in surprise and clatters her bill as a wild male stork lands beside her, in the huge stick nest on the red-tiled roof of a small brick storage building in the village of Brodski Varoš, Croatia, under a bright blue spring sky",
       "speaker": "",
       "host_on_screen": false,
       "on_screen": "Malena",
       "photo": ""
     },
     {
-      "narration": "\u30b9\u30c6\u30d1\u30f3\u3055\u3093\u306f\u3001\u305d\u306e\u30aa\u30b9\u3092\u30af\u30ec\u30da\u30bf\u30f3\u3068\u540d\u4ed8\u3051\u307e\u3057\u305f\u3002\u6bce\u5e74\u79cb\u3001\u30af\u30ec\u30da\u30bf\u30f3\u306f\u98db\u3073\u7acb\u3061\u307e\u3059\u3002\u3067\u3082\u30de\u30ec\u30ca\u306f\u6b8b\u308a\u307e\u3059\u3002",
-      "on_screen_text": "\u5f7c\u306f\u65c5\u7acb\u3064\u3002\u30de\u30ec\u30ca\u306f\u6b8b\u308b",
+      "narration": "ステパンさんは、そのオスをクレペタンと名付けました。毎年秋、クレペタンは飛び立ちます。でもマレナは残ります。",
+      "on_screen_text": "彼は旅立つ。マレナは残る",
       "picture_search": "stork nest rooftop",
-      "image_prompt": "Handheld phone footage at eye level from a ladder: Malena stands alone in the nest, watching a single stork fly away into the distance, quiet and patient, in the huge stick nest on the red-tiled roof of a small brick storage building in the village of Brodski Varo\u0161, Croatia, under a pale autumn sky",
+      "image_prompt": "Handheld phone footage at eye level from a ladder: Malena stands alone in the nest, watching a single stork fly away into the distance, quiet and patient, in the huge stick nest on the red-tiled roof of a small brick storage building in the village of Brodski Varoš, Croatia, under a pale autumn sky",
       "speaker": "",
       "host_on_screen": false,
       "on_screen": "Malena",
       "photo": ""
     },
     {
-      "narration": "\u5357\u30a2\u30d5\u30ea\u30ab\u304b\u3089\u306a\u3093\u30681\u4e073000\u30ad\u30ed\u4ee5\u4e0a\u3002\u65e5\u672c\u304b\u3089\u5357\u30a2\u30d5\u30ea\u30ab\u307e\u3067\u306e\u8ddd\u96e2\u306b\u8fd1\u3044\u9577\u3055\u3067\u3059\u3002",
-      "on_screen_text": "\u30a2\u30d5\u30ea\u30ab\u304b\u30891\u4e073000km\u8d85",
+      "narration": "南アフリカからなんと1万3000キロ以上。日本から南アフリカまでの距離に近い長さです。",
+      "on_screen_text": "アフリカから1万3000km超",
       "picture_search": "stork nest rooftop",
-      "image_prompt": "Handheld phone footage at eye level from a ladder: Malena scans the sky from the nest, neck stretched, hopeful expression, in the huge stick nest on the red-tiled roof of a small brick storage building in the village of Brodski Varo\u0161, Croatia, under a bright blue spring sky",
+      "image_prompt": "Handheld phone footage at eye level from a ladder: Malena scans the sky from the nest, neck stretched, hopeful expression, in the huge stick nest on the red-tiled roof of a small brick storage building in the village of Brodski Varoš, Croatia, under a bright blue spring sky",
       "speaker": "",
       "host_on_screen": false,
       "on_screen": "Malena",
       "photo": ""
     },
     {
-      "narration": "\u305d\u308c\u3067\u3082\u6bce\u5e74\u6625\u306b\u306a\u308b\u3068\u3001\u5f7c\u5973\u306e\u3082\u3068\u3078\u623b\u3063\u3066\u304d\u307e\u3057\u305f\u30022021\u5e74\u307e\u3067\u3002",
-      "on_screen_text": "\u6bce\u5e74\u6625\u30012021\u5e74\u307e\u3067",
+      "narration": "それでも毎年春になると、彼女のもとへ戻ってきました。2021年まで。",
+      "on_screen_text": "毎年春、2021年まで",
       "picture_search": "stork nest rooftop",
-      "image_prompt": "Handheld phone footage at eye level from a ladder: Malena throws her head back and clatters her bill joyfully as the male stork lands in the nest beside her, in the huge stick nest on the red-tiled roof of a small brick storage building in the village of Brodski Varo\u0161, Croatia, under a bright blue spring sky",
+      "image_prompt": "Handheld phone footage at eye level from a ladder: Malena throws her head back and clatters her bill joyfully as the male stork lands in the nest beside her, in the huge stick nest on the red-tiled roof of a small brick storage building in the village of Brodski Varoš, Croatia, under a bright blue spring sky",
       "speaker": "",
       "host_on_screen": false,
       "on_screen": "Malena",
       "photo": ""
     },
     {
-      "narration": "2021\u5e747\u6708\u3001\u30de\u30ec\u30ca\u306f\u4ea1\u304f\u306a\u308a\u307e\u3057\u305f\u3002\u30b9\u30c6\u30d1\u30f3\u3055\u3093\u306e\u305d\u3070\u3067\u904e\u3054\u3057\u305f28\u5e74\u3067\u3057\u305f\u3002",
-      "on_screen_text": "\u30b9\u30c6\u30d1\u30f3\u3068\u904e\u3054\u3057\u305f28\u5e74",
+      "narration": "2021年7月、マレナは亡くなりました。ステパンさんのそばで過ごした28年でした。",
+      "on_screen_text": "ステパンと過ごした28年",
       "picture_search": "stork nest rooftop",
       "image_prompt": "An old white stork resting peacefully in a large rooftop nest at golden hour, eastern Croatian village, handheld phone footage at eye level, soft warm light",
       "speaker": "",
@@ -146,17 +146,17 @@
       "photo": ""
     },
     {
-      "narration": "\u300c\u79c1\u304c\u5f7c\u5973\u306e\u904b\u547d\u3092\u5909\u3048\u305f\u3002\u3060\u304b\u3089\u8cac\u4efb\u304c\u3042\u308b\u3093\u3060\u300d\u3068\u30b9\u30c6\u30d1\u30f3\u3055\u3093\u306f\u8a9e\u3063\u3066\u3044\u307e\u3059\u3002",
-      "on_screen_text": "\u300c\u79c1\u304c\u904b\u547d\u3092\u5909\u3048\u305f\u300d",
+      "narration": "「私が彼女の運命を変えた。だから責任があるんだ」とステパンさんは語っています。",
+      "on_screen_text": "「私が運命を変えた」",
       "picture_search": "Croatian village yard",
-      "image_prompt": "Handheld phone footage at eye level: Stjepan in his faded navy flat cap looks up at the two storks in the rooftop nest, eyes moist, a quiet happy smile, in the small yard of a village house in Brodski Varo\u0161, Croatia, with a red-tiled brick storage building, in golden spring evening light",
+      "image_prompt": "Handheld phone footage at eye level: Stjepan in his faded navy flat cap looks up at the two storks in the rooftop nest, eyes moist, a quiet happy smile, in the small yard of a village house in Brodski Varoš, Croatia, with a red-tiled brick storage building, in golden spring evening light",
       "speaker": "",
       "host_on_screen": false,
       "on_screen": "Stjepan",
       "photo": ""
     }
   ],
-  "footer": "Instinct, une cha\u00eene Hopeverse Media. Made by AI. Made with hope.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "footer": "Instinct, une chaîne Hopeverse Media. Made by AI. Made with hope.\nAbonnez-vous pour une histoire du vivant chaque jour.",
   "category": "15",
   "cast": [
     {
@@ -175,9 +175,5 @@
     }
   ],
   "music": "Tender emotional orchestral score, no vocals: starts with sparse, tense solo piano and low strings for an injured bird at a pond, swells into warm hopeful strings and soft woodwinds for the rescue and the cozy winter, a melancholic dip as the flocks leave, then a soaring, uplifting finale with gentle harp and full strings for the spring reunion, about 55 seconds",
-  "qa": {
-    "passed": false,
-    "problems": "Caption line breaks split words mid-word: '\u30b9\u30c6/\u30d1\u30f3' (frame 2), '\u30ad/\u30c4\u30cd' (frame 3), '\u62b1/\u3044\u3066' (frame 4), '\u6cbb\u3089/\u306a\u304b\u3063\u305f' (frame 5), '\u624b\u4f5c/\u308a' (frame 7), '\u904e/\u3054\u3057\u305f' (frames 14-15), '\u904b\u547d/\u3092' (frame 16)."
-  },
-  "held": "continuity: Caption line breaks split words mid-word: '\u30b9\u30c6/\u30d1\u30f3' (frame 2), '\u30ad/\u30c4\u30cd' (frame 3), '\u62b1/\u3044\u3066' (frame 4), '\u6cbb\u3089/\u306a\u304b\u3063\u305f' (frame 5), '\u624b\u4f5c/\u308a' (frame 7), '\u904e/\u3054\u3057\u305f' (frames 14-15), '\u904b\u547d/\u3092' (frame 16)."
+  "render_failed": 2
 }
