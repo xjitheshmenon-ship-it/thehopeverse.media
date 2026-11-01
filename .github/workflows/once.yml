@@ -1,0 +1,28 @@
+# Put ÆTHER music on Spotify, Apple Music etc. through ONCE (once.py, release/aether.json). Needs the ONCE_TOKEN secret.
+# step=check uploads and prints the price only; step=submit sends the release and spends ONCE credits (owner's go only).
+# Start: push run/once with "step=check" (and "release=album|yaaru|steppu|all") plus "hold=override" in the commit message.
+name: ONCE release
+
+on:
+  workflow_dispatch:
+    inputs:
+      step:
+        description: "check (free) or submit (spends credits)"
+        default: check
+      release:
+        description: "album, yaaru, steppu or all"
+        default: all
+
+permissions:
+  contents: read
+
+jobs:
+  once:
+    runs-on: ubuntu-latest
+    env:
+      ONCE_TOKEN: ${{ secrets.ONCE_TOKEN }}
+      STEP: ${{ inputs.step }}
+      RELEASE: ${{ inputs.release }}
+    steps:
+      - uses: actions/checkout@v5
+      - run: python3 once.py

@@ -1,0 +1,15 @@
+{
+  "artist": "ÆTHER",
+  "writer": "Jithesh Menon",
+  "releases": {
+    "album": {"title": "Original Score, Vol. 1", "genre": "Soundtrack", "sub_genre": "Electronic", "cover": "release/aether-vol-1.jpg",
+      "tracks": [["The Return", "the-return"], ["Dark Horse", "dark-horse"], ["Storm Entry", "storm-entry"], ["Neon Raja", "neon-raja"],
+                 ["Red Line", "red-line"], ["Zero Hour", "zero-hour"], ["The Architect", "the-architect"], ["Crimson Vows", "crimson-vows"],
+                 ["Kolusu", "kolusu"], ["The Oath", "the-oath"], ["The Glance", "the-glance"], ["First Love", "first-love"],
+                 ["Golden Hour", "golden-hour"], ["Trouble Maker", "trouble-maker"], ["Friday Night", "friday-night"]]},
+    "yaaru": {"title": "Yaaru nee?", "genre": "Pop", "language": "ta", "cover": "release/yaaru-nee.jpg",
+      "tracks": [["Yaaru nee?", "yaaru-nee-full"]]},
+    "steppu": {"title": "Steppu Veyyi Raa", "genre": "Pop", "language": "te", "cover": "release/steppu-veyyi-raa.jpg",
+      "tracks": [["Steppu Veyyi Raa", "steppu-veyyi-raa"], ["Steppu Veyyi Raa (Teenmaar Version)", "steppu-veyyi-raa-teenmaar"]]}
+  }
+}
