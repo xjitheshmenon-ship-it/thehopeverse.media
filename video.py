@@ -138,7 +138,9 @@ def dub(path: Path, channel: dict) -> Path:
                    f"{channel['language']} the way a popular creator from that audience talks, not a word-for-word "
                    "translation: keep the curiosity hook, swap examples or units for local ones where it helps, and "
                    "keep every fact true. Give one line per scene, in the same order, so it still matches the "
-                   "footage; on_screen_text at most 8 words. Title under 100 characters, description with hashtags "
+                   "footage; on_screen_text at most 8 words" + (
+                       ", written as one or two lines of at most 9 characters each, with the line break (\\n) only "
+                       "between words, never inside a word" if channel["lang"] == "ja" else "") + ". Title under 100 characters, description with hashtags "
                    "ending in #Shorts." + ENGLISH_NUMBERS * bool(channel.get("dub"))
                    + "\n\nTitle: " + package["title"] + "\n\nDescription: " + package["description"]
                    + "\n\nScenes:\n" + json.dumps([[s.narration, s.on_screen_text] for s in board.scenes],
@@ -576,6 +578,8 @@ def _drawable(text: str, font) -> str:
 def _wrap_ja(text: str, n: int) -> list:
     """Japanese lines of about n wide characters, evenly filled: Latin words and numbers ("Instinct", "1.8°C") stay
     whole, and 、。!? never start a line. Latin letters count half a character."""
+    if "\n" in text:  # the dub's translator broke the lines between words itself
+        return [l.strip() for l in text.splitlines() if l.strip()]
     atoms = re.findall(r"[A-Za-z0-9.,:;°%+\-−'’/]+|\s+|.", text)
     width = lambda a: 0.5 * len(a) if a.isascii() else len(a)
     total = sum(map(width, atoms))
@@ -836,6 +840,83 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
            if track else ["-map", "1:a"])
     subprocess.run([FFMPEG_BINARY, "-y", "-loglevel", "error", "-i", str(picture), "-i", str(voice_track), *mix,
                     "-map", "0:v", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", str(out)], check=True)
+    return out
+
+
+def redub(package_path: Path, voice: str = VOICE) -> Path:
+    """A dub of a posted Short (owner, 1 Nov: "only need dub, not fresh video"): the original's YouTube video with
+    its voice swapped for the dub's and its captions covered by the dub's. No new shots, no footage checks; the only
+    Claude cost is dub()'s translation. Each line is fitted into the time its original line had."""
+    package = json.loads(package_path.read_text(encoding="utf-8"))
+    lang, src = package["lang"], json.loads((OUTBOX / f"{package['dub_of']}.json").read_text(encoding="utf-8"))
+    work = OUTBOX / package["dub_of"]
+    work.mkdir(exist_ok=True)
+    channels = {c["id"]: c for c in _channels()}
+    home, origin = channels.get(package["channel_id"], {}), channels.get(src["channel_id"], {})
+    original = work / "original.mp4"
+    if not original.exists():
+        subprocess.run([sys.executable, "-m", "yt_dlp", "-q", "--no-warnings", "-f", "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/b",
+                        "--merge-output-format", "mp4", "-o", str(original), f"https://www.youtube.com/watch?v={src['youtube_id']}"],
+                       check=True)
+    picture = VideoFileClip(str(original)).without_audio()
+    size, length = picture.size, picture.duration
+    before = Storyboard(scenes=src["scenes"]).scenes if "scenes" in src else Storyboard.model_validate_json(
+        (work / "board.json").read_text(encoding="utf-8")).scenes
+    # 1. Where each original line was: its own voice made again (Edge, free) gives every line's length.
+    slots, t = [], 0.0
+    for i, scene in enumerate(before):
+        audio = work / f"orig-{i:03}.mp3"
+        if any(ch.isalnum() for ch in scene.narration) and speak(scene.narration, HOSTS.get(scene.speaker, {}).get(
+                "voice", origin.get("voice", VOICE)), audio, rate=origin.get("rate", "+0%")) and (n := len(_wav(audio)) / 2 / RATE):
+            slots.append((t, t + n + GAP))
+            t += n + GAP
+        else:
+            slots.append(None)
+    k = length / t if t else 1  # stretch to the real video, whatever drift the re-made voice has
+    # 2. Each dubbed line in its slot, sped up (at most 1.4x) if it is longer, quiet after it if shorter.
+    track = np.zeros(int(length * RATE) + RATE, dtype=np.int16)
+    layers, scale = [picture], origin.get("caption_scale", 1)
+    cover = Image.new("RGBA", size, (0, 0, 0, 0))  # hides the original captions: the band they sit in, for up to 3 lines
+    line_h = int(size[0] // 14 * scale) + 16
+    ImageDraw.Draw(cover).rectangle((0, int(size[1] * 0.72) - line_h * 3 // 2 - 40, size[0], int(size[1] * 0.72) + line_h * 3 // 2 + 40),
+                                    fill=(0, 0, 0, 235))
+    layers.append(ImageClip(np.array(cover), transparent=True).with_duration(length))
+    for i, (scene, slot) in enumerate(zip(Storyboard(scenes=package["scenes"]).scenes, slots)):
+        if not slot:
+            continue
+        start, room = slot[0] * k, (slot[1] - slot[0]) * k
+        audio = work / f"{lang}-{i:03}.mp3"
+        if any(ch.isalnum() for ch in scene.narration) and speak(scene.narration, voice, audio, rate=home.get("rate", "+0%")):
+            raw = _wav(audio)
+            speed = min(1.4, max(1.0, len(raw) / 2 / RATE / max(room - GAP, 0.1)))
+            if speed > 1:
+                fitted = audio.with_suffix(".fit.wav")
+                subprocess.run([FFMPEG_BINARY, "-y", "-loglevel", "error", "-i", str(audio.with_suffix(".wav")), "-af",
+                                f"atempo={speed:.3f}", "-ac", "1", "-ar", str(RATE), "-c:a", "pcm_s16le", str(fitted)], check=True)
+                with wave.open(str(fitted)) as w:
+                    raw = w.readframes(w.getnframes())
+            samples = np.frombuffer(raw, dtype=np.int16)[:int(room * RATE)]
+            track[int(start * RATE):int(start * RATE) + len(samples)] = samples
+        layers.append(ImageClip(caption(scene.on_screen_text, size, lang, home.get("caption_scale", 1)), transparent=True)
+                      .with_start(start).with_duration(min(room, length - start)))
+    voice_track = work / f"{lang}-voice.wav"
+    with wave.open(str(voice_track), "wb") as w:
+        w.setnchannels(1)
+        w.setsampwidth(2)
+        w.setframerate(RATE)
+        w.writeframes(track[:int(length * RATE)].tobytes())
+    silent = work / f"{lang}-picture.mp4"
+    CompositeVideoClip(layers, size=size).with_duration(length).write_videofile(
+        str(silent), fps=30, codec="libx264", audio=False, preset="slow", ffmpeg_params=["-crf", "17", "-pix_fmt", "yuv420p"], logger=None)
+    picture.close()
+    out, music_track = package_path.with_suffix(".mp4"), music(work, length, src)
+    mix = (["-stream_loop", "-1", "-i", str(music_track), "-filter_complex",
+            f"[2:a]volume={MUSIC_VOLUME}[m];[1:a][m]amix=inputs=2:duration=first:normalize=0[a]", "-map", "[a]"]
+           if music_track else ["-map", "1:a"])
+    subprocess.run([FFMPEG_BINARY, "-y", "-loglevel", "error", "-i", str(silent), "-i", str(voice_track), *mix,
+                    "-map", "0:v", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", str(out)], check=True)
+    package["qa"] = {"passed": True, "problems": "dub of a posted Short: same pictures, not checked again"}
+    package_path.write_text(json.dumps(package, indent=2, ensure_ascii=False), encoding="utf-8")
     return out
 
 
@@ -1171,7 +1252,9 @@ if __name__ == "__main__":
         elif not dub_only and not video.exists() and "youtube_id" not in package:  # cloud runs don't keep videos; never remake posted ones
             print(f"Making video for {path.name}")
             try:
-                render(path, voice)
+                posted = json.loads(src.read_text(encoding="utf-8")).get("youtube_id") if "dub_of" in package and \
+                    (src := OUTBOX / f"{package['dub_of']}.json").exists() else None
+                (redub if posted else render)(path, voice)  # a dub of a posted Short reuses its video: no new shots
             except Exception as e:  # with many Shorts a day, one broken package shouldn't stop the rest
                 print(f"    failed: {e}")
                 failed.append(path.name)
