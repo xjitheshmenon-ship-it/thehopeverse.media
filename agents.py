@@ -42,12 +42,13 @@ BUDGET = float(os.environ.get("HOPE_BUDGET", "2"))
 # Cap for the whole day across all runs (Shorts, series, channel idea). Set it as a repo variable in GitHub.
 RAISED = {"2026-10-26": 50.0, "2026-10-27": 25.0}  # one-day raises the owner approved; the usual cap returns the next day
 DAILY_BUDGET = max(RAISED.get(f"{datetime.now():%Y-%m-%d}", 0), float(os.environ.get("DAILY_BUDGET") or "20"))
-# Cap for one GitHub Actions run, Post now and owner one-offs included (owner, 1 Nov 2026: one run re-made 8 dubs for $6).
-RUN_BUDGET = float(os.environ.get("RUN_BUDGET") or "3")
-RUN_SPEND = HERE / "run-spend.txt"  # this run's costs, one per line; never saved to the state branch
+# Cap for one video, writing + footage + checks, Post now and owner one-offs included (owner, 1 Nov 2026: "2-3 usd per video")
+VIDEO_BUDGET = float(os.environ.get("VIDEO_BUDGET") or "3")
 # $ per million tokens: input, output, cache read, cache write
 PRICES = {MODEL: (4, 20, 0.20, 5), HELPER_MODEL: (2, 10, 0.20, 2.5)}
 spent = 0.0
+RESEARCH_BUDGET = float(os.environ.get("RESEARCH_BUDGET") or "1")  # Mr. Focus per topic (owner, 1 Nov 2026); usually ~$0.30-0.50
+research = 0.0
 
 
 def _cost(model: str, usage) -> float:
@@ -82,9 +83,11 @@ TEAM = _sections(TEAM_FILE)
 def run_agent(name: str, system: str, prompt: str, tools: list, effort: str = "medium",
               model: str = HELPER_MODEL) -> str:
     """One agent = a system prompt + tools, driven by the SDK's tool runner. Output is saved to runs/."""
-    global spent
+    global spent, research
     if spent >= BUDGET:
         return f"[budget of ${BUDGET:.2f} reached; stop now and summarize what you have]"
+    if name == "Mr. Focus" and research >= RESEARCH_BUDGET:
+        return f"[research budget of ${RESEARCH_BUDGET:.2f} for this topic reached; go on with the research you have]"
     print(f"... {name} is working (spent so far ${spent:.2f})", flush=True)
     own = TEAM.get(f"{name} ({os.environ.get('HOPE_CHANNEL')})")  # e.g. "## Mr. Pen (yt-sawaal)" in team.md
     if own:
@@ -122,6 +125,10 @@ def run_agent(name: str, system: str, prompt: str, tools: list, effort: str = "m
     for message in runner:
         final = message
         spent += _cost(model, message.usage)
+        research += _cost(model, message.usage) if name == "Mr. Focus" else 0
+        if name == "Mr. Focus" and research >= RESEARCH_BUDGET:
+            print(f"!!! research budget of ${RESEARCH_BUDGET:.2f} reached, stopping Mr. Focus", flush=True)
+            break
         if spent >= BUDGET:
             print(f"!!! budget of ${BUDGET:.2f} reached, stopping", flush=True)
             break
@@ -213,7 +220,8 @@ def queue_post(channel_id: str, title: str, description: str, script: str) -> st
     path.write_text(json.dumps(
         {"channel_id": channel_id, "title": title, "description": description, "script": script,
          # a channel brings its language (Instinct), footer, YouTube category, anchors and photo rule (Sankalp, Sawaal)
-         **{k: channel[k] for k in ("lang", "footer", "category", "hosts", "photos") if k in channel}}, indent=2, ensure_ascii=False))
+         **{k: channel[k] for k in ("lang", "footer", "category", "hosts", "photos") if k in channel},
+         "draft_cost": round(spent, 2)}, indent=2, ensure_ascii=False))  # counts toward VIDEO_BUDGET when it's made
     # ponytail: writes to outbox only; real upload needs YouTube Data API / Instagram Graph API OAuth per channel
     return f"queued at {path.name}"
 
@@ -457,17 +465,11 @@ def log_spend(cost: float, channel: str = "") -> None:
     with HISTORY.open("a", encoding="utf-8") as f:
         f.write(json.dumps({"date": f"{datetime.now():%Y-%m-%d %H:%M}", "cost_usd": round(cost, 2),
                             "channel": channel}) + "\n")
-    with RUN_SPEND.open("a", encoding="utf-8") as f:
-        f.write(f"{cost}\n")
-
-
-def spent_this_run() -> float:
-    return sum(map(float, RUN_SPEND.read_text(encoding="utf-8").split())) if RUN_SPEND.exists() else 0.0
 
 
 def budget_ok(extra: float = 0) -> bool:
-    """Room left today (DAILY_BUDGET) and in this run (RUN_BUDGET) before starting more paid work."""
-    return spent_today() + extra < DAILY_BUDGET and spent_this_run() + extra < RUN_BUDGET
+    """Room left today (DAILY_BUDGET) before starting more paid work."""
+    return spent_today() + extra < DAILY_BUDGET
 
 
 def spend_report() -> str:
@@ -517,8 +519,7 @@ def spend_report() -> str:
 
 if __name__ == "__main__":
     if not budget_ok():
-        sys.exit(f"Budget reached (${spent_this_run():.2f} of ${RUN_BUDGET:.2f} this run, ${spent_today():.2f} of "
-                 f"${DAILY_BUDGET:.2f} today); no more Shorts.")
+        sys.exit(f"Daily budget of ${DAILY_BUDGET:.2f} reached; no more Shorts today.")
     if sys.argv[1:] == ["--grow"]:
         notes = run_agent("Mr. Grow", TEAM["Mr. Grow"],
                           f"Today is {datetime.now():%A %d %B %Y}. Channels:\n{list_channels()}\n\n"
