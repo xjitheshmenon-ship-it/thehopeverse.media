@@ -20,6 +20,7 @@ import base64
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import textwrap
@@ -1198,10 +1199,10 @@ if __name__ == "__main__":
     dubs = [c for c in channels.values() if c.get("status") == "dub" and (HERE / c["token"]).exists()]
     platform = {i: c["platform"] for i, c in channels.items()}
     quota_left, failed, posted, made = True, [], 0, 0
-    paths = sorted(OUTBOX.glob("*.json"))
+    paths, shared = sorted(OUTBOX.glob("*.json")), set()
     for path in paths:  # dubs made below are appended, so they go up in the same run
         package = json.loads(path.read_text(encoding="utf-8"))
-        if "--only" in sys.argv and package["channel_id"] != sys.argv[sys.argv.index("--only") + 1]:
+        if "--only" in sys.argv and package["channel_id"] != sys.argv[sys.argv.index("--only") + 1] and path not in shared:
             continue  # e.g. python video.py --only yt-kissa: post just that channel's videos
         if package.get("held"):
             continue  # failed its relevance check: never made or posted
@@ -1243,15 +1244,15 @@ if __name__ == "__main__":
         if package.get("render_failed", 0) >= 2 and "youtube_id" not in package:
             continue  # failed twice (e.g. credits ran out mid-video): stop paying to remake it every run
         if "youtube_id" not in package and not video.exists() and not (dub_only and dub_path.exists()):
-            if made:
-                continue  # one video per run (owner, 30 Oct): the next run checks the credits again first
             reuses = "dub_of" in package and "youtube_id" in json.loads((OUTBOX / f"{package['dub_of']}.json").read_text(encoding="utf-8")) \
                 if (OUTBOX / f"{package.get('dub_of')}.json").exists() else False
+            if made and not reuses:
+                continue  # one video per run (owner, 30 Oct): the next run checks the credits again first
             if not reuses and (why := not_ready()):  # a dub of a posted Short needs no Claude, fal.ai or HeyGen
                 print(f"::error::Not making more videos: {why}")
                 failed.append(path.name)
                 break
-            made += 1
+            made += not reuses  # a language copy of a posted video costs nothing, so it doesn't use up the run
         if dub_only and not dub_path.exists() and not (path.with_suffix("") / "board.json").exists():
             # its English cut is never posted, so make only the storyboard the dub is cut from (half the fal.ai cost)
             try:
@@ -1324,6 +1325,19 @@ if __name__ == "__main__":
             path.write_text(json.dumps(package, indent=2), encoding="utf-8")
             print(f"    https://youtu.be/{package['youtube_id']}")
             posted += 1
+            # Owner's hard rule, 1 Nov: one video for all Instinct channels, only the language changes. Each connected
+            # channel with "dub_from" this channel gets its copy in this same run, cut from this video.
+            for c in (c for c in channels.values() if c.get("dub_from") == package["channel_id"] and (HERE / c.get("token", "-")).exists()):
+                if (target := path.with_suffix(f".{c['lang']}.json")).exists() or "dub_of" in package:
+                    continue
+                try:
+                    dub(path, c)
+                    (OUTBOX / path.stem).mkdir(exist_ok=True)
+                    shutil.copy(video, OUTBOX / path.stem / "original.mp4")  # redub() starts from it instead of YouTube
+                    paths.append(target)
+                    shared.add(target)
+                except Exception as e:  # the French video is up; its copies can be made later with job=dub
+                    print(f"    {c['language']} copy of {path.name} failed: {e}")
         if channels.get(package["channel_id"], {}).get("lang") or package["channel_id"] != "yt-hopeverse":
             # only Hopeverse Media cross-posts to its Instagram; dubs, series and other channels stay on YouTube
             continue

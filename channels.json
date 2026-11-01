@@ -96,7 +96,7 @@
     }
   },
   {
-    "id": "yt-instinct-de",
+    "id": "yt-instinct-de", "dub_from": "yt-instinct",
     "platform": "youtube",
     "per_day": 2,
     "name": "Instinct Natur",
@@ -125,7 +125,7 @@
     }
   },
   {
-    "id": "yt-instinct-es",
+    "id": "yt-instinct-es", "dub_from": "yt-instinct",
     "platform": "youtube",
     "per_day": 2,
     "name": "Instinto Natural",
