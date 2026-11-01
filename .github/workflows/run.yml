@@ -24,10 +24,12 @@ jobs:
         run: |
           args=()
           while IFS= read -r line; do
-            [[ $line == hold=* ]] && continue
+            [[ $line == hold=* || $line == remake=* ]] && continue
             [[ $line =~ ^[a-z_]+=.*$ ]] && args+=(-f "$line")
           done <<< "$MESSAGE"
-          if ! grep -qx "hold=override" <<< "$MESSAGE" && gh api "repos/$GH_REPO/contents/PAUSED?ref=main" > /dev/null 2>&1; then  # owner-approved one-off: "hold=override" line
+          if grep -qx "job=remake" <<< "$MESSAGE" && ! grep -qx "remake=owner" <<< "$MESSAGE"; then  # owner, 1 Nov 2026
+            echo "::error::A held Short is re-made only when the owner asks: add a remake=owner line"
+          elif ! grep -qx "hold=override" <<< "$MESSAGE" && gh api "repos/$GH_REPO/contents/PAUSED?ref=main" > /dev/null 2>&1; then  # owner-approved one-off: "hold=override" line
             echo "::warning::On hold (PAUSED file on main): not starting ${BRANCH#run/}"
           else
             gh workflow run "${BRANCH#run/}.yml" --ref main "${args[@]}"

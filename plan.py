@@ -29,7 +29,7 @@ from pydantic import BaseModel
 from breakout import rules
 from predict import ASK, track
 from state import approvals, topic_id
-from agents import (DAILY_BUDGET, HELPER_MODEL, HERE, OUTBOX, WEB_SEARCH, _channels, _cost, client, log_spend,
+from agents import (DAILY_BUDGET, HELPER_MODEL, HERE, OUTBOX, WEB_SEARCH, _channels, _cost, budget_ok, client, log_spend,
                     spent_today)
 
 PLAN = HERE / "runs" / "plan.json"
@@ -214,7 +214,7 @@ def refresh() -> dict:
                 stale.append(e)  # no view guess yet: replaced below, but kept if nothing new gets planned
         keep = sorted(keep, key=lambda e: ("ok", "auto", "").index(verdict(cid, e, said)))[:len(whens)]  # approved, then 80+, go first
         empty = whens[len(keep):]
-        if empty and spent_today() < DAILY_BUDGET:
+        if empty and budget_ok():
             try:
                 items = _ask(c, empty, [e["topic"] for e in keep], rejected.get(cid, []))
                 keep += [{"topic": it.topic, "why": it.why, "score": max(0, min(100, it.score)),

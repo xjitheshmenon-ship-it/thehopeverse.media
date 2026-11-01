@@ -14,7 +14,7 @@ from pathlib import Path
 
 from pydantic import BaseModel
 
-from agents import DAILY_BUDGET, next_outbox_path, MODEL, OUTBOX, TEAM, _channels, _cost, client, log_spend, spent_today
+from agents import DAILY_BUDGET, next_outbox_path, MODEL, OUTBOX, TEAM, _channels, _cost, budget_ok, client, log_spend, spent_today
 from breakout import rules
 from plan import next_topic, story_file
 from video import Scene
@@ -113,6 +113,6 @@ def write_episode(cid: str = "") -> Path:
 
 
 if __name__ == "__main__":
-    if spent_today() >= DAILY_BUDGET:
-        raise SystemExit(f"Daily budget of ${DAILY_BUDGET:.2f} reached; no more episodes today.")
+    if not budget_ok():
+        raise SystemExit(f"Budget reached (this run's RUN_BUDGET or the daily ${DAILY_BUDGET:.2f}); no more episodes.")
     write_episode(sys.argv[1] if len(sys.argv) > 1 else "")

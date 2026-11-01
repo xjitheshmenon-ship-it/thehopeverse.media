@@ -42,6 +42,9 @@ BUDGET = float(os.environ.get("HOPE_BUDGET", "2"))
 # Cap for the whole day across all runs (Shorts, series, channel idea). Set it as a repo variable in GitHub.
 RAISED = {"2026-10-26": 50.0, "2026-10-27": 25.0}  # one-day raises the owner approved; the usual cap returns the next day
 DAILY_BUDGET = max(RAISED.get(f"{datetime.now():%Y-%m-%d}", 0), float(os.environ.get("DAILY_BUDGET") or "20"))
+# Cap for one GitHub Actions run, Post now and owner one-offs included (owner, 1 Nov 2026: one run re-made 8 dubs for $6).
+RUN_BUDGET = float(os.environ.get("RUN_BUDGET") or "3")
+RUN_SPEND = HERE / "run-spend.txt"  # this run's costs, one per line; never saved to the state branch
 # $ per million tokens: input, output, cache read, cache write
 PRICES = {MODEL: (4, 20, 0.20, 5), HELPER_MODEL: (2, 10, 0.20, 2.5)}
 spent = 0.0
@@ -454,6 +457,17 @@ def log_spend(cost: float, channel: str = "") -> None:
     with HISTORY.open("a", encoding="utf-8") as f:
         f.write(json.dumps({"date": f"{datetime.now():%Y-%m-%d %H:%M}", "cost_usd": round(cost, 2),
                             "channel": channel}) + "\n")
+    with RUN_SPEND.open("a", encoding="utf-8") as f:
+        f.write(f"{cost}\n")
+
+
+def spent_this_run() -> float:
+    return sum(map(float, RUN_SPEND.read_text(encoding="utf-8").split())) if RUN_SPEND.exists() else 0.0
+
+
+def budget_ok(extra: float = 0) -> bool:
+    """Room left today (DAILY_BUDGET) and in this run (RUN_BUDGET) before starting more paid work."""
+    return spent_today() + extra < DAILY_BUDGET and spent_this_run() + extra < RUN_BUDGET
 
 
 def spend_report() -> str:
@@ -502,8 +516,9 @@ def spend_report() -> str:
 
 
 if __name__ == "__main__":
-    if spent_today() >= DAILY_BUDGET:
-        sys.exit(f"Daily budget of ${DAILY_BUDGET:.2f} reached; no more Shorts today.")
+    if not budget_ok():
+        sys.exit(f"Budget reached (${spent_this_run():.2f} of ${RUN_BUDGET:.2f} this run, ${spent_today():.2f} of "
+                 f"${DAILY_BUDGET:.2f} today); no more Shorts.")
     if sys.argv[1:] == ["--grow"]:
         notes = run_agent("Mr. Grow", TEAM["Mr. Grow"],
                           f"Today is {datetime.now():%A %d %B %Y}. Channels:\n{list_channels()}\n\n"

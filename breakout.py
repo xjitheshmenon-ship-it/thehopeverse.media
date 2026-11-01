@@ -151,7 +151,7 @@ def study(r: dict, rows: list, channel: dict) -> Study:
 
 def run(rows: list) -> list:
     """Study every new breakout in the dashboard's rows and save them; returns the new study ids."""
-    from agents import DAILY_BUDGET, _channels, spent_today
+    from agents import DAILY_BUDGET, _channels, budget_ok, spent_today
     studies, channels = load(), {c["id"]: c for c in _channels()}
     known = {r["youtube_id"] for r in rows if r.get("youtube_id")}
     for c in channels.values():
@@ -162,7 +162,7 @@ def run(rows: list) -> list:
                 print(f"::warning::Uploads of {c['id']}: {str(e)[:300]}")
     new = []
     for r in find(rows, studies, datetime.now()):
-        if spent_today() >= DAILY_BUDGET or r["channel"] not in channels:
+        if not budget_ok() or r["channel"] not in channels:
             continue
         print(f"Breakout on {r['channel']}: {r['title']} ({r['yt_views']} views, usual {r['usual']:.0f}); studying it")
         try:
