@@ -912,7 +912,7 @@ def redub(package_path: Path, voice: str = VOICE) -> Path:
     CompositeVideoClip(layers, size=size).with_duration(length).write_videofile(
         str(silent), fps=30, codec="libx264", audio=False, preset="slow", ffmpeg_params=["-crf", "17", "-pix_fmt", "yuv420p"], logger=None)
     picture.close()
-    out, music_track = package_path.with_suffix(".mp4"), music(work, length, src)
+    out, music_track = package_path.with_suffix(".mp4"), None  # owner, 1 Nov: dubs go out without music
     mix = (["-stream_loop", "-1", "-i", str(music_track), "-filter_complex",
             f"[2:a]volume={MUSIC_VOLUME}[m];[1:a][m]amix=inputs=2:duration=first:normalize=0[a]", "-map", "[a]"]
            if music_track else ["-map", "1:a"])
@@ -1239,7 +1239,9 @@ if __name__ == "__main__":
         if "youtube_id" not in package and not video.exists() and not (dub_only and dub_path.exists()):
             if made:
                 continue  # one video per run (owner, 30 Oct): the next run checks the credits again first
-            if why := not_ready():
+            reuses = "dub_of" in package and "youtube_id" in json.loads((OUTBOX / f"{package['dub_of']}.json").read_text(encoding="utf-8")) \
+                if (OUTBOX / f"{package.get('dub_of')}.json").exists() else False
+            if not reuses and (why := not_ready()):  # a dub of a posted Short needs no Claude, fal.ai or HeyGen
                 print(f"::error::Not making more videos: {why}")
                 failed.append(path.name)
                 break
