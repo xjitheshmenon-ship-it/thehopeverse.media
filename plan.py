@@ -51,6 +51,11 @@ def planned_slots(channel: dict) -> list:
     post 4 a day (channels.json per_day, which overrides SHORTS_PER_DAY)."""
     if channel["platform"] != "youtube" or channel.get("status") not in ("live", "series"):
         return []
+    if channel.get("dub_from"):  # owner, 1 Nov: it shares its source's videos, so only its source's posted Shorts not yet in its language
+        out = Path(__file__).parent / "outbox"
+        waiting = [p for p in out.glob(f"{channel['dub_from']}-*.json") if p.stem.rsplit("-", 1)[1].isdigit()
+                   and not p.with_suffix(f".{channel.get('lang')}.json").exists() and "youtube_id" in json.loads(p.read_text(encoding="utf-8"))]
+        return list(range(1, min(len(waiting), channel.get("per_day") or 2) + 1))
     if channel["id"] == "yt-hopeverse" and not channel.get("per_day"):
         return list(range(1, SHORTS_PER_DAY + 1))
     return list(range(1, (channel.get("per_day") or (SERIES_PER_DAY if channel.get("status") == "series" else 2)) + 1))
