@@ -40,7 +40,7 @@ from PIL import Image, ImageDraw, ImageFont
 from pydantic import BaseModel
 
 from state import split_owner_notes
-from agents import DAILY_BUDGET, budget_ok, HELPER_MODEL, WEB_SEARCH, _cost, OUTBOX, TEAM, _channels, client, log_spend, read_cast, spent_today
+from agents import DAILY_BUDGET, VIDEO_BUDGET, budget_ok, HELPER_MODEL, WEB_SEARCH, _cost, OUTBOX, TEAM, _channels, client, log_spend, read_cast, spent_today
 from approve import approved
 import predict
 
@@ -308,7 +308,7 @@ def host_photo(name: str) -> Path:
     return path
 
 
-paid = {"clips": 0, "usd": 0.0, "blank": 0, "limit": AI_CLIPS}  # spending (fal.ai, footage checks) of the video being made; render() resets it
+paid = {"clips": 0, "usd": 0.0, "blank": 0, "limit": AI_CLIPS, "draft": 0.0}  # spending (fal.ai, footage checks) of the video being made; render() resets it
 shots = []  # stock clips already matched in this video, reused when nothing else fits a later line
 
 
@@ -319,7 +319,7 @@ def _can_pay() -> bool:
     """Reserve one AI clip if the video's cap and DAILY_BUDGET allow it. Scenes are made in parallel, so the
     check and the count happen together."""
     with _paying:
-        if paid["clips"] < paid["limit"] and budget_ok(paid["usd"]):
+        if paid["clips"] < paid["limit"] and budget_ok(paid["usd"]) and paid["draft"] + paid["usd"] < VIDEO_BUDGET:
             paid["clips"] += 1
             return True
         return False
@@ -337,6 +337,8 @@ def _pick(scene: "Scene", thumbnails: list) -> int:
     line is about, or -1 when none does, so a car never stands in for a rocket."""
     if not thumbnails:
         return -1
+    if paid["draft"] + paid["usd"] >= VIDEO_BUDGET:
+        return 0  # the video's budget is used up: take the search's best match unchecked
     try:
         response = client.messages.create(model=HELPER_MODEL, max_tokens=200, thinking={"type": "between_tools"}, messages=[{"role": "user", "content": [
             *({"type": "image", "source": _image(u)} for u in thumbnails),
@@ -765,7 +767,8 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
     if mark.exists():
         logo = ImageClip(str(mark), transparent=True).resized(width=200).with_opacity(0.85).with_position((80, 227))
     # A series shows its own characters in every shot, so its AI clips are capped only by DAILY_BUDGET.
-    paid.update(clips=0, usd=0.0, blank=0, limit=10 ** 6 if package.get("cast") else AI_CLIPS)
+    # Every video, series too, stops paying for AI clips and footage checks at VIDEO_BUDGET, its writing included.
+    paid.update(clips=0, usd=0.0, blank=0, limit=10 ** 6 if package.get("cast") else AI_CLIPS, draft=package.get("draft_cost", 0))
     shots.clear()
     # 1. Every line into one voice track, back to back with GAP between them: nothing can overlap or cut off.
     lines, voice_track = [], work / f"{prefix}voice.wav"
@@ -1197,8 +1200,8 @@ if __name__ == "__main__":
         if package.get("held"):
             continue  # failed its relevance check: never made or posted
         if "youtube_id" not in package and not path.with_suffix(".mp4").exists() and not budget_ok():
-            print(f"::warning::Not making {path.name}: this run's budget is used up (RUN_BUDGET / DAILY_BUDGET)")
-            continue  # owner, 1 Nov 2026: a run stops itself at its cost limit, by-hand runs too
+            print(f"::warning::Not making {path.name}: today's budget is used up (DAILY_BUDGET)")
+            continue
         if channels.get(package["channel_id"], {}).get("status") == "paused":
             continue  # the owner paused this channel (Kissa, 28 Oct 2026): nothing is made or posted until it's live again
         video = path.with_suffix(".mp4")

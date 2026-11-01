@@ -114,5 +114,5 @@ def write_episode(cid: str = "") -> Path:
 
 if __name__ == "__main__":
     if not budget_ok():
-        raise SystemExit(f"Budget reached (this run's RUN_BUDGET or the daily ${DAILY_BUDGET:.2f}); no more episodes.")
+        raise SystemExit(f"Daily budget of ${DAILY_BUDGET:.2f} reached; no more episodes today.")
     write_episode(sys.argv[1] if len(sys.argv) > 1 else "")
