@@ -56,6 +56,23 @@ def load() -> None:
         print(f"Loaded {len(saved)} files from the {BRANCH} branch")
 
 
+def merge_log(path: Path, saved: str) -> None:
+    """runs/*.jsonl are append-only logs (history.jsonl is the spend log the daily budget reads). Two runs side by side
+    each saved their own copy, so the last save dropped the other's lines, and a run that failed to load saved a log of
+    one line (1 Nov 2026: 345 spend lines lost). Keep every saved line and add this run's lines the save lacks."""
+    left = saved.splitlines()
+    # ponytail: an identical line logged by two parallel runs in the same minute is kept once
+    new = [line for line in path.read_text(encoding="utf-8").splitlines() if line.strip() and not _take(left, line)]
+    path.write_text("".join(f"{line}\n" for line in saved.splitlines() + new), encoding="utf-8")
+
+
+def _take(lines: list, line: str) -> bool:
+    if line in lines:
+        lines.remove(line)
+        return True
+    return False
+
+
 def save(only: list = None) -> None:
     env = {**os.environ, "GIT_INDEX_FILE": os.path.join(tempfile.mkdtemp(), "index"),
            "GIT_AUTHOR_NAME": "Mr. Hope", "GIT_AUTHOR_EMAIL": "hope@localhost",
@@ -63,6 +80,10 @@ def save(only: list = None) -> None:
     parent = subprocess.run(["git", "fetch", "origin", BRANCH], cwd=HERE, capture_output=True).returncode == 0
     if parent:  # start from what's saved, so a run that loaded earlier never drops files saved since (sign-ins)
         git("read-tree", "FETCH_HEAD", env=env)
+        for name in only or files():
+            if name.startswith("runs/") and name.endswith(".jsonl"):
+                merge_log(HERE / name, subprocess.run(["git", "show", f"FETCH_HEAD:{name}"], cwd=HERE,
+                                                      capture_output=True, text=True).stdout)
     git("add", "-f", "--", *(only or files()), env=env)
     tree = git("write-tree", env=env)
     commit = git("commit-tree", tree, *(["-p", "FETCH_HEAD"] if parent else []), "-m", "Hope's memory", env=env)
