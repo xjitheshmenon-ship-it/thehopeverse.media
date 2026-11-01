@@ -220,6 +220,15 @@ jobs:
       - name: Plan the next 6 topics per channel (shown on the dashboard)
         if: always() && (env.RAN == '1' || inputs.job == 'one' || inputs.job == 'plan')
         run: python plan.py || true
+      - name: Keep the finished videos for 30 days (owner, 1 Nov), so a held or dubbed video never has to be paid for again
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: videos-${{ github.run_id }}
+          path: outbox/*.mp4
+          if-no-files-found: ignore
+          retention-days: 30
+          compression-level: 0
       - name: Save Hope's memory
         if: always() && (env.RAN == '1' || inputs.job == 'one' || inputs.job == 'story' || inputs.job == 'publish' || inputs.job == 'remake' || inputs.job == 'dub' || inputs.job == 'plan')
         run: python state.py save
