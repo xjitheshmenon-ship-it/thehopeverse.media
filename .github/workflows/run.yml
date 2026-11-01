@@ -26,5 +26,9 @@ jobs:
           while IFS= read -r line; do
             [[ $line =~ ^[a-z_]+=.*$ ]] && args+=(-f "$line")
           done <<< "$MESSAGE"
-          gh workflow run "${BRANCH#run/}.yml" --ref main "${args[@]}"
+          if gh api "repos/$GH_REPO/contents/PAUSED?ref=main" > /dev/null 2>&1; then
+            echo "::warning::On hold (PAUSED file on main): not starting ${BRANCH#run/}"
+          else
+            gh workflow run "${BRANCH#run/}.yml" --ref main "${args[@]}"
+          fi
           gh api -X DELETE "repos/$GH_REPO/git/refs/heads/$BRANCH"
