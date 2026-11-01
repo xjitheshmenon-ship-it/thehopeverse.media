@@ -67,7 +67,7 @@ jobs:
                           (out / f"take{take}.mp3").write_bytes(r.read())
                           song = r.headers.get("song-id", "")
                   except Exception as e:
-                      print(f"take {take} with {model} failed: {e} {getattr(e, 'read', lambda: b'')()[:300]!r}")
+                      print(f"take {take} with {model} failed: {e} {getattr(e, 'read', lambda: b'')()[:1200]!r}")
                       continue
                   # The proof record keeps who made what, when and how, for copyright and distributor questions.
                   (out / f"take{take}.proof.json").write_text(json.dumps({
