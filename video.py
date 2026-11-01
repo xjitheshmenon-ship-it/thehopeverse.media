@@ -40,7 +40,7 @@ from PIL import Image, ImageDraw, ImageFont
 from pydantic import BaseModel
 
 from state import split_owner_notes
-from agents import DAILY_BUDGET, HELPER_MODEL, WEB_SEARCH, _cost, OUTBOX, TEAM, _channels, client, log_spend, read_cast, spent_today
+from agents import DAILY_BUDGET, budget_ok, HELPER_MODEL, WEB_SEARCH, _cost, OUTBOX, TEAM, _channels, client, log_spend, read_cast, spent_today
 from approve import approved
 import predict
 
@@ -319,7 +319,7 @@ def _can_pay() -> bool:
     """Reserve one AI clip if the video's cap and DAILY_BUDGET allow it. Scenes are made in parallel, so the
     check and the count happen together."""
     with _paying:
-        if paid["clips"] < paid["limit"] and spent_today() + paid["usd"] < DAILY_BUDGET:
+        if paid["clips"] < paid["limit"] and budget_ok(paid["usd"]):
             paid["clips"] += 1
             return True
         return False
@@ -1168,14 +1168,9 @@ if __name__ == "__main__":
             target = OUTBOX / f"{name}.{c['lang']}.json"
             if not target.exists():
                 print(f"Wrote {dub(OUTBOX / f'{name}.json', c).name}")
-            elif "youtube_id" not in (d := json.loads(target.read_text(encoding="utf-8"))) and d.get("held") \
-                    and d.get("holds", 0) >= 2:  # held twice: dropped, never paid for again (spend audit, 1 Nov)
-                print(f"::warning::Dropped {target.name}: held twice ({d['held'][:200]})")
-            elif "youtube_id" not in d and d.get("held"):
-                [d.pop(k, None) for k in ("held", "qa", "render_failed")]  # asked again: make a held dub again
-                target.write_text(json.dumps(d, indent=2, ensure_ascii=False), encoding="utf-8")
-                target.with_suffix(".mp4").unlink(missing_ok=True)
-                print(f"Making {target.name} again")
+            elif "youtube_id" not in (d := json.loads(target.read_text(encoding="utf-8"))) and d.get("held"):
+                # owner, 1 Nov 2026: a held video is never re-made on its own; it waits for him (job=remake, remake=owner)
+                print(f"::warning::Not re-making {target.name}: held ({d['held'][:200]}); waits for the owner")
         sys.exit()  # the normal run then makes and posts them in that channel's slots
     if "--next-dub" in sys.argv:  # the oldest posted Short of the channel's "dub_from" not yet re-voiced for it (owner, 31 Oct)
         c = channels[sys.argv[sys.argv.index("--next-dub") + 1]]
@@ -1201,6 +1196,9 @@ if __name__ == "__main__":
             continue  # e.g. python video.py --only yt-kissa: post just that channel's videos
         if package.get("held"):
             continue  # failed its relevance check: never made or posted
+        if "youtube_id" not in package and not path.with_suffix(".mp4").exists() and not budget_ok():
+            print(f"::warning::Not making {path.name}: this run's budget is used up (RUN_BUDGET / DAILY_BUDGET)")
+            continue  # owner, 1 Nov 2026: a run stops itself at its cost limit, by-hand runs too
         if channels.get(package["channel_id"], {}).get("status") == "paused":
             continue  # the owner paused this channel (Kissa, 28 Oct 2026): nothing is made or posted until it's live again
         video = path.with_suffix(".mp4")

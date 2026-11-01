@@ -15,7 +15,7 @@ from zoneinfo import ZoneInfo
 
 from pydantic import BaseModel
 
-from agents import DAILY_BUDGET, HERE, MODEL, OUTBOX, WEB_SEARCH, _channels, _cost, client, log_spend, next_outbox_path, spent_today
+from agents import DAILY_BUDGET, HERE, MODEL, OUTBOX, WEB_SEARCH, _channels, _cost, budget_ok, client, log_spend, next_outbox_path, spent_today
 from series import Character
 from video import Scene
 
@@ -102,6 +102,6 @@ def publish_at(channel: dict, when: str) -> str:
 
 
 if __name__ == "__main__":
-    if spent_today() >= DAILY_BUDGET:
-        raise SystemExit(f"Daily budget of ${DAILY_BUDGET:.2f} reached; no story today.")
+    if not budget_ok():
+        raise SystemExit(f"Budget reached (this run's RUN_BUDGET or the daily ${DAILY_BUDGET:.2f}); no story.")
     write_story(sys.argv[1] if len(sys.argv) > 1 else "yt-instinct", " ".join(sys.argv[2:]), os.environ.get("WHEN", ""))

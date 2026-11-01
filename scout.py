@@ -164,8 +164,8 @@ def render(kit: Kit, out: Path, network: bool = True) -> None:
 
 
 def scout() -> Path:
-    from agents import DAILY_BUDGET, MODEL, WEB_SEARCH, _channels, _cost, client, log_spend, spent_today
-    if spent_today() >= DAILY_BUDGET:
+    from agents import DAILY_BUDGET, MODEL, WEB_SEARCH, _channels, _cost, budget_ok, client, log_spend, spent_today
+    if not budget_ok():
         sys.exit(f"Daily budget of ${DAILY_BUDGET:.2f} reached; no channel idea today.")
     past = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(IDEAS.glob("*/kit.json"))]
     known = [f"{c['name']}: {c['niche']} ({c['audience']})" for c in _channels()] + \
