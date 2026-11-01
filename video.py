@@ -550,8 +550,7 @@ def caption(text: str, size: tuple, lang: str = "", scale: float = 1) -> np.ndar
     draw = ImageDraw.Draw(img)
     font = _font(int(size[0] // 14 * scale), lang)
     if lang == "ja":  # no spaces between Japanese words, and each character is about twice as wide
-        n = int(9 / scale)
-        lines = [text[i:i + n] for i in range(0, len(text), n)]
+        lines = _wrap_ja(_drawable(text, font), int(9 / scale))
     else:
         lines = textwrap.wrap(text, width=int(18 / scale))
     line_h = font.size + 16
@@ -566,6 +565,27 @@ def caption(text: str, size: tuple, lang: str = "", scale: float = 1) -> np.ndar
             draw.text((x, y), t, font=f, fill="white", anchor="ls")
             x += draw.textlength(t, font=f)
     return np.array(img)
+
+
+def _drawable(text: str, font) -> str:
+    """Drop characters the font has no glyph for (emoji, ✅, ❌): they drew as boxes and held the Japanese dubs."""
+    missing = bytes(font.getmask("\U0010FFFD"))
+    return re.sub(r" {2,}", " ", "".join(ch for ch in text if ch.isspace() or bytes(font.getmask(ch)) != missing)).strip()
+
+
+def _wrap_ja(text: str, n: int) -> list:
+    """Japanese lines of about n wide characters, evenly filled: Latin words and numbers ("Instinct", "1.8°C") stay
+    whole, and 、。!? never start a line. Latin letters count half a character."""
+    atoms = re.findall(r"[A-Za-z0-9.,:;°%+\-−'’/]+|\s+|.", text)
+    width = lambda a: 0.5 * len(a) if a.isascii() else len(a)
+    total = sum(map(width, atoms))
+    target = total / max(1, -(-int(total) // n))  # same number of lines, filled evenly, so no lone last character
+    lines, line, w = [], "", 0
+    for a in atoms:
+        if line and w + width(a) > target + 0.5 and a not in "、。,.!?！？)）」』ー":
+            lines.append(line.strip()); line, w = "", 0
+        line += a; w += width(a)
+    return [l for l in lines + [line.strip()] if l]
 
 
 DEVANAGARI = re.compile(r"([\u0900-\u097F\u1CD0-\u1CFF\uA8E0-\uA8FF\u200C\u200D]+)")
@@ -1064,8 +1084,14 @@ if __name__ == "__main__":
         i = sys.argv.index("--dub-to")
         c = channels[sys.argv[i + 1]]
         for name in sys.argv[i + 2:]:
-            if not (OUTBOX / f"{name}.{c['lang']}.json").exists():
+            target = OUTBOX / f"{name}.{c['lang']}.json"
+            if not target.exists():
                 print(f"Wrote {dub(OUTBOX / f'{name}.json', c).name}")
+            elif "youtube_id" not in (d := json.loads(target.read_text(encoding="utf-8"))) and d.get("held"):
+                [d.pop(k, None) for k in ("held", "qa", "render_failed")]  # asked again: make a held dub again
+                target.write_text(json.dumps(d, indent=2, ensure_ascii=False), encoding="utf-8")
+                target.with_suffix(".mp4").unlink(missing_ok=True)
+                print(f"Making {target.name} again")
         sys.exit()  # the normal run then makes and posts them in that channel's slots
     if "--next-dub" in sys.argv:  # the oldest posted Short of the channel's "dub_from" not yet re-voiced for it (owner, 31 Oct)
         c = channels[sys.argv[sys.argv.index("--next-dub") + 1]]
@@ -1171,7 +1197,10 @@ if __name__ == "__main__":
             continue
         if "youtube_id" not in package and "qa" not in package and video.exists():
             try:
-                c = continuity(video, f"{home.get('name')}: {package.get('title')}", package["channel_id"])
+                about = f"{home.get('name')}: {package.get('title')}" + (  # a dub's pictures are already public on its source
+                    ". It is a re-voiced copy of a Short already approved and posted: judge only the captions (garbled text, "
+                    "missing-glyph boxes, words split across lines) and blank or broken frames, not the footage" * bool(package.get("dub_of")))
+                c = continuity(video, about, package["channel_id"])
                 package["qa"] = {"passed": c.passed, "problems": c.problems}
                 if not c.passed:
                     package["held"] = f"continuity: {c.problems}"
