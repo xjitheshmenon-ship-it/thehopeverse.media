@@ -24,6 +24,7 @@ jobs:
         run: |
           args=()
           while IFS= read -r line; do
+            [[ $line == hold=* ]] && continue
             [[ $line =~ ^[a-z_]+=.*$ ]] && args+=(-f "$line")
           done <<< "$MESSAGE"
           if ! grep -qx "hold=override" <<< "$MESSAGE" && gh api "repos/$GH_REPO/contents/PAUSED?ref=main" > /dev/null 2>&1; then  # owner-approved one-off: "hold=override" line
