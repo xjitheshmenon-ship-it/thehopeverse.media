@@ -50,7 +50,8 @@ def files() -> list:
 
 def load() -> None:
     if subprocess.run(["git", "fetch", "origin", BRANCH], cwd=HERE, capture_output=True).returncode == 0:
-        saved = git("ls-tree", "-r", "--name-only", "FETCH_HEAD").splitlines()
+        saved = git("ls-tree", "-r", "-z", "--name-only", "FETCH_HEAD").split("\0")  # -z: "l'éléphanteau" isn't quoted
+        saved = [f for f in saved if f]
         git("restore", "--source=FETCH_HEAD", "--worktree", "--", *saved)
         print(f"Loaded {len(saved)} files from the {BRANCH} branch")
 
