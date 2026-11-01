@@ -222,6 +222,7 @@ jobs:
         run: python plan.py || true
       - name: Keep the finished videos for 30 days (owner, 1 Nov), so a held or dubbed video never has to be paid for again
         if: always()
+        continue-on-error: true  # a full storage quota must never fail the run
         uses: actions/upload-artifact@v4
         with:
           name: videos-${{ github.run_id }}
