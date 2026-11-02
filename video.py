@@ -971,6 +971,10 @@ def relevance(package: dict, channel: dict) -> Relevance:
 class Check(BaseModel):
     passed: bool
     problems: str  # one line per problem, empty when it passes
+    bad_frames: int = 0  # how many of the 16 frames show a problem
+
+
+BAD_FRAMES_MAX = 3  # owner, 2 Nov 2026: "if 80% is fine, go ahead": held only when more than 20% of the 16 frames are wrong
 
 
 def continuity(video: Path, about: str, channel_id: str = "") -> Check:
@@ -994,9 +998,11 @@ def continuity(video: Path, about: str, channel_id: str = "") -> Check:
              "jewellery or props change between shots; a setting that changes when it should be the same place; things "
              "or people appearing and vanishing; upside-down, warped or melted frames, extra limbs, garbled text. "
              "Different people in news or stock footage are fine. passed: true only if a careful viewer would see none "
-             "of these. problems: one short line each."}]}])
+             "of these. problems: one short line each. bad_frames: how many of the 16 frames show at least one problem."}]}])
     log_spend(_cost(MODEL, response.usage), channel_id)
-    return response.parsed_output
+    check = response.parsed_output
+    check.passed = check.passed or check.bad_frames <= BAD_FRAMES_MAX
+    return check
 
 
 def youtube(interactive: bool = True, token: Path = TOKEN, api: tuple = ("youtube", "v3")):
@@ -1301,7 +1307,7 @@ if __name__ == "__main__":
                     ". It is a re-voiced copy of a Short already approved and posted: judge only the captions (garbled text, "
                     "missing-glyph boxes, words split across lines) and blank or broken frames, not the footage" * bool(package.get("dub_of")))
                 c = continuity(video, about, package["channel_id"])
-                package["qa"] = {"passed": c.passed, "problems": c.problems}
+                package["qa"] = {"passed": c.passed, "problems": c.problems, "bad_frames": c.bad_frames}
                 if not c.passed:
                     package["held"] = f"continuity: {c.problems}"
                     package["holds"] = package.get("holds", 0) + 1
