@@ -63,7 +63,10 @@ def planned_slots(channel: dict) -> list:
 
 def live_channels() -> list:
     """Channels that post every day and are signed in here, in channels.json order (the order of each round)."""
-    return [c for c in _channels() if planned_slots(c) and (HERE / c.get("token", "token.json")).exists()]
+    hold = HERE / "PAUSED"  # owner's hold; an "only: id id" line lets just those channels run (owner, 2 Nov 2026)
+    only = next((l.split(":", 1)[1].split() for l in hold.read_text().splitlines() if l.startswith("only:")), []) if hold.exists() else None
+    return [c for c in _channels() if planned_slots(c) and (HERE / c.get("token", "token.json")).exists()
+            and (only is None or c["id"] in only)]
 
 
 def day_order(channels: list = None) -> list:
