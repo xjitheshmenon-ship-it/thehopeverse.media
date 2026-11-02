@@ -3,6 +3,9 @@ rented Modal GPU, to compare with the HeyGen shots. Free on Modal's $30 monthly 
 
     modal run ltx.py --package outbox/yt-instinct-37.json --scenes 0,3,10
 
+video.py uses the deployed app (modal deploy ltx.py, done by hope.yml) for acting shots: ltx_clip() below.
+One warm container per function (max_containers=1), so the parallel scenes queue instead of each loading the model.
+
 Needs MODAL_TOKEN_ID / MODAL_TOKEN_SECRET (Modal) and HF_TOKEN (Hugging Face, LTX-2.5 licence accepted).
 Each shot starts on the character's reference photo (hosts/<name>-real.png), like our HeyGen image-to-video.
 """
@@ -23,13 +26,13 @@ cache = modal.Volume.from_name("ltx-cache", create_if_missing=True)  # ~70 GB of
 app = modal.App("hopeverse-ltx", image=image)
 
 
-@app.function(gpu="H100", volumes={"/cache": cache}, timeout=3600, secrets=[modal.Secret.from_local_environ(["HF_TOKEN"])])
+@app.function(gpu="H100", volumes={"/cache": cache}, timeout=3600, max_containers=1, scaledown_window=300, secrets=[modal.Secret.from_local_environ(["HF_TOKEN"])])
 def make(shots: list) -> list:
-    """shots: [{"prompt", "photo" (png bytes)}] -> [(mp4 bytes, seconds of GPU time for that shot)]."""
+    """shots: [{"prompt", "photo" (png bytes, or None for text-to-video)}] -> [(mp4 bytes, GPU seconds for that shot)]."""
     import io
 
     import torch
-    from diffusers import LTX2ImageToVideoPipeline
+    from diffusers import LTX2ImageToVideoPipeline, LTX2Pipeline
     from diffusers.pipelines.ltx2.utils import DEFAULT_NEGATIVE_PROMPT, DISTILLED_SIGMA_VALUES
     from diffusers.utils import encode_video
     from PIL import Image
@@ -37,12 +40,14 @@ def make(shots: list) -> list:
     start = time.time()
     pipe = LTX2ImageToVideoPipeline.from_pretrained(MODEL, dtype=torch.bfloat16)
     pipe.enable_model_cpu_offload()
+    t2v = LTX2Pipeline.from_pipe(pipe)  # same weights, for shots with no starting picture
     cache.commit()
     print(f"model ready in {time.time() - start:.0f} s")
     out = []
     for i, shot in enumerate(shots):
         t = time.time()
-        video, _audio = pipe(image=Image.open(io.BytesIO(shot["photo"])).convert("RGB"), prompt=shot["prompt"],
+        start_on = {"image": Image.open(io.BytesIO(shot["photo"])).convert("RGB")} if shot.get("photo") else {}
+        video, _audio = (pipe if start_on else t2v)(**start_on, prompt=shot["prompt"],
                              negative_prompt=DEFAULT_NEGATIVE_PROMPT, height=HEIGHT, width=WIDTH, num_frames=FRAMES,
                              frame_rate=float(FPS), sigmas=DISTILLED_SIGMA_VALUES, guidance_scale=1.0,
                              audio_guidance_scale=1.0, stg_scale=0.0, audio_stg_scale=0.0, modality_scale=1.0,
@@ -55,7 +60,7 @@ def make(shots: list) -> list:
     return out
 
 
-@app.function(gpu="H100", volumes={"/cache": cache}, timeout=1800)
+@app.function(gpu="H100", volumes={"/cache": cache}, timeout=1800, max_containers=1, scaledown_window=300)
 def pose(shots: list) -> list:
     """Scene still first (owner, 2 Nov): put the character from its reference photo into the shot's scene with the
     open-source Qwen-Image-Edit (Apache 2.0), so LTX animates the right place, not the reference photo's background."""
@@ -103,3 +108,16 @@ def main(package: str, scenes: str = "0,3,10", out: str = "ltx-test", scene_firs
     Path(out, "report.json").write_text(json.dumps({"shots": report, "run_seconds": round(total),
                                                      "usd_whole_run_at_h100_rate": round(total * 0.001097, 2)}, indent=2))
     print(Path(out, "report.json").read_text())
+
+
+def ltx_clip(prompt: str, path: Path, photo: Path = None, scene: str = "") -> float:
+    """For video.py and film.py (owner, 2 Nov 2026: LTX makes every AI shot, HeyGen only talking hosts).
+    photo + scene: the character placed into the scene (Qwen-Image-Edit), then animated; photo alone: animated as it is;
+    neither: text-to-video. Saves a 5 s silent mp4 to path and returns the cost in dollars (H100 rate)."""
+    t = time.time()
+    still = photo.read_bytes() if photo else None
+    if photo and scene:
+        still = modal.Function.from_name("hopeverse-ltx", "pose").remote([{"photo": still, "scene": scene}])[0]
+    mp4, _secs = modal.Function.from_name("hopeverse-ltx", "make").remote([{"prompt": prompt, "photo": still}])[0]
+    path.write_bytes(mp4)
+    return round((time.time() - t) * 0.001097, 3)  # ponytail: wall time incl. queueing, so an upper bound

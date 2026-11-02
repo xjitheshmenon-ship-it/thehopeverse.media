@@ -41,6 +41,9 @@ concurrency:
   group: hope-${{ inputs.job == 'one' && format('one-{0}', github.run_id) || github.event.schedule == '15 * * * *' && 'stats' || github.event.schedule == '30 11 * * *' && 'report' || inputs.job == 'slot' && 'daily' || inputs.job == 'next' && 'daily' || inputs.job || 'daily' }}
 
 env:
+  MODAL_TOKEN_ID: ${{ secrets.MODAL_TOKEN_ID }}  # owner, 2 Nov 2026: LTX-2.5 on Modal makes the AI shots (ltx.py)
+  MODAL_TOKEN_SECRET: ${{ secrets.MODAL_TOKEN_SECRET }}
+  HF_TOKEN: ${{ secrets.HF_TOKEN }}
   TZ: Asia/Kolkata
   PYTHONIOENCODING: utf-8
   PYTHONUNBUFFERED: 1  # log lines show when each step really happened
@@ -79,6 +82,7 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
+      - run: '[ -z "$MODAL_TOKEN_ID" ] || modal deploy ltx.py || echo "::warning::LTX deploy failed; AI shots fall back to HeyGen"'
       - name: YouTube sign-in files
         env:
           CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
