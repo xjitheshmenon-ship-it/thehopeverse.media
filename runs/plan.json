@@ -49,39 +49,21 @@
    "when": "2026-11-02 06:05"
   }
  ],
- "rejected": {},
+ "rejected": {
+  "yt-instinct": [
+   "Binti Jua : la gorille qui a porté un enfant tombé dans son enclos jusqu'aux soigneurs (histoire vraie)",
+   "Wojtek, l'ours brun devenu soldat qui portait des obus à Monte Cassino (histoire vraie)",
+   "Koko et Ndume : la gorille qui a pris soin d'un chaton, All Ball, comme d'un bébé (histoire vraie)"
+  ]
+ },
  "yt-instinct": [
-  {
-   "topic": "Binti Jua : la gorille qui a porté un enfant tombé dans son enclos jusqu'aux soigneurs (histoire vraie)",
-   "why": "Sauvetage filmé au zoo de Brookfield en 1996, un animal qui sauve un humain, émotion forte et source solide.",
-   "score": 64,
-   "views48": 1800,
-   "planned": "2026-11-02 14:05",
-   "when": "2026-11-02 05:40"
-  },
-  {
-   "topic": "Wojtek, l'ours brun devenu soldat qui portait des obus à Monte Cassino (histoire vraie)",
-   "why": "Histoire vraie de la Seconde Guerre mondiale, animal nommé, très parlante pour l'audience âgée de la chaîne.",
-   "score": 62,
-   "views48": 1500,
-   "planned": "2026-11-02 14:05",
-   "when": "2026-11-02 06:05"
-  },
   {
    "topic": "Alex, le perroquet gris qui a compris le mot « zéro » et appris à nommer des couleurs (histoire vraie)",
    "why": "Animal nommé issu d'une étude publiée (Irene Pepperberg), acte visible avec comparaison à un jeune enfant. Ton calme et chaleureux, adapté aux seniors. Sujet intemporel, mais le perroquet « aucun » existe déjà dans la chaîne : angle différent avec la relation entre Alex et sa soigneuse, dernier mot « Sois gentille, je t'aime ».",
    "score": 58,
    "views48": 900,
    "planned": "2026-11-02 17:28",
-   "when": "2026-11-03 04:00"
-  },
-  {
-   "topic": "Koko et Ndume : la gorille qui a pris soin d'un chaton, All Ball, comme d'un bébé (histoire vraie)",
-   "why": "Histoire vraie de lien entre animaux, qui plaît aux spectateurs plus âgés : un geste doux, visible et simple à raconter. Elle suit le schéma des rescapés et des amitiés qui ont le mieux marché sur la chaîne, et elle n'est ni dans les sujets déjà faits ni dans ceux déjà prévus. Le thème est durable, sans lien avec l'actualité. Ton calme, une idée par phrase, comparaison avec un enfant et son animal.",
-   "score": 62,
-   "views48": 900,
-   "planned": "2026-11-02 17:44",
-   "when": "2026-11-03 04:25"
+   "when": "2026-11-02 05:40"
   },
   {
    "topic": "Betty et Abel : la corneille qui a plié un fil de fer pour attraper sa nourriture, et son compagnon qui l'a laissée faire (histoire vraie)",
@@ -89,7 +71,7 @@
    "score": 58,
    "views48": 900,
    "planned": "2026-11-02 17:59",
-   "when": "2026-11-03 04:50"
+   "when": "2026-11-02 06:05"
   },
   {
    "topic": "Fu Manchu, l'orang-outan qui s'évadait de son enclos au zoo d'Omaha en défaisant ses serrures (histoire vraie)",
@@ -97,6 +79,30 @@
    "score": 58,
    "views48": 900,
    "planned": "2026-11-02 18:10",
+   "when": "2026-11-03 04:00"
+  },
+  {
+   "topic": "1 miroir, 1 tache : la pie qui se gratte le cou (histoire vraie)",
+   "why": "Étude publiée (Prior, 2008) : des pies ont vu une marque colorée dans le miroir et ont essayé de l'enlever. Comportement montrable avec des images libres de pies. Ton calme, comparaison avec l'enfant qui se reconnaît vers 2 ans. Esprit animal, sujet durable.",
+   "score": 58,
+   "views48": 780,
+   "planned": "2026-11-02 18:12",
+   "when": "2026-11-03 04:25"
+  },
+  {
+   "topic": "1 poule, 1 choix : elle attend pour avoir plus de graines (histoire vraie)",
+   "why": "Étude sur le contrôle de soi chez les poules : elles attendent quelques secondes pour une plus grande récompense, comme un enfant devant une sucrerie. Images libres de poules très faciles à trouver. Sujet simple, chaleureux, bien adapté à un public âgé, et peu traité en français.",
+   "score": 55,
+   "views48": 700,
+   "planned": "2026-11-02 18:12",
+   "when": "2026-11-03 04:50"
+  },
+  {
+   "topic": "1 rat, 1 ami : il libère son compagnon enfermé avant de manger le chocolat (histoire vraie)",
+   "why": "Étude publiée (Bartal, 2011) : des rats ont ouvert la porte d'un compagnon enfermé, même avec du chocolat à côté. Clair, émouvant, avec comparaison humaine sur l'entraide. Images libres de rats suffisent. Esprit animal et amitié, sujet durable.",
+   "score": 60,
+   "views48": 850,
+   "planned": "2026-11-02 18:12",
    "when": "2026-11-03 05:15"
   }
  ],
