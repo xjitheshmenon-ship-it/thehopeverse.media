@@ -1277,9 +1277,9 @@ if __name__ == "__main__":
         elif not dub_only and not video.exists() and "youtube_id" not in package:  # cloud runs don't keep videos; never remake posted ones
             print(f"Making video for {path.name}")
             try:
-                posted = json.loads(src.read_text(encoding="utf-8")).get("youtube_id") if "dub_of" in package and \
+                src_id = json.loads(src.read_text(encoding="utf-8")).get("youtube_id") if "dub_of" in package and \
                     (src := OUTBOX / f"{package['dub_of']}.json").exists() else None
-                (redub if posted else render)(path, voice)  # a dub of a posted Short reuses its video: no new shots
+                (redub if src_id else render)(path, voice)  # a dub of a posted Short reuses its video: no new shots
             except Exception as e:  # with many Shorts a day, one broken package shouldn't stop the rest
                 print(f"    failed: {e}")
                 failed.append(path.name)
