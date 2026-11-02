@@ -62,15 +62,23 @@ def write_story(channel_id: str, topic: str = "", when: str = "") -> Path:
                    "under 80 characters, a curiosity hook, ending with '(histoire vraie)' or its translation); "
                    f"description (2-3 {channel['language']} lines that say it is a true story re-enacted with AI and "
                    "name the source, then 3-5 hashtags ending with #Shorts); music (an English prompt for an "
-                   "emotional score, no vocals); cast (exactly 2: the person and the animal. name: a first name, "
+                   "emotional score, no vocals); cast (the person and the animal, 2 or 3 entries. name: a first name, "
                    "or the animal's real name; look in English: for the person 'man' or 'woman' then nationality, "
                    "age, face, hair and clothes, one distinctive piece of clothing they always wear; for the animal "
-                   "its species, age, size and markings; voice and pitch: any, nobody speaks on screen); scenes (one "
+                   "its exact species and subspecies with the markings that tell it apart from look-alikes (e.g. "
+                   "'Magellanic penguin: two black bands across the white chest, no pink eye patch'), age, size. "
+                   "Each cast entry is ONE fixed look, drawn from one reference photo: when the animal grows up in "
+                   "the story (a cub that becomes an adult), give each age its own entry, e.g. 'Christian lionceau' "
+                   "and 'Christian adulte'; voice and pitch: any, nobody speaks on screen); scenes (one "
                    f"per shot, in order: narration one short storybook sentence in {channel['language']}, at most 12 "
                    "words, read by the narrator; speaker empty; on_screen_text the same sentence, shortened if it's "
-                   "over 8 words; on_screen the cast name the camera is on; image_prompt the shot as handheld phone "
-                   "footage at eye level: that character's action and expression, the place and light, each place "
-                   "described the same way in every shot; picture_search 2-4 English words for the place)."}])
+                   "over 8 words; on_screen the cast name the camera is on, and the person whenever the person is in "
+                   "the shot (the shot is posed from that one photo, so the person never changes); image_prompt the "
+                   "shot as handheld phone footage at eye level: that character's action and expression, the place "
+                   "and light, each place described the same way in every shot; every cast member in the shot is "
+                   "described by copying their look word for word, at the age that cast entry has; show only the "
+                   "cast (no other people, crowds, hands or phones); what the picture shows must match the "
+                   "narration (a line about a cub shows the cub); picture_search 2-4 English words for the place)."}])
     story = response.parsed_output
     names = [c.name for c in story.cast]
     for s in story.scenes:  # narrated, and someone from the cast is always in shot
