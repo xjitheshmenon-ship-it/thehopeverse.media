@@ -55,15 +55,45 @@ def make(shots: list) -> list:
     return out
 
 
+@app.function(gpu="H100", volumes={"/cache": cache}, timeout=1800)
+def pose(shots: list) -> list:
+    """Scene still first (owner, 2 Nov): put the character from its reference photo into the shot's scene with the
+    open-source Qwen-Image-Edit (Apache 2.0), so LTX animates the right place, not the reference photo's background."""
+    import io
+
+    import torch
+    from diffusers import QwenImageEditPipeline
+    from PIL import Image
+
+    pipe = QwenImageEditPipeline.from_pretrained("Qwen/Qwen-Image-Edit", torch_dtype=torch.bfloat16).to("cuda")
+    cache.commit()
+    out = []
+    for shot in shots:
+        img = pipe(image=Image.open(io.BytesIO(shot["photo"])).convert("RGB"), height=HEIGHT, width=WIDTH,
+                   prompt="Keep this exact animal (same face, fur, markings, age and size) and place it in this scene: "
+                          f"{shot['scene']} Photorealistic vertical phone photo, no text.",
+                   negative_prompt=" ", true_cfg_scale=4.0, num_inference_steps=30,
+                   generator=torch.Generator("cuda").manual_seed(42)).images[0]
+        buf = io.BytesIO()
+        img.save(buf, "PNG")
+        out.append(buf.getvalue())
+    return out
+
+
 @app.local_entrypoint()
-def main(package: str, scenes: str = "0,3,10", out: str = "ltx-test"):
+def main(package: str, scenes: str = "0,3,10", out: str = "ltx-test", scene_first: bool = False):
     pkg = json.loads(Path(package).read_text())
     picked = [pkg["scenes"][int(i)] for i in scenes.split(",")]
     shots = [{"prompt": f"{s['image_prompt']} Natural, subtle real movement, cinematic. No text.",
               "photo": Path(f"hosts/{s['on_screen'].lower()}-real.png").read_bytes()} for s in picked]
     start = time.time()
-    results = make.remote(shots)
     Path(out).mkdir(parents=True, exist_ok=True)
+    if scene_first:
+        for idx, shot, s, png in zip(scenes.split(","), shots, picked, pose.remote(
+                [{"photo": sh["photo"], "scene": s["image_prompt"]} for sh, s in zip(shots, picked)])):
+            shot["photo"] = png
+            (Path(out) / f"scene-{int(idx):02}-still.png").write_bytes(png)
+    results = make.remote(shots)
     report = []
     for idx, (mp4, secs), s in zip(scenes.split(","), results, picked):
         (Path(out) / f"scene-{int(idx):02}-ltx.mp4").write_bytes(mp4)
