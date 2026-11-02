@@ -68,6 +68,8 @@
   },
   {
     "id": "yt-instinct",
+    "photos": true,
+    "free_only": true,
     "platform": "youtube",
     "eleven": "female", "per_day": 6,
     "name": "Instinct",
