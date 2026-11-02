@@ -53,56 +53,62 @@
   "yt-instinct": [
    "Binti Jua : la gorille qui a porté un enfant tombé dans son enclos jusqu'aux soigneurs (histoire vraie)",
    "Wojtek, l'ours brun devenu soldat qui portait des obus à Monte Cassino (histoire vraie)",
-   "Koko et Ndume : la gorille qui a pris soin d'un chaton, All Ball, comme d'un bébé (histoire vraie)"
+   "Koko et Ndume : la gorille qui a pris soin d'un chaton, All Ball, comme d'un bébé (histoire vraie)",
+   "Alex, le perroquet gris qui a compris le mot « zéro » et appris à nommer des couleurs (histoire vraie)",
+   "Betty et Abel : la corneille qui a plié un fil de fer pour attraper sa nourriture, et son compagnon qui l'a laissée faire (histoire vraie)",
+   "Fu Manchu, l'orang-outan qui s'évadait de son enclos au zoo d'Omaha en défaisant ses serrures (histoire vraie)",
+   "1 miroir, 1 tache : la pie qui se gratte le cou (histoire vraie)",
+   "1 poule, 1 choix : elle attend pour avoir plus de graines (histoire vraie)",
+   "1 rat, 1 ami : il libère son compagnon enfermé avant de manger le chocolat (histoire vraie)"
   ]
  },
  "yt-instinct": [
   {
-   "topic": "Alex, le perroquet gris qui a compris le mot « zéro » et appris à nommer des couleurs (histoire vraie)",
-   "why": "Animal nommé issu d'une étude publiée (Irene Pepperberg), acte visible avec comparaison à un jeune enfant. Ton calme et chaleureux, adapté aux seniors. Sujet intemporel, mais le perroquet « aucun » existe déjà dans la chaîne : angle différent avec la relation entre Alex et sa soigneuse, dernier mot « Sois gentille, je t'aime ».",
+   "topic": "1 pie, 1 ruban : les geais et les corbeaux qui reconnaissent un visage humain (histoire vraie)",
+   "why": "Étude publiée sur les corneilles d'Amérique, qui reconnaissent un visage et le retiennent des années. Images de corneilles faciles à trouver. Ton calme, idée simple, comparaison avec la mémoire des visages chez l'homme.",
    "score": 58,
    "views48": 900,
-   "planned": "2026-11-02 17:28",
+   "planned": "2026-11-02 21:20",
    "when": "2026-11-02 05:40"
   },
   {
-   "topic": "Betty et Abel : la corneille qui a plié un fil de fer pour attraper sa nourriture, et son compagnon qui l'a laissée faire (histoire vraie)",
-   "why": "Je choisis un récit calme sur un animal nommé, tiré d'une étude publiée, avec un geste visible et une comparaison avec l'être humain. Le corbeau au fil de fer a fait partie des deux succès de la chaîne. Cette fois, on raconte l'histoire de Betty en entier, avec son compagnon Abel qui emporte le crochet. C'est un angle plus chaleureux que le simple exploit technique, et il convient bien à un public senior francophone. Il n'est pas dans les sujets déjà faits ou prévus.",
-   "score": 58,
-   "views48": 900,
-   "planned": "2026-11-02 17:59",
+   "topic": "1 mot, 1 chien : Rico, le border collie qui connaissait 200 jouets par leur nom",
+   "why": "Étude publiée dans Science en 2004. Un chien de la même race suffit en images libres. Comparaison avec un enfant qui apprend ses premiers mots. Attention : un sujet proche du chien qui retient un nom a eu peu de vues.",
+   "score": 52,
+   "views48": 450,
+   "planned": "2026-11-02 21:20",
    "when": "2026-11-02 06:05"
   },
   {
-   "topic": "Fu Manchu, l'orang-outan qui s'évadait de son enclos au zoo d'Omaha en défaisant ses serrures (histoire vraie)",
-   "why": "Un animal nommé, une histoire vraie et vérifiée par des témoins, avec un geste visible : il cachait un fil de fer dans sa bouche pour ouvrir ses serrures. On peut le comparer à un enfant qui trouve une clé. Le ton reste doux et simple pour les seniors. Ce sujet est peu traité en français et proche du corbeau Betty, qui a bien marché. Il n'est pas lié à l'actualité du jour.",
-   "score": 58,
-   "views48": 900,
-   "planned": "2026-11-02 18:10",
+   "topic": "1 rat, 1 rire : les rats qui rient quand on les chatouille, et la comparaison avec l'enfant",
+   "why": "Sujet proche d'un Short déjà fait sur les rats, à écarter au profit d'un autre angle : les corbeaux qui font des cadeaux.",
+   "score": 30,
+   "views48": 300,
+   "planned": "2026-11-02 21:20",
    "when": "2026-11-03 04:00"
   },
   {
-   "topic": "1 miroir, 1 tache : la pie qui se gratte le cou (histoire vraie)",
-   "why": "Étude publiée (Prior, 2008) : des pies ont vu une marque colorée dans le miroir et ont essayé de l'enlever. Comportement montrable avec des images libres de pies. Ton calme, comparaison avec l'enfant qui se reconnaît vers 2 ans. Esprit animal, sujet durable.",
-   "score": 58,
-   "views48": 780,
-   "planned": "2026-11-02 18:12",
+   "topic": "1 corbeau, 1 cadeau : l'oiseau qui rapporte un objet à la petite fille qui le nourrit (histoire vraie)",
+   "why": "Histoire de Gabi Mann, aux États-Unis, racontée par la BBC. Les corbeaux et les corneilles sont des oiseaux très bien filmés en images libres. Amitié entre l'animal et l'homme, ton chaleureux pour les seniors, proche du succès du corbeau au fil de fer.",
+   "score": 62,
+   "views48": 1100,
+   "planned": "2026-11-02 21:20",
    "when": "2026-11-03 04:25"
   },
   {
-   "topic": "1 poule, 1 choix : elle attend pour avoir plus de graines (histoire vraie)",
-   "why": "Étude sur le contrôle de soi chez les poules : elles attendent quelques secondes pour une plus grande récompense, comme un enfant devant une sucrerie. Images libres de poules très faciles à trouver. Sujet simple, chaleureux, bien adapté à un public âgé, et peu traité en français.",
-   "score": 55,
+   "topic": "1 pieuvre, 1 bocal : elle dévisse le couvercle de l'intérieur (histoire vraie)",
+   "why": "Comportement observé en aquarium et très bien documenté. Des images libres de pieuvres existent. Beaucoup d'étonnement visuel, idée simple. Le dernier Short sur le poulpe a mal marché, donc l'angle est celui de l'intelligence, pas de l'anatomie.",
+   "score": 50,
    "views48": 700,
-   "planned": "2026-11-02 18:12",
+   "planned": "2026-11-02 21:20",
    "when": "2026-11-03 04:50"
   },
   {
-   "topic": "1 rat, 1 ami : il libère son compagnon enfermé avant de manger le chocolat (histoire vraie)",
-   "why": "Étude publiée (Bartal, 2011) : des rats ont ouvert la porte d'un compagnon enfermé, même avec du chocolat à côté. Clair, émouvant, avec comparaison humaine sur l'entraide. Images libres de rats suffisent. Esprit animal et amitié, sujet durable.",
-   "score": 60,
-   "views48": 850,
-   "planned": "2026-11-02 18:12",
+   "topic": "1 éléphant, 1 miroir : Happy, la femelle qui se reconnaît et touche la marque sur son front",
+   "why": "Étude publiée en 2006 sur le test du miroir chez les éléphants. Les images libres d'éléphants conviennent à tout individu de l'espèce. Comparaison avec l'enfant de dix-huit mois. Sujet fort pour le public senior : calme et émouvant.",
+   "score": 64,
+   "views48": 1000,
+   "planned": "2026-11-02 21:20",
    "when": "2026-11-03 05:15"
   }
  ],
