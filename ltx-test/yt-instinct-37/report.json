@@ -3,22 +3,22 @@
     {
       "scene": 0,
       "character": "Christian lionceau",
-      "gpu_seconds": 57,
-      "usd_at_h100_rate": 0.063
+      "gpu_seconds": 81,
+      "usd_at_h100_rate": 0.089
     },
     {
       "scene": 3,
       "character": "Christian lionceau",
-      "gpu_seconds": 41,
-      "usd_at_h100_rate": 0.045
+      "gpu_seconds": 54,
+      "usd_at_h100_rate": 0.059
     },
     {
       "scene": 10,
       "character": "Christian adulte",
-      "gpu_seconds": 40,
-      "usd_at_h100_rate": 0.044
+      "gpu_seconds": 50,
+      "usd_at_h100_rate": 0.055
     }
   ],
-  "run_seconds": 179,
-  "usd_whole_run_at_h100_rate": 0.2
+  "run_seconds": 541,
+  "usd_whole_run_at_h100_rate": 0.59
 }
