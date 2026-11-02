@@ -63,7 +63,7 @@ def main(package: str, scenes: str = "0,3,10", out: str = "ltx-test"):
               "photo": Path(f"hosts/{s['on_screen'].lower()}-real.png").read_bytes()} for s in picked]
     start = time.time()
     results = make.remote(shots)
-    Path(out).mkdir(exist_ok=True)
+    Path(out).mkdir(parents=True, exist_ok=True)
     report = []
     for idx, (mp4, secs), s in zip(scenes.split(","), results, picked):
         (Path(out) / f"scene-{int(idx):02}-ltx.mp4").write_bytes(mp4)
