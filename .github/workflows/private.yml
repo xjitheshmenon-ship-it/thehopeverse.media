@@ -1,0 +1,52 @@
+# Private preview (owner, 2 Nov 2026): put a test video from the music-tracks branch on a channel as PRIVATE,
+# so the owner can watch it on his phone. Never public. Start: push run/private with "file=ltx-test/x/all.mp4",
+# "channel=yt-instinct" and "title=..." lines (plus "hold=override" while PAUSED).
+name: Private preview
+
+on:
+  workflow_dispatch:
+    inputs:
+      file:
+        description: "mp4 path on the music-tracks branch"
+      channel:
+        default: "yt-instinct"
+      title:
+        default: "Test (private)"
+
+permissions:
+  contents: read
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python state.py load
+      - env:
+          TOKEN_KEY: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          FILE: ${{ inputs.file }}
+          CHANNEL: ${{ inputs.channel }}
+          TITLE: ${{ inputs.title }}
+        run: |
+          token=$(jq -r --arg c "$CHANNEL" '.[] | select(.id == $c) | .token' channels.json)
+          openssl enc -d -aes-256-cbc -pbkdf2 -pass env:TOKEN_KEY -in "tokens/$token.enc" -out "$token"
+          git fetch -q origin music-tracks && git show "origin/music-tracks:$FILE" > preview.mp4
+          python - "$token" <<'EOF'
+          import os, sys
+          from pathlib import Path
+          from googleapiclient.http import MediaFileUpload
+          from video import youtube
+          body = {"snippet": {"title": os.environ["TITLE"][:100], "description": "Private test, not for release."},
+                  "status": {"privacyStatus": "private", "selfDeclaredMadeForKids": False, "containsSyntheticMedia": True}}
+          req = youtube(interactive=False, token=Path(sys.argv[1])).videos().insert(
+              part="snippet,status", body=body, media_body=MediaFileUpload("preview.mp4", resumable=True))
+          res = None
+          while res is None:
+              _, res = req.next_chunk()
+          print(f"::notice::Private video: https://youtu.be/{res['id']}")
+          EOF
