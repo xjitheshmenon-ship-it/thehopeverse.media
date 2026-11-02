@@ -1,0 +1,24 @@
+{
+  "shots": [
+    {
+      "scene": 0,
+      "character": "Christian lionceau",
+      "gpu_seconds": 57,
+      "usd_at_h100_rate": 0.063
+    },
+    {
+      "scene": 3,
+      "character": "Christian lionceau",
+      "gpu_seconds": 41,
+      "usd_at_h100_rate": 0.045
+    },
+    {
+      "scene": 10,
+      "character": "Christian adulte",
+      "gpu_seconds": 40,
+      "usd_at_h100_rate": 0.044
+    }
+  ],
+  "run_seconds": 179,
+  "usd_whole_run_at_h100_rate": 0.2
+}
