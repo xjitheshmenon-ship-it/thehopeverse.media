@@ -18,6 +18,9 @@ concurrency:
   group: hope-episode-${{ github.run_id }}  # Post now: starts at once, never waits behind the daily queue (state.py saves merge)
 
 env:
+  MODAL_TOKEN_ID: ${{ secrets.MODAL_TOKEN_ID }}  # owner, 2 Nov 2026: LTX-2.5 on Modal makes the AI shots (ltx.py)
+  MODAL_TOKEN_SECRET: ${{ secrets.MODAL_TOKEN_SECRET }}
+  HF_TOKEN: ${{ secrets.HF_TOKEN }}
   TZ: Asia/Kolkata
   PYTHONIOENCODING: utf-8
   PYTHONUNBUFFERED: 1  # log lines show when each step really happened
@@ -46,6 +49,7 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
+      - run: '[ -z "$MODAL_TOKEN_ID" ] || modal deploy ltx.py || echo "::warning::LTX deploy failed; AI shots fall back to HeyGen"'
       - run: |  # Hindi captions
           { sudo apt-get install -y -qq fonts-noto-core || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core; }; } > /dev/null
       - run: printf '%s' "$CLIENT_SECRET" > client_secret.json

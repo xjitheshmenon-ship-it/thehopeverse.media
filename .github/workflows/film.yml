@@ -28,6 +28,9 @@ jobs:
   film:
     runs-on: ubuntu-latest
     env:
+      MODAL_TOKEN_ID: ${{ secrets.MODAL_TOKEN_ID }}  # owner, 2 Nov 2026: LTX-2.5 on Modal makes the AI shots (ltx.py)
+      MODAL_TOKEN_SECRET: ${{ secrets.MODAL_TOKEN_SECRET }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
       FAL_KEY: ${{ secrets.FAL_KEY }}
       HEYGEN_API_KEY: ${{ secrets.HEYGEN_API_KEY }}
       NAME: ${{ inputs.name }}
@@ -37,6 +40,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core && pip install -q -r requirements.txt fal-client imageio-ffmpeg
+      - run: '[ -z "$MODAL_TOKEN_ID" ] || modal deploy ltx.py || echo "::warning::LTX deploy failed; AI shots fall back to HeyGen"'
       - run: |
           git fetch origin music-tracks && git worktree add out origin/music-tracks
           mkdir -p "films/$NAME" && cp -n out/films/"$NAME"/raw-*.mp4 out/films/"$NAME"/ref-* out/films/"$NAME"/frame-* "films/$NAME/" 2>/dev/null || true

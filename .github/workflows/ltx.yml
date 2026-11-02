@@ -16,6 +16,9 @@ on:
       scene_first:
         description: "yes = put the character into each scene with Qwen-Image-Edit first, then LTX animates it"
         default: "no"
+      deployed:
+        description: "yes = test the way video.py calls it: deploy, then one text-only shot and one scene shot"
+        default: "no"
 
 permissions:
   contents: write
@@ -37,7 +40,20 @@ jobs:
           git fetch -q origin state
           mkdir -p outbox && git show "origin/state:outbox/$PACKAGE.json" > "outbox/$PACKAGE.json"
           git archive origin/state hosts | tar -x
-      - run: modal run ltx.py --package "outbox/$PACKAGE.json" --scenes "${{ inputs.scenes }}" --out "ltx-test/$PACKAGE" $([ "${{ inputs.scene_first }}" = yes ] && echo --scene-first)
+      - if: inputs.deployed == 'yes'
+        run: |
+          modal deploy ltx.py
+          python - <<'EOF'
+          import json, os
+          from pathlib import Path
+          from ltx import ltx_clip
+          s = json.loads(Path(f"outbox/{os.environ['PACKAGE']}.json").read_text())["scenes"]
+          out = Path(f"ltx-test/{os.environ['PACKAGE']}/deployed"); out.mkdir(parents=True, exist_ok=True)
+          print("text-only $", ltx_clip("A busy London street in 1969, red buses, people walking, cinematic.", out / "text-only.mp4"))
+          print("scene $", ltx_clip(s[3]["image_prompt"], out / "scene-03.mp4", Path(f"hosts/{s[3]['on_screen'].lower()}-real.png"), s[3]["image_prompt"]))
+          EOF
+      - if: inputs.deployed != 'yes'
+        run: modal run ltx.py --package "outbox/$PACKAGE.json" --scenes "${{ inputs.scenes }}" --out "ltx-test/$PACKAGE" $([ "${{ inputs.scene_first }}" = yes ] && echo --scene-first)
       - if: always()
         run: |
           [ -d "ltx-test/$PACKAGE" ] || exit 0
