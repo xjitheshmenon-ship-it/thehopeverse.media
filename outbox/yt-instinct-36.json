@@ -12,11 +12,6 @@
     "why": "Evergreen true story with an emotional hook and an explicit '(histoire vraie)' title like the stork hit; the script delivers on it, hedges the 8,000 km claim, and ends with a question suited to seniors. Minor risk: 'au moins 5 ans' and the 2016 sources are not newer-checked.",
     "views48": 2600
   },
-  "qa": {
-    "passed": false,
-    "problems": "The penguin's species changes between shots. The story is about Dindim, a Magellanic penguin found in Brazil, but the frames show African penguins instead: the pink eye patches in the bucket scenes and the close-up portrait, and an African-penguin colony on the beach. The 'Il remue la queue comme un chien' frames show a washed-out Antarctic or snowy scene that doesn't match the Brazilian beach setting. In the aquarium frames ('8 000 km ? Très improbable'), the underwater animal looks more like a seal or sea lion than a penguin. The man's sweater, rope and posture look consistent between the two beach shots, so there is no continuity break there."
-  },
-  "held": "continuity: The penguin's species changes between shots. The story is about Dindim, a Magellanic penguin found in Brazil, but the frames show African penguins instead: the pink eye patches in the bucket scenes and the close-up portrait, and an African-penguin colony on the beach. The 'Il remue la queue comme un chien' frames show a washed-out Antarctic or snowy scene that doesn't match the Brazilian beach setting. In the aquarium frames ('8 000 km ? Très improbable'), the underwater animal looks more like a seal or sea lion than a penguin. The man's sweater, rope and posture look consistent between the two beach shots, so there is no continuity break there.",
   "holds": 1,
   "photos": true,
   "free_only": true

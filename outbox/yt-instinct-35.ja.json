@@ -1,0 +1,167 @@
+{
+  "channel_id": "yt-instinct-ja",
+  "title": "\u30cf\u30c1\u516c\u306f9\u5e74\u9593\u3001\u6e0b\u8c37\u99c5\u3067\u98fc\u3044\u4e3b\u3092\u5f85\u3061\u7d9a\u3051\u305f\u3010\u5b9f\u8a71\u3011 #Shorts",
+  "description": "\u53c2\u8003:Wikipedia(\u30cf\u30c1\u516c)\u3001\u6771\u4eac\u5927\u5b66(\u9285\u50cf\u30012015\u5e74)\n\u3053\u306e\u52d5\u753b\u306e\u6620\u50cf\u306fAI\u3067\u4f5c\u6210\u3055\u308c\u305f\u3082\u306e\u3067\u3059\u3002\u5b9f\u969b\u306e\u51fa\u6765\u4e8b\u306e\u5199\u771f\u3067\u306f\u3042\u308a\u307e\u305b\u3093\u3002\n\nInstinct(Hopeverse Media)\u3002AI\u3067\u5236\u4f5c\u3002\u5e0c\u671b\u3092\u3053\u3081\u3066\u3002\n\u6bce\u65e5\u3001\u751f\u304d\u3082\u306e\u306e\u7269\u8a9e\u3092\u304a\u5c4a\u3051\u3057\u307e\u3059\u3002\u30c1\u30e3\u30f3\u30cd\u30eb\u767b\u9332\u304a\u9858\u3044\u3057\u307e\u3059\u3002\n\n#\u52d5\u7269 #\u5b9f\u8a71 #\u611f\u52d5 #\u30cf\u30c1\u516c #\u6e0b\u8c37 #Shorts",
+  "dub_of": "yt-instinct-35",
+  "lang": "ja",
+  "scenes": [
+    {
+      "narration": "9\u5e74\u4ee5\u4e0a\u3001\u3053\u306e\u72ac\u306f\u99c5\u304b\u3089\u51fa\u3066\u304f\u308b\u4eba\u306e\u9854\u3092\u3001\u6bce\u65e5\u3058\u3063\u3068\u898b\u3064\u3081\u7d9a\u3051\u3066\u3044\u307e\u3057\u305f\u3002",
+      "on_screen_text": "9\u5e74\u4ee5\u4e0a",
+      "picture_search": "akita dog eyes close-up",
+      "image_prompt": "Photo-real extreme close-up of an all-white curled-tail akita's eyes at a 1920s Japanese station exit, golden light, shallow depth of field, vertical 9:16",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "\u305d\u306e\u540d\u524d\u306f\u3001\u30cf\u30c1\u516c\u3002",
+      "on_screen_text": "\u30cf\u30c1\u516c\n\u6771\u4eac",
+      "picture_search": "blurred commuters train station exit",
+      "image_prompt": "Photo-real POV of blurred period passengers in 1920s clothes streaming out of a Japanese station exit, golden light, vertical",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": "Hachik\u014d dog"
+    },
+    {
+      "narration": "\u5f85\u3063\u3066\u3044\u305f\u306e\u306f\u3001\u98fc\u3044\u4e3b\u306e\u4e0a\u91ce\u6559\u6388\u3002",
+      "on_screen_text": "\u4e0a\u91ce\u6559\u6388",
+      "picture_search": "man petting white dog",
+      "image_prompt": "Photo-real middle-aged man with round glasses, dark wool coat and soft hat petting an all-white curled-tail akita at a 1920s station, golden light",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "\u5834\u6240\u306f\u3001\u6771\u4eac\u306e\u6e0b\u8c37\u99c5\u3067\u3059\u3002",
+      "on_screen_text": "\u6e0b\u8c37\u99c5",
+      "picture_search": "Shibuya station Tokyo",
+      "image_prompt": "Photo-real Shibuya station today, wide angle, no recognizable faces, vertical framing",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": "Shibuya Station Hachiko exit"
+    },
+    {
+      "narration": "1925\u5e745\u670821\u65e5\u3001\u6559\u6388\u306f\u7a81\u7136\u4ea1\u304f\u306a\u308a\u307e\u3057\u305f\u3002",
+      "on_screen_text": "1925\u5e74\n5\u670821\u65e5",
+      "picture_search": "empty vintage train platform",
+      "image_prompt": "Photo-real empty 1920s Japanese station platform, muted light, slow push-in",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "\u305d\u308c\u3067\u3082\u30cf\u30c1\u516c\u306f\u3001\u307b\u307c\u6bce\u65e5\u3001\u99c5\u306b\u901a\u3044\u7d9a\u3051\u305f\u3093\u3067\u3059\u3002",
+      "on_screen_text": "\u307b\u307c\u6bce\u65e5\n\u99c5\u3078",
+      "picture_search": "dog waiting alone dusk",
+      "image_prompt": "Photo-real all-white curled-tail akita sitting alone at dusk outside a 1920s station exit, warm low light",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "\u305d\u3057\u30661932\u5e74\u3001\u65b0\u805e\u304c\u305d\u306e\u8a71\u3092\u53d6\u308a\u4e0a\u3052\u3066\u3001",
+      "on_screen_text": "1932\u5e74\n\u65b0\u805e\u3067\u8a71\u984c\u306b",
+      "picture_search": "vintage newspaper printing",
+      "image_prompt": "Photo-real 1930s newspaper on a wooden table, text not readable, warm light",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "\u65e5\u672c\u4e2d\u306b\u77e5\u3089\u308c\u308b\u3053\u3068\u306b\u306a\u308a\u307e\u3057\u305f\u3002",
+      "on_screen_text": "\u65e5\u672c\u4e2d\u304c\n\u77e5\u3063\u305f",
+      "picture_search": "pedestrians walking street Japan",
+      "image_prompt": "Photo-real blurred passers-by in 1930s Tokyo street, silhouettes, soft light",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "\u305d\u306e\u6570\u30013500\u591c\u4ee5\u4e0a\u3002",
+      "on_screen_text": "3500\u591c\u4ee5\u4e0a",
+      "picture_search": "calendar pages turning",
+      "image_prompt": "Photo-real calendar pages turning, close-up, warm light",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "\u6559\u6388\u304c\u4ea1\u304f\u306a\u3063\u305f\u65e5\u306b\u751f\u307e\u308c\u305f\u5b50\u306f\u3001\u3082\u304610\u6b73\u8fd1\u304f\u306b\u306a\u3063\u3066\u3044\u305f\u8a08\u7b97\u3067\u3059\u3002",
+      "on_screen_text": "\u3082\u3046\u3059\u3050\n10\u6b73",
+      "picture_search": "child walking street from behind",
+      "image_prompt": "Photo-real ten-year-old child seen from behind in a 1930s Japanese street, soft golden light",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "\u30cf\u30c1\u516c\u304c\u4f55\u3092\u601d\u3063\u3066\u3044\u305f\u306e\u304b\u306f\u3001\u308f\u304b\u3063\u3066\u3044\u307e\u305b\u3093\u3002",
+      "on_screen_text": "\u672c\u5fc3\u306f\n\u8b0e\u306e\u307e\u307e",
+      "picture_search": "dog profile portrait",
+      "image_prompt": "Photo-real all-white curled-tail akita in profile, quiet light, slowest push-in",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "\u901a\u308a\u304c\u304b\u308a\u306e\u4eba\u304c\u3054\u306f\u3093\u3092\u304f\u308c\u305f\u305d\u3046\u3067\u3059\u304c\u3001\u305d\u308c\u3060\u3051\u306710\u5e74\u8fd1\u304f\u540c\u3058\u5834\u6240\u306b\u3044\u305f\u7406\u7531\u306f\u3001\u8aac\u660e\u3067\u304d\u307e\u305b\u3093\u3002",
+      "on_screen_text": "\u3054\u306f\u3093\u3092\n\u304f\u308c\u308b\u4eba\u3082",
+      "picture_search": "blurred passers-by walking",
+      "image_prompt": "Photo-real blurred passers-by near a station entrance, dusk",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "\u4eca\u3001\u6e0b\u8c37\u99c5\u306e\u524d\u306b\u306f\u3001\u30cf\u30c1\u516c\u306e\u9285\u50cf\u304c\u7acb\u3063\u3066\u3044\u307e\u3059\u3002",
+      "on_screen_text": "\u4eca\u306e\u6e0b\u8c37",
+      "picture_search": "Hachiko statue Shibuya",
+      "image_prompt": "Photo-real bronze akita statue in front of Shibuya station, soft daylight",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": "Hachik\u014d statue Shibuya"
+    },
+    {
+      "narration": "\u305d\u3057\u30662015\u5e74\u3001\u6771\u4eac\u5927\u5b66\u306b\u3082\u3001\u6559\u6388\u3068\u30cf\u30c1\u516c\u304c\u518d\u4f1a\u3059\u308b\u9285\u50cf\u304c\u3067\u304d\u307e\u3057\u305f\u3002",
+      "on_screen_text": "\u6771\u4eac\u5927\u5b66\n2015\u5e74",
+      "picture_search": "Tokyo university campus",
+      "image_prompt": "Photo-real bronze statue of a professor greeting a dog on a university campus lawn, soft light",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": "Hachik\u014d and Ueno statue University of Tokyo"
+    },
+    {
+      "narration": "\u3042\u306a\u305f\u306b\u306f\u3001\u4eca\u3082\u5f85\u3063\u3066\u304f\u308c\u3066\u3044\u308b\u4eba\u3001\u3044\u307e\u3059\u304b?",
+      "on_screen_text": "\u3042\u306a\u305f\u306f?",
+      "picture_search": "Tokyo sunset skyline",
+      "image_prompt": "Photo-real Tokyo skyline at sunset fading to dark, warm gold, vertical",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    }
+  ],
+  "footer": "Instinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "category": "15",
+  "photos": true,
+  "qa": {
+    "passed": true,
+    "problems": "dub of a posted Short: same pictures, not checked again"
+  },
+  "youtube_id": "b3-YIk0Kcs0"
+}
