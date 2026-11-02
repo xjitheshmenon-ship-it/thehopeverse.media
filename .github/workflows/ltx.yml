@@ -1,0 +1,45 @@
+# LTX-2.5 test (owner, 2 Nov 2026): a few of a Short's AI shots made with open-source LTX-2.5 on a Modal GPU
+# (free on Modal's $30 monthly credit), to compare with HeyGen. Nothing is uploaded.
+# Start it by pushing run/ltx with "package=yt-instinct-37" and "scenes=0,3,10" lines in the commit message.
+# The clips and a timing/cost report land on the music-tracks branch under ltx-test/<package>/.
+name: LTX test shots
+
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: "Short in outbox/ on the state branch, without .json"
+        default: "yt-instinct-37"
+      scenes:
+        description: "Scene numbers to remake, comma-separated"
+        default: "0,3,10"
+
+permissions:
+  contents: write
+
+jobs:
+  ltx:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    env:
+      MODAL_TOKEN_ID: ${{ secrets.MODAL_TOKEN_ID }}
+      MODAL_TOKEN_SECRET: ${{ secrets.MODAL_TOKEN_SECRET }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      PACKAGE: ${{ inputs.package }}
+    steps:
+      - uses: actions/checkout@v5
+      - run: |
+          [ -n "$MODAL_TOKEN_ID" ] && [ -n "$HF_TOKEN" ] || { echo "::error::Add the MODAL_TOKEN_ID, MODAL_TOKEN_SECRET and HF_TOKEN secrets first"; exit 1; }
+          pip install -q modal
+          git fetch -q origin state
+          mkdir -p outbox && git show "origin/state:outbox/$PACKAGE.json" > "outbox/$PACKAGE.json"
+          git archive origin/state hosts | tar -x
+      - run: modal run ltx.py --package "outbox/$PACKAGE.json" --scenes "${{ inputs.scenes }}" --out "ltx-test/$PACKAGE"
+      - if: always()
+        run: |
+          [ -d "ltx-test/$PACKAGE" ] || exit 0
+          git fetch -q origin music-tracks && git worktree add out origin/music-tracks
+          mkdir -p "out/ltx-test" && cp -r "ltx-test/$PACKAGE" out/ltx-test/
+          git config --global user.name hope && git config --global user.email hope@users.noreply.github.com  # rebase on pull needs it
+          cd out && git checkout -q -B music-tracks && git add . && git commit -qm "LTX test: $PACKAGE" || exit 0
+          for i in 1 2 3; do git pull -q --rebase origin music-tracks && git push "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" music-tracks && exit 0; sleep 5; done; exit 1
