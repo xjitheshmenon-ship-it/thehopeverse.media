@@ -12,12 +12,8 @@
     "why": "Hachikō is a timeless, well-known true story that fits an older francophone audience and the 'histoire vraie' format that hit with the stork; facts match the title (9+ years, 1925, 1932, 2015 statue), with no newer finding contradicting it.",
     "views48": 1500
   },
-  "qa": {
-    "passed": false,
-    "problems": "Professor Ueno is shown as a modern-looking man in a beanie and dark coat on a European-style brick street, which does not match the 1920s Shibuya setting used elsewhere, where men wear fedoras and suits.\nHachiko's look changes between shots: a white dog with a pinkish nose in frames 1–2, a cream/red Akita at the station, and a smaller dog with a curled tail in the Ueno scenes.\nThe station setting jumps between an old wooden platform and the modern Shibuya crossing with neon billboards, even where captions refer to 1925 (\"21 mai 1925\" is shown over the modern crossing).\nThe dog vanishes from the waiting spot in the blurry modern crowd shot captioned \"Presque dix ans au même endroit.\"\nThe last frame (snowy mountain with hikers) has no link to the story's setting or characters.\nThe caption \"Université de Tokyo, 2015\" is placed over the same 1920s-style professor and dog scene, which is a timeline mismatch."
-  },
-  "held": "continuity: Professor Ueno is shown as a modern-looking man in a beanie and dark coat on a European-style brick street, which does not match the 1920s Shibuya setting used elsewhere, where men wear fedoras and suits.\nHachiko's look changes between shots: a white dog with a pinkish nose in frames 1–2, a cream/red Akita at the station, and a smaller dog with a curled tail in the Ueno scenes.\nThe station setting jumps between an old wooden platform and the modern Shibuya crossing with neon billboards, even where captions refer to 1925 (\"21 mai 1925\" is shown over the modern crossing).\nThe dog vanishes from the waiting spot in the blurry modern crowd shot captioned \"Presque dix ans au même endroit.\"\nThe last frame (snowy mountain with hikers) has no link to the story's setting or characters.\nThe caption \"Université de Tokyo, 2015\" is placed over the same 1920s-style professor and dog scene, which is a timeline mismatch.",
   "holds": 1,
   "photos": true,
-  "free_only": true
+  "free_only": true,
+  "render_failed": 1
 }
