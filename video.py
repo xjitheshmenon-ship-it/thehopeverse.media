@@ -279,9 +279,11 @@ def _clip(path: Path, size: tuple, duration: float, skip: float = 0):
     """A stock or AI clip filling the frame for `duration` seconds, starting `skip` of the way in. ffmpeg cuts just
     that stretch and scales and centre-crops it to the frame once (Lanczos, near-lossless), so 4K footage stays sharp
     and costs no extra render time."""
-    src = VideoFileClip(str(path))
-    start = min(src.duration * skip, max(0, src.duration - duration))
-    src.close()
+    # Duration from ffmpeg itself: moviepy can't parse newer files' "Stream group" lines (a 4K Pixabay clip, 2 Nov)
+    info = subprocess.run([FFMPEG_BINARY, "-i", str(path)], capture_output=True, text=True).stderr
+    h, m, sec = re.search(r"Duration: (\d+):(\d+):([\d.]+)", info).groups()
+    length = int(h) * 3600 + int(m) * 60 + float(sec)
+    start = min(length * skip, max(0, length - duration))
     part = path.with_name(f"{path.stem}-{size[1]}p-{start:.2f}-{duration:.2f}.mp4")
     if not part.exists():
         w, h = size
