@@ -51,7 +51,6 @@
  ],
  "rejected": {
   "yt-instinct": [
-   "Binti Jua : la gorille qui a porté un enfant tombé dans son enclos jusqu'aux soigneurs (histoire vraie)",
    "Wojtek, l'ours brun devenu soldat qui portait des obus à Monte Cassino (histoire vraie)",
    "Koko et Ndume : la gorille qui a pris soin d'un chaton, All Ball, comme d'un bébé (histoire vraie)",
    "Alex, le perroquet gris qui a compris le mot « zéro » et appris à nommer des couleurs (histoire vraie)",
@@ -65,56 +64,62 @@
    "1 rat, 1 rire : les rats qui rient quand on les chatouille, et la comparaison avec l'enfant",
    "1 pieuvre, 1 bocal : elle dévisse le couvercle de l'intérieur (histoire vraie)",
    "1 mot, 1 geste : les chiens qui comprennent le pointage d'un doigt humain, mieux que le chimpanzé (étude vraie)",
-   "1 mouchoir, 1 miroir : les pies qui se reconnaissent et les éléphants de Bronx (étude vraie) – version simple : 1 chimpanzé, 1 sourire : les singes qui consolent un ami après une dispute (étude vraie)"
+   "1 mouchoir, 1 miroir : les pies qui se reconnaissent et les éléphants de Bronx (étude vraie) – version simple : 1 chimpanzé, 1 sourire : les singes qui consolent un ami après une dispute (étude vraie)",
+   "1 chien, 1 regard : les loups ne demandent jamais d'aide, les chiens oui (étude vraie)",
+   "1 tournevis, 1 corbeau : les corbeaux de Nouvelle-Calédonie fabriquent un crochet (étude vraie)",
+   "1 poisson, 1 visage : l'archerfish reconnaît un visage humain (étude vraie)",
+   "1 abeille, 1 visage : elle retient un visage humain pendant plusieurs jours (étude vraie)",
+   "1 mouton, 1 visage : les moutons reconnaissent 50 visages pendant 2 ans (étude vraie)",
+   "1 chèvre, 1 sourire : elle préfère les visages humains heureux (étude vraie)"
   ]
  },
  "yt-instinct": [
   {
-   "topic": "1 chien, 1 regard : les loups ne demandent jamais d'aide, les chiens oui (étude vraie)",
-   "why": "Étude publiée sur le regard vers l'humain devant une boîte fermée. Un chien de n'importe quelle race se filme facilement en stock. Comparaison simple avec l'enfant qui lève les yeux vers un adulte.",
+   "topic": "Owen et Mzee : l'hippopotame orphelin et la tortue géante qui sont devenus inséparables (histoire vraie)",
+   "why": "Histoire vraie célèbre d'amitié avec de nombreuses photos libres sur Wikimedia Commons, ton chaleureux adapté aux seniors.",
    "score": 58,
-   "views48": 700,
-   "planned": "2026-11-02 22:21",
+   "views48": 1500,
+   "planned": "2026-11-02 22:25",
    "when": "2026-11-03 04:00"
   },
   {
-   "topic": "1 tournevis, 1 corbeau : les corbeaux de Nouvelle-Calédonie fabriquent un crochet (étude vraie)",
-   "why": "Crochets de feuilles et de brindilles, étude publiée. Images stock de corbeaux et de branches. Comparaison avec l'enfant qui apprend à fabriquer un outil.",
-   "score": 55,
-   "views48": 850,
-   "planned": "2026-11-02 22:21",
+   "topic": "Christian, le lion élevé à Londres et retrouvé en Afrique par ses deux amis (histoire vraie)",
+   "why": "Histoire de retrouvailles émouvante, photos et images disponibles sur Commons, très appréciée du public âgé francophone.",
+   "score": 57,
+   "views48": 1700,
+   "planned": "2026-11-02 22:25",
    "when": "2026-11-03 04:25"
   },
   {
-   "topic": "1 poisson, 1 visage : l'archerfish reconnaît un visage humain (étude vraie)",
-   "why": "Le poisson archer a appris à reconnaître un visage dans une étude publiée en 2016. Surprenant et calme, images stock de poissons archers en action. Peu traité en français.",
-   "score": 57,
-   "views48": 650,
-   "planned": "2026-11-02 22:21",
+   "topic": "Dindim, le manchot qui revient chaque année voir l'homme qui l'a sauvé au Brésil (histoire vraie)",
+   "why": "Histoire vraie de loyauté et de retour, photos réelles de l'animal disponibles, thème proche des succès de la chaîne.",
+   "score": 56,
+   "views48": 1600,
+   "planned": "2026-11-02 22:25",
    "when": "2026-11-03 04:50"
   },
   {
-   "topic": "1 abeille, 1 visage : elle retient un visage humain pendant plusieurs jours (étude vraie)",
-   "why": "Étude publiée sur les abeilles apprenant des photos de visages. Images stock d'abeilles faciles à trouver. Comparaison avec notre mémoire des visages.",
-   "score": 56,
-   "views48": 750,
-   "planned": "2026-11-02 22:21",
+   "topic": "Knut, l'ourson polaire du zoo de Berlin élevé par un soigneur (histoire vraie)",
+   "why": "Histoire vraie connue en Europe, nombreuses photos libres sur Commons, ton doux et familier pour les seniors.",
+   "score": 54,
+   "views48": 1200,
+   "planned": "2026-11-02 22:25",
    "when": "2026-11-03 05:15"
   },
   {
-   "topic": "1 mouton, 1 visage : les moutons reconnaissent 50 visages pendant 2 ans (étude vraie)",
-   "why": "Étude de Cambridge, mémoire des visages sur de longues périodes. Troupeau de moutons en stock, thème rural et familier pour les seniors francophones. Angle chaleureux.",
-   "score": 60,
+   "topic": "Hao Hao et le chien Hachi... non : Lonesome George, la dernière tortue de Pinta aux Galápagos (histoire vraie)",
+   "why": "Histoire vraie d'un animal nommé avec de nombreuses photos Commons, forte charge émotionnelle et éducative.",
+   "score": 50,
    "views48": 900,
-   "planned": "2026-11-02 22:21",
+   "planned": "2026-11-02 22:25",
    "when": "2026-11-03 05:40"
   },
   {
-   "topic": "1 chèvre, 1 sourire : elle préfère les visages humains heureux (étude vraie)",
-   "why": "Étude publiée sur les chèvres qui s'approchent des visages souriants. Stock de chèvres facile à trouver et ton tendre pour un public âgé. Comparaison avec le chien et le cheval déjà traités.",
-   "score": 57,
-   "views48": 800,
-   "planned": "2026-11-02 22:21",
+   "topic": "Hamlet... non : Cher Ami, le pigeon voyageur qui a porté un message malgré ses blessures (histoire vraie)",
+   "why": "Histoire vraie de courage d'un animal nommé, photos disponibles sur Commons, intéresse un public plus âgé amateur d'histoire.",
+   "score": 52,
+   "views48": 1000,
+   "planned": "2026-11-02 22:25",
    "when": "2026-11-03 06:05"
   }
  ],
