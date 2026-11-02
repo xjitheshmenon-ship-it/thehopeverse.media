@@ -107,7 +107,15 @@ jobs:
         # GROW before the day's first video, MORE when another video follows; nothing when the day's videos are done
         run: |  # PAUSED file (owner's hold, e.g. until ElevenLabs is back): no videos; delete it to resume
           [ -f PAUSED ] && ! grep -q '^only:' PAUSED && { echo "::warning::Videos paused: $(cat PAUSED)"; exit 0; }  # "only:" line: those channels run
-          python plan.py --due | tee -a "$GITHUB_ENV"
+          python plan.py --due > "$RUNNER_TEMP/due"; cat "$RUNNER_TEMP/due"
+          NEXT=$(sed -n 's/^NEXT=//p' "$RUNNER_TEMP/due")
+          last=$(ls outbox 2>/dev/null | grep -E "^$NEXT-[0-9]+\.json$" | sort -V | tail -1)
+          if [ -n "$NEXT" ] && [ -n "$last" ] && jq -e '.held and (has("youtube_id") | not)' "outbox/$last" > /dev/null; then
+            # owner, 2 Nov 2026: "complete one work, then go for the next": a held video stops the chain until he decides
+            echo "::error::$last was held, not posted ($(jq -r .held "outbox/$last" | head -c 300)). Nothing new is made until the owner decides."
+            exit 0
+          fi
+          cat "$RUNNER_TEMP/due" >> "$GITHUB_ENV"
 
       - name: Stop if today's budget is used up
         if: env.NEXT != ''  # Post now (job one) overrules the daily budget: the owner asked for it
