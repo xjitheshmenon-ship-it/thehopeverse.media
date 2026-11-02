@@ -1,0 +1,180 @@
+{
+  "channel_id": "yt-instinct",
+  "title": "Achet\u00e9 chez Harrods, ce lion a-t-il reconnu ses amis ? (histoire vraie)",
+  "description": "Histoire vraie, reconstitu\u00e9e avec des images cr\u00e9\u00e9es par IA : Christian, un lionceau achet\u00e9 \u00e0 Londres en 1969, retrouve ses deux amis au Kenya apr\u00e8s avoir \u00e9t\u00e9 rendu \u00e0 la vie sauvage.\nSources : Wikip\u00e9dia (Christian the lion), Newsweek, TODAY.\n#Christianlelion #HistoireVraie #Lion #Animaux #Shorts",
+  "lang": "fr",
+  "category": "15",
+  "footer": "Instinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "music": "Gentle emotional orchestral score, no vocals: starts with soft solo piano and a warm cello, light pizzicato strings like a ticking clock in the middle, a sad pause for the farewell, then swelling strings and soft African percussion that build to a tender, joyful climax for the reunion, ending on a quiet held piano chord",
+  "source": "Christian, un lion n\u00e9 en captivit\u00e9 le 12 ao\u00fbt 1969, est achet\u00e9 fin 1969 au rayon animaux de Harrods, \u00e0 Londres, par deux Australiens, John Rendall et Anthony \u00ab Ace \u00bb Bourke. Il vit avec eux dans leur magasin de meubles, sur King's Road. Il devient trop grand pour Londres et rejoint en 1970 la r\u00e9serve de Kora, au Kenya, o\u00f9 George Adamson le pr\u00e9pare \u00e0 la vie sauvage. Ce sont les acteurs Bill Travers et Virginia McKenna qui ont conseill\u00e9 Adamson. En 1971, les deux amis reviennent le voir et il les reconna\u00eet. Le film de ces retrouvailles fait le tour du monde en 2008. Ils le revoient une derni\u00e8re fois en 1973, puis personne ne sait ce qu'il est devenu. John Rendall est mort le 20 janvier 2022 de complications du Covid. Sources : Wikip\u00e9dia, \u00ab Christian the lion \u00bb (https://en.wikipedia.org/wiki/Christian_the_lion) ; Newsweek, 2022 (https://www.newsweek.com/christian-lion-video-owner-john-rendall-london-dies-1673487) ; We Heart, 2018 (https://www.we-heart.com/2018/10/25/christian-the-lion-illustrated-legacy-harrods-reunion/) ; TODAY (https://www.today.com/news/christian-lions-owners-recall-final-farewell-2d80555098). Point incertain : We Heart parle de \u00ab deux ans plus tard \u00bb pour ces retrouvailles, les autres sources disent environ un an.",
+  "script": "En 1969, un lionceau attend dans une cage \u00e0 Londres.\nIl est \u00e0 vendre, au rayon animaux de Harrods.\nJohn, un jeune Australien, et son ami ne peuvent l'abandonner.\nIls l'appellent Christian et l'installent dans leur magasin de meubles.\nMais il grandit vite, et Londres devient trop petite pour lui.\nDes acteurs leur conseillent George Adamson, un protecteur des lions au Kenya.\nEn 1970, Christian s'envole pour la r\u00e9serve de Kora.\nQuelques semaines plus tard, John doit le laisser \u00e0 la vie sauvage.\nUn an apr\u00e8s, John et son ami reviennent au Kenya.\nOn les pr\u00e9vient : il ne se souviendra peut-\u00eatre plus d'eux.\nSoudain, un grand lion appara\u00eet sur les rochers et les fixe.\nIl court vers eux, bondit, et les serre dans ses pattes.\nRevu en 1973, il dispara\u00eet ensuite : nul ne sait ce qu'il devint.\nMais ce jour-l\u00e0, le lionceau de Harrods \u00e9tait revenu vers ses amis.",
+  "cast": [
+    {
+      "name": "John",
+      "role": "Le h\u00e9ros silencieux : un jeune Australien qui ach\u00e8te le lionceau \u00e0 Londres, puis le rend \u00e0 la vie sauvage au Kenya",
+      "look": "man, Australian, about 24 years old, open friendly face with light stubble, shoulder-length wavy fair hair and long sideburns, late-1960s clothes: cream shirt with open collar and flared trousers, always wears the same worn brown suede jacket",
+      "voice": "none, he never speaks on screen",
+      "pitch": "none"
+    },
+    {
+      "name": "Christian",
+      "role": "Le lion, achet\u00e9 chez Harrods puis rendu \u00e0 la vie sauvage au Kenya",
+      "look": "African lion, male. In London: a cub of about 4 months that grows to about 1 year, sandy golden coat with faint spots on the legs, big paws, amber eyes. In Kenya: a young adult of about 2 years, large and muscular, thick tawny mane that is still growing, darker tip on the tail",
+      "voice": "none, he never speaks",
+      "pitch": "none"
+    }
+  ],
+  "scenes": [
+    {
+      "narration": "En 1969, un lionceau attend dans une cage \u00e0 Londres.",
+      "on_screen_text": "1969 : un lionceau en cage \u00e0 Londres",
+      "picture_search": "department store pet cage",
+      "image_prompt": "Handheld phone footage at eye level: a small lion cub with a sandy golden coat and faint leg spots lies behind the bars of a small cage, looking up with sad, unsure amber eyes. Place: a 1969 London department store pet section with a small metal cage on a counter, under warm indoor lamp light.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Christian",
+      "photo": ""
+    },
+    {
+      "narration": "Il est \u00e0 vendre, au rayon animaux de Harrods.",
+      "on_screen_text": "\u00c0 vendre, au rayon animaux de Harrods",
+      "picture_search": "vintage department store interior",
+      "image_prompt": "Handheld phone footage at eye level: the lion cub pushes a paw through the cage bars and gives a small, lonely yawn. Place: a 1969 London department store pet section with a small metal cage on a counter, under warm indoor lamp light.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Christian",
+      "photo": ""
+    },
+    {
+      "narration": "John, un jeune Australien, et son ami ne peuvent l'abandonner.",
+      "on_screen_text": "John et son ami l'adoptent",
+      "picture_search": "department store pet cage",
+      "image_prompt": "Handheld phone footage at eye level: a young man with shoulder-length fair hair in a worn brown suede jacket bends close to the cage, smiling softly as he looks at the cub. Place: a 1969 London department store pet section with a small metal cage on a counter, under warm indoor lamp light.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "John",
+      "photo": ""
+    },
+    {
+      "narration": "Ils l'appellent Christian et l'installent dans leur magasin de meubles.",
+      "on_screen_text": "Il s'appelle Christian",
+      "picture_search": "vintage furniture shop London",
+      "image_prompt": "Handheld phone footage at eye level: the lion cub plays happily among antique chairs, chewing on a cushion with a playful look. Place: a 1969 London furniture shop with a wooden floor and antique chairs, in soft daylight from a large shop window.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Christian",
+      "photo": ""
+    },
+    {
+      "narration": "Mais il grandit vite, et Londres devient trop petite pour lui.",
+      "on_screen_text": "Il grandit\u2026 Londres devient trop petite",
+      "picture_search": "vintage furniture shop London",
+      "image_prompt": "Handheld phone footage at eye level: a bigger young lion, now about one year old, paces between the antique chairs and looks restlessly at the window. Place: a 1969 London furniture shop with a wooden floor and antique chairs, in soft daylight from a large shop window.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Christian",
+      "photo": ""
+    },
+    {
+      "narration": "Des acteurs leur conseillent George Adamson, un protecteur des lions au Kenya.",
+      "on_screen_text": "Direction : George Adamson, au Kenya",
+      "picture_search": "vintage furniture shop London",
+      "image_prompt": "Handheld phone footage at eye level: the young man in the worn brown suede jacket sits on an antique chair, stroking the young lion's head, his face hopeful but worried. Place: a 1969 London furniture shop with a wooden floor and antique chairs, in soft daylight from a large shop window.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "John",
+      "photo": ""
+    },
+    {
+      "narration": "En 1970, Christian s'envole pour la r\u00e9serve de Kora.",
+      "on_screen_text": "1970 : envol pour Kora, au Kenya",
+      "picture_search": "Kenya bush thorn trees",
+      "image_prompt": "Handheld phone footage at eye level: the young lion steps carefully onto red earth for the first time, sniffing the air with wide, curious eyes. Place: the dry Kenyan bush at Kora with red earth, thorn trees and a rocky outcrop, in golden afternoon light.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Christian",
+      "photo": ""
+    },
+    {
+      "narration": "Quelques semaines plus tard, John doit le laisser \u00e0 la vie sauvage.",
+      "on_screen_text": "John doit le laisser partir",
+      "picture_search": "Kenya bush thorn trees",
+      "image_prompt": "Handheld phone footage at eye level: the young man in the worn brown suede jacket stands still, eyes wet and lips pressed together, watching something walk away into the distance. Place: the dry Kenyan bush at Kora with red earth, thorn trees and a rocky outcrop, in golden afternoon light.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "John",
+      "photo": ""
+    },
+    {
+      "narration": "Un an apr\u00e8s, John et son ami reviennent au Kenya.",
+      "on_screen_text": "Un an apr\u00e8s, ils reviennent",
+      "picture_search": "Kenya bush rocky outcrop",
+      "image_prompt": "Handheld phone footage at eye level: the young man in the worn brown suede jacket walks slowly through the bush, scanning the horizon with a nervous, hopeful look. Place: the dry Kenyan bush at Kora with red earth, thorn trees and a rocky outcrop, in golden afternoon light.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "John",
+      "photo": ""
+    },
+    {
+      "narration": "On les pr\u00e9vient : il ne se souviendra peut-\u00eatre plus d'eux.",
+      "on_screen_text": "Se souviendra-t-il d'eux ?",
+      "picture_search": "Kenya bush rocky outcrop",
+      "image_prompt": "Handheld phone footage at eye level: the young man in the worn brown suede jacket stops and waits with his hands at his sides, looking anxious, his eyes on the rocks. Place: the dry Kenyan bush at Kora with red earth, thorn trees and a rocky outcrop, in golden afternoon light.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "John",
+      "photo": ""
+    },
+    {
+      "narration": "Soudain, un grand lion appara\u00eet sur les rochers et les fixe.",
+      "on_screen_text": "Un grand lion les fixe",
+      "picture_search": "lion on rocky outcrop",
+      "image_prompt": "Handheld phone footage at eye level: a large young male lion with a thick, still-growing tawny mane stands on top of the rocks, staring hard, ears forward. Place: the dry Kenyan bush at Kora with red earth, thorn trees and a rocky outcrop, in golden afternoon light.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Christian",
+      "photo": ""
+    },
+    {
+      "narration": "Il court vers eux, bondit, et les serre dans ses pattes.",
+      "on_screen_text": "Il bondit et les serre fort",
+      "picture_search": "lion running savanna",
+      "image_prompt": "Handheld phone footage at eye level: the maned lion rises on his back legs and wraps his big front paws around the shoulders of the man in the worn brown suede jacket, rubbing his head against him, eyes half closed with joy. Place: the dry Kenyan bush at Kora with red earth, thorn trees and a rocky outcrop, in golden afternoon light.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Christian",
+      "photo": ""
+    },
+    {
+      "narration": "Revu en 1973, il dispara\u00eet ensuite : nul ne sait ce qu'il devint.",
+      "on_screen_text": "Revu en 1973, puis disparu",
+      "picture_search": "Kenya bush thorn trees",
+      "image_prompt": "Handheld phone footage at eye level: the maned lion walks away slowly between the thorn trees and looks back once over his shoulder, calm and free. Place: the dry Kenyan bush at Kora with red earth, thorn trees and a rocky outcrop, in golden afternoon light.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Christian",
+      "photo": ""
+    },
+    {
+      "narration": "Mais ce jour-l\u00e0, le lionceau de Harrods \u00e9tait revenu vers ses amis.",
+      "on_screen_text": "Il \u00e9tait revenu vers eux",
+      "picture_search": "lion on rocky outcrop",
+      "image_prompt": "Handheld phone footage at eye level: the maned lion lies pressed against the kneeling man in the worn brown suede jacket, who laughs with tears in his eyes and holds the lion's head close. Place: the dry Kenyan bush at Kora with red earth, thorn trees and a rocky outcrop, in golden afternoon light.",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "Christian",
+      "photo": ""
+    }
+  ],
+  "relevance": {
+    "score": 72,
+    "why": "Evergreen, emotional true story (Christian the lion) fits older francophone viewers and the stork-style 'histoire vraie' format that broke out; script delivers the reunion promised, though the 'reconnu' framing and 1973 sighting are well-known and the story is widely told already.",
+    "views48": 1500
+  },
+  "qa": {
+    "passed": false,
+    "problems": "Frame 2: an adult maned lion sits in the Harrods cage where frame 1 shows a cub, so the animal for sale changes size and age between shots.\nFrame 4: an adult lion appears next to Christian in the flat and is never seen again.\nFrame 5: Christian is already a full-grown maned lion, yet in frames 6-7 he is a cub on John's lap again.\nFrame 11: John is suddenly a different man of a different ethnicity, in a darker jacket and dark shirt.\nFrames 9-11: John's face and hair change from frame to frame (light hair and beard in 9, a cleaner-shaven look in 10).\nFrame 13: John wears a khaki shirt and jeans instead of the brown jacket and trousers he wears in frames 10-12.\nFrame 16: the man hugging the lion is older and dark-haired and looks like a different person from John.\nFrame 12: a stray hand appears at the bottom right of the frame.\nFrames 6-7 and 14-15: each pair is a duplicated frame with identical captions."
+  },
+  "held": "continuity: Frame 2: an adult maned lion sits in the Harrods cage where frame 1 shows a cub, so the animal for sale changes size and age between shots.\nFrame 4: an adult lion appears next to Christian in the flat and is never seen again.\nFrame 5: Christian is already a full-grown maned lion, yet in frames 6-7 he is a cub on John's lap again.\nFrame 11: John is suddenly a different man of a different ethnicity, in a darker jacket and dark shirt.\nFrames 9-11: John's face and hair change from frame to frame (light hair and beard in 9, a cleaner-shaven look in 10).\nFrame 13: John wears a khaki shirt and jeans instead of the brown jacket and trousers he wears in frames 10-12.\nFrame 16: the man hugging the lion is older and dark-haired and looks like a different person from John.\nFrame 12: a stray hand appears at the bottom right of the frame.\nFrames 6-7 and 14-15: each pair is a duplicated frame with identical captions.",
+  "holds": 1
+}
