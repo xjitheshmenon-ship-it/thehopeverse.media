@@ -7,7 +7,7 @@ on:
   # Owner's hold (1 Nov 2026, "hold all workflow"): video and report schedules off. To resume, uncomment those 2 lines.
   # Owner, 2 Nov: "update HQ, hold all other things", so the hourly dashboard numbers run again (no videos, no paid calls).
   schedule:
-  #   - cron: "30 22 * * *"  # 04:00 IST (next day): start the day's videos; each run makes one and starts the next (plan.py --due)
+    - cron: "30 22 * * *"  # 04:00 IST (next day): start the day's videos; each run makes one and starts the next (plan.py --due)
   #   - cron: "30 11 * * *"  # 17:00 IST: the daily report and new channel idea
     - cron: "15 * * * *"   # hourly: dashboard numbers
   workflow_dispatch:
@@ -106,7 +106,7 @@ jobs:
         # NEXT = the channel, N = its video number today, QUOTA its daily count, REVIEW on its last, SERIES for Kissa,
         # GROW before the day's first video, MORE when another video follows; nothing when the day's videos are done
         run: |  # PAUSED file (owner's hold, e.g. until ElevenLabs is back): no videos; delete it to resume
-          [ -f PAUSED ] && { echo "::warning::Videos paused: $(cat PAUSED)"; exit 0; }
+          [ -f PAUSED ] && ! grep -q '^only:' PAUSED && { echo "::warning::Videos paused: $(cat PAUSED)"; exit 0; }  # "only:" line: those channels run
           python plan.py --due | tee -a "$GITHUB_ENV"
 
       - name: Stop if today's budget is used up
