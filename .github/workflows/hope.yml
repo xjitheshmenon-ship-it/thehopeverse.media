@@ -111,9 +111,14 @@ jobs:
           NEXT=$(sed -n 's/^NEXT=//p' "$RUNNER_TEMP/due")
           last=$(ls outbox 2>/dev/null | grep -E "^$NEXT-[0-9]+\.json$" | sort -V | tail -1)
           if [ -n "$NEXT" ] && [ -n "$last" ] && jq -e '.held and (has("youtube_id") | not)' "outbox/$last" > /dev/null; then
-            # owner, 2 Nov 2026: "complete one work, then go for the next": a held video stops the chain until he decides
-            echo "::error::$last was held, not posted ($(jq -r .held "outbox/$last" | head -c 300)). Nothing new is made until the owner decides."
-            exit 0
+            # owner, 2 Nov 2026: "complete one work, then go for the next": a held video is tried once more, then the
+            # chain stops until he decides
+            if jq -e '(.holds // 1) >= 2' "outbox/$last" > /dev/null; then
+              echo "::error::$last was held twice, not posted ($(jq -r .held "outbox/$last" | head -c 300)). Nothing new is made until the owner decides."
+              exit 0
+            fi
+            echo "::warning::$last was held; trying it once more instead of a new video"
+            echo "REMAKE=$last" >> "$RUNNER_TEMP/due"
           fi
           cat "$RUNNER_TEMP/due" >> "$GITHUB_ENV"
 
@@ -127,6 +132,16 @@ jobs:
           { sudo apt-get install -y -qq fonts-noto-core fonts-noto-cjk || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core fonts-noto-cjk; }; } > /dev/null  # Hindi captions
           [ "$GROW" = 1 ] && { python agents.py --grow || true; }  # Mr. Grow's notes for the day's Shorts
           id=$NEXT
+          if jq -e --arg id "$id" '.[] | select(.id == $id) | .free_only' channels.json > /dev/null; then
+            export FAL_KEY= HEYGEN_API_KEY= AI_CLIPS_PER_SHORT=0  # owner, 2 Nov 2026: free stock footage only, no HeyGen or fal
+          fi
+          if [ -n "$REMAKE" ]; then  # the held video's one retry (same script, footage picked again), never a new one
+            VIDEO=$REMAKE python -c "import json, os, pathlib; p = pathlib.Path('outbox', os.environ['VIDEO']); d = json.loads(p.read_text()); [d.pop(k, None) for k in ('held', 'qa', 'render_failed')]; p.write_text(json.dumps(d, indent=2, ensure_ascii=False))"
+            rm -f "outbox/${REMAKE%.json}.mp4"
+            python video.py --only "$id" || true
+            jq -e 'has("youtube_id")' "outbox/$REMAKE" > /dev/null || { echo "::error::$REMAKE held again: waiting for the owner"; echo MORE=0 >> "$GITHUB_ENV"; exit 1; }
+            exit 0
+          fi
           if [ "$id" = yt-hopeverse ]; then
             goal="get today's topics from Mr. Focus, check list_outbox, then draft and queue the best new current-affairs YouTube Short for $id, aimed at a global audience, on a story not already drafted today."
           else
@@ -139,7 +154,6 @@ jobs:
           src=$(python video.py --next-dub "$id" || true)  # a channel with "dub_from" re-voices its source's posted Shorts first
           if [ -n "$src" ]; then python video.py --dub-to "$id" "$src" || true
           elif jq -e --arg id "$id" '.[] | select(.id == $id) | .dub_from' channels.json > /dev/null; then echo "$id only shares its source's videos (owner, 1 Nov)"; exit 0
-          elif [[ $topic == *"(histoire vraie)"* ]]; then python story.py "$id" "$topic" || true  # true story: same cast in every shot (2 Nov: stock shots mixed different animals)
           else HOPE_CHANNEL=$id HOPE_REVIEW=$REVIEW python agents.py "Scheduled run, Short $N of $QUOTA today for channel $id: $goal" || true; fi
           ok=0; [ "$(ls outbox/*.json 2>/dev/null | wc -l)" -gt "$before" ] || { echo "::error::No Short was drafted (see Mr. Hope's log above)"; ok=1
             cp "$RUNNER_TEMP/plan.json" runs/plan.json 2>/dev/null; sed -i '$d' runs/slots.jsonl
