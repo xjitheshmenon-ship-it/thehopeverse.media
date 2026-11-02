@@ -59,56 +59,62 @@
    "Fu Manchu, l'orang-outan qui s'évadait de son enclos au zoo d'Omaha en défaisant ses serrures (histoire vraie)",
    "1 miroir, 1 tache : la pie qui se gratte le cou (histoire vraie)",
    "1 poule, 1 choix : elle attend pour avoir plus de graines (histoire vraie)",
-   "1 rat, 1 ami : il libère son compagnon enfermé avant de manger le chocolat (histoire vraie)"
+   "1 rat, 1 ami : il libère son compagnon enfermé avant de manger le chocolat (histoire vraie)",
+   "1 pie, 1 ruban : les geais et les corbeaux qui reconnaissent un visage humain (histoire vraie)",
+   "1 mot, 1 chien : Rico, le border collie qui connaissait 200 jouets par leur nom",
+   "1 rat, 1 rire : les rats qui rient quand on les chatouille, et la comparaison avec l'enfant",
+   "1 pieuvre, 1 bocal : elle dévisse le couvercle de l'intérieur (histoire vraie)",
+   "1 mot, 1 geste : les chiens qui comprennent le pointage d'un doigt humain, mieux que le chimpanzé (étude vraie)",
+   "1 mouchoir, 1 miroir : les pies qui se reconnaissent et les éléphants de Bronx (étude vraie) – version simple : 1 chimpanzé, 1 sourire : les singes qui consolent un ami après une dispute (étude vraie)"
   ]
  },
  "yt-instinct": [
   {
-   "topic": "1 pie, 1 ruban : les geais et les corbeaux qui reconnaissent un visage humain (histoire vraie)",
-   "why": "Étude publiée sur les corneilles d'Amérique, qui reconnaissent un visage et le retiennent des années. Images de corneilles faciles à trouver. Ton calme, idée simple, comparaison avec la mémoire des visages chez l'homme.",
+   "topic": "1 chien, 1 regard : les loups ne demandent jamais d'aide, les chiens oui (étude vraie)",
+   "why": "Étude publiée sur le regard vers l'humain devant une boîte fermée. Un chien de n'importe quelle race se filme facilement en stock. Comparaison simple avec l'enfant qui lève les yeux vers un adulte.",
    "score": 58,
-   "views48": 900,
-   "planned": "2026-11-02 21:20",
+   "views48": 700,
+   "planned": "2026-11-02 22:21",
    "when": "2026-11-03 04:00"
   },
   {
-   "topic": "1 mot, 1 chien : Rico, le border collie qui connaissait 200 jouets par leur nom",
-   "why": "Étude publiée dans Science en 2004. Un chien de la même race suffit en images libres. Comparaison avec un enfant qui apprend ses premiers mots. Attention : un sujet proche du chien qui retient un nom a eu peu de vues.",
-   "score": 52,
-   "views48": 450,
-   "planned": "2026-11-02 21:20",
+   "topic": "1 tournevis, 1 corbeau : les corbeaux de Nouvelle-Calédonie fabriquent un crochet (étude vraie)",
+   "why": "Crochets de feuilles et de brindilles, étude publiée. Images stock de corbeaux et de branches. Comparaison avec l'enfant qui apprend à fabriquer un outil.",
+   "score": 55,
+   "views48": 850,
+   "planned": "2026-11-02 22:21",
    "when": "2026-11-03 04:25"
   },
   {
-   "topic": "1 rat, 1 rire : les rats qui rient quand on les chatouille, et la comparaison avec l'enfant",
-   "why": "Sujet proche d'un Short déjà fait sur les rats, à écarter au profit d'un autre angle : les corbeaux qui font des cadeaux.",
-   "score": 30,
-   "views48": 300,
-   "planned": "2026-11-02 21:20",
+   "topic": "1 poisson, 1 visage : l'archerfish reconnaît un visage humain (étude vraie)",
+   "why": "Le poisson archer a appris à reconnaître un visage dans une étude publiée en 2016. Surprenant et calme, images stock de poissons archers en action. Peu traité en français.",
+   "score": 57,
+   "views48": 650,
+   "planned": "2026-11-02 22:21",
    "when": "2026-11-03 04:50"
   },
   {
-   "topic": "1 pieuvre, 1 bocal : elle dévisse le couvercle de l'intérieur (histoire vraie)",
-   "why": "Comportement observé en aquarium et très bien documenté. Des images libres de pieuvres existent. Beaucoup d'étonnement visuel, idée simple. Le dernier Short sur le poulpe a mal marché, donc l'angle est celui de l'intelligence, pas de l'anatomie.",
-   "score": 50,
-   "views48": 700,
-   "planned": "2026-11-02 21:20",
+   "topic": "1 abeille, 1 visage : elle retient un visage humain pendant plusieurs jours (étude vraie)",
+   "why": "Étude publiée sur les abeilles apprenant des photos de visages. Images stock d'abeilles faciles à trouver. Comparaison avec notre mémoire des visages.",
+   "score": 56,
+   "views48": 750,
+   "planned": "2026-11-02 22:21",
    "when": "2026-11-03 05:15"
   },
   {
-   "topic": "1 mot, 1 geste : les chiens qui comprennent le pointage d'un doigt humain, mieux que le chimpanzé (étude vraie)",
-   "why": "Comportement que n'importe quel chien montre en images libres de droits, avec une comparaison humaine claire (l'enfant de 1 an le fait aussi). Sujet sur l'esprit animal, ton calme pour public senior, absent des sujets déjà faits ou prévus. Chiens très populaires chez les francophones.",
-   "score": 58,
-   "views48": 780,
-   "planned": "2026-11-02 21:43",
+   "topic": "1 mouton, 1 visage : les moutons reconnaissent 50 visages pendant 2 ans (étude vraie)",
+   "why": "Étude de Cambridge, mémoire des visages sur de longues périodes. Troupeau de moutons en stock, thème rural et familier pour les seniors francophones. Angle chaleureux.",
+   "score": 60,
+   "views48": 900,
+   "planned": "2026-11-02 22:21",
    "when": "2026-11-03 05:40"
   },
   {
-   "topic": "1 mouchoir, 1 miroir : les pies qui se reconnaissent et les éléphants de Bronx (étude vraie) – version simple : 1 chimpanzé, 1 sourire : les singes qui consolent un ami après une dispute (étude vraie)",
-   "why": "Sujet sur l'amitié et l'esprit animal, avec une comparaison humaine simple : la consolation après une dispute, observée chez les chimpanzés par Frans de Waal. Des images libres de chimpanzés suffisent, sans individu précis. Ton calme et chaleureux, adapté aux seniors. Angle peu repris en français, jamais traité sur la chaîne.",
-   "score": 58,
-   "views48": 700,
-   "planned": "2026-11-02 21:59",
+   "topic": "1 chèvre, 1 sourire : elle préfère les visages humains heureux (étude vraie)",
+   "why": "Étude publiée sur les chèvres qui s'approchent des visages souriants. Stock de chèvres facile à trouver et ton tendre pour un public âgé. Comparaison avec le chien et le cheval déjà traités.",
+   "score": 57,
+   "views48": 800,
+   "planned": "2026-11-02 22:21",
    "when": "2026-11-03 06:05"
   }
  ],
