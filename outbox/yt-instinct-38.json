@@ -1,0 +1,25 @@
+{
+  "channel_id": "yt-instinct",
+  "title": "8 ans : des corneilles lui rapportent des objets ? #Shorts",
+  "description": "\u00c0 huit ans, une fillette de Seattle, aux \u00c9tats-Unis, recevait de petits objets laiss\u00e9s par des corneilles. Pour sa famille, ce sont des cadeaux. Tout a commenc\u00e9 en 2011, avec des restes de repas. Puis une perle jaune, un morceau de verre poli et une vieille vis rouill\u00e9e sont apparus. Un jour, un capuchon d'objectif perdu a \u00e9t\u00e9 retrouv\u00e9 au bord du bain des oiseaux. Le chercheur John Marzluff a vu beaucoup d'objets rapport\u00e9s par des corneilles, mais les cadeaux ne sont pas garantis. Et le capuchon \u00e9tait peut-\u00eatre une co\u00efncidence.\n\nEt vous, un animal vous a-t-il d\u00e9j\u00e0 rapport\u00e9 quelque chose ?\n\nSources : BBC News Magazine (25 f\u00e9vrier 2015) ; Why Evolution Is True (27 f\u00e9vrier 2015) ; KNKX (15 avril 2015) ; Audubon (2 mars 2015).\nImages : vid\u00e9os libres de droits (Pexels, Pixabay) \u00e0 titre d'illustration ; ce ne sont pas les vraies corneilles ni les vrais objets. Cr\u00e9dits des auteurs : \u00e0 compl\u00e9ter depuis le journal de licences du montage.\n\nInstinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.\n\n#animaux #nature #histoirevraie #corneilles #Shorts",
+  "script": "VOICE: fr-FR-DeniseNeural, rate -8%, captions scale 1.2. Narrator only, no cast. ~54 s after trims.\n\nSCRIPT:\n\u00ab En 2015, une fillette de huit ans recevait des cadeaux\u2026 de corneilles. En 2011, \u00e0 Seattle, Gabi, encore toute petite, laissait tomber des restes. Une corneille les ramassait. En 2013, avec sa m\u00e8re, elle s'est mise \u00e0 les nourrir chaque jour. Des objets sont alors apparus : une perle jaune, un morceau de verre poli\u2026 et m\u00eame une vieille vis rouill\u00e9e. Un jour, sa m\u00e8re a perdu un capuchon d'objectif dans une ruelle. Elle l'a retrouv\u00e9 au bord du bain des oiseaux. Selon elle, une corneille l'avait apport\u00e9, puis rinc\u00e9. Pour la famille, ce sont des cadeaux. Le chercheur John Marzluff a vu beaucoup d'objets rapport\u00e9s, mais n'en a jamais re\u00e7u lui-m\u00eame. Le capuchon ? Peut-\u00eatre une co\u00efncidence. Et vous, un animal vous a-t-il d\u00e9j\u00e0 rapport\u00e9 quelque chose ? \u00bb\n\nEDIT PLAN (Mr. Cut, 23 shots, 9:16, ~54-55 s, cut every 2-3 s):\n- Hook: crow dipping an object in a birdbath at 0:00 (1.5 s silent).\n- Seattle skyline, crows at peanut feeder, empty tray.\n- Stand-in macros of yellow bead / sea glass / rusty screw / lens cap, each tagged \u00ab Image d'illustration \u00bb.\n- Alley, birdbath, crow rinsing (callback).\n- Calm caveat shots 18-21 with captions \u00ab Des cadeaux ? Non d\u00e9montr\u00e9 \u00bb, \u00ab John Marzluff, chercheur \u00bb, \u00ab Peut-\u00eatre une co\u00efncidence \u00bb.\n- End: crow at a feeder at dawn, caption \u00ab Et vous ? \u00bb, then credit card with sources.\n- The \"voisin\" line is dropped.\n- Free stock only (Pexels/Pixabay); log author, URL and licence for each clip. No images of the real girl or family, no BBC material.\n- Music: soft piano/strings ~65-70 bpm, ducked -14 dB (Mr. Raga picks).\n- Confirm TTS length is under 60 s before render; if over, drop shot 6, then shot 15.\n\nPINNED COMMENT (post after publishing): Selon la m\u00e8re, une corneille aurait rapport\u00e9 un capuchon d'objectif. Mais ce pourrait \u00eatre une co\u00efncidence. Selon vous, cadeau ou hasard ?\n\nTHUMBNAIL: a crow at the edge of a birdbath with a small shiny yellow bead in its beak or beside it (stock, no people). Text \u00ab 8 ans \u00bb in bright yellow with black outline on a dark blue-green background. Alt: three objects (yellow bead, sea glass, rusty screw) on a wooden rail, text \u00ab 3 objets trouv\u00e9s \u00bb.",
+  "lang": "fr",
+  "footer": "Instinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "category": "15",
+  "photos": true,
+  "draft_cost": 0.96,
+  "relevance": {
+    "score": 72,
+    "why": "Evergreen, well-hedged crow-gift story (Gabi Mann, Marzluff) fits the French-speaking audience and script matches the title, though the 2015 hook is dated and the title's question mark and 'Image d'illustration' stand-ins weaken it.",
+    "views48": 900
+  },
+  "credits": [
+    "Seattle 3.jpg by Daniel Schwen (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Seattle_3.jpg"
+  ],
+  "qa": {
+    "passed": true,
+    "problems": "",
+    "bad_frames": 0
+  },
+  "youtube_id": "k6s0810Aimg"
+}
