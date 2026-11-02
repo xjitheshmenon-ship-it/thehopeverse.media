@@ -332,6 +332,10 @@ if __name__ == "__main__":
     if os.environ.get("BREAKOUTS") == "true":  # the hourly numbers run only, so two runs never study the same Short
         breakout.run(rows)
         predict.record(rows, NOW.replace(tzinfo=None))  # real 48-hour views next to each prediction
+        try:  # once a day: each channel's current pattern from YouTube Analytics for the predictor (free, no AI)
+            predict.daily(rows, NOW.replace(tzinfo=None), _channels())
+        except Exception as e:
+            print(f"::warning::Daily patterns: {str(e)[:300]}")
     rows += film_uploads(rows)  # after breakouts and predictions, which are about Shorts
     plan = slots(rows)
     data = {"updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
