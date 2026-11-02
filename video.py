@@ -181,9 +181,9 @@ def storyboard(package: dict) -> Storyboard:
                    "never cartoon. Never ask for a real, identifiable person in picture_search or image_prompt (no "
                    "politician, official or celebrity by name or likeness): show the place, building, crowd, document "
                    "or object instead, so no shot is a fake of a real person. "
-                   + ("photo: when the line is about a named real person, party, flag, election symbol or landmark, a "
+                   + ("photo: when the line is about a named real person, animal, animal species, party, flag, election symbol or landmark, a "
                       "2-5 word Wikimedia Commons search for a REAL photo or video of it (e.g. 'Narendra Modi 2024', "
-                      "'Flag of the Bharatiya Janata Party', 'Rahul Gandhi rally', 'Parliament House New Delhi'), else "
+                      "'Flag of the Bharatiya Janata Party', 'Rahul Gandhi rally', 'Parliament House New Delhi', 'Hachiko Shibuya', 'Spheniscus magellanicus'), else "
                       "empty; use it on about half the scenes that aren't anchors talking. "
                       if package.get("photos") else "photo: always empty. ")
                    + ("speaker: always empty and host_on_screen always false: one narrator reads every line, in the "

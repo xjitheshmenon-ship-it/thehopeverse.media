@@ -205,7 +205,11 @@ jobs:
           for v in $VIDEO; do  # one or more held Shorts, space-separated, made one at a time
             VIDEO=$v python -c "import json, os, pathlib; p = pathlib.Path('outbox', os.environ['VIDEO']); d = json.loads(p.read_text()); assert d.get('holds', 0) < 2, 'held twice: dropped, not re-made (spend audit 1 Nov)'; [d.pop(k, None) for k in ('held', 'qa', 'render_failed')]; p.write_text(json.dumps(d, indent=2, ensure_ascii=False)); print(d['channel_id'])" > "$RUNNER_TEMP/channel" || continue
             rm -f "outbox/${v%.json}.mp4"
-            python video.py --only "$(cat "$RUNNER_TEMP/channel")" || true
+            if jq -e '.free_only' "outbox/$v" > /dev/null; then  # owner, 2 Nov: fix a held Short with free pictures only (Commons, Pixabay)
+              FAL_KEY= HEYGEN_API_KEY= AI_CLIPS_PER_SHORT=0 python video.py --only "$(cat "$RUNNER_TEMP/channel")" || true
+            else
+              python video.py --only "$(cat "$RUNNER_TEMP/channel")" || true
+            fi
           done
       - name: Post a held Short as it is (owner's OK), from the video a run saved
         if: inputs.job == 'post'
