@@ -792,7 +792,11 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
                 who = {**who, "voice": who.get(f"voice_{lang}", voice)}
             eleven = os.environ.get(f"ELEVEN_VOICE_{scene.speaker.upper()}") or eleven_voice(
                 "female" if "woman" in who.get("look", "").lower() else "male")
-            if lang not in ("", "hi") or free_voice:  # ElevenLabs picks Indian-accented voices; French etc. keep the channel's Edge voice
+            if lang not in ("", "hi") and home.get("eleven") and "dub_of" not in package:  # owner, 2 Nov 2026: ElevenLabs for Instinct French
+                eleven = eleven_voice(home["eleven"])
+            elif lang not in ("", "hi"):  # ElevenLabs picks Indian-accented voices; French etc. keep the channel's Edge voice
+                eleven = ""
+            if free_voice:
                 eleven = ""
             if not speak(scene.narration, who.get("voice", voice), audio, who.get("pitch", "+0Hz"), eleven,
                          spoken[k - 1][1].narration if k else "",
