@@ -16,7 +16,7 @@ on:
         description: "next = make and post the next video of the day (one channel at a time, then it starts the next; stops when every channel has its count), report = the 5 PM report and channel idea, one = make and post the next planned Short now for the channel below, story = make and post a true animal rescue story Short now (AI re-enactment) for the channel below, stats = dashboard numbers only, plan = plan the next 6 topics per channel (slot is the same as next; to sign a channel in, use the Connect a channel workflow)"
         default: next
         type: choice
-        options: [next, report, one, story, publish, refresh, stats, plan, slot, audience, remake, dub]
+        options: [next, report, one, story, publish, refresh, stats, plan, slot, audience, remake, dub, post]
       channel:
         description: "For job one or story: which channel's Short to post now. For job refresh: the channel whose uploads get its current footer and tags"
         default: yt-hopeverse
@@ -207,6 +207,18 @@ jobs:
             rm -f "outbox/${v%.json}.mp4"
             python video.py --only "$(cat "$RUNNER_TEMP/channel")" || true
           done
+      - name: Post a held Short as it is (owner's OK), from the video a run saved
+        if: inputs.job == 'post'
+        env:
+          VIDEO: ${{ inputs.topic }}  # "<outbox file> <run id>", e.g. "yt-instinct-37.json 41450851623"
+          GH_TOKEN: ${{ github.token }}
+        run: |  # owner, 2 Nov 2026: posts the saved video, nothing is made again
+          set -- $VIDEO
+          gh run download "$2" -n "videos-$2" -D "$RUNNER_TEMP/saved"
+          cp "$RUNNER_TEMP/saved/${1%.json}.mp4" outbox/
+          VIDEO=$1 python -c "import json, os, pathlib; p = pathlib.Path('outbox', os.environ['VIDEO']); d = json.loads(p.read_text()); d.pop('held', None); d['qa'] = {**d.get('qa', {}), 'passed': True, 'owner_ok': True}; p.write_text(json.dumps(d, indent=2, ensure_ascii=False)); print(d['channel_id'])" > "$RUNNER_TEMP/channel"
+          sudo apt-get install -y -qq fonts-noto-core fonts-noto-cjk > /dev/null || true
+          python video.py --only "$(cat "$RUNNER_TEMP/channel")"
       - name: Re-voice posted Shorts for another channel (same scenes, new language) and post them in its slots
         if: inputs.job == 'dub'
         env:
@@ -255,7 +267,7 @@ jobs:
           retention-days: 30
           compression-level: 0
       - name: Save Hope's memory
-        if: always() && (env.RAN == '1' || inputs.job == 'one' || inputs.job == 'story' || inputs.job == 'publish' || inputs.job == 'remake' || inputs.job == 'dub' || inputs.job == 'plan')
+        if: always() && (env.RAN == '1' || inputs.job == 'one' || inputs.job == 'story' || inputs.job == 'publish' || inputs.job == 'remake' || inputs.job == 'dub' || inputs.job == 'post' || inputs.job == 'plan')
         run: python state.py save
       - name: Start the next video
         if: always() && env.MORE == '1'
