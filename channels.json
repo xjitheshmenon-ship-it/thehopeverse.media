@@ -69,7 +69,7 @@
   {
     "id": "yt-instinct",
     "platform": "youtube",
-    "free_only": true, "per_day": 6,
+    "eleven": "female", "free_only": true, "per_day": 6,
     "name": "Instinct",
     "url": "https://www.youtube.com/@Instinct.natureFR",
     "niche": "Short, well-checked stories about animal behaviour and nature's strangest adaptations, told in French with stock wildlife footage and AI images",
