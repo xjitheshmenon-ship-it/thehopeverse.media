@@ -8,6 +8,7 @@ for a normal key, so their rows show the logged spend instead. dashboard.py show
 """
 import json
 import os
+from datetime import datetime, timezone
 import urllib.request
 
 # Below these, the row turns "low": about a day of normal use.
@@ -43,7 +44,9 @@ def check() -> list:
     try:
         s = _get("https://api.elevenlabs.io/v1/user/subscription", **{"xi-api-key": key})
         rows.append(_row("ElevenLabs", s["character_limit"] - s["character_count"], "characters",
-                         f"Voices; free Edge voices take over when it runs out. Plan: {s.get('tier', '?')}",
+                         f"Voices; free Edge voices take over when it runs out. Plan: {s.get('tier', '?')}, status: {s.get('status', '?')}"
+                         + (f", resets {datetime.fromtimestamp(s['next_character_count_reset_unix'], timezone.utc):%d %b %Y}"
+                            if s.get('next_character_count_reset_unix') else ""),
                          LOW["ElevenLabs"]))
     except Exception as e:  # a restricted key needs "User: read" permission
         rows.append(_row("ElevenLabs", None, "characters", f"Couldn't read the balance ({e}); turn on User: Read for the key in ElevenLabs"))
