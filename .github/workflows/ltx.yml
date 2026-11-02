@@ -13,6 +13,9 @@ on:
       scenes:
         description: "Scene numbers to remake, comma-separated"
         default: "0,3,10"
+      scene_first:
+        description: "yes = put the character into each scene with Qwen-Image-Edit first, then LTX animates it"
+        default: "no"
 
 permissions:
   contents: write
@@ -34,7 +37,7 @@ jobs:
           git fetch -q origin state
           mkdir -p outbox && git show "origin/state:outbox/$PACKAGE.json" > "outbox/$PACKAGE.json"
           git archive origin/state hosts | tar -x
-      - run: modal run ltx.py --package "outbox/$PACKAGE.json" --scenes "${{ inputs.scenes }}" --out "ltx-test/$PACKAGE"
+      - run: modal run ltx.py --package "outbox/$PACKAGE.json" --scenes "${{ inputs.scenes }}" --out "ltx-test/$PACKAGE" $([ "${{ inputs.scene_first }}" = yes ] && echo --scene-first)
       - if: always()
         run: |
           [ -d "ltx-test/$PACKAGE" ] || exit 0
