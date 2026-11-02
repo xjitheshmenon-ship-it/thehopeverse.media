@@ -1,276 +1,312 @@
 {
- "yt-hopeverse": [
-  {
-   "topic": "Binance $6.3B hack: PBS reported what may be the biggest crypto theft ever. Angle: it is about 4x the Bybit hack of $1.5B in 2025, so how do hackers cash out that much?",
-   "why": "Fresh headline with a big number, and crypto audiences in the US, UK and India search it. The cash-out angle is something most outlets skip.",
-   "score": 66,
-   "views48": 60,
-   "planned": "2026-11-01 12:11",
-   "when": "2026-11-01 04:00"
+  "yt-hopeverse": [
+    {
+      "topic": "Binance $6.3B hack: PBS reported what may be the biggest crypto theft ever. Angle: it is about 4x the Bybit hack of $1.5B in 2025, so how do hackers cash out that much?",
+      "why": "Fresh headline with a big number, and crypto audiences in the US, UK and India search it. The cash-out angle is something most outlets skip.",
+      "score": 66,
+      "views48": 60,
+      "planned": "2026-11-01 12:11",
+      "when": "2026-11-01 04:00"
+    },
+    {
+      "topic": "Italy cost-of-living protests turn violent: thousands marched, and NBC covered the clashes. Angle: why Italian wages have barely risen in about 30 years while prices climbed.",
+      "why": "Current street-protest story from Europe with a 'why does this happen' hook on wages.",
+      "score": 62,
+      "views48": 50,
+      "planned": "2026-11-01 12:11",
+      "when": "2026-11-01 06:05"
+    },
+    {
+      "topic": "Starlink slowdown hits Ukrainian front-line soldiers (NBC News). Angle: how one private company's network speed can affect a war, and who controls the switch.",
+      "why": "A recent report with a hidden-dependency angle that suits explainers. Interest in Ukraine stays high among Western viewers.",
+      "score": 64,
+      "views48": 55,
+      "planned": "2026-11-01 12:11",
+      "when": "2026-11-01 08:10"
+    },
+    {
+      "topic": "Fairford base incident: 2 men charged with helping Iran over an incident at a US-run military base in Britain. Angle: why a US base sits in the English countryside, and what Britain can legally do.",
+      "why": "UK-relevant story tied to the Iran war, with an explainer angle on the base itself.",
+      "score": 63,
+      "views48": 55,
+      "planned": "2026-11-01 12:11",
+      "when": "2026-11-01 09:25"
+    },
+    {
+      "topic": "South Korea's baby bust: NBC reports it is fighting population decline and may be a model for others. Angle: its fertility rate is the lowest in the world, under 0.8 children per woman, so what is it trying?",
+      "why": "The figure is well sourced and widely searched. It fits a global audience and the explainer holds up for days.",
+      "score": 58,
+      "views48": 45,
+      "planned": "2026-11-01 12:11",
+      "when": "2026-11-02 04:00"
+    },
+    {
+      "topic": "Villa Vie cruise company abandons passengers in Cambodia (NBC News). Angle: how the 'live on a ship' residence model works, and why passengers got stranded when the company failed.",
+      "why": "A curious consumer-news story with a clear 'how did this happen' hook for a global audience. It is less tied to politics than the other stories.",
+      "score": 55,
+      "views48": 40,
+      "planned": "2026-11-01 12:11",
+      "when": "2026-11-02 06:05"
+    }
+  ],
+  "rejected": {
+    "yt-instinct": [
+      "Wojtek, l'ours brun devenu soldat qui portait des obus à Monte Cassino (histoire vraie)",
+      "Koko et Ndume : la gorille qui a pris soin d'un chaton, All Ball, comme d'un bébé (histoire vraie)",
+      "Alex, le perroquet gris qui a compris le mot « zéro » et appris à nommer des couleurs (histoire vraie)",
+      "Betty et Abel : la corneille qui a plié un fil de fer pour attraper sa nourriture, et son compagnon qui l'a laissée faire (histoire vraie)",
+      "Fu Manchu, l'orang-outan qui s'évadait de son enclos au zoo d'Omaha en défaisant ses serrures (histoire vraie)",
+      "1 miroir, 1 tache : la pie qui se gratte le cou (histoire vraie)",
+      "1 poule, 1 choix : elle attend pour avoir plus de graines (histoire vraie)",
+      "1 rat, 1 ami : il libère son compagnon enfermé avant de manger le chocolat (histoire vraie)",
+      "1 pie, 1 ruban : les geais et les corbeaux qui reconnaissent un visage humain (histoire vraie)",
+      "1 mot, 1 chien : Rico, le border collie qui connaissait 200 jouets par leur nom",
+      "1 rat, 1 rire : les rats qui rient quand on les chatouille, et la comparaison avec l'enfant",
+      "1 pieuvre, 1 bocal : elle dévisse le couvercle de l'intérieur (histoire vraie)",
+      "1 mot, 1 geste : les chiens qui comprennent le pointage d'un doigt humain, mieux que le chimpanzé (étude vraie)",
+      "1 mouchoir, 1 miroir : les pies qui se reconnaissent et les éléphants de Bronx (étude vraie) – version simple : 1 chimpanzé, 1 sourire : les singes qui consolent un ami après une dispute (étude vraie)",
+      "1 chien, 1 regard : les loups ne demandent jamais d'aide, les chiens oui (étude vraie)",
+      "1 tournevis, 1 corbeau : les corbeaux de Nouvelle-Calédonie fabriquent un crochet (étude vraie)",
+      "1 poisson, 1 visage : l'archerfish reconnaît un visage humain (étude vraie)",
+      "1 abeille, 1 visage : elle retient un visage humain pendant plusieurs jours (étude vraie)",
+      "1 mouton, 1 visage : les moutons reconnaissent 50 visages pendant 2 ans (étude vraie)",
+      "1 chèvre, 1 sourire : elle préfère les visages humains heureux (étude vraie)"
+    ]
   },
-  {
-   "topic": "Italy cost-of-living protests turn violent: thousands marched, and NBC covered the clashes. Angle: why Italian wages have barely risen in about 30 years while prices climbed.",
-   "why": "Current street-protest story from Europe with a 'why does this happen' hook on wages.",
-   "score": 62,
-   "views48": 50,
-   "planned": "2026-11-01 12:11",
-   "when": "2026-11-01 06:05"
-  },
-  {
-   "topic": "Starlink slowdown hits Ukrainian front-line soldiers (NBC News). Angle: how one private company's network speed can affect a war, and who controls the switch.",
-   "why": "A recent report with a hidden-dependency angle that suits explainers. Interest in Ukraine stays high among Western viewers.",
-   "score": 64,
-   "views48": 55,
-   "planned": "2026-11-01 12:11",
-   "when": "2026-11-01 08:10"
-  },
-  {
-   "topic": "Fairford base incident: 2 men charged with helping Iran over an incident at a US-run military base in Britain. Angle: why a US base sits in the English countryside, and what Britain can legally do.",
-   "why": "UK-relevant story tied to the Iran war, with an explainer angle on the base itself.",
-   "score": 63,
-   "views48": 55,
-   "planned": "2026-11-01 12:11",
-   "when": "2026-11-01 09:25"
-  },
-  {
-   "topic": "South Korea's baby bust: NBC reports it is fighting population decline and may be a model for others. Angle: its fertility rate is the lowest in the world, under 0.8 children per woman, so what is it trying?",
-   "why": "The figure is well sourced and widely searched. It fits a global audience and the explainer holds up for days.",
-   "score": 58,
-   "views48": 45,
-   "planned": "2026-11-01 12:11",
-   "when": "2026-11-02 04:00"
-  },
-  {
-   "topic": "Villa Vie cruise company abandons passengers in Cambodia (NBC News). Angle: how the 'live on a ship' residence model works, and why passengers got stranded when the company failed.",
-   "why": "A curious consumer-news story with a clear 'how did this happen' hook for a global audience. It is less tied to politics than the other stories.",
-   "score": 55,
-   "views48": 40,
-   "planned": "2026-11-01 12:11",
-   "when": "2026-11-02 06:05"
-  }
- ],
- "rejected": {
   "yt-instinct": [
-   "Wojtek, l'ours brun devenu soldat qui portait des obus à Monte Cassino (histoire vraie)",
-   "Koko et Ndume : la gorille qui a pris soin d'un chaton, All Ball, comme d'un bébé (histoire vraie)",
-   "Alex, le perroquet gris qui a compris le mot « zéro » et appris à nommer des couleurs (histoire vraie)",
-   "Betty et Abel : la corneille qui a plié un fil de fer pour attraper sa nourriture, et son compagnon qui l'a laissée faire (histoire vraie)",
-   "Fu Manchu, l'orang-outan qui s'évadait de son enclos au zoo d'Omaha en défaisant ses serrures (histoire vraie)",
-   "1 miroir, 1 tache : la pie qui se gratte le cou (histoire vraie)",
-   "1 poule, 1 choix : elle attend pour avoir plus de graines (histoire vraie)",
-   "1 rat, 1 ami : il libère son compagnon enfermé avant de manger le chocolat (histoire vraie)",
-   "1 pie, 1 ruban : les geais et les corbeaux qui reconnaissent un visage humain (histoire vraie)",
-   "1 mot, 1 chien : Rico, le border collie qui connaissait 200 jouets par leur nom",
-   "1 rat, 1 rire : les rats qui rient quand on les chatouille, et la comparaison avec l'enfant",
-   "1 pieuvre, 1 bocal : elle dévisse le couvercle de l'intérieur (histoire vraie)",
-   "1 mot, 1 geste : les chiens qui comprennent le pointage d'un doigt humain, mieux que le chimpanzé (étude vraie)",
-   "1 mouchoir, 1 miroir : les pies qui se reconnaissent et les éléphants de Bronx (étude vraie) – version simple : 1 chimpanzé, 1 sourire : les singes qui consolent un ami après une dispute (étude vraie)",
-   "1 chien, 1 regard : les loups ne demandent jamais d'aide, les chiens oui (étude vraie)",
-   "1 tournevis, 1 corbeau : les corbeaux de Nouvelle-Calédonie fabriquent un crochet (étude vraie)",
-   "1 poisson, 1 visage : l'archerfish reconnaît un visage humain (étude vraie)",
-   "1 abeille, 1 visage : elle retient un visage humain pendant plusieurs jours (étude vraie)",
-   "1 mouton, 1 visage : les moutons reconnaissent 50 visages pendant 2 ans (étude vraie)",
-   "1 chèvre, 1 sourire : elle préfère les visages humains heureux (étude vraie)"
+    {
+      "topic": "Wisdom, l'albatros de plus de 70 ans qui pond encore un œuf chaque année sur Midway (histoire vraie)",
+      "why": "Oiseau sauvage nommé le plus vieux connu, baguée en 1956 ; nombreuses photos libres de l'US Fish and Wildlife Service sur Wikimedia Commons. (choisi à la main par Claude, 2 nov.)",
+      "score": 66,
+      "views48": 1800,
+      "hand": true,
+      "planned": "2026-11-02 17:00",
+      "when": "2026-11-02 17:00"
+    },
+    {
+      "topic": "Knut, l'ourson polaire de Berlin élevé au biberon par son soigneur Thomas (histoire vraie)",
+      "why": "Histoire vraie célèbre (zoo de Berlin, 2007), lien humain-animal fort ; beaucoup de photos libres de Knut sur Wikimedia Commons. (choisi à la main par Claude, 2 nov.)",
+      "score": 63,
+      "views48": 1500,
+      "hand": true,
+      "planned": "2026-11-02 17:00",
+      "when": "2026-11-02 17:00"
+    },
+    {
+      "topic": "Wojtek, l'ours brun adopté par des soldats polonais qui portait des caisses d'obus (histoire vraie)",
+      "why": "Ours nommé, histoire vraie de la Seconde Guerre mondiale ; photos d'archives libres de Wojtek sur Wikimedia Commons. (choisi à la main par Claude, 2 nov.)",
+      "score": 62,
+      "views48": 1400,
+      "hand": true,
+      "planned": "2026-11-02 17:00",
+      "when": "2026-11-02 17:00"
+    },
+    {
+      "topic": "Lonesome George, la dernière tortue de Pinta, seule de son espèce pendant 40 ans (histoire vraie)",
+      "why": "Tortue nommée des Galápagos, symbole mondial ; nombreuses photos libres sur Wikimedia Commons. (choisi à la main par Claude, 2 nov.)",
+      "score": 61,
+      "views48": 1200,
+      "hand": true,
+      "planned": "2026-11-02 17:00",
+      "when": "2026-11-02 17:00"
+    },
+    {
+      "topic": "Owen et Mzee : l'hippopotame orphelin et la tortue géante qui sont devenus inséparables (histoire vraie)",
+      "why": "Histoire vraie célèbre d'amitié avec de nombreuses photos libres sur Wikimedia Commons, ton chaleureux adapté aux seniors.",
+      "score": 58,
+      "views48": 1500,
+      "planned": "2026-11-02 22:25",
+      "when": "2026-11-03 04:00"
+    },
+    {
+      "topic": "Christian, le lion élevé à Londres et retrouvé en Afrique par ses deux amis (histoire vraie)",
+      "why": "Histoire de retrouvailles émouvante, photos et images disponibles sur Commons, très appréciée du public âgé francophone.",
+      "score": 57,
+      "views48": 1700,
+      "planned": "2026-11-02 22:25",
+      "when": "2026-11-03 04:25"
+    },
+    {
+      "topic": "Dindim, le manchot qui revient chaque année voir l'homme qui l'a sauvé au Brésil (histoire vraie)",
+      "why": "Histoire vraie de loyauté et de retour, photos réelles de l'animal disponibles, thème proche des succès de la chaîne.",
+      "score": 56,
+      "views48": 1600,
+      "planned": "2026-11-02 22:25",
+      "when": "2026-11-03 04:50"
+    },
+    {
+      "topic": "Knut, l'ourson polaire du zoo de Berlin élevé par un soigneur (histoire vraie)",
+      "why": "Histoire vraie connue en Europe, nombreuses photos libres sur Commons, ton doux et familier pour les seniors.",
+      "score": 54,
+      "views48": 1200,
+      "planned": "2026-11-02 22:25",
+      "when": "2026-11-03 05:15"
+    },
+    {
+      "topic": "Hao Hao et le chien Hachi... non : Lonesome George, la dernière tortue de Pinta aux Galápagos (histoire vraie)",
+      "why": "Histoire vraie d'un animal nommé avec de nombreuses photos Commons, forte charge émotionnelle et éducative.",
+      "score": 50,
+      "views48": 900,
+      "planned": "2026-11-02 22:25",
+      "when": "2026-11-03 05:40"
+    },
+    {
+      "topic": "Hamlet... non : Cher Ami, le pigeon voyageur qui a porté un message malgré ses blessures (histoire vraie)",
+      "why": "Histoire vraie de courage d'un animal nommé, photos disponibles sur Commons, intéresse un public plus âgé amateur d'histoire.",
+      "score": 52,
+      "views48": 1000,
+      "planned": "2026-11-02 22:25",
+      "when": "2026-11-03 06:05"
+    }
+  ],
+  "yt-instinct-ja": [
+    {
+      "topic": "カラスは人の顔を覚えている:ワシントン大学のお面実験と、東京のカラスの話",
+      "why": "高齢の視聴者にも身近なカラスの話題です。お面をかぶった人を何年も覚えていた、という公開された研究があり、驚きがはっきり伝わります。日本の都市のカラスと結びつけられます。",
+      "score": 62,
+      "views48": 60,
+      "planned": "2026-11-01 15:19",
+      "when": "2026-11-01 04:50"
+    },
+    {
+      "topic": "奈良のシカはおじぎをする:せんべいを求める行動と人との暮らし",
+      "why": "奈良公園のシカは日本の視聴者になじみ深く、おじぎの行動も目で見て分かります。昔からの共存の歴史にも触れられます。",
+      "score": 60,
+      "views48": 55,
+      "planned": "2026-11-01 15:19",
+      "when": "2026-11-01 06:55"
+    },
+    {
+      "topic": "ゾウは亡くなった仲間を悼む:家族のきずなを示す観察記録",
+      "why": "動物の心と友情という、このチャンネルの中心テーマです。落ち着いた語りで、人間の気持ちとも比べやすい話です。",
+      "score": 58,
+      "views48": 50,
+      "planned": "2026-11-01 15:19",
+      "when": "2026-11-01 09:00"
+    },
+    {
+      "topic": "タコのオクトパスは瓶のふたを内側から閉める:水族館で記録された賢さ",
+      "why": "目で見て分かる賢い行動で、日本人にはなじみ深いタコの話です。短い動画で一つのアイデアを伝えやすいです。",
+      "score": 57,
+      "views48": 45,
+      "planned": "2026-11-01 15:19",
+      "when": "2026-11-01 10:15"
+    },
+    {
+      "topic": "ニホンザルの温泉入り:長野の雪ザルが寒さをしのぐ方法",
+      "why": "日本ならではの動物の話題で、高齢の視聴者にも温泉は身近です。研究では温泉に入るとストレスが減ることが示されています。",
+      "score": 63,
+      "views48": 65,
+      "planned": "2026-11-01 15:19",
+      "when": "2026-11-01 10:40"
+    },
+    {
+      "topic": "イヌは人の気持ちが分かる:飼い主の表情を読み取る研究",
+      "why": "犬は幅広い世代に人気で、人との絆を伝える話です。研究結果をやさしい言葉で説明でき、いつでも見てもらえる内容です。",
+      "score": 59,
+      "views48": 55,
+      "planned": "2026-11-01 15:19",
+      "when": "2026-11-01 11:05"
+    }
+  ],
+  "yt-sankalp": [
+    {
+      "topic": "1 नवंबर 2026: बेंगलुरु–मुंबई वंदे भारत स्लीपर को रेल मंत्री अश्विनी वैष्णव ने हरी झंडी दिखाई। IT हब और वित्तीय राजधानी अब रात भर की ट्रेन से जुड़ेंगी। रूट और सफ़र के समय की बारीकी दो सरकारी स्रोतों से जाँचें।",
+      "why": "ताज़ा उद्घाटन, जिसमें स्लीपर ट्रेन का नया पहलू है और जो भारत की प्रगति दिखाता है। न्यूज़ऑन एयर और स्कूल असेंबली हेडलाइन्स ने इसे 1 नवंबर को कवर किया। जिज्ञासा वाला सवाल: स्लीपर वंदे भारत से दो टेक हब के बीच रात का सफ़र कैसे बदलेगा?",
+      "score": 72,
+      "views48": 18,
+      "planned": "2026-11-01 15:19",
+      "when": "2026-11-01 05:15"
+    },
+    {
+      "topic": "जियो प्लेटफ़ॉर्म्स का ₹30,200 करोड़ का रिकॉर्ड IPO। लिस्टिंग के बाद यह भारत की दूसरी सबसे क़ीमती कंपनी बनी। जिज्ञासा वाला सवाल: इतना बड़ा IPO भारतीय निवेशकों और बाज़ार की ताक़त के बारे में क्या बताता है?",
+      "why": "पिछले 24-48 घंटे की बड़ी आर्थिक ख़बर, जिसमें एक ठोस आँकड़ा है। 18-45 साल के निवेश में रुचि रखने वाले दर्शकों के लिए प्रासंगिक है और राष्ट्रीय गर्व से जुड़ती है। इंडियन ओपिनियन के डाइजेस्ट में है। दूसरे स्रोत से पुष्टि ज़रूरी है।",
+      "score": 70,
+      "views48": 15,
+      "planned": "2026-11-01 15:19",
+      "when": "2026-11-01 07:20"
+    },
+    {
+      "topic": "भारत का कोयला आयात एक साल में 111 से घटकर 104 मिलियन टन रह गया (न्यूज़ऑन एयर, 1 नवंबर 2026)। जिज्ञासा वाला सवाल: घरेलू उत्पादन बढ़ने से आयात का बिल और आत्मनिर्भरता पर क्या असर पड़ा?",
+      "why": "सरकारी डेटा रिलीज़ है, जिसमें साफ़ आँकड़ा है। बड़े चैनलों ने इसे कम उठाया, इसलिए कोण अनोखा है। ऊर्जा आत्मनिर्भरता राष्ट्रीय गर्व का मुद्दा है। खोज की माँग मध्यम है।",
+      "score": 66,
+      "views48": 10,
+      "planned": "2026-11-01 15:19",
+      "when": "2026-11-02 05:15"
+    },
+    {
+      "topic": "उपराष्ट्रपति ने दिल्ली के तालकटोरा स्टेडियम में नेशनल ऑर्गन ट्रांसप्लांट गेम्स 2026 का उद्घाटन किया। जिज्ञासा वाला सवाल: अंगदान करने वालों के परिवारों के लिए यह खेल क्यों है, और भारत में अंगदान की क्या स्थिति है?",
+      "why": "1 नवंबर का ताज़ा आयोजन और जनहित से जुड़ा कम चर्चित कोण। अंगदान के आँकड़े NOTTO और स्वास्थ्य मंत्रालय से दोहरे स्रोत से जाँचे जा सकते हैं। राष्ट्रीय गर्व और मानवीय पहलू मज़बूत हैं, पर सीधी खोज माँग कम है।",
+      "score": 62,
+      "views48": 8,
+      "planned": "2026-11-01 15:19",
+      "when": "2026-11-02 07:20"
+    },
+    {
+      "topic": "राष्ट्रपति ने हरियाणा दिवस पर कुरुक्षेत्र में कहा कि बेटी बचाओ, बेटी पढ़ाओ अभियान महिला सशक्तिकरण का मील का पत्थर है (1 नवंबर 2026)। जिज्ञासा वाला सवाल: अभियान शुरू होने के बाद से हरियाणा के लिंगानुपात के सरकारी आँकड़े कितने बदले?",
+      "why": "ताज़ा सरकारी योजना की उपलब्धि है, और हिंदी भाषी दर्शकों के लिए सीधे प्रासंगिक है। पुराने बनाम नए लिंगानुपात के आँकड़े दो स्रोतों से जाँचकर अनोखा कोण बनता है। महिला आरक्षण वाले पिछले Short से अलग विषय है।",
+      "score": 64,
+      "views48": 10,
+      "planned": "2026-11-01 15:19",
+      "when": "2026-11-03 05:15"
+    },
+    {
+      "topic": "विदेश मंत्री जयशंकर ने अटलांटा के भारतीय वाणिज्य दूतावास में सरदार वल्लभभाई पटेल की प्रतिमा का अनावरण किया। यह राष्ट्रीय एकता दिवस (31 अक्टूबर) के आसपास हुआ। जिज्ञासा वाला सवाल: विदेशों में भारतीय मिशनों में पटेल की प्रतिमा का क्या महत्व है, और अमेरिका में कितने भारतीय वाणिज्य दूतावास हैं?",
+      "why": "कूटनीति और राष्ट्रीय गर्व पर केंद्रित, 1 नवंबर की ताज़ा ख़बर। हिंदी दर्शकों से भावनात्मक जुड़ाव है। न्यूज़ऑन एयर की ख़बर है और MEA से पुष्टि चाहिए। खोज की माँग कम है, पर कोण कम कवर हुआ है।",
+      "score": 58,
+      "views48": 8,
+      "planned": "2026-11-01 15:19",
+      "when": "2026-11-03 07:20"
+    }
+  ],
+  "yt-sawaal": [
+    {
+      "topic": "CAG की रिपोर्ट: 2025-26 में ऑडिट के बाद ₹4,251.34 करोड़ की वसूली, पर कई बड़े मामलों में वसूली बताई गई रकम से कम #Shorts",
+      "why": "CAG की ताज़ा 'इम्पैक्ट रिपोर्ट' पर Business Standard की रिपोर्ट के अनुसार वसूली ₹4,251.34 करोड़ रही, जबकि कई बड़े मामलों में ऑडिटर की बताई रकम से कम वसूली हुई। खुला सवाल यह है कि बाकी रकम का क्या हुआ। यह जनता के पैसे की जवाबदेही का सवाल है और भारत की ऑडिट संस्था की भूमिका दिखाता है। दूसरा स्रोत CAG की वेबसाइट है।",
+      "score": 66,
+      "views48": 45,
+      "planned": "2026-11-01 15:19",
+      "when": "2026-11-01 05:40"
+    },
+    {
+      "topic": "बिहार विधान परिषद की 8 सीटें: BJP को 3, और जन सुराज का पहला खाता। स्नातक वोटर कैसे चुनते हैं MLC? #Shorts",
+      "why": "28 अक्टूबर को आई गिनती में 8 सीटों के नतीजे आए: BJP को 3 सीटें मिलीं और जन सुराज ने उच्च सदन में पहली जीत दर्ज की (India TV News)। कम चर्चित पहलू यह है कि स्नातक और शिक्षक क्षेत्रों के सीमित मतदाता कैसे चुनते हैं और वोटर सूची कैसे बनती है। यह भारतीय लोकतंत्र के उच्च सदन का तरीका समझाता है। दूसरा स्रोत चुनाव आयोग के नतीजे होंगे।",
+      "score": 62,
+      "views48": 40,
+      "planned": "2026-11-01 15:19",
+      "when": "2026-11-01 07:45"
+    },
+    {
+      "topic": "बंगाल में किताबों की बिक्री: BJP का ₹2 करोड़ से ज़्यादा का दावा, CPI(M) की 104% बढ़ोतरी। दोनों के आंकड़ों का पैमाना अलग क्यों? #Shorts",
+      "why": "India Today Hindi ने बताया कि दुर्गा पूजा में BJP ने ₹2 करोड़ से ज़्यादा की किताबें बिकने का दावा किया, जबकि CPI(M) ने बिक्री में 104% बढ़ोतरी बताई। दोनों के पैमाने अलग हैं, इसलिए तुलना मुश्किल है। यह पार्टी विवाद नहीं बल्कि आंकड़ों को सही तरह पढ़ने का सवाल है। पढ़ने की संस्कृति का पहलू राष्ट्रीय गर्व से जुड़ता है। दूसरा स्रोत दोनों पार्टियों के बयान होंगे।",
+      "score": 58,
+      "views48": 45,
+      "planned": "2026-11-01 15:19",
+      "when": "2026-11-02 05:40"
+    },
+    {
+      "topic": "दिल्ली में INDIA ब्लॉक की रैली: 10 लाख लोगों का दावा। भीड़ की गिनती आख़िर कैसे होती है? #Shorts",
+      "why": "आज तक के अनुसार रैली में 10 लाख लोगों के जुटने का दावा किया गया। रामलीला मैदान की क्षमता और भीड़ गिनने के तरीकों पर तथ्य-आधारित व्याख्या हो सकती है। यह एक दावे को परखने का तरीका बताता है। चैनल कोई पक्ष नहीं लेगा। प्रसारण से पहले तारीख़ और दूसरे स्रोत की पुष्टि ज़रूरी है।",
+      "score": 55,
+      "views48": 50,
+      "planned": "2026-11-01 15:19",
+      "when": "2026-11-02 07:45"
+    },
+    {
+      "topic": "राष्ट्रीय स्तर पर भारतनेट: CAG की परफ़ॉर्मेंस ऑडिट रिपोर्ट गाँवों के इंटरनेट पर क्या सवाल छोड़ती है? #Shorts",
+      "why": "13 अगस्त 2026 को CAG की भारतनेट पर परफ़ॉर्मेंस ऑडिट रिपोर्ट संसद में रखी गई (CAG प्रेस रिलीज़)। गाँव-गाँव तक इंटरनेट पहुँचाना एक राष्ट्रीय गौरव का वादा है। रिपोर्ट के आंकड़े देखकर बताया जाएगा कि काम कितना हुआ और क्या सवाल बाकी हैं। प्रसारण से पहले संख्याओं की दूसरे स्रोत से पुष्टि करनी होगी। यह ताज़ा ख़बर नहीं है, इसलिए यह एक अच्छे स्रोत वाला एक्सप्लेनर है।",
+      "score": 50,
+      "views48": 35,
+      "planned": "2026-11-01 15:19",
+      "when": "2026-11-03 05:40"
+    },
+    {
+      "topic": "CAG रिपोर्ट 2024-25: केंद्र का पूंजीगत खर्च ₹8,58,256 करोड़, पिछले साल से 6.33% ज़्यादा। यह पैसा कहाँ गया? #Shorts",
+      "why": "2 अप्रैल 2026 को संसद में रखी गई CAG की 'यूनियन गवर्नमेंट अकाउंट्स' रिपोर्ट में ये आंकड़े हैं (CAG प्रेस रिलीज़)। सड़क, रेल जैसी लंबी अवधि की संपत्तियों पर खर्च का सवाल राष्ट्र निर्माण से जुड़ा है। रिपोर्ट का खर्च-वार ब्योरा दूसरा स्रोत होगा। यह एक्सप्लेनर है और ताज़ा ख़बर नहीं।",
+      "score": 48,
+      "views48": 30,
+      "planned": "2026-11-01 15:19",
+      "when": "2026-11-03 07:45"
+    }
   ]
- },
- "yt-instinct": [
-  {
-   "topic": "Owen et Mzee : l'hippopotame orphelin et la tortue géante qui sont devenus inséparables (histoire vraie)",
-   "why": "Histoire vraie célèbre d'amitié avec de nombreuses photos libres sur Wikimedia Commons, ton chaleureux adapté aux seniors.",
-   "score": 58,
-   "views48": 1500,
-   "planned": "2026-11-02 22:25",
-   "when": "2026-11-03 04:00"
-  },
-  {
-   "topic": "Christian, le lion élevé à Londres et retrouvé en Afrique par ses deux amis (histoire vraie)",
-   "why": "Histoire de retrouvailles émouvante, photos et images disponibles sur Commons, très appréciée du public âgé francophone.",
-   "score": 57,
-   "views48": 1700,
-   "planned": "2026-11-02 22:25",
-   "when": "2026-11-03 04:25"
-  },
-  {
-   "topic": "Dindim, le manchot qui revient chaque année voir l'homme qui l'a sauvé au Brésil (histoire vraie)",
-   "why": "Histoire vraie de loyauté et de retour, photos réelles de l'animal disponibles, thème proche des succès de la chaîne.",
-   "score": 56,
-   "views48": 1600,
-   "planned": "2026-11-02 22:25",
-   "when": "2026-11-03 04:50"
-  },
-  {
-   "topic": "Knut, l'ourson polaire du zoo de Berlin élevé par un soigneur (histoire vraie)",
-   "why": "Histoire vraie connue en Europe, nombreuses photos libres sur Commons, ton doux et familier pour les seniors.",
-   "score": 54,
-   "views48": 1200,
-   "planned": "2026-11-02 22:25",
-   "when": "2026-11-03 05:15"
-  },
-  {
-   "topic": "Hao Hao et le chien Hachi... non : Lonesome George, la dernière tortue de Pinta aux Galápagos (histoire vraie)",
-   "why": "Histoire vraie d'un animal nommé avec de nombreuses photos Commons, forte charge émotionnelle et éducative.",
-   "score": 50,
-   "views48": 900,
-   "planned": "2026-11-02 22:25",
-   "when": "2026-11-03 05:40"
-  },
-  {
-   "topic": "Hamlet... non : Cher Ami, le pigeon voyageur qui a porté un message malgré ses blessures (histoire vraie)",
-   "why": "Histoire vraie de courage d'un animal nommé, photos disponibles sur Commons, intéresse un public plus âgé amateur d'histoire.",
-   "score": 52,
-   "views48": 1000,
-   "planned": "2026-11-02 22:25",
-   "when": "2026-11-03 06:05"
-  }
- ],
- "yt-instinct-ja": [
-  {
-   "topic": "カラスは人の顔を覚えている:ワシントン大学のお面実験と、東京のカラスの話",
-   "why": "高齢の視聴者にも身近なカラスの話題です。お面をかぶった人を何年も覚えていた、という公開された研究があり、驚きがはっきり伝わります。日本の都市のカラスと結びつけられます。",
-   "score": 62,
-   "views48": 60,
-   "planned": "2026-11-01 15:19",
-   "when": "2026-11-01 04:50"
-  },
-  {
-   "topic": "奈良のシカはおじぎをする:せんべいを求める行動と人との暮らし",
-   "why": "奈良公園のシカは日本の視聴者になじみ深く、おじぎの行動も目で見て分かります。昔からの共存の歴史にも触れられます。",
-   "score": 60,
-   "views48": 55,
-   "planned": "2026-11-01 15:19",
-   "when": "2026-11-01 06:55"
-  },
-  {
-   "topic": "ゾウは亡くなった仲間を悼む:家族のきずなを示す観察記録",
-   "why": "動物の心と友情という、このチャンネルの中心テーマです。落ち着いた語りで、人間の気持ちとも比べやすい話です。",
-   "score": 58,
-   "views48": 50,
-   "planned": "2026-11-01 15:19",
-   "when": "2026-11-01 09:00"
-  },
-  {
-   "topic": "タコのオクトパスは瓶のふたを内側から閉める:水族館で記録された賢さ",
-   "why": "目で見て分かる賢い行動で、日本人にはなじみ深いタコの話です。短い動画で一つのアイデアを伝えやすいです。",
-   "score": 57,
-   "views48": 45,
-   "planned": "2026-11-01 15:19",
-   "when": "2026-11-01 10:15"
-  },
-  {
-   "topic": "ニホンザルの温泉入り:長野の雪ザルが寒さをしのぐ方法",
-   "why": "日本ならではの動物の話題で、高齢の視聴者にも温泉は身近です。研究では温泉に入るとストレスが減ることが示されています。",
-   "score": 63,
-   "views48": 65,
-   "planned": "2026-11-01 15:19",
-   "when": "2026-11-01 10:40"
-  },
-  {
-   "topic": "イヌは人の気持ちが分かる:飼い主の表情を読み取る研究",
-   "why": "犬は幅広い世代に人気で、人との絆を伝える話です。研究結果をやさしい言葉で説明でき、いつでも見てもらえる内容です。",
-   "score": 59,
-   "views48": 55,
-   "planned": "2026-11-01 15:19",
-   "when": "2026-11-01 11:05"
-  }
- ],
- "yt-sankalp": [
-  {
-   "topic": "1 नवंबर 2026: बेंगलुरु–मुंबई वंदे भारत स्लीपर को रेल मंत्री अश्विनी वैष्णव ने हरी झंडी दिखाई। IT हब और वित्तीय राजधानी अब रात भर की ट्रेन से जुड़ेंगी। रूट और सफ़र के समय की बारीकी दो सरकारी स्रोतों से जाँचें।",
-   "why": "ताज़ा उद्घाटन, जिसमें स्लीपर ट्रेन का नया पहलू है और जो भारत की प्रगति दिखाता है। न्यूज़ऑन एयर और स्कूल असेंबली हेडलाइन्स ने इसे 1 नवंबर को कवर किया। जिज्ञासा वाला सवाल: स्लीपर वंदे भारत से दो टेक हब के बीच रात का सफ़र कैसे बदलेगा?",
-   "score": 72,
-   "views48": 18,
-   "planned": "2026-11-01 15:19",
-   "when": "2026-11-01 05:15"
-  },
-  {
-   "topic": "जियो प्लेटफ़ॉर्म्स का ₹30,200 करोड़ का रिकॉर्ड IPO। लिस्टिंग के बाद यह भारत की दूसरी सबसे क़ीमती कंपनी बनी। जिज्ञासा वाला सवाल: इतना बड़ा IPO भारतीय निवेशकों और बाज़ार की ताक़त के बारे में क्या बताता है?",
-   "why": "पिछले 24-48 घंटे की बड़ी आर्थिक ख़बर, जिसमें एक ठोस आँकड़ा है। 18-45 साल के निवेश में रुचि रखने वाले दर्शकों के लिए प्रासंगिक है और राष्ट्रीय गर्व से जुड़ती है। इंडियन ओपिनियन के डाइजेस्ट में है। दूसरे स्रोत से पुष्टि ज़रूरी है।",
-   "score": 70,
-   "views48": 15,
-   "planned": "2026-11-01 15:19",
-   "when": "2026-11-01 07:20"
-  },
-  {
-   "topic": "भारत का कोयला आयात एक साल में 111 से घटकर 104 मिलियन टन रह गया (न्यूज़ऑन एयर, 1 नवंबर 2026)। जिज्ञासा वाला सवाल: घरेलू उत्पादन बढ़ने से आयात का बिल और आत्मनिर्भरता पर क्या असर पड़ा?",
-   "why": "सरकारी डेटा रिलीज़ है, जिसमें साफ़ आँकड़ा है। बड़े चैनलों ने इसे कम उठाया, इसलिए कोण अनोखा है। ऊर्जा आत्मनिर्भरता राष्ट्रीय गर्व का मुद्दा है। खोज की माँग मध्यम है।",
-   "score": 66,
-   "views48": 10,
-   "planned": "2026-11-01 15:19",
-   "when": "2026-11-02 05:15"
-  },
-  {
-   "topic": "उपराष्ट्रपति ने दिल्ली के तालकटोरा स्टेडियम में नेशनल ऑर्गन ट्रांसप्लांट गेम्स 2026 का उद्घाटन किया। जिज्ञासा वाला सवाल: अंगदान करने वालों के परिवारों के लिए यह खेल क्यों है, और भारत में अंगदान की क्या स्थिति है?",
-   "why": "1 नवंबर का ताज़ा आयोजन और जनहित से जुड़ा कम चर्चित कोण। अंगदान के आँकड़े NOTTO और स्वास्थ्य मंत्रालय से दोहरे स्रोत से जाँचे जा सकते हैं। राष्ट्रीय गर्व और मानवीय पहलू मज़बूत हैं, पर सीधी खोज माँग कम है।",
-   "score": 62,
-   "views48": 8,
-   "planned": "2026-11-01 15:19",
-   "when": "2026-11-02 07:20"
-  },
-  {
-   "topic": "राष्ट्रपति ने हरियाणा दिवस पर कुरुक्षेत्र में कहा कि बेटी बचाओ, बेटी पढ़ाओ अभियान महिला सशक्तिकरण का मील का पत्थर है (1 नवंबर 2026)। जिज्ञासा वाला सवाल: अभियान शुरू होने के बाद से हरियाणा के लिंगानुपात के सरकारी आँकड़े कितने बदले?",
-   "why": "ताज़ा सरकारी योजना की उपलब्धि है, और हिंदी भाषी दर्शकों के लिए सीधे प्रासंगिक है। पुराने बनाम नए लिंगानुपात के आँकड़े दो स्रोतों से जाँचकर अनोखा कोण बनता है। महिला आरक्षण वाले पिछले Short से अलग विषय है।",
-   "score": 64,
-   "views48": 10,
-   "planned": "2026-11-01 15:19",
-   "when": "2026-11-03 05:15"
-  },
-  {
-   "topic": "विदेश मंत्री जयशंकर ने अटलांटा के भारतीय वाणिज्य दूतावास में सरदार वल्लभभाई पटेल की प्रतिमा का अनावरण किया। यह राष्ट्रीय एकता दिवस (31 अक्टूबर) के आसपास हुआ। जिज्ञासा वाला सवाल: विदेशों में भारतीय मिशनों में पटेल की प्रतिमा का क्या महत्व है, और अमेरिका में कितने भारतीय वाणिज्य दूतावास हैं?",
-   "why": "कूटनीति और राष्ट्रीय गर्व पर केंद्रित, 1 नवंबर की ताज़ा ख़बर। हिंदी दर्शकों से भावनात्मक जुड़ाव है। न्यूज़ऑन एयर की ख़बर है और MEA से पुष्टि चाहिए। खोज की माँग कम है, पर कोण कम कवर हुआ है।",
-   "score": 58,
-   "views48": 8,
-   "planned": "2026-11-01 15:19",
-   "when": "2026-11-03 07:20"
-  }
- ],
- "yt-sawaal": [
-  {
-   "topic": "CAG की रिपोर्ट: 2025-26 में ऑडिट के बाद ₹4,251.34 करोड़ की वसूली, पर कई बड़े मामलों में वसूली बताई गई रकम से कम #Shorts",
-   "why": "CAG की ताज़ा 'इम्पैक्ट रिपोर्ट' पर Business Standard की रिपोर्ट के अनुसार वसूली ₹4,251.34 करोड़ रही, जबकि कई बड़े मामलों में ऑडिटर की बताई रकम से कम वसूली हुई। खुला सवाल यह है कि बाकी रकम का क्या हुआ। यह जनता के पैसे की जवाबदेही का सवाल है और भारत की ऑडिट संस्था की भूमिका दिखाता है। दूसरा स्रोत CAG की वेबसाइट है।",
-   "score": 66,
-   "views48": 45,
-   "planned": "2026-11-01 15:19",
-   "when": "2026-11-01 05:40"
-  },
-  {
-   "topic": "बिहार विधान परिषद की 8 सीटें: BJP को 3, और जन सुराज का पहला खाता। स्नातक वोटर कैसे चुनते हैं MLC? #Shorts",
-   "why": "28 अक्टूबर को आई गिनती में 8 सीटों के नतीजे आए: BJP को 3 सीटें मिलीं और जन सुराज ने उच्च सदन में पहली जीत दर्ज की (India TV News)। कम चर्चित पहलू यह है कि स्नातक और शिक्षक क्षेत्रों के सीमित मतदाता कैसे चुनते हैं और वोटर सूची कैसे बनती है। यह भारतीय लोकतंत्र के उच्च सदन का तरीका समझाता है। दूसरा स्रोत चुनाव आयोग के नतीजे होंगे।",
-   "score": 62,
-   "views48": 40,
-   "planned": "2026-11-01 15:19",
-   "when": "2026-11-01 07:45"
-  },
-  {
-   "topic": "बंगाल में किताबों की बिक्री: BJP का ₹2 करोड़ से ज़्यादा का दावा, CPI(M) की 104% बढ़ोतरी। दोनों के आंकड़ों का पैमाना अलग क्यों? #Shorts",
-   "why": "India Today Hindi ने बताया कि दुर्गा पूजा में BJP ने ₹2 करोड़ से ज़्यादा की किताबें बिकने का दावा किया, जबकि CPI(M) ने बिक्री में 104% बढ़ोतरी बताई। दोनों के पैमाने अलग हैं, इसलिए तुलना मुश्किल है। यह पार्टी विवाद नहीं बल्कि आंकड़ों को सही तरह पढ़ने का सवाल है। पढ़ने की संस्कृति का पहलू राष्ट्रीय गर्व से जुड़ता है। दूसरा स्रोत दोनों पार्टियों के बयान होंगे।",
-   "score": 58,
-   "views48": 45,
-   "planned": "2026-11-01 15:19",
-   "when": "2026-11-02 05:40"
-  },
-  {
-   "topic": "दिल्ली में INDIA ब्लॉक की रैली: 10 लाख लोगों का दावा। भीड़ की गिनती आख़िर कैसे होती है? #Shorts",
-   "why": "आज तक के अनुसार रैली में 10 लाख लोगों के जुटने का दावा किया गया। रामलीला मैदान की क्षमता और भीड़ गिनने के तरीकों पर तथ्य-आधारित व्याख्या हो सकती है। यह एक दावे को परखने का तरीका बताता है। चैनल कोई पक्ष नहीं लेगा। प्रसारण से पहले तारीख़ और दूसरे स्रोत की पुष्टि ज़रूरी है।",
-   "score": 55,
-   "views48": 50,
-   "planned": "2026-11-01 15:19",
-   "when": "2026-11-02 07:45"
-  },
-  {
-   "topic": "राष्ट्रीय स्तर पर भारतनेट: CAG की परफ़ॉर्मेंस ऑडिट रिपोर्ट गाँवों के इंटरनेट पर क्या सवाल छोड़ती है? #Shorts",
-   "why": "13 अगस्त 2026 को CAG की भारतनेट पर परफ़ॉर्मेंस ऑडिट रिपोर्ट संसद में रखी गई (CAG प्रेस रिलीज़)। गाँव-गाँव तक इंटरनेट पहुँचाना एक राष्ट्रीय गौरव का वादा है। रिपोर्ट के आंकड़े देखकर बताया जाएगा कि काम कितना हुआ और क्या सवाल बाकी हैं। प्रसारण से पहले संख्याओं की दूसरे स्रोत से पुष्टि करनी होगी। यह ताज़ा ख़बर नहीं है, इसलिए यह एक अच्छे स्रोत वाला एक्सप्लेनर है।",
-   "score": 50,
-   "views48": 35,
-   "planned": "2026-11-01 15:19",
-   "when": "2026-11-03 05:40"
-  },
-  {
-   "topic": "CAG रिपोर्ट 2024-25: केंद्र का पूंजीगत खर्च ₹8,58,256 करोड़, पिछले साल से 6.33% ज़्यादा। यह पैसा कहाँ गया? #Shorts",
-   "why": "2 अप्रैल 2026 को संसद में रखी गई CAG की 'यूनियन गवर्नमेंट अकाउंट्स' रिपोर्ट में ये आंकड़े हैं (CAG प्रेस रिलीज़)। सड़क, रेल जैसी लंबी अवधि की संपत्तियों पर खर्च का सवाल राष्ट्र निर्माण से जुड़ा है। रिपोर्ट का खर्च-वार ब्योरा दूसरा स्रोत होगा। यह एक्सप्लेनर है और ताज़ा ख़बर नहीं।",
-   "score": 48,
-   "views48": 30,
-   "planned": "2026-11-01 15:19",
-   "when": "2026-11-03 07:45"
-  }
- ]
 }
