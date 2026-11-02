@@ -402,17 +402,24 @@ def _heygen_wait(url: str, path: Path) -> float:
     raise RuntimeError("HeyGen took over 15 minutes")
 
 
-def heygen_clip(prompt: str, path: Path, image: Path = None) -> float:
-    """A 5 s silent-use shot from HeyGen Video ($0.018 a second at 768p): from the prompt alone, or starting on
-    image (a character acting). Saves it to path and returns its cost in dollars."""
+def heygen_clip(prompt: str, path: Path, image: Path = None, reference: Path = None) -> float:
+    """A 5 s silent-use shot from HeyGen Video at 768p: from the prompt alone or starting on image ($0.018 a
+    second), or with reference, a character's photo HeyGen keeps the same in every shot ($0.05 a second; the
+    prompt calls it <Picture 1>). Saves it to path and returns its cost in dollars."""
     body = {"model": "heygen-video-1", "prompt": prompt + " No music, no dialogue, no logos or printed words.",
             "duration": 5, "resolution": "768p"}
-    body.update({"mode": "image_to_video", "image": {"type": "asset_id", "asset_id": _heygen_upload(image)}} if image
-                else {"mode": "text_to_video", "aspect_ratio": "9:16"})
+    if reference:
+        body.update({"mode": "reference_to_video", "aspect_ratio": "9:16",
+                     "reference_images": [{"type": "asset_id", "asset_id": _heygen_upload(reference)}]})
+    elif image:
+        body.update({"mode": "image_to_video", "image": {"type": "asset_id", "asset_id": _heygen_upload(image)}})
+    else:
+        body.update({"mode": "text_to_video", "aspect_ratio": "9:16"})
     req = urllib.request.Request("https://api.heygen.com/v3/models/videos", data=json.dumps(body).encode(), headers={
         "x-api-key": os.environ["HEYGEN_API_KEY"].strip(), "Content-Type": "application/json"})
     video_id = json.load(urllib.request.urlopen(req, timeout=60))["data"]["video_id"]
-    return 0.018 * (_heygen_wait(f"https://api.heygen.com/v3/models/videos/{video_id}", path) or 5)
+    rate = 0.05 if reference else 0.018
+    return rate * (_heygen_wait(f"https://api.heygen.com/v3/models/videos/{video_id}", path) or 5)
 
 
 def heygen(still: Path, audio: Path, path: Path) -> float:
@@ -483,17 +490,21 @@ def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float
             try:
                 if not path.exists():
                     prompt = f"{scene.image_prompt}. Natural, subtle real movement, cinematic drama scene. {STYLE}"
-                    try:
-                        still = _pose(scene, actor, i, work, talking=False)
-                    except Exception as e:  # fal.ai down or out of credit: their usual photo acts
-                        print(f"    no posed photo ({e}); using {actor}'s reference photo")
-                        still = host_photo(actor)
                     if os.environ.get("HEYGEN_API_KEY"):
+                        # Owner, 2 Nov 2026: HeyGen reference mode, so the character stays the same in every shot
+                        # (posing from one photo kept redrawing the animal). No posed still needed.
                         try:
-                            paid["usd"] += heygen_clip(prompt, path, image=still)
+                            paid["usd"] += heygen_clip(
+                                f"The {actor} in <Picture 1>, exactly as in the picture: {HOSTS[actor].get('look', '')}. "
+                                f"{prompt}", path, reference=host_photo(actor))
                         except Exception as e:  # Kling below
                             print(f"    HeyGen Video failed ({e} {getattr(e, 'read', lambda: b'')()[:200]!r}); using Kling")
                     if not path.exists():
+                        try:
+                            still = _pose(scene, actor, i, work, talking=False)
+                        except Exception as e:  # fal.ai down or out of credit: their usual photo acts
+                            print(f"    no posed photo ({e}); using {actor}'s reference photo")
+                            still = host_photo(actor)
                         import fal_client
                         result = fal_client.subscribe(ACT_MODEL, arguments={  # 5 s, looped if the line is longer
                             "prompt": prompt, "image_url": fal_client.upload_file(str(still)),
