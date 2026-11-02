@@ -430,7 +430,9 @@ def _pose(scene: "Scene", name: str, i: int, work: Path, talking: bool) -> Path:
     still = work / f"host-{i:03}.png"
     if not still.exists():
         result = fal_client.subscribe(HOST_MODEL, arguments={
-            "prompt": f"The same person, same face, hair and clothes: {scene.image_prompt}. "
+            "prompt": f"The same person or animal as in the photo, same face, hair, markings and clothes: {scene.image_prompt}. "
+                      f"Their look, unchanged: {HOSTS[name].get('look', '')}. Only the people and animals described are in "
+                      f"frame: no extra people, hands, phones or cameras. "  # owner, 2 Nov 2026: clear prompts, no stray people
                       f"{'Looking at the camera. ' if talking else ''}{STYLE}",
             "image_url": fal_client.upload_file(str(host_photo(name))), "aspect_ratio": "9:16"})
         urllib.request.urlretrieve(result["images"][0]["url"], still)
