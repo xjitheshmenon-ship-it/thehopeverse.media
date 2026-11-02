@@ -1218,6 +1218,8 @@ if __name__ == "__main__":
         package = json.loads(path.read_text(encoding="utf-8"))
         if "--only" in sys.argv and package["channel_id"] != sys.argv[sys.argv.index("--only") + 1] and path not in shared:
             continue  # e.g. python video.py --only yt-kissa: post just that channel's videos
+        if (one := os.environ.get("ONLY_FILE")) and path.name.split(".")[0] != one.split(".")[0]:
+            continue  # a by-hand remake or post touches only that Short (and its dubs), never other waiting ones
         if package.get("held"):
             continue  # failed its relevance check: never made or posted
         if "youtube_id" not in package and not path.with_suffix(".mp4").exists() and not budget_ok():
