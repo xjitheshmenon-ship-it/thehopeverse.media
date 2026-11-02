@@ -161,6 +161,8 @@ def run(rows: list) -> list:
             except Exception as e:  # a channel's sign-in problem shouldn't stop the others
                 print(f"::warning::Uploads of {c['id']}: {str(e)[:300]}")
     new = []
+    if (HERE / "PAUSED").exists():  # owner's hold: no paid Claude studies while only HQ numbers run (2 Nov 2026)
+        return []
     for r in find(rows, studies, datetime.now()):
         if not budget_ok() or r["channel"] not in channels:
             continue
