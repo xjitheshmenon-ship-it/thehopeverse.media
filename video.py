@@ -736,6 +736,8 @@ def not_ready() -> str:
         client.messages.create(model=HELPER_MODEL, max_tokens=1, messages=[{"role": "user", "content": "ok"}])
     except Exception as e:
         return f"Anthropic: {str(e)[:200]}"
+    if not os.environ.get("FAL_KEY") and not os.environ.get("HEYGEN_API_KEY"):
+        return ""  # free pictures only (Commons, Pixabay): no paid maker needed
     try:
         urllib.request.urlopen(urllib.request.Request(
             "https://rest.fal.ai/storage/auth/token?storage_type=fal-cdn-v3", data=b"{}", method="POST",
