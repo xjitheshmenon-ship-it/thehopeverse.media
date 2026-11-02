@@ -404,7 +404,16 @@ def _heygen_wait(url: str, path: Path) -> float:
 
 def heygen_clip(prompt: str, path: Path, image: Path = None) -> float:
     """A 5 s silent-use shot from HeyGen Video ($0.018 a second at 768p): from the prompt alone, or starting on
-    image (a character acting). Saves it to path and returns its cost in dollars."""
+    image (a character acting). Saves it to path and returns its cost in dollars.
+    With MODAL_TOKEN_ID set, LTX-2.5 on Modal makes it instead (owner, 2 Nov 2026: ~$0.05 a shot); HeyGen if LTX fails."""
+    if os.environ.get("MODAL_TOKEN_ID"):
+        try:
+            from ltx import ltx_clip
+            return ltx_clip(prompt, path, image)
+        except Exception as e:
+            print(f"    LTX failed ({e}); trying HeyGen")
+            if not os.environ.get("HEYGEN_API_KEY"):
+                raise
     body = {"model": "heygen-video-1", "prompt": prompt + " No music, no dialogue, no logos or printed words.",
             "duration": 5, "resolution": "768p"}
     body.update({"mode": "image_to_video", "image": {"type": "asset_id", "asset_id": _heygen_upload(image)}} if image
@@ -477,18 +486,26 @@ def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float
             except Exception as e:
                 print(f"    no talking shot of {scene.speaker}: {e}")
     actor = scene.on_screen if scene.on_screen in HOSTS else scene.speaker
-    if cast_only and actor in HOSTS and (os.environ.get("HEYGEN_API_KEY") or os.environ.get("FAL_KEY")):
+    if cast_only and actor in HOSTS and (os.environ.get("MODAL_TOKEN_ID") or os.environ.get("HEYGEN_API_KEY")
+                                         or os.environ.get("FAL_KEY")):
         path = work / f"act-{i:03}.mp4"  # no lips to match, so dubs reuse it
         if path.exists() or _can_pay():
             try:
                 if not path.exists():
                     prompt = f"{scene.image_prompt}. Natural, subtle real movement, cinematic drama scene. {STYLE}"
-                    try:
-                        still = _pose(scene, actor, i, work, talking=False)
-                    except Exception as e:  # fal.ai down or out of credit: their usual photo acts
-                        print(f"    no posed photo ({e}); using {actor}'s reference photo")
-                        still = host_photo(actor)
-                    if os.environ.get("HEYGEN_API_KEY"):
+                    if os.environ.get("MODAL_TOKEN_ID"):  # owner, 2 Nov 2026: LTX-2.5 on Modal first (~$0.10 a shot)
+                        try:
+                            from ltx import ltx_clip  # character placed into the scene (free Qwen), then animated
+                            paid["usd"] += ltx_clip(prompt, path, host_photo(actor), scene.image_prompt)
+                        except Exception as e:  # HeyGen / Kling below
+                            print(f"    LTX failed ({e}); trying HeyGen")
+                    if not path.exists():
+                        try:
+                            still = _pose(scene, actor, i, work, talking=False)
+                        except Exception as e:  # fal.ai down or out of credit: their usual photo acts
+                            print(f"    no posed photo ({e}); using {actor}'s reference photo")
+                            still = host_photo(actor)
+                    if os.environ.get("HEYGEN_API_KEY") and not path.exists():
                         try:
                             paid["usd"] += heygen_clip(prompt, path, image=still)
                         except Exception as e:  # Kling below
@@ -523,12 +540,12 @@ def background(scene: "Scene", i: int, audio: Path, size: tuple, duration: float
             return _clip(path, size, duration, skip=0.2)  # skip NASA title cards at the start
     except Exception as e:
         print(f"    no NASA footage for '{query}': {e}")
-    if os.environ.get("HEYGEN_API_KEY") or os.environ.get("FAL_KEY"):
+    if os.environ.get("MODAL_TOKEN_ID") or os.environ.get("HEYGEN_API_KEY") or os.environ.get("FAL_KEY"):
         path = work / f"ai-{i:03}.mp4"  # no lips to match, so dubs reuse it
         if path.exists() or _can_pay():
             try:
                 if not path.exists():
-                    if os.environ.get("HEYGEN_API_KEY"):  # HeyGen Video first: about $0.09 a clip against Kling's $0.35
+                    if os.environ.get("MODAL_TOKEN_ID") or os.environ.get("HEYGEN_API_KEY"):  # LTX, else HeyGen Video ($0.09), before Kling's $0.35
                         try:
                             paid["usd"] += heygen_clip(f"{scene.image_prompt}. {STYLE}", path)
                         except Exception as e:

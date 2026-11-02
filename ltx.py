@@ -10,6 +10,7 @@ Needs MODAL_TOKEN_ID / MODAL_TOKEN_SECRET (Modal) and HF_TOKEN (Hugging Face, LT
 Each shot starts on the character's reference photo (hosts/<name>-real.png), like our HeyGen image-to-video.
 """
 import json
+import os
 import time
 from pathlib import Path
 
@@ -59,7 +60,7 @@ def _render(text_only: bool, shots: list) -> list:
 
 
 GPU = dict(gpu="H100", volumes={"/cache": cache}, timeout=3600, max_containers=1, scaledown_window=300,
-           secrets=[modal.Secret.from_local_environ(["HF_TOKEN"])])
+           secrets=[modal.Secret.from_local_environ(["HF_TOKEN"])] if os.environ.get("HF_TOKEN") else [])  # set at deploy; video.py imports ltx_clip without it
 
 
 @app.function(**GPU)
