@@ -26,9 +26,8 @@ cache = modal.Volume.from_name("ltx-cache", create_if_missing=True)  # ~70 GB of
 app = modal.App("hopeverse-ltx", image=image)
 
 
-@app.function(gpu="H100", volumes={"/cache": cache}, timeout=3600, max_containers=1, scaledown_window=300, secrets=[modal.Secret.from_local_environ(["HF_TOKEN"])])
-def make(shots: list) -> list:
-    """shots: [{"prompt", "photo" (png bytes, or None for text-to-video)}] -> [(mp4 bytes, GPU seconds for that shot)]."""
+def _render(text_only: bool, shots: list) -> list:
+    """shots: [{"prompt", "photo" (png bytes)}] -> [(mp4 bytes, GPU seconds for that shot)]."""
     import io
 
     import torch
@@ -38,16 +37,15 @@ def make(shots: list) -> list:
     from PIL import Image
 
     start = time.time()
-    pipe = LTX2ImageToVideoPipeline.from_pretrained(MODEL, dtype=torch.bfloat16)
+    pipe = (LTX2Pipeline if text_only else LTX2ImageToVideoPipeline).from_pretrained(MODEL, dtype=torch.bfloat16)
     pipe.enable_model_cpu_offload()
-    t2v = LTX2Pipeline.from_pipe(pipe)  # same weights, for shots with no starting picture
     cache.commit()
     print(f"model ready in {time.time() - start:.0f} s")
     out = []
     for i, shot in enumerate(shots):
         t = time.time()
-        start_on = {"image": Image.open(io.BytesIO(shot["photo"])).convert("RGB")} if shot.get("photo") else {}
-        video, _audio = (pipe if start_on else t2v)(**start_on, prompt=shot["prompt"],
+        start_on = {} if text_only else {"image": Image.open(io.BytesIO(shot["photo"])).convert("RGB")}
+        video, _audio = pipe(**start_on, prompt=shot["prompt"],
                              negative_prompt=DEFAULT_NEGATIVE_PROMPT, height=HEIGHT, width=WIDTH, num_frames=FRAMES,
                              frame_rate=float(FPS), sigmas=DISTILLED_SIGMA_VALUES, guidance_scale=1.0,
                              audio_guidance_scale=1.0, stg_scale=0.0, audio_stg_scale=0.0, modality_scale=1.0,
@@ -58,6 +56,22 @@ def make(shots: list) -> list:
         out.append((Path(path).read_bytes(), round(time.time() - t)))
         print(f"shot {i}: {out[-1][1]} s")
     return out
+
+
+GPU = dict(gpu="H100", volumes={"/cache": cache}, timeout=3600, max_containers=1, scaledown_window=300,
+           secrets=[modal.Secret.from_local_environ(["HF_TOKEN"])])
+
+
+@app.function(**GPU)
+def make(shots: list) -> list:
+    """Image-to-video: each shot starts on its photo."""
+    return _render(False, shots)
+
+
+@app.function(**GPU)
+def make_text(shots: list) -> list:
+    """Text-to-video for shots with no starting picture (own container: two LTX pipelines don't fit one H100)."""
+    return _render(True, shots)
 
 
 @app.function(gpu="H100", volumes={"/cache": cache}, timeout=1800, max_containers=1, scaledown_window=300)
@@ -118,6 +132,7 @@ def ltx_clip(prompt: str, path: Path, photo: Path = None, scene: str = "") -> fl
     still = photo.read_bytes() if photo else None
     if photo and scene:
         still = modal.Function.from_name("hopeverse-ltx", "pose").remote([{"photo": still, "scene": scene}])[0]
-    mp4, _secs = modal.Function.from_name("hopeverse-ltx", "make").remote([{"prompt": prompt, "photo": still}])[0]
+    mp4, _secs = modal.Function.from_name("hopeverse-ltx", "make" if still else "make_text").remote(
+        [{"prompt": prompt, "photo": still}])[0]
     path.write_bytes(mp4)
     return round((time.time() - t) * 0.001097, 3)  # ponytail: wall time incl. queueing, so an upper bound
