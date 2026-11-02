@@ -642,7 +642,7 @@ def speak(text: str, voice: str, path: Path, pitch: str = "+0Hz", eleven: str = 
     if eleven and os.environ.get("ELEVENLABS_API_KEY"):
         try:
             req = urllib.request.Request(
-                f"https://api.elevenlabs.io/v1/text-to-speech/{eleven}?output_format=mp3_44100_192",
+                f"https://api.elevenlabs.io/v1/text-to-speech/{eleven}?output_format=mp3_44100_128",
                 data=json.dumps({"text": text, "model_id": ELEVEN_MODEL, "voice_settings": ELEVEN_SETTINGS,
                                  "previous_text": before,
                                  "next_text": after}).encode(),
