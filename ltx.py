@@ -16,7 +16,7 @@ MODEL = "Lightricks/LTX-2.5-Diffusers"
 HEIGHT, WIDTH, FRAMES, FPS = 1280, 704, 121, 24  # 9:16, about 5 s (frames % 8 == 1, sides divisible by 32)
 
 image = (modal.Image.debian_slim(python_version="3.12").apt_install("git", "ffmpeg")
-         .pip_install("torch", "transformers", "accelerate", "sentencepiece", "imageio", "imageio-ffmpeg", "av",
+         .pip_install("torch", "torchvision", "transformers", "accelerate", "sentencepiece", "imageio", "imageio-ffmpeg", "av",
                       "huggingface_hub[hf_transfer]", "git+https://github.com/huggingface/diffusers")
          .env({"HF_HUB_ENABLE_HF_TRANSFER": "1", "HF_HOME": "/cache"}))
 cache = modal.Volume.from_name("ltx-cache", create_if_missing=True)  # ~70 GB of weights, downloaded once
