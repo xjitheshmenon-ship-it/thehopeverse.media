@@ -129,11 +129,12 @@ def ltx_clip(prompt: str, path: Path, photo: Path = None, scene: str = "") -> fl
     """For video.py and film.py (owner, 2 Nov 2026: LTX makes every AI shot, HeyGen only talking hosts).
     photo + scene: the character placed into the scene (Qwen-Image-Edit), then animated; photo alone: animated as it is;
     neither: text-to-video. Saves a 5 s silent mp4 to path and returns the cost in dollars (H100 rate)."""
-    t = time.time()
-    still = photo.read_bytes() if photo else None
+    still, gpu = photo.read_bytes() if photo else None, 0
     if photo and scene:
         still = modal.Function.from_name("hopeverse-ltx", "pose").remote([{"photo": still, "scene": scene}])[0]
-    mp4, _secs = modal.Function.from_name("hopeverse-ltx", "make" if still else "make_text").remote(
+        gpu += 30  # ponytail: typical Qwen still time on a warm H100; pose() could return its own seconds
+    mp4, secs = modal.Function.from_name("hopeverse-ltx", "make" if still else "make_text").remote(
         [{"prompt": prompt, "photo": still}])[0]
     path.write_bytes(mp4)
-    return round((time.time() - t) * 0.001097, 3)  # ponytail: wall time incl. queueing, so an upper bound
+    # GPU time only: wall time counts the queue (scenes run 6 at a time on one GPU) and ate the $3 video cap on 3 Nov
+    return round((gpu + secs) * 0.001097, 3)
