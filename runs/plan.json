@@ -75,15 +75,6 @@
  },
  "yt-instinct": [
   {
-   "topic": "Knut, l'ourson polaire de Berlin élevé au biberon par son soigneur Thomas (histoire vraie)",
-   "why": "Histoire vraie célèbre (zoo de Berlin, 2007), lien humain-animal fort ; beaucoup de photos libres de Knut sur Wikimedia Commons. (choisi à la main par Claude, 2 nov.)",
-   "score": 63,
-   "views48": 1500,
-   "hand": true,
-   "planned": "2026-11-02 17:00",
-   "when": "2026-11-03 04:25"
-  },
-  {
    "topic": "Wojtek, l'ours brun adopté par des soldats polonais qui portait des caisses d'obus (histoire vraie)",
    "why": "Ours nommé, histoire vraie de la Seconde Guerre mondiale ; photos d'archives libres de Wojtek sur Wikimedia Commons. (choisi à la main par Claude, 2 nov.)",
    "score": 62,
@@ -124,6 +115,14 @@
    "views48": 1600,
    "planned": "2026-11-02 22:25",
    "when": "2026-11-04 04:00"
+  },
+  {
+   "topic": "Cher Ami, le pigeon voyageur qui a porté un message malgré ses blessures en 1918 (histoire vraie)",
+   "why": "Histoire vraie d'un animal nommé, avec un ton calme et chaleureux pour un public senior. Ce n'est pas un doublon des sujets déjà faits ou prévus. Risque : l'époque est ancienne, mais la Commons a de vraies photos de Cher Ami, empaillé au Smithsonian, ainsi que des documents d'archives. Le sujet touche la fidélité et la mémoire du chemin du retour, et il est connu dans les pays francophones à cause de la guerre de 1914-1918.",
+   "score": 66,
+   "views48": 900,
+   "planned": "2026-11-03 06:59",
+   "when": "2026-11-04 04:25"
   }
  ],
  "yt-instinct-ja": [
