@@ -1,0 +1,104 @@
+{
+  "title": "RED LINE: Night car chase",
+  "music": "music/locked/red-line.mp3",
+  "maker": "ltx",
+  "look": "Photorealistic cinematic film still, night city, wet streets reflecting neon, deep red and cold teal colour grade, anamorphic lens, motion blur, fast smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos, no badges, no number plates. The hero car is always the same original car: a sleek matte black two-door sports coupe with a thin glowing red light strip across the rear and a red line along each side, no badges or logos",
+  "refs": {
+    "ref-car.jpg": "Three-quarter front view of an original sleek matte black two-door sports coupe with a thin glowing red light strip across the rear and a red line along each side, no badges, no logos, no number plate, parked on wet asphalt at night, plain dark background, soft red rim light"
+  },
+  "shots": [
+    {
+      "end": 4,
+      "prompt": "Extreme close-up, a fingertip presses a glowing red engine start button on a dark car dashboard, the dashboard lights flicker on",
+      "look": "Photorealistic cinematic film still, night city, wet streets reflecting neon, deep red and cold teal colour grade, anamorphic lens, motion blur, fast smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos, no badges, no number plates. No other cars in focus unless described"
+    },
+    {
+      "end": 8,
+      "prompt": "The car idles in a dark underground parking garage, its headlights flick on and the exhaust breathes vapour",
+      "image": "films/red-line-film/ref-car.jpg",
+      "scene": "The car parked in a dark concrete underground parking garage at night, front three-quarter view"
+    },
+    {
+      "end": 10,
+      "prompt": "Extreme close-up of a car rev counter, the needle swings hard into the red zone, glowing red light",
+      "look": "Photorealistic cinematic film still, night city, wet streets reflecting neon, deep red and cold teal colour grade, anamorphic lens, motion blur, fast smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos, no badges, no number plates. No other cars in focus unless described"
+    },
+    {
+      "end": 12,
+      "prompt": "Low shot at the rear wheel, the tyre spins and smokes, the car launches forward out of frame",
+      "image": "films/red-line-film/ref-car.jpg",
+      "scene": "Low rear three-quarter view of the car in the parking garage, tyre smoke around the rear wheel"
+    },
+    {
+      "end": 16,
+      "prompt": "Low tracking shot alongside the car as it speeds through a neon-lit city street at night, lights streaking past",
+      "image": "films/red-line-film/ref-car.jpg",
+      "scene": "The car racing down a wet neon-lit city street at night, low side view"
+    },
+    {
+      "end": 20,
+      "prompt": "Shot from behind the car, two black SUVs with flashing blue lights chase it down the street, closing in",
+      "image": "films/red-line-film/ref-car.jpg",
+      "scene": "The car seen from behind racing down a wet city street at night, two black SUVs with flashing blue lights behind it"
+    },
+    {
+      "end": 24,
+      "prompt": "The car drifts sideways around a corner, sparks and water spray, the camera whips around with it",
+      "image": "films/red-line-film/ref-car.jpg",
+      "scene": "The car drifting sideways around a wet city corner at night, water spray"
+    },
+    {
+      "end": 28,
+      "prompt": "Extreme close-up, a gloved hand slams a gear stick forward, dashboard lights glowing red",
+      "look": "Photorealistic cinematic film still, night city, wet streets reflecting neon, deep red and cold teal colour grade, anamorphic lens, motion blur, fast smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos, no badges, no number plates. No other cars in focus unless described"
+    },
+    {
+      "end": 30,
+      "prompt": "The car brakes hard and skids sideways to a stop, inches from a huge truck crossing the junction, smoke from the tyres",
+      "image": "films/red-line-film/ref-car.jpg",
+      "scene": "The car skidding sideways at a night city junction, a large truck crossing in front, tyre smoke"
+    },
+    {
+      "end": 32,
+      "prompt": "Extreme close-up of a driver's calm eyes in a rear-view mirror, red light, then the eyes narrow",
+      "look": "Photorealistic cinematic film still, night city, wet streets reflecting neon, deep red and cold teal colour grade, anamorphic lens, motion blur, fast smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos, no badges, no number plates. No other cars in focus unless described"
+    },
+    {
+      "end": 37,
+      "prompt": "The car speeds through a long tunnel, the tunnel lights streaking over the car in rhythm",
+      "image": "films/red-line-film/ref-car.jpg",
+      "scene": "The car racing through a long lit road tunnel at night, front view"
+    },
+    {
+      "end": 42,
+      "prompt": "Behind on a city road at night, two black SUVs with flashing blue lights swerve, collide and spin out in sparks and smoke",
+      "look": "Photorealistic cinematic film still, night city, wet streets reflecting neon, deep red and cold teal colour grade, anamorphic lens, motion blur, fast smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos, no badges, no number plates. No other cars in focus unless described"
+    },
+    {
+      "end": 46,
+      "prompt": "The car weaves fast between huge trucks on a night highway, the camera tracking low beside it",
+      "image": "films/red-line-film/ref-car.jpg",
+      "scene": "The car on a night highway between huge trucks, low side view"
+    },
+    {
+      "end": 51,
+      "prompt": "Aerial drone shot following the car racing across a long lit suspension bridge at night, the city behind",
+      "image": "films/red-line-film/ref-car.jpg",
+      "scene": "Aerial view of the car on a long lit suspension bridge at night"
+    },
+    {
+      "end": 56,
+      "prompt": "The car bursts through a cloud of steam towards the camera at full speed, headlights flaring",
+      "image": "films/red-line-film/ref-car.jpg",
+      "scene": "The car racing towards the camera through street steam at night, headlights on"
+    },
+    {
+      "end": 60.1,
+      "prompt": "The car slows and stops on an empty coastal road at dawn, its red rear light strip glowing, the engine ticking",
+      "image": "films/red-line-film/ref-car.jpg",
+      "scene": "The car stopped on an empty coastal road at dawn, rear view, red light strip glowing",
+      "text": "RED LINE"
+    }
+  ],
+  "description": "Ignition, a racing heartbeat, one hard brake that stops everything dead, then the escape.\n\nMusic: Red Line, an original score by ÆTHER. Original AI-made film. Headphones on, volume up.\n\n#carchase #chasebgm #actionbgm #cinematic #shorts\n\nMade with AI."
+}
