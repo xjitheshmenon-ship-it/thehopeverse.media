@@ -9,7 +9,8 @@
   "shots": [
     {
       "end": 4,
-      "prompt": "Extreme close-up of a single fingertip tapping a dark glass surface, a ripple of blue light spreading out from the touch"
+      "prompt": "Extreme close-up of a single fingertip tapping a dark glass surface, a ripple of blue light spreading out from the touch",
+      "look": "Photorealistic cinematic film still, today's world, cold blue and teal light from screens, anamorphic lens, shallow depth of field, slow smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos. No man in a suit, no main character in frame"
     },
     {
       "end": 8,
@@ -23,11 +24,13 @@
     },
     {
       "end": 15,
-      "prompt": "Night street crossing in a vast neon city, crowds stop and look up as every screen around them glows with the same white geometric symbol"
+      "prompt": "Night street crossing in a vast neon city, crowds stop and look up as every screen around them glows with the same white geometric symbol",
+      "look": "Photorealistic cinematic film still, today's world, cold blue and teal light from screens, anamorphic lens, shallow depth of field, slow smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos. No man in a suit, no main character in frame"
     },
     {
       "end": 18,
-      "prompt": "Wide night shot of a desert city skyline of glass towers, every tower facade lights up with the same glowing white symbol"
+      "prompt": "Wide night shot of a desert city skyline of glass towers, every tower facade lights up with the same glowing white symbol",
+      "look": "Photorealistic cinematic film still, today's world, cold blue and teal light from screens, anamorphic lens, shallow depth of field, slow smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos. No man in a suit, no main character in frame"
     },
     {
       "end": 24,
@@ -55,11 +58,13 @@
     },
     {
       "end": 46,
-      "prompt": "Aerial night shot of a huge glittering city, the lights go dark block by block until the whole city is black"
+      "prompt": "Aerial night shot of a huge glittering city, the lights go dark block by block until the whole city is black",
+      "look": "Photorealistic cinematic film still, today's world, cold blue and teal light from screens, anamorphic lens, shallow depth of field, slow smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos. No man in a suit, no main character in frame"
     },
     {
       "end": 52,
-      "prompt": "A wall of dozens of video-call faces on screens, the faces flicker and vanish to black one by one, dark room"
+      "prompt": "A wall of dozens of video-call faces on screens, the faces flicker and vanish to black one by one, dark room",
+      "look": "Photorealistic cinematic film still, today's world, cold blue and teal light from screens, anamorphic lens, shallow depth of field, slow smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos. No man in a suit, no main character in frame"
     },
     {
       "end": 58,
