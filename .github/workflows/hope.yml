@@ -117,8 +117,9 @@ jobs:
           python plan.py --due > "$RUNNER_TEMP/due"; cat "$RUNNER_TEMP/due"
           NEXT=$(sed -n 's/^NEXT=//p' "$RUNNER_TEMP/due")
           last=$(ls outbox 2>/dev/null | grep -E "^$NEXT-[0-9]+\.json$" | sort -V | tail -1)
-          if [ -n "$NEXT" ] && [ -n "$last" ] && jq -e '(.held or .render_failed) and (has("youtube_id") | not)' "outbox/$last" > /dev/null; then
+          if [ -n "$NEXT" ] && [ -n "$last" ] && jq -e '(.held or .render_failed) and (has("youtube_id") | not) and (.shelved | not)' "outbox/$last" > /dev/null; then
             # owner, 2 Nov 2026: "complete one work, then go for the next": a held video is tried once more, then the
+            # chain stops until he decides ("shelved": true in its package = he chose to skip it, 3 Nov)
             # chain stops until he decides
             if jq -e '((.holds // 0) + (.render_failed // 0)) >= 2' "outbox/$last" > /dev/null; then
               echo "::error::$last was held twice, not posted ($(jq -r .held "outbox/$last" | head -c 300)). Nothing new is made until the owner decides."
