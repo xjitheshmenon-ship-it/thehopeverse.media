@@ -27,7 +27,7 @@ on:
         default: ""
         type: string
       when:
-        description: "For job story: when it goes public, in the channel's time zone (e.g. 2026-10-30 12:30; empty = its next free slot). It counts toward that day's videos"
+        description: "For job next: a later day (2026-11-04) whose videos are made now and scheduled in its slots. For job story: when it goes public, in the channel's time zone (e.g. 2026-10-30 12:30; empty = its next free slot). It counts toward that day's videos"
         default: ""
         type: string
 
@@ -112,6 +112,8 @@ jobs:
         # GROW before the day's first video, MORE when another video follows; nothing when the day's videos are done
         run: |  # PAUSED file (owner's hold, e.g. until ElevenLabs is back): no videos; delete it to resume
           [ -f PAUSED ] && ! grep -q '^only:' PAUSED && { echo "::warning::Videos paused: $(cat PAUSED)"; exit 0; }  # "only:" line: those channels run
+          # owner, 3 Nov 2026: job=next with when=YYYY-MM-DD makes that day's videos ahead, each scheduled in that day's slots
+          [ -n "${{ inputs.when }}" ] && { export FOR_DAY="${{ inputs.when }}"; echo "FOR_DAY=$FOR_DAY" >> "$GITHUB_ENV"; }
           python plan.py --due > "$RUNNER_TEMP/due"; cat "$RUNNER_TEMP/due"
           NEXT=$(sed -n 's/^NEXT=//p' "$RUNNER_TEMP/due")
           last=$(ls outbox 2>/dev/null | grep -E "^$NEXT-[0-9]+\.json$" | sort -V | tail -1)
@@ -284,7 +286,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           python -c "import sys, agents as a; sys.exit(a.spent_today() >= a.DAILY_BUDGET)" || { echo "Daily budget used up: no more videos today"; exit 0; }
-          gh workflow run hope.yml --ref "$GITHUB_REF_NAME" -f job=next
+          gh workflow run hope.yml --ref "$GITHUB_REF_NAME" -f job=next ${FOR_DAY:+-f when="$FOR_DAY"}
 
       - name: Dashboard numbers (and a deep study of any Short that broke out, on the hourly run)
         if: always()

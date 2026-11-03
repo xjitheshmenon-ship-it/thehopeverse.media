@@ -1131,12 +1131,15 @@ def upload(video: Path, package: dict, token: Path = TOKEN, channel: dict = None
             "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False,
                        "containsSyntheticMedia": True}}
     from datetime import datetime, timezone
+    from zoneinfo import ZoneInfo
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     if package.get("publish_at", "") > now:  # a time picked for this one video (film.py, story.py WHEN)
         body["status"].update(privacyStatus="private", publishAt=package["publish_at"])
     elif (channel or {}).get("publish_at"):
         taken = {json.loads(p.read_text(encoding="utf-8")).get("publish_at") for p in OUTBOX.glob(f"{channel['id']}-*.json")}
-        if when := next_publish(channel["publish_at"], channel.get("tz", "UTC"), taken):
+        day = os.environ.get("FOR_DAY", "")[:10]  # made ahead for that day: its slots only, never an earlier one
+        start = datetime.fromisoformat(day).replace(tzinfo=ZoneInfo(channel.get("tz", "UTC"))) if day else None
+        if when := next_publish(channel["publish_at"], channel.get("tz", "UTC"), taken, start if start and start > datetime.now(timezone.utc) else None):
             body["status"].update(privacyStatus="private", publishAt=when)  # YouTube makes it public at that time
             package["publish_at"] = when  # saved with the package by the caller, so the next Short takes the next slot
     request = youtube(token=token).videos().insert(
