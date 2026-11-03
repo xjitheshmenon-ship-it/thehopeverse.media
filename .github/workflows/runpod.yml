@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       job:
-        description: "setup = create the RunPod endpoint, test = make one shot, health = show workers and queue, gpus = clear the queue and widen the GPU types, move = put the volume in US-GA-2 (H100/H200 stock)"
+        description: "setup = create the RunPod endpoint, test = make one shot, health = show workers and queue, gpus = clear the queue and widen the GPU types, move = put the volume in US-CA-2 (H100/H200 stock)"
         default: test
         type: choice
         options: [setup, test, health, gpus, move]
@@ -33,7 +33,7 @@ jobs:
           api() { curl -sS -X "$1" "https://rest.runpod.io/v1/$2" -H "Authorization: Bearer $RUNPOD_API_KEY" -H "Content-Type: application/json" ${3:+-d "$3"}; }
           echo "Data centers with H100:"; api GET "datacenters" | jq -c '.[]? | {id, gpus: [.gpuAvailability[]? | select(.gpuTypeId | test("H100")) | .gpuTypeId]}' || true
           vol=""
-          for dc in US-GA-2 US-CA-2 US-MO-1 AP-JP-1; do  # 3 Nov: these had H100/H200 stock; US-TX-3 had none  # first data center that takes the volume
+          for dc in US-CA-2 AP-JP-1 EUR-IS-4 CA-MTL-3; do  # 3 Nov: these had H100/H200 stock; US-TX-3 had none  # first data center that takes the volume
             out=$(api POST networkvolumes "{\"name\":\"ltx-cache\",\"size\":100,\"dataCenterId\":\"$dc\"}"); echo "$dc: $out"
             vol=$(jq -r '.id // empty' <<< "$out"); [ -n "$vol" ] && break
           done
@@ -71,13 +71,13 @@ jobs:
         run: |
           api() { curl -sS -X "$1" "https://rest.runpod.io/v1/$2" -H "Authorization: Bearer $RUNPOD_API_KEY" -H "Content-Type: application/json" ${3:+-d "$3"}; }
           ep=$(jq -r .endpoint runpod.json); old=$(jq -r .volume runpod.json)
-          vol=$(api POST networkvolumes '{"name":"ltx-cache","size":100,"dataCenterId":"US-GA-2"}' | tee /dev/stderr | jq -r '.id // empty')
+          vol=$(api POST networkvolumes '{"name":"ltx-cache","size":100,"dataCenterId":"US-CA-2"}' | tee /dev/stderr | jq -r '.id // empty')
           [ -n "$vol" ] || exit 1
           api PATCH "endpoints/$ep" "{\"networkVolumeId\":\"$vol\",\"networkVolumeIds\":[\"$vol\"]}" | jq -c '{id, networkVolumeIds}'
           api DELETE "networkvolumes/$old"; echo " deleted old volume $old"
           jq --arg v "$vol" '.volume = $v' runpod.json > r && mv r runpod.json
           git config user.name "Hope (RunPod setup)"; git config user.email "actions@github.com"
-          git commit -am "RunPod LTX volume moved to US-GA-2" && git push
+          git commit -am "RunPod LTX volume moved to US-CA-2" && git push
       - name: Make one test shot on RunPod
         if: inputs.job == 'test'
         run: |
