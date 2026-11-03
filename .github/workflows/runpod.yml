@@ -7,10 +7,10 @@ on:
   workflow_dispatch:
     inputs:
       job:
-        description: "setup = create the RunPod endpoint, test = make one shot, health = show workers and queue"
+        description: "setup = create the RunPod endpoint, test = make one shot, health = show workers and queue, gpus = clear the queue and widen the GPU types"
         default: test
         type: choice
-        options: [setup, test, health]
+        options: [setup, test, health, gpus]
 
 permissions:
   contents: write
@@ -22,6 +22,8 @@ jobs:
     env:
       RUNPOD_API_KEY: ${{ secrets.RUNPOD_API_KEY }}
       HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      # 80 GB cards only (LTX-2.5 + Qwen); the volume pins workers to one data center (US-TX-3), so allow several types
+      GPUS: '["NVIDIA H100 80GB HBM3", "NVIDIA H100 PCIe", "NVIDIA H100 NVL", "NVIDIA H200", "NVIDIA A100-SXM4-80GB", "NVIDIA A100 80GB PCIe"]'
     steps:
       - uses: actions/checkout@v5
       - name: Create the network volume, template and endpoint
@@ -41,8 +43,8 @@ jobs:
                 isServerless: true, containerDiskInGb: 40, dockerStartCmd: ["bash", "-c", $s],
                 env: {HF_TOKEN: $hf, HF_HOME: "/runpod-volume/hf", HF_HUB_ENABLE_HF_TRANSFER: "1"}}')"); echo "$tpl" | jq 'del(.env)'
           tid=$(jq -r .id <<< "$tpl")
-          ep=$(api POST endpoints "$(jq -n --arg t "$tid" --arg v "$vol" '{name: "hopeverse-ltx", templateId: $t, networkVolumeId: $v,
-                gpuTypeIds: ["NVIDIA H100 80GB HBM3", "NVIDIA H100 PCIe", "NVIDIA H100 NVL"], workersMin: 0, workersMax: 1,
+          ep=$(api POST endpoints "$(jq -n --arg t "$tid" --arg v "$vol" --argjson gpus "$GPUS" '{name: "hopeverse-ltx", templateId: $t, networkVolumeId: $v,
+                gpuTypeIds: $gpus, workersMin: 0, workersMax: 1,
                 idleTimeout: 300, executionTimeoutMs: 2400000}')"); echo "$ep"
           id=$(jq -r '.id // empty' <<< "$ep"); [ -n "$id" ] || { echo "::error::Endpoint not created"; exit 1; }
           jq -n --arg e "$id" --arg v "$vol" --arg t "$tid" '{endpoint: $e, volume: $v, template: $t}' > runpod.json
@@ -54,6 +56,13 @@ jobs:
           ep=$(jq -r .endpoint runpod.json)
           curl -sS "https://api.runpod.ai/v2/$ep/health" -H "Authorization: Bearer $RUNPOD_API_KEY"; echo
           curl -sS "https://rest.runpod.io/v1/endpoints/$ep?includeWorkers=true" -H "Authorization: Bearer $RUNPOD_API_KEY" | jq 'del(.template.env, .env)'
+      - name: Clear the queue and widen the GPU types
+        if: inputs.job == 'gpus'
+        run: |
+          ep=$(jq -r .endpoint runpod.json)
+          curl -sS -X POST "https://api.runpod.ai/v2/$ep/purge-queue" -H "Authorization: Bearer $RUNPOD_API_KEY"; echo
+          curl -sS -X PATCH "https://rest.runpod.io/v1/endpoints/$ep" -H "Authorization: Bearer $RUNPOD_API_KEY" -H "Content-Type: application/json" \
+            -d "$(jq -n --argjson g "$GPUS" '{gpuTypeIds: $g}')" | jq -c '{id, gpuTypeIds, workersMax}'
       - name: Make one test shot on RunPod
         if: inputs.job == 'test'
         run: |
