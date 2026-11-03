@@ -5,7 +5,7 @@
     POST=yt-aether VIDEO=<id> python film.py ...  -> only rewrites that posted film's title and description
 
 The shots' "end" times follow the track's sections (tease, hit, walk, drop, mass, punch), so the cuts land on the music.
-HeyGen Video first (HEYGEN_API_KEY, about $0.09 a 5 s shot, slowed down to fill longer shots), else Kling on fal.ai
+"maker": "ltx" = LTX-2.5 on Modal only (ltx.py, ~$0.05-0.12 a shot). Else HeyGen Video first (HEYGEN_API_KEY, about $0.09 a 5 s shot, slowed down to fill longer shots), else Kling on fal.ai
 (FAL_KEY, $0.35 per 5 s shot, $0.70 up to 10 s).
 A shot with "image" starts from that photo, so the same man, face and clothes appear in every shot; with "frame" it starts
 from a still posed from that photo for this shot (Kontext), which keeps faces far steadier than a portrait start.
@@ -71,10 +71,12 @@ def make(i: int) -> Path:
     shot, start = film["shots"][i], starts[i]
     raw, part = work / f"raw-{i:02}.mp4", work / f"part-{i:02}.mp4"
     image = work / f"frame-{i:02}.jpg" if shot.get("frame") else Path(shot["image"]) if shot.get("image") else None
+    if not raw.exists() and film.get("maker") == "ltx":  # owner, 3 Nov 2026: LTX only (Modal credit); a failed shot stops the run, no paid fallback
+        from ltx import ltx_clip  # "scene": the photo's character placed into that scene first (Qwen), then animated
+        cost.append(ltx_clip(f"{shot['prompt']}. {shot.get('look', film['look'])}", raw, image, shot.get("scene", "")))
     if not raw.exists() and film.get("maker") != "kling":  # "maker": "kling" holds faces better from a start frame
         try:
-            heygen_clip(f"{shot['prompt']}. {shot.get('look', film['look'])}", raw, image)
-            cost.append(0.09)
+            cost.append(heygen_clip(f"{shot['prompt']}. {shot.get('look', film['look'])}", raw, image))
         except Exception as e:
             print(f"shot {i + 1}: HeyGen failed ({e}); using Kling")
     if not raw.exists():

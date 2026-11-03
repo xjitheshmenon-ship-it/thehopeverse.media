@@ -1,0 +1,109 @@
+{
+  "title": "THE ARCHITECT: He owns every screen on Earth",
+  "music": "music/locked/the-architect.mp3",
+  "maker": "ltx",
+  "look": "Photorealistic cinematic film still, today's world, cold blue and teal light from screens, anamorphic lens, shallow depth of field, slow smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos. The man is always the same original fictional character: a calm tech billionaire in his early 40s, neat short dark hair with grey at the temples, clean-shaven, thin silver-rimmed glasses, black turtleneck under a sharp charcoal tailored suit",
+  "refs": {
+    "ref-architect.jpg": "Waist-up portrait of an original fictional man, a calm tech billionaire in his early 40s of mixed heritage, neat short dark hair with grey at the temples, clean-shaven, thin silver-rimmed glasses, black turtleneck under a sharp charcoal tailored suit, a faint knowing smile, plain dark grey studio background, soft cold blue key light"
+  },
+  "shots": [
+    {
+      "end": 4,
+      "prompt": "Extreme close-up of a single fingertip tapping a dark glass surface, a ripple of blue light spreading out from the touch"
+    },
+    {
+      "end": 8,
+      "prompt": "Slow push-in on his face lit blue by a wall of screens, he slowly begins to smile",
+      "image": "films/the-architect-film/ref-architect.jpg",
+      "scene": "He stands in a dark room facing a huge wall of glowing blue screens, close-up of his face lit by their light"
+    },
+    {
+      "end": 11.5,
+      "prompt": "Aerial night shot of a huge city square, every giant billboard flickers and turns to the same glowing white geometric symbol at once"
+    },
+    {
+      "end": 15,
+      "prompt": "Night street crossing in a vast neon city, crowds stop and look up as every screen around them glows with the same white geometric symbol"
+    },
+    {
+      "end": 18,
+      "prompt": "Wide night shot of a desert city skyline of glass towers, every tower facade lights up with the same glowing white symbol"
+    },
+    {
+      "end": 24,
+      "prompt": "Smooth steadicam shot, he walks slowly towards the camera through a vast glass tower lobby, guards in black step aside without a word",
+      "image": "films/the-architect-film/ref-architect.jpg",
+      "scene": "He walks through a vast modern glass tower lobby at night, guards in black suits on both sides"
+    },
+    {
+      "end": 30,
+      "prompt": "Tracking shot beside him as he walks calmly down a long corridor of glowing server racks, blue lights pulsing",
+      "image": "films/the-architect-film/ref-architect.jpg",
+      "scene": "He walks down a long dark corridor of glowing blue server racks, seen from the side"
+    },
+    {
+      "end": 34,
+      "prompt": "He stands still at a floor-to-ceiling window, the camera slowly pushes in from behind, the city glittering far below",
+      "image": "films/the-architect-film/ref-architect.jpg",
+      "scene": "He stands at a floor-to-ceiling window at night, seen from behind, a huge glittering city far below"
+    },
+    {
+      "end": 40,
+      "prompt": "Close shot, he calmly presses one glowing key on a black glass keyboard, his face lit from below",
+      "image": "films/the-architect-film/ref-architect.jpg",
+      "scene": "He sits at a black glass desk with a glowing keyboard, close shot of his face and hand, dark room"
+    },
+    {
+      "end": 46,
+      "prompt": "Aerial night shot of a huge glittering city, the lights go dark block by block until the whole city is black"
+    },
+    {
+      "end": 52,
+      "prompt": "A wall of dozens of video-call faces on screens, the faces flicker and vanish to black one by one, dark room"
+    },
+    {
+      "end": 58,
+      "prompt": "He watches calmly, the screens' light reflected in his glasses, a cold stillness",
+      "image": "films/the-architect-film/ref-architect.jpg",
+      "scene": "Close-up of his face in a dark room, glowing screens reflected in his glasses"
+    },
+    {
+      "end": 60,
+      "prompt": "He turns his head slowly to look straight into the camera",
+      "image": "films/the-architect-film/ref-architect.jpg",
+      "scene": "Medium close-up of him in a dark room lit by blue screens, his head turned slightly away from the camera"
+    },
+    {
+      "end": 66,
+      "prompt": "Slow push-in as he looks straight into the camera and smiles, calm and dangerous",
+      "image": "films/the-architect-film/ref-architect.jpg",
+      "scene": "Close-up portrait of him looking straight into the camera in a dark room lit by blue screens"
+    },
+    {
+      "end": 72,
+      "prompt": "Low-angle shot, he stands on a rooftop helipad at night, his jacket moving in the wind, the city lights below, the camera slowly circles him",
+      "image": "films/the-architect-film/ref-architect.jpg",
+      "scene": "He stands on a skyscraper rooftop helipad at night, low angle, city lights below"
+    },
+    {
+      "end": 78,
+      "prompt": "Extreme slow push-in on his eyes behind the glasses, thousands of tiny screens reflected in them",
+      "image": "films/the-architect-film/ref-architect.jpg",
+      "scene": "Extreme close-up of his eyes behind thin silver-rimmed glasses, blue screen light"
+    },
+    {
+      "end": 84,
+      "prompt": "His reflection in a dark glass wall, the city lights behind it, he adjusts his cuff and smiles",
+      "image": "films/the-architect-film/ref-architect.jpg",
+      "scene": "His reflection in a dark glass wall at night, city lights behind the glass"
+    },
+    {
+      "end": 90.1,
+      "prompt": "He walks away from the camera down a dark glass corridor towards a cold white light, a silhouette",
+      "image": "films/the-architect-film/ref-architect.jpg",
+      "scene": "He walks away down a dark glass corridor towards a cold white light, seen from behind",
+      "text": "THE ARCHITECT"
+    }
+  ],
+  "description": "He never raises his voice. He doesn't need to. One tap on the glass and every screen on Earth belongs to him.\n\nMusic: The Architect, an original score by ÆTHER. Original AI-made character and film. Headphones on, volume up.\n\n#villainbgm #villaintheme #attitudebgm #cinematic #shorts\n\nMade with AI."
+}
