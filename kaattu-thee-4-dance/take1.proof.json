@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER album Kaattu Thee, song 4: Dance, Arabic-kuthu fusion (instrumental, 90 s, one take)",
+  "take": 1,
+  "made_at_utc": "2026-11-03T13:39:40.768264+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "XeuInTfaHymCrcexsPp0",
+  "request": {
+    "prompt": "A complete, high-energy modern Tamil film dance number, instrumental, new-generation Kollywood style: an Arabic and Middle-Eastern melody fused with raw Tamil kuthu. ONE irresistible, catchy, exotic hook melody in a Hijaz-style Middle-Eastern scale (flat second, raised third) with fast trills and slides, played on a bright reedy mizmar-like synth lead, answered by an oud-like plucked synth, a whistle and punchy brass. Swinging belly-dance meets dappankuthu bounce at 104 BPM: darbuka and riq rolls locked with loud thappu and parai drums, a tight kick, snappy claps, deep 808 bass and modern EDM synth stabs, a gang 'hey' shout on the big beats. Clean, wide, musical production with space, not noisy. Full song shape: an 8 second darbuka solo intro, the hook, a second melody section with oud and veena call-and-answer, a switch into a fast triplet tisram groove, a short stop of silence and a crowd shout, a breakdown with only darbuka, thappu and claps building faster, then the biggest final hook with everyone playing, and a proper ending: a fast drum korvai and one last full-band hit.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 90000
+  },
+  "brief": {
+    "notes": "Jithesh 13:35: 'Now dance.' Instrumental like the locked intro. One take only (his rule 13:29). He called the 60 s fight tests 'incomplete versions', so this is 90 s with a full shape: intro, hook, second section, a breakdown, the biggest hook, and a real ending. Indian touch = Tamil film writing style (bounce, tisram switch, stop-and-slam hits, hook returning bigger), not only Indian instruments. 13:35 he added 'Like beast movie songs': taken as the traits of that film's dance hit, not its tune: an Arabic / Middle-Eastern melody fused with Tamil kuthu, Hijaz-style scale, darbuka with thappu, mizmar/oud-like synth lead, belly-dance swing."
+  },
+  "story": "Rudra's friends drag him into the street wedding procession and the whole lane turns into a dance floor.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
