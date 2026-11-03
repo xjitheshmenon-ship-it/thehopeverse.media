@@ -1,0 +1,28 @@
+{
+  "channel_id": "yt-instinct",
+  "title": "1 ours aurait port\u00e9 des obus (histoire vraie) #Shorts",
+  "description": "Un ours brun debout au milieu des soldats : cette image a fait de Wojtek une l\u00e9gende. Recueilli ourson en Iran, en 1942, par des soldats polonais sortis des camps sovi\u00e9tiques, il aurait port\u00e9 des caisses d'obus \u00e0 Monte Cassino en 1944, selon des t\u00e9moins. Les historiens d\u00e9battent des d\u00e9tails, mais l'insigne de la compagnie montre bien un ours portant un obus, et des statues, \u00e0 \u00c9dimbourg et \u00e0 Cracovie, rappellent encore cette amiti\u00e9.\n\nSources : Wikip\u00e9dia \u00ab Wojtek (bear) \u00bb ; Historic Environment Scotland, blog, 2018 ; British Library, blog, 2015.\nPhotos : Imperial War Museum, domaine public, via Wikimedia Commons. Images : s\u00e9quences d'illustration (Pixabay), pas de Wojtek lui-m\u00eame.\n\nInstinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.\n\n#animaux #nature #histoirevraie #lesaviezvous #Shorts",
+  "script": "NOTES FOR OWNER: PUBLISH AT 19:00 Europe/Paris (fallbacks 22:00 or 05:00). Pick the first day where 19:00 is free on Instinct; I can't see the queue, so please check for clashes (3 Instinct Shorts already sit at 30 Oct 04:00Z, and the giraffe/baby-elephant Shorts are duplicated). Pinned comment: \u00ab Et vous, quel animal a fait partie de votre famille ? \u00bb\nThumbnail: real IWM photo of Wojtek, tight crop on the bear, light sepia; text \u00ab Un ours soldat ? \u00bb in golden yellow on navy band. No AI image.\nBefore render: confirm the PD licence box on Commons for File:Wojtek_the_bear.jpg (HU 16546) and File:Wojtek_meet_the_new_friend.jpg (HU 16545).\n\nFORMAT: 1 Short, 9:16, narrator only, no cast. Voice fr-FR-DeniseNeural -8%, captions scale 1.2. Target \u226455 s; if over, drop shot 10's line as last resort.\nHOOK TEXT 0:00\u20130:02: \u00ab Cet ours aurait port\u00e9 des caisses\u2026 comme les soldats. \u00bb\n\nNARRATION (132 words):\nUn ours brun, debout, parmi des soldats. On dit qu'il portait leurs caisses. Il s'appelait Wojtek. Printemps 1942, en Iran, des soldats polonais recueillent un ourson orphelin. Ces hommes venaient de quitter les camps sovi\u00e9tiques. Ils en font la mascotte de leur compagnie de ravitaillement. Il grandit avec eux, et dormait sous leurs tentes. En mai 1944, \u00e0 Monte Cassino, en Italie, selon des t\u00e9moins, il portait des caisses d'obus. Comme un enfant qui imite ses parents. Les historiens d\u00e9battent des d\u00e9tails. Mais l'insigne de la compagnie montre un ours portant un obus. Apr\u00e8s la guerre, il arrive au zoo d'\u00c9dimbourg, en \u00c9cosse, en 1947. D'anciens soldats venaient lui parler en polonais. Il est mort fin 1963. Des statues le rappellent \u00e0 \u00c9dimbourg et \u00e0 Cracovie. Et vous, quel animal a fait partie de votre famille ?\n\nEDIT PLAN (Mr. Cut, 20 shots, ~53 s, cuts every 2\u20133 s):\n- Visuals: IWM Commons photos (File:Wojtek_the_bear.jpg HU 16546, File:Wojtek_meet_the_new_friend.jpg HU 16545); Pixabay stock tagged \u00ab Illustration \u00bb for the rest.\n- Shots 1, 2 and 10: caption \u00ab Aucune photo connue de ce moment \u00bb.\n- Company badge: only if a free Commons file exists, else IWM photo + text.\n- Edinburgh statue: Commons photo with author/licence credit.\n- Music: calm piano ~70 bpm, YouTube Audio Library or Pixabay Music, ducked -18 dB.\n- Last shot: credits strip.\n- Rules: no AI images, no HeyGen/fal, no beer/cigarettes, no battle imagery.",
+  "lang": "fr",
+  "footer": "Instinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "category": "15",
+  "photos": true,
+  "draft_cost": 1.02,
+  "relevance": {
+    "score": 80,
+    "why": "Evergreen true story (Wojtek) with strong hook and the same 'histoire vraie' title format as the stork hit; script is hedged ('aurait', historians debate) and matches the title, fits francophone seniors with WWII interest, though licence checks and a queue clash remain.",
+    "views48": 1300
+  },
+  "credits": [
+    "Wojtek the bear.jpg by Imperial War Museum (Public domain), https://commons.wikimedia.org/wiki/File:Wojtek_the_bear.jpg",
+    "Monte Cassino Opactwo 1.JPG by Radomi\u0142 (CC BY-SA 3.0), https://commons.wikimedia.org/wiki/File:Monte_Cassino_Opactwo_1.JPG",
+    "Edinburgh Zoo - geograph.org.uk - 2371247.jpg by N Chadwick (CC BY-SA 2.0), https://commons.wikimedia.org/wiki/File:Edinburgh_Zoo_-_geograph.org.uk_-_2371247.jpg",
+    "Wojtek memorial statue, West Princes Street Gardens, Edinburgh, Scotland, 28th May 2022.jpg by DsMaxwell (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Wojtek_memorial_statue,_West_Princes_Street_Gardens,_Edinburgh,_Scotland,_28th_May_2022.jpg"
+  ],
+  "qa": {
+    "passed": true,
+    "problems": "",
+    "bad_frames": 0
+  },
+  "youtube_id": "5xTOtEBCLd4"
+}

@@ -75,15 +75,6 @@
  },
  "yt-instinct": [
   {
-   "topic": "Wojtek, l'ours brun adopté par des soldats polonais qui portait des caisses d'obus (histoire vraie)",
-   "why": "Ours nommé, histoire vraie de la Seconde Guerre mondiale ; photos d'archives libres de Wojtek sur Wikimedia Commons. (choisi à la main par Claude, 2 nov.)",
-   "score": 62,
-   "views48": 1400,
-   "hand": true,
-   "planned": "2026-11-02 17:00",
-   "when": "2026-11-03 04:50"
-  },
-  {
    "topic": "Lonesome George, la dernière tortue de Pinta, seule de son espèce pendant 40 ans (histoire vraie)",
    "why": "Tortue nommée des Galápagos, symbole mondial ; nombreuses photos libres sur Wikimedia Commons. (choisi à la main par Claude, 2 nov.)",
    "score": 61,
@@ -123,6 +114,14 @@
    "views48": 900,
    "planned": "2026-11-03 06:59",
    "when": "2026-11-04 04:25"
+  },
+  {
+   "topic": "Malena et Klepetan : la cigogne blessée que Stjepan Vokić a soignée en Croatie, et le mâle qui revient chaque printemps après 13 000 km (histoire vraie)",
+   "why": "Même famille que la cigogne à 6698 vues, la meilleure histoire de la chaîne : un animal nommé, une amitié avec un homme, un retour chaque année. Les photos de Malena et Klepetan existent sur Wikimedia Commons. Ton calme, français simple, adapté aux seniors. Cette histoire a été racontée surtout en anglais, donc peu de concurrence en français. Attention : elle ressemble au Short à succès, il faut un angle différent (la maison de Slavonski Brod, les poussins).",
+   "score": 66,
+   "views48": 2300,
+   "planned": "2026-11-03 08:49",
+   "when": "2026-11-04 04:50"
   }
  ],
  "yt-instinct-ja": [
