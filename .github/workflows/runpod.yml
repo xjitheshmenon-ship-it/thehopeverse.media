@@ -55,6 +55,9 @@ jobs:
         run: |
           ep=$(jq -r .endpoint runpod.json)
           curl -sS "https://api.runpod.ai/v2/$ep/health" -H "Authorization: Bearer $RUNPOD_API_KEY"; echo
+          curl -sS "https://api.runpod.io/graphql?api_key=$RUNPOD_API_KEY" -H "Content-Type: application/json" \
+            -d '{"query":"{ dataCenters { id gpuAvailability { gpuTypeId stockStatus available } } myself { clientBalance currentSpendPerHr } }"}' \
+            | jq -c '.data.myself, (.data.dataCenters[]? | {id, gpus: [.gpuAvailability[]? | select(.stockStatus != null and (.gpuTypeId | test("H100|H200|A100|L40|6000"))) | "\(.gpuTypeId)=\(.stockStatus)"]} | select(.gpus | length > 0)), .errors'
           curl -sS "https://rest.runpod.io/v1/endpoints/$ep?includeWorkers=true" -H "Authorization: Bearer $RUNPOD_API_KEY" | jq 'del(.template.env, .env)'
       - name: Clear the queue and widen the GPU types
         if: inputs.job == 'gpus'
