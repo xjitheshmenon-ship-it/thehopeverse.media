@@ -1,0 +1,29 @@
+{
+  "channel_id": "yt-instinct",
+  "title": "George, 40 ans seul (histoire vraie) #Shorts",
+  "description": "Il \u00e9tait le dernier connu de son esp\u00e8ce. Pendant quarante ans, aucune femelle de Pinta n'a \u00e9t\u00e9 trouv\u00e9e pour lui, malgr\u00e9 une r\u00e9compense de 10 000 dollars. Des chasseurs, puis des ch\u00e8vres l\u00e2ch\u00e9es sur son \u00eele, avaient fait dispara\u00eetre les siens. Mais sur le volcan Wolf, des tortues hybrides portent encore des g\u00e8nes de son esp\u00e8ce.\n\nSources : galapagos.org (Lonesome George) ; National Geographic, 2015 (hybrides du volcan Wolf) ; Nature Ecology & Evolution, 2018 (g\u00e9nome) ; RT\u00c9, 2017 ; Fondation Charles Darwin (datazone).\n\nInstinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.\n\nPhotos : Wikimedia Commons (auteurs et licences indiqu\u00e9s), Pixabay.\n\n#animaux #nature #histoirevraie #lesaviezvous #Shorts",
+  "script": "NOTES FOR OWNER: PUBLISH SLOT = 19:00 Europe/Paris (fallbacks 22:00 or 05:00). Date to be confirmed by owner: queue has no time field and I can't see which Instinct slots are taken; check for clashes before uploading.\nPinned comment: \u00ab Quel est le premier animal dont vous vous souvenez dans votre vie ? \u00bb\nThumbnail: real Commons photo of George, close profile, calm deep blue-green background; text \u00ab 40 ans seul \u00bb in golden yellow with thin dark outline. No AI, no faces.\nCast: none (narrator-only).\n\nVOICE: fr-FR-DeniseNeural, -8%, captions scale 1.2, target \u226455 s, hard limit 58 s.\nNARRATION (locked):\nA \u00ab Un seul. George \u00e9tait seul dans son enclos. Le dernier connu de son esp\u00e8ce. \u00bb\nB \u00ab En 1971, un scientifique l'a aper\u00e7u sur l'\u00eele Pinta, aux Gal\u00e1pagos. \u00bb\nC \u00ab Des marins chasseurs, puis des ch\u00e8vres l\u00e2ch\u00e9es en 1959, avaient fait dispara\u00eetre les siens. \u00bb\nD \u00ab En 1972, des gardes l'ont emmen\u00e9 sur l'\u00eele de Santa Cruz. On offrait 10 000 dollars pour une femelle de son esp\u00e8ce. \u00bb\nE \u00ab Imaginez vivre quarante ans dans le m\u00eame jardin, entour\u00e9 de gens bienveillants, sans jamais croiser quelqu'un des v\u00f4tres. \u00bb\nF \u00ab En 2008, il s'est enfin accoupl\u00e9. Mais les \u0153ufs n'\u00e9taient pas viables. \u00bb\nG \u00ab Il est mort le 24 juin 2012, \u00e0 environ cent ans. \u00bb\nH \u00ab Plus tard, sur le volcan Wolf, des scientifiques ont trouv\u00e9 des tortues hybrides portant des g\u00e8nes de Pinta. Aucune n'est pure. Mais une part de son esp\u00e8ce survit, sans promesse de retour. \u00bb\nI \u00ab Et vous... ? Que voudriez-vous qu'on se rappelle de vous ? \u00bb\n\nEDIT PLAN (Mr. Cut): 21 shots, ~54 s, cut every 2-3 s, warm slightly desaturated grade, 0.5 s dissolves, dip to black at 0:37 and at the end.\nOverlays: 1 (0:00) / 1971 / 1959 : 3 ch\u00e8vres / 10 000 $ / 40 ans / 2008 / 24 juin 2012 / Des g\u00e8nes de Pinta retrouv\u00e9s / Et vous... ?\nVisuals: at least 4 real Commons photos of Lonesome George from Category:Lonesome George (CC-BY, CC-BY-SA or PD only; no Gal\u00e1pagos Conservancy-branded images; record filename, author, licence at pick time; text-card backup if licence fails) for shots 1,2,7,9,10,12,15,16,20,21. Pixabay stock (tagged \"Illustration\" excluded) for landscape, goats, boat, grazing tortoise, eggs, volcano, tortoises on slope. No AI imagery, no HeyGen/fal, free only.\nMusic (Mr. Raga): gentle piano/strings ~18 dB under voice.\nOn-screen credits 0:49-0:53.5: \u00ab Photos : [auteur], [licence] (Wikimedia Commons) \u00b7 Vid\u00e9os : Pixabay \u00bb.",
+  "lang": "fr",
+  "footer": "Instinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "category": "15",
+  "photos": true,
+  "draft_cost": 1.01,
+  "relevance": {
+    "score": 80,
+    "why": "Evergreen true story in the same format as the stork hit (\"histoire vraie\"), with a strong emotional hook for older francophone viewers. The script matches the title and its facts hold up: Pinta 1971, 1972 move, 2008 mating with non-viable eggs, death 24 Jun 2012, and Wolf volcano hybrids. Small risks are the \"environ cent ans\" age and the unconfirmed publish slot.",
+    "views48": 1500
+  },
+  "credits": [
+    "Pinta Island.tif by NASA image by Jesse Allen, Robert Simmon, and Michael Taylor, using data from the USGS Global Visualization Viewer. Caption by Laura Rocchio (Public domain), https://commons.wikimedia.org/wiki/File:Pinta_Island.tif",
+    "2014-09-18-Lonesome-George-American-Museum-of-Natural-History.jpg by Kevin Gepford (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:2014-09-18-Lonesome-George-American-Museum-of-Natural-History.jpg",
+    "Santa Cruz- Tortoise 12 (Lonesome George) (3685677882).jpg by Ethan Ableman (CC BY 2.0), https://commons.wikimedia.org/wiki/File:Santa_Cruz-_Tortoise_12_(Lonesome_George)_(3685677882).jpg",
+    "Nav\u00edo varado en isla Santa Cruz, islas Gal\u00e1pagos, Ecuador, 2015-07-26, DD 53.JPG by Diego Delso (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Nav%C3%ADo_varado_en_isla_Santa_Cruz,_islas_Gal%C3%A1pagos,_Ecuador,_2015-07-26,_DD_53.JPG",
+    "Pinta Island Tortoise Lonesome George 2008.jpg by Arturo de Frias Marques (CC BY-SA 3.0), https://commons.wikimedia.org/wiki/File:Pinta_Island_Tortoise_Lonesome_George_2008.jpg"
+  ],
+  "qa": {
+    "passed": true,
+    "problems": "",
+    "bad_frames": 0
+  },
+  "youtube_id": "QwUmAUiaFvE"
+}
