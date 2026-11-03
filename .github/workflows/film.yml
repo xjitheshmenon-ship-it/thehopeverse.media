@@ -47,6 +47,7 @@ jobs:
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core && pip install -q -r requirements.txt fal-client imageio-ffmpeg
       - run: '[ -z "$MODAL_TOKEN_ID" ] || modal deploy ltx.py || echo "::warning::LTX deploy failed; AI shots fall back to HeyGen"'
       - run: |
+          grep -q '"file"' "films/$NAME.json" && exit 0  # a finished video (music visualizer) is only posted: no clips to reuse, skip the huge music-tracks fetch
           git fetch origin music-tracks && git worktree add out origin/music-tracks
           mkdir -p "films/$NAME" && cp -n out/films/"$NAME"/raw-*.mp4 out/films/"$NAME"/ref-* out/films/"$NAME"/frame-* "films/$NAME/" 2>/dev/null || true
       - name: Unlock the channel's sign-in (only when posting)
@@ -71,6 +72,7 @@ jobs:
           python -c "import state; state.save(['runs/history.jsonl'])"
       - if: always()
         run: |
+          [ -d out ] || exit 0  # a finished video already lives on main
           mkdir -p "out/films/$NAME" && cp films/"$NAME"/raw-*.mp4 films/"$NAME"/ref-* films/"$NAME"/frame-* "out/films/$NAME/" 2>/dev/null || true
           [ "$(stat -c%s "films/$NAME.mp4" 2>/dev/null || echo 0)" -lt 99000000 ] && cp "films/$NAME.mp4" out/films/ || true  # a file over 100 MB would make GitHub refuse the paid clips too
           git config --global user.name hope && git config --global user.email hope@users.noreply.github.com  # rebase on pull needs it too
