@@ -1,0 +1,134 @@
+{
+ "title": "ÆTHER: Yaazhini long A (only take 2's own sung words + wordless parts)",
+ "story": "He says he is fine after she left, but keeps calling her name and checking her photos.",
+ "brief": {
+  "notes": "Jithesh 3 Nov 13:28 on yaazhini-full: 'lyrics and music doesnt matching'. Our new verses broke the fit again. A: no new words at all; take 2's own sung parts (exact) arranged into a longer song, new parts are instrumental or wordless humming conditioned on take 2's sections."
+ },
+ "seconds": 197,
+ "takes": 1,
+ "instrumental": false,
+ "source": "yaazhini-source",
+ "plan": {
+  "chunks": [
+   {
+    "song_id": "SOURCE",
+    "range": {
+     "start_ms": 0,
+     "end_ms": 41700
+    }
+   },
+   {
+    "text": "[Instrumental]\n{acoustic guitar and harmonium play the chorus melody, claps, the groove keeps going}",
+    "duration_ms": 20000,
+    "positive_styles": [
+     "electronic percussion",
+     "catchy melody",
+     "expressive vocals",
+     "upbeat rhythm",
+     "instrumental on the chorus melody, no lead vocal"
+    ],
+    "negative_styles": [
+     "acoustic solo",
+     "slow tempo",
+     "lyrics",
+     "words"
+    ],
+    "context_adherence": "high",
+    "conditioning_ref": {
+     "song_id": "SOURCE",
+     "range": {
+      "start_ms": 18340,
+      "end_ms": 38340
+     }
+    },
+    "condition_strength": "high"
+   },
+   {
+    "song_id": "SOURCE",
+    "range": {
+     "start_ms": 41700,
+     "end_ms": 56000
+    }
+   },
+   {
+    "song_id": "SOURCE",
+    "range": {
+     "start_ms": 18340,
+     "end_ms": 41700
+    }
+   },
+   {
+    "text": "[Bridge]\n(mm-mm, mm-mm)\n(aa... aa...)\n{soft: the beat drops back, a young female voice hums the verse melody, then the beat returns}",
+    "duration_ms": 22000,
+    "positive_styles": [
+     "acoustic guitar",
+     "soft percussion",
+     "emotional vocals",
+     "soft wordless humming bridge, female voice, no words"
+    ],
+    "negative_styles": [
+     "heavy synth",
+     "aggressive beats",
+     "lyrics",
+     "words"
+    ],
+    "context_adherence": "high",
+    "conditioning_ref": {
+     "song_id": "SOURCE",
+     "range": {
+      "start_ms": 41700,
+      "end_ms": 60000
+     }
+    },
+    "condition_strength": "high"
+   },
+   {
+    "song_id": "SOURCE",
+    "range": {
+     "start_ms": 0,
+     "end_ms": 18340
+    }
+   },
+   {
+    "song_id": "SOURCE",
+    "range": {
+     "start_ms": 18340,
+     "end_ms": 41700
+    }
+   },
+   {
+    "text": "[Instrumental]\n{the chorus melody on guitar and harmonium with group claps and soft humming, bigger}",
+    "duration_ms": 16000,
+    "positive_styles": [
+     "electronic percussion",
+     "catchy melody",
+     "expressive vocals",
+     "upbeat rhythm",
+     "instrumental, bigger, wordless humming only"
+    ],
+    "negative_styles": [
+     "acoustic solo",
+     "slow tempo",
+     "lyrics",
+     "words"
+    ],
+    "context_adherence": "high",
+    "conditioning_ref": {
+     "song_id": "SOURCE",
+     "range": {
+      "start_ms": 22000,
+      "end_ms": 38000
+     }
+    },
+    "condition_strength": "high"
+   },
+   {
+    "song_id": "SOURCE",
+    "range": {
+     "start_ms": 41700,
+     "end_ms": 60000
+    }
+   }
+  ]
+ }
+}
