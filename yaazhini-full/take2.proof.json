@@ -1,0 +1,191 @@
+{
+  "title": "\u00c6THER: Yaazhini full (v2 take 2 kept, extended to about 3.5 min)",
+  "take": 2,
+  "made_at_utc": "2026-11-03T09:24:44.628765+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2_5",
+  "elevenlabs_song_id": "0vMQLBwjaR8MvVYxn75U",
+  "request": {
+    "composition_plan": {
+      "chunks": [
+        {
+          "song_id": "mHbPMGmc3XvYjrf5CiHo_upload",
+          "range": {
+            "start_ms": 0,
+            "end_ms": 41700
+          }
+        },
+        {
+          "text": "[Verse 2]\n\u0ba8\u0bbe\u0ba9\u0bcd gym-\u0b95\u0bcd\u0b95\u0bc1 \u0baa\u0bcb\u0ba9\u0bc7\u0ba9\u0bcd friends-\u0b93\u0b9f \u0b9a\u0bc1\u0ba4\u0bcd\u0ba4\u0bbf\u0ba9\u0bc7\u0ba9\u0bcd\n\u0b89\u0ba9\u0bcd status \u0baa\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bc7\u0ba9\u0bcd \u0b9a\u0bbf\u0bb0\u0bbf\u0b9a\u0bcd\u0b9a\u0bc7\u0ba9\u0bcd \u0bae\u0bb1\u0bc1\u0baa\u0b9f\u0bbf\u0baf\u0bc1\u0bae\u0bcd\n\u0bb0\u0bbe\u0ba4\u0bcd\u0ba4\u0bbf\u0bb0\u0bbf \u0b86\u0ba9\u0bbe \u0b89\u0ba9\u0bcd \u0b95\u0bc1\u0bb0\u0bb2\u0bcd \u0b95\u0bc7\u0b95\u0bcd\u0b95\u0bc1\u0ba4\u0bc1 \u0b93 \u0baf\u0bbe\u0bb4\u0bbf\u0ba9\u0bbf \u0baf\u0bbe\u0bb4\u0bbf\u0ba9\u0bbf",
+          "duration_ms": 18340,
+          "positive_styles": [
+            "tamil pop",
+            "indie pop",
+            "acoustic guitar",
+            "electronic percussion",
+            "melancholic",
+            "romantic",
+            "acoustic guitar",
+            "soft vocals",
+            "melancholic",
+            "mid-tempo",
+            "same melody and feel as the first verse, same singer"
+          ],
+          "negative_styles": [
+            "heavy metal",
+            "hard rock",
+            "classical",
+            "jazz",
+            "aggressive",
+            "heavy drums",
+            "distorted guitar",
+            "fast tempo"
+          ],
+          "context_adherence": "high",
+          "conditioning_ref": {
+            "song_id": "mHbPMGmc3XvYjrf5CiHo_upload",
+            "range": {
+              "start_ms": 0,
+              "end_ms": 18340
+            }
+          },
+          "condition_strength": "xhigh"
+        },
+        {
+          "song_id": "mHbPMGmc3XvYjrf5CiHo_upload",
+          "range": {
+            "start_ms": 18340,
+            "end_ms": 41700
+          }
+        },
+        {
+          "text": "[Bridge]\n(\u0b86... \u0b86...)\n\u0b9a\u0bca\u0bb2\u0bcd\u0bb2\u0bc1 \u0baf\u0bbe\u0bb4\u0bbf\u0ba9\u0bbf, \u0b92\u0bb0\u0bc1 \u0bb5\u0bbe\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bc8 \u0b9a\u0bca\u0bb2\u0bcd\u0bb2\u0bc1\n\u0ba8\u0bbe\u0ba9\u0bcd fine-\u0ba9\u0bc1 \u0b9a\u0bca\u0ba9\u0bcd\u0ba9\u0ba4\u0bc1 \u0baa\u0bca\u0baf\u0bcd \u0ba4\u0bbe\u0ba9\u0bcd \u0baf\u0bbe\u0bb4\u0bbf\u0ba9\u0bbf\n(\u0b86... \u0b86...)",
+          "duration_ms": 20000,
+          "positive_styles": [
+            "acoustic guitar",
+            "soft percussion",
+            "emotional vocals",
+            "soft bridge: the beat drops back, a young female voice sings wordless aa lines, he sings tenderly, the beat returns at the end"
+          ],
+          "negative_styles": [
+            "heavy synth",
+            "aggressive beats"
+          ],
+          "context_adherence": "high",
+          "conditioning_ref": {
+            "song_id": "mHbPMGmc3XvYjrf5CiHo_upload",
+            "range": {
+              "start_ms": 41700,
+              "end_ms": 60000
+            }
+          },
+          "condition_strength": "high"
+        },
+        {
+          "text": "[Instrumental]\n{acoustic guitar and harmonium play the chorus melody, soft female humming, claps, the groove builds}",
+          "duration_ms": 20000,
+          "positive_styles": [
+            "electronic percussion",
+            "catchy melody",
+            "expressive vocals",
+            "upbeat rhythm",
+            "instrumental break on the chorus melody, no lead vocal, building up"
+          ],
+          "negative_styles": [
+            "acoustic solo",
+            "slow tempo"
+          ],
+          "context_adherence": "high",
+          "conditioning_ref": {
+            "song_id": "mHbPMGmc3XvYjrf5CiHo_upload",
+            "range": {
+              "start_ms": 18340,
+              "end_ms": 38340
+            }
+          },
+          "condition_strength": "high"
+        },
+        {
+          "text": "[Verse 3]\n\u0ba8\u0bc0 \u0b87\u0bb2\u0bcd\u0bb2\u0bbe\u0bae \u0ba8\u0bbe\u0ba9\u0bcd \u0b9c\u0bbe\u0bb2\u0bbf\u0baf\u0bbe \u0ba4\u0bbe\u0ba9\u0bcd \u0b87\u0bb0\u0bc1\u0b95\u0bcd\u0b95\u0bc7\u0ba9\u0bcd\n\u0b89\u0ba9\u0bcd message \u0bb5\u0ba8\u0bcd\u0ba4\u0bbe \u0b9a\u0bbf\u0bb0\u0bbf\u0b9a\u0bcd\u0b9a\u0bc7\u0ba9\u0bcd \u0bae\u0bb1\u0bc1\u0baa\u0b9f\u0bbf\u0baf\u0bc1\u0bae\u0bcd\n\u0b92\u0bb0\u0bc1 hi \u0baa\u0bcb\u0b9f\u0bcd\u0b9f\u0bbe \u0baa\u0bcb\u0ba4\u0bc1\u0bae\u0bcd \u0ba8\u0bbe\u0ba9\u0bcd \u0b93\u0b9f\u0bbf \u0bb5\u0bb0\u0bc1\u0bb5\u0bc7\u0ba9\u0bcd \u0b93 \u0baf\u0bbe\u0bb4\u0bbf\u0ba9\u0bbf \u0baf\u0bbe\u0bb4\u0bbf\u0ba9\u0bbf",
+          "duration_ms": 18340,
+          "positive_styles": [
+            "tamil pop",
+            "indie pop",
+            "acoustic guitar",
+            "electronic percussion",
+            "melancholic",
+            "romantic",
+            "acoustic guitar",
+            "soft vocals",
+            "melancholic",
+            "mid-tempo",
+            "same melody and feel as the first verse, a little more energy"
+          ],
+          "negative_styles": [
+            "heavy metal",
+            "hard rock",
+            "classical",
+            "jazz",
+            "aggressive",
+            "heavy drums",
+            "distorted guitar",
+            "fast tempo"
+          ],
+          "context_adherence": "high",
+          "conditioning_ref": {
+            "song_id": "mHbPMGmc3XvYjrf5CiHo_upload",
+            "range": {
+              "start_ms": 0,
+              "end_ms": 18340
+            }
+          },
+          "condition_strength": "xhigh"
+        },
+        {
+          "song_id": "mHbPMGmc3XvYjrf5CiHo_upload",
+          "range": {
+            "start_ms": 18340,
+            "end_ms": 41700
+          }
+        },
+        {
+          "text": "[Final chorus]\n\u0baf\u0bbe\u0bb4\u0bbf\u0ba9\u0bbf \u0baf\u0bbe\u0bb4\u0bbf\u0ba9\u0bbf \u0b8e\u0b99\u0bcd\u0b95 \u0baa\u0bcb\u0ba9 \u0baf\u0bbe\u0bb4\u0bbf\u0ba9\u0bbf\n\u0ba8\u0bbe\u0ba9\u0bcd \u0b87\u0b99\u0bcd\u0b95 \u0ba4\u0bbe\u0ba9\u0bcd \u0b9a\u0bc1\u0bae\u0bcd\u0bae\u0bbe\u0ba4\u0bbe\u0ba9\u0bcd \u0b9a\u0bca\u0bb2\u0bcd\u0bb1\u0bc7\u0ba9\u0bcd\n\u0baa\u0bbe\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bcd\u0b95\u0bbf\u0b9f\u0bcd\u0b9f\u0bc1 \u0b87\u0bb0\u0bc1\u0b95\u0bcd\u0b95\u0bc7\u0ba9\u0bcd \u0b89\u0ba9\u0bcd photo \u0b89\u0ba9\u0bcd smile \u0bae\u0bb1\u0b95\u0bcd\u0b95 \u0bae\u0bc1\u0b9f\u0bbf\u0baf\u0bbe\u0ba4\u0bc1\n\u0baf\u0bbe\u0bb4\u0bbf\u0ba9\u0bbf \u0baf\u0bbe\u0bb4\u0bbf\u0ba9\u0bbf \u0b86\u0bb9\u0bcd \u0baf\u0bbe\u0bb4\u0bbf\u0ba9\u0bbf\n\u0ba8\u0bbe\u0ba9\u0bcd okay \u0baa\u0bcb\u0bb2 \u0b86\u0ba9\u0bbe \u0b89\u0bb3\u0bcd\u0bb3\u0bc7 \u0ba8\u0bc0 \u0ba4\u0bbe\u0ba9\u0bcd \u0baf\u0bbe\u0bb4\u0bbf\u0ba9\u0bbf",
+          "duration_ms": 23360,
+          "positive_styles": [
+            "electronic percussion",
+            "catchy melody",
+            "expressive vocals",
+            "upbeat rhythm",
+            "the biggest chorus: friends sing the name along with him, extra claps, full groove"
+          ],
+          "negative_styles": [
+            "acoustic solo",
+            "slow tempo"
+          ],
+          "context_adherence": "high",
+          "conditioning_ref": {
+            "song_id": "mHbPMGmc3XvYjrf5CiHo_upload",
+            "range": {
+              "start_ms": 18340,
+              "end_ms": 41700
+            }
+          },
+          "condition_strength": "xhigh"
+        },
+        {
+          "song_id": "mHbPMGmc3XvYjrf5CiHo_upload",
+          "range": {
+            "start_ms": 41700,
+            "end_ms": 60000
+          }
+        }
+      ]
+    },
+    "model_id": "music_v2_5"
+  },
+  "brief": {
+    "notes": "Jithesh 3 Nov 09:15: 'make take 2 to 3-4 mints audio'. Take 2's own sections (verse 1 + chorus 0-41.7 s, chorus, verse 2/ending 41.7-60 s) are kept exactly as reference chunks. New parts are each conditioned on the matching section of take 2 so the tune stays: verse 2 and verse 3 (new words in the same line shapes as take 2's own verse 1), a soft bridge with female aa lines, an instrumental chorus break, a bigger final chorus with take 2's own chorus words. Lyrics in Tamil script like take 2."
+  },
+  "story": "He says he is fine after she left, but keeps calling her name and checking her photos. In the bridge he admits saying 'fine' was a lie.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
