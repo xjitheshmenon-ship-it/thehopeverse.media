@@ -79,22 +79,13 @@
  },
  "yt-instinct": [
   {
-   "topic": "Alex, le perroquet gris du Gabon qui comprenait les couleurs et les formes (histoire vraie)",
-   "why": "Un animal nommé et une étude publiée par Irene Pepperberg, avec des photos libres sur Commons. Il montre l'intelligence et la parole, et l'on peut le comparer à un jeune enfant. Le sujet est durable. Le public francophone le connaît peu en français.",
-   "score": 55,
-   "views48": 850,
-   "planned": "2026-11-03 09:40",
-   "when": "2026-11-04 04:00",
-   "hand": true
-  },
-  {
    "topic": "Paul, le poulpe qui a deviné les 8 matchs de l'Allemagne à la Coupe du monde 2010 (histoire vraie)",
    "why": "Animal nommé mondialement connu ; photos libres sur Wikimedia Commons. (choisi à la main par Claude, 3 nov.)",
    "score": 64,
    "views48": 1600,
    "hand": true,
    "planned": "2026-11-04 06:00",
-   "when": "2026-11-04 04:25"
+   "when": "2026-11-04 04:00"
   },
   {
    "topic": "Owney, le chien qui a voyagé avec le courrier tout autour du monde en 1895 (histoire vraie)",
@@ -103,7 +94,7 @@
    "views48": 1200,
    "hand": true,
    "planned": "2026-11-04 06:00",
-   "when": "2026-11-04 04:50"
+   "when": "2026-11-04 04:25"
   },
   {
    "topic": "Jumbo, l'éléphant si célèbre que son nom est devenu un mot (histoire vraie)",
@@ -112,7 +103,7 @@
    "views48": 1400,
    "hand": true,
    "planned": "2026-11-04 06:00",
-   "when": "2026-11-04 05:15"
+   "when": "2026-11-04 04:50"
   },
   {
    "topic": "Balto, le chien de traîneau qui a apporté le remède contre la diphtérie à Nome en 1925 (histoire vraie)",
@@ -121,7 +112,7 @@
    "views48": 1500,
    "hand": true,
    "planned": "2026-11-04 06:00",
-   "when": "2026-11-04 05:40"
+   "when": "2026-11-04 05:15"
   },
   {
    "topic": "Laïka, la chienne des rues de Moscou devenue le premier animal en orbite (histoire vraie)",
@@ -130,6 +121,14 @@
    "views48": 1400,
    "hand": true,
    "planned": "2026-11-04 06:00",
+   "when": "2026-11-04 05:40"
+  },
+  {
+   "topic": "Bamboo, la chienne Colley de... non : Mr. Gums exclu. Choix : Tarra et Bella, l'éléphante et la chienne devenues inséparables dans un refuge du Tennessee (histoire vraie)",
+   "why": "Histoire d'amitié entre deux animaux, avec de vraies photos libres de droits du refuge. Ton calme et chaleureux, adapté aux seniors. Même format que Owen et Mzee et Dindim, qui fonctionnent bien. Angle peu repris en français.",
+   "score": 66,
+   "views48": 1400,
+   "planned": "2026-11-03 23:30",
    "when": "2026-11-04 06:05"
   }
  ],
