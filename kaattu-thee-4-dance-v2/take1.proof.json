@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER album Kaattu Thee, song 4: Dance v2 (heavy swagger groove from his two reference BGMs, one take)",
+  "take": 1,
+  "made_at_utc": "2026-11-03T14:01:52.258274+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "ksPUkLdJGXF32EdZmHcj",
+  "request": {
+    "prompt": "A modern Tamil film mass swagger theme for a dance entry, instrumental, new-generation Kollywood style. Slow, heavy, head-nodding half-time groove at 86 BPM (double-time feel 172). Dark and bass-heavy: a huge sustained 808 sub bass and a growling synth bass carry the groove, the drums are tight and sparse (punchy kick, snap, a few thappu and darbuka accents), very few bright highs. ONE short, menacing, catchy hook in D minor with an Arabic-Indian colour: a flat second (E flat) and a raised seventh (C sharp), played on a dark reedy synth lead with slides and bends, answered by low brass stabs and a deep wordless gang 'hey'. Simple, repeated, easy to hum. Clean, dark, wide cinematic mix with space, steady loud level, not noisy. Starts straight on the bass and the hook, one rising sweep around 12 seconds, a one-beat silence, then the full heavy groove with brass and the hook doubled an octave up, a second bigger statement of the hook, ends cleanly on one heavy hit and a sub-bass drop.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 75000
+  },
+  "brief": {
+    "notes": "Jithesh 13:46-13:48 on dance v1 (Arabic-kuthu fusion, many sections): 'total disaster', 'everything is wrong'. v1 overloaded the prompt (fusion scale + seven sections). v2 uses the same simple shape that worked for the locked intro and the fight theme: one clear hook, a quiet start on one instrument, a build, a short silence, one big drop, the hook bigger, a clean ending. Plain Tamil kuthu, no Arabic fusion. One take. 13:52 he sent two reference BGMs ('this beast BGM'). Measured (tools/analyze.py; traits only, no tune): ref 1 86 BPM half-time (172), D minor with flat 2nd + raised 7th (D Eb F# / C#), sub 48% bass 35% mid 13% highs 4%, 808 sustained 44%, percussive only 31%, flat loud -10 to -12 dB, one riser ~13 s; ref 2 ~62/123 BPM, G minor with flat 2nd + raised 7th, sub 33% bass 35% mid 27%, percussive 14%, wider stereo, flat level. So: dark, sub-bass-led, slow heavy swagger, synth-and-bass groove more than drums, few bright highs, steady level."
+  },
+  "story": "Rudra's friends drag him into the street wedding procession and the whole lane turns into a dance floor.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
