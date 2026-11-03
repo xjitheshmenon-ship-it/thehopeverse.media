@@ -1,0 +1,215 @@
+{
+  "title": "NOCTURNE CIRCUIT: He switched the whole city back on",
+  "music": "music/locked/nocturne-circuit.mp3",
+  "maker": "ltx",
+  "look": "Photorealistic cinematic film still, a modern megacity at night during a total power blackout, deep blue darkness cut by torch beams, electric cyan sparks and warm gold city light, anamorphic lens, shallow depth of field, smooth cinematic camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. The engineer is always the same original fictional character: a lean Indian man in his early thirties, short black hair, short neat black beard, a white hard hat with a small round headlamp, a dark navy utility work jacket with two reflective silver bands on each sleeve, grey work trousers, black work boots, bright orange work gloves",
+  "refs": {
+    "ref-engineer.jpg": "Full-body portrait of an original fictional man: a lean Indian man in his early thirties, short black hair, short neat black beard, a white hard hat with a small round headlamp, a dark navy utility work jacket with two reflective silver bands on each sleeve, grey work trousers, black work boots, bright orange work gloves, standing calm and ready, plain dark grey studio background, soft cyan key light and warm gold rim light"
+  },
+  "shots": [
+    {
+      "end": 4.8,
+      "prompt": "Slow aerial push over a vast modern megacity at night in a total blackout, every glass tower dark, only moonlight on the glass",
+      "look": "Photorealistic cinematic film still, a modern megacity at night during a total power blackout, deep blue darkness cut by torch beams, electric cyan sparks and warm gold city light, anamorphic lens, shallow depth of field, smooth cinematic camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No main character's face in frame unless described"
+    },
+    {
+      "end": 9.6,
+      "prompt": "Close-up, a little girl's face lit by a single candle behind an apartment window, looking out at the dark city",
+      "look": "Photorealistic cinematic film still, a modern megacity at night during a total power blackout, deep blue darkness cut by torch beams, electric cyan sparks and warm gold city light, anamorphic lens, shallow depth of field, smooth cinematic camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No main character's face in frame unless described"
+    },
+    {
+      "end": 14.4,
+      "prompt": "In darkness he clicks on his headlamp, the white beam cuts across the frame and lights his calm face",
+      "image": "films/nocturne-circuit-film/ref-engineer.jpg",
+      "scene": "He stands in a pitch-dark city street at night, waist-up, facing camera, blackout"
+    },
+    {
+      "end": 19.2,
+      "prompt": "A dead traffic signal over a dark crowded intersection, cars stopped, people holding up phone torches in the blackout",
+      "look": "Photorealistic cinematic film still, a modern megacity at night during a total power blackout, deep blue darkness cut by torch beams, electric cyan sparks and warm gold city light, anamorphic lens, shallow depth of field, smooth cinematic camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No main character's face in frame unless described"
+    },
+    {
+      "end": 24.0,
+      "prompt": "He walks fast down a dark street towards camera, a tool bag on his shoulder, headlamp beam swinging",
+      "image": "films/nocturne-circuit-film/ref-engineer.jpg",
+      "scene": "He walks down a dark empty city street at night during a blackout, full body, tool bag on his shoulder"
+    },
+    {
+      "end": 28.8,
+      "prompt": "He hauls open a heavy steel door and blue sparks hiss out of the darkness inside",
+      "image": "films/nocturne-circuit-film/ref-engineer.jpg",
+      "scene": "He stands at the heavy steel door of a power substation at night, waist-up, side view"
+    },
+    {
+      "end": 33.6,
+      "prompt": "Inside a dark power substation, giant transformers, a burnt thick cable spitting bright blue sparks",
+      "look": "Photorealistic cinematic film still, a modern megacity at night during a total power blackout, deep blue darkness cut by torch beams, electric cyan sparks and warm gold city light, anamorphic lens, shallow depth of field, smooth cinematic camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No main character's face in frame unless described"
+    },
+    {
+      "end": 38.4,
+      "prompt": "Close-up, he studies the sparking cable, blue light flickering on his face, calm and focused",
+      "image": "films/nocturne-circuit-film/ref-engineer.jpg",
+      "scene": "Inside a dark power substation lit by blue sparks, close-up of his face and shoulders"
+    },
+    {
+      "end": 43.2,
+      "prompt": "Extreme close-up, hands in bright orange work gloves strip a thick black cable, bright copper strands shining in a torch beam",
+      "look": "Photorealistic cinematic film still, a modern megacity at night during a total power blackout, deep blue darkness cut by torch beams, electric cyan sparks and warm gold city light, anamorphic lens, shallow depth of field, smooth cinematic camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No main character's face in frame unless described"
+    },
+    {
+      "end": 48.0,
+      "prompt": "He climbs a tall steel ladder inside the substation, sparks falling around him",
+      "image": "films/nocturne-circuit-film/ref-engineer.jpg",
+      "scene": "He climbs a tall steel ladder inside a dark power substation, full body, sparks in the air"
+    },
+    {
+      "end": 52.8,
+      "prompt": "Extreme close-up, hands in bright orange work gloves lock a heavy steel cable clamp onto a copper busbar, tiny blue arcs",
+      "look": "Photorealistic cinematic film still, a modern megacity at night during a total power blackout, deep blue darkness cut by torch beams, electric cyan sparks and warm gold city light, anamorphic lens, shallow depth of field, smooth cinematic camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No main character's face in frame unless described"
+    },
+    {
+      "end": 57.6,
+      "prompt": "He grips a huge red steel lever with both hands and takes a deep breath",
+      "image": "films/nocturne-circuit-film/ref-engineer.jpg",
+      "scene": "Inside a dark power substation he grips a huge red lever with both hands, waist-up"
+    },
+    {
+      "end": 62.4,
+      "prompt": "Extreme close-up of his eyes in the dark, perfectly still, he gives one small nod",
+      "image": "films/nocturne-circuit-film/ref-engineer.jpg",
+      "scene": "Extreme close-up of his eyes and headlamp in darkness"
+    },
+    {
+      "end": 67.2,
+      "prompt": "Hands in bright orange work gloves slam a huge red lever down and a wave of blue-white electricity races along thick cables",
+      "look": "Photorealistic cinematic film still, a modern megacity at night during a total power blackout, deep blue darkness cut by torch beams, electric cyan sparks and warm gold city light, anamorphic lens, shallow depth of field, smooth cinematic camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No main character's face in frame unless described"
+    },
+    {
+      "end": 72.0,
+      "prompt": "Aerial over the dark megacity, one district lights up block by block in a racing wave of warm gold light",
+      "look": "Photorealistic cinematic film still, a modern megacity at night during a total power blackout, deep blue darkness cut by torch beams, electric cyan sparks and warm gold city light, anamorphic lens, shallow depth of field, smooth cinematic camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No main character's face in frame unless described"
+    },
+    {
+      "end": 76.8,
+      "prompt": "Street lamps flick on one after another down a long wet avenue, the camera rushing along with the wave of light",
+      "look": "Photorealistic cinematic film still, a modern megacity at night during a total power blackout, deep blue darkness cut by torch beams, electric cyan sparks and warm gold city light, anamorphic lens, shallow depth of field, smooth cinematic camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No main character's face in frame unless described"
+    },
+    {
+      "end": 81.6,
+      "prompt": "A night market's lights and neon flicker back on, the crowd cheering with arms raised",
+      "look": "Photorealistic cinematic film still, a modern megacity at night during a total power blackout, deep blue darkness cut by torch beams, electric cyan sparks and warm gold city light, anamorphic lens, shallow depth of field, smooth cinematic camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No main character's face in frame unless described"
+    },
+    {
+      "end": 86.4,
+      "prompt": "He steps out into the street and looks up at the lit towers, a small smile, then turns his head to the dark horizon",
+      "image": "films/nocturne-circuit-film/ref-engineer.jpg",
+      "scene": "He stands outside a power substation at night, warm city light on one side of his face, waist-up"
+    },
+    {
+      "end": 91.2,
+      "prompt": "Aerial, half the megacity glows gold, the other half is still in total darkness, a sharp line between them",
+      "look": "Photorealistic cinematic film still, a modern megacity at night during a total power blackout, deep blue darkness cut by torch beams, electric cyan sparks and warm gold city light, anamorphic lens, shallow depth of field, smooth cinematic camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No main character's face in frame unless described"
+    },
+    {
+      "end": 96.0,
+      "prompt": "He rides a black electric motorbike fast through dark empty streets, his headlamp beam leading the way",
+      "image": "films/nocturne-circuit-film/ref-engineer.jpg",
+      "scene": "He rides a black electric motorbike through a dark city street at night, side view, full body"
+    },
+    {
+      "end": 100.8,
+      "prompt": "He climbs the steel lattice of a giant electricity transmission tower at night, the dark city far below",
+      "image": "films/nocturne-circuit-film/ref-engineer.jpg",
+      "scene": "He climbs the steel lattice of a giant electricity transmission tower at night, full body, city below"
+    },
+    {
+      "end": 105.6,
+      "prompt": "At the top of the tower he clips on his safety line and looks out over the dark half of the city, wind tugging his jacket",
+      "image": "films/nocturne-circuit-film/ref-engineer.jpg",
+      "scene": "He stands at the top of a giant electricity transmission tower at night, waist-up, dark city behind"
+    },
+    {
+      "end": 110.4,
+      "prompt": "He presses two thick cable ends together and a blinding blue-white flash fills the frame",
+      "image": "films/nocturne-circuit-film/ref-engineer.jpg",
+      "scene": "At the top of a transmission tower at night he holds two thick cable ends, close-up, waist-up"
+    },
+    {
+      "end": 115.2,
+      "prompt": "A blue-white electric surge races along high-voltage power lines from a giant tower down into a dark city",
+      "look": "Photorealistic cinematic film still, a modern megacity at night during a total power blackout, deep blue darkness cut by torch beams, electric cyan sparks and warm gold city light, anamorphic lens, shallow depth of field, smooth cinematic camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No main character's face in frame unless described"
+    },
+    {
+      "end": 120.0,
+      "prompt": "Aerial over the whole megacity, district after district bursts into warm gold light all the way to the horizon",
+      "look": "Photorealistic cinematic film still, a modern megacity at night during a total power blackout, deep blue darkness cut by torch beams, electric cyan sparks and warm gold city light, anamorphic lens, shallow depth of field, smooth cinematic camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No main character's face in frame unless described"
+    },
+    {
+      "end": 124.8,
+      "prompt": "A silver metro train's lights snap on and it glides along an elevated track between glowing towers",
+      "look": "Photorealistic cinematic film still, a modern megacity at night during a total power blackout, deep blue darkness cut by torch beams, electric cyan sparks and warm gold city light, anamorphic lens, shallow depth of field, smooth cinematic camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No main character's face in frame unless described"
+    },
+    {
+      "end": 129.6,
+      "prompt": "A wall of tall apartment towers lights up floor by floor from bottom to top, fast",
+      "look": "Photorealistic cinematic film still, a modern megacity at night during a total power blackout, deep blue darkness cut by torch beams, electric cyan sparks and warm gold city light, anamorphic lens, shallow depth of field, smooth cinematic camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No main character's face in frame unless described"
+    },
+    {
+      "end": 134.4,
+      "prompt": "On top of the tower he throws his head back laughing, the golden city glowing behind him",
+      "image": "films/nocturne-circuit-film/ref-engineer.jpg",
+      "scene": "He stands at the top of a giant transmission tower at night, waist-up, the whole city glowing gold behind him"
+    },
+    {
+      "end": 139.2,
+      "prompt": "Crowds on a big city bridge cheer with arms raised as the skyline lights up behind them",
+      "look": "Photorealistic cinematic film still, a modern megacity at night during a total power blackout, deep blue darkness cut by torch beams, electric cyan sparks and warm gold city light, anamorphic lens, shallow depth of field, smooth cinematic camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No main character's face in frame unless described"
+    },
+    {
+      "end": 144.0,
+      "prompt": "Sweeping shot over a harbour, the glowing city reflected in calm black water",
+      "look": "Photorealistic cinematic film still, a modern megacity at night during a total power blackout, deep blue darkness cut by torch beams, electric cyan sparks and warm gold city light, anamorphic lens, shallow depth of field, smooth cinematic camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No main character's face in frame unless described"
+    },
+    {
+      "end": 148.8,
+      "prompt": "He switches off his headlamp, the city lights are bright enough now on his face",
+      "image": "films/nocturne-circuit-film/ref-engineer.jpg",
+      "scene": "Close-up of him at the top of a transmission tower at night, city glow on his face"
+    },
+    {
+      "end": 153.6,
+      "prompt": "He climbs down the tower ladder, golden city light on his face",
+      "image": "films/nocturne-circuit-film/ref-engineer.jpg",
+      "scene": "He climbs down a transmission tower ladder at night, full body, glowing city behind"
+    },
+    {
+      "end": 158.4,
+      "prompt": "A little girl presses her hand to a lit apartment window and waves at the glowing city",
+      "look": "Photorealistic cinematic film still, a modern megacity at night during a total power blackout, deep blue darkness cut by torch beams, electric cyan sparks and warm gold city light, anamorphic lens, shallow depth of field, smooth cinematic camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No main character's face in frame unless described"
+    },
+    {
+      "end": 163.2,
+      "prompt": "He walks alone down a glowing avenue, tool bag on his shoulder, gold lights reflected in the wet road",
+      "image": "films/nocturne-circuit-film/ref-engineer.jpg",
+      "scene": "He walks down a lit city avenue at night, full body, tool bag on his shoulder, wet road"
+    },
+    {
+      "end": 168.0,
+      "prompt": "He sits on a concrete step with a small paper cup of tea, steam rising, watching the city",
+      "image": "films/nocturne-circuit-film/ref-engineer.jpg",
+      "scene": "He sits on a concrete step outside a substation at night, full body, holding a small paper cup of tea"
+    },
+    {
+      "end": 172.8,
+      "prompt": "Slow aerial pull-back from the glowing megacity as the first pale blue light of dawn rises on the horizon",
+      "look": "Photorealistic cinematic film still, a modern megacity at night during a total power blackout, deep blue darkness cut by torch beams, electric cyan sparks and warm gold city light, anamorphic lens, shallow depth of field, smooth cinematic camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No main character's face in frame unless described"
+    },
+    {
+      "end": 180.0,
+      "prompt": "He looks up at the dawn sky and smiles, the first soft light on his face",
+      "image": "films/nocturne-circuit-film/ref-engineer.jpg",
+      "scene": "Close-up of him outside at first light of dawn, soft blue sky behind"
+    }
+  ],
+  "description": "One blackout. One engineer. One night to switch the whole city back on.\n\nMusic: Nocturne Circuit, an original score by ÆTHER. Original AI-made film. Headphones on, volume up.\n\n#cinematicmusic #epicmusic #electronicmusic #nightcity #shorts\n\nMade with AI."
+}
