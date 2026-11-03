@@ -1,16 +1,17 @@
-# Hopeverse spending report, 02 Nov 2026 21:51
+# Hopeverse spending report, 03 Nov 2026 06:43
 
-- Today: $18.96 (40 runs)
-- Last 7 days: $170.72
-- This month: $31.96
-- All time: $209.12
+- Today: $1.22 (2 runs)
+- Last 7 days: $139.57
+- This month: $33.83
+- All time: $210.99
 
 Claude (Anthropic) costs as estimated by agents.py, review included. Video images from fal.ai add
 about $0.006 each (about $0.06 a Short). Exact bills: console.anthropic.com and fal.ai/dashboard.
 
 | Day | Runs | Cost |
 | --- | --- | --- |
-| 2026-11-02 | 40 | $18.96 |
+| 2026-11-03 | 2 | $1.22 |
+| 2026-11-02 | 46 | $19.61 |
 | 2026-11-01 | 37 | $13.00 |
 | 2026-10-31 | 37 | $12.96 |
 | 2026-10-30 | 78 | $51.31 |
@@ -54,36 +55,37 @@ spazio, astronomia, universo, pianeti, stelle, sistema solare, missioni spaziali
 
 - fal.ai: ? usd (Couldn't read the balance (HTTP Error 401: Unauthorized); add a fal.ai READONLY key as the FAL_BILLING_KEY secret)
 - HeyGen: ? usd (Couldn't read the balance (HTTP Error 401: UNAUTHORIZED))
-- ElevenLabs: 28762 characters (Voices; free Edge voices take over when it runs out. Plan: payg, status: active, resets 02 Dec 2026)
+- ElevenLabs: 28388 characters (Voices; free Edge voices take over when it runs out. Plan: payg, status: active, resets 02 Dec 2026)
 - Anthropic: ? usd (No balance API: see console.anthropic.com > Billing. Spend is logged per run)
 - Perplexity: ? usd (No balance API: see perplexity.ai/account/api. About $0.006 a search)
 
 ## Mr. Grow's to-dos for you today
 
-- **Fix the YouTube token.** Re-authorise it, because stats have now failed twice running.
-- **Publish times:** I moved none. `performance` shows no usable slot data, only Hopeverse slots from 29 Oct, and no views.
+- **Reconnect YouTube OAuth.** Until then I can't judge publish times. I moved no times today.
 - **Pinned comments:**
-  - Instinct: « Quel animal vous a le plus surpris ? »
+  - Instinct: "Quel animal vous a le plus surpris ?"
+  - Sawaal: "आपको क्या लगता है, जवाब कौन देगा?"
+  - Sankalp: "इस फैसले से किसे फायदा होगा?"
   - Hopeverse: "Which story should we explain next?"
-  - Sawaal: "क्या छूटे वोटर वापस जुड़ सकते हैं?"
-  - Sankalp: "इस फ़ैसले का सबसे बड़ा असर किस पर पड़ेगा?"
-  - Instinct Japan, Instinct Natur and Instinto Natural: "Which animal story do you want next?", written in each channel's language.
-- **Community posts and polls:**
-  - Instinct: crow, dolphin or stork next?
-  - Hopeverse: tech, science or world news?
-  - Sawaal: SIR or census?
-- **Instagram:** share Hopeverse's best Short, "$399 Robot Duck Learned to Walk Before Step 1", with the caption "The robot learned to walk before step one. Full story on YouTube." Do not cross-promote between our own channels.
-- **Clean-up:** delete `rQPOCx8wY6c`.
+- **Community posts, each with a poll:**
+  - Instinct: "Corbeau ou dauphin ?"
+  - Sankalp and Sawaal: pick the next topic.
+  - Hopeverse: "Tech or world news?"
+- **Instagram:** share the best Hopeverse Short each day with the caption "One number, one minute. Which story next?" Never cross-promote between our own channels.
 
 ## Monetization target (10M Shorts views in 90 days)
 
-The YouTube stats API failed again. The token is expired or revoked (`invalid_grant`), so I have no view numbers today. I can't report views per day or views per Short against 111,000 and 28,000. The last known figures (29 Oct) were Instinct about 570 per Short, Sawaal about 90 and Hopeverse about 9, so all three are far below target. Instinct is still the closest. The total across all channels against 3.3 million a day is unknown.
+Stats are unavailable, so these figures are not measured.
+- Per-channel views per day against 111,000, and average views per Short against 28,000: not measurable.
+- Last known, from 28 Oct: Instinct about 570 per Short, with the crow at 1,218 and the dolphin at 1,156.
+- Network total against 3.3 million per day: not measurable.
+- The closest channel is Instinct. It should keep to named-animal breakout formats and use the same topics on its German, Spanish and Japanese sister channels.
 
 ## Sponsorship and collab leads
 
-Search was down, so every lead below is unverified. Check each entry bar by hand.
-1. **Hopeverse:** Ground News, check its creator/affiliate page. Link: ground.news.
-2. **Instinct:** French nature and pet brand briefs on Hivency or Influence4You. Link: hivency.com.
-3. **Sawaal and Sankalp:** Plixxo, for the follower minimum. Link: plixxo.com.
-4. **Hopeverse:** Collabstr, for news or education briefs. Link: collabstr.com.
-5. **To test:** Influencer Hub, for a similar-size Hindi news or French nature creator to tag in a Collaborations tag. Link: influencer-hub.com.
+Search was limited today, so every entry bar below is unverified. Check each one by hand.
+1. **Hopeverse:** Ground News has an application form for independent creators. Check its eligibility page first. This is yesterday's lead with one new detail. Link: help.ground.news/en/categories/2358337-partner-with-us
+2. **Instinct and its sister channels:** Insense, to test for pet and nature brand briefs. Link: insense.pro
+3. **Sawaal and Sankalp:** Kofluence, an Indian creator platform, to test for nano-creator minimums. Link: kofluence.com
+4. **Instinct:** wildlife ID apps, to test for affiliate or sponsor deals. For example, Merlin Bird ID is not sponsor-ready, so check for a partner page.
+5. **Collab tag:** find a French wildlife Shorts creator of a similar size by hand.
