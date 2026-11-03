@@ -79,22 +79,13 @@
  },
  "yt-instinct": [
   {
-   "topic": "Paul, le poulpe qui a deviné les 8 matchs de l'Allemagne à la Coupe du monde 2010 (histoire vraie)",
-   "why": "Animal nommé mondialement connu ; photos libres sur Wikimedia Commons. (choisi à la main par Claude, 3 nov.)",
-   "score": 64,
-   "views48": 1600,
-   "hand": true,
-   "planned": "2026-11-04 06:00",
-   "when": "2026-11-04 04:00"
-  },
-  {
    "topic": "Owney, le chien qui a voyagé avec le courrier tout autour du monde en 1895 (histoire vraie)",
    "why": "Chien nommé ; photos d'archives du Smithsonian dans le domaine public. (choisi à la main par Claude, 3 nov.)",
    "score": 62,
    "views48": 1200,
    "hand": true,
    "planned": "2026-11-04 06:00",
-   "when": "2026-11-04 04:25"
+   "when": "2026-11-04 05:15"
   },
   {
    "topic": "Jumbo, l'éléphant si célèbre que son nom est devenu un mot (histoire vraie)",
@@ -103,7 +94,7 @@
    "views48": 1400,
    "hand": true,
    "planned": "2026-11-04 06:00",
-   "when": "2026-11-04 04:50"
+   "when": "2026-11-04 05:40"
   },
   {
    "topic": "Balto, le chien de traîneau qui a apporté le remède contre la diphtérie à Nome en 1925 (histoire vraie)",
@@ -112,7 +103,7 @@
    "views48": 1500,
    "hand": true,
    "planned": "2026-11-04 06:00",
-   "when": "2026-11-04 05:15"
+   "when": "2026-11-04 06:05"
   },
   {
    "topic": "Laïka, la chienne des rues de Moscou devenue le premier animal en orbite (histoire vraie)",
@@ -121,7 +112,7 @@
    "views48": 1400,
    "hand": true,
    "planned": "2026-11-04 06:00",
-   "when": "2026-11-04 05:40"
+   "when": "2026-11-05 04:00"
   },
   {
    "topic": "Bamboo, la chienne Colley de... non : Mr. Gums exclu. Choix : Tarra et Bella, l'éléphante et la chienne devenues inséparables dans un refuge du Tennessee (histoire vraie)",
@@ -129,7 +120,15 @@
    "score": 66,
    "views48": 1400,
    "planned": "2026-11-03 23:30",
-   "when": "2026-11-04 06:05"
+   "when": "2026-11-05 04:25"
+  },
+  {
+   "topic": "Tarra et Bella : l'éléphante et la chienne devenues inséparables dans un refuge du Tennessee (histoire vraie)",
+   "why": "Déjà prévu dans la liste mais pas encore publié ; ici, choisissons plutôt une histoire proche du format gagnant et non rejetée : une amitié vraie entre deux animaux nommés, avec de vraies photos libres sur Wikimedia Commons, racontée avec calme et chaleur pour un public senior francophone.",
+   "score": 58,
+   "views48": 1100,
+   "planned": "2026-11-04 00:12",
+   "when": "2026-11-05 04:50"
   }
  ],
  "yt-instinct-ja": [

@@ -1,0 +1,28 @@
+{
+  "channel_id": "yt-instinct",
+  "title": "Paul le poulpe a trouv\u00e9 8 sur 8 (histoire vraie) #Shorts",
+  "description": "Huit sur huit : en 2010, un poulpe nomm\u00e9 Paul, dans un aquarium d'Oberhausen, en Allemagne, a d\u00e9sign\u00e9 le bon vainqueur de huit matchs de la Coupe du monde, les sept de l'Allemagne plus la finale. Rien ne prouve un don de voyance : huit bons choix sur huit, c'est comme faire huit fois pile avec une pi\u00e8ce, soit une chance sur 256. Une chercheuse pense que les poulpes sont peut-\u00eatre attir\u00e9s par les bandes des drapeaux, et l'histoire de Paul donne encore envie de mieux conna\u00eetre ces animaux \u00e9tonnants.\n\nInstinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.\n\nSources : Wikip\u00e9dia (\u00ab Paul (Krake) \u00bb / \u00ab Paul the Octopus \u00bb), BBC, The Guardian.\nPhotos de Paul : Wikimedia Commons ([auteur], [licence], copier depuis la page du fichier).\nAutres images : s\u00e9quences libres d'illustration (Pixabay).\n\n#Shorts #animaux #nature #histoirevraie #poulpe",
+  "script": "NOTES FOR OWNER: Publish slot 19:00 Europe/Paris (fallbacks 22:00 / 05:00). Status live, French, narrator only (no cast).\n\nVOICE: fr-FR-DeniseNeural, rate -8%, captions scale 1.2.\n\nFINAL LOCKED SCRIPT:\nHuit sur huit. Un poulpe a trouv\u00e9 huit r\u00e9sultats de suite. Il s'appelait Paul et vivait dans un aquarium \u00e0 Oberhausen, en Allemagne. Avant chaque match de la Coupe du monde 2010, on posait devant lui deux bo\u00eetes transparentes. Chaque bo\u00eete contenait des moules et le drapeau d'une \u00e9quipe. La premi\u00e8re bo\u00eete ouverte \u00e9tait son choix. Il a trouv\u00e9 les sept matchs de l'Allemagne, plus la finale. M\u00eame les deux d\u00e9faites : contre la Serbie, puis contre l'Espagne en demi-finale. En finale, il a choisi l'Espagne, qui a battu les Pays-Bas. Des m\u00e9dias du monde entier ont suivi ses choix. En Espagne, le chef du gouvernement a m\u00eame parl\u00e9 de le prot\u00e9ger. \u00c9tait-ce de la voyance ? Non : rien ne prouve une voyance, tout s'explique tr\u00e8s bien par le hasard. Huit bons choix sur huit, c'est comme faire huit fois pile avec une pi\u00e8ce : une chance sur 256. D'autres animaux devins se sont tromp\u00e9s. On ne se souvient que de celui qui a r\u00e9ussi. Une chercheuse pense que les poulpes sont peut-\u00eatre attir\u00e9s par les bandes horizontales des drapeaux. Paul est n\u00e9 en 2008 en Angleterre. Il est mort le 26 octobre 2010, \u00e0 moins de trois ans. Un petit monument garde ses cendres \u00e0 Oberhausen. Et vous\u2026 vous souvenez-vous de Paul ?\n\nEDIT PLAN (Mr. Cut): 9:16, ~52 s, 22 shots.\n1 (0-3) Commons photo of Paul at the boxes, \"8 sur 8\".\n2-4 (3-10) Oberhausen city, octopus tank, Paul with two clear boxes, caption \"Oberhausen, Allemagne, 2010\".\n5-6 (10-15) mussels, two flags, \"1re bo\u00eete ouverte = son choix\".\n7-10 (15-23) stadium, German/Serbian/Spanish flags, \"7 matchs + la finale = 8 sur 8\".\n11-13 (23-30) Dutch+Spanish flags, newspapers, Madrid government building (no faces), \"Des m\u00e9dias du monde entier\".\n14-18 (30-42) octopus close-up \"Hasard, pas voyance\", coin flip with soft clink, spinning coin \"1 chance sur 256\", parakeet, striped flags \"Hypoth\u00e8se\".\n19-22 (42-52) English coast \"2008 \u2013 2010\", Paul in tank, Oberhausen memorial (Commons if licence OK, else city), calm octopus, \"Et vous, vous souvenez-vous de Paul ?\", fade.\nStock tagged \"illustration\". Soft piano/strings at -18 dB, slow dissolves.\nImages: free only, Wikimedia Commons (confirm licence, author, and that it is Paul 2010, not Paul II) + Pixabay; never HeyGen or fal. Credit line on shots 20-22.\nCAST: none (narrator only).\nTHUMBNAIL: real Commons photo of Paul, tight crop in his tank, deep blue background, big bright-yellow \"8 sur 8\" with dark outline (alt B: \"8 sur 8 ?\" on dark turquoise, orange 8).\nPINNED COMMENT: \u00ab Et vous, vous souvenez-vous de Paul et de l'\u00e9t\u00e9 2010 ? \u00bb\nLocked facts: 7 matchs de l'Allemagne + la finale = 8 sur 8; 1/256; n\u00e9 en 2008; mort le 26 octobre 2010.",
+  "lang": "fr",
+  "footer": "Instinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "category": "15",
+  "photos": true,
+  "draft_cost": 0.94,
+  "relevance": {
+    "score": 80,
+    "why": "Evergreen, well-known true story that suits older francophone viewers; the script matches the title and its facts hold (8/8, 1/256, born 2008, died 26 Oct 2010), and the hasard-versus-voyance framing is accurate. No newer finding contradicts it. Mild risk: the 2010 nostalgia hook is less fresh, and the 'histoire vraie' title is close to the cigogne hit format.",
+    "views48": 1100
+  },
+  "credits": [
+    "Paul the Octopus 1.jpg by WM-Beh\u00e4lter_des_Oktopus-Orakels_Paul.JPG: Tilla\nOktopus-Orakel_Paul.JPG: Tilla\nderivative work: Mbz1 (talk) (CC BY-SA 3.0), https://commons.wikimedia.org/wiki/File:Paul_the_Octopus_1.jpg",
+    "Fachada Moncloa.png by Pool Moncloa (Attribution), https://commons.wikimedia.org/wiki/File:Fachada_Moncloa.png",
+    "German flag (7664376100).jpg by fdecomite (CC BY 2.0), https://commons.wikimedia.org/wiki/File:German_flag_(7664376100).jpg",
+    "Oktopus-Orakel Paul mit Schuh.JPG by Tilla (CC BY-SA 3.0), https://commons.wikimedia.org/wiki/File:Oktopus-Orakel_Paul_mit_Schuh.JPG"
+  ],
+  "qa": {
+    "passed": true,
+    "problems": "",
+    "bad_frames": 0
+  },
+  "youtube_id": "YCyh1kKlbsg"
+}
