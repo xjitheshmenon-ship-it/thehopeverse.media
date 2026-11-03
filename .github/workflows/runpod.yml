@@ -10,7 +10,7 @@ on:
         description: "setup = create the RunPod endpoint, test = make one shot, health = show workers and queue, gpus = clear the queue and widen the GPU types, move = put the volume in US-CA-2 (H100/H200 stock)"
         default: test
         type: choice
-        options: [setup, test, health, gpus, move]
+        options: [setup, test, health, gpus, move, dry]
 
 permissions:
   contents: write
@@ -78,6 +78,19 @@ jobs:
           jq --arg v "$vol" '.volume = $v' runpod.json > r && mv r runpod.json
           git config user.name "Hope (RunPod setup)"; git config user.email "actions@github.com"
           git commit -am "RunPod LTX volume moved to US-CA-2" && git push
+      - name: Dry run of the worker start on this runner (free, no GPU)
+        if: inputs.job == 'dry'
+        run: |
+          df -h / | tail -1
+          docker run --rm -v "$PWD:/repo" pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime bash -c '
+            pip install -q runpod transformers accelerate sentencepiece imageio imageio-ffmpeg av hf_transfer https://github.com/huggingface/diffusers/archive/main.zip 2>&1 | tail -5
+            python -c "import torch, diffusers; print(\"torch\", torch.__version__, \"diffusers\", diffusers.__version__)"
+            cd /repo && python -c "
+          import runpod_ltx
+          from diffusers import LTX2Pipeline, LTX2ImageToVideoPipeline, QwenImageEditPipeline
+          from diffusers.pipelines.ltx2.utils import DEFAULT_NEGATIVE_PROMPT, DISTILLED_SIGMA_VALUES
+          from diffusers.utils import encode_video
+          print(\"imports ok\")"'
       - name: Make one test shot on RunPod
         if: inputs.job == 'test'
         run: |
