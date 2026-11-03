@@ -1,0 +1,389 @@
+{
+  "title": "\u00c6THER: Tisram (Carnatic EDM, the rhythm changes gear)",
+  "take": 2,
+  "made_at_utc": "2026-11-03T08:54:33.116526+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2_5",
+  "elevenlabs_song_id": "xNDYpSdcRCo8Llm29k6e",
+  "request": {
+    "composition_plan": {
+      "chunks": [
+        {
+          "text": "[Grab: triplet hit]\n{instrumental}",
+          "duration_ms": 8000,
+          "positive_styles": [
+            "a huge modern festival EDM track built on Carnatic classical rhythm: driving tech-house and drum & bass energy at 128 BPM, punchy kick, deep rolling bass, massive bright synths, wide modern mix",
+            "the melody is Carnatic raga Kiravani in G#: G# A# B C# D# E G, phrased like a Carnatic singer with slides and fast gamakam ornaments, each repeat of the hook more ornamented (sangathi)",
+            "a powerful Carnatic-trained female voice sings the hook in swara syllables (sa ri ga ma pa da ni) and climbs to ringing high notes",
+            "real Carnatic percussion played by real musicians, close and natural: mridangam, kanjira, ghatam, thavil; Carnatic violin and veena; tanpura drone on G# and D#",
+            "THE IDEA: the rhythm changes gear (nadai): straight 4 (chatusram) suddenly switches to triplets (tisram) and back, like a Carnatic percussionist, every switch a surprise",
+            "hype every few seconds, euphoric, goosebumps",
+            "second 0: the full band hits a loud 3-against-4 triplet figure on mridangam and synth stabs, then the voice snaps in on a high note"
+          ],
+          "negative_styles": [
+            "boring",
+            "repetitive loop",
+            "fade-in",
+            "lo-fi",
+            "muddy mix",
+            "heavy echo on acoustic instruments",
+            "plain Western pop melody",
+            "generic EDM preset sound",
+            "white-noise risers",
+            "sad",
+            "slow",
+            "Western classical",
+            "orchestral film score",
+            "konnakol",
+            "Hindi lyrics",
+            "English lyrics",
+            "words"
+          ],
+          "context_adherence": "high",
+          "conditioning_ref": {
+            "song_id": "DCmBPMNCda1reODotRyQ_upload",
+            "range": {
+              "start_ms": 28000,
+              "end_ms": 58000
+            }
+          },
+          "condition_strength": "medium"
+        },
+        {
+          "text": "[Hook in four]\n{instrumental}",
+          "duration_ms": 18000,
+          "positive_styles": [
+            "a huge modern festival EDM track built on Carnatic classical rhythm: driving tech-house and drum & bass energy at 128 BPM, punchy kick, deep rolling bass, massive bright synths, wide modern mix",
+            "the melody is Carnatic raga Kiravani in G#: G# A# B C# D# E G, phrased like a Carnatic singer with slides and fast gamakam ornaments, each repeat of the hook more ornamented (sangathi)",
+            "a powerful Carnatic-trained female voice sings the hook in swara syllables (sa ri ga ma pa da ni) and climbs to ringing high notes",
+            "real Carnatic percussion played by real musicians, close and natural: mridangam, kanjira, ghatam, thavil; Carnatic violin and veena; tanpura drone on G# and D#",
+            "THE IDEA: the rhythm changes gear (nadai): straight 4 (chatusram) suddenly switches to triplets (tisram) and back, like a Carnatic percussionist, every switch a surprise",
+            "hype every few seconds, euphoric, goosebumps",
+            "straight four-on-the-floor groove, she sings the short Kiravani swara hook, the violin answers"
+          ],
+          "negative_styles": [
+            "boring",
+            "repetitive loop",
+            "fade-in",
+            "lo-fi",
+            "muddy mix",
+            "heavy echo on acoustic instruments",
+            "plain Western pop melody",
+            "generic EDM preset sound",
+            "white-noise risers",
+            "sad",
+            "slow",
+            "Western classical",
+            "orchestral film score",
+            "konnakol",
+            "Hindi lyrics",
+            "English lyrics",
+            "words"
+          ],
+          "context_adherence": "high",
+          "conditioning_ref": {
+            "song_id": "DCmBPMNCda1reODotRyQ_upload",
+            "range": {
+              "start_ms": 28000,
+              "end_ms": 58000
+            }
+          },
+          "condition_strength": "medium"
+        },
+        {
+          "text": "[Korvai build]\n{instrumental}",
+          "duration_ms": 12000,
+          "positive_styles": [
+            "a huge modern festival EDM track built on Carnatic classical rhythm: driving tech-house and drum & bass energy at 128 BPM, punchy kick, deep rolling bass, massive bright synths, wide modern mix",
+            "the melody is Carnatic raga Kiravani in G#: G# A# B C# D# E G, phrased like a Carnatic singer with slides and fast gamakam ornaments, each repeat of the hook more ornamented (sangathi)",
+            "a powerful Carnatic-trained female voice sings the hook in swara syllables (sa ri ga ma pa da ni) and climbs to ringing high notes",
+            "real Carnatic percussion played by real musicians, close and natural: mridangam, kanjira, ghatam, thavil; Carnatic violin and veena; tanpura drone on G# and D#",
+            "THE IDEA: the rhythm changes gear (nadai): straight 4 (chatusram) suddenly switches to triplets (tisram) and back, like a Carnatic percussionist, every switch a surprise",
+            "hype every few seconds, euphoric, goosebumps",
+            "a korvai build: one rhythmic phrase played three times, each louder, landing exactly on beat 1 of the drop"
+          ],
+          "negative_styles": [
+            "boring",
+            "repetitive loop",
+            "fade-in",
+            "lo-fi",
+            "muddy mix",
+            "heavy echo on acoustic instruments",
+            "plain Western pop melody",
+            "generic EDM preset sound",
+            "white-noise risers",
+            "sad",
+            "slow",
+            "Western classical",
+            "orchestral film score",
+            "konnakol",
+            "Hindi lyrics",
+            "English lyrics",
+            "words"
+          ],
+          "context_adherence": "high",
+          "conditioning_ref": {
+            "song_id": "DCmBPMNCda1reODotRyQ_upload",
+            "range": {
+              "start_ms": 28000,
+              "end_ms": 58000
+            }
+          },
+          "condition_strength": "medium"
+        },
+        {
+          "text": "[Drop in triplets]\n{instrumental}",
+          "duration_ms": 20000,
+          "positive_styles": [
+            "a huge modern festival EDM track built on Carnatic classical rhythm: driving tech-house and drum & bass energy at 128 BPM, punchy kick, deep rolling bass, massive bright synths, wide modern mix",
+            "the melody is Carnatic raga Kiravani in G#: G# A# B C# D# E G, phrased like a Carnatic singer with slides and fast gamakam ornaments, each repeat of the hook more ornamented (sangathi)",
+            "a powerful Carnatic-trained female voice sings the hook in swara syllables (sa ri ga ma pa da ni) and climbs to ringing high notes",
+            "real Carnatic percussion played by real musicians, close and natural: mridangam, kanjira, ghatam, thavil; Carnatic violin and veena; tanpura drone on G# and D#",
+            "THE IDEA: the rhythm changes gear (nadai): straight 4 (chatusram) suddenly switches to triplets (tisram) and back, like a Carnatic percussionist, every switch a surprise",
+            "hype every few seconds, euphoric, goosebumps",
+            "THE DROP switches to triplets (tisram): the kick, bass and mridangam all roll in threes, the voice holds a long high note over it"
+          ],
+          "negative_styles": [
+            "boring",
+            "repetitive loop",
+            "fade-in",
+            "lo-fi",
+            "muddy mix",
+            "heavy echo on acoustic instruments",
+            "plain Western pop melody",
+            "generic EDM preset sound",
+            "white-noise risers",
+            "sad",
+            "slow",
+            "Western classical",
+            "orchestral film score",
+            "konnakol",
+            "Hindi lyrics",
+            "English lyrics",
+            "words"
+          ],
+          "context_adherence": "high",
+          "conditioning_ref": {
+            "song_id": "DCmBPMNCda1reODotRyQ_upload",
+            "range": {
+              "start_ms": 28000,
+              "end_ms": 58000
+            }
+          },
+          "condition_strength": "medium"
+        },
+        {
+          "text": "[Back to four]\n{instrumental}",
+          "duration_ms": 14000,
+          "positive_styles": [
+            "a huge modern festival EDM track built on Carnatic classical rhythm: driving tech-house and drum & bass energy at 128 BPM, punchy kick, deep rolling bass, massive bright synths, wide modern mix",
+            "the melody is Carnatic raga Kiravani in G#: G# A# B C# D# E G, phrased like a Carnatic singer with slides and fast gamakam ornaments, each repeat of the hook more ornamented (sangathi)",
+            "a powerful Carnatic-trained female voice sings the hook in swara syllables (sa ri ga ma pa da ni) and climbs to ringing high notes",
+            "real Carnatic percussion played by real musicians, close and natural: mridangam, kanjira, ghatam, thavil; Carnatic violin and veena; tanpura drone on G# and D#",
+            "THE IDEA: the rhythm changes gear (nadai): straight 4 (chatusram) suddenly switches to triplets (tisram) and back, like a Carnatic percussionist, every switch a surprise",
+            "hype every few seconds, euphoric, goosebumps",
+            "snaps back to straight four with a bigger bass, the hook returns with more ornaments"
+          ],
+          "negative_styles": [
+            "boring",
+            "repetitive loop",
+            "fade-in",
+            "lo-fi",
+            "muddy mix",
+            "heavy echo on acoustic instruments",
+            "plain Western pop melody",
+            "generic EDM preset sound",
+            "white-noise risers",
+            "sad",
+            "slow",
+            "Western classical",
+            "orchestral film score",
+            "konnakol",
+            "Hindi lyrics",
+            "English lyrics",
+            "words"
+          ],
+          "context_adherence": "high",
+          "conditioning_ref": {
+            "song_id": "DCmBPMNCda1reODotRyQ_upload",
+            "range": {
+              "start_ms": 28000,
+              "end_ms": 58000
+            }
+          },
+          "condition_strength": "medium"
+        },
+        {
+          "text": "[Tani breakdown]\n{instrumental}",
+          "duration_ms": 16000,
+          "positive_styles": [
+            "a huge modern festival EDM track built on Carnatic classical rhythm: driving tech-house and drum & bass energy at 128 BPM, punchy kick, deep rolling bass, massive bright synths, wide modern mix",
+            "the melody is Carnatic raga Kiravani in G#: G# A# B C# D# E G, phrased like a Carnatic singer with slides and fast gamakam ornaments, each repeat of the hook more ornamented (sangathi)",
+            "a powerful Carnatic-trained female voice sings the hook in swara syllables (sa ri ga ma pa da ni) and climbs to ringing high notes",
+            "real Carnatic percussion played by real musicians, close and natural: mridangam, kanjira, ghatam, thavil; Carnatic violin and veena; tanpura drone on G# and D#",
+            "THE IDEA: the rhythm changes gear (nadai): straight 4 (chatusram) suddenly switches to triplets (tisram) and back, like a Carnatic percussionist, every switch a surprise",
+            "hype every few seconds, euphoric, goosebumps",
+            "breakdown: only mridangam and kanjira trade fast phrases, getting faster, over a sub-bass pulse"
+          ],
+          "negative_styles": [
+            "boring",
+            "repetitive loop",
+            "fade-in",
+            "lo-fi",
+            "muddy mix",
+            "heavy echo on acoustic instruments",
+            "plain Western pop melody",
+            "generic EDM preset sound",
+            "white-noise risers",
+            "sad",
+            "slow",
+            "Western classical",
+            "orchestral film score",
+            "konnakol",
+            "Hindi lyrics",
+            "English lyrics",
+            "words"
+          ],
+          "context_adherence": "high",
+          "conditioning_ref": {
+            "song_id": "DCmBPMNCda1reODotRyQ_upload",
+            "range": {
+              "start_ms": 28000,
+              "end_ms": 58000
+            }
+          },
+          "condition_strength": "medium"
+        },
+        {
+          "text": "[Korvai build 2]\n{instrumental}",
+          "duration_ms": 12000,
+          "positive_styles": [
+            "a huge modern festival EDM track built on Carnatic classical rhythm: driving tech-house and drum & bass energy at 128 BPM, punchy kick, deep rolling bass, massive bright synths, wide modern mix",
+            "the melody is Carnatic raga Kiravani in G#: G# A# B C# D# E G, phrased like a Carnatic singer with slides and fast gamakam ornaments, each repeat of the hook more ornamented (sangathi)",
+            "a powerful Carnatic-trained female voice sings the hook in swara syllables (sa ri ga ma pa da ni) and climbs to ringing high notes",
+            "real Carnatic percussion played by real musicians, close and natural: mridangam, kanjira, ghatam, thavil; Carnatic violin and veena; tanpura drone on G# and D#",
+            "THE IDEA: the rhythm changes gear (nadai): straight 4 (chatusram) suddenly switches to triplets (tisram) and back, like a Carnatic percussionist, every switch a surprise",
+            "hype every few seconds, euphoric, goosebumps",
+            "a second korvai build, faster, three times, landing on beat 1"
+          ],
+          "negative_styles": [
+            "boring",
+            "repetitive loop",
+            "fade-in",
+            "lo-fi",
+            "muddy mix",
+            "heavy echo on acoustic instruments",
+            "plain Western pop melody",
+            "generic EDM preset sound",
+            "white-noise risers",
+            "sad",
+            "slow",
+            "Western classical",
+            "orchestral film score",
+            "konnakol",
+            "Hindi lyrics",
+            "English lyrics",
+            "words"
+          ],
+          "context_adherence": "high",
+          "conditioning_ref": {
+            "song_id": "DCmBPMNCda1reODotRyQ_upload",
+            "range": {
+              "start_ms": 28000,
+              "end_ms": 58000
+            }
+          },
+          "condition_strength": "medium"
+        },
+        {
+          "text": "[Final drop: gear switching]\n{instrumental}",
+          "duration_ms": 28000,
+          "positive_styles": [
+            "a huge modern festival EDM track built on Carnatic classical rhythm: driving tech-house and drum & bass energy at 128 BPM, punchy kick, deep rolling bass, massive bright synths, wide modern mix",
+            "the melody is Carnatic raga Kiravani in G#: G# A# B C# D# E G, phrased like a Carnatic singer with slides and fast gamakam ornaments, each repeat of the hook more ornamented (sangathi)",
+            "a powerful Carnatic-trained female voice sings the hook in swara syllables (sa ri ga ma pa da ni) and climbs to ringing high notes",
+            "real Carnatic percussion played by real musicians, close and natural: mridangam, kanjira, ghatam, thavil; Carnatic violin and veena; tanpura drone on G# and D#",
+            "THE IDEA: the rhythm changes gear (nadai): straight 4 (chatusram) suddenly switches to triplets (tisram) and back, like a Carnatic percussionist, every switch a surprise",
+            "hype every few seconds, euphoric, goosebumps",
+            "final drop: the groove switches between four and triplets every two bars, the voice sings the fastest swara run and the highest note of the track"
+          ],
+          "negative_styles": [
+            "boring",
+            "repetitive loop",
+            "fade-in",
+            "lo-fi",
+            "muddy mix",
+            "heavy echo on acoustic instruments",
+            "plain Western pop melody",
+            "generic EDM preset sound",
+            "white-noise risers",
+            "sad",
+            "slow",
+            "Western classical",
+            "orchestral film score",
+            "konnakol",
+            "Hindi lyrics",
+            "English lyrics",
+            "words"
+          ],
+          "context_adherence": "high",
+          "conditioning_ref": {
+            "song_id": "DCmBPMNCda1reODotRyQ_upload",
+            "range": {
+              "start_ms": 28000,
+              "end_ms": 58000
+            }
+          },
+          "condition_strength": "medium"
+        },
+        {
+          "text": "[Korvai ending]\n{instrumental}",
+          "duration_ms": 22000,
+          "positive_styles": [
+            "a huge modern festival EDM track built on Carnatic classical rhythm: driving tech-house and drum & bass energy at 128 BPM, punchy kick, deep rolling bass, massive bright synths, wide modern mix",
+            "the melody is Carnatic raga Kiravani in G#: G# A# B C# D# E G, phrased like a Carnatic singer with slides and fast gamakam ornaments, each repeat of the hook more ornamented (sangathi)",
+            "a powerful Carnatic-trained female voice sings the hook in swara syllables (sa ri ga ma pa da ni) and climbs to ringing high notes",
+            "real Carnatic percussion played by real musicians, close and natural: mridangam, kanjira, ghatam, thavil; Carnatic violin and veena; tanpura drone on G# and D#",
+            "THE IDEA: the rhythm changes gear (nadai): straight 4 (chatusram) suddenly switches to triplets (tisram) and back, like a Carnatic percussionist, every switch a surprise",
+            "hype every few seconds, euphoric, goosebumps",
+            "ending: a big korvai played three times by the whole band, the last hit lands and stops dead"
+          ],
+          "negative_styles": [
+            "boring",
+            "repetitive loop",
+            "fade-in",
+            "lo-fi",
+            "muddy mix",
+            "heavy echo on acoustic instruments",
+            "plain Western pop melody",
+            "generic EDM preset sound",
+            "white-noise risers",
+            "sad",
+            "slow",
+            "Western classical",
+            "orchestral film score",
+            "konnakol",
+            "Hindi lyrics",
+            "English lyrics",
+            "words"
+          ],
+          "context_adherence": "high",
+          "conditioning_ref": {
+            "song_id": "DCmBPMNCda1reODotRyQ_upload",
+            "range": {
+              "start_ms": 28000,
+              "end_ms": 58000
+            }
+          },
+          "condition_strength": "medium"
+        }
+      ]
+    },
+    "model_id": "music_v2_5"
+  },
+  "brief": {
+    "notes": "Jithesh 3 Nov 08:44 'yes next' after Tara posted. Album track 2. Conditioned on Tara take 1 (28-58 s, first drop) so the album shares one sound. Device: nadai change (chatusram <-> tisram switches) as the hype moment, korvai builds/ending, tani breakdown. Kiravani G# (Tara landed in G#), 128 BPM, 2:30."
+  },
+  "story": "Same festival, later that night. The drummers take over: every time the beat flips into triplets, the crowd loses its footing and screams for more.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
