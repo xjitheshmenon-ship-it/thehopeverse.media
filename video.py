@@ -908,6 +908,11 @@ def redub(package_path: Path, voice: str = VOICE) -> Path:
                        check=True)
     picture = VideoFileClip(str(original)).without_audio()
     size, length = picture.size, picture.duration
+    # 3 Nov 2026: all 17 dubs with the French picture as-is got 0-8 views (the 2 re-rendered ones got 1,000+), so the
+    # Shorts feed most likely saw them as copies of the French uploads. An 8% zoom and a light grade make the frames
+    # the dub's own. ponytail: cosmetic only; if views stay flat, re-render dubs from the shot list instead.
+    picture = picture.cropped(x_center=size[0] / 2, y_center=size[1] / 2, width=size[0] / 1.08,
+                              height=size[1] / 1.08).resized(new_size=size)
     before = Storyboard(scenes=src["scenes"]).scenes if "scenes" in src else Storyboard.model_validate_json(
         (work / "board.json").read_text(encoding="utf-8")).scenes
     # 1. Where each original line was: its own voice made again (Edge, free) gives every line's length.
@@ -955,7 +960,8 @@ def redub(package_path: Path, voice: str = VOICE) -> Path:
         w.writeframes(track[:int(length * RATE)].tobytes())
     silent = work / f"{lang}-picture.mp4"
     CompositeVideoClip(layers, size=size).with_duration(length).write_videofile(
-        str(silent), fps=30, codec="libx264", audio=False, preset="slow", ffmpeg_params=["-crf", "17", "-pix_fmt", "yuv420p"], logger=None)
+        str(silent), fps=30, codec="libx264", audio=False, preset="slow", logger=None,
+        ffmpeg_params=["-crf", "17", "-pix_fmt", "yuv420p", "-vf", "eq=saturation=1.08:gamma=1.03"])
     picture.close()
     out, music_track = package_path.with_suffix(".mp4"), None  # owner, 1 Nov: dubs go out without music
     mix = (["-stream_loop", "-1", "-i", str(music_track), "-filter_complex",
