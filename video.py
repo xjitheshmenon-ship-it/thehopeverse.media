@@ -248,7 +248,7 @@ def _commons(scene: "Scene", size: tuple, duration: float, work: Path, used: set
     url = "https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode({
         "action": "query", "format": "json", "generator": "search", "gsrsearch": scene.photo, "gsrnamespace": 6,
         "gsrlimit": 10, "prop": "imageinfo", "iiprop": "url|mime|size|extmetadata", "iiurlwidth": 1440})
-    pages = json.load(urllib.request.urlopen(url, timeout=20)).get("query", {}).get("pages", {}).values()
+    pages = json.load(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=20)).get("query", {}).get("pages", {}).values()
     hits = [(p["title"], p["imageinfo"][0]) for p in sorted(pages, key=lambda p: p.get("index", 0))
             if p.get("imageinfo") and p["title"] not in used and p["imageinfo"][0].get("thumburl")
             and p["imageinfo"][0]["mime"].split("/")[0] in ("image", "video")
@@ -265,7 +265,8 @@ def _commons(scene: "Scene", size: tuple, duration: float, work: Path, used: set
     video = info["mime"].startswith("video")
     path = work / f"commons-{len(used):03}{Path(urllib.parse.urlparse(info['url'] if video else info['thumburl']).path).suffix}"
     if not path.exists():
-        urllib.request.urlretrieve(info["url"] if video else info["thumburl"], path)
+        with urllib.request.urlopen(urllib.request.Request(info["url"] if video else info["thumburl"], headers={"User-Agent": UA}), timeout=60) as r:
+            path.write_bytes(r.read())
     if video:
         shots.append(path)
         return _clip(path, size, duration)
@@ -331,11 +332,20 @@ def _can_pay() -> bool:
         return False
 
 
+UA = "HopeverseMedia/1.0 (https://github.com/xjitheshmenon-ship-it/thehopeverse.media)"  # Wikimedia wants a named agent
+
+
 def _image(url: str) -> dict:
     """A thumbnail sent as data: Claude can't fetch Pixabay's thumbnail links itself ("Unable to download")."""
     url = urllib.parse.quote(url, safe=":/~?&=%")  # NASA thumbnail links have spaces in them
-    with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"}), timeout=30) as r:
-        return {"type": "base64", "media_type": r.headers.get_content_type(), "data": base64.b64encode(r.read()).decode()}
+    for wait in (2, 5, 10, 0):  # Wikimedia answers 429 when 6 scenes ask at once (3 Nov: 9 of 11 shots lost)
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=30) as r:
+                return {"type": "base64", "media_type": r.headers.get_content_type(), "data": base64.b64encode(r.read()).decode()}
+        except urllib.error.HTTPError as e:
+            if e.code != 429 or not wait:
+                raise
+            time.sleep(wait)
 
 
 def _pick(scene: "Scene", thumbnails: list) -> int:
