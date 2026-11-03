@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Yaazhini v2 (words and tune made together, 1 min test)",
+  "take": 2,
+  "made_at_utc": "2026-11-03T09:07:52.024816+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "M7Cp66vIdnFsAwhrOBny",
+  "request": {
+    "prompt": "A catchy modern Tamil indie-pop love song with Sufi colour, sung in Tamil with a few casual English words. The singer writes his own lyrics so every word sits naturally on the melody: short, simple, conversational Tamil lines, few syllables per beat, lots of repetition. The hook is a chant-like refrain that keeps calling a girl's name, 'Yaazhini', many times, simple and singable on first listen. Story: he says he is fine after she left, but he keeps calling her name and checking her photos; playful, cheeky, a little heartbroken. Longing minor-key melody with an Indian Sufi flavour, gentle swaying groove at 100 BPM, harmonium, tight handclaps, dholak and tabla, melodic sub bass and a snappy modern beat. Intimate soft young male lead, slightly breathy, laid-back, close to the mic, light autotune; a young female voice sings wordless Sufi-style 'aa' lines between his phrases and joins the refrain. The arrangement swells each time the name refrain returns. Starts straight away with harmonium and claps, the name refrain within the first 10 seconds, ends on the name.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 60000
+  },
+  "brief": {
+    "notes": "Jithesh 3 Nov 09:03 on Yaazhini v1: 'lyrics and music don't match at all'. Every time we wrote the words first and forced them onto chunks, the fit failed. v2 uses the plain prompt mode (no composition plan): ElevenLabs writes the lyrics with the melody, so they match; we only give the story, the name hook and the sound."
+  },
+  "story": "He says he is fine after she left, but keeps calling her name and checking her photos.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
