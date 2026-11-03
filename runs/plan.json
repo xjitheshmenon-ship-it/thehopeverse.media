@@ -70,7 +70,11 @@
       "Dindim, le manchot qui revient chaque année voir l'homme qui l'a sauvé au Brésil (histoire vraie)",
       "Cher Ami, le pigeon voyageur qui a porté un message malgré ses blessures en 1918 (histoire vraie)",
       "Malena et Klepetan : la cigogne blessée que Stjepan Vokić a soignée en Croatie, et le mâle qui revient chaque printemps après 13 000 km (histoire vraie)",
-      "Hachiko exclu. Plutôt : Tilikum exclu. Choix : Pigeon Cher Ami déjà prévu. Sujet retenu : Bamboo, le chien Jock ? Non. Sujet final : Jonny le phoque Hoover, le phoque qui parlait comme un humain (histoire vraie)"
+      "Hachiko exclu. Plutôt : Tilikum exclu. Choix : Pigeon Cher Ami déjà prévu. Sujet retenu : Bamboo, le chien Jock ? Non. Sujet final : Jonny le phoque Hoover, le phoque qui parlait comme un humain (histoire vraie)",
+      "Koko, la gorille qui a appris plus de 1 000 signes et a pris soin d'un chaton (histoire vraie)",
+      "Fukushima et Pépé : Laika exclue. Plutôt : Smoky, le petit chien yorkshire qui a aidé des soldats en 1944 (histoire vraie)",
+      "Hans le Malin : Pas de cheval. Plutôt : Washoe, la chimpanzée qui a appris la langue des signes et l'a transmise à son fils adoptif (histoire vraie)",
+      "Fukushima... non : Tonda, le chat Oscar de la maison de retraite de Providence, qui sentait l'approche de la fin de vie ? Trop discutable. Sujet retenu : Kiko et Mzee exclus. Choix final : Nim ? Non. Sujet final : Pépé le chat... Non. Sujet final : Bobbie, la chienne Colley de l'Oregon qui a retrouvé sa famille après 4 000 km (histoire vraie)"
     ]
   },
   "yt-instinct": [
@@ -84,44 +88,13 @@
       "when": "2026-11-04 04:00"
     },
     {
-      "topic": "Koko, la gorille qui a appris plus de 1 000 signes et a pris soin d'un chaton (histoire vraie)",
-      "why": "Histoire vraie d'un animal nommé avec de nombreuses photos libres sur Wikimedia Commons. Elle touche à la communication et à l'amitié, avec une comparaison humaine simple. Ton calme et chaleureux pour un public senior. Le sujet reste toujours d'actualité.",
-      "score": 58,
-      "views48": 900,
-      "planned": "2026-11-03 09:40",
-      "when": "2026-11-04 04:25"
-    },
-    {
       "topic": "Alex, le perroquet gris du Gabon qui comprenait les couleurs et les formes (histoire vraie)",
       "why": "Un animal nommé et une étude publiée par Irene Pepperberg, avec des photos libres sur Commons. Il montre l'intelligence et la parole, et l'on peut le comparer à un jeune enfant. Le sujet est durable. Le public francophone le connaît peu en français.",
       "score": 55,
       "views48": 850,
       "planned": "2026-11-03 09:40",
-      "when": "2026-11-04 04:50"
-    },
-    {
-      "topic": "Fukushima et Pépé : Laika exclue. Plutôt : Smoky, le petit chien yorkshire qui a aidé des soldats en 1944 (histoire vraie)",
-      "why": "Histoire vraie de loyauté d'un chien nommé, avec des photos libres sur Commons. Ton chaleureux et simple pour les seniors. Les sujets sur les chiens plaisent bien au public francophone. Le thème de la guerre est déjà proche de Stubby, donc l'originalité est moyenne.",
-      "score": 47,
-      "views48": 700,
-      "planned": "2026-11-03 09:40",
-      "when": "2026-11-04 05:15"
-    },
-    {
-      "topic": "Hans le Malin : Pas de cheval. Plutôt : Washoe, la chimpanzée qui a appris la langue des signes et l'a transmise à son fils adoptif (histoire vraie)",
-      "why": "Histoire vraie d'un animal nommé et d'études publiées, avec des photos libres sur Commons. Elle parle de communication et de transmission, avec une comparaison avec l'enfant. Le sujet est durable, mais moins porteur que les histoires d'amitié.",
-      "score": 52,
-      "views48": 800,
-      "planned": "2026-11-03 09:40",
-      "when": "2026-11-04 05:40"
-    },
-    {
-      "topic": "Fukushima... non : Tonda, le chat Oscar de la maison de retraite de Providence, qui sentait l'approche de la fin de vie ? Trop discutable. Sujet retenu : Kiko et Mzee exclus. Choix final : Nim ? Non. Sujet final : Pépé le chat... Non. Sujet final : Bobbie, la chienne Colley de l'Oregon qui a retrouvé sa famille après 4 000 km (histoire vraie)",
-      "why": "Histoire de retour à la maison, de fidélité, très proche des succès (cigogne, Dindim, Christian). Bobbie a des photos libres sur Wikimedia Commons. Ton chaleureux, une idée par phrase, bien adaptée aux seniors francophones. Angle peu traité en français.",
-      "score": 62,
-      "views48": 1500,
-      "planned": "2026-11-03 10:13",
-      "when": "2026-11-04 06:05"
+      "when": "2026-11-05 06:00",
+      "hand": true
     },
     {
       "topic": "Paul, le poulpe qui a deviné les 8 matchs de l'Allemagne à la Coupe du monde 2010 (histoire vraie)",
@@ -167,6 +140,51 @@
       "hand": true,
       "planned": "2026-11-04 06:00",
       "when": "2026-11-04 06:00"
+    },
+    {
+      "topic": "Togo, le vrai héros oublié de la course du sérum vers Nome en 1925 (histoire vraie)",
+      "why": "Chien nommé, photos d'époque libres sur Commons ; suite naturelle de Balto (4 nov.). (choisi à la main par Claude, 3 nov.)",
+      "score": 64,
+      "views48": 1300,
+      "hand": true,
+      "planned": "2026-11-03 16:20",
+      "when": "2026-11-05 06:00"
+    },
+    {
+      "topic": "Tama, la chatte devenue cheffe de gare au Japon et qui a sauvé sa petite ligne (histoire vraie)",
+      "why": "Chatte nommée, nombreuses photos libres sur Commons ; histoire joyeuse et attachante. (choisi à la main par Claude, 3 nov.)",
+      "score": 63,
+      "views48": 1200,
+      "hand": true,
+      "planned": "2026-11-03 16:20",
+      "when": "2026-11-05 06:00"
+    },
+    {
+      "topic": "George le Solitaire, la dernière tortue géante de l'île Pinta aux Galápagos (histoire vraie)",
+      "why": "Animal nommé, photos libres sur Commons ; émotion et conservation. (choisi à la main par Claude, 3 nov.)",
+      "score": 62,
+      "views48": 1100,
+      "hand": true,
+      "planned": "2026-11-03 16:20",
+      "when": "2026-11-05 06:00"
+    },
+    {
+      "topic": "Sergent Reckless, la jument qui portait les munitions sous les bombes en Corée (histoire vraie)",
+      "why": "Jument nommée, photos d'archives de l'US Marine Corps (domaine public). (choisi à la main par Claude, 3 nov.)",
+      "score": 62,
+      "views48": 1100,
+      "hand": true,
+      "planned": "2026-11-03 16:20",
+      "when": "2026-11-05 06:00"
+    },
+    {
+      "topic": "Simon, le chat du navire HMS Amethyst, blessé mais décoré pour son courage en 1949 (histoire vraie)",
+      "why": "Chat nommé, photos d'archives libres sur Commons ; médaille Dickin. (choisi à la main par Claude, 3 nov.)",
+      "score": 61,
+      "views48": 1000,
+      "hand": true,
+      "planned": "2026-11-03 16:20",
+      "when": "2026-11-05 06:00"
     }
   ],
   "yt-instinct-ja": [
