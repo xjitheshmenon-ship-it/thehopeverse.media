@@ -246,7 +246,8 @@ def next_topic(cid: str, any_: bool = False) -> str:
     """Take this channel's first approved topic off the plan and return it ("" if none); any_: else the first one."""
     plan, said = load(), approvals()
     entries = plan.get(cid) or []
-    pick = next((e for v in ("ok", "auto") for e in entries if verdict(cid, e, said) == v), entries[0] if any_ and entries else None)
+    by_day = sorted(entries, key=lambda e: e.get("when", ""))  # earliest day first (3 Nov: a 5 Nov topic went before 4 Nov's)
+    pick = next((e for v in ("ok", "auto") for e in by_day if verdict(cid, e, said) == v), entries[0] if any_ and entries else None)
     if not pick:
         return ""
     entries.remove(pick)
