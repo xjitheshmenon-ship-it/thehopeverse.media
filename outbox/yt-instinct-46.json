@@ -17,11 +17,11 @@
     "Luis Barrag\u00e1n House facade looking north along General Francisco Ramirez.jpg by Daniel Case (CC BY-SA 3.0), https://commons.wikimedia.org/wiki/File:Luis_Barrag%C3%A1n_House_facade_looking_north_along_General_Francisco_Ramirez.jpg",
     "Cabinet Card of Sojourner Truth - Collection of the National Museum of African American History and Culture.jpg by Adam Cuerden (CC0), https://commons.wikimedia.org/wiki/File:Cabinet_Card_of_Sojourner_Truth_-_Collection_of_the_National_Museum_of_African_American_History_and_Culture.jpg"
   ],
+  "holds": 2,
   "qa": {
     "passed": false,
-    "problems": "Stubby, the recurring dog character, looks completely different between shots: a small brindle/leopard-spotted wet-looking dog (frames 1-2), a large spotted mastiff-type dog (frames 3-4), a tan shepherd-like dog (frame 10), and a red-brown spaniel-type dog (frame 16).\nFrame 10's barking tan dog is a different animal from the other Stubby depictions.\nThe Sojourner Truth photo (frames 14-15) and the modern street scene with a car (frames 11-13) are unrelated visuals that do not match their captions.",
-    "bad_frames": 4
+    "problems": "Stubby, the recurring story dog, changes appearance between shots: frames 1-2 show a white dog with a brown head (Jack Russell type), frames 3-4 show a fully reddish-brown fluffy dog, and frame 11 shows a white-and-tan shaggy dog.\nFrames 3-4 (Yale, 1917) show modern-dressed pedestrians, which is anachronistic for 1917.\nFrames 5-7 show a modern warship beside a modern suspension bridge, which is anachronistic for a WWI troopship.",
+    "bad_frames": 7
   },
-  "held": "continuity: Stubby, the recurring dog character, looks completely different between shots: a small brindle/leopard-spotted wet-looking dog (frames 1-2), a large spotted mastiff-type dog (frames 3-4), a tan shepherd-like dog (frame 10), and a red-brown spaniel-type dog (frame 16).\nFrame 10's barking tan dog is a different animal from the other Stubby depictions.\nThe Sojourner Truth photo (frames 14-15) and the modern street scene with a car (frames 11-13) are unrelated visuals that do not match their captions.",
-  "holds": 1
+  "held": "continuity: Stubby, the recurring story dog, changes appearance between shots: frames 1-2 show a white dog with a brown head (Jack Russell type), frames 3-4 show a fully reddish-brown fluffy dog, and frame 11 shows a white-and-tan shaggy dog.\nFrames 3-4 (Yale, 1917) show modern-dressed pedestrians, which is anachronistic for 1917.\nFrames 5-7 show a modern warship beside a modern suspension bridge, which is anachronistic for a WWI troopship."
 }
