@@ -90,7 +90,7 @@ def pose(shots: list) -> list:
     out = []
     for shot in shots:
         img = pipe(image=Image.open(io.BytesIO(shot["photo"])).convert("RGB"), height=HEIGHT, width=WIDTH,
-                   prompt="Keep this exact animal (same face, fur, markings, age and size) and place it in this scene: "
+                   prompt="Keep this exact person or animal (same face, hair, clothes, fur, markings, age and size) and place them in this scene: "
                           f"{shot['scene']} Photorealistic vertical phone photo, no text.",
                    negative_prompt=" ", true_cfg_scale=4.0, num_inference_steps=30,
                    generator=torch.Generator("cuda").manual_seed(42)).images[0]
