@@ -79,15 +79,6 @@
  },
  "yt-instinct": [
   {
-   "topic": "Jumbo, l'éléphant si célèbre que son nom est devenu un mot (histoire vraie)",
-   "why": "Éléphant nommé du XIXe siècle ; nombreuses photos et gravures libres sur Wikimedia Commons. (choisi à la main par Claude, 3 nov.)",
-   "score": 63,
-   "views48": 1400,
-   "hand": true,
-   "planned": "2026-11-04 06:00",
-   "when": "2026-11-04 05:40"
-  },
-  {
    "topic": "Balto, le chien de traîneau qui a apporté le remède contre la diphtérie à Nome en 1925 (histoire vraie)",
    "why": "Chien nommé, histoire vraie célèbre ; photos d'époque libres et statue de Central Park sur Wikimedia Commons. (choisi à la main par Claude, 3 nov.)",
    "score": 63,
@@ -128,6 +119,14 @@
    "views48": 1100,
    "planned": "2026-11-04 01:35",
    "when": "2026-11-05 05:15"
+  },
+  {
+   "topic": "Fiona, l'hippopotame née trop tôt au zoo de Cincinnati en 2017, sauvée par ses soigneurs (histoire vraie)",
+   "why": "Histoire vraie d'un animal nommé, avec de nombreuses photos libres sur Wikimedia Commons. Ton chaleureux et simple, adapté aux seniors. Sujet qui touche un large public francophone, sans angle déjà traité sur la chaîne ni rejeté par le propriétaire.",
+   "score": 58,
+   "views48": 1300,
+   "planned": "2026-11-04 02:56",
+   "when": "2026-11-05 05:40"
   }
  ],
  "yt-instinct-ja": [
