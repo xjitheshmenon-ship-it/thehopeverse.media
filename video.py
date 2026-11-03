@@ -1117,7 +1117,7 @@ def upload(video: Path, package: dict, token: Path = TOKEN, channel: dict = None
     next "publish_at" time (local to its "tz") when it has them."""
     from googleapiclient.http import MediaFileUpload
 
-    package = {**package, "description": split_owner_notes(package["description"])[0]}  # owner notes never go public
+    saved, package = package, {**package, "description": split_owner_notes(package["description"])[0]}  # owner notes never go public
     footer = package.get("footer", TEAM.get("YouTube footer", ""))  # edit it in team.md
     if (channel or {}).get("footer"):  # a package planned before the channel's footer changed gets the new one
         package = {**package, "description": package["description"].replace(footer.strip(), channel["footer"])}
@@ -1147,7 +1147,7 @@ def upload(video: Path, package: dict, token: Path = TOKEN, channel: dict = None
         start = datetime.fromisoformat(day).replace(tzinfo=ZoneInfo(channel.get("tz", "UTC"))) if day else None
         if when := next_publish(channel["publish_at"], channel.get("tz", "UTC"), taken, start if start and start > datetime.now(timezone.utc) else None):
             body["status"].update(privacyStatus="private", publishAt=when)  # YouTube makes it public at that time
-            package["publish_at"] = when  # saved with the package by the caller, so the next Short takes the next slot
+            saved["publish_at"] = when  # saved with the package by the caller, so the next Short takes the next slot
     request = youtube(token=token).videos().insert(
         part="snippet,status", body=body, media_body=MediaFileUpload(str(video), resumable=True))
     response = None
