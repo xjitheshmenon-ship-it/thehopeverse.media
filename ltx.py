@@ -129,6 +129,9 @@ def ltx_clip(prompt: str, path: Path, photo: Path = None, scene: str = "") -> fl
     """For video.py and film.py (owner, 2 Nov 2026: LTX makes every AI shot, HeyGen only talking hosts).
     photo + scene: the character placed into the scene (Qwen-Image-Edit), then animated; photo alone: animated as it is;
     neither: text-to-video. Saves a 5 s silent mp4 to path and returns the cost in dollars (H100 rate)."""
+    if os.environ.get("LTX_ON") == "runpod":  # owner, 3 Nov 2026: pick RunPod outright (e.g. ÆTHER films)
+        from runpod_ltx import runpod_clip
+        return runpod_clip(prompt, path, photo, scene)
     try:
         return _modal_clip(prompt, path, photo, scene)
     except Exception as e:  # Modal down or out of credit: the same model on RunPod (owner, 3 Nov 2026)
