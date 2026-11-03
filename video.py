@@ -1093,10 +1093,24 @@ def uploads(token: Path) -> dict:
 
 
 def stats(video_ids: list) -> dict:
-    """Views, likes, comments and upload time per uploaded video id."""
-    items = youtube(interactive=False).videos().list(part="statistics,status,snippet", id=",".join(video_ids)).execute()
-    return {i["id"]: {**i["statistics"], "privacy": i["status"]["privacyStatus"],
-                      "published": i["snippet"]["publishedAt"]} for i in items["items"]}
+    """Views, likes, comments and upload time per uploaded video id, 50 ids per call. Any channel's sign-in reads
+    public videos, so the next saved token is tried when one has expired (Hopeverse's did on 1 Nov and blanked
+    every Short's views on HQ)."""
+    tokens = dict.fromkeys([TOKEN] + [HERE / c["token"] for c in _channels() if c.get("token")])
+    tokens, out = [t for t in tokens if t.exists()], {}
+    for n in range(0, len(video_ids), 50):
+        for k, token in enumerate(tokens):
+            try:
+                items = youtube(False, token).videos().list(part="statistics,status,snippet",
+                                                            id=",".join(video_ids[n:n + 50])).execute()
+                break
+            except Exception as e:
+                if k == len(tokens) - 1:
+                    raise
+                print(f"    YouTube numbers via {token.name}: {str(e)[:200]}")
+        out.update({i["id"]: {**i["statistics"], "privacy": i["status"]["privacyStatus"],
+                              "published": i["snippet"]["publishedAt"]} for i in items["items"]})
+    return out
 
 
 def next_publish(times: list, tz: str, taken=(), now=None) -> str:
