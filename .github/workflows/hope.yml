@@ -137,7 +137,7 @@ jobs:
           [ "$GROW" = 1 ] && { python agents.py --grow || true; }  # Mr. Grow's notes for the day's Shorts
           id=$NEXT
           if jq -e --arg id "$id" '.[] | select(.id == $id) | .free_only' channels.json > /dev/null; then
-            export FAL_KEY= HEYGEN_API_KEY= MODAL_TOKEN_ID= AI_CLIPS_PER_SHORT=0  # owner, 2 Nov 2026: free stock footage only, no HeyGen or fal
+            export FAL_KEY= HEYGEN_API_KEY= AI_CLIPS_PER_SHORT=0  # owner, 2 Nov 2026: free stock footage first, no HeyGen or fal; 3 Nov: LTX fills shots with no footage
           fi
           if [ -n "$REMAKE" ]; then  # the held video's one retry (same script, footage picked again), never a new one
             VIDEO=$REMAKE python -c "import json, os, pathlib; p = pathlib.Path('outbox', os.environ['VIDEO']); d = json.loads(p.read_text()); [d.pop(k, None) for k in ('held', 'qa', 'render_failed')]; p.write_text(json.dumps(d, indent=2, ensure_ascii=False))"
@@ -210,7 +210,7 @@ jobs:
             VIDEO=$v python -c "import json, os, pathlib; p = pathlib.Path('outbox', os.environ['VIDEO']); d = json.loads(p.read_text()); assert d.get('holds', 0) < 2, 'held twice: dropped, not re-made (spend audit 1 Nov)'; [d.pop(k, None) for k in ('held', 'qa', 'render_failed')]; p.write_text(json.dumps(d, indent=2, ensure_ascii=False)); print(d['channel_id'])" > "$RUNNER_TEMP/channel" || continue
             rm -f "outbox/${v%.json}.mp4"
             if jq -e '.free_only' "outbox/$v" > /dev/null; then  # owner, 2 Nov: fix a held Short with free pictures only (Commons, Pixabay)
-              ONLY_FILE=$v FAL_KEY= HEYGEN_API_KEY= MODAL_TOKEN_ID= AI_CLIPS_PER_SHORT=0 python video.py --only "$(cat "$RUNNER_TEMP/channel")" || true
+              ONLY_FILE=$v FAL_KEY= HEYGEN_API_KEY= AI_CLIPS_PER_SHORT=0 python video.py --only "$(cat "$RUNNER_TEMP/channel")" || true
             else
               ONLY_FILE=$v python video.py --only "$(cat "$RUNNER_TEMP/channel")" || true
             fi
