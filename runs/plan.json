@@ -79,15 +79,6 @@
  },
  "yt-instinct": [
   {
-   "topic": "Balto, le chien de traîneau qui a apporté le remède contre la diphtérie à Nome en 1925 (histoire vraie)",
-   "why": "Chien nommé, histoire vraie célèbre ; photos d'époque libres et statue de Central Park sur Wikimedia Commons. (choisi à la main par Claude, 3 nov.)",
-   "score": 63,
-   "views48": 1500,
-   "hand": true,
-   "planned": "2026-11-04 06:00",
-   "when": "2026-11-04 06:05"
-  },
-  {
    "topic": "Laïka, la chienne des rues de Moscou devenue le premier animal en orbite (histoire vraie)",
    "why": "Animal nommé historique ; photos d'archives libres sur Wikimedia Commons. (choisi à la main par Claude, 3 nov.)",
    "score": 62,
@@ -127,6 +118,14 @@
    "views48": 1300,
    "planned": "2026-11-04 02:56",
    "when": "2026-11-05 05:40"
+  },
+  {
+   "topic": "Hooch et Smoky exclus. Sujet : Pigeon exclu. Choix : Sam, le chien Sarge ? Non. Sujet final : Faithful, la chatte de Londres exclue. Choix retenu : Tara, la chatte de Hernando Beach qui a sauvé un petit garçon d'un chien en 2014 (histoire vraie)",
+   "why": "Histoire vraie d'un animal nommé, avec une vidéo connue et des photos libres probables ; ton chaleureux, loyauté et protection, adapté aux seniors. Angle peu traité en français. Risque : peu de photos libres sur Commons, à vérifier avant montage.",
+   "score": 55,
+   "views48": 700,
+   "planned": "2026-11-04 04:48",
+   "when": "2026-11-05 06:05"
   }
  ],
  "yt-instinct-ja": [

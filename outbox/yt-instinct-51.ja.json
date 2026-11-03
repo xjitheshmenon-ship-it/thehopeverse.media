@@ -1,0 +1,142 @@
+{
+  "channel_id": "yt-instinct-ja",
+  "title": "バルト、嵐の中を85km走った犬(実話)#Shorts",
+  "description": "1925年1月、アラスカのノームでジフテリアが流行。血清を一刻も早く届けなければなりませんでした。150頭以上の犬と約20人の犬ぞり使いが、1,000km以上をリレー。最後の区間、フルマラソン約2回分の距離を、バルトとガンナー・カーセンが嵐の中を走りぬきました。一方トーゴは、レオンハルト・セッパラと約420kmを走破。他のどのチームのほぼ2倍です。チームワークの大切さ、そして一頭一頭が欠かせない存在だと教えてくれる話です。\n\n映像:アーカイブ写真(Wikimedia Commons、作者とライセンスは下記)とイメージ素材(Pixabay)。実際の出来事の映像ではありません。\n\n出典:Cleveland Museum of Natural History/Linda Hall Library/Wikipedia(トーゴ、1925年の血清リレー)\n\nInstinct、Hopeverse Mediaのチャンネルです。AI制作。希望をこめて。\nチャンネル登録で、毎日いきものの物語をお届けします。\n\n#Shorts #動物 #実話 #自然 #知ってた",
+  "dub_of": "yt-instinct-51",
+  "lang": "ja",
+  "scenes": [
+    {
+      "narration": "真っ暗な夜、極寒の中を、85キロ。いったい何のために走ったのか、知ってますか?",
+      "on_screen_text": "85km\n夜の嵐",
+      "picture_search": "sled dogs snow night",
+      "image_prompt": "Photo-real night shot of a dog sled team running through deep snow in a freezing Alaskan landscape, low camera angle, headlamp glow, blowing snow",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "先頭を走るのは犬のバルト。血清を積んだそりを、ノームまで引っぱっていきます。",
+      "on_screen_text": "先頭犬\nバルト",
+      "picture_search": "sled dog team running snow",
+      "image_prompt": "Photo-real lead sled dog pulling a team across a snowy trail at dusk, camera at dog height, breath steaming in cold air",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": "Balto Gunnar Kaasen 1925"
+    },
+    {
+      "narration": "1925年1月、アラスカのノームの町で、ジフテリアが広がり始めました。",
+      "on_screen_text": "1925年1月\nアラスカ・ノーム",
+      "picture_search": "Alaska snowy town winter",
+      "image_prompt": "Photo-real wide shot of a small snowbound Alaskan coastal town in winter, wooden buildings, grey sky, frozen shoreline",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": "Nome Alaska 1925"
+    },
+    {
+      "narration": "血清はリレーで運ばれました。犬ぞり使いは約20人、犬は150頭以上、距離は1,000キロ以上です。",
+      "on_screen_text": "約20人\n150頭以上\n1000km超",
+      "picture_search": "dog sled relay snow",
+      "image_prompt": "Photo-real long line of sled dog teams crossing a vast white snowy wilderness, aerial-style wide angle, distant mountains",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "バルトと犬ぞり使いのガンナー・カーセンは、ブラフという場所で血清を受け取ります。",
+      "on_screen_text": "ブラフで\n血清を受取",
+      "picture_search": "musher sled dogs blizzard",
+      "image_prompt": "Photo-real musher in heavy fur parka standing on sled runners with dog team in a blizzard, seen from behind, swirling snow",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": "Balto Gunnar Kaasen 1925"
+    },
+    {
+      "narration": "最後の区間は、フルマラソン約2回分。それを嵐の中、走りぬきました。",
+      "on_screen_text": "最終区間\n約85km",
+      "picture_search": "blizzard snow storm trail",
+      "image_prompt": "Photo-real harsh blizzard over a frozen trail, near-whiteout, a dog sled team faintly visible, wind-driven snow",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "2月2日の明け方、ついにノームの町に到着しました。",
+      "on_screen_text": "1925年\n2月2日",
+      "picture_search": "snowy town street dawn",
+      "image_prompt": "Photo-real snowy main street of a small northern town at first dawn light, sled dog team arriving, pale pink sky",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "でも、実はトーゴもすごいんです。犬ぞり使いのレオンハルト・セッパラと、約420キロも走りました。血清を運んだ距離だけでも約146キロ。他のどのチームのほぼ2倍です。",
+      "on_screen_text": "トーゴは\n約420km",
+      "picture_search": "Siberian husky sled team snow",
+      "image_prompt": "Photo-real Siberian husky sled team running hard across a snowy plain, golden low sun, sense of long distance",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": "Togo sled dog"
+    },
+    {
+      "narration": "トーゴはノートン湾を横断しました。氷はすでに不安定な状態だったんです。",
+      "on_screen_text": "ノートン湾\n不安定な氷",
+      "picture_search": "sea ice cracking arctic",
+      "image_prompt": "Photo-real cracked sea ice stretching to the horizon under a grey Arctic sky, close angle on fractures in the ice",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "トーゴこそ称賛されるべきだった、と考える人も多いんですよ。",
+      "on_screen_text": "称賛されるべき?",
+      "picture_search": "husky dog portrait snow",
+      "image_prompt": "Photo-real close portrait of a Siberian husky in falling snow, calm determined gaze, shallow depth of field",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "1925年には、ニューヨークのセントラルパークにバルトの像が建てられました。",
+      "on_screen_text": "セントラルパーク\n1925年",
+      "picture_search": "Central Park snow statue",
+      "image_prompt": "Photo-real bronze dog statue on a rock in Central Park, New York, light snow, eye-level camera",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": "Balto statue Central Park"
+    },
+    {
+      "narration": "今、バルトは剥製になって、クリーブランド自然史博物館に展示されています。",
+      "on_screen_text": "クリーブランド\n自然史博物館",
+      "picture_search": "natural history museum exhibit",
+      "image_prompt": "Photo-real museum hall with a glass display case holding a preserved dog specimen, soft gallery lighting",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": "Balto Cleveland Museum of Natural History"
+    },
+    {
+      "narration": "みなさんは、トーゴのこと知ってましたか?コメントで教えてください!",
+      "on_screen_text": "トーゴを\n知ってた?",
+      "picture_search": "husky sled dog snow sunrise",
+      "image_prompt": "Photo-real husky team standing in snow at sunrise, soft golden light, peaceful closing shot",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    }
+  ],
+  "footer": "Instinct, une chaîne Hopeverse Media. Réalisé par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "category": "15",
+  "photos": true
+}

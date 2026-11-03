@@ -1,0 +1,29 @@
+{
+  "channel_id": "yt-instinct",
+  "title": "Balto, 85 km dans la temp\u00eate (histoire vraie) #Shorts",
+  "description": "En janvier 1925, la dipht\u00e9rie menace la ville de Nome, en Alaska, et le rem\u00e8de doit arriver tr\u00e8s vite. Plus de cent cinquante chiens et une vingtaine de mushers se relaient sur plus de mille kilom\u00e8tres ; Balto et Gunnar Kaasen font la derni\u00e8re \u00e9tape, environ deux marathons, dans la temp\u00eate. Togo, lui, a couru environ 420 km avec Leonhard Seppala, presque le double de toute autre \u00e9quipe : une belle le\u00e7on de travail d'\u00e9quipe, o\u00f9 chaque chien compte.\n\nImages : photos d'archives (Wikimedia Commons, auteurs et licences ci-dessous) et images d'illustration (Pixabay), pas de vid\u00e9o de l'\u00e9v\u00e9nement r\u00e9el.\n\nSources : Cleveland Museum of Natural History ; Linda Hall Library ; Wikip\u00e9dia (Togo ; course du s\u00e9rum de 1925).\n\nInstinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.\n\n#Shorts #animaux #histoirevraie #nature #savezvous",
+  "script": "NOTES: Publish slot 19:00 Paris (fallbacks 22:00 / 05:00). Short 6 of 6, status live. Narrator-only, no characters. Voice fr-FR-DeniseNeural, rate -8%, captions 1.2x.\n\nSCRIPT (locked, fact-checked):\n\u00ab Quatre-vingt-cinq kilom\u00e8tres, de nuit, dans un froid extr\u00eame. Balto, chien de t\u00eate, guide l'attelage vers Nome, le s\u00e9rum \u00e0 bord. Alaska, janvier 1925. La dipht\u00e9rie touche la ville de Nome. Le s\u00e9rum voyage par relais de tra\u00eeneaux : une vingtaine de mushers, plus de cent cinquante chiens, plus de mille kilom\u00e8tres. Balto et le musher Gunnar Kaasen prennent le s\u00e9rum \u00e0 Bluff. Ils font la derni\u00e8re \u00e9tape, environ deux marathons, dans la temp\u00eate. Ils entrent \u00e0 Nome au petit matin, le 2 f\u00e9vrier. Mais Togo et son musher, Leonhard Seppala, ont couru environ quatre cent vingt kilom\u00e8tres, dont environ cent quarante-six avec le s\u00e9rum : presque le double de toute autre \u00e9quipe. Togo a travers\u00e9 le golfe de Norton, sur une glace d\u00e9j\u00e0 instable. Beaucoup pensent qu'il m\u00e9ritait la gloire. Une statue de Balto a \u00e9t\u00e9 install\u00e9e \u00e0 Central Park, \u00e0 New York, en 1925. Aujourd'hui, Balto est expos\u00e9, naturalis\u00e9, au mus\u00e9e d'histoire naturelle de Cleveland. Et vous, connaissiez-vous Togo ? \u00bb\nIf TTS runs over 57 s, remove only \u00ab presque le double de toute autre \u00e9quipe. \u00bb, no other change.\n\nEDIT PLAN (Mr. Cut, 21 shots, medicine-vials shot dropped, rescale timings to real audio):\n- Ken Burns stills, Commons photos: \"Balto Gunnar Kaasen 1925\", \"Balto statue Central Park\", \"Balto Cleveland Museum of Natural History\". If any licence is not clearly free, use a text card instead.\n- Pixabay stock for snow, sled dogs, blizzard, sea ice, all tagged \u00ab Illustration \u00bb.\n- No Togo photo, no AI images, nothing from the 1995 film.\n- Info banners: \u00ab 85 km \u00b7 de nuit \u00b7 temp\u00eate \u00bb ; \u00ab Nome, Alaska (\u00c9tats-Unis) \u00b7 janvier 1925 \u00bb ; \u00ab ~20 mushers \u00b7 +150 chiens \u00b7 +1 000 km \u00bb ; \u00ab Derni\u00e8re \u00e9tape : environ 85 km \u00b7 2 f\u00e9vrier 1925 \u00bb ; \u00ab Togo : environ 420 km, dont environ 146 km avec le s\u00e9rum \u00bb ; \u00ab Central Park, 1925 \u00b7 Cleveland Museum of Natural History \u00bb ; \u00ab Et vous, connaissiez-vous Togo ? \u00bb\n- Music: soft solo piano + string pad ~60 BPM, -22 dB, ducked. SFX: subtle wind and ice-creak at -30 dB.\n\nPINNED COMMENT: \u00ab Avant cette vid\u00e9o, aviez-vous d\u00e9j\u00e0 entendu parler de Togo ? \u00bb\n\nTHUMBNAIL: Commons photo of Balto (1925) cropped on the dog, snow background slightly darkened; big white text \u00ab 150 chiens, 1 s\u00e9rum \u00bb with \u00ab 150 \u00bb in bright yellow, navy outline. Verify licence first.\n\nRENDER TODO: add each Commons photo's author/licence/URL to the description.",
+  "lang": "fr",
+  "footer": "Instinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "category": "15",
+  "photos": true,
+  "draft_cost": 0.88,
+  "relevance": {
+    "score": 80,
+    "why": "Evergreen true story with a Togo-vs-Balto twist suits the channel's French-speaking senior audience and the stork-style 'histoire vraie' format; facts are accurate, but it is a dog story rather than an animal-adaptation one, and the title promise (Balto's 85 km) is delivered.",
+    "views48": 1000
+  },
+  "credits": [
+    "Balto and Gunner Kaasen - February 2, 1925, Nome, Alaska.webm by Gaumont (Public domain), https://commons.wikimedia.org/wiki/File:Balto_and_Gunner_Kaasen_-_February_2,_1925,_Nome,_Alaska.webm",
+    "Leonhard Seppala with dogs.jpg by Copyright: Copyright \u00a9 Carrie McLain Museum / AlaskaStock (CC0), https://commons.wikimedia.org/wiki/File:Leonhard_Seppala_with_dogs.jpg",
+    "Balto CMNH Visitor Hall Display.jpg by Nathan Obral (CC0), https://commons.wikimedia.org/wiki/File:Balto_CMNH_Visitor_Hall_Display.jpg",
+    "Balto memorial in Central Park.jpg by Asylum7830 (Public domain), https://commons.wikimedia.org/wiki/File:Balto_memorial_in_Central_Park.jpg"
+  ],
+  "qa": {
+    "passed": true,
+    "problems": "",
+    "bad_frames": 0
+  },
+  "publish_at": "2026-11-04T07:00:00Z",
+  "youtube_id": "awz2I71-Wuc"
+}
