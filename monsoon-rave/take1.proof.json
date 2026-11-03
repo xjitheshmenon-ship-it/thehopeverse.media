@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Monsoon Rave (one hook rising to a huge drop, 3 min)",
+  "take": 1,
+  "made_at_utc": "2026-11-03T07:46:21.030908+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "QCVUYiYHWh3wyDI2GDlN",
+  "request": {
+    "prompt": "An epic trance and progressive house track, 3 minutes, 130 BPM: a monsoon storm over an open-air rave, the crowd dancing in the rain. Built on ONE short, haunting melodic phrase in Raga Kiravani in A (A B C D E F G#) with slides and fast ornaments, repeated and lifted again and again, getting bigger every time until it explodes. Rain and thunder are part of the rhythm: raindrops as shakers, thunder hits on the drops. Driving kick, rolling bassline, trance arpeggios, sweeping orchestral strings, a soaring solo violin. Timeline: 0-30 s: rain, then the phrase alone on plucked strings over a soft arpeggio. 30-60 s: kick and rolling bass join, the phrase repeats on a synth lead, building. 60-90 s: the first drop: the phrase on a huge trance lead with thunder hits. 90-125 s: a breakdown: the phrase becomes a slow, sweeping string melody with a solo violin, rain all around, then a long rising build. 125-165 s: the biggest drop: the phrase on trance lead, strings and violin together, full power, thunder on every downbeat. 165-180 s: the drums stop, only rain and the violin plays the phrase one last time. Real instruments named as themselves are played by real musicians, close, natural and dry, no heavy echo. No white-noise risers, no side-chain pumping on acoustic instruments, no long gaps, no fade-out at the start, no words unless stated.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 180000
+  },
+  "brief": {
+    "notes": "One short phrase repeated and lifted again and again until it explodes, plus a classical-style string melody turned into trance (traits from the classic trance/progressive anthems). Kiravani in A. Rain as part of the rhythm. Prompt mode, 180 s, 2 takes, one at a time."
+  },
+  "story": "The first monsoon storm hits a packed open-air rave; the crowd keeps dancing in the rain as the lights flash with the thunder.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
