@@ -72,7 +72,7 @@ jobs:
       - if: always()
         run: |
           mkdir -p "out/films/$NAME" && cp films/"$NAME"/raw-*.mp4 films/"$NAME"/ref-* films/"$NAME"/frame-* "out/films/$NAME/" 2>/dev/null || true
-          cp "films/$NAME.mp4" out/films/ 2>/dev/null || true
+          [ "$(stat -c%s "films/$NAME.mp4" 2>/dev/null || echo 0)" -lt 99000000 ] && cp "films/$NAME.mp4" out/films/ || true  # a file over 100 MB would make GitHub refuse the paid clips too
           git config --global user.name hope && git config --global user.email hope@users.noreply.github.com  # rebase on pull needs it too
           cd out && git checkout -q -B music-tracks
           git add . && git -c user.name=hope -c user.email=hope@users.noreply.github.com commit -qm "Film: $NAME" || exit 0

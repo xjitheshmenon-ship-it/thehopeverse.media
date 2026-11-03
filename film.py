@@ -114,6 +114,13 @@ else:
     subprocess.run([FF, "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(listing), "-i", film["music"],
                     "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", str(out)],
                    check=True)
+    if out.stat().st_size > 95e6:  # GitHub refuses files over 100 MB: a 3-min film was 114 MB (3 Nov) and the push lost every paid shot
+        kbps = int(95e6 * 8 / 1000 / film["shots"][-1]["end"]) - 250  # minus the 192k audio
+        big = out.with_name(out.stem + "-big.mp4")
+        out.rename(big)
+        subprocess.run([FF, "-y", "-loglevel", "error", "-i", str(big), "-c:v", "libx264", "-b:v", f"{kbps}k", "-maxrate", f"{kbps}k",
+                        "-bufsize", f"{2 * kbps}k", "-preset", "veryfast", "-pix_fmt", "yuv420p", "-c:a", "copy", str(out)], check=True)
+        big.unlink()
     film_path.with_suffix(".cost").write_text(f"{sum(cost):.2f}")
     print(f"Film: {out} ({len(parts)} shots, ${sum(cost):.2f} new AI shots)")
 if post := os.environ.get("POST"):

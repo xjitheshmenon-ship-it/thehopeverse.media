@@ -103,6 +103,8 @@ def next_slots(channel: dict, k: int = 6, after: datetime = None) -> list:
 
 def due(now: datetime = None) -> dict:
     """The next video to make now, as KEY=value env for hope.yml, and mark it started so the next run moves on."""
+    if not now and (day := os.environ.get("FOR_DAY")):  # owner, 3 Nov 2026: make a later day's videos ahead, scheduled
+        now = datetime.fromisoformat(day[:10]).replace(hour=12, tzinfo=IST)
     now, log = (now or datetime.now()).astimezone(IST), HERE / "runs" / "slots.jsonl"
     done, said, plan = made_today(now), approvals(), load()
     ready = {c["id"] for c in live_channels() if any(verdict(c["id"], e, said) in ("ok", "auto") for e in plan.get(c["id"], []))}
