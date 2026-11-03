@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Hindustani fusion, evening theme (wordless humming, 150 s, one take)",
+  "take": 1,
+  "made_at_utc": "2026-11-03T13:55:50.361316+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "lvp7A7W9KyXYRgVcoYJ4",
+  "request": {
+    "prompt": "A complete, original modern Hindustani classical fusion piece, warm, serene and uplifting, for an evening in the city. Raga Yaman, a Lydian scale, in D: D E F# G# A B C#. The melody starts low from C# and climbs C# E F# G# A, leans on the raised fourth G#, rests on F# and comes down A G# F# E D. Sung-style phrasing with meend glides between notes, soft andolan shakes on F# and C#, grace notes before long notes. Lead voice: a soft, close, natural wordless female humming and aalaap on open vowels 'aa' and 'mm', no words, no lyrics, no language, carrying the main tune. Natural instruments, all played by real musicians, close and dry, no heavy echo or delay, never chopped: a bamboo bansuri flute, a sitar with gentle meend, a santoor shimmer, tabla, a tanpura drone on D and A that never stops. Modern fusion body underneath: deep warm round bass, a soft clean kick and brushed snare, a light warm synth pad, and a quiet separate electronic layer of chopped, stuttered veena and a reversed swell into each new section. Modal harmony over the D pedal, few chord changes, no Western pop chord loop. Shape: 0-12 s tanpura drone alone, then a lone bansuri plays a rising 3-note call D F A with the last note bent up; 12-35 s slow free aalaap, the humming voice and bansuri answer each other over the drone; 35 s tabla enters in a relaxed keherwa groove at 84 BPM with bass and soft kick, the humming states the catchy main tune; 60 s sitar and bansuri trade the tune in call and answer, santoor sparkles; 85 s the groove lifts into a faster teentaal feel, tabla and sitar play a quick jugalbandi exchange that gets faster; 110 s one beat of silence, then the biggest final statement of the tune with humming, bansuri, sitar, strings-like pad and full groove together; 135 s it calms, the tabla plays a three-times-repeated tihai and the whole band lands together on D; ends on the lone bansuri playing D F A over the drone, fading naturally.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 150000
+  },
+  "brief": {
+    "notes": "Jithesh 3 Nov 13:47: 'i need a hindustani fusion song.' One take only (his rule). No AI lyrics (he called written lyrics 'really bad'): a soft wordless female humming and aalaap carries the tune instead, which he loves. Complete shape, 2.5 min, with a real build and ending. Raga Yaman in D (evening, serene and romantic). Natural instruments, close and dry, no heavy echo; the processed layer stays light and separate."
+  },
+  "story": "Dusk over a city rooftop: the day's noise fades, the lights come on, and a calm, hopeful evening opens up.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
