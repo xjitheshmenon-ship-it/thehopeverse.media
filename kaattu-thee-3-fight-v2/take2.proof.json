@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER album Kaattu Thee, song 3: Fight v2, cool mass swagger theme (instrumental, 1 min test)",
+  "take": 2,
+  "made_at_utc": "2026-11-03T13:31:21.172260+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "JLHtamiuFX7XEyR6hGhf",
+  "request": {
+    "prompt": "A modern Tamil film mass hero theme for a calm, ice-cool, dangerous older hero, instrumental. Slow, heavy, swaggering half-time groove at 92 BPM that makes you nod your head, retro spaghetti-western style twangy electric guitar riff with tremolo and reverb, a cocky whistled hook melody, deep punchy brass stabs, a dark growling distorted synth bass and gritty modern electronic sound design leading the track (processed hits, deep sub drops, metallic risers), big stomping drums with Indian thavil accents, and a Carnatic veena answering the hook as a second layer. ONE short, catchy, menacing hook in a dark minor key with an Indian flavour, simple enough to whistle after one listen, repeated and growing each time. Clean, cinematic, stylish production with lots of space, not noisy. Starts with a slow confident walk: a lone guitar twang, a single whistle, footsteps-like drum hits and silence between them. Builds with brass and a rising string tremolo, a sudden stop of total silence, then the full band slams in around 22 seconds with the hook on brass and guitar together, heavy and swaggering, with fierce strings and big drum fills. Ends on one huge brass hit and a last lonely whistle.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 60000
+  },
+  "brief": {
+    "notes": "Jithesh 13:27 after the fight v1 test: 'I need a jailer kinda theme music'. Taken as the TRAITS of that kind of score, not the tune: an older, ice-cool mass hero, slow heavy swagger groove, retro twangy guitar, whistle hook, big brass, menace that stays calm then explodes. Original melody; no film, song or artist names in the prompt. Applies music-scoring.md s8 (measured references of this kind): synth/bass-led electronic sound design leads, dark, half-time, flat loud; one Carnatic instrument as a 2nd/3rd layer (owner rule)."
+  },
+  "story": "Rudra walks slowly into the villain's den, calm and smiling, and the whole room knows the fight is already over.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
