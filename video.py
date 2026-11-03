@@ -805,7 +805,8 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
         logo = ImageClip(str(mark), transparent=True).resized(width=200).with_opacity(0.85).with_position((80, 227))
     # A series shows its own characters in every shot, so its AI clips are capped only by DAILY_BUDGET.
     # Every video, series too, stops paying for AI clips and footage checks at VIDEO_BUDGET, its writing included.
-    paid.update(clips=0, usd=0.0, blank=0, limit=10 ** 6 if package.get("cast") else AI_CLIPS, draft=package.get("draft_cost", 0))
+    paid.update(clips=0, usd=0.0, blank=0, limit=10 ** 6 if package.get("cast") or os.environ.get("MODAL_TOKEN_ID") else AI_CLIPS,  # LTX: ~$0.05 a shot, the $ caps still apply
+                 draft=package.get("draft_cost", 0))
     shots.clear()
     # 1. Every line into one voice track, back to back with GAP between them: nothing can overlap or cut off.
     lines, voice_track = [], work / f"{prefix}voice.wav"
