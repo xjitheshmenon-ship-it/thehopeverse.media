@@ -1,0 +1,208 @@
+{
+  "title": "\u00c6THER: Yaazhini (Tamil indie-pop name chant with Sufi colour, 1 min test)",
+  "take": 2,
+  "made_at_utc": "2026-11-03T08:55:53.488388+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2_5",
+  "elevenlabs_song_id": "NhXDerkCvDQaBbxrz1bQ",
+  "request": {
+    "composition_plan": {
+      "chunks": [
+        {
+          "text": "[Intro]\n{harmonium drone, handclaps, the female voice sings a wordless Sufi alaap, then the beat enters}\n(Aa-aa-aa...)",
+          "duration_ms": 8000,
+          "positive_styles": [
+            "modern Tamil indie-pop love song with a gentle swaying dance pulse, quirky and catchy, viral singalong, a Tamil melodic core with Sufi colour layered on top",
+            "mysterious, longing harmonic-minor melody: raga Kiravani in D (D E F G A Bb C#), the melody leans on Bb and C#, small sung slides, simple and singable",
+            "chant-like looping refrain built on a girl's name, repeated many times, short punchy lines, the arrangement swells under the chant each time it returns",
+            "Sufi colour: harmonium drone and chords, tight handclaps and soft group claps, dholak and tabla groove, a soft bowed string answering the voice",
+            "modern indie-pop production: melodic sub bass, snappy modern kick and snap, wide clean mix, intimate and warm, 100 BPM steady",
+            "intimate soft young male lead voice, slightly breathy and nasal, laid-back half-sung delivery close to the mic, light modern autotune, cheeky and tender",
+            "two young female voices: one sings Sufi-style wordless alaaps with long held notes, the other doubles the refrain softly",
+            "harmonium and claps first, the female alaap floats on top, the beat and sub bass enter at the end"
+          ],
+          "negative_styles": [
+            "Carnatic-trained singing",
+            "heavy ornaments",
+            "operatic",
+            "shouting",
+            "strained vocals",
+            "choir",
+            "EDM drop",
+            "trap hi-hats",
+            "rock guitar",
+            "orchestral",
+            "Western pop chords",
+            "jazzy chords",
+            "bright major key",
+            "sad ballad",
+            "konnakol",
+            "mridangam solo",
+            "nadaswaram",
+            "slow",
+            "boring",
+            "long pauses",
+            "fade in",
+            "quiet start"
+          ],
+          "context_adherence": "high"
+        },
+        {
+          "text": "[Refrain]\nYaazhini, Yaazhini\nYen di ippadi?\nYaazhini, Yaazhini\nNenjil nee dhaan di",
+          "duration_ms": 12000,
+          "positive_styles": [
+            "modern Tamil indie-pop love song with a gentle swaying dance pulse, quirky and catchy, viral singalong, a Tamil melodic core with Sufi colour layered on top",
+            "mysterious, longing harmonic-minor melody: raga Kiravani in D (D E F G A Bb C#), the melody leans on Bb and C#, small sung slides, simple and singable",
+            "chant-like looping refrain built on a girl's name, repeated many times, short punchy lines, the arrangement swells under the chant each time it returns",
+            "Sufi colour: harmonium drone and chords, tight handclaps and soft group claps, dholak and tabla groove, a soft bowed string answering the voice",
+            "modern indie-pop production: melodic sub bass, snappy modern kick and snap, wide clean mix, intimate and warm, 100 BPM steady",
+            "intimate soft young male lead voice, slightly breathy and nasal, laid-back half-sung delivery close to the mic, light modern autotune, cheeky and tender",
+            "two young female voices: one sings Sufi-style wordless alaaps with long held notes, the other doubles the refrain softly",
+            "the male voice chants the name refrain softly and catchy, claps on every beat"
+          ],
+          "negative_styles": [
+            "Carnatic-trained singing",
+            "heavy ornaments",
+            "operatic",
+            "shouting",
+            "strained vocals",
+            "choir",
+            "EDM drop",
+            "trap hi-hats",
+            "rock guitar",
+            "orchestral",
+            "Western pop chords",
+            "jazzy chords",
+            "bright major key",
+            "sad ballad",
+            "konnakol",
+            "mridangam solo",
+            "nadaswaram",
+            "slow",
+            "boring",
+            "long pauses"
+          ],
+          "context_adherence": "high"
+        },
+        {
+          "text": "[Verse]\nPhone-la un peru minnudhu\nPaakka maatten, viral thudikkudhu\nBye-nu sonna, sari-nu sonnen\nUlla mattum unnai ninaichen",
+          "duration_ms": 16000,
+          "positive_styles": [
+            "modern Tamil indie-pop love song with a gentle swaying dance pulse, quirky and catchy, viral singalong, a Tamil melodic core with Sufi colour layered on top",
+            "mysterious, longing harmonic-minor melody: raga Kiravani in D (D E F G A Bb C#), the melody leans on Bb and C#, small sung slides, simple and singable",
+            "chant-like looping refrain built on a girl's name, repeated many times, short punchy lines, the arrangement swells under the chant each time it returns",
+            "Sufi colour: harmonium drone and chords, tight handclaps and soft group claps, dholak and tabla groove, a soft bowed string answering the voice",
+            "modern indie-pop production: melodic sub bass, snappy modern kick and snap, wide clean mix, intimate and warm, 100 BPM steady",
+            "intimate soft young male lead voice, slightly breathy and nasal, laid-back half-sung delivery close to the mic, light modern autotune, cheeky and tender",
+            "two young female voices: one sings Sufi-style wordless alaaps with long held notes, the other doubles the refrain softly",
+            "intimate half-sung verse, lighter groove, the harmonium and bowed string answer each line"
+          ],
+          "negative_styles": [
+            "Carnatic-trained singing",
+            "heavy ornaments",
+            "operatic",
+            "shouting",
+            "strained vocals",
+            "choir",
+            "EDM drop",
+            "trap hi-hats",
+            "rock guitar",
+            "orchestral",
+            "Western pop chords",
+            "jazzy chords",
+            "bright major key",
+            "sad ballad",
+            "konnakol",
+            "mridangam solo",
+            "nadaswaram",
+            "slow",
+            "boring",
+            "long pauses"
+          ],
+          "context_adherence": "high"
+        },
+        {
+          "text": "[Refrain]\nYaazhini, Yaazhini\nYen di ippadi?\nYaazhini, Yaazhini\nNenjil nee dhaan di\n(Aa-aa-aa...)",
+          "duration_ms": 14000,
+          "positive_styles": [
+            "modern Tamil indie-pop love song with a gentle swaying dance pulse, quirky and catchy, viral singalong, a Tamil melodic core with Sufi colour layered on top",
+            "mysterious, longing harmonic-minor melody: raga Kiravani in D (D E F G A Bb C#), the melody leans on Bb and C#, small sung slides, simple and singable",
+            "chant-like looping refrain built on a girl's name, repeated many times, short punchy lines, the arrangement swells under the chant each time it returns",
+            "Sufi colour: harmonium drone and chords, tight handclaps and soft group claps, dholak and tabla groove, a soft bowed string answering the voice",
+            "modern indie-pop production: melodic sub bass, snappy modern kick and snap, wide clean mix, intimate and warm, 100 BPM steady",
+            "intimate soft young male lead voice, slightly breathy and nasal, laid-back half-sung delivery close to the mic, light modern autotune, cheeky and tender",
+            "two young female voices: one sings Sufi-style wordless alaaps with long held notes, the other doubles the refrain softly",
+            "the refrain bigger, group claps and the second female voice join, the alaap soars over it, full swell"
+          ],
+          "negative_styles": [
+            "Carnatic-trained singing",
+            "heavy ornaments",
+            "operatic",
+            "shouting",
+            "strained vocals",
+            "choir",
+            "EDM drop",
+            "trap hi-hats",
+            "rock guitar",
+            "orchestral",
+            "Western pop chords",
+            "jazzy chords",
+            "bright major key",
+            "sad ballad",
+            "konnakol",
+            "mridangam solo",
+            "nadaswaram",
+            "slow",
+            "boring",
+            "long pauses"
+          ],
+          "context_adherence": "high"
+        },
+        {
+          "text": "[Tag]\nYaazhini... Yaazhini...\n{the beat stops on the last call}",
+          "duration_ms": 10000,
+          "positive_styles": [
+            "modern Tamil indie-pop love song with a gentle swaying dance pulse, quirky and catchy, viral singalong, a Tamil melodic core with Sufi colour layered on top",
+            "mysterious, longing harmonic-minor melody: raga Kiravani in D (D E F G A Bb C#), the melody leans on Bb and C#, small sung slides, simple and singable",
+            "chant-like looping refrain built on a girl's name, repeated many times, short punchy lines, the arrangement swells under the chant each time it returns",
+            "Sufi colour: harmonium drone and chords, tight handclaps and soft group claps, dholak and tabla groove, a soft bowed string answering the voice",
+            "modern indie-pop production: melodic sub bass, snappy modern kick and snap, wide clean mix, intimate and warm, 100 BPM steady",
+            "intimate soft young male lead voice, slightly breathy and nasal, laid-back half-sung delivery close to the mic, light modern autotune, cheeky and tender",
+            "two young female voices: one sings Sufi-style wordless alaaps with long held notes, the other doubles the refrain softly",
+            "the chant softens, the alaap answers once, the beat stops on the last name call"
+          ],
+          "negative_styles": [
+            "Carnatic-trained singing",
+            "heavy ornaments",
+            "operatic",
+            "shouting",
+            "strained vocals",
+            "choir",
+            "EDM drop",
+            "trap hi-hats",
+            "rock guitar",
+            "orchestral",
+            "Western pop chords",
+            "jazzy chords",
+            "bright major key",
+            "sad ballad",
+            "konnakol",
+            "mridangam solo",
+            "nadaswaram",
+            "slow",
+            "boring",
+            "long pauses",
+            "fade out"
+          ],
+          "context_adherence": "high"
+        }
+      ]
+    },
+    "model_id": "music_v2_5"
+  },
+  "brief": {
+    "notes": "Jithesh 3 Nov 08:49 on Semma Paiyan revox: 'We need a Radhimaa type song, this is totally different mode and pathetic'. Fresh start from research on the reference (style only): indie-pop with a modern pulse, Sufi/devotional colours, Tamil melodic core, a chant-like name refrain repeated heavily, intimate lead with female voices. We had been in bright Hamsadhwani with ornamented Carnatic voices: wrong mode. Now harmonic-minor Kiravani D, harmonium/claps/dholak, soft breathy lead, wordless female alaap, original name hook 'Yaazhini'. 60 s test first."
+  },
+  "story": "A guy who was dumped keeps calling out her name, pretending he is fine while his thumb hovers over her name on his phone.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
