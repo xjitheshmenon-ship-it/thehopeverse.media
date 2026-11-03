@@ -50,7 +50,7 @@
     "conditioning_ref": {
      "song_id": "SOURCE",
      "range": {
-      "start_ms": 10000,
+      "start_ms": 20000,
       "end_ms": 50000
      }
     },
@@ -90,7 +90,7 @@
     "conditioning_ref": {
      "song_id": "SOURCE",
      "range": {
-      "start_ms": 10000,
+      "start_ms": 20000,
       "end_ms": 50000
      }
     },
@@ -129,7 +129,7 @@
     "conditioning_ref": {
      "song_id": "SOURCE",
      "range": {
-      "start_ms": 10000,
+      "start_ms": 20000,
       "end_ms": 50000
      }
     },
@@ -168,7 +168,7 @@
     "conditioning_ref": {
      "song_id": "SOURCE",
      "range": {
-      "start_ms": 10000,
+      "start_ms": 20000,
       "end_ms": 50000
      }
     },
@@ -207,7 +207,7 @@
     "conditioning_ref": {
      "song_id": "SOURCE",
      "range": {
-      "start_ms": 10000,
+      "start_ms": 20000,
       "end_ms": 50000
      }
     },
@@ -246,7 +246,7 @@
     "conditioning_ref": {
      "song_id": "SOURCE",
      "range": {
-      "start_ms": 10000,
+      "start_ms": 20000,
       "end_ms": 50000
      }
     },
