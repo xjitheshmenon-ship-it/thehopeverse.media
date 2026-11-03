@@ -43,6 +43,7 @@ concurrency:
 env:
   MODAL_TOKEN_ID: ${{ secrets.MODAL_TOKEN_ID }}  # owner, 2 Nov 2026: LTX-2.5 on Modal makes the AI shots (ltx.py)
   MODAL_TOKEN_SECRET: ${{ secrets.MODAL_TOKEN_SECRET }}
+  RUNPOD_API_KEY: ${{ secrets.RUNPOD_API_KEY }}  # LTX backup when Modal fails (owner, 3 Nov)
   HF_TOKEN: ${{ secrets.HF_TOKEN }}
   TZ: Asia/Kolkata
   PYTHONIOENCODING: utf-8

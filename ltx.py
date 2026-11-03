@@ -129,6 +129,17 @@ def ltx_clip(prompt: str, path: Path, photo: Path = None, scene: str = "") -> fl
     """For video.py and film.py (owner, 2 Nov 2026: LTX makes every AI shot, HeyGen only talking hosts).
     photo + scene: the character placed into the scene (Qwen-Image-Edit), then animated; photo alone: animated as it is;
     neither: text-to-video. Saves a 5 s silent mp4 to path and returns the cost in dollars (H100 rate)."""
+    try:
+        return _modal_clip(prompt, path, photo, scene)
+    except Exception as e:  # Modal down or out of credit: the same model on RunPod (owner, 3 Nov 2026)
+        if not (os.environ.get("RUNPOD_API_KEY") and (Path(__file__).parent / "runpod.json").exists()):
+            raise
+        print(f"    Modal LTX failed ({str(e)[:120]}); using RunPod")
+        from runpod_ltx import runpod_clip
+        return runpod_clip(prompt, path, photo, scene)
+
+
+def _modal_clip(prompt: str, path: Path, photo: Path = None, scene: str = "") -> float:
     still, gpu = photo.read_bytes() if photo else None, 0
     if photo and scene:
         still = modal.Function.from_name("hopeverse-ltx", "pose").remote([{"photo": still, "scene": scene}])[0]
