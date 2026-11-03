@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER album Kaattu Thee, song 1: Introduction instrumental (1 min test)",
+  "take": 2,
+  "made_at_utc": "2026-11-03T13:10:14.652390+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "JNs5jhvAMdTEDMm2chcj",
+  "request": {
+    "prompt": "A modern Tamil film mass hero-entry theme, instrumental, new-generation Kollywood style. Built around ONE strong, catchy, singable lead melody in a minor key with an Indian flavour, played first on a bright reedy nadaswaram-like synth lead, then doubled by a whistle and heroic brass. The melody is simple, repeats often and is easy to hum after one listen. Clean, punchy, musical production with space, not noisy: tight parai and thappu kuthu drums locked with a modern trap beat and deep 808 bass, a gang 'hey' shout only on the big beats. 124 BPM. Starts with a quiet tense pulse and the melody alone on a single instrument, builds with a riser, a short silence, then a huge drop around 18 seconds where the drums, bass and brass carry the full melody. A second, bigger statement of the melody with strings and brass, ends on one hard hit.",
+    "model_id": "music_v2",
+    "force_instrumental": true,
+    "music_length_ms": 60000
+  },
+  "brief": {
+    "notes": "Jithesh 13:04 on the sung test: 'Destroying the music. Really bad'. He chose 'Instrumental first' (13:06): no AI singing; the melody hook has to carry the song. Kept musical and clean, not a wall of noise: one lead melody, clear space, then the big moment."
+  },
+  "story": "Rudra, a Chennai street boy nobody took seriously, walks back into his area and the street lights up. Mass hero entry theme.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
