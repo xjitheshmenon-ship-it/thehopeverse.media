@@ -1,0 +1,186 @@
+{
+ "title": "ÆTHER: Yaazhini full (v2 take 2 kept, extended to about 3.5 min)",
+ "story": "He says he is fine after she left, but keeps calling her name and checking her photos. In the bridge he admits saying 'fine' was a lie.",
+ "brief": {
+  "notes": "Jithesh 3 Nov 09:15: 'make take 2 to 3-4 mints audio'. Take 2's own sections (verse 1 + chorus 0-41.7 s, chorus, verse 2/ending 41.7-60 s) are kept exactly as reference chunks. New parts are each conditioned on the matching section of take 2 so the tune stays: verse 2 and verse 3 (new words in the same line shapes as take 2's own verse 1), a soft bridge with female aa lines, an instrumental chorus break, a bigger final chorus with take 2's own chorus words. Lyrics in Tamil script like take 2."
+ },
+ "seconds": 207,
+ "takes": 2,
+ "instrumental": false,
+ "source": "yaazhini-source",
+ "plan": {
+  "chunks": [
+   {
+    "song_id": "SOURCE",
+    "range": {
+     "start_ms": 0,
+     "end_ms": 41700
+    }
+   },
+   {
+    "text": "[Verse 2]\nநான் gym-க்கு போனேன் friends-ஓட சுத்தினேன்\nஉன் status பார்த்தேன் சிரிச்சேன் மறுபடியும்\nராத்திரி ஆனா உன் குரல் கேக்குது ஓ யாழினி யாழினி",
+    "duration_ms": 18340,
+    "positive_styles": [
+     "tamil pop",
+     "indie pop",
+     "acoustic guitar",
+     "electronic percussion",
+     "melancholic",
+     "romantic",
+     "acoustic guitar",
+     "soft vocals",
+     "melancholic",
+     "mid-tempo",
+     "same melody and feel as the first verse, same singer"
+    ],
+    "negative_styles": [
+     "heavy metal",
+     "hard rock",
+     "classical",
+     "jazz",
+     "aggressive",
+     "heavy drums",
+     "distorted guitar",
+     "fast tempo"
+    ],
+    "context_adherence": "high",
+    "conditioning_ref": {
+     "song_id": "SOURCE",
+     "range": {
+      "start_ms": 0,
+      "end_ms": 18340
+     }
+    },
+    "condition_strength": "xhigh"
+   },
+   {
+    "song_id": "SOURCE",
+    "range": {
+     "start_ms": 18340,
+     "end_ms": 41700
+    }
+   },
+   {
+    "text": "[Bridge]\n(ஆ... ஆ...)\nசொல்லு யாழினி, ஒரு வார்த்தை சொல்லு\nநான் fine-னு சொன்னது பொய் தான் யாழினி\n(ஆ... ஆ...)",
+    "duration_ms": 20000,
+    "positive_styles": [
+     "acoustic guitar",
+     "soft percussion",
+     "emotional vocals",
+     "soft bridge: the beat drops back, a young female voice sings wordless aa lines, he sings tenderly, the beat returns at the end"
+    ],
+    "negative_styles": [
+     "heavy synth",
+     "aggressive beats"
+    ],
+    "context_adherence": "high",
+    "conditioning_ref": {
+     "song_id": "SOURCE",
+     "range": {
+      "start_ms": 41700,
+      "end_ms": 60000
+     }
+    },
+    "condition_strength": "high"
+   },
+   {
+    "text": "[Instrumental]\n{acoustic guitar and harmonium play the chorus melody, soft female humming, claps, the groove builds}",
+    "duration_ms": 20000,
+    "positive_styles": [
+     "electronic percussion",
+     "catchy melody",
+     "expressive vocals",
+     "upbeat rhythm",
+     "instrumental break on the chorus melody, no lead vocal, building up"
+    ],
+    "negative_styles": [
+     "acoustic solo",
+     "slow tempo"
+    ],
+    "context_adherence": "high",
+    "conditioning_ref": {
+     "song_id": "SOURCE",
+     "range": {
+      "start_ms": 18340,
+      "end_ms": 38340
+     }
+    },
+    "condition_strength": "high"
+   },
+   {
+    "text": "[Verse 3]\nநீ இல்லாம நான் ஜாலியா தான் இருக்கேன்\nஉன் message வந்தா சிரிச்சேன் மறுபடியும்\nஒரு hi போட்டா போதும் நான் ஓடி வருவேன் ஓ யாழினி யாழினி",
+    "duration_ms": 18340,
+    "positive_styles": [
+     "tamil pop",
+     "indie pop",
+     "acoustic guitar",
+     "electronic percussion",
+     "melancholic",
+     "romantic",
+     "acoustic guitar",
+     "soft vocals",
+     "melancholic",
+     "mid-tempo",
+     "same melody and feel as the first verse, a little more energy"
+    ],
+    "negative_styles": [
+     "heavy metal",
+     "hard rock",
+     "classical",
+     "jazz",
+     "aggressive",
+     "heavy drums",
+     "distorted guitar",
+     "fast tempo"
+    ],
+    "context_adherence": "high",
+    "conditioning_ref": {
+     "song_id": "SOURCE",
+     "range": {
+      "start_ms": 0,
+      "end_ms": 18340
+     }
+    },
+    "condition_strength": "xhigh"
+   },
+   {
+    "song_id": "SOURCE",
+    "range": {
+     "start_ms": 18340,
+     "end_ms": 41700
+    }
+   },
+   {
+    "text": "[Final chorus]\nயாழினி யாழினி எங்க போன யாழினி\nநான் இங்க தான் சும்மாதான் சொல்றேன்\nபாத்துக்கிட்டு இருக்கேன் உன் photo உன் smile மறக்க முடியாது\nயாழினி யாழினி ஆஹ் யாழினி\nநான் okay போல ஆனா உள்ளே நீ தான் யாழினி",
+    "duration_ms": 23360,
+    "positive_styles": [
+     "electronic percussion",
+     "catchy melody",
+     "expressive vocals",
+     "upbeat rhythm",
+     "the biggest chorus: friends sing the name along with him, extra claps, full groove"
+    ],
+    "negative_styles": [
+     "acoustic solo",
+     "slow tempo"
+    ],
+    "context_adherence": "high",
+    "conditioning_ref": {
+     "song_id": "SOURCE",
+     "range": {
+      "start_ms": 18340,
+      "end_ms": 41700
+     }
+    },
+    "condition_strength": "xhigh"
+   },
+   {
+    "song_id": "SOURCE",
+    "range": {
+     "start_ms": 41700,
+     "end_ms": 60000
+    }
+   }
+  ]
+ }
+}
