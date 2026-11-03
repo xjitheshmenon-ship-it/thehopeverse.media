@@ -1,0 +1,262 @@
+{
+  "title": "\u00c6THER: Overtake F1 extended (2:30, Carnatic hype sections)",
+  "take": 1,
+  "made_at_utc": "2026-11-03T08:28:09.770483+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2_5",
+  "elevenlabs_song_id": "BxXinhbBnKG1i8NyxwFR",
+  "request": {
+    "composition_plan": {
+      "chunks": [
+        {
+          "song_id": "ABYynK91TQpePTCdJJiD_upload",
+          "range": {
+            "start_ms": 0,
+            "end_ms": 50000
+          }
+        },
+        {
+          "text": "[Lap 2 korvai build]\n{instrumental}",
+          "duration_ms": 12000,
+          "positive_styles": [
+            "a bright, euphoric, high-energy motor-racing film anthem at 152 BPM, same sound, same tempo and same key as the reference: pulsing synth arpeggios, driving palm-muted electric guitar into power chords, huge punchy modern drums, soaring strings and heroic brass",
+            "the melody is Carnatic raga Shankarabharanam in C (C D E F G A B), phrased like a Carnatic singer: slides into notes, fast ornaments (gamakam), quick sangathi variations of the hook",
+            "real instruments played by real musicians, close and natural: Carnatic violin, mridangam, thavil",
+            "loud, wide, bright modern mix, positive and triumphant",
+            "THE BUILD: the whole band plays one short rhythmic phrase three times in a row (a Carnatic korvai), each time louder and faster, the drums rolling, landing together on a huge slam on the downbeat"
+          ],
+          "negative_styles": [
+            "boring",
+            "repetitive loop",
+            "long pauses",
+            "fade-in",
+            "lo-fi",
+            "muddy mix",
+            "heavy echo on acoustic instruments",
+            "plain Western pop melody",
+            "generic EDM preset sound",
+            "white-noise risers",
+            "side-chain pumping",
+            "sad",
+            "slow",
+            "engine sounds",
+            "minor key",
+            "dark",
+            "villain"
+          ],
+          "context_adherence": "high",
+          "conditioning_ref": {
+            "song_id": "ABYynK91TQpePTCdJJiD_upload",
+            "range": {
+              "start_ms": 20000,
+              "end_ms": 50000
+            }
+          },
+          "condition_strength": "medium"
+        },
+        {
+          "text": "[Drop with the high note]\n{instrumental}",
+          "duration_ms": 18000,
+          "positive_styles": [
+            "a bright, euphoric, high-energy motor-racing film anthem at 152 BPM, same sound, same tempo and same key as the reference: pulsing synth arpeggios, driving palm-muted electric guitar into power chords, huge punchy modern drums, soaring strings and heroic brass",
+            "the melody is Carnatic raga Shankarabharanam in C (C D E F G A B), phrased like a Carnatic singer: slides into notes, fast ornaments (gamakam), quick sangathi variations of the hook",
+            "real instruments played by real musicians, close and natural: Carnatic violin, mridangam, thavil",
+            "loud, wide, bright modern mix, positive and triumphant",
+            "THE DROP, maximum hype: full band at full power, and a powerful Carnatic-trained female voice soars up and HOLDS one long, bright high note on the upper-octave C with a wide shake (gamakam), then sings the hook in fast swara syllables sa ri ga ma pa da ni",
+            "the crowd roars, brass and strings blast the hook under her"
+          ],
+          "negative_styles": [
+            "boring",
+            "repetitive loop",
+            "long pauses",
+            "fade-in",
+            "lo-fi",
+            "muddy mix",
+            "heavy echo on acoustic instruments",
+            "plain Western pop melody",
+            "generic EDM preset sound",
+            "white-noise risers",
+            "side-chain pumping",
+            "sad",
+            "slow",
+            "engine sounds",
+            "minor key",
+            "dark",
+            "villain"
+          ],
+          "context_adherence": "high",
+          "conditioning_ref": {
+            "song_id": "ABYynK91TQpePTCdJJiD_upload",
+            "range": {
+              "start_ms": 20000,
+              "end_ms": 50000
+            }
+          },
+          "condition_strength": "medium"
+        },
+        {
+          "text": "[Tisram gear shift]\n{instrumental}",
+          "duration_ms": 16000,
+          "positive_styles": [
+            "a bright, euphoric, high-energy motor-racing film anthem at 152 BPM, same sound, same tempo and same key as the reference: pulsing synth arpeggios, driving palm-muted electric guitar into power chords, huge punchy modern drums, soaring strings and heroic brass",
+            "the melody is Carnatic raga Shankarabharanam in C (C D E F G A B), phrased like a Carnatic singer: slides into notes, fast ornaments (gamakam), quick sangathi variations of the hook",
+            "real instruments played by real musicians, close and natural: Carnatic violin, mridangam, thavil",
+            "loud, wide, bright modern mix, positive and triumphant",
+            "GEAR SHIFT: the rhythm switches into a fast triplet swing (Carnatic tisram nadai) while the tempo stays the same, the Carnatic violin races through fast swara runs over pounding drums, thrilling and new"
+          ],
+          "negative_styles": [
+            "boring",
+            "repetitive loop",
+            "long pauses",
+            "fade-in",
+            "lo-fi",
+            "muddy mix",
+            "heavy echo on acoustic instruments",
+            "plain Western pop melody",
+            "generic EDM preset sound",
+            "white-noise risers",
+            "side-chain pumping",
+            "sad",
+            "slow",
+            "engine sounds",
+            "minor key",
+            "dark",
+            "villain"
+          ],
+          "context_adherence": "high",
+          "conditioning_ref": {
+            "song_id": "ABYynK91TQpePTCdJJiD_upload",
+            "range": {
+              "start_ms": 20000,
+              "end_ms": 50000
+            }
+          },
+          "condition_strength": "medium"
+        },
+        {
+          "text": "[Drum duel]\n{instrumental}",
+          "duration_ms": 14000,
+          "positive_styles": [
+            "a bright, euphoric, high-energy motor-racing film anthem at 152 BPM, same sound, same tempo and same key as the reference: pulsing synth arpeggios, driving palm-muted electric guitar into power chords, huge punchy modern drums, soaring strings and heroic brass",
+            "the melody is Carnatic raga Shankarabharanam in C (C D E F G A B), phrased like a Carnatic singer: slides into notes, fast ornaments (gamakam), quick sangathi variations of the hook",
+            "real instruments played by real musicians, close and natural: Carnatic violin, mridangam, thavil",
+            "loud, wide, bright modern mix, positive and triumphant",
+            "BREAKDOWN DUEL: the synths drop back to a pulsing bass, a real mridangam and a real thavil trade fast patterns back and forth, call and response, faster and faster, building tension, then a big tom roll"
+          ],
+          "negative_styles": [
+            "boring",
+            "repetitive loop",
+            "long pauses",
+            "fade-in",
+            "lo-fi",
+            "muddy mix",
+            "heavy echo on acoustic instruments",
+            "plain Western pop melody",
+            "generic EDM preset sound",
+            "white-noise risers",
+            "side-chain pumping",
+            "sad",
+            "slow",
+            "engine sounds",
+            "minor key",
+            "dark",
+            "villain"
+          ],
+          "context_adherence": "high",
+          "conditioning_ref": {
+            "song_id": "ABYynK91TQpePTCdJJiD_upload",
+            "range": {
+              "start_ms": 20000,
+              "end_ms": 50000
+            }
+          },
+          "condition_strength": "medium"
+        },
+        {
+          "text": "[Final lap drop]\n{instrumental}",
+          "duration_ms": 22000,
+          "positive_styles": [
+            "a bright, euphoric, high-energy motor-racing film anthem at 152 BPM, same sound, same tempo and same key as the reference: pulsing synth arpeggios, driving palm-muted electric guitar into power chords, huge punchy modern drums, soaring strings and heroic brass",
+            "the melody is Carnatic raga Shankarabharanam in C (C D E F G A B), phrased like a Carnatic singer: slides into notes, fast ornaments (gamakam), quick sangathi variations of the hook",
+            "real instruments played by real musicians, close and natural: Carnatic violin, mridangam, thavil",
+            "loud, wide, bright modern mix, positive and triumphant",
+            "THE BIGGEST MOMENT: the full band slams back, the hook on brass, guitar, violin and the female voice together, her high note returns even higher and longer, the crowd cheering, pure victory"
+          ],
+          "negative_styles": [
+            "boring",
+            "repetitive loop",
+            "long pauses",
+            "fade-in",
+            "lo-fi",
+            "muddy mix",
+            "heavy echo on acoustic instruments",
+            "plain Western pop melody",
+            "generic EDM preset sound",
+            "white-noise risers",
+            "side-chain pumping",
+            "sad",
+            "slow",
+            "engine sounds",
+            "minor key",
+            "dark",
+            "villain"
+          ],
+          "context_adherence": "high",
+          "conditioning_ref": {
+            "song_id": "ABYynK91TQpePTCdJJiD_upload",
+            "range": {
+              "start_ms": 20000,
+              "end_ms": 50000
+            }
+          },
+          "condition_strength": "medium"
+        },
+        {
+          "text": "[Chequered flag korvai ending]\n{instrumental}",
+          "duration_ms": 18000,
+          "positive_styles": [
+            "a bright, euphoric, high-energy motor-racing film anthem at 152 BPM, same sound, same tempo and same key as the reference: pulsing synth arpeggios, driving palm-muted electric guitar into power chords, huge punchy modern drums, soaring strings and heroic brass",
+            "the melody is Carnatic raga Shankarabharanam in C (C D E F G A B), phrased like a Carnatic singer: slides into notes, fast ornaments (gamakam), quick sangathi variations of the hook",
+            "real instruments played by real musicians, close and natural: Carnatic violin, mridangam, thavil",
+            "loud, wide, bright modern mix, positive and triumphant",
+            "THE ENDING: the whole band plays a closing rhythmic phrase three times (a Carnatic korvai), the third lands on one massive final hit, then a bright ringing chord and a crowd cheer"
+          ],
+          "negative_styles": [
+            "boring",
+            "repetitive loop",
+            "long pauses",
+            "fade-in",
+            "lo-fi",
+            "muddy mix",
+            "heavy echo on acoustic instruments",
+            "plain Western pop melody",
+            "generic EDM preset sound",
+            "white-noise risers",
+            "side-chain pumping",
+            "sad",
+            "slow",
+            "engine sounds",
+            "minor key",
+            "dark",
+            "villain"
+          ],
+          "context_adherence": "high",
+          "conditioning_ref": {
+            "song_id": "ABYynK91TQpePTCdJJiD_upload",
+            "range": {
+              "start_ms": 20000,
+              "end_ms": 50000
+            }
+          },
+          "condition_strength": "medium"
+        }
+      ]
+    },
+    "model_id": "music_v2_5"
+  },
+  "brief": {
+    "notes": "Jithesh 3 Nov 07:56: everything lacks 'that hype or high note where it grabs attention', 'use Carnatic music knowledge', and 'Overtake make it 2-3 min'. Keeps v3 take 2 (the one delivered) 0-50 s exactly via inpainting, then adds 100 s of new laps built on Carnatic devices as the hype moments: korvai build (phrase x3 landing on the downbeat slam), a female Carnatic voice holding the high upper-octave Sa with gamakam over the drop, tisram (triplet) gear-shift, a mridangam vs thavil duel breakdown, final drop and a korvai ending. Shankarabharanam = the C major the take already sits in, so it stays in key."
+  },
+  "story": "Race day. A young driver starts last on the grid and charges through the field lap after lap to take the chequered flag in front of a roaring crowd.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
