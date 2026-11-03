@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Midnight Metro (nostalgic synthwave, 3 min)",
+  "take": 1,
+  "made_at_utc": "2026-11-03T07:32:35.794433+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "1JPo8MvFdfzJ7rnmuQGv",
+  "request": {
+    "prompt": "A nostalgic, dreamy chillsynth and French-touch electronic track, 3 minutes, 104 BPM, warm and bittersweet, happy and a little sad at once: a late-night metro ride through a glittering Indian city. Warm vintage analog synth arpeggios, a filtered disco-house groove that slowly opens up, a rubbery melodic bass, soft gated snare, shimmering pads. The melody is a raga-shaped tune in Raga Charukesi in C (C D E F G Ab Bb) with gentle slides and ornaments, carried by a soft wordless female humming voice and a glassy synth lead. Timeline: 0-20 s: the arpeggio alone, filtered and warm, the humming enters softly. 20-50 s: the filtered groove and bass join, the hook on the humming voice. 50-80 s: the filter opens wide, full groove, the hook on a bright synth lead, a bansuri answers it. 80-110 s: a dreamy breakdown, only pads, humming and a soft piano, then a drum fill. 110-150 s: the biggest section, full groove, humming and synth lead in harmony, sparkling arpeggios, the hook a little higher. 150-180 s: the groove thins out layer by layer, the humming sings the hook one last time over the arpeggio, ending on a warm held chord. Real instruments named as themselves are played by real musicians, close, natural and dry, no heavy echo. No white-noise risers, no side-chain pumping on acoustic instruments, no long gaps, no fade-out at the start, no words unless stated.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 180000
+  },
+  "brief": {
+    "notes": "Jithesh 1 Nov: 3-4 songs, 3 min, inspired by the EDM list incl. 'Classique' by Adieu Aru (French touch / chillsynth). Traits only, no names in the prompt. Bittersweet, nostalgic, warm. Soft female humming (he loves it). Charukesi in C (major lower half, minor upper half = happy-sad). Prompt mode, 180 s, 2 takes, one at a time."
+  },
+  "story": "Mumbai, 1 AM. A young woman rides the last metro home after a long day; the city lights blur past; she smiles at an old memory. It wasn't a sad story.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
