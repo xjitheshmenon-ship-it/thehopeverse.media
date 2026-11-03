@@ -20,6 +20,9 @@ on:
       refs_only:
         description: "1 = only make the film's reference photos (refs) for a review"
         default: ""
+      ltx_on:
+        description: "runpod = make every LTX shot on RunPod (empty = Modal, RunPod as fallback)"
+        default: ""
 
 permissions:
   contents: write
@@ -38,6 +41,7 @@ jobs:
       POST: ${{ inputs.post }}
       VIDEO: ${{ inputs.video }}
       REFS_ONLY: ${{ inputs.refs_only }}
+      LTX_ON: ${{ inputs.ltx_on }}
     steps:
       - uses: actions/checkout@v5
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core && pip install -q -r requirements.txt fal-client imageio-ffmpeg
