@@ -1,0 +1,222 @@
+{
+  "title": "MIDNIGHT PURSUIT: The whole city is hunting her",
+  "music": "music/locked/midnight-pursuit.mp3",
+  "maker": "ltx",
+  "look": "Photorealistic cinematic film still, a modern megacity at midnight in the rain, wet surfaces reflecting cold cyan and warm sodium-amber light, anamorphic lens, shallow depth of field, fast smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. The woman is always the same original fictional character: a lean athletic woman in her late twenties of South Asian heritage, short black hair in a low tight bun, a charcoal waterproof hooded tech jacket with one reflective amber stripe across the chest, black cargo trousers, black trainers, black fingerless gloves",
+  "refs": {
+    "ref-runner.jpg": "Full-body portrait of an original fictional woman: a lean athletic woman in her late twenties of South Asian heritage, short black hair in a low tight bun, a charcoal waterproof hooded tech jacket with one reflective amber stripe across the chest, black cargo trousers, black trainers, black fingerless gloves, standing calm and ready, plain dark grey studio background, soft cyan key light and amber rim light"
+  },
+  "shots": [
+    {
+      "end": 4.8,
+      "prompt": "Slow aerial push over a rain-soaked megacity at midnight, towers glowing cyan and amber, rain falling through the light",
+      "look": "Photorealistic cinematic film still, a modern megacity at midnight in the rain, wet surfaces reflecting cold cyan and warm sodium-amber light, anamorphic lens, shallow depth of field, fast smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No woman's face in frame, no main character unless described"
+    },
+    {
+      "end": 9.6,
+      "prompt": "Slow push-in, she stands still in a dark rooftop doorway in the rain, then lifts her eyes to the sky",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She stands in a dark rooftop doorway at midnight in the rain, hood up, waist-up, city lights behind"
+    },
+    {
+      "end": 14.4,
+      "prompt": "Extreme close-up, a hand in a black fingerless glove zips a small glowing amber data drive into the chest pocket of a charcoal jacket with an amber stripe",
+      "look": "Photorealistic cinematic film still, a modern megacity at midnight in the rain, wet surfaces reflecting cold cyan and warm sodium-amber light, anamorphic lens, shallow depth of field, fast smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No woman's face in frame, no main character unless described"
+    },
+    {
+      "end": 19.2,
+      "prompt": "A swarm of matte black quad-rotor security drones with bright white searchlights, no logos rises slowly over the edge of a wet rooftop, the white beams sweeping through the rain",
+      "look": "Photorealistic cinematic film still, a modern megacity at midnight in the rain, wet surfaces reflecting cold cyan and warm sodium-amber light, anamorphic lens, shallow depth of field, fast smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No woman's face in frame, no main character unless described"
+    },
+    {
+      "end": 24,
+      "prompt": "A hard white searchlight beam hits her face, she squints, then snaps her head round to run",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "Close-up of her face on a rainy rooftop at night, lit by a hard white searchlight from above"
+    },
+    {
+      "end": 28.8,
+      "prompt": "She sprints flat out across the wet rooftop towards camera, searchlights chasing behind her",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She running across a wet flat rooftop at night in the rain, white searchlight beams behind her, full body"
+    },
+    {
+      "end": 33.6,
+      "prompt": "Low angle, she leaps across the gap between two tall buildings, silhouetted against the glowing city",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She mid-leap between two tall buildings at night, low angle, city lights below, full body"
+    },
+    {
+      "end": 38.4,
+      "prompt": "She lands on the next roof, rolls and is up running again in one move, water spraying",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She landing in a crouch on a wet rooftop at night, water spraying, full body"
+    },
+    {
+      "end": 43.2,
+      "prompt": "Shot from above, matte black quad-rotor security drones with bright white searchlights, no logos dive down into a narrow wet alley, the white beams sweeping the walls",
+      "look": "Photorealistic cinematic film still, a modern megacity at midnight in the rain, wet surfaces reflecting cold cyan and warm sodium-amber light, anamorphic lens, shallow depth of field, fast smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No woman's face in frame, no main character unless described"
+    },
+    {
+      "end": 48,
+      "prompt": "She slides fast down the rails of a steel fire escape ladder, rain flying off her",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She on a steel fire escape ladder on the side of a brick building at night, rain, full body"
+    },
+    {
+      "end": 52.8,
+      "prompt": "She runs through a crowded neon night market, people turning to look as she passes, camera tracking backwards",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She running through a crowded night street market lit by warm amber lanterns and cyan neon, steam in the air, full body"
+    },
+    {
+      "end": 57.6,
+      "prompt": "Low close-up of black trainers sprinting through deep puddles, water exploding, neon reflections shattering",
+      "look": "Photorealistic cinematic film still, a modern megacity at midnight in the rain, wet surfaces reflecting cold cyan and warm sodium-amber light, anamorphic lens, shallow depth of field, fast smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No woman's face in frame, no main character unless described"
+    },
+    {
+      "end": 62.4,
+      "prompt": "She vaults over a food stall in a burst of steam, camera whipping with her",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She vaulting over a steaming street food stall at night, amber lanterns, full body"
+    },
+    {
+      "end": 67.2,
+      "prompt": "matte black quad-rotor security drones with bright white searchlights, no logos weave fast between rows of hanging amber lanterns above a market street, sparks as one clips a cable",
+      "look": "Photorealistic cinematic film still, a modern megacity at midnight in the rain, wet surfaces reflecting cold cyan and warm sodium-amber light, anamorphic lens, shallow depth of field, fast smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No woman's face in frame, no main character unless described"
+    },
+    {
+      "end": 72,
+      "prompt": "She races down a long flight of metro station stairs three at a time, lights strobing",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She running down the wide stairs of a modern underground metro station, cool white light, full body"
+    },
+    {
+      "end": 76.8,
+      "prompt": "She slips sideways through the closing doors of a silver metro train just in time, the doors slam behind her",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She squeezing between the closing doors of a modern silver metro train on a platform, full body"
+    },
+    {
+      "end": 81.6,
+      "prompt": "Inside the speeding train she leans back on the doors catching her breath, tunnel lights strobing across her face",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She inside a speeding modern metro carriage at night, leaning on the doors, tunnel lights flashing past the windows, waist-up"
+    },
+    {
+      "end": 86.4,
+      "prompt": "In a dark metro tunnel, matte black quad-rotor security drones with bright white searchlights, no logos race alongside a speeding silver train, the white beams flashing over the carriages",
+      "look": "Photorealistic cinematic film still, a modern megacity at midnight in the rain, wet surfaces reflecting cold cyan and warm sodium-amber light, anamorphic lens, shallow depth of field, fast smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No woman's face in frame, no main character unless described"
+    },
+    {
+      "end": 91.2,
+      "prompt": "She forces open the rear door of the train, wind and noise blasting in, the tunnel rushing away behind",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She at the open rear door of a speeding metro train in a dark tunnel, wind blowing, full body"
+    },
+    {
+      "end": 96,
+      "prompt": "She jumps from the slowing train onto a dark empty platform and keeps running",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She landing on an empty dimly lit metro platform beside a slowing train, full body"
+    },
+    {
+      "end": 100.8,
+      "prompt": "She sprints up into a dark concrete underpass, white searchlights stabbing in behind her",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She running through a dark concrete underpass at night, white searchlight beams behind her, full body"
+    },
+    {
+      "end": 105.6,
+      "prompt": "Still and quiet, she presses back into the shadow under a concrete bridge, rain dripping, chest rising and falling",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She crouched in deep shadow under a concrete bridge by a river at night, rain dripping from the edge, full body"
+    },
+    {
+      "end": 110.4,
+      "prompt": "Extreme close-up of a small amber data drive glowing softly in a palm in a black fingerless glove, raindrops falling on it",
+      "look": "Photorealistic cinematic film still, a modern megacity at midnight in the rain, wet surfaces reflecting cold cyan and warm sodium-amber light, anamorphic lens, shallow depth of field, fast smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No woman's face in frame, no main character unless described"
+    },
+    {
+      "end": 115.2,
+      "prompt": "A single matte black security drone hangs silently above a river bridge in the rain, its white searchlight scanning slowly across the water",
+      "look": "Photorealistic cinematic film still, a modern megacity at midnight in the rain, wet surfaces reflecting cold cyan and warm sodium-amber light, anamorphic lens, shallow depth of field, fast smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No woman's face in frame, no main character unless described"
+    },
+    {
+      "end": 120,
+      "prompt": "Extreme close-up of her eyes in the dark, a white searchlight slides slowly across them, she does not blink, then her eyes narrow",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "Extreme close-up of her eyes in darkness under a bridge at night, a thin band of white light across them"
+    },
+    {
+      "end": 124.8,
+      "prompt": "She bursts out from under the bridge and sprints along the wet riverside path, searchlights snapping onto her",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She sprinting along a wet riverside path at night beside a dark river, city towers across the water, full body"
+    },
+    {
+      "end": 129.6,
+      "prompt": "A dozen matte black quad-rotor security drones with bright white searchlights, no logos swoop low over a black river at night in tight formation, the water lit white beneath them",
+      "look": "Photorealistic cinematic film still, a modern megacity at midnight in the rain, wet surfaces reflecting cold cyan and warm sodium-amber light, anamorphic lens, shallow depth of field, fast smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No woman's face in frame, no main character unless described"
+    },
+    {
+      "end": 134.4,
+      "prompt": "She races up the outside spiral steel stair of a tall modern glass tower, the city dropping away below",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She running up an outdoor spiral steel staircase on the side of a tall glass tower at night, city far below, full body"
+    },
+    {
+      "end": 139.2,
+      "prompt": "A matte black security drone smashes into a steel beam of a tower in a burst of sparks and tumbles away into the dark",
+      "look": "Photorealistic cinematic film still, a modern megacity at midnight in the rain, wet surfaces reflecting cold cyan and warm sodium-amber light, anamorphic lens, shallow depth of field, fast smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No woman's face in frame, no main character unless described"
+    },
+    {
+      "end": 144,
+      "prompt": "She sprints across a high glass skybridge between two towers, the glowing city far below her feet",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She running across a glass skybridge between two skyscrapers at night, glowing city below, full body"
+    },
+    {
+      "end": 148.8,
+      "prompt": "A swarm of matte black quad-rotor security drones with bright white searchlights, no logos closes in from every side around the top of a skyscraper, the white beams crossing",
+      "look": "Photorealistic cinematic film still, a modern megacity at midnight in the rain, wet surfaces reflecting cold cyan and warm sodium-amber light, anamorphic lens, shallow depth of field, fast smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No woman's face in frame, no main character unless described"
+    },
+    {
+      "end": 153.6,
+      "prompt": "On the very edge of the tower roof she stops, turns, and faces the drones, the wind pulling at her jacket",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She standing at the edge of a skyscraper roof at night facing the camera, the city glowing far below, wind, full body"
+    },
+    {
+      "end": 158.4,
+      "prompt": "She raises the glowing amber drive in her hand towards the drones, a faint smile",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She on a skyscraper rooftop at night holding up a small glowing amber data drive in one hand, waist-up"
+    },
+    {
+      "end": 163.2,
+      "prompt": "She falls backwards off the roof edge and a black paraglider wing snaps open above her",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She jumping off the edge of a skyscraper at night, a black paraglider wing opening above her, city below, full body"
+    },
+    {
+      "end": 168,
+      "prompt": "Aerial shot, she glides on the black paraglider over the glowing city, the drones falling behind",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She flying on a black paraglider high above a glowing night city, seen from behind and above"
+    },
+    {
+      "end": 172.8,
+      "prompt": "Two matte black quad-rotor security drones with bright white searchlights, no logos collide in mid-air and fall in a shower of sparks, the glowing city below",
+      "look": "Photorealistic cinematic film still, a modern megacity at midnight in the rain, wet surfaces reflecting cold cyan and warm sodium-amber light, anamorphic lens, shallow depth of field, fast smooth camera movement, film grain, vertical 9:16, no text, no letters, no logos, no signs with writing. No woman's face in frame, no main character unless described"
+    },
+    {
+      "end": 180,
+      "prompt": "She lands softly on an empty rooftop at first light, the black wing folding behind her, she pulls back her hood and breathes",
+      "image": "films/midnight-pursuit-film/ref-runner.jpg",
+      "scene": "She standing on an empty rooftop at dawn, a black paraglider wing on the ground behind her, soft blue and amber dawn light, full body",
+      "text": "MIDNIGHT PURSUIT"
+    }
+  ],
+  "description": "One drive. One night. Every drone in the city is hunting her.\n\nMusic: Midnight Pursuit, an original score by ÆTHER. Original AI-made film. Headphones on, volume up.\n\n#chasebgm #actionbgm #cinematic #thrillermusic #shorts\n\nMade with AI."
+}
