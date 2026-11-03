@@ -202,7 +202,8 @@ jobs:
         if: inputs.job == 'publish'
         env:
           VIDEO: ${{ inputs.topic }}
-        run: python video.py --publish "$VIDEO"
+          WHEN: ${{ inputs.when }}  # set: move the scheduled Short to this UTC time instead (e.g. 2026-11-04T18:00:00Z)
+        run: if [ -n "$WHEN" ]; then python video.py --reslot "$VIDEO" "$WHEN"; else python video.py --publish "$VIDEO"; fi
       - name: Make a held Short again (same script, new footage) and post it
         if: inputs.job == 'remake'
         env:

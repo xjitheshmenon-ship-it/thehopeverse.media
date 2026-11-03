@@ -1204,6 +1204,19 @@ def instagram(video: Path, caption: str) -> str:
 
 if __name__ == "__main__":
     channels = {c["id"]: c for c in _channels()}
+    if "--reslot" in sys.argv:  # move a still-scheduled Short to another time: python video.py --reslot <youtube id> <UTC ISO>
+        vid, when = sys.argv[sys.argv.index("--reslot") + 1:][:2]
+        path = next(p for p in OUTBOX.glob("*.json") if json.loads(p.read_text(encoding="utf-8")).get("youtube_id") == vid)
+        package = json.loads(path.read_text(encoding="utf-8"))
+        yt = youtube(False, HERE / channels[package["channel_id"]].get("token", "token.json"))
+        status = yt.videos().list(part="status", id=vid).execute()["items"][0]["status"]
+        if status["privacyStatus"] != "private" or not status.get("publishAt"):
+            sys.exit(print(f"{vid} is {status['privacyStatus']} (not scheduled): left as it is"))
+        yt.videos().update(part="status", body={"id": vid, "status": {"privacyStatus": "private", "publishAt": when,
+                                                                       "selfDeclaredMadeForKids": False, "containsSyntheticMedia": True}}).execute()
+        package["publish_at"] = when
+        path.write_text(json.dumps(package, indent=2, ensure_ascii=False), encoding="utf-8")
+        sys.exit(print(f"{vid} was set for {status['publishAt']}, now {when}"))
     if "--publish" in sys.argv:  # make a scheduled Short public now: python video.py --publish <youtube id>
         vid = sys.argv[sys.argv.index("--publish") + 1]
         path = next(p for p in OUTBOX.glob("*.json") if json.loads(p.read_text(encoding="utf-8")).get("youtube_id") == vid)
