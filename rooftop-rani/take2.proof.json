@@ -1,0 +1,19 @@
+{
+  "title": "\u00c6THER: Rooftop Rani (Indian percussion house with a bass flip, 3 min)",
+  "take": 2,
+  "made_at_utc": "2026-11-03T07:41:34.816811+00:00",
+  "maker": "ElevenLabs Music API on the owner's paid plan",
+  "model": "music_v2",
+  "elevenlabs_song_id": "XcSG312Ov3HeDAjBEuX4",
+  "request": {
+    "prompt": "A hypnotic, groovy Indian percussion house track, 3 minutes, 122 BPM: a rooftop party at night. The groove is played by real Indian hand drums, mridangam, tabla, ghatam and kanjira, in tight interlocking patterns with a deep house kick, warm sub bass and a soulful vibe. The melody is in Raga Hamsadhwani in E (E F# G# B D#), short catchy phrases on a breathy bansuri and a plucked veena-like synth, answered by a soft wordless female chant. Timeline: 0-30 s: the hand-drum groove alone, then the kick joins. 30-70 s: the bass and the bansuri hook enter, the chant answers, hypnotic and rolling. 70-90 s: the drums build up, faster and faster rolls on the mridangam. 90-140 s: THE FLIP: the track switches style into heavy, growling bass house with a big punchy kick, the same hook now on a gritty bass synth, hand drums still driving underneath, the crowd shouts on the accents. 140-180 s: the two worlds together, bass house power and the hand-drum groove, the bansuri plays the hook over it all, ending with a three-time rhythmic phrase on the drums. Real instruments named as themselves are played by real musicians, close, natural and dry, no heavy echo. No white-noise risers, no side-chain pumping on acoustic instruments, no long gaps, no fade-out at the start, no words unless stated.",
+    "model_id": "music_v2",
+    "force_instrumental": false,
+    "music_length_ms": 180000
+  },
+  "brief": {
+    "notes": "Afro-house style groove played on Indian hand drums (mridangam, tabla, ghatam, kanjira) + a surprise mid-track flip into heavy bass (traits from the 2026 afro house and tech/bass house hybrids). Hamsadhwani in E keeps it bright. The flip is a style change, not a silence (ElevenLabs ignores short silences). Prompt mode, 180 s, 2 takes, one at a time."
+  },
+  "story": "A Bengaluru rooftop party at night: the dancers move to a hypnotic hand-drum groove until the DJ flips the track into heavy bass and the whole roof jumps.",
+  "human_work": "to be added by the owner: melody, take choice, edits, mix"
+}
