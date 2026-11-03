@@ -100,11 +100,19 @@ def audience(channel: dict, days: int = 28) -> dict:
                     "countries": {"metrics": "views,averageViewPercentage", "dimensions": "country", "sort": "-views", "maxResults": 12},
                     "traffic": {"metrics": "views", "dimensions": "insightTrafficSourceType", "sort": "-views"},
                     "subscribed": {"metrics": "views,averageViewPercentage", "dimensions": "subscribedStatus"},
-                    "devices": {"metrics": "views", "dimensions": "deviceType", "sort": "-views"}}.items():
+                    "devices": {"metrics": "views", "dimensions": "deviceType", "sort": "-views"},
+                    "daily": {"metrics": "views,estimatedMinutesWatched,subscribersGained", "dimensions": "day", "sort": "day"},
+                    "videos": {"metrics": "views,averageViewPercentage,averageViewDuration", "dimensions": "video",
+                               "sort": "-views", "maxResults": 50}}.items():
         try:
             out[key] = q(**kw)
         except Exception as e:
             out[key] = f"unavailable: {str(e)[:200]}"
+    try:  # each upload's privacy and public view count, to spot private/scheduled or stalled Shorts (3 Nov 2026)
+        from video import uploads as yt_uploads
+        out["uploads"] = yt_uploads(HERE / channel.get("token", "token.json"))
+    except Exception as e:
+        out["uploads"] = f"unavailable: {str(e)[:200]}"
     return out
 
 
