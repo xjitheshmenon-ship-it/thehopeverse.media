@@ -1,0 +1,27 @@
+{
+  "channel_id": "yt-instinct",
+  "title": "Winter, dauphine sans queue (histoire vraie) #Shorts",
+  "description": "Une queue perdue dans un pi\u00e8ge \u00e0 crabes, et une petite dauphine qui r\u00e9apprend \u00e0 nager. En 2005, en Floride, Winter, \u00e2g\u00e9e de quelques mois, est rest\u00e9e prise dans une corde. Il a fallu environ dix-huit mois pour cr\u00e9er une queue artificielle, avec un gel de silicone tr\u00e8s doux. Ce m\u00eame gel a ensuite aid\u00e9 des personnes amput\u00e9es \u00e0 mieux supporter leur proth\u00e8se.\n\nPhoto : \u00ab Winter tailless bottlenose dolphin.jpg \u00bb, Paul via Flickr, CC BY-SA 2.0, Wikimedia Commons.\nImages d'illustration : Pixabay (ce n'est pas Winter).\nSources : Wikipedia \u00ab Winter (dolphin) \u00bb, Tampa Bay Times, Hanger Clinic, NBC News.\n\nInstinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.\n\n#animaux #nature #histoirevraie #lesaviezvous #Shorts",
+  "script": "PUBLISH: today, 20:30 Europe/Paris (slot 5 of 6). Category 15. Language fr. Narrator only, no cast.\n\nVO (fr-FR-DeniseNeural, -8%, captions 1.2, ~53 s):\n1. Ce dauphin a perdu sa queue. Pourtant, elle a r\u00e9appris \u00e0 nager.\n2. En d\u00e9cembre 2005, en Floride, ce b\u00e9b\u00e9 s'est pris dans la corde d'un pi\u00e8ge \u00e0 crabes. Sa queue n'a pas surv\u00e9cu.\n3. Recueillie \u00e0 l'aquarium de Clearwater, elle a appris \u00e0 nager comme un poisson, en bougeant son moignon de c\u00f4t\u00e9. Sa colonne vert\u00e9brale s'est courb\u00e9e.\n4. Kevin Carroll et Dan Strzempka lui ont cr\u00e9\u00e9 une queue artificielle en environ dix-huit mois, avec un gel de silicone tr\u00e8s doux.\n5. Elle ne la portait pas tout le temps : c'\u00e9tait un outil de r\u00e9\u00e9ducation, pour prot\u00e9ger son dos.\n6. Ce gel a aussi aid\u00e9 des personnes amput\u00e9es.\n7. Un film, o\u00f9 elle jouait son propre r\u00f4le, est sorti en 2011. Winter est morte en novembre 2021, \u00e0 16 ans.\n8. Et vous, quelle \u00e9preuve vous a appris \u00e0 avancer autrement ?\n\nEDIT PLAN (Mr. Cut): 1080x1920, 21 shots, ~54.5 s. Shot 1 opens on the real Commons photo of Winter without her tail (slow push-in, caption \u00ab Winter (histoire vraie) \u00bb). Beats: hook (0-4.5 s) / Florida 2005 lagoon + trap rope + young dolphin stock (4.5-13) / aquarium, Winter underwater, fish side-to-side, spine (13-22.5) / prosthetic: \u00ab Environ 18 mois \u00bb, silicone gel hands, prosthetic workshop hands (22.5-30.5) / rehabilitation, main photo + dorsal fin (30.5-37) / humans: prosthetic leg walking, legs only (37-40) / film 2011, main photo, sunset \u00ab 2005-2021 \u00bb (40-48.5) / \u00ab Et vous ? \u00bb + credit card 3 s (48.5-54.5). Every Pixabay clip tagged \u00ab Illustration \u00bb; no faces, no AI/HeyGen/fal images; only licence-confirmed Commons files, else dark-blue text card. Music: calm piano/strings 60-70 bpm, ducked 12-15 dB. Measure real TTS; if >55 s, trim end of line 3.\n\nTHUMBNAIL: real Commons photo of Winter, cropped on her body, deep ocean blue, white text with thin gold outline: \u00ab Sans queue, elle nage \u00bb (alt: \u00ab 18 mois \u00bb).",
+  "lang": "fr",
+  "footer": "Instinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "category": "15",
+  "photos": true,
+  "draft_cost": 1.11,
+  "relevance": {
+    "score": 80,
+    "why": "Evergreen true story (Winter, Clearwater) with a strong emotional hook, matching the stork-style '(histoire vraie)' format; facts are accurate (Dec 2005, Carroll and Strzempka, 2011 film, died Nov 2021 aged 16), and the script delivers the title; no newer finding contradicts it.",
+    "views48": 1500
+  },
+  "credits": [
+    "Winter tailless bottlenose dolphin croped.jpg by Paul (CC BY-SA 2.0), https://commons.wikimedia.org/wiki/File:Winter_tailless_bottlenose_dolphin_croped.jpg",
+    "Winter tailless bottlenose dolphin.jpg by Paul (CC BY-SA 2.0), https://commons.wikimedia.org/wiki/File:Winter_tailless_bottlenose_dolphin.jpg",
+    "Winter IMG 4493 s.jpg by Ula0601 (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Winter_IMG_4493_s.jpg"
+  ],
+  "qa": {
+    "passed": true,
+    "problems": "",
+    "bad_frames": 0
+  },
+  "youtube_id": "7zJwW6MpsE0"
+}
