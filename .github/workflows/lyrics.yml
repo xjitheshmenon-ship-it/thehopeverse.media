@@ -1,0 +1,43 @@
+# Time a song's sung lyrics (faster-whisper, free, on the runner) so videos can put each line on screen when it is sung.
+# Start: push run/lyrics with "branch=<branch holding the audio>" and "file=<path in that branch>" (plus hold=override).
+# The timings are printed in the log and saved as <file>.lyrics.json on that branch.
+name: Time sung lyrics
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch that holds the audio"
+        required: true
+      file:
+        description: "Audio path in that branch"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  lyrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ inputs.branch }}
+      - run: pip install -q faster-whisper
+      - env:
+          FILE: ${{ inputs.file }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from faster_whisper import WhisperModel
+          f = os.environ["FILE"]
+          segs, _ = WhisperModel("medium.en", device="cpu", compute_type="int8").transcribe(f, word_timestamps=True, beam_size=5)
+          out = []
+          for s in segs:
+              out.append({"start": round(s.start, 2), "end": round(s.end, 2), "text": s.text.strip(),
+                          "words": [[round(w.start, 2), round(w.end, 2), w.word.strip()] for w in s.words]})
+              print(f"{s.start:7.2f} - {s.end:7.2f}  {s.text.strip()}")
+          json.dump(out, open(f + ".lyrics.json", "w"), indent=1)
+          PY
+          git add "$FILE.lyrics.json" && git -c user.name=hope -c user.email=hope@users.noreply.github.com commit -qm "Lyric timings: $FILE"
+          git push origin HEAD:${{ inputs.branch }}
