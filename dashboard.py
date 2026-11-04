@@ -17,6 +17,7 @@ from zoneinfo import ZoneInfo
 
 import breakout
 import credits
+import engage
 import predict
 from agents import DAILY_BUDGET, HERE, HISTORY, OUTBOX, _channels
 from state import approvals, notes, topic_id
@@ -328,7 +329,7 @@ def push(path) -> None:
 
 
 if __name__ == "__main__":
-    rows, costs = shorts(), spend()
+    rows, costs, comments = shorts(), spend(), []
     if os.environ.get("BREAKOUTS") == "true":  # the hourly numbers run only, so two runs never study the same Short
         breakout.run(rows)
         predict.record(rows, NOW.replace(tzinfo=None))  # real 48-hour views next to each prediction
@@ -336,12 +337,17 @@ if __name__ == "__main__":
             predict.daily(rows, NOW.replace(tzinfo=None), _channels())
         except Exception as e:
             print(f"::warning::Daily patterns: {str(e)[:300]}")
+        try:  # first 48 h of each Short: question comment, playlist, replies (owner, 4 Nov 2026)
+            comments = engage.run(rows, NOW.replace(tzinfo=None))
+        except Exception as e:
+            print(f"::warning::After-posting work: {str(e)[:300]}")
     rows += film_uploads(rows)  # after breakouts and predictions, which are about Shorts
     plan = slots(rows)
     data = {"updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "shorts": rows, "spend": costs, "agent_work": agent_work(), "limits": limits(costs),
             "slots": plan, "channels": channels(rows, costs, plan, youtube_totals()), "runs": runs(), "upcoming": upcoming(), "credits": credits.check(),
-            "topics": topics(), "agents": AGENTS, "talk": talk(), "breakouts": breakouts(), "predictions": predictions()}
+            "topics": topics(), "agents": AGENTS, "talk": talk(), "breakouts": breakouts(), "predictions": predictions(),
+            "comments": comments}
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(data, indent=1, ensure_ascii=False), encoding="utf-8")
     print(f"Saved {OUT} ({len(rows)} Shorts)")

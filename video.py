@@ -1228,6 +1228,7 @@ if __name__ == "__main__":
         path.write_text(json.dumps(package, indent=2, ensure_ascii=False), encoding="utf-8")
         sys.exit(print(f"Public now: https://youtu.be/{vid}"))
     if "--refresh" in sys.argv:  # put the channel's current footer on all its uploads: python video.py --refresh yt-instinct
+        from datetime import datetime, timedelta, timezone
         from google.oauth2.credentials import Credentials
         from googleapiclient.discovery import build
         c = channels[sys.argv[sys.argv.index("--refresh") + 1]]
@@ -1240,6 +1241,9 @@ if __name__ == "__main__":
             part="contentDetails", playlistId=uploads, maxResults=50).execute()["items"]]
         for v in yt.videos().list(part="snippet", id=",".join(ids)).execute()["items"]:
             s = v["snippet"]
+            if datetime.now(timezone.utc) - datetime.fromisoformat(s["publishedAt"].replace("Z", "+00:00")) < timedelta(hours=48):
+                print(f"Skipped https://youtu.be/{v['id']}: under 48 hours old, YouTube is still testing it (owner, 4 Nov)")
+                continue
             # split_owner_notes also takes out owner notes that leaked into old uploads (31 Oct)
             first, *rest = split_owner_notes(s["description"].replace(old, new))[0].split(foot or "\0")  # keep the footer once
             desc = re.sub(r"\n{3,}", "\n\n", (first + foot + "".join(rest)) if rest else first).strip()
