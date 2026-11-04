@@ -23,15 +23,19 @@ jobs:
       - uses: actions/checkout@v5
         with:
           ref: ${{ inputs.branch }}
-      - run: pip install -q -U faster-whisper av
+      - run: pip install -q faster-whisper
       - env:
           FILE: ${{ inputs.file }}
         run: |
           python3 - <<'PY'
-          import json, os
+          import json, os, subprocess
+          import numpy as np
           from faster_whisper import WhisperModel
           f = os.environ["FILE"]
-          segs, _ = WhisperModel("medium.en", device="cpu", compute_type="int8").transcribe(f, word_timestamps=True, beam_size=5)
+          # decode with ffmpeg ourselves: the runner's PyAV is too old for faster-whisper's decoder
+          pcm = np.frombuffer(subprocess.run(["ffmpeg", "-v", "error", "-i", f, "-ac", "1", "-ar", "16000", "-f", "f32le", "-"],
+                                             capture_output=True, check=True).stdout, np.float32)
+          segs, _ = WhisperModel("medium.en", device="cpu", compute_type="int8").transcribe(pcm, word_timestamps=True, beam_size=5)
           out = []
           for s in segs:
               out.append({"start": round(s.start, 2), "end": round(s.end, 2), "text": s.text.strip(),
