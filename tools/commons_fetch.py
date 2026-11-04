@@ -4,7 +4,7 @@ python tools/commons_fetch.py OUT_DIR "Category:A" "Category:B" "File:x.webm" ..
 Keeps only CC BY / CC0 / public-domain files (no share-alike, no non-free), images as 1920 px thumbs,
 videos as originals, and writes OUT_DIR/credits.json with author, licence and source page for each.
 """
-import json, re, sys, time, urllib.parse, urllib.request
+import json, re, sys, time, urllib.error, urllib.parse, urllib.request
 from pathlib import Path
 
 API = "https://commons.wikimedia.org/w/api.php"
@@ -12,13 +12,17 @@ UA = {"User-Agent": "HopeverseMediaBot/1.0 (https://github.com/xjitheshmenon-shi
 
 
 def get(url):
-    for i in range(4):
+    for i in range(8):
         try:
             return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=120).read()
-        except Exception:
-            if i == 3:
+        except urllib.error.HTTPError as e:  # Commons throttles bots with 429: wait as asked, then go on
+            if i == 7 or e.code not in (429, 500, 502, 503, 504):
                 raise
-            time.sleep(2 ** i)
+            time.sleep(int(e.headers.get("Retry-After") or 0) or 15 * (i + 1))
+        except OSError:
+            if i == 7:
+                raise
+            time.sleep(5 * (i + 1))
 
 
 def api(**p):
@@ -66,13 +70,17 @@ def main(out, sources):
             name = re.sub(r"[^A-Za-z0-9._-]+", "_", t[5:])
             if not video:
                 name = Path(name).stem + Path(urllib.parse.urlparse(url).path).suffix
-            (out / name).write_bytes(get(url))
+            try:
+                (out / name).write_bytes(get(url))
+            except Exception as e:  # one stubborn file must not lose the rest
+                print("skip (download)", e, t)
+                continue
             credits.append({"file": name, "title": t, "page": info["descriptionurl"], "licence": lic,
                             "licence_url": meta.get("LicenseUrl", ""),
                             "author": re.sub("<[^>]+>", "", meta.get("Artist", "")).strip(),
                             "description": re.sub("<[^>]+>", "", meta.get("ImageDescription", "")).strip()[:300]})
             print("ok", lic, name)
-            time.sleep(0.3)
+            time.sleep(1.5)
     (out / "credits.json").write_text(json.dumps(credits, ensure_ascii=False, indent=1))
     print(len(credits), "files")
 
