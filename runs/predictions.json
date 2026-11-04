@@ -453,5 +453,26 @@
   "predicted": null,
   "actual": 1,
   "at": "2026-11-04 20:15"
+ },
+ "yt-instinct-34.ja": {
+  "channel": "yt-instinct-ja",
+  "title": "300kgのカバが小さなカメの後ろに隠れた実話 #Shorts",
+  "predicted": null,
+  "actual": 0,
+  "at": "2026-11-04 21:15"
+ },
+ "yt-instinct-35.ja": {
+  "channel": "yt-instinct-ja",
+  "title": "ハチ公は9年間、渋谷駅で飼い主を待ち続けた【実話】 #Shorts",
+  "predicted": null,
+  "actual": 1,
+  "at": "2026-11-04 21:15"
+ },
+ "yt-instinct-37": {
+  "channel": "yt-instinct",
+  "title": "Acheté chez Harrods, ce lion a-t-il reconnu ses amis ? (histoire vraie)",
+  "predicted": 1500,
+  "actual": 155,
+  "at": "2026-11-04 21:15"
  }
 }
