@@ -1,7 +1,7 @@
 """Download freely licensed files from Wikimedia Commons (the session sandbox can't reach Commons; Actions can).
 
 python tools/commons_fetch.py OUT_DIR "Category:A" "Category:B" "File:x.webm" "Search:Smriti Mandhana" ...
-("Search:" = Commons file search, first 40 hits.) Keeps only CC BY / CC0 / public-domain / GODL-India files (no share-alike, no non-free), images as 1920 px thumbs,
+("Search:" = Commons file search, first 40 hits; a "+sa" source also allows CC BY-SA, never NC/ND.) Keeps only CC BY / CC0 / public-domain / GODL-India files (no share-alike, no non-free), images as 1920 px thumbs,
 videos as originals, and writes OUT_DIR/credits.json with author, licence and source page for each.
 """
 import json, re, sys, time, urllib.error, urllib.parse, urllib.request
@@ -30,9 +30,9 @@ def api(**p):
     return json.loads(get(API + "?" + urllib.parse.urlencode(p)))
 
 
-def free(lic):
+def free(lic, sa=False):
     lic = lic.lower().strip()
-    if re.search(r"\b(sa|nc|nd)\b", lic.replace("-", " ")):
+    if re.search(r"\b(nc|nd)\b" if sa else r"\b(sa|nc|nd)\b", lic.replace("-", " ")):
         return False
     return lic.startswith(("cc by", "cc0", "public domain", "godl")) or lic == "pd"  # GODL-India: attribution only
 
@@ -56,6 +56,8 @@ def main(out, sources):
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
     credits, seen = [], set()
+    sa = "+sa" in sources
+    sources = [x for x in sources if x != "+sa"]
     for src in sources:
         for t in titles(src):
             if t in seen:
@@ -65,7 +67,7 @@ def main(out, sources):
                        iiurlwidth=1920)["query"]["pages"][0]["imageinfo"][0]
             meta = {k: v.get("value", "") for k, v in info["extmetadata"].items()}
             lic = re.sub("<[^>]+>", "", meta.get("LicenseShortName", "")).strip()
-            if not free(lic):
+            if not free(lic, sa):
                 print("skip (licence)", lic, t)
                 continue
             video = info["mime"].startswith(("video", "application/ogg"))
@@ -90,5 +92,6 @@ def main(out, sources):
 
 if __name__ == "__main__":
     assert free("CC BY 4.0") and free("CC BY 3.0") and free("CC0") and free("Public domain") and free("GODL-India")
+    assert free("CC BY-SA 4.0", True) and not free("CC BY-NC-SA 2.0", True)
     assert not free("CC BY-SA 4.0") and not free("CC BY-NC 2.0") and not free("")
     main(sys.argv[1], sys.argv[2:])
