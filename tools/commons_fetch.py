@@ -27,9 +27,10 @@ def api(**p):
 
 
 def free(lic):
-    lic = lic.lower()
-    return ("sa" not in lic.split()[-1] and "-sa" not in lic and "nc" not in lic and "nd" not in lic
-            and (lic.startswith("cc by") or lic.startswith("cc0") or lic.startswith("public domain") or lic == "pd"))
+    lic = lic.lower().strip()
+    if re.search(r"\b(sa|nc|nd)\b", lic.replace("-", " ")):
+        return False
+    return lic.startswith(("cc by", "cc0", "public domain")) or lic == "pd"
 
 
 def titles(source):
