@@ -28,13 +28,17 @@ jobs:
           FILE: ${{ inputs.file }}
         run: |
           python3 - <<'PY'
-          import json, os, subprocess
+          import json, os
           import numpy as np
           from faster_whisper import WhisperModel
           f = os.environ["FILE"]
-          # decode with ffmpeg ourselves: the runner's PyAV is too old for faster-whisper's decoder
-          pcm = np.frombuffer(subprocess.run(["ffmpeg", "-v", "error", "-i", f, "-ac", "1", "-ar", "16000", "-f", "f32le", "-"],
-                                             capture_output=True, check=True).stdout, np.float32)
+          # the runner has no ffmpeg and an old PyAV: read the WAV directly and resample to 16 kHz mono
+          import wave
+          w = wave.open(f)
+          sr, ch, sw = w.getframerate(), w.getnchannels(), w.getsampwidth()
+          raw = np.frombuffer(w.readframes(w.getnframes()), {2: np.int16, 4: np.int32}[sw]).astype(np.float32)
+          x = raw.reshape(-1, ch).mean(1) / (2 ** (8 * sw - 1))
+          pcm = np.interp(np.arange(0, len(x) / sr, 1 / 16000), np.arange(len(x)) / sr, x).astype(np.float32)
           segs, _ = WhisperModel("medium.en", device="cpu", compute_type="int8").transcribe(pcm, word_timestamps=True, beam_size=5)
           out = []
           for s in segs:
