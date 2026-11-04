@@ -1,16 +1,16 @@
-# Hopeverse spending report, 04 Nov 2026 15:34
+# Hopeverse spending report, 04 Nov 2026 23:13
 
-- Today: $6.99 (17 runs)
-- Last 7 days: $157.28
-- This month: $73.72
-- All time: $250.88
+- Today: $11.82 (22 runs)
+- Last 7 days: $162.11
+- This month: $78.55
+- All time: $255.71
 
 Claude (Anthropic) costs as estimated by agents.py, review included. Video images from fal.ai add
 about $0.006 each (about $0.06 a Short). Exact bills: console.anthropic.com and fal.ai/dashboard.
 
 | Day | Runs | Cost |
 | --- | --- | --- |
-| 2026-11-04 | 17 | $6.99 |
+| 2026-11-04 | 22 | $11.82 |
 | 2026-11-03 | 57 | $34.12 |
 | 2026-11-02 | 46 | $19.61 |
 | 2026-11-01 | 37 | $13.00 |
@@ -54,37 +54,34 @@ spazio, astronomia, universo, pianeti, stelle, sistema solare, missioni spaziali
 
 ## Credits left
 
-- **HeyGen is low: 1.6 usd left** - top it up today
-- fal.ai: ? usd (Couldn't read the balance (HTTP Error 403: Forbidden); add a fal.ai READONLY key as the FAL_BILLING_KEY secret)
-- HeyGen: 1.6 usd (Talking hosts; Kling on fal.ai takes over when it runs out)
-- ElevenLabs: 26395 characters (Voices; free Edge voices take over when it runs out. Plan: creator, status: active, resets 03 Dec 2026)
+- **ElevenLabs is low: 2186 characters left** - top it up today
+- fal.ai: ? usd (Couldn't read the balance (HTTP Error 401: Unauthorized); add a fal.ai READONLY key as the FAL_BILLING_KEY secret)
+- HeyGen: ? usd (Couldn't read the balance (HTTP Error 401: UNAUTHORIZED))
+- ElevenLabs: 2186 characters (Voices; free Edge voices take over when it runs out. Plan: creator, status: active, resets 03 Dec 2026)
 - Anthropic: ? usd (No balance API: see console.anthropic.com > Billing. Spend is logged per run)
 - Perplexity: ? usd (No balance API: see perplexity.ai/account/api. About $0.006 a search)
 
 ## Mr. Grow's to-dos for you today
 
-- **Reconnect YouTube OAuth.** Without it I can't see views or judge publish times.
-- **Pinned comments:**
-  - Instinct: "Quel animal vous a déjà surpris ?"
-  - Hopeverse: "Which story should we explain next?"
-  - Sawaal: "आपका सवाल क्या है?"
-- **Community posts (text plus poll):** One per channel. Ask which topic they want next, with 3 options.
-- **Instagram:** Share the best Hopeverse number-led Short with the caption "One number. One minute. Full story on YouTube." Don't cross-promote between our own channels.
-- **Publish times:** No changes. There is no slot data and no 3-day, 6-Short evidence.
-- **Housekeeping from Mr. Hope's notes:** Clear the duplicate Instinct giraffe and elephant Shorts scheduled for 30 Oct.
+- **Pin:** Instinct stork Short RrCMGIZYl1w, with the comment "Vous auriez fait quoi à sa place ?" For the others, pin each channel's top Short.
+- **Community posts:** Instinct has a poll: "Quelle histoire vraie voulez-vous demain : sauvetage, amitié ou retrouvailles ?" Sawaal has a poll: "SIR पर सबसे बड़ा सवाल?" with 3 options.
+- **Instagram:** share the stork Short with the caption "Il l'a sauvée. Elle est revenue. 13 000 km." Do not cross-promote between our own channels.
+- **Publish times:** none moved. Too few Shorts per slot and under 3 days of evidence, so there were no changes.
 
 ## Monetization target (10M Shorts views in 90 days)
 
-YouTube stats are down: the token has expired (invalid_grant). I can't give views per day or views per Short, so I'm not guessing.
-- **Last known (29 Oct):** Instinct about 570 views per Short, Sawaal about 90, Hopeverse about 9.
-- **Goal:** 111,000 views a day and 28,000 per Short for each channel, and 3.3M a day in total. Every channel is far below that.
-- **Closest:** Instinct. The crow and dolphin Shorts each got about 1,200 views.
+Estimates from the performance data. Search was cut off, so I did no live trend research today.
+- **Instinct:** about 67k total views over 36 Shorts since 26 Oct. That is about 8–9k a day against 111k, which is 8%. Average per Short is about 1,900 against 28,000, but 3 rescue stories supply 51k of the 67k. Today's six Shorts are at 16–95 views.
+- **Instinct Japan:** about 3k views over 30 Shorts. About 0.4k a day. Average about 98.
+- **Sawaal:** best is 486, usually under 100.
+- **Sankalp, Hopeverse:** under 60 per Short.
+- **Total:** about 10k a day against 3.3M, which is 0.3%.
+- **Closest:** Instinct. Its breakouts are 30k, 13k and 8k, and all are "(histoire vraie)" rescue and return stories. Every later famous-animal story got 40–150 views, including Knut, Ham, Winter, Owney and Balto. Fastest route is more rescue stories where a person saves an animal and it comes back. This is the pattern in the numbers, not a guarantee.
 
 ## Sponsorship and collab leads
 
-The search tool was cut off, so every entry bar is unverified. Check each one by hand.
-1. **Hivency / Influence4You (Instinct):** French brand-campaign platforms. Check the follower minimum.
-2. **Collabstr (all channels):** Creator marketplace. Check whether it has a follower minimum.
-3. **Plixxo (Sawaal, Sankalp):** Indian nano-creator campaigns. Check minimums.
-4. **Influencer Hub (Hopeverse):** To test for news or tech briefs.
-5. **Collab tag:** Find a French wildlife Shorts creator of similar size by hand.
+Search was cut off, so every entry bar below is unverified.
+1. **Ground News (Hopeverse, Sawaal):** apply to the creator partnership programme at https://help.ground.news/en/categories/2358337-partner-with-us. Check the entry bar by hand.
+2. **Hivency (Instinct):** French brand-campaign platform, https://hivency.com. Check the follower minimum by hand.
+3. **Plixxo (Sawaal, Sankalp):** Indian nano-creator campaigns, https://plixxo.com. Check the minimum by hand.
+4. **Collab (Instinct):** find a French rescue-story or animal creator of similar size and propose a Collaborations tag or remix. Still to do by hand.
