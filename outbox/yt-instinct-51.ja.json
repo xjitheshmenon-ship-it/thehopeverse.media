@@ -138,5 +138,6 @@
   ],
   "footer": "Instinct, une chaîne Hopeverse Media. Réalisé par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
   "category": "15",
-  "photos": true
+  "photos": true,
+  "render_failed": 1
 }
