@@ -1,0 +1,28 @@
+{
+  "channel_id": "yt-instinct",
+  "title": "Elle a tendu la patte vers sa bouteille d'eau (histoire vraie)",
+  "description": "F\u00e9vrier 2009, en Australie, pendant les incendies du Samedi noir : une koala aux pattes br\u00fbl\u00e9es accepte l'eau que lui tend un pompier volontaire. Son histoire a fait le tour du monde.\n\nEt vous, avez-vous d\u00e9j\u00e0 aid\u00e9 un animal en d\u00e9tresse ? Dites-le-nous en commentaire.\n\nPour aider les animaux sauvages bless\u00e9s, pensez \u00e0 soutenir une association de sauvetage de la faune pr\u00e8s de chez vous.\n\nSources : ABC News, 6 ao\u00fbt 2009 ; Museums Victoria, \u00ab Sam the koala \u00bb ; Universit\u00e9 de Sydney, 2019, Mella et al.\nImages : s\u00e9quences libres de droits pour illustrer (Pixabay) et photos de Sam naturalis\u00e9e (Wikimedia Commons), pas de l'\u00e9v\u00e9nement r\u00e9el.\n\n#histoirevraie #animaux #sauvetage #nature #Shorts\n\nInstinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "script": "FORMAT: 9:16 Short, ~53 s, narrator only (no cast, no Arjun/Meera). Voice fr-FR-DeniseNeural, rate -8%.\n\nSCRIPT (French):\n\u00ab Elle a tendu la patte\u2026 vers sa bouteille d'eau. \u00bb\n\u00ab D\u00e9but f\u00e9vrier 2009, en Australie, pendant les incendies du Samedi noir. \u00bb\n\u00ab Un pompier volontaire, David Tree, trouve une femelle koala aux pattes br\u00fbl\u00e9es. Trop faible, elle s'arr\u00eate pr\u00e8s de lui. \u00bb\n\u00ab Il tient la bouteille, et elle boit. Comme une personne \u00e9puis\u00e9e qui accepte un verre d'eau d'un inconnu. \u00bb\n\u00ab Au refuge, Colleen Wood la nomme Sam. Elle y rencontre Bob, un autre koala br\u00fbl\u00e9. \u00bb\n\u00ab Les images font le tour du monde. Sam devient un symbole d'espoir. \u00bb\n\u00ab Ses pattes gu\u00e9rissent, mais elle a la chlamydiose, une maladie courante chez les koalas. Le 6 ao\u00fbt 2009, on l'endort pour toujours. \u00bb\n\u00ab En 2019, une \u00e9tude a film\u00e9 des koalas sauvages qui boivent par grande chaleur. Sam avait soif. Mais elle a accept\u00e9 l'aide d'un humain. \u00bb\n\u00ab Et vous, avez-vous d\u00e9j\u00e0 aid\u00e9 un animal en d\u00e9tresse ? \u00bb\n(Shots 17-18 line shortened from Mr. Cut's version to fix his pacing flag; on-screen text there stays \u00ab \u00c9tude de 2019 \u00b7 Universit\u00e9 de Sydney \u00bb.)\n\nEDIT PLAN (Mr. Cut's 20-shot plan as delivered):\n- 9:16, soft piano ~60 bpm at -22 dB, slow dissolves, 0.6 s pause at 0:17.4.\n- Every Pixabay clip tagged \u00ab Illustration \u00bb and never presented as Sam, Bob or David Tree.\n- Shots 13-16: Commons photos of Sam's preserved mount from Category:Sam_the_Koala, with author/licence credit copied from each file page. If a licence is unclear, use a black text card \u00ab Sam, 2009 \u00bb.\n- Loop back to the opening close-up.\n- Banned: Reuters photo, original video, graphic burns.\n\nTHUMBNAIL (option 1): Pixabay koala close-up looking at camera, small water bottle bottom right, text \u00ab Une seule bouteille \u00bb, soft forest green, white text with navy outline. No burns, no Reuters image.\n\nPINNED COMMENT: \u00ab Vous auriez fait quoi \u00e0 la place du pompier ? Racontez-nous, si vous avez d\u00e9j\u00e0 aid\u00e9 un animal. \u00bb\n\nPLAYLIST: Les g\u00e9nies du vivant.",
+  "lang": "fr",
+  "footer": "Instinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "category": "15",
+  "photos": true,
+  "draft_cost": 0.84,
+  "relevance": {
+    "score": 72,
+    "why": "Evergreen true story with a strong emotional hook that matches the title and the older francophone audience. Facts are mostly right (Black Saturday, Sam, 6 Aug 2009, chlamydia), and the 2019 study line is hedged. Risks: the title says 'sa bouteille d'eau', which is slightly off since the bottle was David Tree's, and the Commons licence checks are still pending.",
+    "views48": 750
+  },
+  "credits": [
+    "2009 Victorian bushfires smoke Warrandyte.JPG by Nick carson at English Wikipedia (CC BY 3.0), https://commons.wikimedia.org/wiki/File:2009_Victorian_bushfires_smoke_Warrandyte.JPG",
+    "Taxidermied Mount - Sam the Koala 2.jpg by Benjamin Healley, Museums Victoria (CC BY 4.0), https://commons.wikimedia.org/wiki/File:Taxidermied_Mount_-_Sam_the_Koala_2.jpg",
+    "Taxidermied Mount - Sam the Koala 3.jpg by Benjamin Healley, Museums Victoria (CC BY 4.0), https://commons.wikimedia.org/wiki/File:Taxidermied_Mount_-_Sam_the_Koala_3.jpg"
+  ],
+  "qa": {
+    "passed": false,
+    "problems": "The koala (Sam) changes appearance between shots: a fluffy cream-and-black koala in frames 6 and 13-14 and a grey adult koala in frames 7-8 and 11, with a different young koala in frame 15.\nFrame 6 shows the koala drinking from a glass bottle, while frame 14 shows it drinking from a bowl, so the 'bouteille' prop is inconsistent.\nFrame 16 shows a non-koala animal (a joey or possum-like baby) instead of the story character.",
+    "bad_frames": 6
+  },
+  "held": "continuity: The koala (Sam) changes appearance between shots: a fluffy cream-and-black koala in frames 6 and 13-14 and a grey adult koala in frames 7-8 and 11, with a different young koala in frame 15.\nFrame 6 shows the koala drinking from a glass bottle, while frame 14 shows it drinking from a bowl, so the 'bouteille' prop is inconsistent.\nFrame 16 shows a non-koala animal (a joey or possum-like baby) instead of the story character.",
+  "holds": 1
+}
