@@ -495,5 +495,26 @@
   "predicted": null,
   "actual": 0,
   "at": "2026-11-04 21:49"
+ },
+ "yt-instinct-34": {
+  "channel": "yt-instinct",
+  "title": "300 kg cachés derrière une tortue (histoire vraie) #Shorts",
+  "predicted": 1500,
+  "actual": 1338,
+  "at": "2026-11-04 23:16"
+ },
+ "yt-instinct-38": {
+  "channel": "yt-instinct",
+  "title": "8 ans : des corneilles lui rapportent des objets ? #Shorts",
+  "predicted": 900,
+  "actual": 109,
+  "at": "2026-11-04 23:16"
+ },
+ "yt-instinct-39.ja": {
+  "channel": "yt-instinct-ja",
+  "title": "鏡の前で象のハッピーが額の白い十字に鼻を伸ばした #Shorts",
+  "predicted": null,
+  "actual": 0,
+  "at": "2026-11-04 23:16"
  }
 }
