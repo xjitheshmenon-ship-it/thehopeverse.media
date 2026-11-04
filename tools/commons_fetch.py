@@ -1,7 +1,7 @@
 """Download freely licensed files from Wikimedia Commons (the session sandbox can't reach Commons; Actions can).
 
-python tools/commons_fetch.py OUT_DIR "Category:A" "Category:B" "File:x.webm" ...
-Keeps only CC BY / CC0 / public-domain files (no share-alike, no non-free), images as 1920 px thumbs,
+python tools/commons_fetch.py OUT_DIR "Category:A" "Category:B" "File:x.webm" "Search:Smriti Mandhana" ...
+("Search:" = Commons file search, first 40 hits.) Keeps only CC BY / CC0 / public-domain / GODL-India files (no share-alike, no non-free), images as 1920 px thumbs,
 videos as originals, and writes OUT_DIR/credits.json with author, licence and source page for each.
 """
 import json, re, sys, time, urllib.error, urllib.parse, urllib.request
@@ -34,12 +34,15 @@ def free(lic):
     lic = lic.lower().strip()
     if re.search(r"\b(sa|nc|nd)\b", lic.replace("-", " ")):
         return False
-    return lic.startswith(("cc by", "cc0", "public domain")) or lic == "pd"
+    return lic.startswith(("cc by", "cc0", "public domain", "godl")) or lic == "pd"  # GODL-India: attribution only
 
 
 def titles(source):
     if source.startswith("File:"):
         return [source]
+    if source.startswith("Search:"):
+        r = api(action="query", list="search", srsearch=source[7:], srnamespace=6, srlimit=40)
+        return [m["title"] for m in r["query"]["search"]]
     out, cont = [], {}
     while True:
         r = api(action="query", list="categorymembers", cmtitle=source, cmtype="file", cmlimit=500, **cont)
@@ -75,7 +78,7 @@ def main(out, sources):
             except Exception as e:  # one stubborn file must not lose the rest
                 print("skip (download)", e, t)
                 continue
-            credits.append({"file": name, "title": t, "page": info["descriptionurl"], "licence": lic,
+            credits.append({"file": name, "source": src, "mime": info["mime"], "size": [info.get("width"), info.get("height")], "title": t, "page": info["descriptionurl"], "licence": lic,
                             "licence_url": meta.get("LicenseUrl", ""),
                             "author": re.sub("<[^>]+>", "", meta.get("Artist", "")).strip(),
                             "description": re.sub("<[^>]+>", "", meta.get("ImageDescription", "")).strip()[:300]})
@@ -86,6 +89,6 @@ def main(out, sources):
 
 
 if __name__ == "__main__":
-    assert free("CC BY 4.0") and free("CC BY 3.0") and free("CC0") and free("Public domain")
+    assert free("CC BY 4.0") and free("CC BY 3.0") and free("CC0") and free("Public domain") and free("GODL-India")
     assert not free("CC BY-SA 4.0") and not free("CC BY-NC 2.0") and not free("")
     main(sys.argv[1], sys.argv[2:])
