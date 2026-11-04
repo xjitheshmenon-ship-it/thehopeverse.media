@@ -1,0 +1,31 @@
+# Download freely licensed Wikimedia Commons files (CC BY / CC0 / public domain only) for a video.
+# Start it by pushing run/commons with "name=<folder>" and "sources=Category:A|File:B.webm|..." lines.
+# The files and credits.json land on the branch assets/<name> (nothing is posted; no paid calls).
+name: Fetch free Commons media
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Folder / branch name (assets/<name>)"
+        required: true
+      sources:
+        description: "Category:... or File:... titles, separated by |"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - env:
+          NAME: ${{ inputs.name }}
+          SOURCES: ${{ inputs.sources }}
+        run: |
+          IFS='|' read -ra src <<< "$SOURCES"
+          python tools/commons_fetch.py "/tmp/$NAME" "${src[@]}"
+          cd "/tmp/$NAME" && git init -q -b "assets/$NAME" && git add . && git -c user.name=hope -c user.email=hope@users.noreply.github.com commit -qm "Commons media: $NAME"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" "assets/$NAME"
