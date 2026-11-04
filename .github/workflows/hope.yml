@@ -107,7 +107,7 @@ jobs:
           true
 
       - name: Which video is next
-        if: github.event.schedule == '30 22 * * *' || inputs.job == 'next' || inputs.job == 'slot'
+        if: github.event.schedule == '30 0 * * *' || inputs.job == 'next' || inputs.job == 'slot'
         # NEXT = the channel, N = its video number today, QUOTA its daily count, REVIEW on its last, SERIES for Kissa,
         # GROW before the day's first video, MORE when another video follows; nothing when the day's videos are done
         run: |  # PAUSED file (owner's hold, e.g. until ElevenLabs is back): no videos; delete it to resume
