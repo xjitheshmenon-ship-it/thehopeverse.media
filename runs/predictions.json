@@ -544,5 +544,47 @@
   "predicted": null,
   "actual": 7,
   "at": "2026-11-05 09:00"
+ },
+ "yt-instinct-41": {
+  "channel": "yt-instinct",
+  "title": "Knut, l'ourson élevé au biberon (histoire vraie) #Shorts",
+  "predicted": 1400,
+  "actual": 493,
+  "at": "2026-11-05 10:18"
+ },
+ "yt-instinct-42": {
+  "channel": "yt-instinct",
+  "title": "1 ours aurait porté des obus (histoire vraie) #Shorts",
+  "predicted": 1300,
+  "actual": 107,
+  "at": "2026-11-05 10:18"
+ },
+ "yt-instinct-43.ja": {
+  "channel": "yt-instinct-ja",
+  "title": "40年間ひとりぼっち…最後のゾウガメ「ジョージ」の実話 #Shorts",
+  "predicted": null,
+  "actual": 0,
+  "at": "2026-11-05 10:18"
+ },
+ "yt-instinct-43": {
+  "channel": "yt-instinct",
+  "title": "George, 40 ans seul (histoire vraie) #Shorts",
+  "predicted": 1500,
+  "actual": 159,
+  "at": "2026-11-05 10:18"
+ },
+ "yt-instinct-44.ja": {
+  "channel": "yt-instinct-ja",
+  "title": "尻尾をなくしたイルカ、ウィンターの実話 #Shorts",
+  "predicted": null,
+  "actual": 2,
+  "at": "2026-11-05 10:18"
+ },
+ "yt-instinct-45.ja": {
+  "channel": "yt-instinct-ja",
+  "title": "宇宙でたった0.82秒!チンパンジー「ハム」の実話",
+  "predicted": null,
+  "actual": 0,
+  "at": "2026-11-05 10:18"
  }
 }
