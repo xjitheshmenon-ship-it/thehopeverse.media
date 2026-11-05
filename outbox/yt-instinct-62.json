@@ -1,0 +1,26 @@
+{
+  "channel_id": "yt-instinct",
+  "title": "Sauv\u00e9e \u00e0 10 jours, la lionne Sirga court vers lui (histoire vraie)",
+  "description": "Une lionne court vers un homme et l'enlace, et ces images ont fait le tour du monde. N\u00e9e en 2012 au Botswana, Sirga pesait \u00e0 dix jours \u00e0 peine deux kilos, soit deux paquets de sucre, et une perfusion l'a sauv\u00e9e. Elle a aujourd'hui quatorze ans, et quand Valentin Gr\u00fcner, qui l'a \u00e9lev\u00e9e \u00e0 la main, arrive, elle court encore vers lui.\n\nUn lion reste un animal sauvage : ne jamais imiter.\n\nSources : Today.com (2013) ; deutschland.de (2026) ; livre \u00ab L\u00f6wenland \u00bb de Valentin Gr\u00fcner (Rowohlt, 2022).\nImages : clips d'illustration libres de droits (Pixabay), qui ne montrent pas Sirga ni l'\u00e9v\u00e9nement r\u00e9el.\n\n#Shorts #histoirevraie #lionne #animaux #nature\n\nInstinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "script": "FORMAT: Short 5 of 6, 9:16, 56 s, French, narrator only (fr-FR-DeniseNeural, rate -8%, captions 1.2). No cast. Mark as AI-assisted (synthetic voice). Category 15. Playlist: Les g\u00e9nies du vivant.\n\nFINAL NARRATION (locked, fact-checked):\n[0:00] Une lionne court vers un homme, et l'enlace. Ces images ont fait le tour du monde.\n[0:05] Elle s'appelle Sirga. Elle est n\u00e9e en 2012, au Botswana, dans un camp \u00e0 lions.\n[0:11] \u00c0 dix jours, elle pesait \u00e0 peine deux kilos. Elle \u00e9tait gravement d\u00e9shydrat\u00e9e. Une perfusion l'a sauv\u00e9e.\n[0:18] Valentin Gr\u00fcner et Mikkel Legarth, du Modisa Wildlife Project, l'ont \u00e9lev\u00e9e \u00e0 la main. Valentin a dormi pr\u00e8s d'elle pendant ses huit premiers mois.\n[0:27] Aujourd'hui, elle a quatorze ans. Elle vit dans la r\u00e9serve de Modisa, dans le Kalahari.\n[0:33] Quand Valentin arrive, elle court vers lui. Comme un enfant devenu grand, qui court dans les bras d'un parent.\n[0:40] Mais \u00e9lev\u00e9e par des humains, elle reste une lionne adulte, puissante et impr\u00e9visible. Les fondateurs le savent : le danger est r\u00e9el.\n[0:48] Ce n'est pas un geste \u00e0 imiter. Un lion reste un lion.\n[0:52] Et vous, quel animal ne vous a jamais oubli\u00e9 ?\n\nEDIT PLAN (Mr. Cut): 9:16, 21 shots, slow dissolves, Pixabay free footage only, fixed label \u00ab Images d'illustration \u00bb all video, no shot presented as Sirga, no images of Valentin/Mikkel. Opening text \u00ab Elle court vers lui\u2026 et l'enlace. \u00bb Shots: 1 lioness running toward camera; 2 globe turning; 3 lion cub resting; 4 savanna golden hour; 5 newborn lion cub; 6 tired cub lying (\u00ab \u2248 2 kg \u00bb); 7 IV drip bag (fallback: cub resting); 8 safari jeep, no identifiable people; 9 hand bottle-feeding cub (fallback: cub resting); 10 tent under stars; 11 adult lioness walking (\u00ab Aujourd'hui : 14 ans \u00bb); 12 Kalahari landscape; 13 lioness running through grass; 14 child running into parent's arms; 15 lioness portrait; 16 lioness eyes close-up; 17 lioness in tall grass; 18 lioness walking away; 19 lion looking at camera; 20 lioness resting at sunset; 21 same as shot 1, loop. Music: soft piano + strings, swell at 0:33-0:40, near silence at 0:48-0:52, voice on top, music about -18 dB. Credit each Pixabay clip in the description.\n\nTHUMBNAIL: Pixabay close-up of a calm adult lioness in golden evening light, text \u00ab Elle n'a pas oubli\u00e9 \u00bb, warm ochre/orange, white text with dark-brown outline, small \u00ab Illustration \u00bb corner tag. No human faces. (Alt for testing: lioness in profile, \u00ab 2 kg \u00e0 10 jours \u00bb.)\n\nPINNED COMMENT: \u00ab Et vous, quel animal ne vous a jamais oubli\u00e9 ? Racontez-le-nous. \u00bb",
+  "lang": "fr",
+  "footer": "Instinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "category": "15",
+  "photos": true,
+  "draft_cost": 0.98,
+  "relevance": {
+    "score": 72,
+    "why": "Evergreen true story with facts consistent with the script, a strong emotional hook, and a safety caveat that suits a senior francophone audience. Held back by generic stock footage, the weak record of 'histoire vraie' animal-bond Shorts on this channel, and an Instinct-style stat-led title that is missing.",
+    "views48": 220
+  },
+  "credits": [
+    "Lion (Panthera leo) male 6y.jpg by Charles J. Sharp (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Lion_(Panthera_leo)_male_6y.jpg"
+  ],
+  "qa": {
+    "passed": true,
+    "problems": "Frame 12: overlay band is empty with no caption, and a young boy appears as the 'lui' the lioness runs toward, inconsistent with the adult man in the rest of the story (adult hands earlier, 14 years later).\nFrame 13: the lion's face is so cropped that it reads as distorted.\nThe lioness Sirga's appearance varies notably across frames 1, 11 and 13; this is acceptable as stock footage but weakens continuity.",
+    "bad_frames": 1
+  },
+  "publish_at": "2026-11-06T19:30:00Z",
+  "youtube_id": "N6Yyx1ObC10"
+}
