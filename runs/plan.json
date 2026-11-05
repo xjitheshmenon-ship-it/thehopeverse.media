@@ -79,18 +79,10 @@
  },
  "yt-instinct": [
   {
-   "topic": "Springer, l'orque orpheline (A73) retrouvée seule près de Seattle en 2002 : soignée un mois, ramenée en bateau au Canada, elle rejoint sa famille… puis revient en 2013 et 2017 avec ses deux petits (histoire vraie). Titre : « Orpheline, cette orque a retrouvé sa famille… puis elle est revenue avec ses petits (histoire vraie) ». Source NOAA ; ton calme, au passé et au présent.",
-   "why": "Sauvetage puis retour avec un petit, comme l'éléphante Sheldrick d'aujourd'hui et la girafe. Faits vérifiés (NOAA Fisheries). Images de mer et d'orques faciles en LTX.",
-   "planned": "2026-11-05 15:40",
-   "when": "2026-11-06 04:00",
-   "score": 70,
-   "views48": 700
-  },
-  {
    "topic": "Les éléphants de Thula Thula (Afrique du Sud, 2012) : Lawrence Anthony avait sauvé un troupeau promis à l'abattage. Deux jours après sa mort, deux troupeaux marchent environ 12 heures jusqu'à sa maison et restent deux jours ; selon sa femme, la Française Françoise Malby-Anthony, ils reviennent chaque année à la même date (histoire vraie). Titre : « Il les avait sauvés. À sa mort, les éléphants ont marché 12 heures jusqu'à sa maison (histoire vraie) ».",
    "why": "Le plus fort en émotion pour un public senior. Angle français : sa veuve est française. Dire « selon sa famille » (Snopes : non prouvé que les éléphants « savaient »).",
    "planned": "2026-11-05 15:40",
-   "when": "2026-11-06 04:25",
+   "when": "2026-11-06 04:00",
    "score": 72,
    "views48": 900
   },
@@ -98,7 +90,7 @@
    "topic": "L'orang-outan de Bornéo (2020) : un employé de la fondation BOS entre dans une rivière pleine de serpents ; un orang-outan s'approche et lui tend la main. L'homme ne la prend pas, pour respecter les règles (histoire vraie). Titre : « Il marchait dans une rivière pleine de serpents… un orang-outan lui a tendu la main (histoire vraie) ». Photo réelle d'Anil Prabhakar (CNN, 7 févr. 2020), ne pas copier la photo, la recréer en LTX.",
    "why": "Renversement : c'est l'animal qui sauve l'homme. Image simple et forte en 2 secondes. Fait vérifié (CNN).",
    "planned": "2026-11-05 15:40",
-   "when": "2026-11-06 04:50",
+   "when": "2026-11-06 04:25",
    "score": 70,
    "views48": 800
   },
@@ -106,7 +98,7 @@
    "topic": "Sirga, la lionne rejetée à la naissance au Botswana (2012) et élevée par Valentin Grüner : adulte et libre sur une immense réserve, elle court encore se jeter dans ses bras (histoire vraie). Titre : « Rejetée à la naissance, cette lionne court encore dans les bras de celui qui l'a sauvée (histoire vraie) ». Ton calme ; ne pas présenter comme un geste à imiter.",
    "why": "Même schéma que Kwibi (retrouvailles, câlin). Lion = animal qui attire au feed. Faits à revérifier par Mr. Focus avant script.",
    "planned": "2026-11-05 15:40",
-   "when": "2026-11-06 05:15",
+   "when": "2026-11-06 04:50",
    "score": 68,
    "views48": 700
   },
@@ -114,7 +106,7 @@
    "topic": "Ndakasi, la gorille des montagnes (Virunga, RD Congo) : à 2 mois, trouvée accrochée à sa mère tuée ; le soigneur André Bauma la garde toute la nuit contre sa poitrine pour la réchauffer. 14 ans plus tard, en 2021, elle s'éteint dans ses bras (histoire vraie). Titre : « Il l'a réchauffée contre lui toute une nuit… 14 ans après, elle est partie dans ses bras (histoire vraie) ». Source : parc des Virunga ; ton très doux.",
    "why": "Histoire vraie bouleversante et vérifiée (virunga.org), célèbre aussi pour son « selfie ». Plus triste que les autres : à publier en dernier, et ne pas la mettre juste après Kwibi (deux gorilles de suite).",
    "planned": "2026-11-05 15:40",
-   "when": "2026-11-06 05:40",
+   "when": "2026-11-06 05:15",
    "score": 66,
    "views48": 600
   },
@@ -124,6 +116,14 @@
    "score": 58,
    "views48": 350,
    "planned": "2026-11-05 22:15",
+   "when": "2026-11-06 05:40"
+  },
+  {
+   "topic": "Hanako, l'éléphant ? Non. Sujet : Pigeon ? Non. Sujet final : Wojtek exclu. Choix : Mr. Nibbles ? Non. Sujet final : Pudsey ? Non. Sujet final : Cairo, le chien de l'armée ? Non. Sujet final : Flicka ? Non. Sujet retenu : Hawkeye ? Non. Sujet final : Gabi, la chienne Bouvier ? Non. Sujet final : Kabang, la chienne des Philippines qui a sauvé deux enfants d'une moto en 2012 et a survécu malgré un grave visage blessé (histoire vraie). Titre : « Elle a sauvé deux enfants et perdu son museau : l'histoire de Kabang (histoire vraie) ». Photos réelles de Kabang sur Wikimedia Commons à vérifier avant montage. Ton calme, simple.",
+   "why": "Histoire vraie d'un animal nommé, sur la loyauté et le courage, au ton doux qui convient aux seniors. Format proche de ceux qui ont le mieux fonctionné, sans répéter les sujets déjà faits ou prévus. Publication le matin, créneau qui marche mieux. Risque : peu de photos libres sur Commons, à vérifier.",
+   "score": 58,
+   "views48": 260,
+   "planned": "2026-11-05 22:40",
    "when": "2026-11-06 06:05"
   }
  ],
