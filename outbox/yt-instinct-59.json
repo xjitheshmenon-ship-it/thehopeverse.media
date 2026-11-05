@@ -14,14 +14,14 @@
     "views48": 170
   },
   "credits": [
-    "Colman Dock and Smith Tower.jpg by Dicklyon (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Colman_Dock_and_Smith_Tower.jpg",
+    "Colman Dock view from Smith Tower, Feb. 2026.jpg by SounderBruce (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Colman_Dock_view_from_Smith_Tower,_Feb._2026.jpg",
     "Springer A73 with her younger calf Storm A116 looking well.jpg by Dr. John Ford (Public domain), https://commons.wikimedia.org/wiki/File:Springer_A73_with_her_younger_calf_Storm_A116_looking_well.jpg"
   ],
+  "holds": 2,
   "qa": {
     "passed": false,
-    "problems": "The story is about an orphaned orca (Springer), but frames 1, 5, 7, 9, 10, 11 and 15 show a sea lion or seal instead of an orca, so the main character changes species.\nFrame 11 ('Retrouvailles') shows a family of seals instead of an orca pod.\nFrame 15 ('Juillet 2022 : tous trois en forme') shows seals instead of orcas.\nFrame 6 ('Un enclos en mer') shows a bay full of round boats, unrelated to an orca pen.\nFrame 12 ('Elle revient chaque \u00e9t\u00e9') shows a bird instead of the orca.\nFrames 1, 7 and 11 show distorted, AI-looking seal faces.",
-    "bad_frames": 9
+    "problems": "The story is about an orphan orca (Springer), but frames 1, 5 and 9 show a seal/sea lion-like creature instead of an orca.\nThe creature in frames 1, 5 and 9 is inconsistent from shot to shot: a brown sea lion, then a bizarre pink human-faced creature, then a hippo/walrus-like animal.\nFrame 5 shows a warped, uncanny creature with a human-like face and hair.\nFrame 7 shows a dark blob-like animal that is not clearly an orca.\nFrames 10 and 11 show surreal golden translucent fins on malformed bodies, not realistic orcas.",
+    "bad_frames": 6
   },
-  "held": "continuity: The story is about an orphaned orca (Springer), but frames 1, 5, 7, 9, 10, 11 and 15 show a sea lion or seal instead of an orca, so the main character changes species.\nFrame 11 ('Retrouvailles') shows a family of seals instead of an orca pod.\nFrame 15 ('Juillet 2022 : tous trois en forme') shows seals instead of orcas.\nFrame 6 ('Un enclos en mer') shows a bay full of round boats, unrelated to an orca pen.\nFrame 12 ('Elle revient chaque \u00e9t\u00e9') shows a bird instead of the orca.\nFrames 1, 7 and 11 show distorted, AI-looking seal faces.",
-  "holds": 1
+  "held": "continuity: The story is about an orphan orca (Springer), but frames 1, 5 and 9 show a seal/sea lion-like creature instead of an orca.\nThe creature in frames 1, 5 and 9 is inconsistent from shot to shot: a brown sea lion, then a bizarre pink human-faced creature, then a hippo/walrus-like animal.\nFrame 5 shows a warped, uncanny creature with a human-like face and hair.\nFrame 7 shows a dark blob-like animal that is not clearly an orca.\nFrames 10 and 11 show surreal golden translucent fins on malformed bodies, not realistic orcas."
 }
