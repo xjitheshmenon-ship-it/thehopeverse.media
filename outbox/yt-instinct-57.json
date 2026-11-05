@@ -15,14 +15,14 @@
   },
   "credits": [
     "2009 Victorian bushfires smoke Warrandyte.JPG by Nick carson at English Wikipedia (CC BY 3.0), https://commons.wikimedia.org/wiki/File:2009_Victorian_bushfires_smoke_Warrandyte.JPG",
-    "Taxidermied Mount - Sam the Koala 2.jpg by Benjamin Healley, Museums Victoria (CC BY 4.0), https://commons.wikimedia.org/wiki/File:Taxidermied_Mount_-_Sam_the_Koala_2.jpg",
-    "Taxidermied Mount - Sam the Koala 3.jpg by Benjamin Healley, Museums Victoria (CC BY 4.0), https://commons.wikimedia.org/wiki/File:Taxidermied_Mount_-_Sam_the_Koala_3.jpg"
+    "Taxidermied Mount - Sam the Koala 2.jpg by Benjamin Healley, Museums Victoria (CC BY 4.0), https://commons.wikimedia.org/wiki/File:Taxidermied_Mount_-_Sam_the_Koala_2.jpg"
   ],
+  "holds": 1,
   "qa": {
-    "passed": false,
-    "problems": "The koala (Sam) changes appearance between shots: a fluffy cream-and-black koala in frames 6 and 13-14 and a grey adult koala in frames 7-8 and 11, with a different young koala in frame 15.\nFrame 6 shows the koala drinking from a glass bottle, while frame 14 shows it drinking from a bowl, so the 'bouteille' prop is inconsistent.\nFrame 16 shows a non-koala animal (a joey or possum-like baby) instead of the story character.",
-    "bad_frames": 6
+    "passed": true,
+    "problems": "",
+    "bad_frames": 0
   },
-  "held": "continuity: The koala (Sam) changes appearance between shots: a fluffy cream-and-black koala in frames 6 and 13-14 and a grey adult koala in frames 7-8 and 11, with a different young koala in frame 15.\nFrame 6 shows the koala drinking from a glass bottle, while frame 14 shows it drinking from a bowl, so the 'bouteille' prop is inconsistent.\nFrame 16 shows a non-koala animal (a joey or possum-like baby) instead of the story character.",
-  "holds": 1
+  "publish_at": "2026-11-06T04:00:00Z",
+  "youtube_id": "FmJRiUtyIqc"
 }
