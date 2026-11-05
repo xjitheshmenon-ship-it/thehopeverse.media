@@ -1,16 +1,16 @@
-# Hopeverse spending report, 05 Nov 2026 04:16
+# Hopeverse spending report, 05 Nov 2026 21:58
 
-- Today: $8.81 (24 runs)
-- Last 7 days: $151.64
-- This month: $87.37
-- All time: $264.53
+- Today: $11.14 (31 runs)
+- Last 7 days: $153.97
+- This month: $89.70
+- All time: $266.86
 
 Claude (Anthropic) costs as estimated by agents.py, review included. Video images from fal.ai add
 about $0.006 each (about $0.06 a Short). Exact bills: console.anthropic.com and fal.ai/dashboard.
 
 | Day | Runs | Cost |
 | --- | --- | --- |
-| 2026-11-05 | 24 | $8.81 |
+| 2026-11-05 | 31 | $11.14 |
 | 2026-11-04 | 23 | $11.83 |
 | 2026-11-03 | 57 | $34.12 |
 | 2026-11-02 | 46 | $19.61 |
@@ -55,33 +55,43 @@ spazio, astronomia, universo, pianeti, stelle, sistema solare, missioni spaziali
 
 ## Credits left
 
+- **ElevenLabs is empty: 0 characters left** - top it up today
 - fal.ai: ? usd (Couldn't read the balance (HTTP Error 401: Unauthorized); add a fal.ai READONLY key as the FAL_BILLING_KEY secret)
 - HeyGen: ? usd (Couldn't read the balance (HTTP Error 401: UNAUTHORIZED))
-- ElevenLabs: 26638 characters (Voices; free Edge voices take over when it runs out. Plan: creator, status: active, resets 03 Dec 2026)
+- ElevenLabs: 0 characters (Voices; free Edge voices take over when it runs out. Plan: creator, status: active, resets 03 Dec 2026)
 - Anthropic: ? usd (No balance API: see console.anthropic.com > Billing. Spend is logged per run)
 - Perplexity: ? usd (No balance API: see perplexity.ai/account/api. About $0.006 a search)
 
 ## Mr. Grow's to-dos for you today
 
-- **Pin:** Instinct stork Short RrCMGIZYl1w, with the comment "Vous auriez fait quoi à sa place ?" For the others, pin each channel's top Short.
-- **Community posts:** Instinct has a poll: "Quelle histoire vraie voulez-vous demain : sauvetage, amitié ou retrouvailles ?" Sawaal has a poll: "SIR पर सबसे बड़ा सवाल?" with 3 options.
-- **Instagram:** share the stork Short with the caption "Il l'a sauvée. Elle est revenue. 13 000 km." Do not cross-promote between our own channels.
-- **Publish times:** none moved. Too few Shorts per slot and under 3 days of evidence, so there were no changes.
+- **Pin:** the stork Short (RrCMGIZYl1w) for Instinct, the "Vous auriez fait quoi ?" comment. For the others, pin the top Short's question: Japan crow OABgm77FAdc, Sawaal bRm5mqo7qvA.
+- **Community posts (text + poll):**
+  - Instinct: "Quelle histoire vraie voulez-vous demain ? Éléphant / Baleine / Chien / Oiseau".
+  - Sawaal: a yes/no poll on the SIR deadline.
+  - Hopeverse: a poll on topics.
+- **Instagram:** share the Hopeverse news Shorts with the caption "The one fact most coverage missed". Do not cross-promote our own channels.
+- **Publish times:** no change. Too few Shorts per slot, and the slots are mixed with other variables.
 
 ## Monetization target (10M Shorts views in 90 days)
 
-Estimates from the performance data. Search was cut off, so I did no live trend research today.
-- **Instinct:** about 67k total views over 36 Shorts since 26 Oct. That is about 8–9k a day against 111k, which is 8%. Average per Short is about 1,900 against 28,000, but 3 rescue stories supply 51k of the 67k. Today's six Shorts are at 16–95 views.
-- **Instinct Japan:** about 3k views over 30 Shorts. About 0.4k a day. Average about 98.
-- **Sawaal:** best is 486, usually under 100.
-- **Sankalp, Hopeverse:** under 60 per Short.
-- **Total:** about 10k a day against 3.3M, which is 0.3%.
-- **Closest:** Instinct. Its breakouts are 30k, 13k and 8k, and all are "(histoire vraie)" rescue and return stories. Every later famous-animal story got 40–150 views, including Knut, Ham, Winter, Owney and Balto. Fastest route is more rescue stories where a person saves an animal and it comes back. This is the pattern in the numbers, not a guarantee.
+Figures come from performance's lifetime view counts, which undercount recent Shorts. Search was unavailable again today, so trend advice is marked "to test".
+
+| Channel | Views/day, last 7 days (target 111,000) | Avg views/Short (target 28,000) |
+|---|---|---|
+| Instinct | about 4,500 | about 1,080 (about 280 without the 2 breakouts) |
+| Instinct Japan | about 425 | about 100 |
+| Sawaal | about 50 | about 60 |
+| Hopeverse | about 2 | about 8 |
+| Sankalp | 0 posted this week | none |
+
+- **Other channels:** Instinct Natur and Instinto Natural have no data. Kissa is paused.
+- **All channels:** about 5,000 views a day against 3.3 million.
+- **Closest:** Instinct, at about 4% of the daily target. It got there through two breakouts: the stork at 30,400 views and the giraffe at 13,185.
 
 ## Sponsorship and collab leads
 
-Search was cut off, so every entry bar below is unverified.
-1. **Ground News (Hopeverse, Sawaal):** apply to the creator partnership programme at https://help.ground.news/en/categories/2358337-partner-with-us. Check the entry bar by hand.
-2. **Hivency (Instinct):** French brand-campaign platform, https://hivency.com. Check the follower minimum by hand.
-3. **Plixxo (Sawaal, Sankalp):** Indian nano-creator campaigns, https://plixxo.com. Check the minimum by hand.
-4. **Collab (Instinct):** find a French rescue-story or animal creator of similar size and propose a Collaborations tag or remix. Still to do by hand.
+Search was cut off, so every entry bar is unverified. Check each by hand.
+1. **Collabstr (all channels):** creator marketplace, https://collabstr.com. Create a listing by hand.
+2. **Influencer Hub (Hopeverse, Instinct):** https://influencer-hub.com. Check the follower minimum.
+3. **Influence4You (Instinct):** a French platform, https://influence4you.com. Check the minimum.
+4. **Collab (Instinct Japan):** find a Japanese animal-story creator of similar size and propose a Collaborations tag or remix.
