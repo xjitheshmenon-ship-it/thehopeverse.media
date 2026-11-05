@@ -586,5 +586,19 @@
   "predicted": null,
   "actual": 0,
   "at": "2026-11-05 10:18"
+ },
+ "yt-instinct-44": {
+  "channel": "yt-instinct",
+  "title": "Winter, dauphine sans queue (histoire vraie) #Shorts",
+  "predicted": 1500,
+  "actual": 168,
+  "at": "2026-11-05 11:16"
+ },
+ "yt-instinct-45": {
+  "channel": "yt-instinct",
+  "title": "0,82 seconde dans l'espace : Ham (histoire vraie) #Shorts",
+  "predicted": 900,
+  "actual": 54,
+  "at": "2026-11-05 11:16"
  }
 }
