@@ -13,11 +13,11 @@
     "why": "Evergreen true story with a strong hook, a good fit for older francophone viewers, and a script that matches the title with hedged facts. Mosha's story is old, with no newer contradicting finding, and the 'Short 4 of 6' series plus an interactive closing question help. The title says 'perd une patte' while the hook is about prosthetics, which is a slight mismatch.",
     "views48": 110
   },
+  "holds": 2,
   "qa": {
     "passed": false,
-    "problems": "Mosha (the story's elephant, a 7-month-old calf) is shown as different elephants across frames: adult Asian elephant (frames 1-2), adult African elephants (frames 9-11), young elephant (frame 14), African silhouette (frames 15-16). Her appearance is inconsistent and does not match a calf.\nAfrican elephant herd in a savanna setting (frame 11) is shown for a Thai story, which is inconsistent with the Thailand setting.\nA human boy's leg is used to illustrate the elephant's prosthesis (frames 12-13), an unrelated substitute for the story character.\nCaption '600 kg \u2192 pr\u00e8s de 2 tonnes' (frame 11) sits over African elephants rather than over Mosha.",
-    "bad_frames": 9
+    "problems": "Frames 3-4: caption breaks the word 'Tha\u00eflande' mid-word ('Tha\u00efl / ande-Myanmar'), which reads as garbled text.\nThe elephant Mosha changes between shots: an African elephant with tusks in frame 1, an Asian elephant in frame 2, and a different African-type elephant in frame 14, so the recurring character is inconsistent.\nFrame 1: the story is about a single-leg prosthesis, but this shot shows a healthy tusked African elephant labeled '9 proth\u00e8ses'.",
+    "bad_frames": 4
   },
-  "held": "continuity: Mosha (the story's elephant, a 7-month-old calf) is shown as different elephants across frames: adult Asian elephant (frames 1-2), adult African elephants (frames 9-11), young elephant (frame 14), African silhouette (frames 15-16). Her appearance is inconsistent and does not match a calf.\nAfrican elephant herd in a savanna setting (frame 11) is shown for a Thai story, which is inconsistent with the Thailand setting.\nA human boy's leg is used to illustrate the elephant's prosthesis (frames 12-13), an unrelated substitute for the story character.\nCaption '600 kg \u2192 pr\u00e8s de 2 tonnes' (frame 11) sits over African elephants rather than over Mosha.",
-  "holds": 1
+  "held": "continuity: Frames 3-4: caption breaks the word 'Tha\u00eflande' mid-word ('Tha\u00efl / ande-Myanmar'), which reads as garbled text.\nThe elephant Mosha changes between shots: an African elephant with tusks in frame 1, an Asian elephant in frame 2, and a different African-type elephant in frame 14, so the recurring character is inconsistent.\nFrame 1: the story is about a single-leg prosthesis, but this shot shows a healthy tusked African elephant labeled '9 proth\u00e8ses'."
 }
