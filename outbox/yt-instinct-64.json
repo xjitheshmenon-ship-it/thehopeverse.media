@@ -1,0 +1,28 @@
+{
+  "channel_id": "yt-instinct",
+  "title": "Elsa la lionne revient avec ses petits (histoire vraie)",
+  "description": "Une lionne sort de la brousse au Kenya\u2026 et elle n'est pas seule.\n\u00c9lev\u00e9e par George et Joy Adamson, puis laiss\u00e9e libre, Elsa est revenue au camp avec trois petits. Elle est morte jeune en 1961, mais son histoire a fait le tour du monde gr\u00e2ce aux livres de Joy Adamson, Born Free (1960) et Living Free (1961), et au film \u00ab Vivre libre \u00bb (1966).\nAbonnez-vous pour d\u00e9couvrir chaque jour une histoire vraie du monde animal, racont\u00e9e en une minute.\n\nSources : Wikipedia \u00ab Elsa the lioness \u00bb, SA History, Legends & Legacies of Africa.\nCr\u00e9dit : images d'illustration (Commons/Pixabay), qui ne montrent pas l'\u00e9v\u00e9nement r\u00e9el.\nNarration : voix de synth\u00e8se (IA).\n\nInstinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.\n\n#histoirevraie #animaux #lionne #nature",
+  "script": "FORMAT: vertical YouTube Short, ~55-58 s, narrator-only (no characters, no cast). Voice fr-FR-DeniseNeural, rate -8%, caption scale 1.2. Playlist \u00ab Les g\u00e9nies du vivant \u00bb. Category 15. Music: Mr. Raga's automatic pick (bed: curiosity, soft piano and strings, -18 dB).\n\nNARRATION (exact):\nCette lionne est sortie de la brousse\u2026 et elle n'\u00e9tait pas seule.\nEn 1956, au Kenya, une lionne a charg\u00e9 un garde-chasse, George Adamson. Il a tir\u00e9 pour se d\u00e9fendre.\nElle a laiss\u00e9 trois lionceaux. La plus petite, Elsa, a \u00e9t\u00e9 \u00e9lev\u00e9e par George et sa femme Joy.\nIls lui ont appris \u00e0 chasser, puis l'ont laiss\u00e9e partir, libre.\nUn jour, a racont\u00e9 Joy, Elsa est revenue au camp\u2026 avec trois petits : Jespah, Gopa et Little Elsa.\nComme des parents qui voient revenir leur enfant\u2026 avec ses propres enfants.\nMais Elsa est morte jeune, en 1961, d'une maladie transmise par les tiques.\nSes petits, habitu\u00e9s aux humains, s'attaquaient au b\u00e9tail. Ils ont \u00e9t\u00e9 emmen\u00e9s vers le Serengeti, dans l'actuelle Tanzanie.\nEt vous, avez-vous d\u00e9j\u00e0 vu revenir quelqu'un que vous aviez d\u00fb laisser partir ?\n\nEDIT PLAN (calm 2-3 s cadence, 0.3 s crossfades on emotional beats):\n1: lioness walking toward camera from frame 1, text \u00ab Une lionne. Trois petits. \u00bb\n2-4: calm Kenyan bush, acacia, tall grass (no gunfire sound, nothing graphic), text \u00ab Kenya, 1956 \u00bb\n5-7: lion cub close-up, cubs together, safari tent, text \u00ab La plus petite : Elsa \u00bb\n8-10: lioness walking away / stalking / looking at horizon, text \u00ab Libre \u00bb\n11-13: camp at dusk, then lioness with three cubs (slow push-in), three cubs close-up, text \u00ab Jespah, Gopa et Little Elsa \u00bb\n14-15: savanna sunset, lioness+cub silhouette, text \u00ab \u00c9lever, c'est aussi laisser partir \u00bb\n16-18: acacia at dusk (text \u00ab Elsa, 1956-1961 \u00bb), cattle herd without people, Serengeti plains\n(Rotterdam option and film-reel shot 19 dropped)\n20: loop back to shot 1, text \u00ab Et vous ? \u00bb\n\nIMAGES: FREE ONLY, Wikimedia Commons (licence verified, CC-BY/BY-SA credited on screen) and Pixabay. No film stills, no Adamson photos, no HeyGen/fal/AI. Every stock shot labelled \u00ab Illustration \u00bb; never present a stock lion as Elsa. Reject any clip without confirmed author/link/licence. Append per-clip credits (Auteur \u2013 URL \u2013 licence) to the description once clips are chosen.\n\nTHUMBNAIL: realistic free stock photo of a lioness with three cubs in golden Kenyan grass (not a film still, no people), text \u00ab Elle est revenue \u00bb, white with thin dark-brown outline, warm evening colours.",
+  "lang": "fr",
+  "footer": "Instinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "category": "15",
+  "photos": true,
+  "draft_cost": 1.02,
+  "relevance": {
+    "score": 72,
+    "why": "Evergreen, well-known true story (Born Free) that suits a francophone senior audience, with a script that matches the title; minor risk from the dated 1956 shooting framing and stock footage not showing Elsa.",
+    "views48": 90
+  },
+  "credits": [
+    "Lion cub in Masai Mara National Park.jpg by Byrdyak (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Lion_cub_in_Masai_Mara_National_Park.jpg",
+    "Acacia Kenya Savannah.jpg by Kev Moses (CC BY 2.0), https://commons.wikimedia.org/wiki/File:Acacia_Kenya_Savannah.jpg",
+    "Serengeti plains.jpg by \u05e8\u05e0\u05d3\u05d5\u05dd (CC BY-SA 3.0), https://commons.wikimedia.org/wiki/File:Serengeti_plains.jpg"
+  ],
+  "qa": {
+    "passed": true,
+    "problems": "Frame 1: caption introduces 'Une lionne' (Elsa) but shows a maned male lion, so the main character's appearance contradicts the story and later lioness shots.",
+    "bad_frames": 1
+  },
+  "publish_at": "2026-11-07T04:00:00Z",
+  "youtube_id": "WdthAlc8__k"
+}
