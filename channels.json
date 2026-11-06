@@ -172,6 +172,7 @@
     "lang": "ja",
     "language": "Japanese",
     "voice": "ja-JP-NanamiNeural",
+    "eleven": "female",
     "rate": "-8%",
     "caption_scale": 1.2,
     "token": "token-instinct-ja.json",
