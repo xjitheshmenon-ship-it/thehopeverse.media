@@ -826,7 +826,7 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
                 who = {**who, "voice": who.get(f"voice_{lang}", voice)}
             eleven = os.environ.get(f"ELEVEN_VOICE_{scene.speaker.upper()}") or eleven_voice(
                 "female" if "woman" in who.get("look", "").lower() else "male")
-            if lang not in ("", "hi") and home.get("eleven") and "dub_of" not in package:  # owner, 2 Nov 2026: ElevenLabs for Instinct French
+            if lang not in ("", "hi") and home.get("eleven"):  # owner: ElevenLabs for Instinct French (2 Nov) and Japanese (6 Nov)
                 eleven = eleven_voice(home["eleven"])
             elif lang not in ("", "hi"):  # ElevenLabs picks Indian-accented voices; French etc. keep the channel's Edge voice
                 eleven = ""
@@ -934,12 +934,15 @@ def redub(package_path: Path, voice: str = VOICE) -> Path:
     ImageDraw.Draw(cover).rectangle((0, int(size[1] * 0.72) - line_h * 3 // 2 - 40, size[0], int(size[1] * 0.72) + line_h * 3 // 2 + 40),
                                     fill=(0, 0, 0, 235))
     layers.append(ImageClip(np.array(cover), transparent=True).with_duration(length))
+    # owner, 6 Nov 2026: a channel with "eleven" (Instinct Japan) gets ElevenLabs here too; speak() falls back to Edge.
+    eleven = eleven_voice(home["eleven"]) if home.get("eleven") else ""
     for i, (scene, slot) in enumerate(zip(Storyboard(scenes=package["scenes"]).scenes, slots)):
         if not slot:
             continue
         start, room = slot[0] * k, (slot[1] - slot[0]) * k
         audio = work / f"{lang}-{i:03}.mp3"
-        if any(ch.isalnum() for ch in scene.narration) and speak(scene.narration, voice, audio, rate=home.get("rate", "+0%")):
+        if any(ch.isalnum() for ch in scene.narration) and speak(scene.narration, voice, audio, rate=home.get("rate", "+0%"),
+                                                                 eleven=eleven):
             raw = _wav(audio)
             speed = min(1.4, max(1.0, len(raw) / 2 / RATE / max(room - GAP, 0.1)))
             if speed > 1:
