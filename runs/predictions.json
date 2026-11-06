@@ -628,5 +628,26 @@
   "predicted": null,
   "actual": 5,
   "at": "2026-11-06 04:18"
+ },
+ "yt-instinct-47": {
+  "channel": "yt-instinct",
+  "title": "Hans, le cheval qui lisait les humains #Shorts",
+  "predicted": 900,
+  "actual": 99,
+  "at": "2026-11-06 10:18"
+ },
+ "yt-instinct-48": {
+  "channel": "yt-instinct",
+  "title": "Paul le poulpe a trouvé 8 sur 8 (histoire vraie) #Shorts",
+  "predicted": 1100,
+  "actual": 71,
+  "at": "2026-11-06 10:18"
+ },
+ "yt-instinct-49": {
+  "channel": "yt-instinct",
+  "title": "1895 : Owney, chien du courrier (histoire vraie) #Shorts",
+  "predicted": 900,
+  "actual": 81,
+  "at": "2026-11-06 10:18"
  }
 }
