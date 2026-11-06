@@ -649,5 +649,12 @@
   "predicted": 900,
   "actual": 81,
   "at": "2026-11-06 10:18"
+ },
+ "yt-instinct-50": {
+  "channel": "yt-instinct",
+  "title": "L'éléphant Jumbo et l'homme qui l'a sauvé #Shorts",
+  "predicted": 1400,
+  "actual": 50,
+  "at": "2026-11-06 11:18"
  }
 }
