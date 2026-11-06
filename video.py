@@ -86,6 +86,10 @@ MUSIC_MODELS = (("fal-ai/lyria3/pro",) if MUSIC_RAGA else ()) + (  # Google Lyri
 # owner; when its music minutes run out fal.ai makes it. MUSIC_MAKER=fal skips ElevenLabs.
 MUSIC_MAKER = os.environ.get("MUSIC_MAKER") or ("elevenlabs" if MUSIC_RAGA else "fal")
 MUSIC_VOLUME = 0.12  # background music level under the voice (1 = full)
+# Channels with "bed" in channels.json (Instinct, owner 6 Nov 2026: "bgm which keeps the curiosity") take their music
+# from a small library made once (team.md "## Curiosity beds", saved on the state branch) instead of a new track per
+# Short. At 0.12 with no ducking the old music was lost under the voice; beds play louder and dip whenever she speaks.
+BEDS, BED_VOLUME = HERE / "beds", 0.35
 STYLE = ("photorealistic, real people with natural skin texture, handheld smartphone footage at eye level, natural "
          "overcast daylight, documentary style, vertical 9:16, not a cartoon, not an illustration, not CGI, not 3D, no text, no words")
 SECRET, TOKEN = HERE / "client_secret.json", HERE / "token.json"
@@ -724,14 +728,9 @@ def raga(package: dict) -> str:
         return package.get("music") or TEAM.get("Music", "mysterious, curious ambient underscore, no vocals")
 
 
-def music(work: Path, seconds: float, package: dict) -> Path | None:
-    """One background track per Short, prompted by Mr. Raga when MUSIC_RAGA is on. Dubs reuse it."""
-    path = work / "music.mp3"
-    if path.exists():
-        return path
-    prompt = raga(package) if MUSIC_RAGA else (
-        package.get("music") or TEAM.get("Music", "mysterious, curious ambient underscore, no vocals"))
-    if MUSIC_MAKER == "elevenlabs" and os.environ.get("ELEVENLABS_API_KEY"):
+def _make_track(path: Path, prompt: str, seconds: float, maker: str = MUSIC_MAKER) -> Path | None:
+    """One instrumental track from ElevenLabs Music (maker "elevenlabs") or fal.ai; None if nobody could make it."""
+    if maker == "elevenlabs" and os.environ.get("ELEVENLABS_API_KEY"):
         for model in ("music_v2", "music_v1"):  # v2 sounds better; v1 if the plan doesn't offer it
             try:
                 req = urllib.request.Request(
@@ -756,6 +755,60 @@ def music(work: Path, seconds: float, package: dict) -> Path | None:
         except Exception as e:  # no music is better than no video
             print(f"    no background music from {model}: {e}")
     return None
+
+
+def bed(kind: str, key: str) -> Path | None:
+    """A track from the channel's music library. While the library is short of team.md's list, the next missing track
+    is made once (one take, 60 s, ElevenLabs first so the owner holds its rights, fal.ai if that fails); after that
+    every Short reuses the library for free. The same Short (and its dubs) always gets the same track."""
+    lib = BEDS / kind
+    prompts = [line[2:].strip() for line in TEAM.get("Curiosity beds", "").splitlines() if line.startswith("- ")]
+    have = sorted(lib.glob("*.mp3"))
+    if len(have) < len(prompts):
+        lib.mkdir(parents=True, exist_ok=True)
+        new = lib / f"{len(have) + 1:02d}.mp3"
+        print(f"    making music bed {new.name} of {len(prompts)} for the {kind} library")
+        if _make_track(new, prompts[len(have)], 60, os.environ.get("MUSIC_MAKER") or "elevenlabs"):
+            return new
+    return have[sum(key.encode()) % len(have)] if have else None
+
+
+def bed_kind(package: dict) -> str:
+    """The music library of the package's channel, or of the channel it dubs (Instinct Japan follows Instinct)."""
+    channels = {c["id"]: c for c in _channels()}
+    home = channels.get(package.get("channel_id"), {})
+    return home.get("bed") or channels.get(home.get("dub_from"), {}).get("bed", "")
+
+
+def music(work: Path, seconds: float, package: dict) -> Path | None:
+    """One background track per Short, prompted by Mr. Raga when MUSIC_RAGA is on. Dubs reuse it."""
+    path = work / "music.mp3"
+    if path.exists():
+        return path
+    if kind := bed_kind(package):
+        track = bed(kind, work.name)
+        if track:
+            work.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(track, path)
+            return path
+        return None
+    prompt = raga(package) if MUSIC_RAGA else (
+        package.get("music") or TEAM.get("Music", "mysterious, curious ambient underscore, no vocals"))
+    return _make_track(path, prompt, seconds)
+
+
+def mix_args(track: Path | None, package: dict) -> list:
+    """ffmpeg args laying the music (input 2) under the voice (input 1). Bed channels play it louder and duck it under
+    the voice (it rises back in the pauses, which keeps the suspense); other channels keep the old flat level."""
+    if not track:
+        return ["-map", "1:a"]
+    if bed_kind(package):
+        graph = (f"[1:a]asplit[v][key];[2:a]volume={BED_VOLUME}[m];"
+                 "[m][key]sidechaincompress=threshold=0.05:ratio=3:attack=30:release=600[d];"
+                 "[v][d]amix=inputs=2:duration=first:normalize=0[a]")
+    else:
+        graph = f"[2:a]volume={MUSIC_VOLUME}[m];[1:a][m]amix=inputs=2:duration=first:normalize=0[a]"
+    return ["-stream_loop", "-1", "-i", str(track), "-filter_complex", graph, "-map", "[a]"]
 
 
 def not_ready() -> str:
@@ -881,11 +934,8 @@ def render(package_path: Path, voice: str = VOICE) -> Path:
     listing.write_text("".join(f"file '{p.resolve().as_posix()}'\n" for p in parts), encoding="utf-8")
     subprocess.run([FFMPEG_BINARY, "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(listing),
                     "-c", "copy", str(picture)], check=True)
-    track = music(work, lines[-1][4], package)
     # Music loops if it's short and stops when the voice ends; the video is copied, only the sound is encoded.
-    mix = (["-stream_loop", "-1", "-i", str(track), "-filter_complex",
-            f"[2:a]volume={MUSIC_VOLUME}[m];[1:a][m]amix=inputs=2:duration=first:normalize=0[a]", "-map", "[a]"]
-           if track else ["-map", "1:a"])
+    mix = mix_args(music(work, lines[-1][4], package), package)
     subprocess.run([FFMPEG_BINARY, "-y", "-loglevel", "error", "-i", str(picture), "-i", str(voice_track), *mix,
                     "-map", "0:v", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", str(out)], check=True)
     return out
@@ -966,10 +1016,10 @@ def redub(package_path: Path, voice: str = VOICE) -> Path:
         str(silent), fps=30, codec="libx264", audio=False, preset="slow", logger=None,
         ffmpeg_params=["-crf", "17", "-pix_fmt", "yuv420p", "-vf", "eq=saturation=1.08:gamma=1.03"])
     picture.close()
-    out, music_track = package_path.with_suffix(".mp4"), None  # owner, 1 Nov: dubs go out without music
-    mix = (["-stream_loop", "-1", "-i", str(music_track), "-filter_complex",
-            f"[2:a]volume={MUSIC_VOLUME}[m];[1:a][m]amix=inputs=2:duration=first:normalize=0[a]", "-map", "[a]"]
-           if music_track else ["-map", "1:a"])
+    # Owner, 1 Nov: dubs went out without music; 6 Nov he asked for curiosity music on every Instinct channel, so a dub
+    # of a bed channel's Short gets the same free library track as the original (other channels' dubs stay voice-only).
+    out = package_path.with_suffix(".mp4")
+    mix = mix_args(music(work, length, package) if bed_kind(package) else None, package)
     subprocess.run([FFMPEG_BINARY, "-y", "-loglevel", "error", "-i", str(silent), "-i", str(voice_track), *mix,
                     "-map", "0:v", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", str(out)], check=True)
     package["qa"] = {"passed": True, "problems": "dub of a posted Short: same pictures, not checked again"}

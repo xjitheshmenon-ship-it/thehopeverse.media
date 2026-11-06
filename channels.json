@@ -69,6 +69,7 @@
   },
   {
     "id": "yt-instinct",
+    "bed": "curiosity",
     "photos": true,
     "free_only": true,
     "platform": "youtube",
