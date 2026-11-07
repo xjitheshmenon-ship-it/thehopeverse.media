@@ -1,0 +1,29 @@
+{
+  "channel_id": "yt-instinct",
+  "title": "Requin : selon lui, des dauphins l'ont entour\u00e9 (histoire vraie)",
+  "description": "En 2007, en Californie, un surfeur a \u00e9t\u00e9 attaqu\u00e9 par un grand requin blanc. Il raconte ensuite que des dauphins ont form\u00e9 un cercle autour de lui. Ce r\u00e9cit vient du surfeur lui-m\u00eame, Todd Endris : selon lui, ce cercle lui a laiss\u00e9 le temps de regagner la plage. Rien ne prouve que les dauphins voulaient le prot\u00e9ger. Il a surv\u00e9cu et il est retourn\u00e9 surfer.\n\nImages : extraits libres de droits pour illustration (Pixabay, Wikimedia Commons), pas de l'\u00e9v\u00e9nement r\u00e9el.\nSource : r\u00e9cit de Todd Endris (Surfline, 29 ao\u00fbt 2007).\n\nInstinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.\n\n#histoirevraie #animaux #dauphin #nature",
+  "script": "REVIEW FLAG (owner, before going live): single-sourced (Surfline firsthand, 29 Aug 2007, via snippet). Check one more outlet (TODAY/NBC or Mercury News). Check whether Endris is still alive (one unverified memorial says he died in 2016).\n\nNARRATOR (French, female voice Denise, rate -8%, big captions, ~48 s):\n\u00ab Selon ce surfeur, des dauphins l'ont entour\u00e9 face \u00e0 un requin. C'\u00e9tait en 2007, en Californie, dans la baie de Monterey. Todd Endris surfait pr\u00e8s de Marina State Beach. Soudain, un grand requin blanc l'a attaqu\u00e9, \u00e0 plusieurs reprises. Alors, d'apr\u00e8s son r\u00e9cit, un groupe de grands dauphins est arriv\u00e9. Ils ont form\u00e9 un cercle autour de lui. Selon lui, ce cercle lui a laiss\u00e9 le temps de remonter sur sa planche et de rejoindre la plage. Sur le sable, des amis surfeurs l'ont aid\u00e9. Il a surv\u00e9cu. Plus tard, il est retourn\u00e9 surfer. Prudence, pourtant : les dauphins se d\u00e9fendent parfois contre les requins. Rien ne prouve qu'ils voulaient le sauver. Et vous, croyez-vous que ces dauphins savaient ce qu'ils faisaient ? \u00bb\n\nCAST: none (narrator only).\n\nEDIT PLAN (Mr. Cut): 9:16, 48 s, 20 shots of ~2.4 s, all free stock (Pixabay / Wikimedia Commons), \"Image d'illustration\" tag.\n1) dolphins circling (shot 20 reuses it as a loop)\n2) distant surfer\n3-5) Monterey Bay coast, waves, distant surfers, caption \"2007 \u00b7 Californie, baie de Monterey\"\n6-7) great white swimming calmly, mouth closed, caption \"Un grand requin blanc\" (if no clip is a verified great white, use a text card)\n8-10) bottlenose dolphins from above, pod, loose ring, caption \"D'apr\u00e8s son r\u00e9cit\"\n11-13) surfer paddling to shore, caption \"Selon lui\u2026\"\n14-15) calm beach, silhouettes, caption \"Il a surv\u00e9cu\"\n16-17) sunrise, surfer entering the water, caption \"Retour \u00e0 l'eau\"\n18-19) dolphins in neutral shots, caption \"Rien ne prouve qu'ils voulaient le sauver\"\n20) shot-1 clip again, caption \"Et vous, qu'en pensez-vous ?\"\nAudio: soft piano and strings, ocean ambience. Nothing graphic, no photos of Endris, no AI faces. Log author, link and licence of every clip; put any CC BY credits in the description.\n\nPINNED COMMENT (post by hand): \u00ab Si vous aviez \u00e9t\u00e9 sur cette plage, qu'auriez-vous cru : un hasard ou un geste voulu ? \u00bb\nTHUMBNAIL: bottlenose dolphins swimming in a circle seen from above, a surfboard in the middle, no faces, no shark teeth, no blood; text \u00ab Le cercle, 2007 \u00bb in white with a sun-yellow outline on deep ocean blue.\nPLAYLIST: Les g\u00e9nies du vivant.",
+  "lang": "fr",
+  "footer": "Instinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "category": "15",
+  "photos": true,
+  "draft_cost": 0.88,
+  "relevance": {
+    "score": 66,
+    "why": "Evergreen, well-hedged story with good fit for French-speaking seniors and clear attribution, but it is single-sourced (Endris's survival status unverified, one unconfirmed memorial claims he died in 2016) and the stock footage may not match a verified great white, so demand and fact-checking limit the score.",
+    "views48": 110
+  },
+  "credits": [
+    "White shark.jpg by Pterantula (Terry Goss) at en.wikipedia (CC BY 2.5), https://commons.wikimedia.org/wiki/File:White_shark.jpg",
+    "A pod of spinner dolphins in the Red Sea.jpg by Alexander Vasenin (CC BY-SA 3.0), https://commons.wikimedia.org/wiki/File:A_pod_of_spinner_dolphins_in_the_Red_Sea.jpg",
+    "Monterey Bay, California - DPLA - f7538bd21f227508bdc42a077858a8df.jpg by Department of the Interior. U.S. Fish and Wildlife Service. National Conservation Training Center. 10/1997-8888 (Public domain), https://commons.wikimedia.org/wiki/File:Monterey_Bay,_California_-_DPLA_-_f7538bd21f227508bdc42a077858a8df.jpg",
+    "Common bottlenose dolphins (Tursiops truncatus) Sagres.jpg by Charles J. Sharp (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Common_bottlenose_dolphins_(Tursiops_truncatus)_Sagres.jpg"
+  ],
+  "qa": {
+    "passed": true,
+    "problems": "",
+    "bad_frames": 0
+  },
+  "publish_at": "2026-11-07T19:30:00Z",
+  "youtube_id": "c3QJrPigs40"
+}
