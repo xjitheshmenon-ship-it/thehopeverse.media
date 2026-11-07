@@ -1,44 +1,60 @@
 ## Target
-7-day views per day, against 111,000 a day and 28,000 a Short (my estimates from the figures I have):
-- **Instinct:** about 4,800 a day, about 1,070 per Short. That is 4% of the daily target and 4% of the per-Short target.
-- **Instinct Japan:** about 20 a day, about 1–2 per Short.
-- **Sawaal:** about 5 a day.
-- **Sankalp and Hopeverse:** no Shorts show views since 27–29 Oct, so I count about 0 a day.
-- **All channels:** about 4,800 a day against 3.3 million (0.15%).
-
-Instinct is closest. Its breakouts are the stork (30.6k) and the giraffe (13.2k). Rescue-then-reunion stories told with real photos of the animal are what work. The whale (946) and gorilla (621) on 5 Nov were the best recent ones. Famous-animal histories flopped, at 50–175 views each.
+- **Instinct:** about 1,800 views a day over the last 7 days against 111,000, which is 1.6%. It averages about 395 views per Short against 28,000.
+- **Instinct Japan:** about 35 views a day and about 7 per Short.
+- **Hopeverse, Sankalp and Sawaal:** no data after 4 Nov. Their last Shorts had 0 to 100 views.
+- **All channels:** about 1,900 views a day against 3.3M, which is 0.06%.
+- **Closest channel:** Instinct, but it is still about 60 times short.
+- **Fastest route:** repeat the breakout formula. The stork Short reached 30.7k views. The giraffe reached 13.3k and the baby elephant 8.0k.
 
 ## Mr. Focus
-Rescue → return stories of one named animal with real Commons photos (to test: Ndakasi, orphan orca). Avoid famous historical animals. Japan: reuse only the topics that broke out on Instinct, such as crow and dolphin. Hopeverse and the Hindi channels have no data, so I can't call a winner there.
+- **What the breakouts share:** a human rescues an animal, the animal comes back, and a number makes it vivid (13,000 km, 8 months).
+- **Recent rescue→reunion Shorts:** these now get only 500 to 1,100 views each. The gorilla shielding a child got 1,024.
+- **Look for:** a rescue plus a long journey, with an exact number.
+- **Avoid:** famous historical animals (Balto got 79, Jumbo 65).
+- **Hopeverse:** pick one world story from the last 24 hours. This is to test.
 
 ## Mr. Pen
-Use: a true number or striking image in the first 2 seconds, then danger → human act → time gap → bond. Avoid: a famous name in the hook ("Balto", "Jumbo"), and anything a source doesn't confirm.
+- **Use:** the stork pattern of danger, then a human act, then a time gap, then a bond. Put the number in the first 2 seconds.
+- **Avoid:** a vague opener such as "Selon lui…". The shark title got 0 views while still private, so check why.
+- **Avoid:** titles with a name but no stakes, such as "Winter, dauphine sans queue" (181).
+- **Hopeverse, Sankalp and Sawaal:** open with a closed question and a figure. This is to test.
 
 ## Mr. Spark
-- **Titles:** a short sentence, the species word and "(histoire vraie)", under 70 characters.
-- **Instinct (to test):** #histoirevraie #animaux #sauvetage #elephant #baleine #nature #shorts
-- **Hopeverse (to test):** #worldnews #explained #newsinaminute #shorts
-- **Sawaal/Sankalp (to test):** #हिंदीन्यूज़ #खबर #भारत #shorts
-
-I couldn't search live trends today, so the hashtags are untested.
+- **Titles:** use a short sentence, the species word and "(histoire vraie)", under 70 characters.
+- **Instinct tags (to test):** #Shorts, #animaux, #histoirevraie, #nature, #sauvetage, #éléphant, #émotion.
+- **Hopeverse tags (to test):** #Shorts, #WorldNews, #Explained, #NewsIn60Seconds, #Breaking, #Tech.
+- **Sankalp and Sawaal tags (to test):** #Shorts, #HindiNews, #Bharat, #Samachar, #Politics.
+- **Description:** add the question as the first line and credit every image.
 
 ## Mr. Cut
-Calm pace, about 20 shots, under 55 seconds. Soft piano or strings for rescue stories. Danger in the first 2 seconds, and a clear photo of the named animal.
+- **Pacing:** a danger or number image in the first 2 seconds, about 20 shots, under 59 seconds.
+- **Music:** a calm, warm piano or strings bed with a soft swell at the reunion. Keep it low because many viewers are older.
+- **Stock footage:** caption it as an illustration.
+- **Hopeverse:** a driving, low-key news bed. This is to test.
 
 ## Mr. Post
-- **Instinct:** rescue stories at 18:00 and 19:30 UTC, because 18:00 gave 946 on 5 Nov.
-- **Japan:** only Instinct's proven topics.
-- **Hindi channels:** one dated story from the last 48 hours, posted 17:00–20:00 IST.
+- **Instinct:** only rescue→bond Shorts with a distance or time number. Put one in the 07:00 UTC slot, and no more than one a day.
+- **Instinct Japan:** re-voice only the 3 stories that broke out in French (stork, giraffe, elephant), and only if their French videos got 8,000 views or more.
+- **Sankalp:** a dated government win from the last 48 hours.
+- **Sawaal:** one open question with a figure.
+- **Hopeverse:** one world story per slot.
 
 ## Owner
-- **Pin by hand:** for the whale and gorilla Shorts, pin "Vous auriez fait quoi ?".
-- **Community posts, with a poll:** Instinct: "Quelle histoire ensuite : orque, lionne ou éléphant ?" Hopeverse: "Which story should we explain next: tech, science or world news?"
-- **Instagram:** share the whale and gorilla Shorts to the Hopeverse Media account, captioned "A rescued whale swam up to every diver. True story." Do this with outside accounts only, never our own channels.
-- **Publish times:** none moved. No slot has 3 days and 6 Shorts of evidence yet.
+- **Pin these questions:**
+  - Gorilla: "Vous auriez fait quoi ?"
+  - Elephants saying goodbye: "Avez-vous déjà vu un animal pleurer ?"
+- **Community posts:**
+  - Instinct: "Quelle histoire voulez-vous demain ?" with a poll of rescue, intelligence or friendship.
+  - Hopeverse: poll on which topic to cover next.
+  - Sankalp and Sawaal: a Hindi poll on the topic.
+- **Instagram:** share the gorilla and elephant Shorts to Hopeverse Media on Instagram with the caption "One true story a day. Follow for more." Never cross-promote between our own channels.
+- **Delete:** `rQPOCx8wY6c` (the Hopeverse megatsunami duplicate).
+- **Publish times:** none moved. No Instinct slot has 6 or more Shorts and 3 days of lead over another. The 07:00 UTC slot averages about 680 views but has only 4 Shorts.
 
 ## Leads
-Search was cut off, so every entry bar is unverified. Check each by hand.
-1. **Ground News (Hopeverse):** Its partnership programme for creators has an application form. Apply by hand: https://help.ground.news/en/categories/2358337-partner-with-us
-2. **Zooplus affiliate via Awin (Instinct and the German channel):** pet-shop affiliate scheme. Check the entry bar: https://www.awin.com
-3. **Amazon Associates (Instinct):** link animal books. Check the entry bar: https://affiliate-program.amazon.com
-4. **Outside collab (Instinct):** find a French animal-story creator of similar size and propose a Collaborations tag.
+Entry bars are unverified. Check each by hand.
+1. **Hivency or Influence4You (Instinct):** French creator-campaign platforms. Look for pet and nature brands. https://www.hivency.com
+2. **Collabstr (all channels):** make a profile for the owner to review. https://collabstr.com
+3. **Plixxo (Hindi channels):** Indian micro-creator campaigns. https://plixxo.com
+4. **Influencer Hub (Hopeverse):** news and tech brands. https://influencerhub.com
+5. **Outside collab (Instinct):** a French rescue or animal-story creator of similar size, for a Collaborations tag. Names to be found by hand.
