@@ -1,0 +1,96 @@
+{
+  "channel_id": "yt-instinct-ja",
+  "title": "溺れかけた彼女を、シロイルカが水面へ押し上げた実話",
+  "description": "シロイルカのミラは、本当に「危ない!」って分かってたと思う?コメントで教えてね。\n\n水深6メートル、ビルの2階分の深さのプールの底で、26歳のフリーダイバーが浮上できなくなった。2009年7月、中国・ハルビン。足がけいれんしたヤン・ユンさんのもとへシロイルカのミラが近づき、主催者によると、彼女の脚をくわえて水面へ導こうとしたように見えたという。ミラが何を理解していたかは誰にも分からない。それでも、種を超えた絆は生まれるのかもしれない。\n\n映像はイメージです。フリー素材のシロイルカの写真・動画(Wikimedia Commons、Pixabay)で、ミラ本人ではありません。\n\n出典:National Geographic(2009年8月3日)、The Telegraph(2009年8月2日)、Oceana(2009年7月29日)\n\n#動物 #実話 #シロイルカ #感動 #Shorts",
+  "dub_of": "yt-instinct-72",
+  "lang": "ja",
+  "scenes": [
+    {
+      "narration": "深さ6メートルのプールの底で、26歳の女性が浮かび上がれなくなった。そこへ、1頭のシロイルカが近づいてくる。",
+      "on_screen_text": "水深6メートル\nの底で",
+      "picture_search": "beluga whale swimming toward camera",
+      "image_prompt": "Photo-real underwater shot looking up at a free-diver from below, a white beluga whale gliding toward the camera in deep blue water, vertical 9:16",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": "Beluga whale underwater"
+    },
+    {
+      "narration": "2009年7月、中国・ハルビンの水族館。フリーダイビングの大会に出ていたのが、ヤン・ユンさん、26歳です。",
+      "on_screen_text": "2009年7月\nハルビン",
+      "picture_search": "Harbin city China",
+      "image_prompt": "Photo-real view of a marine-park pool building in Harbin, China, daylight, wide establishing shot, vertical 9:16",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": "Harbin Polar Land"
+    },
+    {
+      "narration": "水は冷たくて、そのうえ両足がけいれん。体が動かず、もう上がれません。",
+      "on_screen_text": "足がつって\n浮上できない",
+      "picture_search": "free diver pool bottom underwater",
+      "image_prompt": "Photo-real slow-motion shot of a free-diver motionless at the bottom of a deep pool, cool blue water, camera from the side, vertical 9:16",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "そこに来たのが、シロイルカのミラ。主催者によると、彼女の脚をくわえて、水面へ導くように見えたそうです。",
+      "on_screen_text": "ミラは\n導いたように見えた",
+      "picture_search": "beluga rising to surface",
+      "image_prompt": "Photo-real wide calm shot of a white beluga whale rising toward the water surface in a large pool, no close-up of the mouth, vertical 9:16",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": "Delphinapterus leucas"
+    },
+    {
+      "narration": "ヤンさんは「下から、すごい力で押された」と話しています。主催者は、命を救われたと言っています。",
+      "on_screen_text": "「下からすごい力」",
+      "picture_search": "light rays underwater swimmer rising",
+      "image_prompt": "Photo-real shot of sunlight rays piercing blue water with a swimmer rising toward the surface, vertical 9:16",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "溺れそうな人を見つけた、ライフセーバーみたいですよね。",
+      "on_screen_text": "イメージ映像",
+      "picture_search": "lifeguard chair pool",
+      "image_prompt": "Photo-real shot of a lifeguard watching swimmers from an elevated chair beside a pool, vertical 9:16",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    },
+    {
+      "narration": "ミラは人と一緒に過ごすのに慣れていました。ただ、何を分かっていたのかは、誰にも証明できません。",
+      "on_screen_text": "本当の理由は\n分かっていない",
+      "picture_search": "beluga aquarium glass visitors",
+      "image_prompt": "Photo-real shot of a beluga whale at an aquarium window with visitors watching at the glass, vertical 9:16",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": "Beluga aquarium"
+    },
+    {
+      "narration": "じゃあ、あなたはどう思う?ミラは、あの深い水の底で分かっていたと思う?",
+      "on_screen_text": "ミラは分かって\nいたと思う?",
+      "picture_search": "beluga whale underwater deep blue",
+      "image_prompt": "Photo-real underwater shot looking up at a free-diver from below, a white beluga approaching the camera in deep blue water, vertical 9:16",
+      "speaker": "",
+      "host_on_screen": false,
+      "on_screen": "",
+      "photo": ""
+    }
+  ],
+  "footer": "Instinct, une chaîne Hopeverse Media. Réalisé par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "category": "15",
+  "photos": true,
+  "qa": {
+    "passed": true,
+    "problems": "dub of a posted Short: same pictures, not checked again"
+  }
+}
