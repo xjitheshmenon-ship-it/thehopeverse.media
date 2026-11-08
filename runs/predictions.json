@@ -817,5 +817,19 @@
   "predicted": 220,
   "actual": 850,
   "at": "2026-11-09 01:13"
+ },
+ "yt-instinct-63": {
+  "channel": "yt-instinct",
+  "title": "Il l'a réchauffée toute une nuit… 14 ans après, elle est partie dans ses bras (histoire vraie)",
+  "predicted": 180,
+  "actual": 355,
+  "at": "2026-11-09 03:17"
+ },
+ "yt-instinct-64.ja": {
+  "channel": "yt-instinct-ja",
+  "title": "野生に帰したライオンのエルサが赤ちゃん連れで戻ってきた実話",
+  "predicted": null,
+  "actual": 19,
+  "at": "2026-11-09 03:17"
  }
 }
