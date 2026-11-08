@@ -761,5 +761,12 @@
   "predicted": null,
   "actual": 1,
   "at": "2026-11-08 09:17"
+ },
+ "yt-instinct-57": {
+  "channel": "yt-instinct",
+  "title": "Elle a tendu la patte vers sa bouteille d'eau (histoire vraie)",
+  "predicted": 750,
+  "actual": 344,
+  "at": "2026-11-08 10:17"
  }
 }
