@@ -803,5 +803,19 @@
   "predicted": null,
   "actual": 1,
   "at": "2026-11-08 19:17"
+ },
+ "yt-instinct-61": {
+  "channel": "yt-instinct",
+  "title": "Un orang-outan lui a tendu la main dans l'eau (histoire vraie)",
+  "predicted": 180,
+  "actual": 118,
+  "at": "2026-11-09 01:13"
+ },
+ "yt-instinct-62": {
+  "channel": "yt-instinct",
+  "title": "Sauvée à 10 jours, la lionne Sirga court vers lui (histoire vraie)",
+  "predicted": 220,
+  "actual": 850,
+  "at": "2026-11-09 01:13"
  }
 }
