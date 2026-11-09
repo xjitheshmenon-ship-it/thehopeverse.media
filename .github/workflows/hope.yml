@@ -238,8 +238,30 @@ jobs:
           CHANNEL: ${{ inputs.channel }}
           VIDEOS: ${{ inputs.topic }}
           DAILY_BUDGET: "1000"  # the owner asked for it, like Post now
+          GH_TOKEN: ${{ github.token }}
         run: |
           { sudo apt-get install -y -qq fonts-noto-core fonts-noto-cjk || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core fonts-noto-cjk; }; } > /dev/null
+          # YouTube blocks yt-dlp on runners ("not a bot"), so a dub's original comes from the run that made it
+          # (artifact videos-<run id>, kept 30 days); the owner asked for these dubs, so earlier failed tries don't count
+          lang=$(jq -r --arg id "$CHANNEL" '.[] | select(.id == $id) | .lang' channels.json)
+          need=""
+          for v in $VIDEOS; do
+            [ -f "outbox/$v.$lang.json" ] && jq 'if has("youtube_id") then . else del(.render_failed) end' "outbox/$v.$lang.json" > "$RUNNER_TEMP/p" && mv "$RUNNER_TEMP/p" "outbox/$v.$lang.json"
+            [ -f "outbox/$v/original.mp4" ] || need="$need $v"
+          done
+          if [ -n "$need" ]; then
+            gh api "repos/$GITHUB_REPOSITORY/actions/artifacts?per_page=100" --jq '.artifacts[] | select(.name | startswith("videos-")) | select(.expired | not) | .workflow_run.id' > "$RUNNER_TEMP/runs" || true
+            while read -r run && [ -n "$need" ]; do
+              rm -rf "$RUNNER_TEMP/a"; gh run download "$run" -n "videos-$run" -D "$RUNNER_TEMP/a" > /dev/null 2>&1 || continue
+              left=""
+              for v in $need; do
+                f=$(find "$RUNNER_TEMP/a" -name "$v.mp4" | head -1)
+                if [ -n "$f" ]; then mkdir -p "outbox/$v"; mv "$f" "outbox/$v/original.mp4"; echo "Original of $v from run $run"; else left="$left $v"; fi
+              done
+              need=$left
+            done < "$RUNNER_TEMP/runs"
+            [ -z "$need" ] || echo "::warning::No saved original for:$need (yt-dlp will try YouTube)"
+          fi
           python video.py --dub-to "$CHANNEL" $VIDEOS
           for v in $VIDEOS; do python video.py --only "$CHANNEL" || true; done  # one video per run of video.py
       - name: Who watches the channel (age, gender, countries, traffic; last 28 days)
