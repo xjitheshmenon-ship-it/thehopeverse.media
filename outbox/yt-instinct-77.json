@@ -15,14 +15,13 @@
   },
   "credits": [
     "Street Intersection at Zamboanga City Town.jpg by Nhrjmhll (CC0), https://commons.wikimedia.org/wiki/File:Street_Intersection_at_Zamboanga_City_Town.jpg",
-    "2023 Historic dogs of the Philippines stamp sheet.jpg by Released by PHLPost (Public domain), https://commons.wikimedia.org/wiki/File:2023_Historic_dogs_of_the_Philippines_stamp_sheet.jpg",
     "Cawa-Cawa Boulevard Zamboanga City.jpg by Darren201 (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Cawa-Cawa_Boulevard_Zamboanga_City.jpg"
   ],
+  "holds": 2,
   "qa": {
     "passed": false,
-    "problems": "Kabang the dog changes appearance: brown-and-white St. Bernard-like dog in frame 3 vs golden retriever-like dog in frame 13 vs large tan dog in frame 16.\nKabang's injury (lost upper snout) is never shown; frame 13 depicts an intact muzzle, contradicting the story.\nMotorcycle rider and bike change between frame 1 and frame 12 (different helmet, shirt and bike design).\nThe two girls (Dina and her cousin) become two young boys in frame 16 with different hair and clothes.\nFrame 7 and frame 8 show the Earth duplicated across the split, a visual glitch.",
-    "bad_frames": 5
+    "problems": "Kabang the dog changes appearance: frame 3 shows a golden/orange shepherd-like mixed breed, frame 9 a fluffy golden retriever/spaniel, frame 14 a dark brown droopy-faced hound, and frame 16 a short-coated reddish dog.\nFrame 3 shows Kabang with an intact face, inconsistent with the story's facial injury that is treated in California.\nFrame 4 shows Dina as a shirtless child in white shorts, while frame 16 shows two different children (a girl and a boy) in modern Western clothes, so the story characters are inconsistent.\nFrames 6 and 7 show warped, garbled phone screens with melted shapes.\nFrame 14's poster has garbled pseudo-text.",
+    "bad_frames": 7
   },
-  "held": "continuity: Kabang the dog changes appearance: brown-and-white St. Bernard-like dog in frame 3 vs golden retriever-like dog in frame 13 vs large tan dog in frame 16.\nKabang's injury (lost upper snout) is never shown; frame 13 depicts an intact muzzle, contradicting the story.\nMotorcycle rider and bike change between frame 1 and frame 12 (different helmet, shirt and bike design).\nThe two girls (Dina and her cousin) become two young boys in frame 16 with different hair and clothes.\nFrame 7 and frame 8 show the Earth duplicated across the split, a visual glitch.",
-  "holds": 1
+  "held": "continuity: Kabang the dog changes appearance: frame 3 shows a golden/orange shepherd-like mixed breed, frame 9 a fluffy golden retriever/spaniel, frame 14 a dark brown droopy-faced hound, and frame 16 a short-coated reddish dog.\nFrame 3 shows Kabang with an intact face, inconsistent with the story's facial injury that is treated in California.\nFrame 4 shows Dina as a shirtless child in white shorts, while frame 16 shows two different children (a girl and a boy) in modern Western clothes, so the story characters are inconsistent.\nFrames 6 and 7 show warped, garbled phone screens with melted shapes.\nFrame 14's poster has garbled pseudo-text."
 }
