@@ -20,6 +20,9 @@
   "qa": {
     "passed": true,
     "problems": "Frame 16: the cat in the stationmaster cap is cream and white, not the calico Tama shown elsewhere, so the main character's appearance changes. Frame 5: the cat in 'Que peut faire un chat ?' is a grey-brown tabby, inconsistent with calico Tama. Frame 8: the yen banknotes carry garbled, fake-looking text and designs.",
-    "bad_frames": 3
-  }
+    "bad_frames": 3,
+    "owner_ok": true
+  },
+  "publish_at": "2026-11-10T05:30:00Z",
+  "youtube_id": "Voj_OukfsUQ"
 }
