@@ -15,14 +15,13 @@
   },
   "credits": [
     "Street Intersection at Zamboanga City Town.jpg by Nhrjmhll (CC0), https://commons.wikimedia.org/wiki/File:Street_Intersection_at_Zamboanga_City_Town.jpg",
-    "2023 Kabang stamp.jpg by Released by PHLPost (Public domain), https://commons.wikimedia.org/wiki/File:2023_Kabang_stamp.jpg",
     "Cawa-Cawa Boulevard Zamboanga City.jpg by Darren201 (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Cawa-Cawa_Boulevard_Zamboanga_City.jpg"
   ],
-  "holds": 1,
+  "holds": 2,
   "qa": {
     "passed": false,
-    "problems": "Frame 4: Dina wears a pink top with a purple skirt, which matches neither girl's outfit in frame 1.\nFrame 9: Kabang appears with an intact muzzle and a spaniel-like look, although she had lost her snout (frame 6) by then.\nFrame 13: the newspaper text is garbled ('yrennej', 'Appe').\nFrame 16: the two girls have become two little boys, and the dog does not resemble Kabang.",
-    "bad_frames": 4
+    "problems": "Kabang the dog changes appearance: frame 3 shows a golden/orange shepherd-like mixed breed, frame 9 a fluffy golden retriever/spaniel, frame 14 a dark brown droopy-faced hound, and frame 16 a short-coated reddish dog.\nFrame 3 shows Kabang with an intact face, inconsistent with the story's facial injury that is treated in California.\nFrame 4 shows Dina as a shirtless child in white shorts, while frame 16 shows two different children (a girl and a boy) in modern Western clothes, so the story characters are inconsistent.\nFrames 6 and 7 show warped, garbled phone screens with melted shapes.\nFrame 14's poster has garbled pseudo-text.",
+    "bad_frames": 7
   },
-  "held": "continuity: Frame 4: Dina wears a pink top with a purple skirt, which matches neither girl's outfit in frame 1.\nFrame 9: Kabang appears with an intact muzzle and a spaniel-like look, although she had lost her snout (frame 6) by then.\nFrame 13: the newspaper text is garbled ('yrennej', 'Appe').\nFrame 16: the two girls have become two little boys, and the dog does not resemble Kabang."
+  "held": "continuity: Kabang the dog changes appearance: frame 3 shows a golden/orange shepherd-like mixed breed, frame 9 a fluffy golden retriever/spaniel, frame 14 a dark brown droopy-faced hound, and frame 16 a short-coated reddish dog.\nFrame 3 shows Kabang with an intact face, inconsistent with the story's facial injury that is treated in California.\nFrame 4 shows Dina as a shirtless child in white shorts, while frame 16 shows two different children (a girl and a boy) in modern Western clothes, so the story characters are inconsistent.\nFrames 6 and 7 show warped, garbled phone screens with melted shapes.\nFrame 14's poster has garbled pseudo-text."
 }
