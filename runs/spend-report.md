@@ -1,16 +1,16 @@
-# Hopeverse spending report, 09 Nov 2026 16:11
+# Hopeverse spending report, 09 Nov 2026 20:45
 
-- Today: $10.05 (18 runs)
-- Last 7 days: $97.25
-- This month: $129.86
-- All time: $307.02
+- Today: $12.68 (28 runs)
+- Last 7 days: $99.88
+- This month: $132.49
+- All time: $309.65
 
 Claude (Anthropic) costs as estimated by agents.py, review included. Video images from fal.ai add
 about $0.006 each (about $0.06 a Short). Exact bills: console.anthropic.com and fal.ai/dashboard.
 
 | Day | Runs | Cost |
 | --- | --- | --- |
-| 2026-11-09 | 18 | $10.05 |
+| 2026-11-09 | 28 | $12.68 |
 | 2026-11-08 | 7 | $4.18 |
 | 2026-11-07 | 26 | $10.03 |
 | 2026-11-06 | 43 | $13.28 |
@@ -59,30 +59,43 @@ spazio, astronomia, universo, pianeti, stelle, sistema solare, missioni spaziali
 
 - fal.ai: ? usd (Couldn't read the balance (HTTP Error 401: Unauthorized); add a fal.ai READONLY key as the FAL_BILLING_KEY secret)
 - HeyGen: ? usd (Couldn't read the balance (HTTP Error 401: UNAUTHORIZED))
-- ElevenLabs: 23590 characters (Voices; free Edge voices take over when it runs out. Plan: creator, status: active, resets 03 Dec 2026)
+- ElevenLabs: 21230 characters (Voices; free Edge voices take over when it runs out. Plan: creator, status: active, resets 03 Dec 2026)
 - Anthropic: ? usd (No balance API: see console.anthropic.com > Billing. Spend is logged per run)
 - Perplexity: ? usd (No balance API: see perplexity.ai/account/api. About $0.006 a search)
 
 ## Mr. Grow's to-dos for you today
 
-- **Pin by hand:** the question comment on the gorilla child Short (2cdDakmSqM8, 2,536 views), the elephant "adieu" Short (8ji6DPr8Mq0, 1,398) and Elsa (WdthAlc8__k, 1,154).
-- **Community post (Instinct):** "Quel animal vous a le plus ému ?" with a poll: gorille / éléphant / dauphin / lionne.
-- **Instagram:** share the gorilla child Short with the caption "Une mère gorille a porté un enfant tombé dans son enclos. Histoire vraie." Do not cross-promote between our own channels.
-- **Publish times:** none moved. Instinct's 04:00 UTC slot averages about 1,100 over 4 days, against about 710–1,000 for the others. No slot has 6 Shorts behind it, and the story type affects the numbers too.
+- **Pin on Instinct:** the gorilla-child Short (2cdDakmSqM8, 2,990 views) with "Vous auriez fait quoi à sa place ?".
+- **Community posts, text plus poll:**
+  - Instinct: "Quelle histoire voulez-vous ? Gorille / Éléphant / Baleine / Chien".
+  - Hopeverse: "Which story should we explain next? Tech / Science / Economy / War".
+  - Sawaal: a poll on SIR.
+- **Instagram:** share the Instinct gorilla Short with the caption "A mother gorilla carried a fallen child. True story." Never share between our own channels.
+- **Publish times moved:** none.
+  - Instinct's 04:00 UTC slot averaged about 1,220 views against 721 for 18:00. That is only one strong day, and only 21:00 UTC (a single Short) is under 6 Shorts. Not enough evidence to move anything.
+- **Still open:** Instinct JA has 3 private Shorts scheduled for 9–10 Nov.
 
 ## Monetization target (10M Shorts views in 90 days)
 
-- **Instinct:** about 2,850 views a day (Nov 2–8, counted from Shorts published in that window), which is 2.6% of 111,000. It averages 570 per Short against 28,000.
-- **Instinct Japan:** about 17 a day and about 3 per Short.
-- **Hopeverse, Sawaal, Sankalp:** no new data since Oct 29–Nov 4. They are under 100 a day and under 100 per Short.
-- **Total across channels:** about 2,900 a day against 3.3M, which is 0.09%.
-- **Closest:** Instinct, and it is still about 40x short.
+Search failed again today, so trends below are "to test". Views per day are estimated from the Shorts published 2–8 Nov.
+
+| Channel | Views/day (7 days) | Avg per Short | vs 111k/day | vs 28k/Short |
+|---|---|---|---|---|
+| Instinct | about 3,000 | about 595 | 2.7% | 2.1% |
+| Instinct JA | about 18 | about 4 | 0.02% | 0.01% |
+| Sawaal | no Shorts since 4 Nov | n/a | 0% | n/a |
+| Sankalp | no Shorts since 26 Oct | n/a | 0% | n/a |
+| Hopeverse | no Shorts since 29 Oct | n/a | 0% | n/a |
+
+All channels together: about 3,000 views a day against 3.3M, which is 0.1%.
+
+Closest is Instinct. Its breakouts were the stork (30.4k), giraffe (13.2k) and elephant (8.0k), all rescue-and-reunion stories. The gorilla child on 8 Nov reached 2,990 in a day. Fastest route: post only rescue-and-reunion Shorts with a named animal and a true number in the first 2 seconds. Drop famous-history Shorts (Balto 84, Jumbo 70).
 
 ## Sponsorship and collab leads
 
-These are unverified, so check the entry bars by hand. Today's search tool failed, so none of these were found in live results.
-1. **Ground News Creator Program (Hopeverse):** search for the partner page. Check the minimum audience first.
-2. **Hivency (Instinct):** look at pet-food and nature brand campaigns.
-3. **Influence4You (Instinct):** check the French pet-brand briefs.
-4. **Plixxo (Sawaal, Sankalp):** check news and app campaigns for small Hindi channels.
-5. **Collab with an outside creator (Instinct):** find a French animal-rescue Shorts creator of similar size for a Collaborations tag.
+All unverified, since search failed. Check the entry bars by hand.
+1. **Collabstr (Hopeverse, Instinct):** create a creator profile and list Shorts rates. The bar is low, and brands browse it.
+2. **Influencer Hub (Sawaal, Sankalp):** check the Indian creator marketplace's minimum subscribers.
+3. **Amazon Associates, India and France (Instinct):** affiliate links to animal books under the descriptions. Associates accepts small channels and approves sites case by case.
+4. **Outside creator (Instinct JA):** find a Japanese animal-rescue Shorts channel with about 1k subscribers for a Collaborations tag.
+5. **Outside creator (Hopeverse):** find a small English explainer channel for a Shorts remix.
