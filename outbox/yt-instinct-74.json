@@ -1,0 +1,26 @@
+{
+  "channel_id": "yt-instinct",
+  "title": "Rendue 5 fois, la chienne Ruby sauve un adolescent (histoire vraie)",
+  "description": "Cinq familles l'avaient ramen\u00e9e au refuge, et pourtant c'est elle qui a retrouv\u00e9 un adolescent disparu depuis trente-six heures dans la for\u00eat. Ce gar\u00e7on \u00e9tait le fils de Patricia Inman, la b\u00e9n\u00e9vole qui avait d\u00e9fendu Ruby quand elle risquait l'euthanasie. Un geste de bont\u00e9, des ann\u00e9es plus tard, lui est revenu.\n\nImages d'illustration (Pixabay) : ce n'est pas la vraie Ruby ni les lieux de l'\u00e9v\u00e9nement.\n\nEt si vous le pouvez, pensez \u00e0 soutenir le refuge pour animaux pr\u00e8s de chez vous : il y a peut-\u00eatre une autre Ruby qui attend.\n\nSources : AP (Associated Press), CBS News\nCr\u00e9dits images : Pixabay\n\nInstinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.\n\n#histoirevraie #animaux #chien #sauvetage",
+  "script": "FORMAT: narrator-only Short, no cast. Voice fr-FR-DeniseNeural, rate -8%, captions x1.2, ~58 s. Playlist: Les g\u00e9nies du vivant. Publish: 19:00 Europe/Paris.\n\nNARRATION:\n\u00ab Octobre 2017. Un adolescent a disparu depuis trente-six heures. Dans une for\u00eat am\u00e9ricaine, une chienne suit une piste jusqu'\u00e0 un ravin. Au fond, l'adolescent, inconscient. Il a surv\u00e9cu. Elle s'appelle Ruby, crois\u00e9e berger australien et border collie. Cinq familles l'ont ramen\u00e9e au refuge, au Rhode Island, aux \u00c9tats-Unis. Menac\u00e9e d'euthanasie, elle est d\u00e9fendue par une b\u00e9n\u00e9vole : Patricia Inman. En 2011, Ruby est recueillie par un policier, Daniel O'Neil. Il la forme \u00e0 la recherche et au sauvetage. Environ six ans plus tard, l'adolescent retrouv\u00e9, c'\u00e9tait le fils de Patricia. Elle avait sauv\u00e9 Ruby. Des ann\u00e9es plus tard, Ruby a sauv\u00e9 son fils. Comme une main tendue qui vous revient. R\u00e9compens\u00e9e en 2018, Ruby a servi onze ans. Elle a \u00e9t\u00e9 euthanasi\u00e9e en mai 2022, apr\u00e8s une maladie soudaine et incurable. Le film Netflix tir\u00e9 de son histoire prend des libert\u00e9s ; ici, ce sont les faits rapport\u00e9s par l'agence AP. Et vous, avez-vous d\u00e9j\u00e0 vu un geste de bont\u00e9 vous revenir ? \u00bb\n\nEDIT PLAN (Mr. Cut, 21 shots, 1080x1920, max 58 s):\nPixabay stock only. Shots: dog tracking in misty forest (first frame); wooded ravine; sunlight through trees; dog behind shelter fence; border collie portrait; kennel corridor; hand stroking dog from behind; police handler from behind with dog; dog running in field; forest paths; door opening on garden; dog in garden; hands reaching; dog resting at sunset; dog walking at dusk; loop back to shot 1.\nNo real Ruby photos, no AI images, no Netflix footage, no identifiable teen/Patricia/officer.\nPermanent small text \u00ab Image d'illustration \u00bb.\nOn-screen text: \u00ab Octobre 2017 \u00b7 36 heures \u00bb, \u00ab Il a surv\u00e9cu \u00bb, \u00ab Rendue par 5 familles \u00bb, \u00ab D\u00e9fendue par Patricia Inman \u00bb, \u00ab 2011 \u00b7 Recueillie par Daniel O'Neil \u00bb, \u00ab Le fils de Patricia Inman \u00bb, \u00ab Un geste revient \u00bb, \u00ab Chien h\u00e9ros American Humane, 2018 \u00bb, \u00ab Sources : AP, CBS News \u00bb, final question large.\nAudio: soft piano/strings at -20 dB, gentle crossfades.\nPixabay credits (author, URL, licence) per clip from each clip's page.\n\nTHUMBNAIL: Pixabay photo of an Australian shepherd / border collie in a forest, profile, looking forward, no human face; text \u00ab Rendue 5 fois \u00bb (white, dark outline, the 5 in golden yellow) on deep forest green; small \u00ab Image d'illustration \u00bb at the bottom.",
+  "lang": "fr",
+  "footer": "Instinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+  "category": "15",
+  "photos": true,
+  "draft_cost": 1.13,
+  "relevance": {
+    "score": 72,
+    "why": "Evergreen true dog-rescue story fits the channel's emotional 'histoire vraie' pattern and francophone seniors, with a clear AP-sourced script and honest disclaimers; the title's 'Rendue 5 fois' matches the script, but Pixabay-only stock and a 19:00 Paris slot (evening IST, weaker) limit it.",
+    "views48": 560
+  },
+  "credits": [
+    "Lady (Border Collie).jpg by Yago Nunes (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Lady_(Border_Collie).jpg"
+  ],
+  "qa": {
+    "passed": true,
+    "problems": "",
+    "bad_frames": 0
+  },
+  "publish_at": "2026-11-09T19:30:00Z",
+  "youtube_id": "pEbu68eP50s"
+}

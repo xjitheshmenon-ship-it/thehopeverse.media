@@ -79,14 +79,6 @@
  },
  "yt-instinct": [
   {
-   "topic": "Ruby, la chienne « inadoptable » (Rhode Island) : rendue cinq fois au refuge et presque euthanasiée, elle est sauvée par la bénévole Patricia Inman et devient chienne de recherche de la police. En 2017, un adolescent disparaît dans la forêt depuis 36 heures : Ruby le retrouve, inconscient… c'était le fils de Patricia (histoire vraie). Titre : « Elle a sauvé une chienne que personne ne voulait… 7 ans plus tard, la chienne a sauvé son fils (histoire vraie) ». Sources : AP, CBS News.",
-   "why": "Retournement émotionnel fort (la dette rendue), même ressort que la girafe orpheline (13 k). Titre en phrase complète, sans nom seul (les titres « nom de chien » faisaient 60-90 vues).",
-   "score": 70,
-   "views48": 700,
-   "planned": "2026-11-07 14:40",
-   "when": "2026-11-09 04:25"
-  },
-  {
    "topic": "Kunkush, le chat réfugié : en 2015, une mère et ses 5 enfants fuient Mossoul (Irak) avec leur chat blanc. En arrivant en bateau sur l'île grecque de Lesbos, il s'enfuit, et ils doivent partir sans lui. Des bénévoles le retrouvent, lancent un appel sur Internet… et 4 mois plus tard, la famille est retrouvée en Norvège. Les retrouvailles sont filmées (histoire vraie). Titre : « Ils avaient perdu leur chat en fuyant la guerre… 4 mois plus tard, il les a retrouvés (histoire vraie) ». Sources : AP, ABC. Ton doux, sans politique.",
    "why": "Retrouvailles = le format qui marche. Lien Europe (Grèce, Allemagne, Norvège) pour le public francophone. Ne pas dire que le chat est mort peu après (fin sur les retrouvailles, qui sont vraies).",
    "score": 66,
@@ -125,6 +117,14 @@
    "views48": 300,
    "planned": "2026-11-08 12:28",
    "when": "2026-11-10 04:00"
+  },
+  {
+   "topic": "Kunkush, le chat réfugié : une famille fuit Mossoul avec son chat blanc, le perd sur l'île de Lesbos, et le retrouve 4 mois plus tard en Norvège grâce à des bénévoles (histoire vraie). Titre : « Ils avaient perdu leur chat en fuyant la guerre… 4 mois plus tard, il les a retrouvés (histoire vraie) ». Ton doux, sans politique, photos libres de Wikimedia Commons.",
+   "why": "Histoire vraie de retrouvailles, le format qui marche le mieux sur la chaîne, avec une fin émouvante et un ton calme pour un public senior. Déjà planifiée par le propriétaire, donc elle remplit bien ce créneau. Le créneau de nuit (04h25 IST) a une bonne médiane, mais les photos libres de Kunkush sont à vérifier.",
+   "score": 58,
+   "views48": 650,
+   "planned": "2026-11-09 13:21",
+   "when": "2026-11-10 04:25"
   }
  ],
  "yt-instinct-ja": [
