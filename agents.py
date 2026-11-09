@@ -40,7 +40,7 @@ WEB_FETCH = {"type": "web_fetch_20260209", "name": "web_fetch", "max_uses": 4}
 # Hard spending cap per run, in US dollars. Change it with: setx HOPE_BUDGET 3
 BUDGET = float(os.environ.get("HOPE_BUDGET", "2"))
 # Cap for the whole day across all runs (Shorts, series, channel idea). Set it as a repo variable in GitHub.
-RAISED = {"2026-10-26": 50.0, "2026-10-27": 25.0, "2026-11-03": 40.0}  # one-day raises the owner approved (3 Nov: 4 Nov videos made the night before); the usual cap returns the next day
+RAISED = {"2026-10-26": 50.0, "2026-10-27": 25.0, "2026-11-03": 40.0, "2026-11-09": 35.0}  # one-day raises the owner approved (3 Nov: 4 Nov videos made the night before); the usual cap returns the next day
 DAILY_BUDGET = max(RAISED.get(f"{datetime.now():%Y-%m-%d}", 0), float(os.environ.get("DAILY_BUDGET") or "20"))
 # Cap for one video, writing + footage + checks, Post now and owner one-offs included (owner, 1 Nov 2026: "2-3 usd per video")
 VIDEO_BUDGET = float(os.environ.get("VIDEO_BUDGET") or "3")
