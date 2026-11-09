@@ -1,16 +1,17 @@
-# Hopeverse spending report, 09 Nov 2026 20:45
+# Hopeverse spending report, 10 Nov 2026 00:20
 
-- Today: $12.68 (28 runs)
-- Last 7 days: $99.88
-- This month: $132.49
-- All time: $309.65
+- Today: $1.07 (1 runs)
+- Last 7 days: $67.51
+- This month: $134.24
+- All time: $311.40
 
 Claude (Anthropic) costs as estimated by agents.py, review included. Video images from fal.ai add
 about $0.006 each (about $0.06 a Short). Exact bills: console.anthropic.com and fal.ai/dashboard.
 
 | Day | Runs | Cost |
 | --- | --- | --- |
-| 2026-11-09 | 28 | $12.68 |
+| 2026-11-10 | 1 | $1.07 |
+| 2026-11-09 | 32 | $13.36 |
 | 2026-11-08 | 7 | $4.18 |
 | 2026-11-07 | 26 | $10.03 |
 | 2026-11-06 | 43 | $13.28 |
@@ -23,7 +24,6 @@ about $0.006 each (about $0.06 a Short). Exact bills: console.anthropic.com and 
 | 2026-10-30 | 78 | $51.31 |
 | 2026-10-29 | 49 | $19.29 |
 | 2026-10-28 | 52 | $22.18 |
-| 2026-10-27 | 53 | $33.02 |
 
 ## Today's new channel idea (folder ideas/2026-10-29-yt-orbita-spazio-it)
 
@@ -59,7 +59,7 @@ spazio, astronomia, universo, pianeti, stelle, sistema solare, missioni spaziali
 
 - fal.ai: ? usd (Couldn't read the balance (HTTP Error 401: Unauthorized); add a fal.ai READONLY key as the FAL_BILLING_KEY secret)
 - HeyGen: ? usd (Couldn't read the balance (HTTP Error 401: UNAUTHORIZED))
-- ElevenLabs: 21230 characters (Voices; free Edge voices take over when it runs out. Plan: creator, status: active, resets 03 Dec 2026)
+- ElevenLabs: 20381 characters (Voices; free Edge voices take over when it runs out. Plan: creator, status: active, resets 03 Dec 2026)
 - Anthropic: ? usd (No balance API: see console.anthropic.com > Billing. Spend is logged per run)
 - Perplexity: ? usd (No balance API: see perplexity.ai/account/api. About $0.006 a search)
 
