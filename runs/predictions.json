@@ -859,5 +859,19 @@
   "predicted": null,
   "actual": 8,
   "at": "2026-11-09 11:54"
+ },
+ "yt-instinct-66": {
+  "channel": "yt-instinct",
+  "title": "Ce gorille s'est placé devant un enfant blessé (histoire vraie)",
+  "predicted": 110,
+  "actual": 1402,
+  "at": "2026-11-09 15:19"
+ },
+ "yt-instinct-68.ja": {
+  "channel": "yt-instinct-ja",
+  "title": "15年檻の中にいたクマが、仲間を安心させた実話",
+  "predicted": null,
+  "actual": 2,
+  "at": "2026-11-09 15:19"
  }
 }
