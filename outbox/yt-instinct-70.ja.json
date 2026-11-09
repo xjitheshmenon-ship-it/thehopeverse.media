@@ -132,5 +132,6 @@
   "qa": {
     "passed": true,
     "problems": "dub of a posted Short: same pictures, not checked again"
-  }
+  },
+  "render_failed": 2
 }
