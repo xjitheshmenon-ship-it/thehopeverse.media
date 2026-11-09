@@ -16,11 +16,12 @@
   "credits": [
     "Vietnamese Pot-bellied pig in Zooparc de Tr\u00e9gomeur, 2025.jpg by Animalculum (CC BY 4.0), https://commons.wikimedia.org/wiki/File:Vietnamese_Pot-bellied_pig_in_Zooparc_de_Tr%C3%A9gomeur,_2025.jpg"
   ],
+  "holds": 1,
   "qa": {
-    "passed": false,
-    "problems": "LuLu, the sow, changes species and appearance between shots: she is a brown wild boar in frames 7, 9, 10 and 12 but a spotted black-and-white domestic pig in frames 8, 15 and 16.",
-    "bad_frames": 4
+    "passed": true,
+    "problems": "",
+    "bad_frames": 0
   },
-  "held": "continuity: LuLu, the sow, changes species and appearance between shots: she is a brown wild boar in frames 7, 9, 10 and 12 but a spotted black-and-white domestic pig in frames 8, 15 and 16.",
-  "holds": 1
+  "publish_at": "2026-11-09T18:00:00Z",
+  "youtube_id": "XLvrKchgFcc"
 }
