@@ -880,5 +880,19 @@
   "predicted": null,
   "actual": 2,
   "at": "2026-11-09 17:18"
+ },
+ "yt-instinct-68": {
+  "channel": "yt-instinct",
+  "title": "15 ans en cage, cet ours a rassuré les autres (histoire vraie)",
+  "predicted": 110,
+  "actual": 1103,
+  "at": "2026-11-10 01:19"
+ },
+ "yt-instinct-69": {
+  "channel": "yt-instinct",
+  "title": "Requin : selon lui, des dauphins l'ont entouré (histoire vraie)",
+  "predicted": 110,
+  "actual": 671,
+  "at": "2026-11-10 01:19"
  }
 }
