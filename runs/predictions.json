@@ -838,5 +838,26 @@
   "predicted": null,
   "actual": 7,
   "at": "2026-11-09 05:14"
+ },
+ "yt-instinct-64": {
+  "channel": "yt-instinct",
+  "title": "Elsa la lionne revient avec ses petits (histoire vraie)",
+  "predicted": 90,
+  "actual": 1154,
+  "at": "2026-11-09 11:54"
+ },
+ "yt-instinct-65": {
+  "channel": "yt-instinct",
+  "title": "Une tortue relâchée après 20 ans nage 37 000 km (histoire vraie)",
+  "predicted": 110,
+  "actual": 472,
+  "at": "2026-11-09 11:54"
+ },
+ "yt-instinct-66.ja": {
+  "channel": "yt-instinct-ja",
+  "title": "子供を守った巨大ゴリラ「ジャンボ」の実話",
+  "predicted": null,
+  "actual": 8,
+  "at": "2026-11-09 11:54"
  }
 }
