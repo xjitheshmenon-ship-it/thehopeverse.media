@@ -13,11 +13,12 @@
     "why": "Evergreen true story (Tara the cat, 2014) with no newer finding contradicting it; the script delivers the title's promise with checked facts; the child-protected-by-an-animal theme fits this older francophone audience; only weakness is that the footage is stock, not the real video.",
     "views48": 1000
   },
+  "holds": 1,
   "qa": {
-    "passed": false,
-    "problems": "The boy (Jeremy) changes between shots. In frames 2-3 he is blond in a pink t-shirt and black shorts on a blue bike. In frame 10 he has dark hair, a white long-sleeve shirt and a dark green bike.\nTara the cat looks different across shots, with different markings and builds. Frame 13 shows a calico, frame 14 a grey tabby, and frames 15-16 an orange cat.\nThe setting is inconsistent: a driveway in Bakersfield in frames 2-4, then a park lawn in frames 5-6 and 10.",
-    "bad_frames": 5
+    "passed": true,
+    "problems": "The family's house in frame 10 ('Il va bien') is a different single-story house from the two-story house with a garage in frames 2-3.\nTara's eyes are green in frame 1 but yellow-amber in frame 9.",
+    "bad_frames": 2
   },
-  "held": "continuity: The boy (Jeremy) changes between shots. In frames 2-3 he is blond in a pink t-shirt and black shorts on a blue bike. In frame 10 he has dark hair, a white long-sleeve shirt and a dark green bike.\nTara the cat looks different across shots, with different markings and builds. Frame 13 shows a calico, frame 14 a grey tabby, and frames 15-16 an orange cat.\nThe setting is inconsistent: a driveway in Bakersfield in frames 2-4, then a park lawn in frames 5-6 and 10.",
-  "holds": 1
+  "publish_at": "2026-11-11T04:00:00Z",
+  "youtube_id": "zSyxEGlLIX4"
 }
