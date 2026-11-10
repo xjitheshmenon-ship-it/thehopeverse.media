@@ -1,16 +1,16 @@
-# Hopeverse spending report, 10 Nov 2026 00:20
+# Hopeverse spending report, 10 Nov 2026 18:46
 
-- Today: $1.07 (1 runs)
-- Last 7 days: $67.51
-- This month: $134.24
-- All time: $311.40
+- Today: $3.29 (9 runs)
+- Last 7 days: $69.73
+- This month: $136.46
+- All time: $313.62
 
 Claude (Anthropic) costs as estimated by agents.py, review included. Video images from fal.ai add
 about $0.006 each (about $0.06 a Short). Exact bills: console.anthropic.com and fal.ai/dashboard.
 
 | Day | Runs | Cost |
 | --- | --- | --- |
-| 2026-11-10 | 1 | $1.07 |
+| 2026-11-10 | 9 | $3.29 |
 | 2026-11-09 | 32 | $13.36 |
 | 2026-11-08 | 7 | $4.18 |
 | 2026-11-07 | 26 | $10.03 |
@@ -57,45 +57,38 @@ spazio, astronomia, universo, pianeti, stelle, sistema solare, missioni spaziali
 
 ## Credits left
 
+- **ElevenLabs is low: 19596 characters left** - top it up today
 - fal.ai: ? usd (Couldn't read the balance (HTTP Error 401: Unauthorized); add a fal.ai READONLY key as the FAL_BILLING_KEY secret)
 - HeyGen: ? usd (Couldn't read the balance (HTTP Error 401: UNAUTHORIZED))
-- ElevenLabs: 20381 characters (Voices; free Edge voices take over when it runs out. Plan: creator, status: active, resets 03 Dec 2026)
+- ElevenLabs: 19596 characters (Voices; free Edge voices take over when it runs out. Plan: creator, status: active, resets 03 Dec 2026)
 - Anthropic: ? usd (No balance API: see console.anthropic.com > Billing. Spend is logged per run)
 - Perplexity: ? usd (No balance API: see perplexity.ai/account/api. About $0.006 a search)
 
 ## Mr. Grow's to-dos for you today
 
-- **Pin on Instinct:** the gorilla-child Short (2cdDakmSqM8, 2,990 views) with "Vous auriez fait quoi à sa place ?".
-- **Community posts, text plus poll:**
-  - Instinct: "Quelle histoire voulez-vous ? Gorille / Éléphant / Baleine / Chien".
-  - Hopeverse: "Which story should we explain next? Tech / Science / Economy / War".
-  - Sawaal: a poll on SIR.
-- **Instagram:** share the Instinct gorilla Short with the caption "A mother gorilla carried a fallen child. True story." Never share between our own channels.
-- **Publish times moved:** none.
-  - Instinct's 04:00 UTC slot averaged about 1,220 views against 721 for 18:00. That is only one strong day, and only 21:00 UTC (a single Short) is under 6 Shorts. Not enough evidence to move anything.
-- **Still open:** Instinct JA has 3 private Shorts scheduled for 9–10 Nov.
+- **Pins:** pin the question comment on the gorilla-child Short (2cdDakmSqM8) and on the stork Short (RrCMGIZYl1w).
+- **Community posts:**
+  - Instinct: "Quel animal vous a le plus ému ?" with a poll (éléphant, gorille, baleine, chien).
+  - Hopeverse: skip until it posts again.
+- **Instagram:** share the gorilla-child Short with the caption "Une mère gorille a porté un enfant tombé dans l'enclos. Histoire vraie." Share it to Instagram only, not to our own channels.
+- **Publish times:** I moved none. No slot has 3 days of data with 6 Shorts behind it.
 
 ## Monetization target (10M Shorts views in 90 days)
 
-Search failed again today, so trends below are "to test". Views per day are estimated from the Shorts published 2–8 Nov.
+Figures are the last-7-day totals for Shorts published since 3 Nov. The tool gives lifetime views and no daily series, so these are rough.
+- **Instinct:** about 700 views per Short. It makes about 6 Shorts a day, so it gets about 4,000 views a day against 111,000, and 700 per Short against 28,000. This is the closest channel, but it is still about 27x short per day.
+- **Instinct JA:** about 2 views per Short and about 15 a day.
+- **Hopeverse:** no Shorts since 29 Oct. Views per day are 0.
+- **Sawaal, Sankalp:** no new data since 4 Nov, about 5 views per Short.
+- **Total across all channels:** about 4,000 views a day against 3.3 million.
 
-| Channel | Views/day (7 days) | Avg per Short | vs 111k/day | vs 28k/Short |
-|---|---|---|---|---|
-| Instinct | about 3,000 | about 595 | 2.7% | 2.1% |
-| Instinct JA | about 18 | about 4 | 0.02% | 0.01% |
-| Sawaal | no Shorts since 4 Nov | n/a | 0% | n/a |
-| Sankalp | no Shorts since 26 Oct | n/a | 0% | n/a |
-| Hopeverse | no Shorts since 29 Oct | n/a | 0% | n/a |
-
-All channels together: about 3,000 views a day against 3.3M, which is 0.1%.
-
-Closest is Instinct. Its breakouts were the stork (30.4k), giraffe (13.2k) and elephant (8.0k), all rescue-and-reunion stories. The gorilla child on 8 Nov reached 2,990 in a day. Fastest route: post only rescue-and-reunion Shorts with a named animal and a true number in the first 2 seconds. Drop famous-history Shorts (Balto 84, Jumbo 70).
+Latest breakouts on Instinct: the gorilla-child rescue (3,622) and the stork (30,978). Both open on a danger and then a human act. The recent "famous animal" Shorts (Tama, Ruby, the pigeon) got 12 to 178 views.
 
 ## Sponsorship and collab leads
 
-All unverified, since search failed. Check the entry bars by hand.
-1. **Collabstr (Hopeverse, Instinct):** create a creator profile and list Shorts rates. The bar is low, and brands browse it.
-2. **Influencer Hub (Sawaal, Sankalp):** check the Indian creator marketplace's minimum subscribers.
-3. **Amazon Associates, India and France (Instinct):** affiliate links to animal books under the descriptions. Associates accepts small channels and approves sites case by case.
-4. **Outside creator (Instinct JA):** find a Japanese animal-rescue Shorts channel with about 1k subscribers for a Collaborations tag.
-5. **Outside creator (Hopeverse):** find a small English explainer channel for a Shorts remix.
+All unverified, since search failed today. Check the entry bars by hand.
+1. **Ground News (Hopeverse):** apply to its creator partnership programme at help.ground.news/en/categories/2358337-partner-with-us.
+2. **Plixxo (Sawaal, Sankalp):** list your channels on the Indian creator marketplace.
+3. **Hivency (Instinct):** apply to its French creator platform for nature and pets brands.
+4. **Outside creator (Instinct):** find a French animal-rescue Shorts channel of about 1k subscribers for a Collaborations tag.
+5. **Outside creator (Instinct DE):** find a small German animal-story channel for a Shorts remix.
