@@ -14,13 +14,13 @@
     "views48": 600
   },
   "credits": [
-    "Daytona Beach, Florida.jpg by 7Mike5000 (CC BY-SA 2.0), https://commons.wikimedia.org/wiki/File:Daytona_Beach,_Florida.jpg"
+    "Driving on Daytona Beach.jpg by The Eloquent Peasant (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Driving_on_Daytona_Beach.jpg"
   ],
+  "holds": 2,
   "qa": {
     "passed": false,
-    "problems": "Holly the cat changes appearance: tabby in early frames and vet scene, but frames 13-14 show a white cat; the cat-turtle hybrid creature in frames 15-16 is warped (cat head on turtle shell). Frames 6-8 show a turtle on lawn instead of the cat. Frame 4-5 show turtle-like object in van instead of cat.",
-    "bad_frames": 9
+    "problems": "Frames 1-2 and 7-8: Holly is shown as a black cat fused with a turtle shell (warped/melted hybrid creature).\nHolly's appearance is inconsistent: a black cat in frames 1-2 and 7-8, but a brown tabby in frames 9, 12 and 13.",
+    "bad_frames": 4
   },
-  "held": "continuity: Holly the cat changes appearance: tabby in early frames and vet scene, but frames 13-14 show a white cat; the cat-turtle hybrid creature in frames 15-16 is warped (cat head on turtle shell). Frames 6-8 show a turtle on lawn instead of the cat. Frame 4-5 show turtle-like object in van instead of cat.",
-  "holds": 1
+  "held": "continuity: Frames 1-2 and 7-8: Holly is shown as a black cat fused with a turtle shell (warped/melted hybrid creature).\nHolly's appearance is inconsistent: a black cat in frames 1-2 and 7-8, but a brown tabby in frames 9, 12 and 13."
 }
