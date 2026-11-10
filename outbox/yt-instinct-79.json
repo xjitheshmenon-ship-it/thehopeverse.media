@@ -1,26 +1,27 @@
 {
-  "channel_id": "yt-instinct",
-  "title": "Chatte perdue \u00e0 300 km, retrouv\u00e9e pr\u00e8s de chez elle (histoire vraie)",
-  "description": "Une chatte tr\u00e8s maigre, aux coussinets us\u00e9s, appara\u00eet dans un jardin de Floride. Holly s'\u00e9tait enfuie en novembre 2012 d'un camping-car \u00e0 Daytona Beach, \u00e0 environ 300 kilom\u00e8tres de chez elle par la route. Pr\u00e8s de deux mois plus tard, elle est retrouv\u00e9e \u00e0 environ 1,6 km de sa maison, et sa puce \u00e9lectronique confirme que c'est bien elle. Personne ne sait comment elle a fait le chemin.\n\nEt vous, votre animal saurait-il retrouver le chemin de la maison ?\n\nSources : New York Times (janvier 2013) ; ABC News.\nImages d'illustration : vid\u00e9os et photos libres (Pixabay, Wikimedia Commons), pas celles de Holly.\n\nInstinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.\n\n#histoirevraie #animaux #chat #leSaviezVous",
-  "script": "PLAYLIST: Les g\u00e9nies du vivant. NARRATOR ONLY, French (no Arjun/Meera). Voice fr-FR-DeniseNeural, slowed.\n\nSCRIPT (locked, ~50 s):\n\u00ab Trois cents kilom\u00e8tres. Une chatte tr\u00e8s maigre, aux coussinets us\u00e9s, entre dans le jardin d'une voisine. Novembre 2012, en Floride, aux \u00c9tats-Unis. Holly, une chatte de quatre ans, s'enfuit du camping-car de ses ma\u00eetres, Jacob et Bonnie Richter, \u00e0 Daytona Beach. Les jours passent. Puis les semaines. Pr\u00e8s de deux mois plus tard, le 31 d\u00e9cembre, on la retrouve \u00e9puis\u00e9e, \u00e0 environ un kilom\u00e8tre et demi de chez eux. Chez le v\u00e9t\u00e9rinaire, sa puce \u00e9lectronique confirme : c'est bien Holly. Daytona Beach est \u00e0 environ 300 kilom\u00e8tres de chez eux par la route. Environ trois heures de voiture. Elle n'avait ni carte, ni panneaux. Le sp\u00e9cialiste des chats Jackson Galaxy le dit au New York Times : \"Nous n'avons pas la moindre id\u00e9e de comment ils font.\" Elle a peut-\u00eatre fait une partie du trajet en v\u00e9hicule. Personne ne sait comment elle a fait le chemin. Et vous, votre animal saurait-il retrouver le chemin de la maison ? \u00bb\n\nEDIT PLAN (Mr. Cut): 9:16, 50 s, 21 shots, cuts every 2-3 s, large captions (scale 1.2), slowed voice, soft piano/strings bed. All visuals free stock (Pixabay/Commons): tortoiseshell cat, Florida beach, parked camping-cars, calendar pages, empty road, tired cat in garden, vet scanning microchip, Florida highway with palms (+ simple Daytona Beach -> West Palm Beach line graphic on a Commons base map), road signs, cat looking into distance, cat at a house door. Permanent small label \u00ab Image d'illustration \u00bb on every cat shot (no free photo of Holly exists). On-screen text: 300 km / Novembre 2012 \u00b7 Daytona Beach, Floride (\u00c9tats-Unis) / Les jours passent\u2026 / 31 d\u00e9cembre 2012 / La puce confirme : c'est Holly. / \u2248 300 km par la route / \u2248 3 h en voiture / Galaxy quote \u00ab \u2014 Jackson Galaxy (citation traduite) \u00bb / Personne ne sait comment. / Et vous ? Final 1 s crossfade back to shot 2 for a loop. No AI images, no NYT/TV photos. Credits file (author, link, licence) must be filled for every clip.\n\nTHUMBNAIL: free stock photo of a tortoiseshell cat in profile on a country road, looking into the distance; text \u00ab 300 km \u00bb in bright yellow with thin black outline on a deep navy tone; small white \u00ab Image d'illustration \u00bb at the bottom; no faces, no AI.",
-  "lang": "fr",
-  "footer": "Instinct, une cha\u00eene Hopeverse Media. R\u00e9alis\u00e9 par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
-  "category": "15",
-  "photos": true,
-  "draft_cost": 1.0,
-  "relevance": {
-    "score": 72,
-    "why": "Evergreen true cat-homing story that suits older francophone viewers, and the script matches the title; small risks are the unverified 'Holly' trip details and the shaky '300 km' claim, since Holly was reportedly found near home in West Palm Beach after about 2 months.",
-    "views48": 600
-  },
-  "credits": [
-    "Driving on Daytona Beach.jpg by The Eloquent Peasant (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Driving_on_Daytona_Beach.jpg"
-  ],
-  "holds": 2,
-  "qa": {
-    "passed": false,
-    "problems": "Frames 1-2 and 7-8: Holly is shown as a black cat fused with a turtle shell (warped/melted hybrid creature).\nHolly's appearance is inconsistent: a black cat in frames 1-2 and 7-8, but a brown tabby in frames 9, 12 and 13.",
-    "bad_frames": 4
-  },
-  "held": "continuity: Frames 1-2 and 7-8: Holly is shown as a black cat fused with a turtle shell (warped/melted hybrid creature).\nHolly's appearance is inconsistent: a black cat in frames 1-2 and 7-8, but a brown tabby in frames 9, 12 and 13."
+ "channel_id": "yt-instinct",
+ "title": "Chatte perdue à 300 km, retrouvée près de chez elle (histoire vraie)",
+ "description": "Une chatte très maigre, aux coussinets usés, apparaît dans un jardin de Floride. Holly s'était enfuie en novembre 2012 d'un camping-car à Daytona Beach, à environ 300 kilomètres de chez elle par la route. Près de deux mois plus tard, elle est retrouvée à environ 1,6 km de sa maison, et sa puce électronique confirme que c'est bien elle. Personne ne sait comment elle a fait le chemin.\n\nEt vous, votre animal saurait-il retrouver le chemin de la maison ?\n\nSources : New York Times (janvier 2013) ; ABC News.\nImages d'illustration : vidéos et photos libres (Pixabay, Wikimedia Commons), pas celles de Holly.\n\nInstinct, une chaîne Hopeverse Media. Réalisé par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.\n\n#histoirevraie #animaux #chat #leSaviezVous",
+ "script": "PLAYLIST: Les génies du vivant. NARRATOR ONLY, French (no Arjun/Meera). Voice fr-FR-DeniseNeural, slowed.\n\nSCRIPT (locked, ~50 s):\n« Trois cents kilomètres. Une chatte très maigre, aux coussinets usés, entre dans le jardin d'une voisine. Novembre 2012, en Floride, aux États-Unis. Holly, une chatte de quatre ans, s'enfuit du camping-car de ses maîtres, Jacob et Bonnie Richter, à Daytona Beach. Les jours passent. Puis les semaines. Près de deux mois plus tard, le 31 décembre, on la retrouve épuisée, à environ un kilomètre et demi de chez eux. Chez le vétérinaire, sa puce électronique confirme : c'est bien Holly. Daytona Beach est à environ 300 kilomètres de chez eux par la route. Environ trois heures de voiture. Elle n'avait ni carte, ni panneaux. Le spécialiste des chats Jackson Galaxy le dit au New York Times : \"Nous n'avons pas la moindre idée de comment ils font.\" Elle a peut-être fait une partie du trajet en véhicule. Personne ne sait comment elle a fait le chemin. Et vous, votre animal saurait-il retrouver le chemin de la maison ? »\n\nEDIT PLAN (Mr. Cut): 9:16, 50 s, 21 shots, cuts every 2-3 s, large captions (scale 1.2), slowed voice, soft piano/strings bed. All visuals free stock (Pixabay/Commons): tortoiseshell cat, Florida beach, parked camping-cars, calendar pages, empty road, tired cat in garden, vet scanning microchip, Florida highway with palms (+ simple Daytona Beach -> West Palm Beach line graphic on a Commons base map), road signs, cat looking into distance, cat at a house door. Permanent small label « Image d'illustration » on every cat shot (no free photo of Holly exists). On-screen text: 300 km / Novembre 2012 · Daytona Beach, Floride (États-Unis) / Les jours passent… / 31 décembre 2012 / La puce confirme : c'est Holly. / ≈ 300 km par la route / ≈ 3 h en voiture / Galaxy quote « — Jackson Galaxy (citation traduite) » / Personne ne sait comment. / Et vous ? Final 1 s crossfade back to shot 2 for a loop. No AI images, no NYT/TV photos. Credits file (author, link, licence) must be filled for every clip.\n\nTHUMBNAIL: free stock photo of a tortoiseshell cat in profile on a country road, looking into the distance; text « 300 km » in bright yellow with thin black outline on a deep navy tone; small white « Image d'illustration » at the bottom; no faces, no AI.",
+ "lang": "fr",
+ "footer": "Instinct, une chaîne Hopeverse Media. Réalisé par l'IA. Fait avec espoir.\nAbonnez-vous pour une histoire du vivant chaque jour.",
+ "category": "15",
+ "photos": true,
+ "draft_cost": 1.0,
+ "relevance": {
+  "score": 72,
+  "why": "Evergreen true cat-homing story that suits older francophone viewers, and the script matches the title; small risks are the unverified 'Holly' trip details and the shaky '300 km' claim, since Holly was reportedly found near home in West Palm Beach after about 2 months.",
+  "views48": 600
+ },
+ "credits": [
+  "Driving on Daytona Beach.jpg by The Eloquent Peasant (CC BY-SA 4.0), https://commons.wikimedia.org/wiki/File:Driving_on_Daytona_Beach.jpg"
+ ],
+ "holds": 2,
+ "qa": {
+  "passed": false,
+  "problems": "Frames 1-2 and 7-8: Holly is shown as a black cat fused with a turtle shell (warped/melted hybrid creature).\nHolly's appearance is inconsistent: a black cat in frames 1-2 and 7-8, but a brown tabby in frames 9, 12 and 13.",
+  "bad_frames": 4
+ },
+ "held": "continuity: Frames 1-2 and 7-8: Holly is shown as a black cat fused with a turtle shell (warped/melted hybrid creature).\nHolly's appearance is inconsistent: a black cat in frames 1-2 and 7-8, but a brown tabby in frames 9, 12 and 13.",
+ "shelved": true
 }
