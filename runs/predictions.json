@@ -964,5 +964,12 @@
   "predicted": null,
   "actual": 1,
   "at": "2026-11-12 08:30"
+ },
+ "yt-instinct-76": {
+  "channel": "yt-instinct",
+  "title": "Blessé, ce pigeon a porté l'appel du bataillon perdu (histoire vraie)",
+  "predicted": 700,
+  "actual": 54,
+  "at": "2026-11-12 10:15"
  }
 }
