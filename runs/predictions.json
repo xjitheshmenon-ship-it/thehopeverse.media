@@ -1006,5 +1006,26 @@
   "predicted": null,
   "actual": 2,
   "at": "2026-11-13 03:20"
+ },
+ "yt-instinct-80": {
+  "channel": "yt-instinct",
+  "title": "Un chien attaque ce petit garçon… sa chatte fonce (histoire vraie)",
+  "predicted": 1000,
+  "actual": 526,
+  "at": "2026-11-13 13:27"
+ },
+ "yt-instinct-81": {
+  "channel": "yt-instinct",
+  "title": "Selon la police, 3 lions ont veillé une fillette (histoire vraie)",
+  "predicted": 1000,
+  "actual": 507,
+  "at": "2026-11-13 13:27"
+ },
+ "yt-instinct-82": {
+  "channel": "yt-instinct",
+  "title": "La gorille Koko a bercé un chaton (histoire vraie)",
+  "predicted": 1100,
+  "actual": 282,
+  "at": "2026-11-13 13:27"
  }
 }
