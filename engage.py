@@ -99,6 +99,8 @@ def write(package: dict, channel: dict, ask: bool, comments: list) -> tuple:
 
 def run(rows: list, now: datetime) -> list:
     """Do the first-48-hours work for every due Short; returns the latest 60 comments seen, for the HQ page."""
+    if (HERE / "PAUSED").exists():  # owner's hold (16 Nov 2026): no automatic comments or replies
+        return []
     from agents import OUTBOX, _channels, budget_ok, log_spend
     channels, saved, seen = {c["id"]: c for c in _channels()}, load(), []
     lists, left, changed = saved.setdefault("_playlists", {}), MAX_REPLIES, False
