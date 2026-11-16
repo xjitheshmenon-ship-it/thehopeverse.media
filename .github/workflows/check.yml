@@ -1,0 +1,20 @@
+# Read-only: which channels and videos are still up (owner, 16 Nov 2026). Posts nothing, costs nothing.
+name: Check channels
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install google-api-python-client google-auth
+      - run: git fetch -q origin state && git show origin/state:tokens/token-instinct.json.enc > t.enc
+      - env:
+          TOKEN_KEY: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+        run: openssl enc -d -aes-256-cbc -pbkdf2 -pass env:TOKEN_KEY -in t.enc -out token-instinct.json
+      - run: python tools/channel_check.py
