@@ -5,8 +5,10 @@
 name: Run on push
 
 on:
-  push:
-    branches: ["run/**"]
+  # Owner, 20 Nov 2026 16:01 UTC: "stop everything". Pushes to run/** no longer start anything. To resume, restore:
+  # push:
+  #   branches: ["run/**"]
+  workflow_dispatch:
 
 permissions:
   actions: write

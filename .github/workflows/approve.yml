@@ -7,8 +7,9 @@ name: Dashboard to Hope
 run-name: "Dashboard: ${{ github.event.issue.title || (inputs.topics && 'topic choices' || 'message for Mr. Hope') }}"
 
 on:
-  issues:
-    types: [opened]
+  # Owner, 20 Nov 2026 16:01 UTC: "stop everything". New issues no longer start it. To resume, restore:
+  # issues:
+  #   types: [opened]
   workflow_dispatch:
     inputs:
       topics:

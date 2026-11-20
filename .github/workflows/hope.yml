@@ -6,10 +6,11 @@ run-name: "Hope: ${{ github.event.schedule == '15 * * * *' && 'dashboard refresh
 on:
   # Owner's hold (1 Nov 2026, "hold all workflow"): video and report schedules off. To resume, uncomment those 2 lines.
   # Owner, 2 Nov: "update HQ, hold all other things", so the hourly dashboard numbers run again (no videos, no paid calls).
-  schedule:
-    - cron: "30 0 * * *"   # 06:00 IST (owner, 2 Nov 2026; was 04:00): start the day's videos; each run makes one and starts the next (plan.py --due)
+  # Owner, 20 Nov 2026 16:01 UTC: "stop everything". Both schedules off. To resume, uncomment schedule + its cron lines.
+  # schedule:
+  #   - cron: "30 0 * * *"   # 06:00 IST (owner, 2 Nov 2026; was 04:00): start the day's videos; each run makes one and starts the next (plan.py --due)
   #   - cron: "30 11 * * *"  # 17:00 IST: the daily report and new channel idea
-    - cron: "15 * * * *"   # hourly: dashboard numbers
+  #   - cron: "15 * * * *"   # hourly: dashboard numbers
   workflow_dispatch:
     inputs:
       job:
