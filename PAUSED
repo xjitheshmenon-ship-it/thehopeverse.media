@@ -1,3 +1,6 @@
 Owner's hold, 16 Nov 2026: YouTube removed 2 channels as spam. Every automatic upload is stopped on every channel
 (daily chain, Instinct batch, dubs, Post now from HQ, comment replies) until the owner restarts after the safety
 plan. Hourly HQ numbers (job=stats) still run. Earlier holds: 1 Nov (ElevenLabs), 2 Nov (Instinct only).
+
+Owner, 20 Nov 2026 16:01 UTC: "stop everything". All automatic triggers are off (hope.yml schedules, run.yml push, approve.yml issues),
+including the hourly HQ numbers, until the owner says restart.
